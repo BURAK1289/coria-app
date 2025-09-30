@@ -1,0 +1,234 @@
+name: Test Suite
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: website/package-lock.json
+        
+    - name: Install dependencies
+      run: |
+        cd website
+        npm ci
+        
+    - name: Type check
+      run: |
+        cd website
+        npm run type-check
+        
+    - name: Lint
+      run: |
+        cd website
+        npm run lint
+        
+    - name: Run unit tests
+      run: |
+        cd website
+        npm run test:coverage
+        
+    - name: Build application
+      run: |
+        cd website
+        npm run build
+        
+    - name: Upload coverage reports
+      uses: codecov/codecov-action@v3
+      with:
+        file: website/coverage/lcov.info
+        flags: unittests
+        name: codecov-umbrella
+        
+  e2e-tests:
+    runs-on: ubuntu-latest
+    needs: test
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+        cache-dependency-path: website/package-lock.json
+        
+    - name: Install dependencies
+      run: |
+        cd website
+        npm ci
+        
+    - name: Install Playwright browsers
+      run: |
+        cd website
+        npx playwright install --with-deps
+        
+    - name: Build application
+      run: |
+        cd website
+        npm run build
+        
+    - name: Start application
+      run: |
+        cd website
+        npm start &
+        sleep 10
+        
+    - name: Run E2E tests
+      run: |
+        cd website
+        npm run test:e2e
+        
+    - name: Upload E2E test results
+      uses: actions/upload-artifact@v3
+      if: failure()
+      with:
+        name: playwright-report
+        path: website/playwright-report/
+        retention-days: 30
+        
+  lighthouse:
+    runs-on: ubuntu-latest
+    needs: test
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+        cache-dependency-path: website/package-lock.json
+        
+    - name: Install dependencies
+      run: |
+        cd website
+        npm ci
+        
+    - name: Build application
+      run: |
+        cd website
+        npm run build
+        
+    - name: Start application
+      run: |
+        cd website
+        npm start &
+        sleep 10
+        
+    - name: Run Lighthouse CI
+      run: |
+        cd website
+        npm run lighthouse:ci
+        
+    - name: Upload Lighthouse results
+      uses: actions/upload-artifact@v3
+      with:
+        name: lighthouse-results
+        path: website/.lighthouseci/
+        retention-days: 30
+        
+  security:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+        cache-dependency-path: website/package-lock.json
+        
+    - name: Install dependencies
+      run: |
+        cd website
+        npm ci
+        
+    - name: Run security audit
+      run: |
+        cd website
+        npm audit --audit-level moderate
+        
+    - name: Build application
+      run: |
+        cd website
+        npm run build
+        
+    - name: Start application
+      run: |
+        cd website
+        npm start &
+        sleep 10
+        
+    - name: Check security headers
+      run: |
+        cd website
+        npm run security:headers http://localhost:3000
+        
+  load-test:
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+        cache-dependency-path: website/package-lock.json
+        
+    - name: Install dependencies
+      run: |
+        cd website
+        npm ci
+        
+    - name: Build application
+      run: |
+        cd website
+        npm run build
+        
+    - name: Start application
+      run: |
+        cd website
+        npm start &
+        sleep 10
+        
+    - name: Run load tests
+      run: |
+        cd website
+        npm run load:test:report
+        
+    - name: Upload load test results
+      uses: actions/upload-artifact@v3
+      with:
+        name: load-test-results
+        path: website/load-test-report.json
+        retention-days: 30

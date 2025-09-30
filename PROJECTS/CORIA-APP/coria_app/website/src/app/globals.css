@@ -1,0 +1,1286 @@
+@import 'tailwindcss';
+
+:root {
+  /* CORIA "Organic Minimalism" Design System v2.0 */
+  /* Ana Renkler - Primary Colors */
+  --coria-green: #1B5E3F;        /* CORIA Yeşili - Primary brand */
+  --acik-yesil: #66BB6A;         /* Açık Yeşil - Success messages, positive indicators */
+  --su-yesili: #26A69A;          /* Su Yeşili - Links, hover states, secondary accents */
+
+  /* Destek Renkleri - Support Colors */
+  --mercan: #FF6B6B;             /* Mercan - Warnings, critical info, attention CTAs */
+  --toprak: #8D6E63;             /* Toprak - Neutral areas, background tones */
+  --koyu-gri: #2C2C2C;           /* Koyu Gri - Text, headings */
+  --acik-gri: #F5F5F5;           /* Açık Gri - Backgrounds, cards */
+
+  /* Legacy Colors - Maintained for compatibility */
+  --leaf: var(--acik-yesil);     /* Mapped to new Açık Yeşil */
+  --foam: #F5F0E6;               /* Primary surface */
+  --mist: #E8E5E0;               /* Secondary wash */
+  --forest: #0D3B2F;             /* Deep accent */
+  --lime: #C5D86D;               /* Energetic highlights */
+  --earth: var(--toprak);        /* Mapped to new Toprak */
+  --sky: #87CEEB;                /* Water & clarity */
+  --coral: var(--mercan);        /* Mapped to new Mercan */
+  --gold: #FFD93D;               /* Achievements */
+
+  /* Extended CORIA Palette */
+  --coria-primary: var(--coria-green);
+  --coria-primary-light: #3F7C5A;
+  --coria-primary-dark: var(--forest);
+  --coria-secondary: var(--acik-yesil);
+  --coria-tertiary: var(--su-yesili);
+  --coria-accent: var(--su-yesili);
+  --coria-accent-light: #4DB6AC;
+  --coria-warning: var(--mercan);
+  --coria-neutral: var(--toprak);
+  --coria-glow: #A7D8B8;
+  --coria-mint: #E3F0DF;
+  --coria-sky: #D7EEF6;
+  --coria-sand: #F4E8D6;
+
+  /* Neutral Colors */
+  --coria-white: #FFFFFF;
+  --coria-gray-50: #FBFAF7;
+  --coria-gray-100: #F3EEE4;
+  --coria-gray-200: #E8E5E0;
+  --coria-gray-300: #D4D0C9;
+  --coria-gray-400: #B6B2AA;
+  --coria-gray-500: #7A8B7F;
+  --coria-gray-600: #5F6F64;
+  --coria-gray-700: #46554B;
+  --coria-gray-800: #38453C;
+  --coria-gray-900: #2C3E34;     /* Primary text */
+  --coria-black: #101713;
+
+  /* Semantic Colors */
+  --coria-success: var(--leaf);
+  --coria-warning: var(--gold);
+  --coria-error: var(--coral);
+  --coria-info: var(--sky);
+
+  /* Background & Text */
+  --background: var(--coria-white);
+  --foreground: var(--coria-gray-900);
+  --text-primary: var(--coria-gray-900);
+  --text-secondary: var(--coria-gray-500);
+}
+
+@theme inline {
+  /* CORIA Brand Colors */
+  --color-coria-green: var(--coria-green);
+  --color-coral: var(--coral);
+  --color-earth: var(--earth);
+  --color-leaf: var(--leaf);
+  --color-water: var(--sky);
+  
+  /* Extended CORIA Palette */
+  --color-coria-primary: var(--coria-primary);
+  --color-coria-primary-light: var(--coria-primary-light);
+  --color-coria-primary-dark: var(--coria-primary-dark);
+  --color-coria-secondary: var(--coria-secondary);
+  --color-coria-accent: var(--coria-accent);
+  --color-coria-accent-light: var(--coria-accent-light);
+  --color-coria-lime: var(--lime);
+  --color-coria-earth: var(--earth);
+  --color-coria-gold: var(--gold);
+
+  /* Neutral Colors */
+  --color-coria-white: var(--coria-white);
+  --color-coria-gray-50: var(--coria-gray-50);
+  --color-coria-gray-100: var(--coria-gray-100);
+  --color-coria-gray-200: var(--coria-gray-200);
+  --color-coria-gray-300: var(--coria-gray-300);
+  --color-coria-gray-400: var(--coria-gray-400);
+  --color-coria-gray-500: var(--coria-gray-500);
+  --color-coria-gray-600: var(--coria-gray-600);
+  --color-coria-gray-700: var(--coria-gray-700);
+  --color-coria-gray-800: var(--coria-gray-800);
+  --color-coria-gray-900: var(--coria-gray-900);
+  --color-coria-black: var(--coria-black);
+
+  /* Semantic Colors */
+  --color-coria-success: var(--coria-success);
+  --color-coria-warning: var(--coria-warning);
+  --color-coria-error: var(--coria-error);
+  --color-coria-info: var(--coria-info);
+
+  /* Background & Text */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+
+  /* Typography - yeni-tasarım.md v2.0 System */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-technical: 'IBM Plex Sans', 'Inter', system-ui, -apple-system, sans-serif; /* Technical content */
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Typography Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  /* Spacing Scale */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg:
+    0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl:
+    0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-soft:
+    0 32px 80px -48px rgb(27 94 63 / 0.45),
+    0 12px 35px -20px rgb(27 94 63 / 0.35);
+}
+
+/* Dark Mode Palette (80% brightness variants) - yeni-tasarım.md v2.0 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark Mode Background & Text */
+    --background: #1A1A1A;              /* Dark mode background */
+    --foreground: #E0E0E0;              /* Dark mode text */
+    --text-primary: #E0E0E0;
+    --text-secondary: var(--coria-gray-300);
+
+    /* Dark Mode Color Variants (80% brightness) */
+    --coria-green: #2E7E5B;             /* CORIA Yeşili 80% */
+    --acik-yesil: #85CC89;              /* Açık Yeşil 80% */
+    --su-yesili: #40B5AA;               /* Su Yeşili 80% */
+    --mercan: #FF8A8A;                  /* Mercan 80% */
+    --toprak: #A38A7E;                  /* Toprak 80% */
+    --koyu-gri: #454545;                /* Koyu Gri 80% */
+    --acik-gri: #2C2C2C;                /* Açık Gri → Card background */
+
+    /* Legacy dark mode colors */
+    --foam: #1f2622;
+    --mist: #27332c;
+    --coria-sand: #2c3b32;
+    --coria-mint: #1f3329;
+  }
+}
+
+[data-theme="dark"] {
+  /* Dark Mode Background & Text */
+  --background: #1A1A1A;              /* Dark mode background */
+  --foreground: #E0E0E0;              /* Dark mode text */
+  --text-primary: #E0E0E0;
+  --text-secondary: var(--coria-gray-300);
+
+  /* Dark Mode Color Variants (80% brightness) */
+  --coria-green: #2E7E5B;             /* CORIA Yeşili 80% */
+  --acik-yesil: #85CC89;              /* Açık Yeşil 80% */
+  --su-yesili: #40B5AA;               /* Su Yeşili 80% */
+  --mercan: #FF8A8A;                  /* Mercan 80% */
+  --toprak: #A38A7E;                  /* Toprak 80% */
+  --koyu-gri: #454545;                /* Koyu Gri 80% */
+  --acik-gri: #2C2C2C;                /* Açık Gri → Card background */
+
+  /* Legacy dark mode colors */
+  --foam: #1f2622;
+  --mist: #27332c;
+  --coria-sand: #2c3b32;
+  --coria-mint: #1f3329;
+}
+
+[data-theme="light"] {
+  --background: var(--coria-white);
+  --foreground: var(--coria-gray-900);
+  --text-primary: var(--coria-gray-900);
+  --text-secondary: #718096;
+}
+
+[data-theme="dark"] body {
+  background:
+    linear-gradient(180deg, #161d19 0%, var(--coria-gray-900) 55%, #121813 100%);
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, var(--foam) 0%, var(--coria-white) 55%, var(--mist) 100%);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 120% at 20% -20%, rgba(127, 176, 105, 0.14) 0%, transparent 60%),
+    radial-gradient(120% 120% at 80% -15%, rgba(135, 206, 235, 0.14) 0%, transparent 65%),
+    radial-gradient(140% 160% at 50% 120%, rgba(27, 94, 63, 0.08) 0%, transparent 70%);
+}
+
+/* Utility Classes for CORIA "Organic Minimalism" Design System v2.0 */
+
+/* Text Colors */
+.text-coria-primary { color: var(--coria-primary); }
+.text-coria-secondary { color: var(--text-secondary); }
+.text-acik-yesil { color: var(--acik-yesil); }
+.text-su-yesili { color: var(--su-yesili); }
+.text-mercan { color: var(--mercan); }
+.text-toprak { color: var(--toprak); }
+.text-koyu-gri { color: var(--koyu-gri); }
+
+/* Background Colors */
+.bg-coria-primary { background-color: var(--coria-primary); }
+.bg-coria-secondary { background-color: var(--coria-secondary); }
+.bg-acik-yesil { background-color: var(--acik-yesil); }
+.bg-su-yesili { background-color: var(--su-yesili); }
+.bg-mercan { background-color: var(--mercan); }
+.bg-toprak { background-color: var(--toprak); }
+.bg-acik-gri { background-color: var(--acik-gri); }
+
+/* Border Colors */
+.border-coria-primary { border-color: var(--coria-primary); }
+.border-acik-yesil { border-color: var(--acik-yesil); }
+.border-su-yesili { border-color: var(--su-yesili); }
+.border-mercan { border-color: var(--mercan); }
+
+/* Organic Minimalism Gradients */
+.bg-gradient-coria {
+  background: linear-gradient(
+    135deg,
+    var(--coria-primary) 0%,
+    var(--coria-secondary) 45%,
+    var(--lime) 70%,
+    var(--gold) 100%
+  );
+}
+
+.bg-gradient-organic {
+  background: linear-gradient(
+    135deg,
+    var(--coria-green) 0%,
+    var(--acik-yesil) 50%,
+    var(--su-yesili) 100%
+  );
+}
+
+.bg-gradient-organic-soft {
+  background: linear-gradient(
+    135deg,
+    rgba(27, 94, 63, 0.1) 0%,
+    rgba(102, 187, 106, 0.05) 50%,
+    rgba(38, 166, 154, 0.1) 100%
+  );
+}
+
+/* Typography Utilities */
+.font-technical {
+  font-family: var(--font-technical);
+}
+
+.font-weight-black {
+  font-weight: var(--font-weight-black);
+}
+
+/* Organic Minimalism Components */
+.organic-button {
+  transition: var(--transition-organic);
+  transform: translateZ(0);
+}
+
+.organic-card {
+  transition: var(--transition-bounce);
+  transform: translateZ(0);
+}
+
+.organic-input {
+  transition: var(--transition-soft);
+  transform: translateZ(0);
+}
+
+.bg-glass-surface {
+  background: rgba(245, 240, 230, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(18px);
+}
+
+.shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+/* Spacing utilities */
+.space-coria-xs {
+  margin: var(--spacing-xs);
+}
+
+.space-coria-sm {
+  margin: var(--spacing-sm);
+}
+
+.space-coria-md {
+  margin: var(--spacing-md);
+}
+
+.space-coria-lg {
+  margin: var(--spacing-lg);
+}
+
+.space-coria-xl {
+  margin: var(--spacing-xl);
+}
+
+/* Padding utilities */
+.p-coria-xs {
+  padding: var(--spacing-xs);
+}
+
+.p-coria-sm {
+  padding: var(--spacing-sm);
+}
+
+.p-coria-md {
+  padding: var(--spacing-md);
+}
+
+.p-coria-lg {
+  padding: var(--spacing-lg);
+}
+
+.p-coria-xl {
+  padding: var(--spacing-xl);
+}
+
+/* Border radius utilities */
+.rounded-coria-sm {
+  border-radius: var(--radius-sm);
+}
+
+.rounded-coria-md {
+  border-radius: var(--radius-md);
+}
+
+.rounded-coria-lg {
+  border-radius: var(--radius-lg);
+}
+
+/* Shadow utilities */
+.shadow-coria-sm {
+  box-shadow: var(--shadow-sm);
+}
+
+.shadow-coria-md {
+  box-shadow: var(--shadow-md);
+}
+
+.shadow-coria-lg {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Mobile Touch Optimizations */
+@media (max-width: 768px) {
+  /* Minimum touch target size (44px) */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Enhanced button sizes for mobile */
+  .btn-mobile {
+    padding: 12px 24px;
+    font-size: 16px;
+    min-height: 48px;
+  }
+  
+  /* Form input optimizations */
+  .form-input-mobile {
+    padding: 16px;
+    font-size: 16px; /* Prevents zoom on iOS */
+    min-height: 48px;
+  }
+  
+  /* Mobile-specific spacing */
+  .mobile-spacing {
+    padding: 16px;
+  }
+  
+  .mobile-spacing-lg {
+    padding: 24px;
+  }
+  
+  /* Touch-friendly navigation */
+  .mobile-nav-item {
+    padding: 16px 20px;
+    font-size: 18px;
+    min-height: 56px;
+  }
+  
+  /* Swipe gesture indicators */
+  .swipe-indicator {
+    position: relative;
+  }
+  
+  .swipe-indicator::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    background: var(--coria-gray-300);
+    border-radius: 2px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects on touch devices */
+  .hover-effect:hover {
+    transform: none;
+  }
+  
+  /* Enhanced focus states for touch */
+  .focus-touch:focus {
+    outline: 2px solid var(--coria-primary);
+    outline-offset: 2px;
+  }
+  
+  /* Larger tap targets */
+  .tap-target {
+    padding: 12px;
+    margin: 4px;
+  }
+}
+
+/* Swipe gesture support */
+.swipeable {
+  touch-action: pan-x;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.swipeable-vertical {
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Mobile form optimizations */
+.mobile-form {
+  padding: 20px 16px;
+}
+
+.mobile-form .form-group {
+  margin-bottom: 20px;
+}
+
+.mobile-form label {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.mobile-form input,
+.mobile-form select,
+.mobile-form textarea {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  border: 2px solid var(--coria-gray-300);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.mobile-form input:focus,
+.mobile-form select:focus,
+.mobile-form textarea:focus {
+  outline: none;
+  border-color: var(--coria-primary);
+  box-shadow: 0 0 0 3px var(--coria-primary-light);
+}
+
+/* Mobile navigation enhancements */
+.mobile-nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 40;
+}
+
+.mobile-nav-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 280px;
+  background: var(--background);
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 50;
+}
+
+.mobile-nav-panel.open {
+  transform: translateX(0);
+}
+
+/* Safe area support for iOS */
+@supports (padding: max(0px)) {
+  .safe-area-top {
+    padding-top: max(16px, env(safe-area-inset-top));
+  }
+  
+  .safe-area-bottom {
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
+  }
+  
+  .safe-area-left {
+    padding-left: max(16px, env(safe-area-inset-left));
+  }
+  
+  .safe-area-right {
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+}
+
+/* ======================================
+   ORGANIC MINIMALISM MICRO-INTERACTIONS
+   ====================================== */
+
+/* Smooth transition variables */
+:root {
+  --transition-organic: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-elastic: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --transition-soft: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Button hover micro-interactions */
+.cta-button,
+.organic-button {
+  transition: var(--transition-organic);
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover,
+.organic-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(27, 94, 63, 0.2);
+}
+
+/* Card hover effects */
+.organic-card {
+  transition: var(--transition-bounce);
+  transform: translateY(0);
+}
+
+.organic-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Input focus micro-interactions */
+.organic-input {
+  transition: var(--transition-soft);
+  border-color: var(--coria-gray-300);
+}
+
+.organic-input:focus {
+  border-color: var(--coria-primary);
+  box-shadow: 0 0 0 3px rgba(27, 94, 63, 0.1);
+  transform: scale(1.02);
+}
+
+/* Float animations */
+@keyframes coriaFloat {
+  0% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-8px) translateX(4px); }
+  100% { transform: translateY(0px) translateX(0px); }
+}
+
+@keyframes coriaPulse {
+  0% { opacity: 0.18; }
+  50% { opacity: 0.35; }
+  100% { opacity: 0.18; }
+}
+
+@keyframes organicScale {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes organicGlow {
+  0% { box-shadow: 0 0 5px rgba(27, 94, 63, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(27, 94, 63, 0.4); }
+  100% { box-shadow: 0 0 5px rgba(27, 94, 63, 0.2); }
+}
+
+.floating-blob {
+  animation: coriaFloat 10s ease-in-out infinite;
+}
+
+.organic-scale {
+  animation: organicScale 2s ease-in-out infinite;
+}
+
+.organic-glow {
+  animation: organicGlow 3s ease-in-out infinite;
+}
+
+.glow-ring {
+  position: relative;
+}
+
+.glow-ring::after {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(circle at 50% 50%, rgba(27, 94, 63, 0.22), transparent 65%);
+  filter: blur(28px);
+}
+
+/* ======================================
+   UNIVERSAL ACCESSIBILITY IMPROVEMENTS
+   ====================================== */
+
+/* WCAG AA Compliant Touch Targets (Desktop + Mobile) */
+button:not(.mobile-nav-button),
+a,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+[role="button"],
+[tabindex="0"],
+.interactive-element {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+}
+
+/* Enhanced focus indicators for all interactive elements */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--coria-primary);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px rgba(27, 94, 63, 0.2);
+}
+
+/* Minimum font size compliance (WCAG) */
+body {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Small text should not go below 14px */
+.text-sm {
+  font-size: 14px !important;
+  line-height: 1.5;
+}
+
+/* Prevent text smaller than 12px */
+.text-xs {
+  font-size: 12px !important;
+  line-height: 1.4;
+}
+
+/* Force readable text size for critical elements */
+.text-readable {
+  font-size: max(16px, 1rem) !important;
+  line-height: 1.6;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --text-primary: #000000;
+    --background: #ffffff;
+    --coria-primary: #1B5E3F;
+  }
+
+  button, a {
+    border: 2px solid currentColor;
+  }
+
+  button:focus-visible,
+  a:focus-visible {
+    outline: 4px solid #1B5E3F;
+    outline-offset: 2px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .floating-blob {
+    animation: none;
+  }
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Better color contrast for links */
+a {
+  color: var(--coria-primary);
+  text-decoration: underline;
+  text-decoration-color: rgba(27, 94, 63, 0.3);
+  text-underline-offset: 3px;
+}
+
+a:hover,
+a:focus {
+  color: var(--coria-primary-dark);
+  text-decoration-color: var(--coria-primary);
+}
+
+/* Improved form accessibility */
+input,
+select,
+textarea {
+  min-height: 44px;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 2px solid var(--coria-gray-300);
+  border-radius: 8px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--coria-primary);
+  box-shadow: 0 0 0 3px rgba(27, 94, 63, 0.2);
+  outline: none;
+}
+
+/* Required field indicators */
+[required] + label::after,
+label.required::after {
+  content: " *";
+  color: var(--coria-error);
+  font-weight: bold;
+}
+
+/* Error states */
+.error,
+[aria-invalid="true"] {
+  border-color: var(--coria-error) !important;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2) !important;
+}
+
+/* Skip links for keyboard navigation */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--coria-primary);
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  z-index: 9999;
+  font-weight: bold;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Ensure sufficient color contrast */
+.text-secondary {
+  color: var(--coria-gray-600) !important; /* Improved contrast */
+}
+
+/* Loading states accessibility */
+[aria-busy="true"] {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+/* Notification/alert accessibility */
+[role="alert"],
+[role="status"] {
+  padding: 16px;
+  border-radius: 8px;
+  margin: 16px 0;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+[role="alert"] {
+  background-color: rgba(255, 107, 107, 0.1);
+  border: 1px solid var(--coria-error);
+  color: var(--coria-error);
+}
+
+[role="status"] {
+  background-color: rgba(127, 176, 105, 0.1);
+  border: 1px solid var(--coria-success);
+  color: var(--coria-success);
+}
+
+/* WCAG AA Compliant Color Contrast Fixes (Desktop + Mobile) */
+
+/* Fix low contrast text colors - ensure minimum 4.5:1 for normal text, 3:1 for large text */
+.text-gray-500,
+.text-coria-gray-500,
+p[class*="text-gray-500"] {
+  color: var(--coria-gray-700) !important; /* 7.2:1 contrast ratio */
+}
+
+.text-gray-600,
+.text-coria-gray-600,
+p[class*="text-gray-600"] {
+  color: var(--coria-gray-800) !important; /* 9.1:1 contrast ratio */
+}
+
+/* Enhanced button contrast - prevent white text on white background */
+button[class*="bg-white"],
+.btn-white {
+  color: var(--coria-gray-900) !important;
+  border: 2px solid var(--coria-gray-300) !important;
+}
+
+button[class*="bg-white"]:hover,
+.btn-white:hover {
+  background-color: var(--coria-gray-50) !important;
+  border-color: var(--coria-primary) !important;
+  color: var(--coria-primary) !important;
+}
+
+/* Footer link improvements */
+footer a,
+.footer-link {
+  color: var(--coria-gray-800) !important; /* 9.1:1 contrast ratio */
+  text-decoration: underline;
+  text-decoration-color: var(--coria-gray-400);
+}
+
+footer a:hover,
+.footer-link:hover {
+  color: var(--coria-primary) !important;
+  text-decoration-color: var(--coria-primary);
+}
+
+/* Copyright and small text improvements */
+.text-xs,
+.text-sm,
+footer p {
+  color: var(--coria-gray-700) !important; /* 7.2:1 contrast minimum */
+}
+
+/* Ensure download buttons have proper contrast */
+.download-button,
+button[aria-label*="İndir"],
+button[class*="bg-gradient"] {
+  background-color: var(--coria-primary) !important;
+  color: var(--coria-white) !important;
+  border: 2px solid var(--coria-primary) !important;
+}
+
+.download-button:hover,
+button[aria-label*="İndir"]:hover,
+button[class*="bg-gradient"]:hover {
+  background-color: var(--coria-primary-dark) !important;
+  border-color: var(--coria-primary-dark) !important;
+}
+
+/* Menu overlay text improvements */
+.menu-overlay p,
+.navigation-overlay p {
+  color: var(--coria-gray-800) !important; /* Better contrast for overlay text */
+}
+
+/* Notification text contrast fix */
+.notification-text,
+.alert-text {
+  color: var(--coria-gray-900) !important; /* Ensure maximum readability */
+}
+
+/* Transparent background text enhancements */
+.bg-opacity-80 p,
+.bg-opacity-85 p,
+.bg-opacity-90 p,
+*[style*="background: rgba"] p,
+*[style*="background-color: rgba"] p {
+  color: var(--coria-gray-900) !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8); /* Add subtle shadow for better readability */
+}
+
+/* Hero section text contrast improvements */
+.hero-text,
+.lead-text,
+p[class*="text-lg"],
+p[class*="text-xl"] {
+  color: var(--coria-gray-800) !important;
+}
+
+/* High contrast mode support - respects user's system preference */
+@media (prefers-contrast: high) {
+  :root {
+    --coria-gray-500: var(--coria-gray-800);
+    --coria-gray-600: var(--coria-gray-900);
+    --text-secondary: var(--coria-gray-800);
+  }
+
+  a, button {
+    border: 2px solid currentColor !important;
+  }
+
+  .text-gray-500, .text-gray-600 {
+    color: var(--coria-black) !important;
+  }
+
+  /* Ensure all text has maximum contrast in high contrast mode */
+  p, span, div {
+    color: var(--coria-black) !important;
+  }
+}
+
+/* Enhanced Keyboard Navigation Support (Desktop + Mobile) */
+
+/* Skip Links - Jump to main content */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--coria-primary);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  z-index: 9999;
+  font-weight: bold;
+  font-size: 14px;
+  transition: top 0.2s ease;
+}
+
+.skip-to-content:focus {
+  top: 6px;
+  outline: 3px solid var(--coria-accent);
+  outline-offset: 2px;
+}
+
+/* Enhanced Focus Indicators for All Interactive Elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible,
+[role="button"]:focus-visible,
+[role="link"]:focus-visible,
+[role="tab"]:focus-visible {
+  outline: 3px solid var(--coria-primary) !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 2px var(--coria-white), 0 0 0 5px var(--coria-primary) !important;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+/* Special focus styles for social links and small buttons */
+a[class*="h-10"]:focus-visible,
+button[class*="h-9"]:focus-visible,
+.social-link:focus-visible {
+  outline: 3px solid var(--coria-primary) !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 2px var(--coria-white), 0 0 0 6px var(--coria-primary) !important;
+}
+
+/* Mobile navigation accessibility fixes */
+.mobile-nav-item[tabindex="-1"] {
+  tabindex: 0 !important; /* Fix negative tabindex */
+}
+
+.mobile-nav-item:focus-visible {
+  background-color: var(--coria-primary) !important;
+  color: var(--coria-white) !important;
+  outline: 3px solid var(--coria-accent) !important;
+  outline-offset: 2px !important;
+}
+
+/* Download buttons and gradient buttons focus */
+button[class*="bg-gradient"]:focus-visible,
+.download-button:focus-visible {
+  outline: 3px solid var(--coria-accent) !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 2px var(--coria-white), 0 0 0 5px var(--coria-accent) !important;
+  transform: translateY(-2px);
+}
+
+/* Form elements enhanced focus */
+input[type="email"]:focus-visible,
+input[type="text"]:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--coria-primary) !important;
+  outline-offset: 2px !important;
+  border-color: var(--coria-primary) !important;
+  box-shadow: 0 0 0 3px rgba(27, 94, 63, 0.2) !important;
+}
+
+/* Keyboard navigation improvements */
+[tabindex="0"]:focus,
+[tabindex="0"]:focus-visible {
+  outline: 3px solid var(--coria-primary) !important;
+  outline-offset: 2px !important;
+}
+
+/* Remove negative tabindex for better accessibility */
+[tabindex="-1"]:not([data-focus-management]) {
+  tabindex: 0 !important;
+}
+
+/* Enhanced focus for custom buttons and CTAs */
+.cta-button:focus-visible,
+button[class*="rounded-full"]:focus-visible {
+  outline: 3px solid var(--coria-primary) !important;
+  outline-offset: 2px !important;
+  transform: scale(1.02);
+}
+
+/* Keyboard navigation for card-like elements */
+[role="button"]:focus-visible,
+.clickable-card:focus-visible {
+  outline: 3px solid var(--coria-primary) !important;
+  outline-offset: 2px !important;
+  background-color: var(--coria-gray-50) !important;
+}
+
+/* Language switcher and theme toggle focus */
+#language-switcher-button:focus-visible,
+button[class*="theme"]:focus-visible {
+  outline: 3px solid var(--coria-primary) !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 2px var(--coria-white), 0 0 0 5px var(--coria-primary) !important;
+}
+
+/* Focus management for modal and overlay elements */
+.modal:focus-visible,
+.overlay:focus-visible,
+.dialog:focus-visible {
+  outline: 3px solid var(--coria-primary) !important;
+  outline-offset: 2px !important;
+}
+
+/* Keyboard navigation for mobile menu */
+@media (max-width: 768px) {
+  .mobile-nav-item:focus-visible {
+    background-color: var(--coria-primary) !important;
+    color: var(--coria-white) !important;
+    transform: scale(1.02);
+  }
+
+  /* Ensure mobile menu items are keyboard accessible */
+  .mobile-nav-item {
+    outline: none;
+    position: relative;
+  }
+
+  .mobile-nav-item:focus-visible::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border: 3px solid var(--coria-accent);
+    border-radius: 8px;
+    pointer-events: none;
+  }
+}
+
+/* Tab order optimization */
+.tab-order-1 { order: 1; }
+.tab-order-2 { order: 2; }
+.tab-order-3 { order: 3; }
+
+/* Reduced motion support for focus indicators */
+@media (prefers-reduced-motion: reduce) {
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  [tabindex]:focus-visible {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* ===========================
+   RESPONSIVE TYPOGRAPHY SYSTEM
+   =========================== */
+
+/* Global typography improvements for better spacing and readability */
+body {
+  line-height: 1.6; /* Improved base line height */
+}
+
+/* Enhanced paragraph spacing */
+p {
+  margin-bottom: 1.25rem; /* Increased from default */
+  line-height: 1.7; /* More generous line spacing */
+}
+
+/* Improved spacing between sections */
+section {
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  section {
+    margin-bottom: 3rem;
+  }
+}
+
+/* Mobile-first responsive typography scale */
+@media (max-width: 767px) {
+  /* Enforce minimum font sizes on mobile */
+  .text-xs {
+    font-size: 0.875rem !important; /* 14px minimum instead of 12px */
+    line-height: 1.7 !important;
+  }
+
+  .text-sm {
+    font-size: 1rem !important; /* 16px minimum instead of 14px */
+    line-height: 1.7 !important;
+  }
+
+  .text-base {
+    font-size: 1.125rem !important; /* 18px instead of 16px */
+    line-height: 1.7 !important;
+  }
+
+  .text-lg {
+    font-size: 1.25rem !important; /* 20px instead of 18px */
+    line-height: 1.6 !important;
+  }
+
+  .text-xl {
+    font-size: 1.375rem !important; /* 22px instead of 20px */
+    line-height: 1.6 !important;
+  }
+
+  /* Headings mobile optimizations */
+  h1, .text-4xl, .text-5xl, .text-6xl, .text-7xl {
+    line-height: 1.3 !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  h2, .text-2xl, .text-3xl {
+    line-height: 1.4 !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  h3, h4, .text-lg, .text-xl {
+    line-height: 1.5 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Better spacing for mobile containers */
+  .max-w-sm, .max-w-md, .max-w-lg {
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* Desktop typography improvements */
+@media (min-width: 768px) {
+  p {
+    line-height: 1.8; /* Even more generous on desktop */
+    margin-bottom: 1.5rem;
+  }
+
+  /* Optimal line lengths for readability */
+  .max-w-2xl {
+    max-width: 65ch; /* Character-based width for optimal reading */
+  }
+
+  .max-w-3xl {
+    max-width: 75ch;
+  }
+
+  .max-w-4xl {
+    max-width: 85ch;
+  }
+}
+
+/* Force better line heights across all text elements */
+.leading-tight {
+  line-height: 1.4 !important; /* Less tight than default 1.25 */
+}
+
+.leading-relaxed {
+  line-height: 1.8 !important; /* More relaxed than default 1.625 */
+}
+
+.leading-loose {
+  line-height: 2.0 !important; /* Much more spacious */
+}
+
+/* Typography utility overrides for consistency */
+.text-balance {
+  text-wrap: balance;
+  max-width: 65ch; /* Prevent overly long lines */
+}
+
+/* Improved spacing for lists */
+ul, ol {
+  margin-bottom: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}

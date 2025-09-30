@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Homepage (First Load JS)",
+    "path": ".next/static/chunks/pages/index.js",
+    "limit": "100 KB"
+  },
+  {
+    "name": "Homepage (Total)",
+    "path": ".next/static/**/*.js",
+    "limit": "300 KB"
+  },
+  {
+    "name": "Features Page",
+    "path": ".next/static/chunks/pages/features.js",
+    "limit": "80 KB"
+  },
+  {
+    "name": "Blog Page",
+    "path": ".next/static/chunks/pages/blog.js",
+    "limit": "70 KB"
+  },
+  {
+    "name": "Framework Bundle",
+    "path": ".next/static/chunks/framework-*.js",
+    "limit": "150 KB"
+  },
+  {
+    "name": "Commons Bundle",
+    "path": ".next/static/chunks/commons-*.js",
+    "limit": "50 KB"
+  }
+]
