@@ -65,7 +65,7 @@ async function bootstrap() {
 
   // Start server
   const port = configService.get('PORT', 3000);
-  await app.listen(port);
+  await app.listen(port, '0.0.0.0');
 
   console.log(`🚀 CORIA Backend is running on: http://localhost:${port}/${apiPrefix}`);
   if (configService.get('ENABLE_SWAGGER', 'true') === 'true') {
