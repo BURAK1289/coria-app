@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { AnalyticsDashboard } from '@/components/analytics/dashboard/analytics-dashboard';
+import { AnalyticsDashboardLazy } from '@/components/analytics/analytics-dashboard-lazy';
 
 export const metadata: Metadata = {
   title: 'Analytics Dashboard - CORIA Admin',
@@ -10,6 +10,10 @@ export const metadata: Metadata = {
   },
 };
 
+// Disable SSR and caching for real-time analytics dashboard
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export default function AnalyticsPage() {
-  return <AnalyticsDashboard />;
+  return <AnalyticsDashboardLazy />;
 }

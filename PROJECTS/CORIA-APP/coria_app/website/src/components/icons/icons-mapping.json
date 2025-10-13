@@ -1,0 +1,392 @@
+{
+  "$schema": "./icons-mapping.schema.json",
+  "version": "1.0.0",
+  "description": "Mapping table from lucide-react icon names to CORIA Icon System names",
+  "mappings": {
+    "AlertTriangle": {
+      "coriaName": "alert-triangle",
+      "status": "needs-generation",
+      "placeholder": "⚠️",
+      "notes": "Error/warning states - needs custom generation"
+    },
+    "ArrowLeft": {
+      "coriaName": "arrow-left",
+      "status": "available",
+      "placeholder": null,
+      "notes": "Phase 2 - generated"
+    },
+    "ArrowRight": {
+      "coriaName": "arrow-right",
+      "status": "available",
+      "placeholder": null,
+      "notes": "Phase 2 - generated"
+    },
+    "ArrowUp": {
+      "coriaName": "arrow-up",
+      "status": "available",
+      "placeholder": null,
+      "notes": "Base icons - existing"
+    },
+    "ArrowUpDown": {
+      "coriaName": "sort",
+      "status": "available",
+      "placeholder": null,
+      "notes": "Phase 2 - generated"
+    },
+    "BarChart3": {
+      "coriaName": "bar-chart",
+      "status": "needs-generation",
+      "placeholder": "📊",
+      "notes": "Analytics visualization - needs custom generation"
+    },
+    "Bell": {
+      "coriaName": "bell",
+      "status": "available",
+      "placeholder": null,
+      "notes": "Phase 2 - generated"
+    },
+    "BookOpen": {
+      "coriaName": "book-open",
+      "status": "needs-generation",
+      "placeholder": "📖",
+      "notes": "Documentation/learning - needs custom generation"
+    },
+    "Bug": {
+      "coriaName": "bug",
+      "status": "needs-generation",
+      "placeholder": "🐛",
+      "notes": "Error debugging - needs custom generation"
+    },
+    "Check": {
+      "coriaName": "check",
+      "status": "available",
+      "placeholder": null,
+      "notes": "Base icons - existing"
+    },
+    "ChevronDown": {
+      "coriaName": "chevron-down",
+      "status": "available",
+      "placeholder": null,
+      "notes": "Phase 2 - generated"
+    },
+    "ChevronLeft": {
+      "coriaName": "chevron-left",
+      "status": "available",
+      "placeholder": null,
+      "notes": "Phase 2 - generated"
+    },
+    "ChevronRight": {
+      "coriaName": "chevron-right",
+      "status": "available",
+      "placeholder": null,
+      "notes": "Phase 2 - generated"
+    },
+    "DollarSign": {
+      "coriaName": "wallet",
+      "status": "available",
+      "placeholder": null,
+      "notes": "Phase 2 - generated, CORIA tokens/payment context"
+    },
+    "Download": {
+      "coriaName": "download",
+      "status": "available",
+      "placeholder": null,
+      "notes": "Phase 2 - generated"
+    },
+    "ExternalLink": {
+      "coriaName": "external-link",
+      "status": "available",
+      "placeholder": null,
+      "notes": "Phase 2 - generated"
+    },
+    "FileText": {
+      "coriaName": "file-text",
+      "status": "needs-generation",
+      "placeholder": "📄",
+      "notes": "Document/report - needs custom generation"
+    },
+    "FlaskConical": {
+      "coriaName": "flask",
+      "status": "needs-generation",
+      "placeholder": "🧪",
+      "notes": "Testing/experimentation - needs custom generation"
+    },
+    "Globe": {
+      "coriaName": "globe",
+      "status": "available",
+      "placeholder": null,
+      "notes": "Phase 2 - generated"
+    },
+    "Home": {
+      "coriaName": "home",
+      "status": "available",
+      "placeholder": null,
+      "notes": "Phase 1 - core navigation"
+    },
+    "Info": {
+      "coriaName": "info",
+      "status": "needs-generation",
+      "placeholder": "ℹ️",
+      "notes": "Information tooltip - needs custom generation"
+    },
+    "Leaf": {
+      "coriaName": "leaf",
+      "status": "available",
+      "placeholder": null,
+      "notes": "CORIA brand icon - existing"
+    },
+    "Menu": {
+      "coriaName": "menu",
+      "status": "available",
+      "placeholder": null,
+      "notes": "Phase 1 - core navigation"
+    },
+    "MessageCircle": {
+      "coriaName": "chat",
+      "status": "available",
+      "placeholder": null,
+      "notes": "Base icons - existing (ChatBubbleLeftRightIcon)"
+    },
+    "Play": {
+      "coriaName": "play",
+      "status": "available",
+      "placeholder": null,
+      "notes": "Base icons - existing"
+    },
+    "RefreshCw": {
+      "coriaName": "refresh",
+      "status": "available",
+      "placeholder": null,
+      "notes": "Base icons - existing (ArrowPathIcon)"
+    },
+    "Smartphone": {
+      "coriaName": "smartphone",
+      "status": "needs-generation",
+      "placeholder": "📱",
+      "notes": "PWA mobile device - needs custom generation"
+    },
+    "Star": {
+      "coriaName": "star",
+      "status": "available",
+      "placeholder": null,
+      "notes": "Base icons - existing"
+    },
+    "TrendingUp": {
+      "coriaName": "trending-up",
+      "status": "needs-generation",
+      "placeholder": "📈",
+      "notes": "Analytics growth - needs custom generation"
+    },
+    "Upload": {
+      "coriaName": "upload",
+      "status": "available",
+      "placeholder": null,
+      "notes": "Phase 2 - generated"
+    },
+    "X": {
+      "coriaName": "close",
+      "status": "available",
+      "placeholder": null,
+      "notes": "Base icons - existing (XIcon)"
+    }
+  },
+  "transformationRules": {
+    "importPattern": {
+      "from": "import { IconName } from 'lucide-react'",
+      "to": "import { Icon } from '@/components/icons/Icon'"
+    },
+    "usagePattern": {
+      "from": "<IconName className=\"...\" size={24} />",
+      "to": "<Icon name=\"icon-name\" className=\"...\" size={24} />"
+    },
+    "sizeMapping": {
+      "16": 16,
+      "18": 20,
+      "20": 20,
+      "24": 24,
+      "28": 32,
+      "32": 32
+    },
+    "accessibilityRules": {
+      "decorative": {
+        "pattern": "Icon inside button/link with text",
+        "attributes": {
+          "aria-hidden": "true"
+        }
+      },
+      "meaningful": {
+        "pattern": "Standalone icon without text",
+        "attributes": {
+          "title": "Descriptive text",
+          "aria-label": "Descriptive text"
+        }
+      }
+    }
+  },
+  "filesToMigrate": [
+    {
+      "path": "/components/ui/mobile-navigation.tsx",
+      "icons": ["X", "Menu", "Star", "DollarSign", "Info", "MessageCircle", "BookOpen", "Leaf"],
+      "priority": "high",
+      "iconCount": 8,
+      "notes": "Main mobile navigation component"
+    },
+    {
+      "path": "/components/monitoring/error-boundary.tsx",
+      "icons": ["AlertTriangle", "RefreshCw", "Bug", "Home"],
+      "priority": "high",
+      "iconCount": 4,
+      "notes": "Error handling UI"
+    },
+    {
+      "path": "/components/features/feature-detail.tsx",
+      "icons": ["ArrowLeft", "Check", "Info", "ExternalLink"],
+      "priority": "high",
+      "iconCount": 4,
+      "notes": "Feature detail page"
+    },
+    {
+      "path": "/components/analytics/dashboard/analytics-dashboard.tsx",
+      "icons": ["BarChart3", "TrendingUp", "FileText", "FlaskConical"],
+      "priority": "high",
+      "iconCount": 4,
+      "notes": "Analytics visualization"
+    },
+    {
+      "path": "/components/pwa/install-prompt.tsx",
+      "icons": ["X", "Download", "Smartphone"],
+      "priority": "high",
+      "iconCount": 3,
+      "notes": "PWA installation prompt"
+    },
+    {
+      "path": "/components/pwa/notification-permission.tsx",
+      "icons": ["Bell", "X"],
+      "priority": "medium",
+      "iconCount": 2,
+      "notes": "Notification permission request"
+    },
+    {
+      "path": "/components/pwa/update-notification.tsx",
+      "icons": ["RefreshCw", "X"],
+      "priority": "medium",
+      "iconCount": 2,
+      "notes": "App update notification"
+    },
+    {
+      "path": "/components/features/category-overview.tsx",
+      "icons": ["ArrowRight", "Check"],
+      "priority": "medium",
+      "iconCount": 2,
+      "notes": "Feature category overview"
+    },
+    {
+      "path": "/components/ui/swipeable-gallery.tsx",
+      "icons": ["ChevronLeft", "ChevronRight"],
+      "priority": "medium",
+      "iconCount": 2,
+      "notes": "Gallery navigation controls"
+    },
+    {
+      "path": "/components/features/app-screenshot-gallery.tsx",
+      "icons": ["Play"],
+      "priority": "medium",
+      "iconCount": 1,
+      "notes": "Screenshot gallery controls"
+    },
+    {
+      "path": "/components/features/related-features.tsx",
+      "icons": ["ArrowRight"],
+      "priority": "medium",
+      "iconCount": 1,
+      "notes": "Related features navigation"
+    },
+    {
+      "path": "/app/admin/monitoring/page.tsx",
+      "icons": [],
+      "priority": "low",
+      "iconCount": 0,
+      "notes": "Needs investigation"
+    },
+    {
+      "path": "/app/[locale]/foundation/page.tsx",
+      "icons": [],
+      "priority": "low",
+      "iconCount": 0,
+      "notes": "Needs investigation"
+    },
+    {
+      "path": "/components/features/why-it-matters.tsx",
+      "icons": [],
+      "priority": "low",
+      "iconCount": 0,
+      "notes": "Needs investigation"
+    },
+    {
+      "path": "/components/features/methodology-explanation.tsx",
+      "icons": [],
+      "priority": "low",
+      "iconCount": 0,
+      "notes": "Needs investigation"
+    },
+    {
+      "path": "/components/features/data-source-attribution.tsx",
+      "icons": [],
+      "priority": "low",
+      "iconCount": 0,
+      "notes": "Needs investigation"
+    },
+    {
+      "path": "/components/features/features-sidebar.tsx",
+      "icons": [],
+      "priority": "low",
+      "iconCount": 0,
+      "notes": "Needs investigation"
+    },
+    {
+      "path": "/components/contact/contact-form.tsx",
+      "icons": [],
+      "priority": "low",
+      "iconCount": 0,
+      "notes": "Needs investigation"
+    }
+  ],
+  "migrationStrategy": {
+    "phase1": {
+      "description": "High priority files with available icons",
+      "files": [
+        "/components/pwa/notification-permission.tsx",
+        "/components/pwa/update-notification.tsx",
+        "/components/features/category-overview.tsx",
+        "/components/ui/swipeable-gallery.tsx",
+        "/components/features/app-screenshot-gallery.tsx",
+        "/components/features/related-features.tsx"
+      ],
+      "allIconsAvailable": true
+    },
+    "phase2": {
+      "description": "Files requiring placeholder icons",
+      "files": [
+        "/components/ui/mobile-navigation.tsx",
+        "/components/monitoring/error-boundary.tsx",
+        "/components/features/feature-detail.tsx",
+        "/components/analytics/dashboard/analytics-dashboard.tsx",
+        "/components/pwa/install-prompt.tsx"
+      ],
+      "needsIconGeneration": ["AlertTriangle", "Bug", "Info", "BarChart3", "TrendingUp", "FileText", "FlaskConical", "Smartphone", "BookOpen"]
+    },
+    "phase3": {
+      "description": "Investigate and migrate remaining files",
+      "files": [
+        "/app/admin/monitoring/page.tsx",
+        "/app/[locale]/foundation/page.tsx",
+        "/components/features/why-it-matters.tsx",
+        "/components/features/methodology-explanation.tsx",
+        "/components/features/data-source-attribution.tsx",
+        "/components/features/features-sidebar.tsx",
+        "/components/contact/contact-form.tsx"
+      ],
+      "requiresInvestigation": true
+    }
+  }
+}

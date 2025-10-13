@@ -1,0 +1,3324 @@
+{
+  "generated": "2025-10-11T15:24:58.310Z",
+  "summary": {
+    "totalFiles": 21,
+    "totalStrings": 233,
+    "byCategory": {}
+  },
+  "byCategory": {
+    "ui": [
+      {
+        "category": "ui",
+        "string": "Fikrin doğuşu ve ilk veri toplama prototipi",
+        "line": 4,
+        "file": "app/[locale]/about/page.tsx",
+        "context": "{ year: '2023', detail: 'Fikrin doğuşu ve ilk veri toplama prototipi' },"
+      },
+      {
+        "category": "ui",
+        "string": "MVP geliştirme ve kapalı beta",
+        "line": 5,
+        "file": "app/[locale]/about/page.tsx",
+        "context": "{ year: '2024 Q1', detail: 'MVP geliştirme ve kapalı beta' },"
+      },
+      {
+        "category": "ui",
+        "string": "Beta lansmanı ve ilk 50K kullanıcı",
+        "line": 6,
+        "file": "app/[locale]/about/page.tsx",
+        "context": "{ year: '2024 Q2', detail: 'Beta lansmanı ve ilk 50K kullanıcı' },"
+      },
+      {
+        "category": "ui",
+        "string": "100K kullanıcı, ilk Foundation bağış raporu",
+        "line": 8,
+        "file": "app/[locale]/about/page.tsx",
+        "context": "{ year: '2024 Q4', detail: '100K kullanıcı, ilk Foundation bağış raporu' },"
+      },
+      {
+        "category": "ui",
+        "string": "CORIA Token lansmanı ve Solana entegrasyonu",
+        "line": 9,
+        "file": "app/[locale]/about/page.tsx",
+        "context": "{ year: '2025', detail: 'CORIA Token lansmanı ve Solana entegrasyonu' }"
+      },
+      {
+        "category": "ui",
+        "string": "Solana tabanlı token altyapısı ve etki raporlama.",
+        "line": 13,
+        "file": "app/[locale]/about/page.tsx",
+        "context": "{ name: 'Believe Platform', description: 'Solana tabanlı token altyapısı ve etki raporlama.' },"
+      },
+      {
+        "category": "ui",
+        "string": "Yeşil Enerji Kooperatifleri",
+        "line": 14,
+        "file": "app/[locale]/about/page.tsx",
+        "context": "{ name: 'Yeşil Enerji Kooperatifleri', description: 'Topluluk fonlu güneş enerjisi kurulumları.' },"
+      },
+      {
+        "category": "ui",
+        "string": "Vegan restoran dönüşümü ve eğitim programları.",
+        "line": 15,
+        "file": "app/[locale]/about/page.tsx",
+        "context": "{ name: 'Vegan Dernekleri', description: 'Vegan restoran dönüşümü ve eğitim programları.' }"
+      },
+      {
+        "category": "ui",
+        "string": "iletişim",
+        "line": 43,
+        "file": "app/[locale]/contact/page.tsx",
+        "context": "tr: ['CORIA', 'iletişim', 'destek', 'yardım', 'müşteri hizmetleri'],"
+      },
+      {
+        "category": "ui",
+        "string": "Birlikte Daha Büyük Etki Yaratıyoruz",
+        "line": 72,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "subtitle: \"Birlikte Daha Büyük Etki Yaratıyoruz\","
+      },
+      {
+        "category": "ui",
+        "string": "CORIA, uygulama gelirlerinin bir kısmını sürdürülebilirlik projelerine yatırım yapmak için CORIA Foundation",
+        "line": 73,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "description: \"CORIA, uygulama gelirlerinin bir kısmını sürdürülebilirlik projelerine yatırım yapmak için CORIA Foundation'ı kuruyor. Believe platformu üzerinden çıkarılacak özel Solana token ile blockchain ekosisteminde yer alarak, token fee gelirlerini de yeşil enerji, veganlık ve sürdürülebilirlik projelerinin fonlanmasında kullanacak.\","
+      },
+      {
+        "category": "ui",
+        "string": "Believe Platform entegrasyonu ile Solana tabanlı token kullanım alanları",
+        "line": 77,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "description: \"Believe Platform entegrasyonu ile Solana tabanlı token kullanım alanları\","
+      },
+      {
+        "category": "ui",
+        "string": "Believe Platform üzerinden çıkarılacak özel Solana token",
+        "line": 82,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "description: \"Believe Platform üzerinden çıkarılacak özel Solana token\""
+      },
+      {
+        "category": "ui",
+        "string": "Fee Dağılım Modeli",
+        "line": 86,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "title: \"Fee Dağılım Modeli\","
+      },
+      {
+        "category": "ui",
+        "string": "Token işlem ücretleri direkt olarak sürdürülebilirlik projelerine aktarılır",
+        "line": 87,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "description: \"Token işlem ücretleri direkt olarak sürdürülebilirlik projelerine aktarılır\""
+      },
+      {
+        "category": "ui",
+        "string": "Şeffaf Fonlama",
+        "line": 91,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "title: \"Şeffaf Fonlama\","
+      },
+      {
+        "category": "ui",
+        "string": "Blockchain tabanlı şeffaf fon dağıtımı ve etki takibi",
+        "line": 92,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "description: \"Blockchain tabanlı şeffaf fon dağıtımı ve etki takibi\""
+      },
+      {
+        "category": "ui",
+        "string": "Ekolojik Tarım Projesi",
+        "line": 100,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "title: \"Ekolojik Tarım Projesi\","
+      },
+      {
+        "category": "ui",
+        "string": "5000 hektar organik tarım alanı oluşturuldu",
+        "line": 101,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "impact: \"5000 hektar organik tarım alanı oluşturuldu\","
+      },
+      {
+        "category": "ui",
+        "string": "Veganlık",
+        "line": 102,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "category: \"Veganlık\""
+      },
+      {
+        "category": "ui",
+        "string": "Güneş Enerjisi Kooperatifi",
+        "line": 106,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "title: \"Güneş Enerjisi Kooperatifi\","
+      },
+      {
+        "category": "ui",
+        "string": "250 aileye temiz enerji erişimi sağlandı",
+        "line": 107,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "impact: \"250 aileye temiz enerji erişimi sağlandı\","
+      },
+      {
+        "category": "ui",
+        "string": "Yeşil Enerji",
+        "line": 108,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "category: \"Yeşil Enerji\""
+      },
+      {
+        "category": "ui",
+        "string": "Sıfır Atık İnisiyatifi",
+        "line": 112,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "title: \"Sıfır Atık İnisiyatifi\","
+      },
+      {
+        "category": "ui",
+        "string": "12 şehirde plastik kullanımı %60 azaltıldı",
+        "line": 113,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "impact: \"12 şehirde plastik kullanımı %60 azaltıldı\","
+      },
+      {
+        "category": "ui",
+        "string": "Sürdürülebilirlik",
+        "line": 114,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "category: \"Sürdürülebilirlik\""
+      },
+      {
+        "category": "ui",
+        "string": "Şeffaflık",
+        "line": 121,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "title: \"Şeffaflık\","
+      },
+      {
+        "category": "ui",
+        "string": "Tüm fonlama kararları ve etki raporları halka açık blockchain üzerinde",
+        "line": 122,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "description: \"Tüm fonlama kararları ve etki raporları halka açık blockchain üzerinde\""
+      },
+      {
+        "category": "ui",
+        "string": "Topluluk Yönetimi",
+        "line": 126,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "title: \"Topluluk Yönetimi\","
+      },
+      {
+        "category": "ui",
+        "string": "CORIA token sahipleri proje seçiminde oy kullanma hakkına sahip",
+        "line": 127,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "description: \"CORIA token sahipleri proje seçiminde oy kullanma hakkına sahip\""
+      },
+      {
+        "category": "ui",
+        "string": "Etki Odaklılık",
+        "line": 131,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "title: \"Etki Odaklılık\","
+      },
+      {
+        "category": "ui",
+        "string": "Her projenin ölçülebilir çevresel ve sosyal etkisi raporlanır",
+        "line": 132,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "description: \"Her projenin ölçülebilir çevresel ve sosyal etkisi raporlanır\""
+      },
+      {
+        "category": "ui",
+        "string": "Foundation konsepti tasarlandı",
+        "line": 141,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "items: ['Foundation konsepti tasarlandı', 'Believe platformu ortaklığı kuruldu']"
+      },
+      {
+        "category": "ui",
+        "string": "Solana tabanlı CORIA Token lansmanı",
+        "line": 146,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "items: ['Solana tabanlı CORIA Token lansmanı', 'İlk topluluk oylaması ile 3 proje fonlandı']"
+      },
+      {
+        "category": "ui",
+        "string": "Global genişleme",
+        "line": 151,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "items: ['Global genişleme', 'Yerel kooperatif iş birlikleri', 'On-chain etki raporları']"
+      },
+      {
+        "category": "ui",
+        "string": "Veganlık",
+        "line": 417,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "<option>Veganlık</option>"
+      },
+      {
+        "category": "ui",
+        "string": "Sürdürülebilirlik",
+        "line": 418,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "<option>Sürdürülebilirlik</option>"
+      },
+      {
+        "category": "ui",
+        "string": "Yeşil Enerji",
+        "line": 419,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "<option>Yeşil Enerji</option>"
+      },
+      {
+        "category": "ui",
+        "string": "CORIA - Sürdürülebilir Yaşam Uygulaması",
+        "line": 54,
+        "file": "app/[locale]/layout.tsx",
+        "context": "tr: 'CORIA - Sürdürülebilir Yaşam Uygulaması',"
+      },
+      {
+        "category": "ui",
+        "string": "Bilinçli tüketim kararları alın, çevresel etkilerinizi takip edin ve sürdürülebilir alternatifleri keşfedin.",
+        "line": 61,
+        "file": "app/[locale]/layout.tsx",
+        "context": "tr: 'Bilinçli tüketim kararları alın, çevresel etkilerinizi takip edin ve sürdürülebilir alternatifleri keşfedin.',"
+      },
+      {
+        "category": "ui",
+        "string": "sürdürülebilirlik",
+        "line": 68,
+        "file": "app/[locale]/layout.tsx",
+        "context": "tr: ['sürdürülebilirlik', 'çevre', 'bilinçli tüketim', 'karbon ayak izi', 'yeşil yaşam', 'barkod tarama', 'çevresel etki'],"
+      },
+      {
+        "category": "ui",
+        "string": "grünes Leben",
+        "line": 70,
+        "file": "app/[locale]/layout.tsx",
+        "context": "de: ['Nachhaltigkeit', 'Umwelt', 'bewusster Konsum', 'CO2-Fußabdruck', 'grünes Leben', 'Barcode-Scanning', 'Umweltauswirkungen'],"
+      },
+      {
+        "category": "ui",
+        "string": "fiyatlandırma",
+        "line": 39,
+        "file": "app/[locale]/pricing/page.tsx",
+        "context": "tr: ['fiyatlandırma', 'premium', 'abonelik'],"
+      },
+      {
+        "category": "ui",
+        "string": "Basın & Yatırımcı",
+        "line": 31,
+        "file": "components/layout/footer.tsx",
+        "context": "{ label: 'Basın & Yatırımcı', href: '/about#press' }"
+      },
+      {
+        "category": "ui",
+        "string": "Gizlilik Politikası",
+        "line": 35,
+        "file": "components/layout/footer.tsx",
+        "context": "{ label: 'Gizlilik Politikası', href: '/legal/privacy' },"
+      },
+      {
+        "category": "ui",
+        "string": "Kullanım Koşulları",
+        "line": 36,
+        "file": "components/layout/footer.tsx",
+        "context": "{ label: 'Kullanım Koşulları', href: '/legal/terms' },"
+      },
+      {
+        "category": "ui",
+        "string": "KVKK Aydınlatması",
+        "line": 37,
+        "file": "components/layout/footer.tsx",
+        "context": "{ label: 'KVKK Aydınlatması', href: '/legal/kvkk' },"
+      },
+      {
+        "category": "ui",
+        "string": "Çerez Politikası",
+        "line": 38,
+        "file": "components/layout/footer.tsx",
+        "context": "{ label: 'Çerez Politikası', href: '/legal/cookies' }"
+      },
+      {
+        "category": "ui",
+        "string": "Ücretsiz",
+        "line": 82,
+        "file": "components/pricing/pricing-plans.tsx",
+        "context": "? 'Ücretsiz'"
+      },
+      {
+        "category": "ui",
+        "string": "nın tüm özelliklerini keşfetmek için uygulamayı indirin",
+        "line": 107,
+        "file": "components/sections/features-showcase-animated.tsx",
+        "context": "aria-label=\"CORIA'nın tüm özelliklerini keşfetmek için uygulamayı indirin\""
+      },
+      {
+        "category": "ui",
+        "string": "${title} özelliği",
+        "line": 60,
+        "file": "components/sections/features-showcase.tsx",
+        "context": "aria-label={`${title} özelliği`}"
+      },
+      {
+        "category": "ui",
+        "string": "Ürünlerin vegan uygunluğunu ve alerjen içeriğini anında analiz edin. Kişisel beslenme tercihlerinize uygun seçimler yapın.",
+        "line": 95,
+        "file": "components/sections/features-showcase.tsx",
+        "context": "description: \"Ürünlerin vegan uygunluğunu ve alerjen içeriğini anında analiz edin. Kişisel beslenme tercihlerinize uygun seçimler yapın.\""
+      },
+      {
+        "category": "ui",
+        "string": "Yapay zeka destekli kişisel asistanınız ile beslenme önerilerinden sürdürülebilir yaşam ipuçlarına kadar her konuda destek alın.",
+        "line": 100,
+        "file": "components/sections/features-showcase.tsx",
+        "context": "description: \"Yapay zeka destekli kişisel asistanınız ile beslenme önerilerinden sürdürülebilir yaşam ipuçlarına kadar her konuda destek alın.\""
+      },
+      {
+        "category": "ui",
+        "string": "Akıllı Kiler",
+        "line": 104,
+        "file": "components/sections/features-showcase.tsx",
+        "context": "title: \"Akıllı Kiler\","
+      },
+      {
+        "category": "ui",
+        "string": "Kilerdeki ürünleri takip edin, son kullanma tarihlerini izleyin ve israfı önlemek için akıllı öneriler alın.",
+        "line": 105,
+        "file": "components/sections/features-showcase.tsx",
+        "context": "description: \"Kilerdeki ürünleri takip edin, son kullanma tarihlerini izleyin ve israfı önlemek için akıllı öneriler alın.\""
+      },
+      {
+        "category": "ui",
+        "string": "ESG Skorları",
+        "line": 109,
+        "file": "components/sections/features-showcase.tsx",
+        "context": "title: \"ESG Skorları\","
+      },
+      {
+        "category": "ui",
+        "string": "Ürün ve markaların çevresel, sosyal ve yönetişim performanslarını ESG skorları ile değerlendirin.",
+        "line": 110,
+        "file": "components/sections/features-showcase.tsx",
+        "context": "description: \"Ürün ve markaların çevresel, sosyal ve yönetişim performanslarını ESG skorları ile değerlendirin.\""
+      },
+      {
+        "category": "ui",
+        "string": "Tüketim alışkanlıklarınızın karbon ayak izini ve su kullanımını takip ederek çevresel etkilerinizi azaltın.",
+        "line": 115,
+        "file": "components/sections/features-showcase.tsx",
+        "context": "description: \"Tüketim alışkanlıklarınızın karbon ayak izini ve su kullanımını takip ederek çevresel etkilerinizi azaltın.\""
+      },
+      {
+        "category": "ui",
+        "string": "Topluluk Önerileri",
+        "line": 119,
+        "file": "components/sections/features-showcase.tsx",
+        "context": "title: \"Topluluk Önerileri\","
+      },
+      {
+        "category": "ui",
+        "string": "Sürdürülebilir yaşam topluluğundan öneriler alın, deneyimlerinizi paylaşın ve birlikte öğrenin.",
+        "line": 120,
+        "file": "components/sections/features-showcase.tsx",
+        "context": "description: \"Sürdürülebilir yaşam topluluğundan öneriler alın, deneyimlerinizi paylaşın ve birlikte öğrenin.\""
+      },
+      {
+        "category": "ui",
+        "string": "Vegan Yaşam Asistanı",
+        "line": 51,
+        "file": "components/sections/hero-section.tsx",
+        "context": "eyebrow: \"Vegan Yaşam Asistanı\","
+      },
+      {
+        "category": "ui",
+        "string": "Kalbinle Seç. Etkiyle Yaşa.",
+        "line": 52,
+        "file": "components/sections/hero-section.tsx",
+        "context": "title: \"Kalbinle Seç. Etkiyle Yaşa.\","
+      },
+      {
+        "category": "ui",
+        "string": "Taradığın her ürünün veganlık, alerjen, sağlık ve sürdürülebilirlik skorlarını tek bakışta gör.",
+        "line": 53,
+        "file": "components/sections/hero-section.tsx",
+        "context": "subtitle: \"Taradığın her ürünün veganlık, alerjen, sağlık ve sürdürülebilirlik skorlarını tek bakışta gör.\","
+      },
+      {
+        "category": "ui",
+        "string": "iOS için İndir",
+        "line": 55,
+        "file": "components/sections/hero-section.tsx",
+        "context": "label: \"iOS için İndir\","
+      },
+      {
+        "category": "ui",
+        "string": "Android için İndir",
+        "line": 59,
+        "file": "components/sections/hero-section.tsx",
+        "context": "label: \"Android için İndir\","
+      },
+      {
+        "category": "ui",
+        "string": "Milyar Ürün Verisi",
+        "line": 65,
+        "file": "components/sections/hero-section.tsx",
+        "context": "{ value: \"2.5+\", label: \"Milyar Ürün Verisi\" },"
+      },
+      {
+        "category": "ui",
+        "string": "Etiket ve İçerik",
+        "line": 66,
+        "file": "components/sections/hero-section.tsx",
+        "context": "{ value: \"10M+\", label: \"Etiket ve İçerik\" },"
+      },
+      {
+        "category": "ui",
+        "string": "Aktif Kullanıcı",
+        "line": 67,
+        "file": "components/sections/hero-section.tsx",
+        "context": "{ value: \"500K+\", label: \"Aktif Kullanıcı\" },"
+      },
+      {
+        "category": "ui",
+        "string": "da CORIA uygulamasını indirin",
+        "line": 119,
+        "file": "components/sections/hero-section.tsx",
+        "context": "aria-label={`${heroContent.primaryCta.label} - Apple App Store'da CORIA uygulamasını indirin`}"
+      },
+      {
+        "category": "ui",
+        "string": "da CORIA uygulamasını indirin",
+        "line": 131,
+        "file": "components/sections/hero-section.tsx",
+        "context": "aria-label={`${heroContent.secondaryCta.label} - Google Play Store'da CORIA uygulamasını indirin`}"
+      },
+      {
+        "category": "ui",
+        "string": "${metric.value} ${metric.label} - CORIA etki göstergesi",
+        "line": 152,
+        "file": "components/sections/hero-section.tsx",
+        "context": "aria-label={`${metric.value} ${metric.label} - CORIA etki göstergesi`}"
+      },
+      {
+        "category": "ui",
+        "string": "CORIA - Sürdürülebilir Yaşam Uygulaması",
+        "line": 48,
+        "file": "components/seo/structured-data.tsx",
+        "context": "tr: 'CORIA - Sürdürülebilir Yaşam Uygulaması',"
+      },
+      {
+        "category": "ui",
+        "string": "Bilinçli tüketim kararları alın, çevresel etkilerinizi takip edin ve sürdürülebilir alternatifleri keşfedin.",
+        "line": 55,
+        "file": "components/seo/structured-data.tsx",
+        "context": "tr: 'Bilinçli tüketim kararları alın, çevresel etkilerinizi takip edin ve sürdürülebilir alternatifleri keşfedin.',"
+      },
+      {
+        "category": "ui",
+        "string": "Sürdürülebilir yaşam için mobil uygulama geliştiren teknoloji şirketi.",
+        "line": 91,
+        "file": "components/seo/structured-data.tsx",
+        "context": "tr: 'Sürdürülebilir yaşam için mobil uygulama geliştiren teknoloji şirketi.',"
+      },
+      {
+        "category": "ui",
+        "string": "Technologieunternehmen, das mobile Anwendungen für nachhaltiges Leben entwickelt.",
+        "line": 93,
+        "file": "components/seo/structured-data.tsx",
+        "context": "de: 'Technologieunternehmen, das mobile Anwendungen für nachhaltiges Leben entwickelt.',"
+      },
+      {
+        "category": "ui",
+        "string": "CORIA Mobil Uygulaması",
+        "line": 139,
+        "file": "components/seo/structured-data.tsx",
+        "context": "tr: 'CORIA Mobil Uygulaması',"
+      },
+      {
+        "category": "ui",
+        "string": "Sürdürülebilir yaşam için barkod tarama, çevresel etki takibi ve bilinçli tüketim önerileri sunan mobil uygulama.",
+        "line": 146,
+        "file": "components/seo/structured-data.tsx",
+        "context": "tr: 'Sürdürülebilir yaşam için barkod tarama, çevresel etki takibi ve bilinçli tüketim önerileri sunan mobil uygulama.',"
+      },
+      {
+        "category": "ui",
+        "string": "Mobile App mit Barcode-Scanning, Umweltauswirkungsverfolgung und bewussten Konsumempfehlungen für nachhaltiges Leben.",
+        "line": 148,
+        "file": "components/seo/structured-data.tsx",
+        "context": "de: 'Mobile App mit Barcode-Scanning, Umweltauswirkungsverfolgung und bewussten Konsumempfehlungen für nachhaltiges Leben.',"
+      },
+      {
+        "category": "ui",
+        "string": "Türkçe",
+        "line": 15,
+        "file": "components/ui/language-switcher.tsx",
+        "context": "tr: { name: 'Türkçe', flag: '🇹🇷', label: 'TR' },"
+      },
+      {
+        "category": "ui",
+        "string": "Français",
+        "line": 18,
+        "file": "components/ui/language-switcher.tsx",
+        "context": "fr: { name: 'Français', flag: '🇫🇷', label: 'FR' },"
+      },
+      {
+        "category": "ui",
+        "string": "Vegan, etik ve sürdürülebilir seçim asistanı",
+        "line": 122,
+        "file": "content/home.ts",
+        "context": "eyebrow: 'Vegan, etik ve sürdürülebilir seçim asistanı',"
+      },
+      {
+        "category": "ui",
+        "string": "Kalbinle Seç. Etkiyle Yaşa.",
+        "line": 123,
+        "file": "content/home.ts",
+        "context": "title: 'Kalbinle Seç. Etkiyle Yaşa.',"
+      },
+      {
+        "category": "ui",
+        "string": "Taradığın her ürünün veganlık, alerjen, sağlık ve sürdürülebilirlik skorlarını tek bakışta gör. Bilimsel verilerle desteklenen önerilerle her seferinde daha iyi seçim yap.",
+        "line": 125,
+        "file": "content/home.ts",
+        "context": "'Taradığın her ürünün veganlık, alerjen, sağlık ve sürdürülebilirlik skorlarını tek bakışta gör. Bilimsel verilerle desteklenen önerilerle her seferinde daha iyi seçim yap.',"
+      },
+      {
+        "category": "ui",
+        "string": "Veganlık, alerjen ve içerik riskleri için anlık uyarılar",
+        "line": 127,
+        "file": "content/home.ts",
+        "context": "'Veganlık, alerjen ve içerik riskleri için anlık uyarılar',"
+      },
+      {
+        "category": "ui",
+        "string": "ESG, boykot ve marka etik profillerinin 360° görünümü",
+        "line": 128,
+        "file": "content/home.ts",
+        "context": "'ESG, boykot ve marka etik profillerinin 360° görünümü',"
+      },
+      {
+        "category": "ui",
+        "string": "Akıllı kiler, israf önleme ve karbon/su etkisi takibi",
+        "line": 129,
+        "file": "content/home.ts",
+        "context": "'Akıllı kiler, israf önleme ve karbon/su etkisi takibi'"
+      },
+      {
+        "category": "ui",
+        "string": "Premium’u 7 gün ücretsiz dene, istediğin zaman iptal et.",
+        "line": 133,
+        "file": "content/home.ts",
+        "context": "note: 'Premium’u 7 gün ücretsiz dene, istediğin zaman iptal et.'"
+      },
+      {
+        "category": "ui",
+        "string": "ürün etiketi analizi",
+        "line": 136,
+        "file": "content/home.ts",
+        "context": "{ value: '2.5B+', label: 'ürün etiketi analizi' },"
+      },
+      {
+        "category": "ui",
+        "string": "güncel içerik & etiket verisi",
+        "line": 137,
+        "file": "content/home.ts",
+        "context": "{ value: '10M+', label: 'güncel içerik & etiket verisi' },"
+      },
+      {
+        "category": "ui",
+        "string": "aktif CORIA topluluğu",
+        "line": 138,
+        "file": "content/home.ts",
+        "context": "{ value: '500K+', label: 'aktif CORIA topluluğu' },"
+      },
+      {
+        "category": "ui",
+        "string": "Topluluk ve iş ortaklarımızdan destek",
+        "line": 142,
+        "file": "content/home.ts",
+        "context": "title: 'Topluluk ve iş ortaklarımızdan destek',"
+      },
+      {
+        "category": "ui",
+        "string": "CORIA, sürdürülebilir dönüşümün kalbinde yer alan bireylerin ve kurumların güvenilir yardımcısıdır.",
+        "line": 143,
+        "file": "content/home.ts",
+        "context": "subtitle: 'CORIA, sürdürülebilir dönüşümün kalbinde yer alan bireylerin ve kurumların güvenilir yardımcısıdır.',"
+      },
+      {
+        "category": "ui",
+        "string": "Alışveriş rutinimi kurtardı",
+        "line": 145,
+        "file": "content/home.ts",
+        "context": "{ title: '\"Alışveriş rutinimi kurtardı\"', description: '\"Alerjen riskleri ve etik uyarılar sayesinde ailem için güvenli alışveriş yapmak artık saniyeler sürüyor.\" — Elif, ebeveyn', icon: '💬' },"
+      },
+      {
+        "category": "ui",
+        "string": "Veriye dayalı ESG raporları",
+        "line": 146,
+        "file": "content/home.ts",
+        "context": "{ title: '\"Veriye dayalı ESG raporları\"', description: '\"Marka analizlerinde CORIA’nın verilerini referans alıyoruz; şeffaflık ve hız kombinasyonu eşsiz.\" — ImpactLab', icon: '📈' },"
+      },
+      {
+        "category": "ui",
+        "string": "Foundation ile gerçek etki",
+        "line": 147,
+        "file": "content/home.ts",
+        "context": "{ title: '\"Foundation ile gerçek etki\"', description: '\"Token tabanlı modelleri sayesinde bağışlarımızın nereye harcandığını anlık takip ediyoruz.\" — Yeşil Enerji Kooperatifi', icon: '🌱' }"
+      },
+      {
+        "category": "ui",
+        "string": "Vegan & Vegan Adayları",
+        "line": 152,
+        "file": "content/home.ts",
+        "context": "title: 'Vegan & Vegan Adayları',"
+      },
+      {
+        "category": "ui",
+        "string": "Ürünleri saniyeler içinde tarayarak veganlığını, içerik risklerini ve daha iyi alternatifleri gör.",
+        "line": 153,
+        "file": "content/home.ts",
+        "context": "description: 'Ürünleri saniyeler içinde tarayarak veganlığını, içerik risklerini ve daha iyi alternatifleri gör.',"
+      },
+      {
+        "category": "ui",
+        "string": "Özel vegan/vejetaryen filtreleri",
+        "line": 155,
+        "file": "content/home.ts",
+        "context": "'Özel vegan/vejetaryen filtreleri',"
+      },
+      {
+        "category": "ui",
+        "string": "Topluluk yorumları ve deneyimleri",
+        "line": 156,
+        "file": "content/home.ts",
+        "context": "'Topluluk yorumları ve deneyimleri',"
+      },
+      {
+        "category": "ui",
+        "string": "Tarif önerileri ve market alışveriş listeleri",
+        "line": 157,
+        "file": "content/home.ts",
+        "context": "'Tarif önerileri ve market alışveriş listeleri'"
+      },
+      {
+        "category": "ui",
+        "string": "Alerjen, şeker, tuz ve katkı risklerini çocuklarının ihtiyaçlarına göre yönet.",
+        "line": 163,
+        "file": "content/home.ts",
+        "context": "description: 'Alerjen, şeker, tuz ve katkı risklerini çocuklarının ihtiyaçlarına göre yönet.',"
+      },
+      {
+        "category": "ui",
+        "string": "Risk seviyeleriyle alerjen uyarıları",
+        "line": 165,
+        "file": "content/home.ts",
+        "context": "'Risk seviyeleriyle alerjen uyarıları',"
+      },
+      {
+        "category": "ui",
+        "string": "Detaylı içerik açıklamaları",
+        "line": 166,
+        "file": "content/home.ts",
+        "context": "'Detaylı içerik açıklamaları',"
+      },
+      {
+        "category": "ui",
+        "string": "Güvenli alternatif önerileri",
+        "line": 167,
+        "file": "content/home.ts",
+        "context": "'Güvenli alternatif önerileri'"
+      },
+      {
+        "category": "ui",
+        "string": "Sağlık Odaklı Kullanıcılar",
+        "line": 172,
+        "file": "content/home.ts",
+        "context": "title: 'Sağlık Odaklı Kullanıcılar',"
+      },
+      {
+        "category": "ui",
+        "string": "Besin değerlerini, sağlık skorlarını ve kişisel hedeflerini tek ekranda takip et.",
+        "line": 173,
+        "file": "content/home.ts",
+        "context": "description: 'Besin değerlerini, sağlık skorlarını ve kişisel hedeflerini tek ekranda takip et.',"
+      },
+      {
+        "category": "ui",
+        "string": "Şeker/tuz/protein sapma uyarıları",
+        "line": 176,
+        "file": "content/home.ts",
+        "context": "'Şeker/tuz/protein sapma uyarıları',"
+      },
+      {
+        "category": "ui",
+        "string": "Uzmanlardan onaylı içerik kütüphanesi",
+        "line": 177,
+        "file": "content/home.ts",
+        "context": "'Uzmanlardan onaylı içerik kütüphanesi'"
+      },
+      {
+        "category": "ui",
+        "string": "Sürdürülebilirlik Savunucuları",
+        "line": 182,
+        "file": "content/home.ts",
+        "context": "title: 'Sürdürülebilirlik Savunucuları',"
+      },
+      {
+        "category": "ui",
+        "string": "Karbon, su ve etik etkileri karşılaştır; Foundation projeleriyle gerçek değişimi destekle.",
+        "line": 183,
+        "file": "content/home.ts",
+        "context": "description: 'Karbon, su ve etik etkileri karşılaştır; Foundation projeleriyle gerçek değişimi destekle.',"
+      },
+      {
+        "category": "ui",
+        "string": "Karbon & su ayak izi sayaçları",
+        "line": 185,
+        "file": "content/home.ts",
+        "context": "'Karbon & su ayak izi sayaçları',"
+      },
+      {
+        "category": "ui",
+        "string": "CORIA Foundation proje bağışları",
+        "line": 187,
+        "file": "content/home.ts",
+        "context": "'CORIA Foundation proje bağışları'"
+      },
+      {
+        "category": "ui",
+        "string": "Barkod tarayın, ürünün veganlık durumu, alerjen riskleri ve içerik açıklamaları anında listelensin.",
+        "line": 195,
+        "file": "content/home.ts",
+        "context": "description: 'Barkod tarayın, ürünün veganlık durumu, alerjen riskleri ve içerik açıklamaları anında listelensin.',"
+      },
+      {
+        "category": "ui",
+        "string": "AI Yaşam Asistanı",
+        "line": 199,
+        "file": "content/home.ts",
+        "context": "title: 'AI Yaşam Asistanı',"
+      },
+      {
+        "category": "ui",
+        "string": "Sorularınızı sorun, tarif, alternatif ürün ve alışveriş listesi önerilerini kişiselleştirilmiş olarak alın.",
+        "line": 200,
+        "file": "content/home.ts",
+        "context": "description: 'Sorularınızı sorun, tarif, alternatif ürün ve alışveriş listesi önerilerini kişiselleştirilmiş olarak alın.',"
+      },
+      {
+        "category": "ui",
+        "string": "Akıllı Kiler",
+        "line": 204,
+        "file": "content/home.ts",
+        "context": "title: 'Akıllı Kiler',"
+      },
+      {
+        "category": "ui",
+        "string": "SKT takibi, otomatik hatırlatmalar ve israfı azaltan kullanım önerileriyle kilerinizi yönetin.",
+        "line": 205,
+        "file": "content/home.ts",
+        "context": "description: 'SKT takibi, otomatik hatırlatmalar ve israfı azaltan kullanım önerileriyle kilerinizi yönetin.',"
+      },
+      {
+        "category": "ui",
+        "string": "Markaların çevresel, sosyal ve yönetişim performanslarını, boykot listelerini ve tedarik şeffaflığını inceleyin.",
+        "line": 210,
+        "file": "content/home.ts",
+        "context": "description: 'Markaların çevresel, sosyal ve yönetişim performanslarını, boykot listelerini ve tedarik şeffaflığını inceleyin.',"
+      },
+      {
+        "category": "ui",
+        "string": "Her ürün seçimindeki karbon, su ve döngüsellik etkisini görün; alternatif senaryoları karşılaştırın.",
+        "line": 215,
+        "file": "content/home.ts",
+        "context": "description: 'Her ürün seçimindeki karbon, su ve döngüsellik etkisini görün; alternatif senaryoları karşılaştırın.',"
+      },
+      {
+        "category": "ui",
+        "string": "Topluluk ve İçerikler",
+        "line": 219,
+        "file": "content/home.ts",
+        "context": "title: 'Topluluk ve İçerikler',"
+      },
+      {
+        "category": "ui",
+        "string": "Öne çıkan tarifler, kullanıcı deneyimleri, uzman yazıları ve sürdürülebilir yaşam rehberleri.",
+        "line": 220,
+        "file": "content/home.ts",
+        "context": "description: 'Öne çıkan tarifler, kullanıcı deneyimleri, uzman yazıları ve sürdürülebilir yaşam rehberleri.',"
+      },
+      {
+        "category": "ui",
+        "string": "Tara → Analiz Et → Daha İyi Seç akışını interaktif demo ile keşfet.",
+        "line": 226,
+        "file": "content/home.ts",
+        "context": "subtitle: 'Tara → Analiz Et → Daha İyi Seç akışını interaktif demo ile keşfet.',"
+      },
+      {
+        "category": "ui",
+        "string": "CORIA uygulama ekran akışı",
+        "line": 227,
+        "file": "content/home.ts",
+        "context": "posterAlt: 'CORIA uygulama ekran akışı',"
+      },
+      {
+        "category": "ui",
+        "string": "Barkodu okuttuğun anda ürünün tüm bilgileri açılır.",
+        "line": 229,
+        "file": "content/home.ts",
+        "context": "{ title: '1. Tara', description: 'Barkodu okuttuğun anda ürünün tüm bilgileri açılır.' },"
+      },
+      {
+        "category": "ui",
+        "string": "Veganlık, alerjen, sağlık ve ESG skorlarını tek bakışta değerlendir.",
+        "line": 230,
+        "file": "content/home.ts",
+        "context": "{ title: '2. Analiz Et', description: 'Veganlık, alerjen, sağlık ve ESG skorlarını tek bakışta değerlendir.' },"
+      },
+      {
+        "category": "ui",
+        "string": "3. Daha İyi Seç",
+        "line": 231,
+        "file": "content/home.ts",
+        "context": "{ title: '3. Daha İyi Seç', description: 'Alternatif ürünleri, tarif önerilerini ve israf önleyici ipuçlarını keşfet.' }"
+      },
+      {
+        "category": "ui",
+        "string": "Demo sesli anlatım ve altyazı desteklidir.",
+        "line": 233,
+        "file": "content/home.ts",
+        "context": "note: 'Demo sesli anlatım ve altyazı desteklidir.',"
+      },
+      {
+        "category": "ui",
+        "string": "Topluluğumuzun biriktirdiği etki",
+        "line": 237,
+        "file": "content/home.ts",
+        "context": "title: 'Topluluğumuzun biriktirdiği etki',"
+      },
+      {
+        "category": "ui",
+        "string": "Gerçek zamanlı sayaçlar, CORIA kullanıcılarının günlük kararlarla oluşturduğu kolektif katkıyı gösterir.",
+        "line": 238,
+        "file": "content/home.ts",
+        "context": "subtitle: 'Gerçek zamanlı sayaçlar, CORIA kullanıcılarının günlük kararlarla oluşturduğu kolektif katkıyı gösterir.',"
+      },
+      {
+        "category": "ui",
+        "string": "Bugünün CO₂ tasarrufu",
+        "line": 240,
+        "file": "content/home.ts",
+        "context": "{ value: '34 kg', label: 'Bugünün CO₂ tasarrufu', description: 'Daha yeşil marka tercihleri ile.' },"
+      },
+      {
+        "category": "ui",
+        "string": "Su yoğun ürünlerden akıllı alternatiflere geçiş sayesinde.",
+        "line": 241,
+        "file": "content/home.ts",
+        "context": "{ value: '120 L', label: 'Bu haftaki su tasarrufu', description: 'Su yoğun ürünlerden akıllı alternatiflere geçiş sayesinde.' },"
+      },
+      {
+        "category": "ui",
+        "string": "Bu ay önlenen gıda israfı",
+        "line": 242,
+        "file": "content/home.ts",
+        "context": "{ value: '45 kg', label: 'Bu ay önlenen gıda israfı', description: 'Akıllı kiler hatırlatmaları ve planlı alışverişle.' }"
+      },
+      {
+        "category": "ui",
+        "string": "Kişisel etki paneli",
+        "line": 246,
+        "file": "content/home.ts",
+        "context": "title: 'Kişisel etki paneli',"
+      },
+      {
+        "category": "ui",
+        "string": "Tüm seçimleriniz ton bazında CO₂, su ve etik puan olarak toplanır; hedefler belirleyip gelişiminizi takip edin.",
+        "line": 247,
+        "file": "content/home.ts",
+        "context": "description: 'Tüm seçimleriniz ton bazında CO₂, su ve etik puan olarak toplanır; hedefler belirleyip gelişiminizi takip edin.'"
+      },
+      {
+        "category": "ui",
+        "string": "Şehir bazlı liderlik tabloları, sezonluk tüketim rehberleri ve kampanyalarla harekete geçin.",
+        "line": 251,
+        "file": "content/home.ts",
+        "context": "description: 'Şehir bazlı liderlik tabloları, sezonluk tüketim rehberleri ve kampanyalarla harekete geçin.'"
+      },
+      {
+        "category": "ui",
+        "string": "Birlikte daha büyük etki yaratıyoruz",
+        "line": 257,
+        "file": "content/home.ts",
+        "context": "title: 'Birlikte daha büyük etki yaratıyoruz',"
+      },
+      {
+        "category": "ui",
+        "string": "Uygulama gelirlerinin %5’i ve CORIA Token fee gelirleri yeşil enerji, veganlık ve sürdürülebilirlik projelerine aktarılıyor.",
+        "line": 258,
+        "file": "content/home.ts",
+        "context": "subtitle: 'Uygulama gelirlerinin %5’i ve CORIA Token fee gelirleri yeşil enerji, veganlık ve sürdürülebilirlik projelerine aktarılıyor.',"
+      },
+      {
+        "category": "ui",
+        "string": "Believe platformu üzerinden çıkarılacak Solana tabanlı CORIA Token ile şeffaf, zincir üstü bağış ve etki raporlama modeli kuruyoruz.",
+        "line": 260,
+        "file": "content/home.ts",
+        "context": "'Believe platformu üzerinden çıkarılacak Solana tabanlı CORIA Token ile şeffaf, zincir üstü bağış ve etki raporlama modeli kuruyoruz.',"
+      },
+      {
+        "category": "ui",
+        "string": "Şeffaf fon dağıtımı",
+        "line": 262,
+        "file": "content/home.ts",
+        "context": "{ title: 'Şeffaf fon dağıtımı', description: 'Toplanan her token ve TL, zincir üstü dashboard’da takip edilebiliyor.' },"
+      },
+      {
+        "category": "ui",
+        "string": "Vegan restoran dönüşümü, gıda bankacılığı, orman restorasyonu gibi alanlara destek.",
+        "line": 263,
+        "file": "content/home.ts",
+        "context": "{ title: 'Yerel projelere odak', description: 'Vegan restoran dönüşümü, gıda bankacılığı, orman restorasyonu gibi alanlara destek.' },"
+      },
+      {
+        "category": "ui",
+        "string": "Topluluk oylaması",
+        "line": 264,
+        "file": "content/home.ts",
+        "context": "{ title: 'Topluluk oylaması', description: 'Yeni projeler CORIA topluluğunun oylarıyla seçiliyor ve ilerleme aylık raporlarla paylaşılıyor.' }"
+      },
+      {
+        "category": "ui",
+        "string": "Anadolu Vegan Mutfağı",
+        "line": 267,
+        "file": "content/home.ts",
+        "context": "{ title: 'Anadolu Vegan Mutfağı', impact: 'İlk 6 ayda 2.4 ton gıda israfı önlendi.' },"
+      },
+      {
+        "category": "ui",
+        "string": "Yeşil Enerji Kooperatifi",
+        "line": 268,
+        "file": "content/home.ts",
+        "context": "{ title: 'Yeşil Enerji Kooperatifi', impact: 'Topluluk fonuyla 120 kW güneş enerjisi kuruldu.' },"
+      },
+      {
+        "category": "ui",
+        "string": "Sıfır Atık Marketleri",
+        "line": 269,
+        "file": "content/home.ts",
+        "context": "{ title: 'Sıfır Atık Marketleri', impact: '5 şehirde yeniden kullanılabilir ambalaj altyapısı kuruldu.' }"
+      },
+      {
+        "category": "ui",
+        "string": "Foundation detaylarını incele",
+        "line": 271,
+        "file": "content/home.ts",
+        "context": "cta: { label: 'Foundation detaylarını incele', href: '/foundation' }"
+      },
+      {
+        "category": "ui",
+        "string": "Bilinçli tüketim rehberleri",
+        "line": 274,
+        "file": "content/home.ts",
+        "context": "title: 'Bilinçli tüketim rehberleri',"
+      },
+      {
+        "category": "ui",
+        "string": "Uzman yazıları, tarifler ve sürdürülebilir yaşam pratikleriyle her hafta güncellenen içerikler.",
+        "line": 275,
+        "file": "content/home.ts",
+        "context": "subtitle: 'Uzman yazıları, tarifler ve sürdürülebilir yaşam pratikleriyle her hafta güncellenen içerikler.',"
+      },
+      {
+        "category": "ui",
+        "string": "Alerjen etiketlerini 60 saniyede çöz",
+        "line": 278,
+        "file": "content/home.ts",
+        "context": "title: 'Alerjen etiketlerini 60 saniyede çöz',"
+      },
+      {
+        "category": "ui",
+        "string": "Gluten, laktoz, fındık ve daha fazlası için CORIA’nın risk skorlarını nasıl yorumlayacağını öğren.",
+        "line": 279,
+        "file": "content/home.ts",
+        "context": "excerpt: 'Gluten, laktoz, fındık ve daha fazlası için CORIA’nın risk skorlarını nasıl yorumlayacağını öğren.',"
+      },
+      {
+        "category": "ui",
+        "string": "Karbon ayak izinizi market alışverişinde azaltın",
+        "line": 284,
+        "file": "content/home.ts",
+        "context": "title: 'Karbon ayak izinizi market alışverişinde azaltın',"
+      },
+      {
+        "category": "ui",
+        "string": "Sezonluk ürün seçimi ve yerel üretici önerileriyle çevresel etkinizi minimuma indirin.",
+        "line": 285,
+        "file": "content/home.ts",
+        "context": "excerpt: 'Sezonluk ürün seçimi ve yerel üretici önerileriyle çevresel etkinizi minimuma indirin.',"
+      },
+      {
+        "category": "ui",
+        "string": "Foundation projelerinde yeni dönem",
+        "line": 290,
+        "file": "content/home.ts",
+        "context": "title: 'Foundation projelerinde yeni dönem',"
+      },
+      {
+        "category": "ui",
+        "string": "Solana token modeliyle şeffaf fonlama nasıl çalışıyor? İlk raporlar yayınlandı.",
+        "line": 291,
+        "file": "content/home.ts",
+        "context": "excerpt: 'Solana token modeliyle şeffaf fonlama nasıl çalışıyor? İlk raporlar yayınlandı.',"
+      },
+      {
+        "category": "ui",
+        "string": "Tüm içerikleri görüntüle",
+        "line": 296,
+        "file": "content/home.ts",
+        "context": "cta: { label: 'Tüm içerikleri görüntüle', href: '/blog' }"
+      },
+      {
+        "category": "ui",
+        "string": "Sık sorulan sorular",
+        "line": 299,
+        "file": "content/home.ts",
+        "context": "title: 'Sık sorulan sorular',"
+      },
+      {
+        "category": "ui",
+        "string": "CORIA’yı kullanmaya başlamadan önce en çok merak edilenleri derledik.",
+        "line": 300,
+        "file": "content/home.ts",
+        "context": "subtitle: 'CORIA’yı kullanmaya başlamadan önce en çok merak edilenleri derledik.',"
+      },
+      {
+        "category": "ui",
+        "string": "Sınırsız ürün tarama, detaylı etki raporları, gelişmiş filtreler, israf azaltma önerileri ve Foundation projelerine katkı sertifikası.",
+        "line": 305,
+        "file": "content/home.ts",
+        "context": "'Sınırsız ürün tarama, detaylı etki raporları, gelişmiş filtreler, israf azaltma önerileri ve Foundation projelerine katkı sertifikası.'"
+      },
+      {
+        "category": "ui",
+        "string": "Veri gizliliği nasıl sağlanıyor?",
+        "line": 308,
+        "file": "content/home.ts",
+        "context": "question: 'Veri gizliliği nasıl sağlanıyor?',"
+      },
+      {
+        "category": "ui",
+        "string": "Kişisel veriler sadece profil deneyimini iyileştirmek için kullanılır, üçüncü taraflarla paylaşılmaz ve dilediğiniz an hesap verilerini silebilirsiniz.",
+        "line": 310,
+        "file": "content/home.ts",
+        "context": "'Kişisel veriler sadece profil deneyimini iyileştirmek için kullanılır, üçüncü taraflarla paylaşılmaz ve dilediğiniz an hesap verilerini silebilirsiniz.'"
+      },
+      {
+        "category": "ui",
+        "string": "Foundation projelerine nasıl başvurabilirim?",
+        "line": 313,
+        "file": "content/home.ts",
+        "context": "question: 'Foundation projelerine nasıl başvurabilirim?',"
+      },
+      {
+        "category": "ui",
+        "string": "Foundation sayfasındaki başvuru formundan projenizi gönderebilir, değerlendirme süreci ve kriterleri detaylı inceleyebilirsiniz.",
+        "line": 315,
+        "file": "content/home.ts",
+        "context": "'Foundation sayfasındaki başvuru formundan projenizi gönderebilir, değerlendirme süreci ve kriterleri detaylı inceleyebilirsiniz.'"
+      },
+      {
+        "category": "ui",
+        "string": "CORIA ile bilinçli tüketimin gücünü keşfet",
+        "line": 320,
+        "file": "content/home.ts",
+        "context": "title: 'CORIA ile bilinçli tüketimin gücünü keşfet',"
+      },
+      {
+        "category": "ui",
+        "string": "Topluluğumuza katılın, etki panelinizi açın ve sürdürülebilir geleceğe birlikte yön verin.",
+        "line": 321,
+        "file": "content/home.ts",
+        "context": "subtitle: 'Topluluğumuza katılın, etki panelinizi açın ve sürdürülebilir geleceğe birlikte yön verin.',"
+      },
+      {
+        "category": "ui",
+        "string": "Foundation’a katıl",
+        "line": 322,
+        "file": "content/home.ts",
+        "context": "primary: { label: 'Foundation’a katıl', href: '/foundation' },"
+      },
+      {
+        "category": "ui",
+        "string": "Özellikleri keşfet",
+        "line": 323,
+        "file": "content/home.ts",
+        "context": "secondary: { label: 'Özellikleri keşfet', href: '/features' }"
+      },
+      {
+        "category": "ui",
+        "string": "[Contentful] Gerekli kimlik bilgileri eksik; istemci başlatılamadı.",
+        "line": 14,
+        "file": "lib/contentful.ts",
+        "context": "logger.warn('[Contentful] Gerekli kimlik bilgileri eksik; istemci başlatılamadı.');"
+      },
+      {
+        "category": "ui",
+        "string": "[Contentful] İstemci oluşturulurken hata oluştu:",
+        "line": 27,
+        "file": "lib/contentful.ts",
+        "context": "logger.error('[Contentful] İstemci oluşturulurken hata oluştu:', error);"
+      },
+      {
+        "category": "ui",
+        "string": "içerikleri için istemci bulunamadı. Boş sonuç dönüyor.",
+        "line": 193,
+        "file": "lib/contentful.ts",
+        "context": "logger.warn(`[Contentful] '${contentType}' içerikleri için istemci bulunamadı. Boş sonuç dönüyor.`);"
+      },
+      {
+        "category": "ui",
+        "string": "içeriği (${slug}) için istemci bulunamadı.",
+        "line": 221,
+        "file": "lib/contentful.ts",
+        "context": "logger.warn(`[Contentful] '${contentType}' içeriği (${slug}) için istemci bulunamadı.`);"
+      },
+      {
+        "category": "ui",
+        "string": "si ${entryId} olan kayıt için istemci bulunamadı.",
+        "line": 249,
+        "file": "lib/contentful.ts",
+        "context": "logger.warn(`[Contentful] ID'si ${entryId} olan kayıt için istemci bulunamadı.`);"
+      },
+      {
+        "category": "ui",
+        "string": "si ${assetId} olan varlık için istemci bulunamadı.",
+        "line": 272,
+        "file": "lib/contentful.ts",
+        "context": "logger.warn(`[Contentful] ID'si ${assetId} olan varlık için istemci bulunamadı.`);"
+      },
+      {
+        "category": "ui",
+        "string": "${this.field} alanı geçersiz: ${this.message}",
+        "line": 94,
+        "file": "lib/errors.ts",
+        "context": "? `${this.field} alanı geçersiz: ${this.message}`"
+      },
+      {
+        "category": "ui",
+        "string": "Girilen bilgiler geçersiz: ${this.message}",
+        "line": 95,
+        "file": "lib/errors.ts",
+        "context": ": `Girilen bilgiler geçersiz: ${this.message}`,"
+      },
+      {
+        "category": "ui",
+        "string": "Ungültiges ${this.field}: ${this.message}",
+        "line": 100,
+        "file": "lib/errors.ts",
+        "context": "? `Ungültiges ${this.field}: ${this.message}`"
+      },
+      {
+        "category": "ui",
+        "string": "Ungültige Eingabe: ${this.message}",
+        "line": 101,
+        "file": "lib/errors.ts",
+        "context": ": `Ungültige Eingabe: ${this.message}`,"
+      },
+      {
+        "category": "ui",
+        "string": "Sunucu hatası oluştu. Lütfen daha sonra tekrar deneyin.",
+        "line": 142,
+        "file": "lib/errors.ts",
+        "context": "? 'Sunucu hatası oluştu. Lütfen daha sonra tekrar deneyin.'"
+      },
+      {
+        "category": "ui",
+        "string": "İstek işlenirken bir hata oluştu.",
+        "line": 143,
+        "file": "lib/errors.ts",
+        "context": ": 'İstek işlenirken bir hata oluştu.',"
+      },
+      {
+        "category": "ui",
+        "string": "İnternet bağlantınızı kontrol edin ve tekrar deneyin.",
+        "line": 185,
+        "file": "lib/errors.ts",
+        "context": "? 'İnternet bağlantınızı kontrol edin ve tekrar deneyin.'"
+      },
+      {
+        "category": "ui",
+        "string": "Ağ bağlantısı hatası. Lütfen tekrar deneyin.",
+        "line": 186,
+        "file": "lib/errors.ts",
+        "context": ": 'Ağ bağlantısı hatası. Lütfen tekrar deneyin.',"
+      },
+      {
+        "category": "ui",
+        "string": "Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.",
+        "line": 191,
+        "file": "lib/errors.ts",
+        "context": "? 'Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.'"
+      },
+      {
+        "category": "ui",
+        "string": "Oturum açmanız gerekiyor.",
+        "line": 229,
+        "file": "lib/errors.ts",
+        "context": "? 'Oturum açmanız gerekiyor.'"
+      },
+      {
+        "category": "ui",
+        "string": "Bu işlem için yetkiniz bulunmuyor.",
+        "line": 230,
+        "file": "lib/errors.ts",
+        "context": ": 'Bu işlem için yetkiniz bulunmuyor.',"
+      },
+      {
+        "category": "ui",
+        "string": "Sie müssen sich anmelden.",
+        "line": 235,
+        "file": "lib/errors.ts",
+        "context": "? 'Sie müssen sich anmelden.'"
+      },
+      {
+        "category": "ui",
+        "string": "Sie haben keine Berechtigung für diese Aktion.",
+        "line": 236,
+        "file": "lib/errors.ts",
+        "context": ": 'Sie haben keine Berechtigung für diese Aktion.',"
+      },
+      {
+        "category": "ui",
+        "string": "${this.resourceType} bulunamadı.",
+        "line": 272,
+        "file": "lib/errors.ts",
+        "context": "? `${this.resourceType} bulunamadı.`"
+      },
+      {
+        "category": "ui",
+        "string": "Aradığınız sayfa bulunamadı.",
+        "line": 273,
+        "file": "lib/errors.ts",
+        "context": ": 'Aradığınız sayfa bulunamadı.',"
+      },
+      {
+        "category": "ui",
+        "string": "Çok fazla istek gönderdiniz. Lütfen biraz bekleyin.",
+        "line": 314,
+        "file": "lib/errors.ts",
+        "context": "tr: 'Çok fazla istek gönderdiniz. Lütfen biraz bekleyin.',"
+      },
+      {
+        "category": "ui",
+        "string": "Sistem yapılandırma hatası. Lütfen yöneticiye başvurun.",
+        "line": 353,
+        "file": "lib/errors.ts",
+        "context": "tr: 'Sistem yapılandırma hatası. Lütfen yöneticiye başvurun.',"
+      },
+      {
+        "category": "ui",
+        "string": "Beklenmeyen bir hata oluştu.",
+        "line": 495,
+        "file": "lib/errors.ts",
+        "context": "tr: 'Beklenmeyen bir hata oluştu.',"
+      },
+      {
+        "category": "ui",
+        "string": "okuma süresi",
+        "line": 208,
+        "file": "lib/formatting.ts",
+        "context": "tr: { singular: 'dakika', plural: 'dakika', suffix: 'okuma süresi' },"
+      },
+      {
+        "category": "ui",
+        "string": "[PWA] Service worker development modunda devre dışı bırakıldı",
+        "line": 28,
+        "file": "lib/pwa.ts",
+        "context": "logger.info('[PWA] Service worker development modunda devre dışı bırakıldı');"
+      },
+      {
+        "category": "ui",
+        "string": "[PWA] Var olan servis worker kayıtları temizlendi",
+        "line": 34,
+        "file": "lib/pwa.ts",
+        "context": "logger.info('[PWA] Var olan servis worker kayıtları temizlendi');"
+      },
+      {
+        "category": "ui",
+        "string": "[PWA] Servis worker temizleme başarısız:",
+        "line": 36,
+        "file": "lib/pwa.ts",
+        "context": "logger.warn('[PWA] Servis worker temizleme başarısız:', error);"
+      },
+      {
+        "category": "ui",
+        "string": "text=Türkçe",
+        "line": 41,
+        "file": "test/e2e/navigation.spec.ts",
+        "context": "await page.click('text=Türkçe')"
+      },
+      {
+        "category": "ui",
+        "string": "Test Başlık",
+        "line": 27,
+        "file": "test/integration/api-validation.test.ts",
+        "context": "tr: 'Test Başlık',"
+      },
+      {
+        "category": "ui",
+        "string": "Test özet",
+        "line": 33,
+        "file": "test/integration/api-validation.test.ts",
+        "context": "tr: 'Test özet',"
+      },
+      {
+        "category": "ui",
+        "string": "Test içerik",
+        "line": 39,
+        "file": "test/integration/api-validation.test.ts",
+        "context": "tr: 'Test içerik',"
+      },
+      {
+        "category": "ui",
+        "string": "Yazar avatarı",
+        "line": 59,
+        "file": "test/integration/api-validation.test.ts",
+        "context": "tr: 'Yazar avatarı',"
+      },
+      {
+        "category": "ui",
+        "string": "Sürdürülebilirlik",
+        "line": 71,
+        "file": "test/integration/api-validation.test.ts",
+        "context": "tr: 'Sürdürülebilirlik',"
+      },
+      {
+        "category": "ui",
+        "string": "Sürdürülebilirlik kategorisi",
+        "line": 83,
+        "file": "test/integration/api-validation.test.ts",
+        "context": "tr: 'Sürdürülebilirlik kategorisi',"
+      },
+      {
+        "category": "ui",
+        "string": "Öne çıkan görsel",
+        "line": 99,
+        "file": "test/integration/api-validation.test.ts",
+        "context": "tr: 'Öne çıkan görsel',"
+      },
+      {
+        "category": "ui",
+        "string": "SEO Başlık",
+        "line": 117,
+        "file": "test/integration/api-validation.test.ts",
+        "context": "tr: 'SEO Başlık',"
+      },
+      {
+        "category": "ui",
+        "string": "SEO açıklama",
+        "line": 123,
+        "file": "test/integration/api-validation.test.ts",
+        "context": "tr: 'SEO açıklama',"
+      },
+      {
+        "category": "ui",
+        "string": "schlüssel",
+        "line": 131,
+        "file": "test/integration/api-validation.test.ts",
+        "context": "de: ['schlüssel', 'wort'],"
+      },
+      {
+        "category": "ui",
+        "string": "Barkod tarama içeriği",
+        "line": 240,
+        "file": "test/integration/api-validation.test.ts",
+        "context": "tr: 'Barkod tarama içeriği',"
+      },
+      {
+        "category": "ui",
+        "string": "SEO açıklama",
+        "line": 256,
+        "file": "test/integration/api-validation.test.ts",
+        "context": "tr: 'SEO açıklama',"
+      },
+      {
+        "category": "ui",
+        "string": "Ürün barkodlarını tarayın",
+        "line": 275,
+        "file": "test/integration/api-validation.test.ts",
+        "context": "tr: 'Ürün barkodlarını tarayın',"
+      },
+      {
+        "category": "ui",
+        "string": "Ekran görüntüsü 1",
+        "line": 286,
+        "file": "test/integration/api-validation.test.ts",
+        "context": "tr: 'Ekran görüntüsü 1',"
+      },
+      {
+        "category": "ui",
+        "string": "Hızlı tarama",
+        "line": 298,
+        "file": "test/integration/api-validation.test.ts",
+        "context": "tr: ['Hızlı tarama', 'Doğru sonuçlar'],"
+      },
+      {
+        "category": "ui",
+        "string": "Tarama özellikleri",
+        "line": 318,
+        "file": "test/integration/api-validation.test.ts",
+        "context": "tr: 'Tarama özellikleri',"
+      },
+      {
+        "category": "ui",
+        "string": "Türkçe başlık",
+        "line": 560,
+        "file": "test/integration/api-validation.test.ts",
+        "context": "tr: 'Türkçe başlık',"
+      },
+      {
+        "category": "ui",
+        "string": "özet",
+        "line": 570,
+        "file": "test/integration/api-validation.test.ts",
+        "context": "excerpt: { tr: 'özet', en: 'excerpt', de: 'auszug', fr: 'extrait' },"
+      },
+      {
+        "category": "ui",
+        "string": "içerik",
+        "line": 571,
+        "file": "test/integration/api-validation.test.ts",
+        "context": "content: { tr: 'içerik', en: 'content', de: 'inhalt', fr: 'contenu' },"
+      },
+      {
+        "category": "ui",
+        "string": "açıklama",
+        "line": 590,
+        "file": "test/integration/api-validation.test.ts",
+        "context": "description: { tr: 'açıklama', en: 'description', de: 'beschreibung', fr: 'description' }"
+      },
+      {
+        "category": "ui",
+        "string": "Türkçe içerik",
+        "line": 227,
+        "file": "test/lib/type-guards.test.ts",
+        "context": "tr: 'Türkçe içerik',"
+      },
+      {
+        "category": "ui",
+        "string": "Contenu français",
+        "line": 230,
+        "file": "test/lib/type-guards.test.ts",
+        "context": "fr: 'Contenu français'"
+      },
+      {
+        "category": "ui",
+        "string": "Türkçe",
+        "line": 322,
+        "file": "test/lib/type-guards.test.ts",
+        "context": "tr: 'Türkçe',"
+      },
+      {
+        "category": "ui",
+        "string": "Français",
+        "line": 325,
+        "file": "test/lib/type-guards.test.ts",
+        "context": "fr: 'Français'"
+      },
+      {
+        "category": "ui",
+        "string": "Türkçe",
+        "line": 190,
+        "file": "test/types/generic-constraints.test-d.ts",
+        "context": "tr: 'Türkçe',"
+      },
+      {
+        "category": "ui",
+        "string": "Français",
+        "line": 193,
+        "file": "test/types/generic-constraints.test-d.ts",
+        "context": "fr: 'Français'"
+      },
+      {
+        "category": "ui",
+        "string": "Türkçe",
+        "line": 199,
+        "file": "test/types/generic-constraints.test-d.ts",
+        "context": "tr: 'Türkçe',"
+      },
+      {
+        "category": "ui",
+        "string": "Türkçe",
+        "line": 205,
+        "file": "test/types/generic-constraints.test-d.ts",
+        "context": "tr: 'Türkçe',"
+      },
+      {
+        "category": "ui",
+        "string": "Türkçe",
+        "line": 214,
+        "file": "test/types/generic-constraints.test-d.ts",
+        "context": "tr: 'Türkçe',"
+      },
+      {
+        "category": "ui",
+        "string": "Français",
+        "line": 217,
+        "file": "test/types/generic-constraints.test-d.ts",
+        "context": "fr: 'Français',"
+      },
+      {
+        "category": "ui",
+        "string": "Test Başlık",
+        "line": 231,
+        "file": "test/types/generic-constraints.test-d.ts",
+        "context": "tr: 'Test Başlık',"
+      },
+      {
+        "category": "ui",
+        "string": "Test özet",
+        "line": 237,
+        "file": "test/types/generic-constraints.test-d.ts",
+        "context": "tr: 'Test özet',"
+      },
+      {
+        "category": "ui",
+        "string": "Test içerik",
+        "line": 243,
+        "file": "test/types/generic-constraints.test-d.ts",
+        "context": "tr: 'Test içerik',"
+      },
+      {
+        "category": "ui",
+        "string": "Özellik",
+        "line": 264,
+        "file": "test/types/generic-constraints.test-d.ts",
+        "context": "tr: 'Özellik',"
+      },
+      {
+        "category": "ui",
+        "string": "Açıklama",
+        "line": 270,
+        "file": "test/types/generic-constraints.test-d.ts",
+        "context": "tr: 'Açıklama',"
+      }
+    ],
+    "aria": [
+      {
+        "category": "aria",
+        "string": "CORIA platform özellikleri",
+        "line": 144,
+        "file": "components/sections/features-showcase.tsx",
+        "context": "aria-label=\"CORIA platform özellikleri\""
+      },
+      {
+        "category": "aria",
+        "string": "CORIA istatistikleri ve etki göstergeleri",
+        "line": 142,
+        "file": "components/sections/hero-section.tsx",
+        "context": "aria-label=\"CORIA istatistikleri ve etki göstergeleri\""
+      }
+    ],
+    "alt": [],
+    "title": [],
+    "placeholder": [
+      {
+        "category": "placeholder",
+        "string": "Projenizi tanımlayan başlık",
+        "line": 408,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "placeholder=\"Projenizi tanımlayan başlık\""
+      },
+      {
+        "category": "placeholder",
+        "string": "Projenizi 280 karakterde özetleyin",
+        "line": 441,
+        "file": "app/[locale]/foundation/page.tsx",
+        "context": "placeholder=\"Projenizi 280 karakterde özetleyin\""
+      }
+    ]
+  },
+  "byFile": {
+    "app/[locale]/about/page.tsx": [
+      {
+        "category": "ui",
+        "string": "Fikrin doğuşu ve ilk veri toplama prototipi",
+        "line": 4,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/about/page.tsx",
+        "context": "{ year: '2023', detail: 'Fikrin doğuşu ve ilk veri toplama prototipi' },"
+      },
+      {
+        "category": "ui",
+        "string": "MVP geliştirme ve kapalı beta",
+        "line": 5,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/about/page.tsx",
+        "context": "{ year: '2024 Q1', detail: 'MVP geliştirme ve kapalı beta' },"
+      },
+      {
+        "category": "ui",
+        "string": "Beta lansmanı ve ilk 50K kullanıcı",
+        "line": 6,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/about/page.tsx",
+        "context": "{ year: '2024 Q2', detail: 'Beta lansmanı ve ilk 50K kullanıcı' },"
+      },
+      {
+        "category": "ui",
+        "string": "100K kullanıcı, ilk Foundation bağış raporu",
+        "line": 8,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/about/page.tsx",
+        "context": "{ year: '2024 Q4', detail: '100K kullanıcı, ilk Foundation bağış raporu' },"
+      },
+      {
+        "category": "ui",
+        "string": "CORIA Token lansmanı ve Solana entegrasyonu",
+        "line": 9,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/about/page.tsx",
+        "context": "{ year: '2025', detail: 'CORIA Token lansmanı ve Solana entegrasyonu' }"
+      },
+      {
+        "category": "ui",
+        "string": "Solana tabanlı token altyapısı ve etki raporlama.",
+        "line": 13,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/about/page.tsx",
+        "context": "{ name: 'Believe Platform', description: 'Solana tabanlı token altyapısı ve etki raporlama.' },"
+      },
+      {
+        "category": "ui",
+        "string": "Yeşil Enerji Kooperatifleri",
+        "line": 14,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/about/page.tsx",
+        "context": "{ name: 'Yeşil Enerji Kooperatifleri', description: 'Topluluk fonlu güneş enerjisi kurulumları.' },"
+      },
+      {
+        "category": "ui",
+        "string": "Vegan restoran dönüşümü ve eğitim programları.",
+        "line": 15,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/about/page.tsx",
+        "context": "{ name: 'Vegan Dernekleri', description: 'Vegan restoran dönüşümü ve eğitim programları.' }"
+      }
+    ],
+    "app/[locale]/contact/page.tsx": [
+      {
+        "category": "ui",
+        "string": "iletişim",
+        "line": 43,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/contact/page.tsx",
+        "context": "tr: ['CORIA', 'iletişim', 'destek', 'yardım', 'müşteri hizmetleri'],"
+      }
+    ],
+    "app/[locale]/foundation/page.tsx": [
+      {
+        "category": "ui",
+        "string": "Birlikte Daha Büyük Etki Yaratıyoruz",
+        "line": 72,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "subtitle: \"Birlikte Daha Büyük Etki Yaratıyoruz\","
+      },
+      {
+        "category": "ui",
+        "string": "CORIA, uygulama gelirlerinin bir kısmını sürdürülebilirlik projelerine yatırım yapmak için CORIA Foundation",
+        "line": 73,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "description: \"CORIA, uygulama gelirlerinin bir kısmını sürdürülebilirlik projelerine yatırım yapmak için CORIA Foundation'ı kuruyor. Believe platformu üzerinden çıkarılacak özel Solana token ile blockchain ekosisteminde yer alarak, token fee gelirlerini de yeşil enerji, veganlık ve sürdürülebilirlik projelerinin fonlanmasında kullanacak.\","
+      },
+      {
+        "category": "ui",
+        "string": "Believe Platform entegrasyonu ile Solana tabanlı token kullanım alanları",
+        "line": 77,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "description: \"Believe Platform entegrasyonu ile Solana tabanlı token kullanım alanları\","
+      },
+      {
+        "category": "ui",
+        "string": "Believe Platform üzerinden çıkarılacak özel Solana token",
+        "line": 82,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "description: \"Believe Platform üzerinden çıkarılacak özel Solana token\""
+      },
+      {
+        "category": "ui",
+        "string": "Fee Dağılım Modeli",
+        "line": 86,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "title: \"Fee Dağılım Modeli\","
+      },
+      {
+        "category": "ui",
+        "string": "Token işlem ücretleri direkt olarak sürdürülebilirlik projelerine aktarılır",
+        "line": 87,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "description: \"Token işlem ücretleri direkt olarak sürdürülebilirlik projelerine aktarılır\""
+      },
+      {
+        "category": "ui",
+        "string": "Şeffaf Fonlama",
+        "line": 91,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "title: \"Şeffaf Fonlama\","
+      },
+      {
+        "category": "ui",
+        "string": "Blockchain tabanlı şeffaf fon dağıtımı ve etki takibi",
+        "line": 92,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "description: \"Blockchain tabanlı şeffaf fon dağıtımı ve etki takibi\""
+      },
+      {
+        "category": "ui",
+        "string": "Ekolojik Tarım Projesi",
+        "line": 100,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "title: \"Ekolojik Tarım Projesi\","
+      },
+      {
+        "category": "ui",
+        "string": "5000 hektar organik tarım alanı oluşturuldu",
+        "line": 101,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "impact: \"5000 hektar organik tarım alanı oluşturuldu\","
+      },
+      {
+        "category": "ui",
+        "string": "Veganlık",
+        "line": 102,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "category: \"Veganlık\""
+      },
+      {
+        "category": "ui",
+        "string": "Güneş Enerjisi Kooperatifi",
+        "line": 106,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "title: \"Güneş Enerjisi Kooperatifi\","
+      },
+      {
+        "category": "ui",
+        "string": "250 aileye temiz enerji erişimi sağlandı",
+        "line": 107,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "impact: \"250 aileye temiz enerji erişimi sağlandı\","
+      },
+      {
+        "category": "ui",
+        "string": "Yeşil Enerji",
+        "line": 108,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "category: \"Yeşil Enerji\""
+      },
+      {
+        "category": "ui",
+        "string": "Sıfır Atık İnisiyatifi",
+        "line": 112,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "title: \"Sıfır Atık İnisiyatifi\","
+      },
+      {
+        "category": "ui",
+        "string": "12 şehirde plastik kullanımı %60 azaltıldı",
+        "line": 113,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "impact: \"12 şehirde plastik kullanımı %60 azaltıldı\","
+      },
+      {
+        "category": "ui",
+        "string": "Sürdürülebilirlik",
+        "line": 114,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "category: \"Sürdürülebilirlik\""
+      },
+      {
+        "category": "ui",
+        "string": "Şeffaflık",
+        "line": 121,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "title: \"Şeffaflık\","
+      },
+      {
+        "category": "ui",
+        "string": "Tüm fonlama kararları ve etki raporları halka açık blockchain üzerinde",
+        "line": 122,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "description: \"Tüm fonlama kararları ve etki raporları halka açık blockchain üzerinde\""
+      },
+      {
+        "category": "ui",
+        "string": "Topluluk Yönetimi",
+        "line": 126,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "title: \"Topluluk Yönetimi\","
+      },
+      {
+        "category": "ui",
+        "string": "CORIA token sahipleri proje seçiminde oy kullanma hakkına sahip",
+        "line": 127,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "description: \"CORIA token sahipleri proje seçiminde oy kullanma hakkına sahip\""
+      },
+      {
+        "category": "ui",
+        "string": "Etki Odaklılık",
+        "line": 131,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "title: \"Etki Odaklılık\","
+      },
+      {
+        "category": "ui",
+        "string": "Her projenin ölçülebilir çevresel ve sosyal etkisi raporlanır",
+        "line": 132,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "description: \"Her projenin ölçülebilir çevresel ve sosyal etkisi raporlanır\""
+      },
+      {
+        "category": "ui",
+        "string": "Foundation konsepti tasarlandı",
+        "line": 141,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "items: ['Foundation konsepti tasarlandı', 'Believe platformu ortaklığı kuruldu']"
+      },
+      {
+        "category": "ui",
+        "string": "Solana tabanlı CORIA Token lansmanı",
+        "line": 146,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "items: ['Solana tabanlı CORIA Token lansmanı', 'İlk topluluk oylaması ile 3 proje fonlandı']"
+      },
+      {
+        "category": "ui",
+        "string": "Global genişleme",
+        "line": 151,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "items: ['Global genişleme', 'Yerel kooperatif iş birlikleri', 'On-chain etki raporları']"
+      },
+      {
+        "category": "placeholder",
+        "string": "Projenizi tanımlayan başlık",
+        "line": 408,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "placeholder=\"Projenizi tanımlayan başlık\""
+      },
+      {
+        "category": "ui",
+        "string": "Veganlık",
+        "line": 417,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "<option>Veganlık</option>"
+      },
+      {
+        "category": "ui",
+        "string": "Sürdürülebilirlik",
+        "line": 418,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "<option>Sürdürülebilirlik</option>"
+      },
+      {
+        "category": "ui",
+        "string": "Yeşil Enerji",
+        "line": 419,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "<option>Yeşil Enerji</option>"
+      },
+      {
+        "category": "placeholder",
+        "string": "Projenizi 280 karakterde özetleyin",
+        "line": 441,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+        "context": "placeholder=\"Projenizi 280 karakterde özetleyin\""
+      }
+    ],
+    "app/[locale]/layout.tsx": [
+      {
+        "category": "ui",
+        "string": "CORIA - Sürdürülebilir Yaşam Uygulaması",
+        "line": 54,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/layout.tsx",
+        "context": "tr: 'CORIA - Sürdürülebilir Yaşam Uygulaması',"
+      },
+      {
+        "category": "ui",
+        "string": "Bilinçli tüketim kararları alın, çevresel etkilerinizi takip edin ve sürdürülebilir alternatifleri keşfedin.",
+        "line": 61,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/layout.tsx",
+        "context": "tr: 'Bilinçli tüketim kararları alın, çevresel etkilerinizi takip edin ve sürdürülebilir alternatifleri keşfedin.',"
+      },
+      {
+        "category": "ui",
+        "string": "sürdürülebilirlik",
+        "line": 68,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/layout.tsx",
+        "context": "tr: ['sürdürülebilirlik', 'çevre', 'bilinçli tüketim', 'karbon ayak izi', 'yeşil yaşam', 'barkod tarama', 'çevresel etki'],"
+      },
+      {
+        "category": "ui",
+        "string": "grünes Leben",
+        "line": 70,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/layout.tsx",
+        "context": "de: ['Nachhaltigkeit', 'Umwelt', 'bewusster Konsum', 'CO2-Fußabdruck', 'grünes Leben', 'Barcode-Scanning', 'Umweltauswirkungen'],"
+      }
+    ],
+    "app/[locale]/pricing/page.tsx": [
+      {
+        "category": "ui",
+        "string": "fiyatlandırma",
+        "line": 39,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/pricing/page.tsx",
+        "context": "tr: ['fiyatlandırma', 'premium', 'abonelik'],"
+      }
+    ],
+    "components/layout/footer.tsx": [
+      {
+        "category": "ui",
+        "string": "Basın & Yatırımcı",
+        "line": 31,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/layout/footer.tsx",
+        "context": "{ label: 'Basın & Yatırımcı', href: '/about#press' }"
+      },
+      {
+        "category": "ui",
+        "string": "Gizlilik Politikası",
+        "line": 35,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/layout/footer.tsx",
+        "context": "{ label: 'Gizlilik Politikası', href: '/legal/privacy' },"
+      },
+      {
+        "category": "ui",
+        "string": "Kullanım Koşulları",
+        "line": 36,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/layout/footer.tsx",
+        "context": "{ label: 'Kullanım Koşulları', href: '/legal/terms' },"
+      },
+      {
+        "category": "ui",
+        "string": "KVKK Aydınlatması",
+        "line": 37,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/layout/footer.tsx",
+        "context": "{ label: 'KVKK Aydınlatması', href: '/legal/kvkk' },"
+      },
+      {
+        "category": "ui",
+        "string": "Çerez Politikası",
+        "line": 38,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/layout/footer.tsx",
+        "context": "{ label: 'Çerez Politikası', href: '/legal/cookies' }"
+      }
+    ],
+    "components/pricing/pricing-plans.tsx": [
+      {
+        "category": "ui",
+        "string": "Ücretsiz",
+        "line": 82,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/pricing/pricing-plans.tsx",
+        "context": "? 'Ücretsiz'"
+      }
+    ],
+    "components/sections/features-showcase-animated.tsx": [
+      {
+        "category": "ui",
+        "string": "nın tüm özelliklerini keşfetmek için uygulamayı indirin",
+        "line": 107,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/sections/features-showcase-animated.tsx",
+        "context": "aria-label=\"CORIA'nın tüm özelliklerini keşfetmek için uygulamayı indirin\""
+      }
+    ],
+    "components/sections/features-showcase.tsx": [
+      {
+        "category": "ui",
+        "string": "${title} özelliği",
+        "line": 60,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/sections/features-showcase.tsx",
+        "context": "aria-label={`${title} özelliği`}"
+      },
+      {
+        "category": "ui",
+        "string": "Ürünlerin vegan uygunluğunu ve alerjen içeriğini anında analiz edin. Kişisel beslenme tercihlerinize uygun seçimler yapın.",
+        "line": 95,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/sections/features-showcase.tsx",
+        "context": "description: \"Ürünlerin vegan uygunluğunu ve alerjen içeriğini anında analiz edin. Kişisel beslenme tercihlerinize uygun seçimler yapın.\""
+      },
+      {
+        "category": "ui",
+        "string": "Yapay zeka destekli kişisel asistanınız ile beslenme önerilerinden sürdürülebilir yaşam ipuçlarına kadar her konuda destek alın.",
+        "line": 100,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/sections/features-showcase.tsx",
+        "context": "description: \"Yapay zeka destekli kişisel asistanınız ile beslenme önerilerinden sürdürülebilir yaşam ipuçlarına kadar her konuda destek alın.\""
+      },
+      {
+        "category": "ui",
+        "string": "Akıllı Kiler",
+        "line": 104,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/sections/features-showcase.tsx",
+        "context": "title: \"Akıllı Kiler\","
+      },
+      {
+        "category": "ui",
+        "string": "Kilerdeki ürünleri takip edin, son kullanma tarihlerini izleyin ve israfı önlemek için akıllı öneriler alın.",
+        "line": 105,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/sections/features-showcase.tsx",
+        "context": "description: \"Kilerdeki ürünleri takip edin, son kullanma tarihlerini izleyin ve israfı önlemek için akıllı öneriler alın.\""
+      },
+      {
+        "category": "ui",
+        "string": "ESG Skorları",
+        "line": 109,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/sections/features-showcase.tsx",
+        "context": "title: \"ESG Skorları\","
+      },
+      {
+        "category": "ui",
+        "string": "Ürün ve markaların çevresel, sosyal ve yönetişim performanslarını ESG skorları ile değerlendirin.",
+        "line": 110,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/sections/features-showcase.tsx",
+        "context": "description: \"Ürün ve markaların çevresel, sosyal ve yönetişim performanslarını ESG skorları ile değerlendirin.\""
+      },
+      {
+        "category": "ui",
+        "string": "Tüketim alışkanlıklarınızın karbon ayak izini ve su kullanımını takip ederek çevresel etkilerinizi azaltın.",
+        "line": 115,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/sections/features-showcase.tsx",
+        "context": "description: \"Tüketim alışkanlıklarınızın karbon ayak izini ve su kullanımını takip ederek çevresel etkilerinizi azaltın.\""
+      },
+      {
+        "category": "ui",
+        "string": "Topluluk Önerileri",
+        "line": 119,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/sections/features-showcase.tsx",
+        "context": "title: \"Topluluk Önerileri\","
+      },
+      {
+        "category": "ui",
+        "string": "Sürdürülebilir yaşam topluluğundan öneriler alın, deneyimlerinizi paylaşın ve birlikte öğrenin.",
+        "line": 120,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/sections/features-showcase.tsx",
+        "context": "description: \"Sürdürülebilir yaşam topluluğundan öneriler alın, deneyimlerinizi paylaşın ve birlikte öğrenin.\""
+      },
+      {
+        "category": "aria",
+        "string": "CORIA platform özellikleri",
+        "line": 144,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/sections/features-showcase.tsx",
+        "context": "aria-label=\"CORIA platform özellikleri\""
+      }
+    ],
+    "components/sections/hero-section.tsx": [
+      {
+        "category": "ui",
+        "string": "Vegan Yaşam Asistanı",
+        "line": 51,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/sections/hero-section.tsx",
+        "context": "eyebrow: \"Vegan Yaşam Asistanı\","
+      },
+      {
+        "category": "ui",
+        "string": "Kalbinle Seç. Etkiyle Yaşa.",
+        "line": 52,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/sections/hero-section.tsx",
+        "context": "title: \"Kalbinle Seç. Etkiyle Yaşa.\","
+      },
+      {
+        "category": "ui",
+        "string": "Taradığın her ürünün veganlık, alerjen, sağlık ve sürdürülebilirlik skorlarını tek bakışta gör.",
+        "line": 53,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/sections/hero-section.tsx",
+        "context": "subtitle: \"Taradığın her ürünün veganlık, alerjen, sağlık ve sürdürülebilirlik skorlarını tek bakışta gör.\","
+      },
+      {
+        "category": "ui",
+        "string": "iOS için İndir",
+        "line": 55,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/sections/hero-section.tsx",
+        "context": "label: \"iOS için İndir\","
+      },
+      {
+        "category": "ui",
+        "string": "Android için İndir",
+        "line": 59,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/sections/hero-section.tsx",
+        "context": "label: \"Android için İndir\","
+      },
+      {
+        "category": "ui",
+        "string": "Milyar Ürün Verisi",
+        "line": 65,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/sections/hero-section.tsx",
+        "context": "{ value: \"2.5+\", label: \"Milyar Ürün Verisi\" },"
+      },
+      {
+        "category": "ui",
+        "string": "Etiket ve İçerik",
+        "line": 66,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/sections/hero-section.tsx",
+        "context": "{ value: \"10M+\", label: \"Etiket ve İçerik\" },"
+      },
+      {
+        "category": "ui",
+        "string": "Aktif Kullanıcı",
+        "line": 67,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/sections/hero-section.tsx",
+        "context": "{ value: \"500K+\", label: \"Aktif Kullanıcı\" },"
+      },
+      {
+        "category": "ui",
+        "string": "da CORIA uygulamasını indirin",
+        "line": 119,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/sections/hero-section.tsx",
+        "context": "aria-label={`${heroContent.primaryCta.label} - Apple App Store'da CORIA uygulamasını indirin`}"
+      },
+      {
+        "category": "ui",
+        "string": "da CORIA uygulamasını indirin",
+        "line": 131,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/sections/hero-section.tsx",
+        "context": "aria-label={`${heroContent.secondaryCta.label} - Google Play Store'da CORIA uygulamasını indirin`}"
+      },
+      {
+        "category": "aria",
+        "string": "CORIA istatistikleri ve etki göstergeleri",
+        "line": 142,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/sections/hero-section.tsx",
+        "context": "aria-label=\"CORIA istatistikleri ve etki göstergeleri\""
+      },
+      {
+        "category": "ui",
+        "string": "${metric.value} ${metric.label} - CORIA etki göstergesi",
+        "line": 152,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/sections/hero-section.tsx",
+        "context": "aria-label={`${metric.value} ${metric.label} - CORIA etki göstergesi`}"
+      }
+    ],
+    "components/seo/structured-data.tsx": [
+      {
+        "category": "ui",
+        "string": "CORIA - Sürdürülebilir Yaşam Uygulaması",
+        "line": 48,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/seo/structured-data.tsx",
+        "context": "tr: 'CORIA - Sürdürülebilir Yaşam Uygulaması',"
+      },
+      {
+        "category": "ui",
+        "string": "Bilinçli tüketim kararları alın, çevresel etkilerinizi takip edin ve sürdürülebilir alternatifleri keşfedin.",
+        "line": 55,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/seo/structured-data.tsx",
+        "context": "tr: 'Bilinçli tüketim kararları alın, çevresel etkilerinizi takip edin ve sürdürülebilir alternatifleri keşfedin.',"
+      },
+      {
+        "category": "ui",
+        "string": "Sürdürülebilir yaşam için mobil uygulama geliştiren teknoloji şirketi.",
+        "line": 91,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/seo/structured-data.tsx",
+        "context": "tr: 'Sürdürülebilir yaşam için mobil uygulama geliştiren teknoloji şirketi.',"
+      },
+      {
+        "category": "ui",
+        "string": "Technologieunternehmen, das mobile Anwendungen für nachhaltiges Leben entwickelt.",
+        "line": 93,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/seo/structured-data.tsx",
+        "context": "de: 'Technologieunternehmen, das mobile Anwendungen für nachhaltiges Leben entwickelt.',"
+      },
+      {
+        "category": "ui",
+        "string": "CORIA Mobil Uygulaması",
+        "line": 139,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/seo/structured-data.tsx",
+        "context": "tr: 'CORIA Mobil Uygulaması',"
+      },
+      {
+        "category": "ui",
+        "string": "Sürdürülebilir yaşam için barkod tarama, çevresel etki takibi ve bilinçli tüketim önerileri sunan mobil uygulama.",
+        "line": 146,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/seo/structured-data.tsx",
+        "context": "tr: 'Sürdürülebilir yaşam için barkod tarama, çevresel etki takibi ve bilinçli tüketim önerileri sunan mobil uygulama.',"
+      },
+      {
+        "category": "ui",
+        "string": "Mobile App mit Barcode-Scanning, Umweltauswirkungsverfolgung und bewussten Konsumempfehlungen für nachhaltiges Leben.",
+        "line": 148,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/seo/structured-data.tsx",
+        "context": "de: 'Mobile App mit Barcode-Scanning, Umweltauswirkungsverfolgung und bewussten Konsumempfehlungen für nachhaltiges Leben.',"
+      }
+    ],
+    "components/ui/language-switcher.tsx": [
+      {
+        "category": "ui",
+        "string": "Türkçe",
+        "line": 15,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/ui/language-switcher.tsx",
+        "context": "tr: { name: 'Türkçe', flag: '🇹🇷', label: 'TR' },"
+      },
+      {
+        "category": "ui",
+        "string": "Français",
+        "line": 18,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/ui/language-switcher.tsx",
+        "context": "fr: { name: 'Français', flag: '🇫🇷', label: 'FR' },"
+      }
+    ],
+    "content/home.ts": [
+      {
+        "category": "ui",
+        "string": "Vegan, etik ve sürdürülebilir seçim asistanı",
+        "line": 122,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "eyebrow: 'Vegan, etik ve sürdürülebilir seçim asistanı',"
+      },
+      {
+        "category": "ui",
+        "string": "Kalbinle Seç. Etkiyle Yaşa.",
+        "line": 123,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "title: 'Kalbinle Seç. Etkiyle Yaşa.',"
+      },
+      {
+        "category": "ui",
+        "string": "Taradığın her ürünün veganlık, alerjen, sağlık ve sürdürülebilirlik skorlarını tek bakışta gör. Bilimsel verilerle desteklenen önerilerle her seferinde daha iyi seçim yap.",
+        "line": 125,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "'Taradığın her ürünün veganlık, alerjen, sağlık ve sürdürülebilirlik skorlarını tek bakışta gör. Bilimsel verilerle desteklenen önerilerle her seferinde daha iyi seçim yap.',"
+      },
+      {
+        "category": "ui",
+        "string": "Veganlık, alerjen ve içerik riskleri için anlık uyarılar",
+        "line": 127,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "'Veganlık, alerjen ve içerik riskleri için anlık uyarılar',"
+      },
+      {
+        "category": "ui",
+        "string": "ESG, boykot ve marka etik profillerinin 360° görünümü",
+        "line": 128,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "'ESG, boykot ve marka etik profillerinin 360° görünümü',"
+      },
+      {
+        "category": "ui",
+        "string": "Akıllı kiler, israf önleme ve karbon/su etkisi takibi",
+        "line": 129,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "'Akıllı kiler, israf önleme ve karbon/su etkisi takibi'"
+      },
+      {
+        "category": "ui",
+        "string": "Premium’u 7 gün ücretsiz dene, istediğin zaman iptal et.",
+        "line": 133,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "note: 'Premium’u 7 gün ücretsiz dene, istediğin zaman iptal et.'"
+      },
+      {
+        "category": "ui",
+        "string": "ürün etiketi analizi",
+        "line": 136,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "{ value: '2.5B+', label: 'ürün etiketi analizi' },"
+      },
+      {
+        "category": "ui",
+        "string": "güncel içerik & etiket verisi",
+        "line": 137,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "{ value: '10M+', label: 'güncel içerik & etiket verisi' },"
+      },
+      {
+        "category": "ui",
+        "string": "aktif CORIA topluluğu",
+        "line": 138,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "{ value: '500K+', label: 'aktif CORIA topluluğu' },"
+      },
+      {
+        "category": "ui",
+        "string": "Topluluk ve iş ortaklarımızdan destek",
+        "line": 142,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "title: 'Topluluk ve iş ortaklarımızdan destek',"
+      },
+      {
+        "category": "ui",
+        "string": "CORIA, sürdürülebilir dönüşümün kalbinde yer alan bireylerin ve kurumların güvenilir yardımcısıdır.",
+        "line": 143,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "subtitle: 'CORIA, sürdürülebilir dönüşümün kalbinde yer alan bireylerin ve kurumların güvenilir yardımcısıdır.',"
+      },
+      {
+        "category": "ui",
+        "string": "Alışveriş rutinimi kurtardı",
+        "line": 145,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "{ title: '\"Alışveriş rutinimi kurtardı\"', description: '\"Alerjen riskleri ve etik uyarılar sayesinde ailem için güvenli alışveriş yapmak artık saniyeler sürüyor.\" — Elif, ebeveyn', icon: '💬' },"
+      },
+      {
+        "category": "ui",
+        "string": "Veriye dayalı ESG raporları",
+        "line": 146,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "{ title: '\"Veriye dayalı ESG raporları\"', description: '\"Marka analizlerinde CORIA’nın verilerini referans alıyoruz; şeffaflık ve hız kombinasyonu eşsiz.\" — ImpactLab', icon: '📈' },"
+      },
+      {
+        "category": "ui",
+        "string": "Foundation ile gerçek etki",
+        "line": 147,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "{ title: '\"Foundation ile gerçek etki\"', description: '\"Token tabanlı modelleri sayesinde bağışlarımızın nereye harcandığını anlık takip ediyoruz.\" — Yeşil Enerji Kooperatifi', icon: '🌱' }"
+      },
+      {
+        "category": "ui",
+        "string": "Vegan & Vegan Adayları",
+        "line": 152,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "title: 'Vegan & Vegan Adayları',"
+      },
+      {
+        "category": "ui",
+        "string": "Ürünleri saniyeler içinde tarayarak veganlığını, içerik risklerini ve daha iyi alternatifleri gör.",
+        "line": 153,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "description: 'Ürünleri saniyeler içinde tarayarak veganlığını, içerik risklerini ve daha iyi alternatifleri gör.',"
+      },
+      {
+        "category": "ui",
+        "string": "Özel vegan/vejetaryen filtreleri",
+        "line": 155,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "'Özel vegan/vejetaryen filtreleri',"
+      },
+      {
+        "category": "ui",
+        "string": "Topluluk yorumları ve deneyimleri",
+        "line": 156,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "'Topluluk yorumları ve deneyimleri',"
+      },
+      {
+        "category": "ui",
+        "string": "Tarif önerileri ve market alışveriş listeleri",
+        "line": 157,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "'Tarif önerileri ve market alışveriş listeleri'"
+      },
+      {
+        "category": "ui",
+        "string": "Alerjen, şeker, tuz ve katkı risklerini çocuklarının ihtiyaçlarına göre yönet.",
+        "line": 163,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "description: 'Alerjen, şeker, tuz ve katkı risklerini çocuklarının ihtiyaçlarına göre yönet.',"
+      },
+      {
+        "category": "ui",
+        "string": "Risk seviyeleriyle alerjen uyarıları",
+        "line": 165,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "'Risk seviyeleriyle alerjen uyarıları',"
+      },
+      {
+        "category": "ui",
+        "string": "Detaylı içerik açıklamaları",
+        "line": 166,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "'Detaylı içerik açıklamaları',"
+      },
+      {
+        "category": "ui",
+        "string": "Güvenli alternatif önerileri",
+        "line": 167,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "'Güvenli alternatif önerileri'"
+      },
+      {
+        "category": "ui",
+        "string": "Sağlık Odaklı Kullanıcılar",
+        "line": 172,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "title: 'Sağlık Odaklı Kullanıcılar',"
+      },
+      {
+        "category": "ui",
+        "string": "Besin değerlerini, sağlık skorlarını ve kişisel hedeflerini tek ekranda takip et.",
+        "line": 173,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "description: 'Besin değerlerini, sağlık skorlarını ve kişisel hedeflerini tek ekranda takip et.',"
+      },
+      {
+        "category": "ui",
+        "string": "Şeker/tuz/protein sapma uyarıları",
+        "line": 176,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "'Şeker/tuz/protein sapma uyarıları',"
+      },
+      {
+        "category": "ui",
+        "string": "Uzmanlardan onaylı içerik kütüphanesi",
+        "line": 177,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "'Uzmanlardan onaylı içerik kütüphanesi'"
+      },
+      {
+        "category": "ui",
+        "string": "Sürdürülebilirlik Savunucuları",
+        "line": 182,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "title: 'Sürdürülebilirlik Savunucuları',"
+      },
+      {
+        "category": "ui",
+        "string": "Karbon, su ve etik etkileri karşılaştır; Foundation projeleriyle gerçek değişimi destekle.",
+        "line": 183,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "description: 'Karbon, su ve etik etkileri karşılaştır; Foundation projeleriyle gerçek değişimi destekle.',"
+      },
+      {
+        "category": "ui",
+        "string": "Karbon & su ayak izi sayaçları",
+        "line": 185,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "'Karbon & su ayak izi sayaçları',"
+      },
+      {
+        "category": "ui",
+        "string": "CORIA Foundation proje bağışları",
+        "line": 187,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "'CORIA Foundation proje bağışları'"
+      },
+      {
+        "category": "ui",
+        "string": "Barkod tarayın, ürünün veganlık durumu, alerjen riskleri ve içerik açıklamaları anında listelensin.",
+        "line": 195,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "description: 'Barkod tarayın, ürünün veganlık durumu, alerjen riskleri ve içerik açıklamaları anında listelensin.',"
+      },
+      {
+        "category": "ui",
+        "string": "AI Yaşam Asistanı",
+        "line": 199,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "title: 'AI Yaşam Asistanı',"
+      },
+      {
+        "category": "ui",
+        "string": "Sorularınızı sorun, tarif, alternatif ürün ve alışveriş listesi önerilerini kişiselleştirilmiş olarak alın.",
+        "line": 200,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "description: 'Sorularınızı sorun, tarif, alternatif ürün ve alışveriş listesi önerilerini kişiselleştirilmiş olarak alın.',"
+      },
+      {
+        "category": "ui",
+        "string": "Akıllı Kiler",
+        "line": 204,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "title: 'Akıllı Kiler',"
+      },
+      {
+        "category": "ui",
+        "string": "SKT takibi, otomatik hatırlatmalar ve israfı azaltan kullanım önerileriyle kilerinizi yönetin.",
+        "line": 205,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "description: 'SKT takibi, otomatik hatırlatmalar ve israfı azaltan kullanım önerileriyle kilerinizi yönetin.',"
+      },
+      {
+        "category": "ui",
+        "string": "Markaların çevresel, sosyal ve yönetişim performanslarını, boykot listelerini ve tedarik şeffaflığını inceleyin.",
+        "line": 210,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "description: 'Markaların çevresel, sosyal ve yönetişim performanslarını, boykot listelerini ve tedarik şeffaflığını inceleyin.',"
+      },
+      {
+        "category": "ui",
+        "string": "Her ürün seçimindeki karbon, su ve döngüsellik etkisini görün; alternatif senaryoları karşılaştırın.",
+        "line": 215,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "description: 'Her ürün seçimindeki karbon, su ve döngüsellik etkisini görün; alternatif senaryoları karşılaştırın.',"
+      },
+      {
+        "category": "ui",
+        "string": "Topluluk ve İçerikler",
+        "line": 219,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "title: 'Topluluk ve İçerikler',"
+      },
+      {
+        "category": "ui",
+        "string": "Öne çıkan tarifler, kullanıcı deneyimleri, uzman yazıları ve sürdürülebilir yaşam rehberleri.",
+        "line": 220,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "description: 'Öne çıkan tarifler, kullanıcı deneyimleri, uzman yazıları ve sürdürülebilir yaşam rehberleri.',"
+      },
+      {
+        "category": "ui",
+        "string": "Tara → Analiz Et → Daha İyi Seç akışını interaktif demo ile keşfet.",
+        "line": 226,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "subtitle: 'Tara → Analiz Et → Daha İyi Seç akışını interaktif demo ile keşfet.',"
+      },
+      {
+        "category": "ui",
+        "string": "CORIA uygulama ekran akışı",
+        "line": 227,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "posterAlt: 'CORIA uygulama ekran akışı',"
+      },
+      {
+        "category": "ui",
+        "string": "Barkodu okuttuğun anda ürünün tüm bilgileri açılır.",
+        "line": 229,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "{ title: '1. Tara', description: 'Barkodu okuttuğun anda ürünün tüm bilgileri açılır.' },"
+      },
+      {
+        "category": "ui",
+        "string": "Veganlık, alerjen, sağlık ve ESG skorlarını tek bakışta değerlendir.",
+        "line": 230,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "{ title: '2. Analiz Et', description: 'Veganlık, alerjen, sağlık ve ESG skorlarını tek bakışta değerlendir.' },"
+      },
+      {
+        "category": "ui",
+        "string": "3. Daha İyi Seç",
+        "line": 231,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "{ title: '3. Daha İyi Seç', description: 'Alternatif ürünleri, tarif önerilerini ve israf önleyici ipuçlarını keşfet.' }"
+      },
+      {
+        "category": "ui",
+        "string": "Demo sesli anlatım ve altyazı desteklidir.",
+        "line": 233,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "note: 'Demo sesli anlatım ve altyazı desteklidir.',"
+      },
+      {
+        "category": "ui",
+        "string": "Topluluğumuzun biriktirdiği etki",
+        "line": 237,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "title: 'Topluluğumuzun biriktirdiği etki',"
+      },
+      {
+        "category": "ui",
+        "string": "Gerçek zamanlı sayaçlar, CORIA kullanıcılarının günlük kararlarla oluşturduğu kolektif katkıyı gösterir.",
+        "line": 238,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "subtitle: 'Gerçek zamanlı sayaçlar, CORIA kullanıcılarının günlük kararlarla oluşturduğu kolektif katkıyı gösterir.',"
+      },
+      {
+        "category": "ui",
+        "string": "Bugünün CO₂ tasarrufu",
+        "line": 240,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "{ value: '34 kg', label: 'Bugünün CO₂ tasarrufu', description: 'Daha yeşil marka tercihleri ile.' },"
+      },
+      {
+        "category": "ui",
+        "string": "Su yoğun ürünlerden akıllı alternatiflere geçiş sayesinde.",
+        "line": 241,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "{ value: '120 L', label: 'Bu haftaki su tasarrufu', description: 'Su yoğun ürünlerden akıllı alternatiflere geçiş sayesinde.' },"
+      },
+      {
+        "category": "ui",
+        "string": "Bu ay önlenen gıda israfı",
+        "line": 242,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "{ value: '45 kg', label: 'Bu ay önlenen gıda israfı', description: 'Akıllı kiler hatırlatmaları ve planlı alışverişle.' }"
+      },
+      {
+        "category": "ui",
+        "string": "Kişisel etki paneli",
+        "line": 246,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "title: 'Kişisel etki paneli',"
+      },
+      {
+        "category": "ui",
+        "string": "Tüm seçimleriniz ton bazında CO₂, su ve etik puan olarak toplanır; hedefler belirleyip gelişiminizi takip edin.",
+        "line": 247,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "description: 'Tüm seçimleriniz ton bazında CO₂, su ve etik puan olarak toplanır; hedefler belirleyip gelişiminizi takip edin.'"
+      },
+      {
+        "category": "ui",
+        "string": "Şehir bazlı liderlik tabloları, sezonluk tüketim rehberleri ve kampanyalarla harekete geçin.",
+        "line": 251,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "description: 'Şehir bazlı liderlik tabloları, sezonluk tüketim rehberleri ve kampanyalarla harekete geçin.'"
+      },
+      {
+        "category": "ui",
+        "string": "Birlikte daha büyük etki yaratıyoruz",
+        "line": 257,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "title: 'Birlikte daha büyük etki yaratıyoruz',"
+      },
+      {
+        "category": "ui",
+        "string": "Uygulama gelirlerinin %5’i ve CORIA Token fee gelirleri yeşil enerji, veganlık ve sürdürülebilirlik projelerine aktarılıyor.",
+        "line": 258,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "subtitle: 'Uygulama gelirlerinin %5’i ve CORIA Token fee gelirleri yeşil enerji, veganlık ve sürdürülebilirlik projelerine aktarılıyor.',"
+      },
+      {
+        "category": "ui",
+        "string": "Believe platformu üzerinden çıkarılacak Solana tabanlı CORIA Token ile şeffaf, zincir üstü bağış ve etki raporlama modeli kuruyoruz.",
+        "line": 260,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "'Believe platformu üzerinden çıkarılacak Solana tabanlı CORIA Token ile şeffaf, zincir üstü bağış ve etki raporlama modeli kuruyoruz.',"
+      },
+      {
+        "category": "ui",
+        "string": "Şeffaf fon dağıtımı",
+        "line": 262,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "{ title: 'Şeffaf fon dağıtımı', description: 'Toplanan her token ve TL, zincir üstü dashboard’da takip edilebiliyor.' },"
+      },
+      {
+        "category": "ui",
+        "string": "Vegan restoran dönüşümü, gıda bankacılığı, orman restorasyonu gibi alanlara destek.",
+        "line": 263,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "{ title: 'Yerel projelere odak', description: 'Vegan restoran dönüşümü, gıda bankacılığı, orman restorasyonu gibi alanlara destek.' },"
+      },
+      {
+        "category": "ui",
+        "string": "Topluluk oylaması",
+        "line": 264,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "{ title: 'Topluluk oylaması', description: 'Yeni projeler CORIA topluluğunun oylarıyla seçiliyor ve ilerleme aylık raporlarla paylaşılıyor.' }"
+      },
+      {
+        "category": "ui",
+        "string": "Anadolu Vegan Mutfağı",
+        "line": 267,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "{ title: 'Anadolu Vegan Mutfağı', impact: 'İlk 6 ayda 2.4 ton gıda israfı önlendi.' },"
+      },
+      {
+        "category": "ui",
+        "string": "Yeşil Enerji Kooperatifi",
+        "line": 268,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "{ title: 'Yeşil Enerji Kooperatifi', impact: 'Topluluk fonuyla 120 kW güneş enerjisi kuruldu.' },"
+      },
+      {
+        "category": "ui",
+        "string": "Sıfır Atık Marketleri",
+        "line": 269,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "{ title: 'Sıfır Atık Marketleri', impact: '5 şehirde yeniden kullanılabilir ambalaj altyapısı kuruldu.' }"
+      },
+      {
+        "category": "ui",
+        "string": "Foundation detaylarını incele",
+        "line": 271,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "cta: { label: 'Foundation detaylarını incele', href: '/foundation' }"
+      },
+      {
+        "category": "ui",
+        "string": "Bilinçli tüketim rehberleri",
+        "line": 274,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "title: 'Bilinçli tüketim rehberleri',"
+      },
+      {
+        "category": "ui",
+        "string": "Uzman yazıları, tarifler ve sürdürülebilir yaşam pratikleriyle her hafta güncellenen içerikler.",
+        "line": 275,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "subtitle: 'Uzman yazıları, tarifler ve sürdürülebilir yaşam pratikleriyle her hafta güncellenen içerikler.',"
+      },
+      {
+        "category": "ui",
+        "string": "Alerjen etiketlerini 60 saniyede çöz",
+        "line": 278,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "title: 'Alerjen etiketlerini 60 saniyede çöz',"
+      },
+      {
+        "category": "ui",
+        "string": "Gluten, laktoz, fındık ve daha fazlası için CORIA’nın risk skorlarını nasıl yorumlayacağını öğren.",
+        "line": 279,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "excerpt: 'Gluten, laktoz, fındık ve daha fazlası için CORIA’nın risk skorlarını nasıl yorumlayacağını öğren.',"
+      },
+      {
+        "category": "ui",
+        "string": "Karbon ayak izinizi market alışverişinde azaltın",
+        "line": 284,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "title: 'Karbon ayak izinizi market alışverişinde azaltın',"
+      },
+      {
+        "category": "ui",
+        "string": "Sezonluk ürün seçimi ve yerel üretici önerileriyle çevresel etkinizi minimuma indirin.",
+        "line": 285,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "excerpt: 'Sezonluk ürün seçimi ve yerel üretici önerileriyle çevresel etkinizi minimuma indirin.',"
+      },
+      {
+        "category": "ui",
+        "string": "Foundation projelerinde yeni dönem",
+        "line": 290,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "title: 'Foundation projelerinde yeni dönem',"
+      },
+      {
+        "category": "ui",
+        "string": "Solana token modeliyle şeffaf fonlama nasıl çalışıyor? İlk raporlar yayınlandı.",
+        "line": 291,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "excerpt: 'Solana token modeliyle şeffaf fonlama nasıl çalışıyor? İlk raporlar yayınlandı.',"
+      },
+      {
+        "category": "ui",
+        "string": "Tüm içerikleri görüntüle",
+        "line": 296,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "cta: { label: 'Tüm içerikleri görüntüle', href: '/blog' }"
+      },
+      {
+        "category": "ui",
+        "string": "Sık sorulan sorular",
+        "line": 299,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "title: 'Sık sorulan sorular',"
+      },
+      {
+        "category": "ui",
+        "string": "CORIA’yı kullanmaya başlamadan önce en çok merak edilenleri derledik.",
+        "line": 300,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "subtitle: 'CORIA’yı kullanmaya başlamadan önce en çok merak edilenleri derledik.',"
+      },
+      {
+        "category": "ui",
+        "string": "Sınırsız ürün tarama, detaylı etki raporları, gelişmiş filtreler, israf azaltma önerileri ve Foundation projelerine katkı sertifikası.",
+        "line": 305,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "'Sınırsız ürün tarama, detaylı etki raporları, gelişmiş filtreler, israf azaltma önerileri ve Foundation projelerine katkı sertifikası.'"
+      },
+      {
+        "category": "ui",
+        "string": "Veri gizliliği nasıl sağlanıyor?",
+        "line": 308,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "question: 'Veri gizliliği nasıl sağlanıyor?',"
+      },
+      {
+        "category": "ui",
+        "string": "Kişisel veriler sadece profil deneyimini iyileştirmek için kullanılır, üçüncü taraflarla paylaşılmaz ve dilediğiniz an hesap verilerini silebilirsiniz.",
+        "line": 310,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "'Kişisel veriler sadece profil deneyimini iyileştirmek için kullanılır, üçüncü taraflarla paylaşılmaz ve dilediğiniz an hesap verilerini silebilirsiniz.'"
+      },
+      {
+        "category": "ui",
+        "string": "Foundation projelerine nasıl başvurabilirim?",
+        "line": 313,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "question: 'Foundation projelerine nasıl başvurabilirim?',"
+      },
+      {
+        "category": "ui",
+        "string": "Foundation sayfasındaki başvuru formundan projenizi gönderebilir, değerlendirme süreci ve kriterleri detaylı inceleyebilirsiniz.",
+        "line": 315,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "'Foundation sayfasındaki başvuru formundan projenizi gönderebilir, değerlendirme süreci ve kriterleri detaylı inceleyebilirsiniz.'"
+      },
+      {
+        "category": "ui",
+        "string": "CORIA ile bilinçli tüketimin gücünü keşfet",
+        "line": 320,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "title: 'CORIA ile bilinçli tüketimin gücünü keşfet',"
+      },
+      {
+        "category": "ui",
+        "string": "Topluluğumuza katılın, etki panelinizi açın ve sürdürülebilir geleceğe birlikte yön verin.",
+        "line": 321,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "subtitle: 'Topluluğumuza katılın, etki panelinizi açın ve sürdürülebilir geleceğe birlikte yön verin.',"
+      },
+      {
+        "category": "ui",
+        "string": "Foundation’a katıl",
+        "line": 322,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "primary: { label: 'Foundation’a katıl', href: '/foundation' },"
+      },
+      {
+        "category": "ui",
+        "string": "Özellikleri keşfet",
+        "line": 323,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+        "context": "secondary: { label: 'Özellikleri keşfet', href: '/features' }"
+      }
+    ],
+    "lib/contentful.ts": [
+      {
+        "category": "ui",
+        "string": "[Contentful] Gerekli kimlik bilgileri eksik; istemci başlatılamadı.",
+        "line": 14,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/contentful.ts",
+        "context": "logger.warn('[Contentful] Gerekli kimlik bilgileri eksik; istemci başlatılamadı.');"
+      },
+      {
+        "category": "ui",
+        "string": "[Contentful] İstemci oluşturulurken hata oluştu:",
+        "line": 27,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/contentful.ts",
+        "context": "logger.error('[Contentful] İstemci oluşturulurken hata oluştu:', error);"
+      },
+      {
+        "category": "ui",
+        "string": "içerikleri için istemci bulunamadı. Boş sonuç dönüyor.",
+        "line": 193,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/contentful.ts",
+        "context": "logger.warn(`[Contentful] '${contentType}' içerikleri için istemci bulunamadı. Boş sonuç dönüyor.`);"
+      },
+      {
+        "category": "ui",
+        "string": "içeriği (${slug}) için istemci bulunamadı.",
+        "line": 221,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/contentful.ts",
+        "context": "logger.warn(`[Contentful] '${contentType}' içeriği (${slug}) için istemci bulunamadı.`);"
+      },
+      {
+        "category": "ui",
+        "string": "si ${entryId} olan kayıt için istemci bulunamadı.",
+        "line": 249,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/contentful.ts",
+        "context": "logger.warn(`[Contentful] ID'si ${entryId} olan kayıt için istemci bulunamadı.`);"
+      },
+      {
+        "category": "ui",
+        "string": "si ${assetId} olan varlık için istemci bulunamadı.",
+        "line": 272,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/contentful.ts",
+        "context": "logger.warn(`[Contentful] ID'si ${assetId} olan varlık için istemci bulunamadı.`);"
+      }
+    ],
+    "lib/errors.ts": [
+      {
+        "category": "ui",
+        "string": "${this.field} alanı geçersiz: ${this.message}",
+        "line": 94,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/errors.ts",
+        "context": "? `${this.field} alanı geçersiz: ${this.message}`"
+      },
+      {
+        "category": "ui",
+        "string": "Girilen bilgiler geçersiz: ${this.message}",
+        "line": 95,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/errors.ts",
+        "context": ": `Girilen bilgiler geçersiz: ${this.message}`,"
+      },
+      {
+        "category": "ui",
+        "string": "Ungültiges ${this.field}: ${this.message}",
+        "line": 100,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/errors.ts",
+        "context": "? `Ungültiges ${this.field}: ${this.message}`"
+      },
+      {
+        "category": "ui",
+        "string": "Ungültige Eingabe: ${this.message}",
+        "line": 101,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/errors.ts",
+        "context": ": `Ungültige Eingabe: ${this.message}`,"
+      },
+      {
+        "category": "ui",
+        "string": "Sunucu hatası oluştu. Lütfen daha sonra tekrar deneyin.",
+        "line": 142,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/errors.ts",
+        "context": "? 'Sunucu hatası oluştu. Lütfen daha sonra tekrar deneyin.'"
+      },
+      {
+        "category": "ui",
+        "string": "İstek işlenirken bir hata oluştu.",
+        "line": 143,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/errors.ts",
+        "context": ": 'İstek işlenirken bir hata oluştu.',"
+      },
+      {
+        "category": "ui",
+        "string": "İnternet bağlantınızı kontrol edin ve tekrar deneyin.",
+        "line": 185,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/errors.ts",
+        "context": "? 'İnternet bağlantınızı kontrol edin ve tekrar deneyin.'"
+      },
+      {
+        "category": "ui",
+        "string": "Ağ bağlantısı hatası. Lütfen tekrar deneyin.",
+        "line": 186,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/errors.ts",
+        "context": ": 'Ağ bağlantısı hatası. Lütfen tekrar deneyin.',"
+      },
+      {
+        "category": "ui",
+        "string": "Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.",
+        "line": 191,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/errors.ts",
+        "context": "? 'Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.'"
+      },
+      {
+        "category": "ui",
+        "string": "Oturum açmanız gerekiyor.",
+        "line": 229,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/errors.ts",
+        "context": "? 'Oturum açmanız gerekiyor.'"
+      },
+      {
+        "category": "ui",
+        "string": "Bu işlem için yetkiniz bulunmuyor.",
+        "line": 230,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/errors.ts",
+        "context": ": 'Bu işlem için yetkiniz bulunmuyor.',"
+      },
+      {
+        "category": "ui",
+        "string": "Sie müssen sich anmelden.",
+        "line": 235,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/errors.ts",
+        "context": "? 'Sie müssen sich anmelden.'"
+      },
+      {
+        "category": "ui",
+        "string": "Sie haben keine Berechtigung für diese Aktion.",
+        "line": 236,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/errors.ts",
+        "context": ": 'Sie haben keine Berechtigung für diese Aktion.',"
+      },
+      {
+        "category": "ui",
+        "string": "${this.resourceType} bulunamadı.",
+        "line": 272,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/errors.ts",
+        "context": "? `${this.resourceType} bulunamadı.`"
+      },
+      {
+        "category": "ui",
+        "string": "Aradığınız sayfa bulunamadı.",
+        "line": 273,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/errors.ts",
+        "context": ": 'Aradığınız sayfa bulunamadı.',"
+      },
+      {
+        "category": "ui",
+        "string": "Çok fazla istek gönderdiniz. Lütfen biraz bekleyin.",
+        "line": 314,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/errors.ts",
+        "context": "tr: 'Çok fazla istek gönderdiniz. Lütfen biraz bekleyin.',"
+      },
+      {
+        "category": "ui",
+        "string": "Sistem yapılandırma hatası. Lütfen yöneticiye başvurun.",
+        "line": 353,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/errors.ts",
+        "context": "tr: 'Sistem yapılandırma hatası. Lütfen yöneticiye başvurun.',"
+      },
+      {
+        "category": "ui",
+        "string": "Beklenmeyen bir hata oluştu.",
+        "line": 495,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/errors.ts",
+        "context": "tr: 'Beklenmeyen bir hata oluştu.',"
+      }
+    ],
+    "lib/formatting.ts": [
+      {
+        "category": "ui",
+        "string": "okuma süresi",
+        "line": 208,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/formatting.ts",
+        "context": "tr: { singular: 'dakika', plural: 'dakika', suffix: 'okuma süresi' },"
+      }
+    ],
+    "lib/pwa.ts": [
+      {
+        "category": "ui",
+        "string": "[PWA] Service worker development modunda devre dışı bırakıldı",
+        "line": 28,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/pwa.ts",
+        "context": "logger.info('[PWA] Service worker development modunda devre dışı bırakıldı');"
+      },
+      {
+        "category": "ui",
+        "string": "[PWA] Var olan servis worker kayıtları temizlendi",
+        "line": 34,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/pwa.ts",
+        "context": "logger.info('[PWA] Var olan servis worker kayıtları temizlendi');"
+      },
+      {
+        "category": "ui",
+        "string": "[PWA] Servis worker temizleme başarısız:",
+        "line": 36,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/pwa.ts",
+        "context": "logger.warn('[PWA] Servis worker temizleme başarısız:', error);"
+      }
+    ],
+    "test/e2e/navigation.spec.ts": [
+      {
+        "category": "ui",
+        "string": "text=Türkçe",
+        "line": 41,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/e2e/navigation.spec.ts",
+        "context": "await page.click('text=Türkçe')"
+      }
+    ],
+    "test/integration/api-validation.test.ts": [
+      {
+        "category": "ui",
+        "string": "Test Başlık",
+        "line": 27,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/integration/api-validation.test.ts",
+        "context": "tr: 'Test Başlık',"
+      },
+      {
+        "category": "ui",
+        "string": "Test özet",
+        "line": 33,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/integration/api-validation.test.ts",
+        "context": "tr: 'Test özet',"
+      },
+      {
+        "category": "ui",
+        "string": "Test içerik",
+        "line": 39,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/integration/api-validation.test.ts",
+        "context": "tr: 'Test içerik',"
+      },
+      {
+        "category": "ui",
+        "string": "Yazar avatarı",
+        "line": 59,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/integration/api-validation.test.ts",
+        "context": "tr: 'Yazar avatarı',"
+      },
+      {
+        "category": "ui",
+        "string": "Sürdürülebilirlik",
+        "line": 71,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/integration/api-validation.test.ts",
+        "context": "tr: 'Sürdürülebilirlik',"
+      },
+      {
+        "category": "ui",
+        "string": "Sürdürülebilirlik kategorisi",
+        "line": 83,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/integration/api-validation.test.ts",
+        "context": "tr: 'Sürdürülebilirlik kategorisi',"
+      },
+      {
+        "category": "ui",
+        "string": "Öne çıkan görsel",
+        "line": 99,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/integration/api-validation.test.ts",
+        "context": "tr: 'Öne çıkan görsel',"
+      },
+      {
+        "category": "ui",
+        "string": "SEO Başlık",
+        "line": 117,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/integration/api-validation.test.ts",
+        "context": "tr: 'SEO Başlık',"
+      },
+      {
+        "category": "ui",
+        "string": "SEO açıklama",
+        "line": 123,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/integration/api-validation.test.ts",
+        "context": "tr: 'SEO açıklama',"
+      },
+      {
+        "category": "ui",
+        "string": "schlüssel",
+        "line": 131,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/integration/api-validation.test.ts",
+        "context": "de: ['schlüssel', 'wort'],"
+      },
+      {
+        "category": "ui",
+        "string": "Barkod tarama içeriği",
+        "line": 240,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/integration/api-validation.test.ts",
+        "context": "tr: 'Barkod tarama içeriği',"
+      },
+      {
+        "category": "ui",
+        "string": "SEO açıklama",
+        "line": 256,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/integration/api-validation.test.ts",
+        "context": "tr: 'SEO açıklama',"
+      },
+      {
+        "category": "ui",
+        "string": "Ürün barkodlarını tarayın",
+        "line": 275,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/integration/api-validation.test.ts",
+        "context": "tr: 'Ürün barkodlarını tarayın',"
+      },
+      {
+        "category": "ui",
+        "string": "Ekran görüntüsü 1",
+        "line": 286,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/integration/api-validation.test.ts",
+        "context": "tr: 'Ekran görüntüsü 1',"
+      },
+      {
+        "category": "ui",
+        "string": "Hızlı tarama",
+        "line": 298,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/integration/api-validation.test.ts",
+        "context": "tr: ['Hızlı tarama', 'Doğru sonuçlar'],"
+      },
+      {
+        "category": "ui",
+        "string": "Tarama özellikleri",
+        "line": 318,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/integration/api-validation.test.ts",
+        "context": "tr: 'Tarama özellikleri',"
+      },
+      {
+        "category": "ui",
+        "string": "Türkçe başlık",
+        "line": 560,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/integration/api-validation.test.ts",
+        "context": "tr: 'Türkçe başlık',"
+      },
+      {
+        "category": "ui",
+        "string": "özet",
+        "line": 570,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/integration/api-validation.test.ts",
+        "context": "excerpt: { tr: 'özet', en: 'excerpt', de: 'auszug', fr: 'extrait' },"
+      },
+      {
+        "category": "ui",
+        "string": "içerik",
+        "line": 571,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/integration/api-validation.test.ts",
+        "context": "content: { tr: 'içerik', en: 'content', de: 'inhalt', fr: 'contenu' },"
+      },
+      {
+        "category": "ui",
+        "string": "açıklama",
+        "line": 590,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/integration/api-validation.test.ts",
+        "context": "description: { tr: 'açıklama', en: 'description', de: 'beschreibung', fr: 'description' }"
+      }
+    ],
+    "test/lib/type-guards.test.ts": [
+      {
+        "category": "ui",
+        "string": "Türkçe içerik",
+        "line": 227,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/lib/type-guards.test.ts",
+        "context": "tr: 'Türkçe içerik',"
+      },
+      {
+        "category": "ui",
+        "string": "Contenu français",
+        "line": 230,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/lib/type-guards.test.ts",
+        "context": "fr: 'Contenu français'"
+      },
+      {
+        "category": "ui",
+        "string": "Türkçe",
+        "line": 322,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/lib/type-guards.test.ts",
+        "context": "tr: 'Türkçe',"
+      },
+      {
+        "category": "ui",
+        "string": "Français",
+        "line": 325,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/lib/type-guards.test.ts",
+        "context": "fr: 'Français'"
+      }
+    ],
+    "test/types/generic-constraints.test-d.ts": [
+      {
+        "category": "ui",
+        "string": "Türkçe",
+        "line": 190,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/types/generic-constraints.test-d.ts",
+        "context": "tr: 'Türkçe',"
+      },
+      {
+        "category": "ui",
+        "string": "Français",
+        "line": 193,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/types/generic-constraints.test-d.ts",
+        "context": "fr: 'Français'"
+      },
+      {
+        "category": "ui",
+        "string": "Türkçe",
+        "line": 199,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/types/generic-constraints.test-d.ts",
+        "context": "tr: 'Türkçe',"
+      },
+      {
+        "category": "ui",
+        "string": "Türkçe",
+        "line": 205,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/types/generic-constraints.test-d.ts",
+        "context": "tr: 'Türkçe',"
+      },
+      {
+        "category": "ui",
+        "string": "Türkçe",
+        "line": 214,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/types/generic-constraints.test-d.ts",
+        "context": "tr: 'Türkçe',"
+      },
+      {
+        "category": "ui",
+        "string": "Français",
+        "line": 217,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/types/generic-constraints.test-d.ts",
+        "context": "fr: 'Français',"
+      },
+      {
+        "category": "ui",
+        "string": "Test Başlık",
+        "line": 231,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/types/generic-constraints.test-d.ts",
+        "context": "tr: 'Test Başlık',"
+      },
+      {
+        "category": "ui",
+        "string": "Test özet",
+        "line": 237,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/types/generic-constraints.test-d.ts",
+        "context": "tr: 'Test özet',"
+      },
+      {
+        "category": "ui",
+        "string": "Test içerik",
+        "line": 243,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/types/generic-constraints.test-d.ts",
+        "context": "tr: 'Test içerik',"
+      },
+      {
+        "category": "ui",
+        "string": "Özellik",
+        "line": 264,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/types/generic-constraints.test-d.ts",
+        "context": "tr: 'Özellik',"
+      },
+      {
+        "category": "ui",
+        "string": "Açıklama",
+        "line": 270,
+        "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/test/types/generic-constraints.test-d.ts",
+        "context": "tr: 'Açıklama',"
+      }
+    ]
+  }
+}

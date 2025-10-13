@@ -9,13 +9,15 @@ import {
   Heading,
   Text,
 } from '@/components/ui';
-import { ContactForm } from '@/components/contact/contact-form';
-import { ContactMethods } from '@/components/contact/contact-methods';
-import { ContactFAQ } from '@/components/contact/contact-faq';
-import { SupportTicketing } from '@/components/contact/support-ticketing';
 import { generateLocalizedMetadata } from '@/lib/metadata';
 import { LocalizedPageProps } from '@/types/global';
 import { Locale } from '@/types/localization';
+import {
+  ContactFormLazy,
+  ContactMethodsLazy,
+  ContactFAQLazy,
+  SupportTicketingLazy,
+} from '@/components/contact/contact-sections-lazy';
 
 interface ContactPageProps extends LocalizedPageProps {}
 
@@ -58,32 +60,26 @@ export default function ContactPage() {
         <ContactHeroSection />
 
         <section className="relative overflow-hidden py-24 sm:py-28">
-          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white via-foam to-white" aria-hidden />
           <Container size="xl" padding="lg" className="relative z-10">
-            <ContactMethods />
+            <ContactMethodsLazy />
           </Container>
         </section>
 
         <section className="relative overflow-hidden py-24 sm:py-28">
-          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white via-white to-foam" aria-hidden />
-          <div className="absolute -right-20 top-12 -z-10 h-64 w-64 rounded-full bg-coria-mint/20 blur-3xl" aria-hidden />
           <Container size="xl" padding="lg" className="relative z-10">
-            <ContactForm />
+            <ContactFormLazy />
           </Container>
         </section>
 
         <section className="relative overflow-hidden py-24 sm:py-28">
-          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white via-foam to-white" aria-hidden />
-          <div className="absolute left-16 top-10 -z-10 h-56 w-56 rounded-full bg-coria-sky/20 blur-3xl" aria-hidden />
           <Container size="xl" padding="lg" className="relative z-10">
-            <SupportTicketing />
+            <SupportTicketingLazy />
           </Container>
         </section>
 
         <section className="relative overflow-hidden pb-24 sm:pb-28">
-          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white via-white to-foam" aria-hidden />
           <Container size="xl" padding="lg" className="relative z-10">
-            <ContactFAQ />
+            <ContactFAQLazy />
           </Container>
         </section>
 
@@ -102,23 +98,21 @@ function ContactHeroSection() {
   const secondaryLabel = t('secondaryActionLabel');
 
   return (
-    <section className="relative overflow-hidden pt-32 pb-20 sm:pt-36 sm:pb-24">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-coria-primary via-leaf to-water" aria-hidden />
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.18),transparent_60%)]" aria-hidden />
+    <section className="relative overflow-hidden pt-32 pb-20 sm:pt-36 sm:pb-24 bg-gradient-to-br from-white via-foam/50 to-acik-gri/30">
 
-      <Container size="xl" padding="lg" className="relative z-10 text-white">
+      <Container size="xl" padding="lg" className="relative z-10">
         <div className="mx-auto max-w-4xl text-center space-y-6">
-          <Heading as="h1" size="4xl" weight="bold" className="text-balance">
+          <Heading as="h1" size="4xl" weight="bold" className="text-balance text-coria-primary">
             {t('title')}
           </Heading>
-          <Text size="xl" className="text-white/80">
+          <Text size="xl" className="text-gray-600">
             {t('subtitle')}
           </Text>
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button asChild variant="primary" size="lg" className="bg-white text-coria-primary hover:bg-white/90">
+            <Button asChild variant="primary" size="lg">
               <a href="mailto:support@coria.app">{primaryLabel}</a>
             </Button>
-            <Button asChild variant="ghost" size="lg" className="border border-white/60 text-white hover:bg-white/10">
+            <Button asChild variant="outline" size="lg">
               <a href="https://help.coria.app" target="_blank" rel="noopener noreferrer">
                 {secondaryLabel}
               </a>
@@ -134,23 +128,21 @@ function ContactCTASection() {
   const t = useTranslations('contact.cta');
 
   return (
-    <section className="relative overflow-hidden py-24 sm:py-28">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-coria-primary via-coria-secondary to-water" aria-hidden />
-      <div className="absolute inset-0 -z-10 bg-black/10" aria-hidden />
+    <section className="relative overflow-hidden py-24 sm:py-28 bg-white">
 
-      <Container size="xl" padding="lg" className="relative z-10 text-white">
+      <Container size="xl" padding="lg" className="relative z-10">
         <div className="mx-auto max-w-4xl text-center space-y-6">
-          <Heading as="h2" size="3xl" weight="bold" className="text-balance">
+          <Heading as="h2" size="3xl" weight="bold" className="text-balance text-coria-primary">
             {t('title')}
           </Heading>
-          <Text size="lg" className="text-white/80">
+          <Text size="lg" className="text-gray-600">
             {t('description')}
           </Text>
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button asChild variant="ghost" size="lg" className="flex items-center gap-3 rounded-full border border-white/60 bg-white/15 px-6 text-white hover:bg-white/25">
+            <Button asChild variant="primary" size="lg">
               <a href="mailto:partners@coria.app">{t('primaryLabel')}</a>
             </Button>
-            <Button asChild variant="ghost" size="lg" className="flex items-center gap-3 rounded-full border border-white/50 bg-transparent px-6 text-white hover:bg-white/20">
+            <Button asChild variant="outline" size="lg">
               <a href="https://cal.com/coria" target="_blank" rel="noopener noreferrer">
                 {t('secondaryLabel')}
               </a>

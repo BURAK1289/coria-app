@@ -1,0 +1,4209 @@
+{
+  "byFile": {
+    "app/[locale]/about/page.tsx": {
+      "totalStrings": 8,
+      "migrations": [
+        {
+          "line": 4,
+          "category": "ui",
+          "originalString": "Fikrin doğuşu ve ilk veri toplama prototipi",
+          "suggestedKey": "pages.about.timeline.fikrinDoğuşuVeIlkVeriToplamaPrototipi",
+          "context": "{ year: '2023', detail: 'Fikrin doğuşu ve ilk veri toplama prototipi' },...",
+          "replacement": "{t('pages.about.timeline.fikrinDoğuşuVeIlkVeriToplamaPrototipi')}"
+        },
+        {
+          "line": 5,
+          "category": "ui",
+          "originalString": "MVP geliştirme ve kapalı beta",
+          "suggestedKey": "pages.about.timeline.mvpGeliştirmeVeKapalıBeta",
+          "context": "{ year: '2024 Q1', detail: 'MVP geliştirme ve kapalı beta' },...",
+          "replacement": "{t('pages.about.timeline.mvpGeliştirmeVeKapalıBeta')}"
+        },
+        {
+          "line": 6,
+          "category": "ui",
+          "originalString": "Beta lansmanı ve ilk 50K kullanıcı",
+          "suggestedKey": "pages.about.timeline.betaLansmanıVeIlk50kKullanıcı",
+          "context": "{ year: '2024 Q2', detail: 'Beta lansmanı ve ilk 50K kullanıcı' },...",
+          "replacement": "{t('pages.about.timeline.betaLansmanıVeIlk50kKullanıcı')}"
+        },
+        {
+          "line": 8,
+          "category": "ui",
+          "originalString": "100K kullanıcı, ilk Foundation bağış raporu",
+          "suggestedKey": "pages.about.timeline.100kKullanıcıIlkFoundationBağışRaporu",
+          "context": "{ year: '2024 Q4', detail: '100K kullanıcı, ilk Foundation bağış raporu' },...",
+          "replacement": "{t('pages.about.timeline.100kKullanıcıIlkFoundationBağışRaporu')}"
+        },
+        {
+          "line": 9,
+          "category": "ui",
+          "originalString": "CORIA Token lansmanı ve Solana entegrasyonu",
+          "suggestedKey": "pages.about.timeline.coriaTokenLansmanıVeSolanaEntegrasyonu",
+          "context": "{ year: '2025', detail: 'CORIA Token lansmanı ve Solana entegrasyonu' }...",
+          "replacement": "{t('pages.about.timeline.coriaTokenLansmanıVeSolanaEntegrasyonu')}"
+        },
+        {
+          "line": 13,
+          "category": "ui",
+          "originalString": "Solana tabanlı token altyapısı ve etki raporlama.",
+          "suggestedKey": "pages.about.partnerships.solanaTabanlıTokenAltyapısıVeEtkiRaporlama",
+          "context": "{ name: 'Believe Platform', description: 'Solana tabanlı token altyapısı ve etki...",
+          "replacement": "{t('pages.about.partnerships.solanaTabanlıTokenAltyapısıVeEtkiRaporlama')}"
+        },
+        {
+          "line": 14,
+          "category": "ui",
+          "originalString": "Yeşil Enerji Kooperatifleri",
+          "suggestedKey": "pages.about.partnerships.yeşilEnerjiKooperatifleri",
+          "context": "{ name: 'Yeşil Enerji Kooperatifleri', description: 'Topluluk fonlu güneş enerji...",
+          "replacement": "{t('pages.about.partnerships.yeşilEnerjiKooperatifleri')}"
+        },
+        {
+          "line": 15,
+          "category": "ui",
+          "originalString": "Vegan restoran dönüşümü ve eğitim programları.",
+          "suggestedKey": "pages.about.partnerships.veganRestoranDönüşümüVeEğitimProgramları",
+          "context": "{ name: 'Vegan Dernekleri', description: 'Vegan restoran dönüşümü ve eğitim prog...",
+          "replacement": "{t('pages.about.partnerships.veganRestoranDönüşümüVeEğitimProgramları')}"
+        }
+      ]
+    },
+    "app/[locale]/contact/page.tsx": {
+      "totalStrings": 1,
+      "migrations": [
+        {
+          "line": 43,
+          "category": "ui",
+          "originalString": "iletişim",
+          "suggestedKey": "pages.contact.content.iletişim",
+          "context": "tr: ['CORIA', 'iletişim', 'destek', 'yardım', 'müşteri hizmetleri'],...",
+          "replacement": "{t('pages.contact.content.iletişim')}"
+        }
+      ]
+    },
+    "app/[locale]/foundation/page.tsx": {
+      "totalStrings": 31,
+      "migrations": [
+        {
+          "line": 72,
+          "category": "ui",
+          "originalString": "Birlikte Daha Büyük Etki Yaratıyoruz",
+          "suggestedKey": "pages.foundation.hero.subtitle.birlikteDahaBüyükEtkiYaratıyoruz",
+          "context": "subtitle: \"Birlikte Daha Büyük Etki Yaratıyoruz\",...",
+          "replacement": "{t('pages.foundation.hero.subtitle.birlikteDahaBüyükEtkiYaratıyoruz')}"
+        },
+        {
+          "line": 73,
+          "category": "ui",
+          "originalString": "CORIA, uygulama gelirlerinin bir kısmını sürdürülebilirlik projelerine yatırım yapmak için CORIA Foundation",
+          "suggestedKey": "pages.foundation.features.coriaUygulamaGelirlerininBirKısmınıSürdürüleb",
+          "context": "description: \"CORIA, uygulama gelirlerinin bir kısmını sürdürülebilirlik projele...",
+          "replacement": "{t('pages.foundation.features.coriaUygulamaGelirlerininBirKısmınıSürdürüleb')}"
+        },
+        {
+          "line": 77,
+          "category": "ui",
+          "originalString": "Believe Platform entegrasyonu ile Solana tabanlı token kullanım alanları",
+          "suggestedKey": "pages.foundation.features.believePlatformEntegrasyonuIleSolanaTabanlıT",
+          "context": "description: \"Believe Platform entegrasyonu ile Solana tabanlı token kullanım al...",
+          "replacement": "{t('pages.foundation.features.believePlatformEntegrasyonuIleSolanaTabanlıT')}"
+        },
+        {
+          "line": 82,
+          "category": "ui",
+          "originalString": "Believe Platform üzerinden çıkarılacak özel Solana token",
+          "suggestedKey": "pages.foundation.features.believePlatformÜzerindenÇıkarılacakÖzelSolana",
+          "context": "description: \"Believe Platform üzerinden çıkarılacak özel Solana token\"...",
+          "replacement": "{t('pages.foundation.features.believePlatformÜzerindenÇıkarılacakÖzelSolana')}"
+        },
+        {
+          "line": 86,
+          "category": "ui",
+          "originalString": "Fee Dağılım Modeli",
+          "suggestedKey": "pages.foundation.content.feeDağılımModeli",
+          "context": "title: \"Fee Dağılım Modeli\",...",
+          "replacement": "{t('pages.foundation.content.feeDağılımModeli')}"
+        },
+        {
+          "line": 87,
+          "category": "ui",
+          "originalString": "Token işlem ücretleri direkt olarak sürdürülebilirlik projelerine aktarılır",
+          "suggestedKey": "pages.foundation.features.tokenIşlemÜcretleriDirektOlarakSürdürülebilir",
+          "context": "description: \"Token işlem ücretleri direkt olarak sürdürülebilirlik projelerine ...",
+          "replacement": "{t('pages.foundation.features.tokenIşlemÜcretleriDirektOlarakSürdürülebilir')}"
+        },
+        {
+          "line": 91,
+          "category": "ui",
+          "originalString": "Şeffaf Fonlama",
+          "suggestedKey": "pages.foundation.content.şeffafFonlama",
+          "context": "title: \"Şeffaf Fonlama\",...",
+          "replacement": "{t('pages.foundation.content.şeffafFonlama')}"
+        },
+        {
+          "line": 92,
+          "category": "ui",
+          "originalString": "Blockchain tabanlı şeffaf fon dağıtımı ve etki takibi",
+          "suggestedKey": "pages.foundation.features.blockchainTabanlıŞeffafFonDağıtımıVeEtkiTak",
+          "context": "description: \"Blockchain tabanlı şeffaf fon dağıtımı ve etki takibi\"...",
+          "replacement": "{t('pages.foundation.features.blockchainTabanlıŞeffafFonDağıtımıVeEtkiTak')}"
+        },
+        {
+          "line": 100,
+          "category": "ui",
+          "originalString": "Ekolojik Tarım Projesi",
+          "suggestedKey": "pages.foundation.content.ekolojikTarımProjesi",
+          "context": "title: \"Ekolojik Tarım Projesi\",...",
+          "replacement": "{t('pages.foundation.content.ekolojikTarımProjesi')}"
+        },
+        {
+          "line": 101,
+          "category": "ui",
+          "originalString": "5000 hektar organik tarım alanı oluşturuldu",
+          "suggestedKey": "pages.foundation.content.5000HektarOrganikTarımAlanıOluşturuldu",
+          "context": "impact: \"5000 hektar organik tarım alanı oluşturuldu\",...",
+          "replacement": "{t('pages.foundation.content.5000HektarOrganikTarımAlanıOluşturuldu')}"
+        },
+        {
+          "line": 102,
+          "category": "ui",
+          "originalString": "Veganlık",
+          "suggestedKey": "pages.foundation.content.veganlık",
+          "context": "category: \"Veganlık\"...",
+          "replacement": "{t('pages.foundation.content.veganlık')}"
+        },
+        {
+          "line": 106,
+          "category": "ui",
+          "originalString": "Güneş Enerjisi Kooperatifi",
+          "suggestedKey": "pages.foundation.content.güneşEnerjisiKooperatifi",
+          "context": "title: \"Güneş Enerjisi Kooperatifi\",...",
+          "replacement": "{t('pages.foundation.content.güneşEnerjisiKooperatifi')}"
+        },
+        {
+          "line": 107,
+          "category": "ui",
+          "originalString": "250 aileye temiz enerji erişimi sağlandı",
+          "suggestedKey": "pages.foundation.content.250AileyeTemizEnerjiErişimiSağlandı",
+          "context": "impact: \"250 aileye temiz enerji erişimi sağlandı\",...",
+          "replacement": "{t('pages.foundation.content.250AileyeTemizEnerjiErişimiSağlandı')}"
+        },
+        {
+          "line": 108,
+          "category": "ui",
+          "originalString": "Yeşil Enerji",
+          "suggestedKey": "pages.foundation.content.yeşilEnerji",
+          "context": "category: \"Yeşil Enerji\"...",
+          "replacement": "{t('pages.foundation.content.yeşilEnerji')}"
+        },
+        {
+          "line": 112,
+          "category": "ui",
+          "originalString": "Sıfır Atık İnisiyatifi",
+          "suggestedKey": "pages.foundation.content.sıfırAtıkİnisiyatifi",
+          "context": "title: \"Sıfır Atık İnisiyatifi\",...",
+          "replacement": "{t('pages.foundation.content.sıfırAtıkİnisiyatifi')}"
+        },
+        {
+          "line": 113,
+          "category": "ui",
+          "originalString": "12 şehirde plastik kullanımı %60 azaltıldı",
+          "suggestedKey": "pages.foundation.content.12ŞehirdePlastikKullanımı60Azaltıldı",
+          "context": "impact: \"12 şehirde plastik kullanımı %60 azaltıldı\",...",
+          "replacement": "{t('pages.foundation.content.12ŞehirdePlastikKullanımı60Azaltıldı')}"
+        },
+        {
+          "line": 114,
+          "category": "ui",
+          "originalString": "Sürdürülebilirlik",
+          "suggestedKey": "pages.foundation.content.sürdürülebilirlik",
+          "context": "category: \"Sürdürülebilirlik\"...",
+          "replacement": "{t('pages.foundation.content.sürdürülebilirlik')}"
+        },
+        {
+          "line": 121,
+          "category": "ui",
+          "originalString": "Şeffaflık",
+          "suggestedKey": "pages.foundation.content.şeffaflık",
+          "context": "title: \"Şeffaflık\",...",
+          "replacement": "{t('pages.foundation.content.şeffaflık')}"
+        },
+        {
+          "line": 122,
+          "category": "ui",
+          "originalString": "Tüm fonlama kararları ve etki raporları halka açık blockchain üzerinde",
+          "suggestedKey": "pages.foundation.features.tümFonlamaKararlarıVeEtkiRaporlarıHalkaAçık",
+          "context": "description: \"Tüm fonlama kararları ve etki raporları halka açık blockchain üzer...",
+          "replacement": "{t('pages.foundation.features.tümFonlamaKararlarıVeEtkiRaporlarıHalkaAçık')}"
+        },
+        {
+          "line": 126,
+          "category": "ui",
+          "originalString": "Topluluk Yönetimi",
+          "suggestedKey": "pages.foundation.content.toplulukYönetimi",
+          "context": "title: \"Topluluk Yönetimi\",...",
+          "replacement": "{t('pages.foundation.content.toplulukYönetimi')}"
+        },
+        {
+          "line": 127,
+          "category": "ui",
+          "originalString": "CORIA token sahipleri proje seçiminde oy kullanma hakkına sahip",
+          "suggestedKey": "pages.foundation.features.coriaTokenSahipleriProjeSeçimindeOyKullanma",
+          "context": "description: \"CORIA token sahipleri proje seçiminde oy kullanma hakkına sahip\"...",
+          "replacement": "{t('pages.foundation.features.coriaTokenSahipleriProjeSeçimindeOyKullanma')}"
+        },
+        {
+          "line": 131,
+          "category": "ui",
+          "originalString": "Etki Odaklılık",
+          "suggestedKey": "pages.foundation.content.etkiOdaklılık",
+          "context": "title: \"Etki Odaklılık\",...",
+          "replacement": "{t('pages.foundation.content.etkiOdaklılık')}"
+        },
+        {
+          "line": 132,
+          "category": "ui",
+          "originalString": "Her projenin ölçülebilir çevresel ve sosyal etkisi raporlanır",
+          "suggestedKey": "pages.foundation.features.herProjeninÖlçülebilirÇevreselVeSosyalEtkisi",
+          "context": "description: \"Her projenin ölçülebilir çevresel ve sosyal etkisi raporlanır\"...",
+          "replacement": "{t('pages.foundation.features.herProjeninÖlçülebilirÇevreselVeSosyalEtkisi')}"
+        },
+        {
+          "line": 141,
+          "category": "ui",
+          "originalString": "Foundation konsepti tasarlandı",
+          "suggestedKey": "pages.foundation.roadmap.foundationKonseptiTasarlandı",
+          "context": "items: ['Foundation konsepti tasarlandı', 'Believe platformu ortaklığı kuruldu']...",
+          "replacement": "{t('pages.foundation.roadmap.foundationKonseptiTasarlandı')}"
+        },
+        {
+          "line": 146,
+          "category": "ui",
+          "originalString": "Solana tabanlı CORIA Token lansmanı",
+          "suggestedKey": "pages.foundation.roadmap.solanaTabanlıCoriaTokenLansmanı",
+          "context": "items: ['Solana tabanlı CORIA Token lansmanı', 'İlk topluluk oylaması ile 3 proj...",
+          "replacement": "{t('pages.foundation.roadmap.solanaTabanlıCoriaTokenLansmanı')}"
+        },
+        {
+          "line": 151,
+          "category": "ui",
+          "originalString": "Global genişleme",
+          "suggestedKey": "pages.foundation.roadmap.globalGenişleme",
+          "context": "items: ['Global genişleme', 'Yerel kooperatif iş birlikleri', 'On-chain etki rap...",
+          "replacement": "{t('pages.foundation.roadmap.globalGenişleme')}"
+        },
+        {
+          "line": 408,
+          "category": "placeholder",
+          "originalString": "Projenizi tanımlayan başlık",
+          "suggestedKey": "pages.foundation.content.projeniziTanımlayanBaşlık",
+          "context": "placeholder=\"Projenizi tanımlayan başlık\"...",
+          "replacement": "placeholder={t('pages.foundation.content.projeniziTanımlayanBaşlık')}"
+        },
+        {
+          "line": 417,
+          "category": "ui",
+          "originalString": "Veganlık",
+          "suggestedKey": "pages.foundation.content.veganlık",
+          "context": "<option>Veganlık</option>...",
+          "replacement": "{t('pages.foundation.content.veganlık')}"
+        },
+        {
+          "line": 418,
+          "category": "ui",
+          "originalString": "Sürdürülebilirlik",
+          "suggestedKey": "pages.foundation.content.sürdürülebilirlik",
+          "context": "<option>Sürdürülebilirlik</option>...",
+          "replacement": "{t('pages.foundation.content.sürdürülebilirlik')}"
+        },
+        {
+          "line": 419,
+          "category": "ui",
+          "originalString": "Yeşil Enerji",
+          "suggestedKey": "pages.foundation.content.yeşilEnerji",
+          "context": "<option>Yeşil Enerji</option>...",
+          "replacement": "{t('pages.foundation.content.yeşilEnerji')}"
+        },
+        {
+          "line": 441,
+          "category": "placeholder",
+          "originalString": "Projenizi 280 karakterde özetleyin",
+          "suggestedKey": "pages.foundation.content.projenizi280KarakterdeÖzetleyin",
+          "context": "placeholder=\"Projenizi 280 karakterde özetleyin\"...",
+          "replacement": "placeholder={t('pages.foundation.content.projenizi280KarakterdeÖzetleyin')}"
+        }
+      ]
+    },
+    "app/[locale]/layout.tsx": {
+      "totalStrings": 4,
+      "migrations": [
+        {
+          "line": 54,
+          "category": "ui",
+          "originalString": "CORIA - Sürdürülebilir Yaşam Uygulaması",
+          "suggestedKey": "common.meta.coriaSürdürülebilirYaşamUygulaması",
+          "context": "tr: 'CORIA - Sürdürülebilir Yaşam Uygulaması',...",
+          "replacement": "{t('common.meta.coriaSürdürülebilirYaşamUygulaması')}"
+        },
+        {
+          "line": 61,
+          "category": "ui",
+          "originalString": "Bilinçli tüketim kararları alın, çevresel etkilerinizi takip edin ve sürdürülebilir alternatifleri keşfedin.",
+          "suggestedKey": "common.meta.bilinçliTüketimKararlarıAlınÇevreselEtkilerin",
+          "context": "tr: 'Bilinçli tüketim kararları alın, çevresel etkilerinizi takip edin ve sürdür...",
+          "replacement": "{t('common.meta.bilinçliTüketimKararlarıAlınÇevreselEtkilerin')}"
+        },
+        {
+          "line": 68,
+          "category": "ui",
+          "originalString": "sürdürülebilirlik",
+          "suggestedKey": "common.meta.keywords.sürdürülebilirlik",
+          "context": "tr: ['sürdürülebilirlik', 'çevre', 'bilinçli tüketim', 'karbon ayak izi', 'yeşil...",
+          "replacement": "{t('common.meta.keywords.sürdürülebilirlik')}"
+        },
+        {
+          "line": 70,
+          "category": "ui",
+          "originalString": "grünes Leben",
+          "suggestedKey": "common.meta.keywords.grünesLeben",
+          "context": "de: ['Nachhaltigkeit', 'Umwelt', 'bewusster Konsum', 'CO2-Fußabdruck', 'grünes L...",
+          "replacement": "{t('common.meta.keywords.grünesLeben')}"
+        }
+      ]
+    },
+    "app/[locale]/pricing/page.tsx": {
+      "totalStrings": 1,
+      "migrations": [
+        {
+          "line": 39,
+          "category": "ui",
+          "originalString": "fiyatlandırma",
+          "suggestedKey": "pages.pricing.content.fiyatlandırma",
+          "context": "tr: ['fiyatlandırma', 'premium', 'abonelik'],...",
+          "replacement": "{t('pages.pricing.content.fiyatlandırma')}"
+        }
+      ]
+    },
+    "components/layout/footer.tsx": {
+      "totalStrings": 5,
+      "migrations": [
+        {
+          "line": 31,
+          "category": "ui",
+          "originalString": "Basın & Yatırımcı",
+          "suggestedKey": "navigation.footer.basınYatırımcı",
+          "context": "{ label: 'Basın & Yatırımcı', href: '/about#press' }...",
+          "replacement": "{t('navigation.footer.basınYatırımcı')}"
+        },
+        {
+          "line": 35,
+          "category": "ui",
+          "originalString": "Gizlilik Politikası",
+          "suggestedKey": "navigation.footer.gizlilikPolitikası",
+          "context": "{ label: 'Gizlilik Politikası', href: '/legal/privacy' },...",
+          "replacement": "{t('navigation.footer.gizlilikPolitikası')}"
+        },
+        {
+          "line": 36,
+          "category": "ui",
+          "originalString": "Kullanım Koşulları",
+          "suggestedKey": "navigation.footer.kullanımKoşulları",
+          "context": "{ label: 'Kullanım Koşulları', href: '/legal/terms' },...",
+          "replacement": "{t('navigation.footer.kullanımKoşulları')}"
+        },
+        {
+          "line": 37,
+          "category": "ui",
+          "originalString": "KVKK Aydınlatması",
+          "suggestedKey": "navigation.footer.kvkkAydınlatması",
+          "context": "{ label: 'KVKK Aydınlatması', href: '/legal/kvkk' },...",
+          "replacement": "{t('navigation.footer.kvkkAydınlatması')}"
+        },
+        {
+          "line": 38,
+          "category": "ui",
+          "originalString": "Çerez Politikası",
+          "suggestedKey": "navigation.footer.çerezPolitikası",
+          "context": "{ label: 'Çerez Politikası', href: '/legal/cookies' }...",
+          "replacement": "{t('navigation.footer.çerezPolitikası')}"
+        }
+      ]
+    },
+    "components/pricing/pricing-plans.tsx": {
+      "totalStrings": 1,
+      "migrations": [
+        {
+          "line": 82,
+          "category": "ui",
+          "originalString": "Ücretsiz",
+          "suggestedKey": "common.ui.ücretsiz",
+          "context": "? 'Ücretsiz'...",
+          "replacement": "{t('common.ui.ücretsiz')}"
+        }
+      ]
+    },
+    "components/sections/features-showcase-animated.tsx": {
+      "totalStrings": 1,
+      "migrations": [
+        {
+          "line": 107,
+          "category": "ui",
+          "originalString": "nın tüm özelliklerini keşfetmek için uygulamayı indirin",
+          "suggestedKey": "common.ui.nınTümÖzellikleriniKeşfetmekIçinUygulamayıIn",
+          "context": "aria-label=\"CORIA'nın tüm özelliklerini keşfetmek için uygulamayı indirin\"...",
+          "replacement": "{t('common.ui.nınTümÖzellikleriniKeşfetmekIçinUygulamayıIn')}"
+        }
+      ]
+    },
+    "components/sections/features-showcase.tsx": {
+      "totalStrings": 11,
+      "migrations": [
+        {
+          "line": 60,
+          "category": "ui",
+          "originalString": "${title} özelliği",
+          "suggestedKey": "common.aria.features.titleÖzelliği",
+          "context": "aria-label={`${title} özelliği`}...",
+          "replacement": "{t('common.aria.features.titleÖzelliği')}"
+        },
+        {
+          "line": 95,
+          "category": "ui",
+          "originalString": "Ürünlerin vegan uygunluğunu ve alerjen içeriğini anında analiz edin. Kişisel beslenme tercihlerinize uygun seçimler yapın.",
+          "suggestedKey": "features.descriptions.ürünlerinVeganUygunluğunuVeAlerjenIçeriğiniA",
+          "context": "description: \"Ürünlerin vegan uygunluğunu ve alerjen içeriğini anında analiz edi...",
+          "replacement": "{t('features.descriptions.ürünlerinVeganUygunluğunuVeAlerjenIçeriğiniA')}"
+        },
+        {
+          "line": 100,
+          "category": "ui",
+          "originalString": "Yapay zeka destekli kişisel asistanınız ile beslenme önerilerinden sürdürülebilir yaşam ipuçlarına kadar her konuda destek alın.",
+          "suggestedKey": "features.descriptions.yapayZekaDestekliKişiselAsistanınızIleBeslen",
+          "context": "description: \"Yapay zeka destekli kişisel asistanınız ile beslenme önerilerinden...",
+          "replacement": "{t('features.descriptions.yapayZekaDestekliKişiselAsistanınızIleBeslen')}"
+        },
+        {
+          "line": 104,
+          "category": "ui",
+          "originalString": "Akıllı Kiler",
+          "suggestedKey": "features.list.akıllıKiler",
+          "context": "title: \"Akıllı Kiler\",...",
+          "replacement": "{t('features.list.akıllıKiler')}"
+        },
+        {
+          "line": 105,
+          "category": "ui",
+          "originalString": "Kilerdeki ürünleri takip edin, son kullanma tarihlerini izleyin ve israfı önlemek için akıllı öneriler alın.",
+          "suggestedKey": "features.descriptions.kilerdekiÜrünleriTakipEdinSonKullanmaTarihle",
+          "context": "description: \"Kilerdeki ürünleri takip edin, son kullanma tarihlerini izleyin ve...",
+          "replacement": "{t('features.descriptions.kilerdekiÜrünleriTakipEdinSonKullanmaTarihle')}"
+        },
+        {
+          "line": 109,
+          "category": "ui",
+          "originalString": "ESG Skorları",
+          "suggestedKey": "features.list.esgSkorları",
+          "context": "title: \"ESG Skorları\",...",
+          "replacement": "{t('features.list.esgSkorları')}"
+        },
+        {
+          "line": 110,
+          "category": "ui",
+          "originalString": "Ürün ve markaların çevresel, sosyal ve yönetişim performanslarını ESG skorları ile değerlendirin.",
+          "suggestedKey": "features.descriptions.ürünVeMarkalarınÇevreselSosyalVeYönetişimPe",
+          "context": "description: \"Ürün ve markaların çevresel, sosyal ve yönetişim performanslarını ...",
+          "replacement": "{t('features.descriptions.ürünVeMarkalarınÇevreselSosyalVeYönetişimPe')}"
+        },
+        {
+          "line": 115,
+          "category": "ui",
+          "originalString": "Tüketim alışkanlıklarınızın karbon ayak izini ve su kullanımını takip ederek çevresel etkilerinizi azaltın.",
+          "suggestedKey": "features.descriptions.tüketimAlışkanlıklarınızınKarbonAyakIziniVeS",
+          "context": "description: \"Tüketim alışkanlıklarınızın karbon ayak izini ve su kullanımını ta...",
+          "replacement": "{t('features.descriptions.tüketimAlışkanlıklarınızınKarbonAyakIziniVeS')}"
+        },
+        {
+          "line": 119,
+          "category": "ui",
+          "originalString": "Topluluk Önerileri",
+          "suggestedKey": "features.list.toplulukÖnerileri",
+          "context": "title: \"Topluluk Önerileri\",...",
+          "replacement": "{t('features.list.toplulukÖnerileri')}"
+        },
+        {
+          "line": 120,
+          "category": "ui",
+          "originalString": "Sürdürülebilir yaşam topluluğundan öneriler alın, deneyimlerinizi paylaşın ve birlikte öğrenin.",
+          "suggestedKey": "features.descriptions.sürdürülebilirYaşamTopluluğundanÖnerilerAlınD",
+          "context": "description: \"Sürdürülebilir yaşam topluluğundan öneriler alın, deneyimlerinizi ...",
+          "replacement": "{t('features.descriptions.sürdürülebilirYaşamTopluluğundanÖnerilerAlınD')}"
+        },
+        {
+          "line": 144,
+          "category": "aria",
+          "originalString": "CORIA platform özellikleri",
+          "suggestedKey": "common.aria.features.coriaPlatformÖzellikleri",
+          "context": "aria-label=\"CORIA platform özellikleri\"...",
+          "replacement": "aria-label={t('common.aria.features.coriaPlatformÖzellikleri')}"
+        }
+      ]
+    },
+    "components/sections/hero-section.tsx": {
+      "totalStrings": 12,
+      "migrations": [
+        {
+          "line": 51,
+          "category": "ui",
+          "originalString": "Vegan Yaşam Asistanı",
+          "suggestedKey": "hero.badge.veganYaşamAsistanı",
+          "context": "eyebrow: \"Vegan Yaşam Asistanı\",...",
+          "replacement": "{t('hero.badge.veganYaşamAsistanı')}"
+        },
+        {
+          "line": 52,
+          "category": "ui",
+          "originalString": "Kalbinle Seç. Etkiyle Yaşa.",
+          "suggestedKey": "hero.title.kalbinleSeçEtkiyleYaşa",
+          "context": "title: \"Kalbinle Seç. Etkiyle Yaşa.\",...",
+          "replacement": "{t('hero.title.kalbinleSeçEtkiyleYaşa')}"
+        },
+        {
+          "line": 53,
+          "category": "ui",
+          "originalString": "Taradığın her ürünün veganlık, alerjen, sağlık ve sürdürülebilirlik skorlarını tek bakışta gör.",
+          "suggestedKey": "hero.title.taradığınHerÜrününVeganlıkAlerjenSağlıkVeSü",
+          "context": "subtitle: \"Taradığın her ürünün veganlık, alerjen, sağlık ve sürdürülebilirlik s...",
+          "replacement": "{t('hero.title.taradığınHerÜrününVeganlıkAlerjenSağlıkVeSü')}"
+        },
+        {
+          "line": 55,
+          "category": "ui",
+          "originalString": "iOS için İndir",
+          "suggestedKey": "hero.cta.iosIçinİndir",
+          "context": "label: \"iOS için İndir\",...",
+          "replacement": "{t('hero.cta.iosIçinİndir')}"
+        },
+        {
+          "line": 59,
+          "category": "ui",
+          "originalString": "Android için İndir",
+          "suggestedKey": "hero.cta.androidIçinİndir",
+          "context": "label: \"Android için İndir\",...",
+          "replacement": "{t('hero.cta.androidIçinİndir')}"
+        },
+        {
+          "line": 65,
+          "category": "ui",
+          "originalString": "Milyar Ürün Verisi",
+          "suggestedKey": "hero.stats.milyarÜrünVerisi",
+          "context": "{ value: \"2.5+\", label: \"Milyar Ürün Verisi\" },...",
+          "replacement": "{t('hero.stats.milyarÜrünVerisi')}"
+        },
+        {
+          "line": 66,
+          "category": "ui",
+          "originalString": "Etiket ve İçerik",
+          "suggestedKey": "hero.stats.etiketVeİçerik",
+          "context": "{ value: \"10M+\", label: \"Etiket ve İçerik\" },...",
+          "replacement": "{t('hero.stats.etiketVeİçerik')}"
+        },
+        {
+          "line": 67,
+          "category": "ui",
+          "originalString": "Aktif Kullanıcı",
+          "suggestedKey": "hero.stats.aktifKullanıcı",
+          "context": "{ value: \"500K+\", label: \"Aktif Kullanıcı\" },...",
+          "replacement": "{t('hero.stats.aktifKullanıcı')}"
+        },
+        {
+          "line": 119,
+          "category": "ui",
+          "originalString": "da CORIA uygulamasını indirin",
+          "suggestedKey": "common.aria.daCoriaUygulamasınıIndirin",
+          "context": "aria-label={`${heroContent.primaryCta.label} - Apple App Store'da CORIA uygulama...",
+          "replacement": "{t('common.aria.daCoriaUygulamasınıIndirin')}"
+        },
+        {
+          "line": 131,
+          "category": "ui",
+          "originalString": "da CORIA uygulamasını indirin",
+          "suggestedKey": "common.aria.daCoriaUygulamasınıIndirin",
+          "context": "aria-label={`${heroContent.secondaryCta.label} - Google Play Store'da CORIA uygu...",
+          "replacement": "{t('common.aria.daCoriaUygulamasınıIndirin')}"
+        },
+        {
+          "line": 142,
+          "category": "aria",
+          "originalString": "CORIA istatistikleri ve etki göstergeleri",
+          "suggestedKey": "common.aria.coriaIstatistikleriVeEtkiGöstergeleri",
+          "context": "aria-label=\"CORIA istatistikleri ve etki göstergeleri\"...",
+          "replacement": "aria-label={t('common.aria.coriaIstatistikleriVeEtkiGöstergeleri')}"
+        },
+        {
+          "line": 152,
+          "category": "ui",
+          "originalString": "${metric.value} ${metric.label} - CORIA etki göstergesi",
+          "suggestedKey": "common.aria.metricvalueMetriclabelCoriaEtkiGöstergesi",
+          "context": "aria-label={`${metric.value} ${metric.label} - CORIA etki göstergesi`}...",
+          "replacement": "{t('common.aria.metricvalueMetriclabelCoriaEtkiGöstergesi')}"
+        }
+      ]
+    },
+    "components/seo/structured-data.tsx": {
+      "totalStrings": 7,
+      "migrations": [
+        {
+          "line": 48,
+          "category": "ui",
+          "originalString": "CORIA - Sürdürülebilir Yaşam Uygulaması",
+          "suggestedKey": "common.ui.coriaSürdürülebilirYaşamUygulaması",
+          "context": "tr: 'CORIA - Sürdürülebilir Yaşam Uygulaması',...",
+          "replacement": "{t('common.ui.coriaSürdürülebilirYaşamUygulaması')}"
+        },
+        {
+          "line": 55,
+          "category": "ui",
+          "originalString": "Bilinçli tüketim kararları alın, çevresel etkilerinizi takip edin ve sürdürülebilir alternatifleri keşfedin.",
+          "suggestedKey": "common.ui.bilinçliTüketimKararlarıAlınÇevreselEtkilerin",
+          "context": "tr: 'Bilinçli tüketim kararları alın, çevresel etkilerinizi takip edin ve sürdür...",
+          "replacement": "{t('common.ui.bilinçliTüketimKararlarıAlınÇevreselEtkilerin')}"
+        },
+        {
+          "line": 91,
+          "category": "ui",
+          "originalString": "Sürdürülebilir yaşam için mobil uygulama geliştiren teknoloji şirketi.",
+          "suggestedKey": "common.ui.sürdürülebilirYaşamIçinMobilUygulamaGeliştire",
+          "context": "tr: 'Sürdürülebilir yaşam için mobil uygulama geliştiren teknoloji şirketi.',...",
+          "replacement": "{t('common.ui.sürdürülebilirYaşamIçinMobilUygulamaGeliştire')}"
+        },
+        {
+          "line": 93,
+          "category": "ui",
+          "originalString": "Technologieunternehmen, das mobile Anwendungen für nachhaltiges Leben entwickelt.",
+          "suggestedKey": "common.ui.technologieunternehmenDasMobileAnwendungenFür",
+          "context": "de: 'Technologieunternehmen, das mobile Anwendungen für nachhaltiges Leben entwi...",
+          "replacement": "{t('common.ui.technologieunternehmenDasMobileAnwendungenFür')}"
+        },
+        {
+          "line": 139,
+          "category": "ui",
+          "originalString": "CORIA Mobil Uygulaması",
+          "suggestedKey": "common.ui.coriaMobilUygulaması",
+          "context": "tr: 'CORIA Mobil Uygulaması',...",
+          "replacement": "{t('common.ui.coriaMobilUygulaması')}"
+        },
+        {
+          "line": 146,
+          "category": "ui",
+          "originalString": "Sürdürülebilir yaşam için barkod tarama, çevresel etki takibi ve bilinçli tüketim önerileri sunan mobil uygulama.",
+          "suggestedKey": "common.ui.sürdürülebilirYaşamIçinBarkodTaramaÇevreselE",
+          "context": "tr: 'Sürdürülebilir yaşam için barkod tarama, çevresel etki takibi ve bilinçli t...",
+          "replacement": "{t('common.ui.sürdürülebilirYaşamIçinBarkodTaramaÇevreselE')}"
+        },
+        {
+          "line": 148,
+          "category": "ui",
+          "originalString": "Mobile App mit Barcode-Scanning, Umweltauswirkungsverfolgung und bewussten Konsumempfehlungen für nachhaltiges Leben.",
+          "suggestedKey": "common.ui.mobileAppMitBarcodescanningUmweltauswirkungsve",
+          "context": "de: 'Mobile App mit Barcode-Scanning, Umweltauswirkungsverfolgung und bewussten ...",
+          "replacement": "{t('common.ui.mobileAppMitBarcodescanningUmweltauswirkungsve')}"
+        }
+      ]
+    },
+    "components/ui/language-switcher.tsx": {
+      "totalStrings": 2,
+      "migrations": [
+        {
+          "line": 15,
+          "category": "ui",
+          "originalString": "Türkçe",
+          "suggestedKey": "common.ui.türkçe",
+          "context": "tr: { name: 'Türkçe', flag: '🇹🇷', label: 'TR' },...",
+          "replacement": "{t('common.ui.türkçe')}"
+        },
+        {
+          "line": 18,
+          "category": "ui",
+          "originalString": "Français",
+          "suggestedKey": "common.ui.français",
+          "context": "fr: { name: 'Français', flag: '🇫🇷', label: 'FR' },...",
+          "replacement": "{t('common.ui.français')}"
+        }
+      ]
+    },
+    "content/home.ts": {
+      "totalStrings": 85,
+      "migrations": [
+        {
+          "line": 122,
+          "category": "ui",
+          "originalString": "Vegan, etik ve sürdürülebilir seçim asistanı",
+          "suggestedKey": "common.ui.veganEtikVeSürdürülebilirSeçimAsistanı",
+          "context": "eyebrow: 'Vegan, etik ve sürdürülebilir seçim asistanı',...",
+          "replacement": "{t('common.ui.veganEtikVeSürdürülebilirSeçimAsistanı')}"
+        },
+        {
+          "line": 123,
+          "category": "ui",
+          "originalString": "Kalbinle Seç. Etkiyle Yaşa.",
+          "suggestedKey": "common.ui.kalbinleSeçEtkiyleYaşa",
+          "context": "title: 'Kalbinle Seç. Etkiyle Yaşa.',...",
+          "replacement": "{t('common.ui.kalbinleSeçEtkiyleYaşa')}"
+        },
+        {
+          "line": 125,
+          "category": "ui",
+          "originalString": "Taradığın her ürünün veganlık, alerjen, sağlık ve sürdürülebilirlik skorlarını tek bakışta gör. Bilimsel verilerle desteklenen önerilerle her seferinde daha iyi seçim yap.",
+          "suggestedKey": "common.ui.taradığınHerÜrününVeganlıkAlerjenSağlıkVeSü",
+          "context": "'Taradığın her ürünün veganlık, alerjen, sağlık ve sürdürülebilirlik skorlarını ...",
+          "replacement": "{t('common.ui.taradığınHerÜrününVeganlıkAlerjenSağlıkVeSü')}"
+        },
+        {
+          "line": 127,
+          "category": "ui",
+          "originalString": "Veganlık, alerjen ve içerik riskleri için anlık uyarılar",
+          "suggestedKey": "common.ui.veganlıkAlerjenVeIçerikRiskleriIçinAnlıkUya",
+          "context": "'Veganlık, alerjen ve içerik riskleri için anlık uyarılar',...",
+          "replacement": "{t('common.ui.veganlıkAlerjenVeIçerikRiskleriIçinAnlıkUya')}"
+        },
+        {
+          "line": 128,
+          "category": "ui",
+          "originalString": "ESG, boykot ve marka etik profillerinin 360° görünümü",
+          "suggestedKey": "common.ui.esgBoykotVeMarkaEtikProfillerinin360Görünüm",
+          "context": "'ESG, boykot ve marka etik profillerinin 360° görünümü',...",
+          "replacement": "{t('common.ui.esgBoykotVeMarkaEtikProfillerinin360Görünüm')}"
+        },
+        {
+          "line": 129,
+          "category": "ui",
+          "originalString": "Akıllı kiler, israf önleme ve karbon/su etkisi takibi",
+          "suggestedKey": "common.ui.akıllıKilerIsrafÖnlemeVeKarbonsuEtkisiTakib",
+          "context": "'Akıllı kiler, israf önleme ve karbon/su etkisi takibi'...",
+          "replacement": "{t('common.ui.akıllıKilerIsrafÖnlemeVeKarbonsuEtkisiTakib')}"
+        },
+        {
+          "line": 133,
+          "category": "ui",
+          "originalString": "Premium’u 7 gün ücretsiz dene, istediğin zaman iptal et.",
+          "suggestedKey": "common.ui.premiumu7GünÜcretsizDeneIstediğinZamanIptal",
+          "context": "note: 'Premium’u 7 gün ücretsiz dene, istediğin zaman iptal et.'...",
+          "replacement": "{t('common.ui.premiumu7GünÜcretsizDeneIstediğinZamanIptal')}"
+        },
+        {
+          "line": 136,
+          "category": "ui",
+          "originalString": "ürün etiketi analizi",
+          "suggestedKey": "common.ui.ürünEtiketiAnalizi",
+          "context": "{ value: '2.5B+', label: 'ürün etiketi analizi' },...",
+          "replacement": "{t('common.ui.ürünEtiketiAnalizi')}"
+        },
+        {
+          "line": 137,
+          "category": "ui",
+          "originalString": "güncel içerik & etiket verisi",
+          "suggestedKey": "common.ui.güncelIçerikEtiketVerisi",
+          "context": "{ value: '10M+', label: 'güncel içerik & etiket verisi' },...",
+          "replacement": "{t('common.ui.güncelIçerikEtiketVerisi')}"
+        },
+        {
+          "line": 138,
+          "category": "ui",
+          "originalString": "aktif CORIA topluluğu",
+          "suggestedKey": "common.ui.aktifCoriaTopluluğu",
+          "context": "{ value: '500K+', label: 'aktif CORIA topluluğu' },...",
+          "replacement": "{t('common.ui.aktifCoriaTopluluğu')}"
+        },
+        {
+          "line": 142,
+          "category": "ui",
+          "originalString": "Topluluk ve iş ortaklarımızdan destek",
+          "suggestedKey": "common.ui.toplulukVeIşOrtaklarımızdanDestek",
+          "context": "title: 'Topluluk ve iş ortaklarımızdan destek',...",
+          "replacement": "{t('common.ui.toplulukVeIşOrtaklarımızdanDestek')}"
+        },
+        {
+          "line": 143,
+          "category": "ui",
+          "originalString": "CORIA, sürdürülebilir dönüşümün kalbinde yer alan bireylerin ve kurumların güvenilir yardımcısıdır.",
+          "suggestedKey": "common.ui.coriaSürdürülebilirDönüşümünKalbindeYerAlanB",
+          "context": "subtitle: 'CORIA, sürdürülebilir dönüşümün kalbinde yer alan bireylerin ve kurum...",
+          "replacement": "{t('common.ui.coriaSürdürülebilirDönüşümünKalbindeYerAlanB')}"
+        },
+        {
+          "line": 145,
+          "category": "ui",
+          "originalString": "Alışveriş rutinimi kurtardı",
+          "suggestedKey": "common.ui.alışverişRutinimiKurtardı",
+          "context": "{ title: '\"Alışveriş rutinimi kurtardı\"', description: '\"Alerjen riskleri ve eti...",
+          "replacement": "{t('common.ui.alışverişRutinimiKurtardı')}"
+        },
+        {
+          "line": 146,
+          "category": "ui",
+          "originalString": "Veriye dayalı ESG raporları",
+          "suggestedKey": "common.ui.veriyeDayalıEsgRaporları",
+          "context": "{ title: '\"Veriye dayalı ESG raporları\"', description: '\"Marka analizlerinde COR...",
+          "replacement": "{t('common.ui.veriyeDayalıEsgRaporları')}"
+        },
+        {
+          "line": 147,
+          "category": "ui",
+          "originalString": "Foundation ile gerçek etki",
+          "suggestedKey": "common.ui.foundationIleGerçekEtki",
+          "context": "{ title: '\"Foundation ile gerçek etki\"', description: '\"Token tabanlı modelleri ...",
+          "replacement": "{t('common.ui.foundationIleGerçekEtki')}"
+        },
+        {
+          "line": 152,
+          "category": "ui",
+          "originalString": "Vegan & Vegan Adayları",
+          "suggestedKey": "common.ui.veganVeganAdayları",
+          "context": "title: 'Vegan & Vegan Adayları',...",
+          "replacement": "{t('common.ui.veganVeganAdayları')}"
+        },
+        {
+          "line": 153,
+          "category": "ui",
+          "originalString": "Ürünleri saniyeler içinde tarayarak veganlığını, içerik risklerini ve daha iyi alternatifleri gör.",
+          "suggestedKey": "common.ui.ürünleriSaniyelerIçindeTarayarakVeganlığınıIç",
+          "context": "description: 'Ürünleri saniyeler içinde tarayarak veganlığını, içerik risklerini...",
+          "replacement": "{t('common.ui.ürünleriSaniyelerIçindeTarayarakVeganlığınıIç')}"
+        },
+        {
+          "line": 155,
+          "category": "ui",
+          "originalString": "Özel vegan/vejetaryen filtreleri",
+          "suggestedKey": "common.ui.özelVeganvejetaryenFiltreleri",
+          "context": "'Özel vegan/vejetaryen filtreleri',...",
+          "replacement": "{t('common.ui.özelVeganvejetaryenFiltreleri')}"
+        },
+        {
+          "line": 156,
+          "category": "ui",
+          "originalString": "Topluluk yorumları ve deneyimleri",
+          "suggestedKey": "common.ui.toplulukYorumlarıVeDeneyimleri",
+          "context": "'Topluluk yorumları ve deneyimleri',...",
+          "replacement": "{t('common.ui.toplulukYorumlarıVeDeneyimleri')}"
+        },
+        {
+          "line": 157,
+          "category": "ui",
+          "originalString": "Tarif önerileri ve market alışveriş listeleri",
+          "suggestedKey": "common.ui.tarifÖnerileriVeMarketAlışverişListeleri",
+          "context": "'Tarif önerileri ve market alışveriş listeleri'...",
+          "replacement": "{t('common.ui.tarifÖnerileriVeMarketAlışverişListeleri')}"
+        },
+        {
+          "line": 163,
+          "category": "ui",
+          "originalString": "Alerjen, şeker, tuz ve katkı risklerini çocuklarının ihtiyaçlarına göre yönet.",
+          "suggestedKey": "common.ui.alerjenŞekerTuzVeKatkıRiskleriniÇocuklarının",
+          "context": "description: 'Alerjen, şeker, tuz ve katkı risklerini çocuklarının ihtiyaçlarına...",
+          "replacement": "{t('common.ui.alerjenŞekerTuzVeKatkıRiskleriniÇocuklarının')}"
+        },
+        {
+          "line": 165,
+          "category": "ui",
+          "originalString": "Risk seviyeleriyle alerjen uyarıları",
+          "suggestedKey": "common.ui.riskSeviyeleriyleAlerjenUyarıları",
+          "context": "'Risk seviyeleriyle alerjen uyarıları',...",
+          "replacement": "{t('common.ui.riskSeviyeleriyleAlerjenUyarıları')}"
+        },
+        {
+          "line": 166,
+          "category": "ui",
+          "originalString": "Detaylı içerik açıklamaları",
+          "suggestedKey": "common.ui.detaylıIçerikAçıklamaları",
+          "context": "'Detaylı içerik açıklamaları',...",
+          "replacement": "{t('common.ui.detaylıIçerikAçıklamaları')}"
+        },
+        {
+          "line": 167,
+          "category": "ui",
+          "originalString": "Güvenli alternatif önerileri",
+          "suggestedKey": "common.ui.güvenliAlternatifÖnerileri",
+          "context": "'Güvenli alternatif önerileri'...",
+          "replacement": "{t('common.ui.güvenliAlternatifÖnerileri')}"
+        },
+        {
+          "line": 172,
+          "category": "ui",
+          "originalString": "Sağlık Odaklı Kullanıcılar",
+          "suggestedKey": "common.ui.sağlıkOdaklıKullanıcılar",
+          "context": "title: 'Sağlık Odaklı Kullanıcılar',...",
+          "replacement": "{t('common.ui.sağlıkOdaklıKullanıcılar')}"
+        },
+        {
+          "line": 173,
+          "category": "ui",
+          "originalString": "Besin değerlerini, sağlık skorlarını ve kişisel hedeflerini tek ekranda takip et.",
+          "suggestedKey": "common.ui.besinDeğerleriniSağlıkSkorlarınıVeKişiselHed",
+          "context": "description: 'Besin değerlerini, sağlık skorlarını ve kişisel hedeflerini tek ek...",
+          "replacement": "{t('common.ui.besinDeğerleriniSağlıkSkorlarınıVeKişiselHed')}"
+        },
+        {
+          "line": 176,
+          "category": "ui",
+          "originalString": "Şeker/tuz/protein sapma uyarıları",
+          "suggestedKey": "common.ui.şekertuzproteinSapmaUyarıları",
+          "context": "'Şeker/tuz/protein sapma uyarıları',...",
+          "replacement": "{t('common.ui.şekertuzproteinSapmaUyarıları')}"
+        },
+        {
+          "line": 177,
+          "category": "ui",
+          "originalString": "Uzmanlardan onaylı içerik kütüphanesi",
+          "suggestedKey": "common.ui.uzmanlardanOnaylıIçerikKütüphanesi",
+          "context": "'Uzmanlardan onaylı içerik kütüphanesi'...",
+          "replacement": "{t('common.ui.uzmanlardanOnaylıIçerikKütüphanesi')}"
+        },
+        {
+          "line": 182,
+          "category": "ui",
+          "originalString": "Sürdürülebilirlik Savunucuları",
+          "suggestedKey": "common.ui.sürdürülebilirlikSavunucuları",
+          "context": "title: 'Sürdürülebilirlik Savunucuları',...",
+          "replacement": "{t('common.ui.sürdürülebilirlikSavunucuları')}"
+        },
+        {
+          "line": 183,
+          "category": "ui",
+          "originalString": "Karbon, su ve etik etkileri karşılaştır; Foundation projeleriyle gerçek değişimi destekle.",
+          "suggestedKey": "common.ui.karbonSuVeEtikEtkileriKarşılaştırFoundation",
+          "context": "description: 'Karbon, su ve etik etkileri karşılaştır; Foundation projeleriyle g...",
+          "replacement": "{t('common.ui.karbonSuVeEtikEtkileriKarşılaştırFoundation')}"
+        },
+        {
+          "line": 185,
+          "category": "ui",
+          "originalString": "Karbon & su ayak izi sayaçları",
+          "suggestedKey": "common.ui.karbonSuAyakIziSayaçları",
+          "context": "'Karbon & su ayak izi sayaçları',...",
+          "replacement": "{t('common.ui.karbonSuAyakIziSayaçları')}"
+        },
+        {
+          "line": 187,
+          "category": "ui",
+          "originalString": "CORIA Foundation proje bağışları",
+          "suggestedKey": "common.ui.coriaFoundationProjeBağışları",
+          "context": "'CORIA Foundation proje bağışları'...",
+          "replacement": "{t('common.ui.coriaFoundationProjeBağışları')}"
+        },
+        {
+          "line": 195,
+          "category": "ui",
+          "originalString": "Barkod tarayın, ürünün veganlık durumu, alerjen riskleri ve içerik açıklamaları anında listelensin.",
+          "suggestedKey": "common.ui.barkodTarayınÜrününVeganlıkDurumuAlerjenRisk",
+          "context": "description: 'Barkod tarayın, ürünün veganlık durumu, alerjen riskleri ve içerik...",
+          "replacement": "{t('common.ui.barkodTarayınÜrününVeganlıkDurumuAlerjenRisk')}"
+        },
+        {
+          "line": 199,
+          "category": "ui",
+          "originalString": "AI Yaşam Asistanı",
+          "suggestedKey": "common.ui.aiYaşamAsistanı",
+          "context": "title: 'AI Yaşam Asistanı',...",
+          "replacement": "{t('common.ui.aiYaşamAsistanı')}"
+        },
+        {
+          "line": 200,
+          "category": "ui",
+          "originalString": "Sorularınızı sorun, tarif, alternatif ürün ve alışveriş listesi önerilerini kişiselleştirilmiş olarak alın.",
+          "suggestedKey": "common.ui.sorularınızıSorunTarifAlternatifÜrünVeAlışve",
+          "context": "description: 'Sorularınızı sorun, tarif, alternatif ürün ve alışveriş listesi ön...",
+          "replacement": "{t('common.ui.sorularınızıSorunTarifAlternatifÜrünVeAlışve')}"
+        },
+        {
+          "line": 204,
+          "category": "ui",
+          "originalString": "Akıllı Kiler",
+          "suggestedKey": "common.ui.akıllıKiler",
+          "context": "title: 'Akıllı Kiler',...",
+          "replacement": "{t('common.ui.akıllıKiler')}"
+        },
+        {
+          "line": 205,
+          "category": "ui",
+          "originalString": "SKT takibi, otomatik hatırlatmalar ve israfı azaltan kullanım önerileriyle kilerinizi yönetin.",
+          "suggestedKey": "common.ui.sktTakibiOtomatikHatırlatmalarVeIsrafıAzalta",
+          "context": "description: 'SKT takibi, otomatik hatırlatmalar ve israfı azaltan kullanım öner...",
+          "replacement": "{t('common.ui.sktTakibiOtomatikHatırlatmalarVeIsrafıAzalta')}"
+        },
+        {
+          "line": 210,
+          "category": "ui",
+          "originalString": "Markaların çevresel, sosyal ve yönetişim performanslarını, boykot listelerini ve tedarik şeffaflığını inceleyin.",
+          "suggestedKey": "common.ui.markalarınÇevreselSosyalVeYönetişimPerformans",
+          "context": "description: 'Markaların çevresel, sosyal ve yönetişim performanslarını, boykot ...",
+          "replacement": "{t('common.ui.markalarınÇevreselSosyalVeYönetişimPerformans')}"
+        },
+        {
+          "line": 215,
+          "category": "ui",
+          "originalString": "Her ürün seçimindeki karbon, su ve döngüsellik etkisini görün; alternatif senaryoları karşılaştırın.",
+          "suggestedKey": "common.ui.herÜrünSeçimindekiKarbonSuVeDöngüsellikEtki",
+          "context": "description: 'Her ürün seçimindeki karbon, su ve döngüsellik etkisini görün; alt...",
+          "replacement": "{t('common.ui.herÜrünSeçimindekiKarbonSuVeDöngüsellikEtki')}"
+        },
+        {
+          "line": 219,
+          "category": "ui",
+          "originalString": "Topluluk ve İçerikler",
+          "suggestedKey": "common.ui.toplulukVeİçerikler",
+          "context": "title: 'Topluluk ve İçerikler',...",
+          "replacement": "{t('common.ui.toplulukVeİçerikler')}"
+        },
+        {
+          "line": 220,
+          "category": "ui",
+          "originalString": "Öne çıkan tarifler, kullanıcı deneyimleri, uzman yazıları ve sürdürülebilir yaşam rehberleri.",
+          "suggestedKey": "common.ui.öneÇıkanTariflerKullanıcıDeneyimleriUzmanYaz",
+          "context": "description: 'Öne çıkan tarifler, kullanıcı deneyimleri, uzman yazıları ve sürdü...",
+          "replacement": "{t('common.ui.öneÇıkanTariflerKullanıcıDeneyimleriUzmanYaz')}"
+        },
+        {
+          "line": 226,
+          "category": "ui",
+          "originalString": "Tara → Analiz Et → Daha İyi Seç akışını interaktif demo ile keşfet.",
+          "suggestedKey": "common.ui.taraAnalizEtDahaİyiSeçAkışınıInteraktifD",
+          "context": "subtitle: 'Tara → Analiz Et → Daha İyi Seç akışını interaktif demo ile keşfet.',...",
+          "replacement": "{t('common.ui.taraAnalizEtDahaİyiSeçAkışınıInteraktifD')}"
+        },
+        {
+          "line": 227,
+          "category": "ui",
+          "originalString": "CORIA uygulama ekran akışı",
+          "suggestedKey": "common.ui.coriaUygulamaEkranAkışı",
+          "context": "posterAlt: 'CORIA uygulama ekran akışı',...",
+          "replacement": "{t('common.ui.coriaUygulamaEkranAkışı')}"
+        },
+        {
+          "line": 229,
+          "category": "ui",
+          "originalString": "Barkodu okuttuğun anda ürünün tüm bilgileri açılır.",
+          "suggestedKey": "common.ui.barkoduOkuttuğunAndaÜrününTümBilgileriAçılır",
+          "context": "{ title: '1. Tara', description: 'Barkodu okuttuğun anda ürünün tüm bilgileri aç...",
+          "replacement": "{t('common.ui.barkoduOkuttuğunAndaÜrününTümBilgileriAçılır')}"
+        },
+        {
+          "line": 230,
+          "category": "ui",
+          "originalString": "Veganlık, alerjen, sağlık ve ESG skorlarını tek bakışta değerlendir.",
+          "suggestedKey": "common.ui.veganlıkAlerjenSağlıkVeEsgSkorlarınıTekBakı",
+          "context": "{ title: '2. Analiz Et', description: 'Veganlık, alerjen, sağlık ve ESG skorları...",
+          "replacement": "{t('common.ui.veganlıkAlerjenSağlıkVeEsgSkorlarınıTekBakı')}"
+        },
+        {
+          "line": 231,
+          "category": "ui",
+          "originalString": "3. Daha İyi Seç",
+          "suggestedKey": "common.ui.3DahaİyiSeç",
+          "context": "{ title: '3. Daha İyi Seç', description: 'Alternatif ürünleri, tarif önerilerini...",
+          "replacement": "{t('common.ui.3DahaİyiSeç')}"
+        },
+        {
+          "line": 233,
+          "category": "ui",
+          "originalString": "Demo sesli anlatım ve altyazı desteklidir.",
+          "suggestedKey": "common.ui.demoSesliAnlatımVeAltyazıDesteklidir",
+          "context": "note: 'Demo sesli anlatım ve altyazı desteklidir.',...",
+          "replacement": "{t('common.ui.demoSesliAnlatımVeAltyazıDesteklidir')}"
+        },
+        {
+          "line": 237,
+          "category": "ui",
+          "originalString": "Topluluğumuzun biriktirdiği etki",
+          "suggestedKey": "common.ui.topluluğumuzunBiriktirdiğiEtki",
+          "context": "title: 'Topluluğumuzun biriktirdiği etki',...",
+          "replacement": "{t('common.ui.topluluğumuzunBiriktirdiğiEtki')}"
+        },
+        {
+          "line": 238,
+          "category": "ui",
+          "originalString": "Gerçek zamanlı sayaçlar, CORIA kullanıcılarının günlük kararlarla oluşturduğu kolektif katkıyı gösterir.",
+          "suggestedKey": "common.ui.gerçekZamanlıSayaçlarCoriaKullanıcılarınınGün",
+          "context": "subtitle: 'Gerçek zamanlı sayaçlar, CORIA kullanıcılarının günlük kararlarla olu...",
+          "replacement": "{t('common.ui.gerçekZamanlıSayaçlarCoriaKullanıcılarınınGün')}"
+        },
+        {
+          "line": 240,
+          "category": "ui",
+          "originalString": "Bugünün CO₂ tasarrufu",
+          "suggestedKey": "common.ui.bugününCoTasarrufu",
+          "context": "{ value: '34 kg', label: 'Bugünün CO₂ tasarrufu', description: 'Daha yeşil marka...",
+          "replacement": "{t('common.ui.bugününCoTasarrufu')}"
+        },
+        {
+          "line": 241,
+          "category": "ui",
+          "originalString": "Su yoğun ürünlerden akıllı alternatiflere geçiş sayesinde.",
+          "suggestedKey": "common.ui.suYoğunÜrünlerdenAkıllıAlternatiflereGeçişSa",
+          "context": "{ value: '120 L', label: 'Bu haftaki su tasarrufu', description: 'Su yoğun ürünl...",
+          "replacement": "{t('common.ui.suYoğunÜrünlerdenAkıllıAlternatiflereGeçişSa')}"
+        },
+        {
+          "line": 242,
+          "category": "ui",
+          "originalString": "Bu ay önlenen gıda israfı",
+          "suggestedKey": "common.ui.buAyÖnlenenGıdaIsrafı",
+          "context": "{ value: '45 kg', label: 'Bu ay önlenen gıda israfı', description: 'Akıllı kiler...",
+          "replacement": "{t('common.ui.buAyÖnlenenGıdaIsrafı')}"
+        },
+        {
+          "line": 246,
+          "category": "ui",
+          "originalString": "Kişisel etki paneli",
+          "suggestedKey": "common.ui.kişiselEtkiPaneli",
+          "context": "title: 'Kişisel etki paneli',...",
+          "replacement": "{t('common.ui.kişiselEtkiPaneli')}"
+        },
+        {
+          "line": 247,
+          "category": "ui",
+          "originalString": "Tüm seçimleriniz ton bazında CO₂, su ve etik puan olarak toplanır; hedefler belirleyip gelişiminizi takip edin.",
+          "suggestedKey": "common.ui.tümSeçimlerinizTonBazındaCoSuVeEtikPuanOl",
+          "context": "description: 'Tüm seçimleriniz ton bazında CO₂, su ve etik puan olarak toplanır;...",
+          "replacement": "{t('common.ui.tümSeçimlerinizTonBazındaCoSuVeEtikPuanOl')}"
+        },
+        {
+          "line": 251,
+          "category": "ui",
+          "originalString": "Şehir bazlı liderlik tabloları, sezonluk tüketim rehberleri ve kampanyalarla harekete geçin.",
+          "suggestedKey": "common.ui.şehirBazlıLiderlikTablolarıSezonlukTüketimRe",
+          "context": "description: 'Şehir bazlı liderlik tabloları, sezonluk tüketim rehberleri ve kam...",
+          "replacement": "{t('common.ui.şehirBazlıLiderlikTablolarıSezonlukTüketimRe')}"
+        },
+        {
+          "line": 257,
+          "category": "ui",
+          "originalString": "Birlikte daha büyük etki yaratıyoruz",
+          "suggestedKey": "common.ui.birlikteDahaBüyükEtkiYaratıyoruz",
+          "context": "title: 'Birlikte daha büyük etki yaratıyoruz',...",
+          "replacement": "{t('common.ui.birlikteDahaBüyükEtkiYaratıyoruz')}"
+        },
+        {
+          "line": 258,
+          "category": "ui",
+          "originalString": "Uygulama gelirlerinin %5’i ve CORIA Token fee gelirleri yeşil enerji, veganlık ve sürdürülebilirlik projelerine aktarılıyor.",
+          "suggestedKey": "common.ui.uygulamaGelirlerinin5iVeCoriaTokenFeeGelirl",
+          "context": "subtitle: 'Uygulama gelirlerinin %5’i ve CORIA Token fee gelirleri yeşil enerji,...",
+          "replacement": "{t('common.ui.uygulamaGelirlerinin5iVeCoriaTokenFeeGelirl')}"
+        },
+        {
+          "line": 260,
+          "category": "ui",
+          "originalString": "Believe platformu üzerinden çıkarılacak Solana tabanlı CORIA Token ile şeffaf, zincir üstü bağış ve etki raporlama modeli kuruyoruz.",
+          "suggestedKey": "common.ui.believePlatformuÜzerindenÇıkarılacakSolanaTab",
+          "context": "'Believe platformu üzerinden çıkarılacak Solana tabanlı CORIA Token ile şeffaf, ...",
+          "replacement": "{t('common.ui.believePlatformuÜzerindenÇıkarılacakSolanaTab')}"
+        },
+        {
+          "line": 262,
+          "category": "ui",
+          "originalString": "Şeffaf fon dağıtımı",
+          "suggestedKey": "common.ui.şeffafFonDağıtımı",
+          "context": "{ title: 'Şeffaf fon dağıtımı', description: 'Toplanan her token ve TL, zincir ü...",
+          "replacement": "{t('common.ui.şeffafFonDağıtımı')}"
+        },
+        {
+          "line": 263,
+          "category": "ui",
+          "originalString": "Vegan restoran dönüşümü, gıda bankacılığı, orman restorasyonu gibi alanlara destek.",
+          "suggestedKey": "common.ui.veganRestoranDönüşümüGıdaBankacılığıOrmanRes",
+          "context": "{ title: 'Yerel projelere odak', description: 'Vegan restoran dönüşümü, gıda ban...",
+          "replacement": "{t('common.ui.veganRestoranDönüşümüGıdaBankacılığıOrmanRes')}"
+        },
+        {
+          "line": 264,
+          "category": "ui",
+          "originalString": "Topluluk oylaması",
+          "suggestedKey": "common.ui.toplulukOylaması",
+          "context": "{ title: 'Topluluk oylaması', description: 'Yeni projeler CORIA topluluğunun oyl...",
+          "replacement": "{t('common.ui.toplulukOylaması')}"
+        },
+        {
+          "line": 267,
+          "category": "ui",
+          "originalString": "Anadolu Vegan Mutfağı",
+          "suggestedKey": "common.ui.anadoluVeganMutfağı",
+          "context": "{ title: 'Anadolu Vegan Mutfağı', impact: 'İlk 6 ayda 2.4 ton gıda israfı önlend...",
+          "replacement": "{t('common.ui.anadoluVeganMutfağı')}"
+        },
+        {
+          "line": 268,
+          "category": "ui",
+          "originalString": "Yeşil Enerji Kooperatifi",
+          "suggestedKey": "common.ui.yeşilEnerjiKooperatifi",
+          "context": "{ title: 'Yeşil Enerji Kooperatifi', impact: 'Topluluk fonuyla 120 kW güneş ener...",
+          "replacement": "{t('common.ui.yeşilEnerjiKooperatifi')}"
+        },
+        {
+          "line": 269,
+          "category": "ui",
+          "originalString": "Sıfır Atık Marketleri",
+          "suggestedKey": "common.ui.sıfırAtıkMarketleri",
+          "context": "{ title: 'Sıfır Atık Marketleri', impact: '5 şehirde yeniden kullanılabilir amba...",
+          "replacement": "{t('common.ui.sıfırAtıkMarketleri')}"
+        },
+        {
+          "line": 271,
+          "category": "ui",
+          "originalString": "Foundation detaylarını incele",
+          "suggestedKey": "common.ui.foundationDetaylarınıIncele",
+          "context": "cta: { label: 'Foundation detaylarını incele', href: '/foundation' }...",
+          "replacement": "{t('common.ui.foundationDetaylarınıIncele')}"
+        },
+        {
+          "line": 274,
+          "category": "ui",
+          "originalString": "Bilinçli tüketim rehberleri",
+          "suggestedKey": "common.ui.bilinçliTüketimRehberleri",
+          "context": "title: 'Bilinçli tüketim rehberleri',...",
+          "replacement": "{t('common.ui.bilinçliTüketimRehberleri')}"
+        },
+        {
+          "line": 275,
+          "category": "ui",
+          "originalString": "Uzman yazıları, tarifler ve sürdürülebilir yaşam pratikleriyle her hafta güncellenen içerikler.",
+          "suggestedKey": "common.ui.uzmanYazılarıTariflerVeSürdürülebilirYaşamPr",
+          "context": "subtitle: 'Uzman yazıları, tarifler ve sürdürülebilir yaşam pratikleriyle her ha...",
+          "replacement": "{t('common.ui.uzmanYazılarıTariflerVeSürdürülebilirYaşamPr')}"
+        },
+        {
+          "line": 278,
+          "category": "ui",
+          "originalString": "Alerjen etiketlerini 60 saniyede çöz",
+          "suggestedKey": "common.ui.alerjenEtiketlerini60SaniyedeÇöz",
+          "context": "title: 'Alerjen etiketlerini 60 saniyede çöz',...",
+          "replacement": "{t('common.ui.alerjenEtiketlerini60SaniyedeÇöz')}"
+        },
+        {
+          "line": 279,
+          "category": "ui",
+          "originalString": "Gluten, laktoz, fındık ve daha fazlası için CORIA’nın risk skorlarını nasıl yorumlayacağını öğren.",
+          "suggestedKey": "common.ui.glutenLaktozFındıkVeDahaFazlasıIçinCorianın",
+          "context": "excerpt: 'Gluten, laktoz, fındık ve daha fazlası için CORIA’nın risk skorlarını ...",
+          "replacement": "{t('common.ui.glutenLaktozFındıkVeDahaFazlasıIçinCorianın')}"
+        },
+        {
+          "line": 284,
+          "category": "ui",
+          "originalString": "Karbon ayak izinizi market alışverişinde azaltın",
+          "suggestedKey": "common.ui.karbonAyakIziniziMarketAlışverişindeAzaltın",
+          "context": "title: 'Karbon ayak izinizi market alışverişinde azaltın',...",
+          "replacement": "{t('common.ui.karbonAyakIziniziMarketAlışverişindeAzaltın')}"
+        },
+        {
+          "line": 285,
+          "category": "ui",
+          "originalString": "Sezonluk ürün seçimi ve yerel üretici önerileriyle çevresel etkinizi minimuma indirin.",
+          "suggestedKey": "common.ui.sezonlukÜrünSeçimiVeYerelÜreticiÖnerileriyle",
+          "context": "excerpt: 'Sezonluk ürün seçimi ve yerel üretici önerileriyle çevresel etkinizi m...",
+          "replacement": "{t('common.ui.sezonlukÜrünSeçimiVeYerelÜreticiÖnerileriyle')}"
+        },
+        {
+          "line": 290,
+          "category": "ui",
+          "originalString": "Foundation projelerinde yeni dönem",
+          "suggestedKey": "common.ui.foundationProjelerindeYeniDönem",
+          "context": "title: 'Foundation projelerinde yeni dönem',...",
+          "replacement": "{t('common.ui.foundationProjelerindeYeniDönem')}"
+        },
+        {
+          "line": 291,
+          "category": "ui",
+          "originalString": "Solana token modeliyle şeffaf fonlama nasıl çalışıyor? İlk raporlar yayınlandı.",
+          "suggestedKey": "common.ui.solanaTokenModeliyleŞeffafFonlamaNasılÇalışı",
+          "context": "excerpt: 'Solana token modeliyle şeffaf fonlama nasıl çalışıyor? İlk raporlar ya...",
+          "replacement": "{t('common.ui.solanaTokenModeliyleŞeffafFonlamaNasılÇalışı')}"
+        },
+        {
+          "line": 296,
+          "category": "ui",
+          "originalString": "Tüm içerikleri görüntüle",
+          "suggestedKey": "common.ui.tümIçerikleriGörüntüle",
+          "context": "cta: { label: 'Tüm içerikleri görüntüle', href: '/blog' }...",
+          "replacement": "{t('common.ui.tümIçerikleriGörüntüle')}"
+        },
+        {
+          "line": 299,
+          "category": "ui",
+          "originalString": "Sık sorulan sorular",
+          "suggestedKey": "common.ui.sıkSorulanSorular",
+          "context": "title: 'Sık sorulan sorular',...",
+          "replacement": "{t('common.ui.sıkSorulanSorular')}"
+        },
+        {
+          "line": 300,
+          "category": "ui",
+          "originalString": "CORIA’yı kullanmaya başlamadan önce en çok merak edilenleri derledik.",
+          "suggestedKey": "common.ui.coriayıKullanmayaBaşlamadanÖnceEnÇokMerakEd",
+          "context": "subtitle: 'CORIA’yı kullanmaya başlamadan önce en çok merak edilenleri derledik....",
+          "replacement": "{t('common.ui.coriayıKullanmayaBaşlamadanÖnceEnÇokMerakEd')}"
+        },
+        {
+          "line": 305,
+          "category": "ui",
+          "originalString": "Sınırsız ürün tarama, detaylı etki raporları, gelişmiş filtreler, israf azaltma önerileri ve Foundation projelerine katkı sertifikası.",
+          "suggestedKey": "common.ui.sınırsızÜrünTaramaDetaylıEtkiRaporlarıGelişm",
+          "context": "'Sınırsız ürün tarama, detaylı etki raporları, gelişmiş filtreler, israf azaltma...",
+          "replacement": "{t('common.ui.sınırsızÜrünTaramaDetaylıEtkiRaporlarıGelişm')}"
+        },
+        {
+          "line": 308,
+          "category": "ui",
+          "originalString": "Veri gizliliği nasıl sağlanıyor?",
+          "suggestedKey": "common.ui.veriGizliliğiNasılSağlanıyor",
+          "context": "question: 'Veri gizliliği nasıl sağlanıyor?',...",
+          "replacement": "{t('common.ui.veriGizliliğiNasılSağlanıyor')}"
+        },
+        {
+          "line": 310,
+          "category": "ui",
+          "originalString": "Kişisel veriler sadece profil deneyimini iyileştirmek için kullanılır, üçüncü taraflarla paylaşılmaz ve dilediğiniz an hesap verilerini silebilirsiniz.",
+          "suggestedKey": "common.ui.kişiselVerilerSadeceProfilDeneyiminiIyileştir",
+          "context": "'Kişisel veriler sadece profil deneyimini iyileştirmek için kullanılır, üçüncü t...",
+          "replacement": "{t('common.ui.kişiselVerilerSadeceProfilDeneyiminiIyileştir')}"
+        },
+        {
+          "line": 313,
+          "category": "ui",
+          "originalString": "Foundation projelerine nasıl başvurabilirim?",
+          "suggestedKey": "common.ui.foundationProjelerineNasılBaşvurabilirim",
+          "context": "question: 'Foundation projelerine nasıl başvurabilirim?',...",
+          "replacement": "{t('common.ui.foundationProjelerineNasılBaşvurabilirim')}"
+        },
+        {
+          "line": 315,
+          "category": "ui",
+          "originalString": "Foundation sayfasındaki başvuru formundan projenizi gönderebilir, değerlendirme süreci ve kriterleri detaylı inceleyebilirsiniz.",
+          "suggestedKey": "common.ui.foundationSayfasındakiBaşvuruFormundanProjeniz",
+          "context": "'Foundation sayfasındaki başvuru formundan projenizi gönderebilir, değerlendirme...",
+          "replacement": "{t('common.ui.foundationSayfasındakiBaşvuruFormundanProjeniz')}"
+        },
+        {
+          "line": 320,
+          "category": "ui",
+          "originalString": "CORIA ile bilinçli tüketimin gücünü keşfet",
+          "suggestedKey": "common.ui.coriaIleBilinçliTüketiminGücünüKeşfet",
+          "context": "title: 'CORIA ile bilinçli tüketimin gücünü keşfet',...",
+          "replacement": "{t('common.ui.coriaIleBilinçliTüketiminGücünüKeşfet')}"
+        },
+        {
+          "line": 321,
+          "category": "ui",
+          "originalString": "Topluluğumuza katılın, etki panelinizi açın ve sürdürülebilir geleceğe birlikte yön verin.",
+          "suggestedKey": "common.ui.topluluğumuzaKatılınEtkiPaneliniziAçınVeSürd",
+          "context": "subtitle: 'Topluluğumuza katılın, etki panelinizi açın ve sürdürülebilir geleceğ...",
+          "replacement": "{t('common.ui.topluluğumuzaKatılınEtkiPaneliniziAçınVeSürd')}"
+        },
+        {
+          "line": 322,
+          "category": "ui",
+          "originalString": "Foundation’a katıl",
+          "suggestedKey": "common.ui.foundationaKatıl",
+          "context": "primary: { label: 'Foundation’a katıl', href: '/foundation' },...",
+          "replacement": "{t('common.ui.foundationaKatıl')}"
+        },
+        {
+          "line": 323,
+          "category": "ui",
+          "originalString": "Özellikleri keşfet",
+          "suggestedKey": "common.ui.özellikleriKeşfet",
+          "context": "secondary: { label: 'Özellikleri keşfet', href: '/features' }...",
+          "replacement": "{t('common.ui.özellikleriKeşfet')}"
+        }
+      ]
+    },
+    "lib/contentful.ts": {
+      "totalStrings": 6,
+      "migrations": [
+        {
+          "line": 14,
+          "category": "ui",
+          "originalString": "[Contentful] Gerekli kimlik bilgileri eksik; istemci başlatılamadı.",
+          "suggestedKey": "common.ui.contentfulGerekliKimlikBilgileriEksikIstemci",
+          "context": "logger.warn('[Contentful] Gerekli kimlik bilgileri eksik; istemci başlatılamadı....",
+          "replacement": "{t('common.ui.contentfulGerekliKimlikBilgileriEksikIstemci')}"
+        },
+        {
+          "line": 27,
+          "category": "ui",
+          "originalString": "[Contentful] İstemci oluşturulurken hata oluştu:",
+          "suggestedKey": "common.ui.contentfulİstemciOluşturulurkenHataOluştu",
+          "context": "logger.error('[Contentful] İstemci oluşturulurken hata oluştu:', error);...",
+          "replacement": "{t('common.ui.contentfulİstemciOluşturulurkenHataOluştu')}"
+        },
+        {
+          "line": 193,
+          "category": "ui",
+          "originalString": "içerikleri için istemci bulunamadı. Boş sonuç dönüyor.",
+          "suggestedKey": "common.ui.içerikleriIçinIstemciBulunamadıBoşSonuçDönüy",
+          "context": "logger.warn(`[Contentful] '${contentType}' içerikleri için istemci bulunamadı. B...",
+          "replacement": "{t('common.ui.içerikleriIçinIstemciBulunamadıBoşSonuçDönüy')}"
+        },
+        {
+          "line": 221,
+          "category": "ui",
+          "originalString": "içeriği (${slug}) için istemci bulunamadı.",
+          "suggestedKey": "common.ui.içeriğiSlugIçinIstemciBulunamadı",
+          "context": "logger.warn(`[Contentful] '${contentType}' içeriği (${slug}) için istemci buluna...",
+          "replacement": "{t('common.ui.içeriğiSlugIçinIstemciBulunamadı')}"
+        },
+        {
+          "line": 249,
+          "category": "ui",
+          "originalString": "si ${entryId} olan kayıt için istemci bulunamadı.",
+          "suggestedKey": "common.ui.siEntryidOlanKayıtIçinIstemciBulunamadı",
+          "context": "logger.warn(`[Contentful] ID'si ${entryId} olan kayıt için istemci bulunamadı.`)...",
+          "replacement": "{t('common.ui.siEntryidOlanKayıtIçinIstemciBulunamadı')}"
+        },
+        {
+          "line": 272,
+          "category": "ui",
+          "originalString": "si ${assetId} olan varlık için istemci bulunamadı.",
+          "suggestedKey": "common.ui.siAssetidOlanVarlıkIçinIstemciBulunamadı",
+          "context": "logger.warn(`[Contentful] ID'si ${assetId} olan varlık için istemci bulunamadı.`...",
+          "replacement": "{t('common.ui.siAssetidOlanVarlıkIçinIstemciBulunamadı')}"
+        }
+      ]
+    },
+    "lib/errors.ts": {
+      "totalStrings": 18,
+      "migrations": [
+        {
+          "line": 94,
+          "category": "ui",
+          "originalString": "${this.field} alanı geçersiz: ${this.message}",
+          "suggestedKey": "common.ui.thisfieldAlanıGeçersizThismessage",
+          "context": "? `${this.field} alanı geçersiz: ${this.message}`...",
+          "replacement": "{t('common.ui.thisfieldAlanıGeçersizThismessage')}"
+        },
+        {
+          "line": 95,
+          "category": "ui",
+          "originalString": "Girilen bilgiler geçersiz: ${this.message}",
+          "suggestedKey": "common.ui.girilenBilgilerGeçersizThismessage",
+          "context": ": `Girilen bilgiler geçersiz: ${this.message}`,...",
+          "replacement": "{t('common.ui.girilenBilgilerGeçersizThismessage')}"
+        },
+        {
+          "line": 100,
+          "category": "ui",
+          "originalString": "Ungültiges ${this.field}: ${this.message}",
+          "suggestedKey": "common.ui.ungültigesThisfieldThismessage",
+          "context": "? `Ungültiges ${this.field}: ${this.message}`...",
+          "replacement": "{t('common.ui.ungültigesThisfieldThismessage')}"
+        },
+        {
+          "line": 101,
+          "category": "ui",
+          "originalString": "Ungültige Eingabe: ${this.message}",
+          "suggestedKey": "common.ui.ungültigeEingabeThismessage",
+          "context": ": `Ungültige Eingabe: ${this.message}`,...",
+          "replacement": "{t('common.ui.ungültigeEingabeThismessage')}"
+        },
+        {
+          "line": 142,
+          "category": "ui",
+          "originalString": "Sunucu hatası oluştu. Lütfen daha sonra tekrar deneyin.",
+          "suggestedKey": "common.ui.sunucuHatasıOluştuLütfenDahaSonraTekrarDene",
+          "context": "? 'Sunucu hatası oluştu. Lütfen daha sonra tekrar deneyin.'...",
+          "replacement": "{t('common.ui.sunucuHatasıOluştuLütfenDahaSonraTekrarDene')}"
+        },
+        {
+          "line": 143,
+          "category": "ui",
+          "originalString": "İstek işlenirken bir hata oluştu.",
+          "suggestedKey": "common.ui.i̇stekIşlenirkenBirHataOluştu",
+          "context": ": 'İstek işlenirken bir hata oluştu.',...",
+          "replacement": "{t('common.ui.i̇stekIşlenirkenBirHataOluştu')}"
+        },
+        {
+          "line": 185,
+          "category": "ui",
+          "originalString": "İnternet bağlantınızı kontrol edin ve tekrar deneyin.",
+          "suggestedKey": "common.ui.i̇nternetBağlantınızıKontrolEdinVeTekrarDeney",
+          "context": "? 'İnternet bağlantınızı kontrol edin ve tekrar deneyin.'...",
+          "replacement": "{t('common.ui.i̇nternetBağlantınızıKontrolEdinVeTekrarDeney')}"
+        },
+        {
+          "line": 186,
+          "category": "ui",
+          "originalString": "Ağ bağlantısı hatası. Lütfen tekrar deneyin.",
+          "suggestedKey": "common.ui.ağBağlantısıHatasıLütfenTekrarDeneyin",
+          "context": ": 'Ağ bağlantısı hatası. Lütfen tekrar deneyin.',...",
+          "replacement": "{t('common.ui.ağBağlantısıHatasıLütfenTekrarDeneyin')}"
+        },
+        {
+          "line": 191,
+          "category": "ui",
+          "originalString": "Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.",
+          "suggestedKey": "common.ui.bitteÜberprüfenSieIhreInternetverbindungUndV",
+          "context": "? 'Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.'...",
+          "replacement": "{t('common.ui.bitteÜberprüfenSieIhreInternetverbindungUndV')}"
+        },
+        {
+          "line": 229,
+          "category": "ui",
+          "originalString": "Oturum açmanız gerekiyor.",
+          "suggestedKey": "common.ui.oturumAçmanızGerekiyor",
+          "context": "? 'Oturum açmanız gerekiyor.'...",
+          "replacement": "{t('common.ui.oturumAçmanızGerekiyor')}"
+        },
+        {
+          "line": 230,
+          "category": "ui",
+          "originalString": "Bu işlem için yetkiniz bulunmuyor.",
+          "suggestedKey": "common.ui.buIşlemIçinYetkinizBulunmuyor",
+          "context": ": 'Bu işlem için yetkiniz bulunmuyor.',...",
+          "replacement": "{t('common.ui.buIşlemIçinYetkinizBulunmuyor')}"
+        },
+        {
+          "line": 235,
+          "category": "ui",
+          "originalString": "Sie müssen sich anmelden.",
+          "suggestedKey": "common.ui.sieMüssenSichAnmelden",
+          "context": "? 'Sie müssen sich anmelden.'...",
+          "replacement": "{t('common.ui.sieMüssenSichAnmelden')}"
+        },
+        {
+          "line": 236,
+          "category": "ui",
+          "originalString": "Sie haben keine Berechtigung für diese Aktion.",
+          "suggestedKey": "common.ui.sieHabenKeineBerechtigungFürDieseAktion",
+          "context": ": 'Sie haben keine Berechtigung für diese Aktion.',...",
+          "replacement": "{t('common.ui.sieHabenKeineBerechtigungFürDieseAktion')}"
+        },
+        {
+          "line": 272,
+          "category": "ui",
+          "originalString": "${this.resourceType} bulunamadı.",
+          "suggestedKey": "common.ui.thisresourcetypeBulunamadı",
+          "context": "? `${this.resourceType} bulunamadı.`...",
+          "replacement": "{t('common.ui.thisresourcetypeBulunamadı')}"
+        },
+        {
+          "line": 273,
+          "category": "ui",
+          "originalString": "Aradığınız sayfa bulunamadı.",
+          "suggestedKey": "common.ui.aradığınızSayfaBulunamadı",
+          "context": ": 'Aradığınız sayfa bulunamadı.',...",
+          "replacement": "{t('common.ui.aradığınızSayfaBulunamadı')}"
+        },
+        {
+          "line": 314,
+          "category": "ui",
+          "originalString": "Çok fazla istek gönderdiniz. Lütfen biraz bekleyin.",
+          "suggestedKey": "common.ui.çokFazlaIstekGönderdinizLütfenBirazBekleyin",
+          "context": "tr: 'Çok fazla istek gönderdiniz. Lütfen biraz bekleyin.',...",
+          "replacement": "{t('common.ui.çokFazlaIstekGönderdinizLütfenBirazBekleyin')}"
+        },
+        {
+          "line": 353,
+          "category": "ui",
+          "originalString": "Sistem yapılandırma hatası. Lütfen yöneticiye başvurun.",
+          "suggestedKey": "common.ui.sistemYapılandırmaHatasıLütfenYöneticiyeBaşvu",
+          "context": "tr: 'Sistem yapılandırma hatası. Lütfen yöneticiye başvurun.',...",
+          "replacement": "{t('common.ui.sistemYapılandırmaHatasıLütfenYöneticiyeBaşvu')}"
+        },
+        {
+          "line": 495,
+          "category": "ui",
+          "originalString": "Beklenmeyen bir hata oluştu.",
+          "suggestedKey": "common.ui.beklenmeyenBirHataOluştu",
+          "context": "tr: 'Beklenmeyen bir hata oluştu.',...",
+          "replacement": "{t('common.ui.beklenmeyenBirHataOluştu')}"
+        }
+      ]
+    },
+    "lib/formatting.ts": {
+      "totalStrings": 1,
+      "migrations": [
+        {
+          "line": 208,
+          "category": "ui",
+          "originalString": "okuma süresi",
+          "suggestedKey": "common.ui.okumaSüresi",
+          "context": "tr: { singular: 'dakika', plural: 'dakika', suffix: 'okuma süresi' },...",
+          "replacement": "{t('common.ui.okumaSüresi')}"
+        }
+      ]
+    },
+    "lib/pwa.ts": {
+      "totalStrings": 3,
+      "migrations": [
+        {
+          "line": 28,
+          "category": "ui",
+          "originalString": "[PWA] Service worker development modunda devre dışı bırakıldı",
+          "suggestedKey": "common.ui.pwaServiceWorkerDevelopmentModundaDevreDışı",
+          "context": "logger.info('[PWA] Service worker development modunda devre dışı bırakıldı');...",
+          "replacement": "{t('common.ui.pwaServiceWorkerDevelopmentModundaDevreDışı')}"
+        },
+        {
+          "line": 34,
+          "category": "ui",
+          "originalString": "[PWA] Var olan servis worker kayıtları temizlendi",
+          "suggestedKey": "common.ui.pwaVarOlanServisWorkerKayıtlarıTemizlendi",
+          "context": "logger.info('[PWA] Var olan servis worker kayıtları temizlendi');...",
+          "replacement": "{t('common.ui.pwaVarOlanServisWorkerKayıtlarıTemizlendi')}"
+        },
+        {
+          "line": 36,
+          "category": "ui",
+          "originalString": "[PWA] Servis worker temizleme başarısız:",
+          "suggestedKey": "common.ui.pwaServisWorkerTemizlemeBaşarısız",
+          "context": "logger.warn('[PWA] Servis worker temizleme başarısız:', error);...",
+          "replacement": "{t('common.ui.pwaServisWorkerTemizlemeBaşarısız')}"
+        }
+      ]
+    },
+    "test/e2e/navigation.spec.ts": {
+      "totalStrings": 1,
+      "migrations": [
+        {
+          "line": 41,
+          "category": "ui",
+          "originalString": "text=Türkçe",
+          "suggestedKey": "common.ui.texttürkçe",
+          "context": "await page.click('text=Türkçe')...",
+          "replacement": "{t('common.ui.texttürkçe')}"
+        }
+      ]
+    },
+    "test/integration/api-validation.test.ts": {
+      "totalStrings": 20,
+      "migrations": [
+        {
+          "line": 27,
+          "category": "ui",
+          "originalString": "Test Başlık",
+          "suggestedKey": "common.ui.testBaşlık",
+          "context": "tr: 'Test Başlık',...",
+          "replacement": "{t('common.ui.testBaşlık')}"
+        },
+        {
+          "line": 33,
+          "category": "ui",
+          "originalString": "Test özet",
+          "suggestedKey": "common.ui.testÖzet",
+          "context": "tr: 'Test özet',...",
+          "replacement": "{t('common.ui.testÖzet')}"
+        },
+        {
+          "line": 39,
+          "category": "ui",
+          "originalString": "Test içerik",
+          "suggestedKey": "common.ui.testIçerik",
+          "context": "tr: 'Test içerik',...",
+          "replacement": "{t('common.ui.testIçerik')}"
+        },
+        {
+          "line": 59,
+          "category": "ui",
+          "originalString": "Yazar avatarı",
+          "suggestedKey": "common.ui.yazarAvatarı",
+          "context": "tr: 'Yazar avatarı',...",
+          "replacement": "{t('common.ui.yazarAvatarı')}"
+        },
+        {
+          "line": 71,
+          "category": "ui",
+          "originalString": "Sürdürülebilirlik",
+          "suggestedKey": "common.ui.sürdürülebilirlik",
+          "context": "tr: 'Sürdürülebilirlik',...",
+          "replacement": "{t('common.ui.sürdürülebilirlik')}"
+        },
+        {
+          "line": 83,
+          "category": "ui",
+          "originalString": "Sürdürülebilirlik kategorisi",
+          "suggestedKey": "common.ui.sürdürülebilirlikKategorisi",
+          "context": "tr: 'Sürdürülebilirlik kategorisi',...",
+          "replacement": "{t('common.ui.sürdürülebilirlikKategorisi')}"
+        },
+        {
+          "line": 99,
+          "category": "ui",
+          "originalString": "Öne çıkan görsel",
+          "suggestedKey": "common.ui.öneÇıkanGörsel",
+          "context": "tr: 'Öne çıkan görsel',...",
+          "replacement": "{t('common.ui.öneÇıkanGörsel')}"
+        },
+        {
+          "line": 117,
+          "category": "ui",
+          "originalString": "SEO Başlık",
+          "suggestedKey": "common.ui.seoBaşlık",
+          "context": "tr: 'SEO Başlık',...",
+          "replacement": "{t('common.ui.seoBaşlık')}"
+        },
+        {
+          "line": 123,
+          "category": "ui",
+          "originalString": "SEO açıklama",
+          "suggestedKey": "common.ui.seoAçıklama",
+          "context": "tr: 'SEO açıklama',...",
+          "replacement": "{t('common.ui.seoAçıklama')}"
+        },
+        {
+          "line": 131,
+          "category": "ui",
+          "originalString": "schlüssel",
+          "suggestedKey": "common.ui.schlüssel",
+          "context": "de: ['schlüssel', 'wort'],...",
+          "replacement": "{t('common.ui.schlüssel')}"
+        },
+        {
+          "line": 240,
+          "category": "ui",
+          "originalString": "Barkod tarama içeriği",
+          "suggestedKey": "common.ui.barkodTaramaIçeriği",
+          "context": "tr: 'Barkod tarama içeriği',...",
+          "replacement": "{t('common.ui.barkodTaramaIçeriği')}"
+        },
+        {
+          "line": 256,
+          "category": "ui",
+          "originalString": "SEO açıklama",
+          "suggestedKey": "common.ui.seoAçıklama",
+          "context": "tr: 'SEO açıklama',...",
+          "replacement": "{t('common.ui.seoAçıklama')}"
+        },
+        {
+          "line": 275,
+          "category": "ui",
+          "originalString": "Ürün barkodlarını tarayın",
+          "suggestedKey": "common.ui.ürünBarkodlarınıTarayın",
+          "context": "tr: 'Ürün barkodlarını tarayın',...",
+          "replacement": "{t('common.ui.ürünBarkodlarınıTarayın')}"
+        },
+        {
+          "line": 286,
+          "category": "ui",
+          "originalString": "Ekran görüntüsü 1",
+          "suggestedKey": "common.ui.ekranGörüntüsü1",
+          "context": "tr: 'Ekran görüntüsü 1',...",
+          "replacement": "{t('common.ui.ekranGörüntüsü1')}"
+        },
+        {
+          "line": 298,
+          "category": "ui",
+          "originalString": "Hızlı tarama",
+          "suggestedKey": "common.ui.hızlıTarama",
+          "context": "tr: ['Hızlı tarama', 'Doğru sonuçlar'],...",
+          "replacement": "{t('common.ui.hızlıTarama')}"
+        },
+        {
+          "line": 318,
+          "category": "ui",
+          "originalString": "Tarama özellikleri",
+          "suggestedKey": "common.ui.taramaÖzellikleri",
+          "context": "tr: 'Tarama özellikleri',...",
+          "replacement": "{t('common.ui.taramaÖzellikleri')}"
+        },
+        {
+          "line": 560,
+          "category": "ui",
+          "originalString": "Türkçe başlık",
+          "suggestedKey": "common.ui.türkçeBaşlık",
+          "context": "tr: 'Türkçe başlık',...",
+          "replacement": "{t('common.ui.türkçeBaşlık')}"
+        },
+        {
+          "line": 570,
+          "category": "ui",
+          "originalString": "özet",
+          "suggestedKey": "common.ui.özet",
+          "context": "excerpt: { tr: 'özet', en: 'excerpt', de: 'auszug', fr: 'extrait' },...",
+          "replacement": "{t('common.ui.özet')}"
+        },
+        {
+          "line": 571,
+          "category": "ui",
+          "originalString": "içerik",
+          "suggestedKey": "common.ui.içerik",
+          "context": "content: { tr: 'içerik', en: 'content', de: 'inhalt', fr: 'contenu' },...",
+          "replacement": "{t('common.ui.içerik')}"
+        },
+        {
+          "line": 590,
+          "category": "ui",
+          "originalString": "açıklama",
+          "suggestedKey": "common.ui.açıklama",
+          "context": "description: { tr: 'açıklama', en: 'description', de: 'beschreibung', fr: 'descr...",
+          "replacement": "{t('common.ui.açıklama')}"
+        }
+      ]
+    },
+    "test/lib/type-guards.test.ts": {
+      "totalStrings": 4,
+      "migrations": [
+        {
+          "line": 227,
+          "category": "ui",
+          "originalString": "Türkçe içerik",
+          "suggestedKey": "common.ui.türkçeIçerik",
+          "context": "tr: 'Türkçe içerik',...",
+          "replacement": "{t('common.ui.türkçeIçerik')}"
+        },
+        {
+          "line": 230,
+          "category": "ui",
+          "originalString": "Contenu français",
+          "suggestedKey": "common.ui.contenuFrançais",
+          "context": "fr: 'Contenu français'...",
+          "replacement": "{t('common.ui.contenuFrançais')}"
+        },
+        {
+          "line": 322,
+          "category": "ui",
+          "originalString": "Türkçe",
+          "suggestedKey": "common.ui.türkçe",
+          "context": "tr: 'Türkçe',...",
+          "replacement": "{t('common.ui.türkçe')}"
+        },
+        {
+          "line": 325,
+          "category": "ui",
+          "originalString": "Français",
+          "suggestedKey": "common.ui.français",
+          "context": "fr: 'Français'...",
+          "replacement": "{t('common.ui.français')}"
+        }
+      ]
+    },
+    "test/types/generic-constraints.test-d.ts": {
+      "totalStrings": 11,
+      "migrations": [
+        {
+          "line": 190,
+          "category": "ui",
+          "originalString": "Türkçe",
+          "suggestedKey": "common.ui.türkçe",
+          "context": "tr: 'Türkçe',...",
+          "replacement": "{t('common.ui.türkçe')}"
+        },
+        {
+          "line": 193,
+          "category": "ui",
+          "originalString": "Français",
+          "suggestedKey": "common.ui.français",
+          "context": "fr: 'Français'...",
+          "replacement": "{t('common.ui.français')}"
+        },
+        {
+          "line": 199,
+          "category": "ui",
+          "originalString": "Türkçe",
+          "suggestedKey": "common.ui.türkçe",
+          "context": "tr: 'Türkçe',...",
+          "replacement": "{t('common.ui.türkçe')}"
+        },
+        {
+          "line": 205,
+          "category": "ui",
+          "originalString": "Türkçe",
+          "suggestedKey": "common.ui.türkçe",
+          "context": "tr: 'Türkçe',...",
+          "replacement": "{t('common.ui.türkçe')}"
+        },
+        {
+          "line": 214,
+          "category": "ui",
+          "originalString": "Türkçe",
+          "suggestedKey": "common.ui.türkçe",
+          "context": "tr: 'Türkçe',...",
+          "replacement": "{t('common.ui.türkçe')}"
+        },
+        {
+          "line": 217,
+          "category": "ui",
+          "originalString": "Français",
+          "suggestedKey": "common.ui.français",
+          "context": "fr: 'Français',...",
+          "replacement": "{t('common.ui.français')}"
+        },
+        {
+          "line": 231,
+          "category": "ui",
+          "originalString": "Test Başlık",
+          "suggestedKey": "common.ui.testBaşlık",
+          "context": "tr: 'Test Başlık',...",
+          "replacement": "{t('common.ui.testBaşlık')}"
+        },
+        {
+          "line": 237,
+          "category": "ui",
+          "originalString": "Test özet",
+          "suggestedKey": "common.ui.testÖzet",
+          "context": "tr: 'Test özet',...",
+          "replacement": "{t('common.ui.testÖzet')}"
+        },
+        {
+          "line": 243,
+          "category": "ui",
+          "originalString": "Test içerik",
+          "suggestedKey": "common.ui.testIçerik",
+          "context": "tr: 'Test içerik',...",
+          "replacement": "{t('common.ui.testIçerik')}"
+        },
+        {
+          "line": 264,
+          "category": "ui",
+          "originalString": "Özellik",
+          "suggestedKey": "common.ui.özellik",
+          "context": "tr: 'Özellik',...",
+          "replacement": "{t('common.ui.özellik')}"
+        },
+        {
+          "line": 270,
+          "category": "ui",
+          "originalString": "Açıklama",
+          "suggestedKey": "common.ui.açıklama",
+          "context": "tr: 'Açıklama',...",
+          "replacement": "{t('common.ui.açıklama')}"
+        }
+      ]
+    }
+  },
+  "byKey": {
+    "pages.about.timeline.fikrinDoğuşuVeIlkVeriToplamaPrototipi": {
+      "originalString": "Fikrin doğuşu ve ilk veri toplama prototipi",
+      "files": [
+        {
+          "file": "app/[locale]/about/page.tsx",
+          "line": 4
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.about.timeline.mvpGeliştirmeVeKapalıBeta": {
+      "originalString": "MVP geliştirme ve kapalı beta",
+      "files": [
+        {
+          "file": "app/[locale]/about/page.tsx",
+          "line": 5
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.about.timeline.betaLansmanıVeIlk50kKullanıcı": {
+      "originalString": "Beta lansmanı ve ilk 50K kullanıcı",
+      "files": [
+        {
+          "file": "app/[locale]/about/page.tsx",
+          "line": 6
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.about.timeline.100kKullanıcıIlkFoundationBağışRaporu": {
+      "originalString": "100K kullanıcı, ilk Foundation bağış raporu",
+      "files": [
+        {
+          "file": "app/[locale]/about/page.tsx",
+          "line": 8
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.about.timeline.coriaTokenLansmanıVeSolanaEntegrasyonu": {
+      "originalString": "CORIA Token lansmanı ve Solana entegrasyonu",
+      "files": [
+        {
+          "file": "app/[locale]/about/page.tsx",
+          "line": 9
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.about.partnerships.solanaTabanlıTokenAltyapısıVeEtkiRaporlama": {
+      "originalString": "Solana tabanlı token altyapısı ve etki raporlama.",
+      "files": [
+        {
+          "file": "app/[locale]/about/page.tsx",
+          "line": 13
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.about.partnerships.yeşilEnerjiKooperatifleri": {
+      "originalString": "Yeşil Enerji Kooperatifleri",
+      "files": [
+        {
+          "file": "app/[locale]/about/page.tsx",
+          "line": 14
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.about.partnerships.veganRestoranDönüşümüVeEğitimProgramları": {
+      "originalString": "Vegan restoran dönüşümü ve eğitim programları.",
+      "files": [
+        {
+          "file": "app/[locale]/about/page.tsx",
+          "line": 15
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.contact.content.iletişim": {
+      "originalString": "iletişim",
+      "files": [
+        {
+          "file": "app/[locale]/contact/page.tsx",
+          "line": 43
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.foundation.hero.subtitle.birlikteDahaBüyükEtkiYaratıyoruz": {
+      "originalString": "Birlikte Daha Büyük Etki Yaratıyoruz",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 72
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.foundation.features.coriaUygulamaGelirlerininBirKısmınıSürdürüleb": {
+      "originalString": "CORIA, uygulama gelirlerinin bir kısmını sürdürülebilirlik projelerine yatırım yapmak için CORIA Foundation",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 73
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.foundation.features.believePlatformEntegrasyonuIleSolanaTabanlıT": {
+      "originalString": "Believe Platform entegrasyonu ile Solana tabanlı token kullanım alanları",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 77
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.foundation.features.believePlatformÜzerindenÇıkarılacakÖzelSolana": {
+      "originalString": "Believe Platform üzerinden çıkarılacak özel Solana token",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 82
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.foundation.content.feeDağılımModeli": {
+      "originalString": "Fee Dağılım Modeli",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 86
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.foundation.features.tokenIşlemÜcretleriDirektOlarakSürdürülebilir": {
+      "originalString": "Token işlem ücretleri direkt olarak sürdürülebilirlik projelerine aktarılır",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 87
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.foundation.content.şeffafFonlama": {
+      "originalString": "Şeffaf Fonlama",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 91
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.foundation.features.blockchainTabanlıŞeffafFonDağıtımıVeEtkiTak": {
+      "originalString": "Blockchain tabanlı şeffaf fon dağıtımı ve etki takibi",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 92
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.foundation.content.ekolojikTarımProjesi": {
+      "originalString": "Ekolojik Tarım Projesi",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 100
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.foundation.content.5000HektarOrganikTarımAlanıOluşturuldu": {
+      "originalString": "5000 hektar organik tarım alanı oluşturuldu",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 101
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.foundation.content.veganlık": {
+      "originalString": "Veganlık",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 102
+        },
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 417
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.foundation.content.güneşEnerjisiKooperatifi": {
+      "originalString": "Güneş Enerjisi Kooperatifi",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 106
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.foundation.content.250AileyeTemizEnerjiErişimiSağlandı": {
+      "originalString": "250 aileye temiz enerji erişimi sağlandı",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 107
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.foundation.content.yeşilEnerji": {
+      "originalString": "Yeşil Enerji",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 108
+        },
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 419
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.foundation.content.sıfırAtıkİnisiyatifi": {
+      "originalString": "Sıfır Atık İnisiyatifi",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 112
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.foundation.content.12ŞehirdePlastikKullanımı60Azaltıldı": {
+      "originalString": "12 şehirde plastik kullanımı %60 azaltıldı",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 113
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.foundation.content.sürdürülebilirlik": {
+      "originalString": "Sürdürülebilirlik",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 114
+        },
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 418
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.foundation.content.şeffaflık": {
+      "originalString": "Şeffaflık",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 121
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.foundation.features.tümFonlamaKararlarıVeEtkiRaporlarıHalkaAçık": {
+      "originalString": "Tüm fonlama kararları ve etki raporları halka açık blockchain üzerinde",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 122
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.foundation.content.toplulukYönetimi": {
+      "originalString": "Topluluk Yönetimi",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 126
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.foundation.features.coriaTokenSahipleriProjeSeçimindeOyKullanma": {
+      "originalString": "CORIA token sahipleri proje seçiminde oy kullanma hakkına sahip",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 127
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.foundation.content.etkiOdaklılık": {
+      "originalString": "Etki Odaklılık",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 131
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.foundation.features.herProjeninÖlçülebilirÇevreselVeSosyalEtkisi": {
+      "originalString": "Her projenin ölçülebilir çevresel ve sosyal etkisi raporlanır",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 132
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.foundation.roadmap.foundationKonseptiTasarlandı": {
+      "originalString": "Foundation konsepti tasarlandı",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 141
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.foundation.roadmap.solanaTabanlıCoriaTokenLansmanı": {
+      "originalString": "Solana tabanlı CORIA Token lansmanı",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 146
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.foundation.roadmap.globalGenişleme": {
+      "originalString": "Global genişleme",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 151
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.foundation.content.projeniziTanımlayanBaşlık": {
+      "originalString": "Projenizi tanımlayan başlık",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 408
+        }
+      ],
+      "category": "placeholder"
+    },
+    "pages.foundation.content.projenizi280KarakterdeÖzetleyin": {
+      "originalString": "Projenizi 280 karakterde özetleyin",
+      "files": [
+        {
+          "file": "app/[locale]/foundation/page.tsx",
+          "line": 441
+        }
+      ],
+      "category": "placeholder"
+    },
+    "common.meta.coriaSürdürülebilirYaşamUygulaması": {
+      "originalString": "CORIA - Sürdürülebilir Yaşam Uygulaması",
+      "files": [
+        {
+          "file": "app/[locale]/layout.tsx",
+          "line": 54
+        }
+      ],
+      "category": "ui"
+    },
+    "common.meta.bilinçliTüketimKararlarıAlınÇevreselEtkilerin": {
+      "originalString": "Bilinçli tüketim kararları alın, çevresel etkilerinizi takip edin ve sürdürülebilir alternatifleri keşfedin.",
+      "files": [
+        {
+          "file": "app/[locale]/layout.tsx",
+          "line": 61
+        }
+      ],
+      "category": "ui"
+    },
+    "common.meta.keywords.sürdürülebilirlik": {
+      "originalString": "sürdürülebilirlik",
+      "files": [
+        {
+          "file": "app/[locale]/layout.tsx",
+          "line": 68
+        }
+      ],
+      "category": "ui"
+    },
+    "common.meta.keywords.grünesLeben": {
+      "originalString": "grünes Leben",
+      "files": [
+        {
+          "file": "app/[locale]/layout.tsx",
+          "line": 70
+        }
+      ],
+      "category": "ui"
+    },
+    "pages.pricing.content.fiyatlandırma": {
+      "originalString": "fiyatlandırma",
+      "files": [
+        {
+          "file": "app/[locale]/pricing/page.tsx",
+          "line": 39
+        }
+      ],
+      "category": "ui"
+    },
+    "navigation.footer.basınYatırımcı": {
+      "originalString": "Basın & Yatırımcı",
+      "files": [
+        {
+          "file": "components/layout/footer.tsx",
+          "line": 31
+        }
+      ],
+      "category": "ui"
+    },
+    "navigation.footer.gizlilikPolitikası": {
+      "originalString": "Gizlilik Politikası",
+      "files": [
+        {
+          "file": "components/layout/footer.tsx",
+          "line": 35
+        }
+      ],
+      "category": "ui"
+    },
+    "navigation.footer.kullanımKoşulları": {
+      "originalString": "Kullanım Koşulları",
+      "files": [
+        {
+          "file": "components/layout/footer.tsx",
+          "line": 36
+        }
+      ],
+      "category": "ui"
+    },
+    "navigation.footer.kvkkAydınlatması": {
+      "originalString": "KVKK Aydınlatması",
+      "files": [
+        {
+          "file": "components/layout/footer.tsx",
+          "line": 37
+        }
+      ],
+      "category": "ui"
+    },
+    "navigation.footer.çerezPolitikası": {
+      "originalString": "Çerez Politikası",
+      "files": [
+        {
+          "file": "components/layout/footer.tsx",
+          "line": 38
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.ücretsiz": {
+      "originalString": "Ücretsiz",
+      "files": [
+        {
+          "file": "components/pricing/pricing-plans.tsx",
+          "line": 82
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.nınTümÖzellikleriniKeşfetmekIçinUygulamayıIn": {
+      "originalString": "nın tüm özelliklerini keşfetmek için uygulamayı indirin",
+      "files": [
+        {
+          "file": "components/sections/features-showcase-animated.tsx",
+          "line": 107
+        }
+      ],
+      "category": "ui"
+    },
+    "common.aria.features.titleÖzelliği": {
+      "originalString": "${title} özelliği",
+      "files": [
+        {
+          "file": "components/sections/features-showcase.tsx",
+          "line": 60
+        }
+      ],
+      "category": "ui"
+    },
+    "features.descriptions.ürünlerinVeganUygunluğunuVeAlerjenIçeriğiniA": {
+      "originalString": "Ürünlerin vegan uygunluğunu ve alerjen içeriğini anında analiz edin. Kişisel beslenme tercihlerinize uygun seçimler yapın.",
+      "files": [
+        {
+          "file": "components/sections/features-showcase.tsx",
+          "line": 95
+        }
+      ],
+      "category": "ui"
+    },
+    "features.descriptions.yapayZekaDestekliKişiselAsistanınızIleBeslen": {
+      "originalString": "Yapay zeka destekli kişisel asistanınız ile beslenme önerilerinden sürdürülebilir yaşam ipuçlarına kadar her konuda destek alın.",
+      "files": [
+        {
+          "file": "components/sections/features-showcase.tsx",
+          "line": 100
+        }
+      ],
+      "category": "ui"
+    },
+    "features.list.akıllıKiler": {
+      "originalString": "Akıllı Kiler",
+      "files": [
+        {
+          "file": "components/sections/features-showcase.tsx",
+          "line": 104
+        }
+      ],
+      "category": "ui"
+    },
+    "features.descriptions.kilerdekiÜrünleriTakipEdinSonKullanmaTarihle": {
+      "originalString": "Kilerdeki ürünleri takip edin, son kullanma tarihlerini izleyin ve israfı önlemek için akıllı öneriler alın.",
+      "files": [
+        {
+          "file": "components/sections/features-showcase.tsx",
+          "line": 105
+        }
+      ],
+      "category": "ui"
+    },
+    "features.list.esgSkorları": {
+      "originalString": "ESG Skorları",
+      "files": [
+        {
+          "file": "components/sections/features-showcase.tsx",
+          "line": 109
+        }
+      ],
+      "category": "ui"
+    },
+    "features.descriptions.ürünVeMarkalarınÇevreselSosyalVeYönetişimPe": {
+      "originalString": "Ürün ve markaların çevresel, sosyal ve yönetişim performanslarını ESG skorları ile değerlendirin.",
+      "files": [
+        {
+          "file": "components/sections/features-showcase.tsx",
+          "line": 110
+        }
+      ],
+      "category": "ui"
+    },
+    "features.descriptions.tüketimAlışkanlıklarınızınKarbonAyakIziniVeS": {
+      "originalString": "Tüketim alışkanlıklarınızın karbon ayak izini ve su kullanımını takip ederek çevresel etkilerinizi azaltın.",
+      "files": [
+        {
+          "file": "components/sections/features-showcase.tsx",
+          "line": 115
+        }
+      ],
+      "category": "ui"
+    },
+    "features.list.toplulukÖnerileri": {
+      "originalString": "Topluluk Önerileri",
+      "files": [
+        {
+          "file": "components/sections/features-showcase.tsx",
+          "line": 119
+        }
+      ],
+      "category": "ui"
+    },
+    "features.descriptions.sürdürülebilirYaşamTopluluğundanÖnerilerAlınD": {
+      "originalString": "Sürdürülebilir yaşam topluluğundan öneriler alın, deneyimlerinizi paylaşın ve birlikte öğrenin.",
+      "files": [
+        {
+          "file": "components/sections/features-showcase.tsx",
+          "line": 120
+        }
+      ],
+      "category": "ui"
+    },
+    "common.aria.features.coriaPlatformÖzellikleri": {
+      "originalString": "CORIA platform özellikleri",
+      "files": [
+        {
+          "file": "components/sections/features-showcase.tsx",
+          "line": 144
+        }
+      ],
+      "category": "aria"
+    },
+    "hero.badge.veganYaşamAsistanı": {
+      "originalString": "Vegan Yaşam Asistanı",
+      "files": [
+        {
+          "file": "components/sections/hero-section.tsx",
+          "line": 51
+        }
+      ],
+      "category": "ui"
+    },
+    "hero.title.kalbinleSeçEtkiyleYaşa": {
+      "originalString": "Kalbinle Seç. Etkiyle Yaşa.",
+      "files": [
+        {
+          "file": "components/sections/hero-section.tsx",
+          "line": 52
+        }
+      ],
+      "category": "ui"
+    },
+    "hero.title.taradığınHerÜrününVeganlıkAlerjenSağlıkVeSü": {
+      "originalString": "Taradığın her ürünün veganlık, alerjen, sağlık ve sürdürülebilirlik skorlarını tek bakışta gör.",
+      "files": [
+        {
+          "file": "components/sections/hero-section.tsx",
+          "line": 53
+        }
+      ],
+      "category": "ui"
+    },
+    "hero.cta.iosIçinİndir": {
+      "originalString": "iOS için İndir",
+      "files": [
+        {
+          "file": "components/sections/hero-section.tsx",
+          "line": 55
+        }
+      ],
+      "category": "ui"
+    },
+    "hero.cta.androidIçinİndir": {
+      "originalString": "Android için İndir",
+      "files": [
+        {
+          "file": "components/sections/hero-section.tsx",
+          "line": 59
+        }
+      ],
+      "category": "ui"
+    },
+    "hero.stats.milyarÜrünVerisi": {
+      "originalString": "Milyar Ürün Verisi",
+      "files": [
+        {
+          "file": "components/sections/hero-section.tsx",
+          "line": 65
+        }
+      ],
+      "category": "ui"
+    },
+    "hero.stats.etiketVeİçerik": {
+      "originalString": "Etiket ve İçerik",
+      "files": [
+        {
+          "file": "components/sections/hero-section.tsx",
+          "line": 66
+        }
+      ],
+      "category": "ui"
+    },
+    "hero.stats.aktifKullanıcı": {
+      "originalString": "Aktif Kullanıcı",
+      "files": [
+        {
+          "file": "components/sections/hero-section.tsx",
+          "line": 67
+        }
+      ],
+      "category": "ui"
+    },
+    "common.aria.daCoriaUygulamasınıIndirin": {
+      "originalString": "da CORIA uygulamasını indirin",
+      "files": [
+        {
+          "file": "components/sections/hero-section.tsx",
+          "line": 119
+        },
+        {
+          "file": "components/sections/hero-section.tsx",
+          "line": 131
+        }
+      ],
+      "category": "ui"
+    },
+    "common.aria.coriaIstatistikleriVeEtkiGöstergeleri": {
+      "originalString": "CORIA istatistikleri ve etki göstergeleri",
+      "files": [
+        {
+          "file": "components/sections/hero-section.tsx",
+          "line": 142
+        }
+      ],
+      "category": "aria"
+    },
+    "common.aria.metricvalueMetriclabelCoriaEtkiGöstergesi": {
+      "originalString": "${metric.value} ${metric.label} - CORIA etki göstergesi",
+      "files": [
+        {
+          "file": "components/sections/hero-section.tsx",
+          "line": 152
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.coriaSürdürülebilirYaşamUygulaması": {
+      "originalString": "CORIA - Sürdürülebilir Yaşam Uygulaması",
+      "files": [
+        {
+          "file": "components/seo/structured-data.tsx",
+          "line": 48
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.bilinçliTüketimKararlarıAlınÇevreselEtkilerin": {
+      "originalString": "Bilinçli tüketim kararları alın, çevresel etkilerinizi takip edin ve sürdürülebilir alternatifleri keşfedin.",
+      "files": [
+        {
+          "file": "components/seo/structured-data.tsx",
+          "line": 55
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.sürdürülebilirYaşamIçinMobilUygulamaGeliştire": {
+      "originalString": "Sürdürülebilir yaşam için mobil uygulama geliştiren teknoloji şirketi.",
+      "files": [
+        {
+          "file": "components/seo/structured-data.tsx",
+          "line": 91
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.technologieunternehmenDasMobileAnwendungenFür": {
+      "originalString": "Technologieunternehmen, das mobile Anwendungen für nachhaltiges Leben entwickelt.",
+      "files": [
+        {
+          "file": "components/seo/structured-data.tsx",
+          "line": 93
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.coriaMobilUygulaması": {
+      "originalString": "CORIA Mobil Uygulaması",
+      "files": [
+        {
+          "file": "components/seo/structured-data.tsx",
+          "line": 139
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.sürdürülebilirYaşamIçinBarkodTaramaÇevreselE": {
+      "originalString": "Sürdürülebilir yaşam için barkod tarama, çevresel etki takibi ve bilinçli tüketim önerileri sunan mobil uygulama.",
+      "files": [
+        {
+          "file": "components/seo/structured-data.tsx",
+          "line": 146
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.mobileAppMitBarcodescanningUmweltauswirkungsve": {
+      "originalString": "Mobile App mit Barcode-Scanning, Umweltauswirkungsverfolgung und bewussten Konsumempfehlungen für nachhaltiges Leben.",
+      "files": [
+        {
+          "file": "components/seo/structured-data.tsx",
+          "line": 148
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.türkçe": {
+      "originalString": "Türkçe",
+      "files": [
+        {
+          "file": "components/ui/language-switcher.tsx",
+          "line": 15
+        },
+        {
+          "file": "test/lib/type-guards.test.ts",
+          "line": 322
+        },
+        {
+          "file": "test/types/generic-constraints.test-d.ts",
+          "line": 190
+        },
+        {
+          "file": "test/types/generic-constraints.test-d.ts",
+          "line": 199
+        },
+        {
+          "file": "test/types/generic-constraints.test-d.ts",
+          "line": 205
+        },
+        {
+          "file": "test/types/generic-constraints.test-d.ts",
+          "line": 214
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.français": {
+      "originalString": "Français",
+      "files": [
+        {
+          "file": "components/ui/language-switcher.tsx",
+          "line": 18
+        },
+        {
+          "file": "test/lib/type-guards.test.ts",
+          "line": 325
+        },
+        {
+          "file": "test/types/generic-constraints.test-d.ts",
+          "line": 193
+        },
+        {
+          "file": "test/types/generic-constraints.test-d.ts",
+          "line": 217
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.veganEtikVeSürdürülebilirSeçimAsistanı": {
+      "originalString": "Vegan, etik ve sürdürülebilir seçim asistanı",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 122
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.kalbinleSeçEtkiyleYaşa": {
+      "originalString": "Kalbinle Seç. Etkiyle Yaşa.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 123
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.taradığınHerÜrününVeganlıkAlerjenSağlıkVeSü": {
+      "originalString": "Taradığın her ürünün veganlık, alerjen, sağlık ve sürdürülebilirlik skorlarını tek bakışta gör. Bilimsel verilerle desteklenen önerilerle her seferinde daha iyi seçim yap.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 125
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.veganlıkAlerjenVeIçerikRiskleriIçinAnlıkUya": {
+      "originalString": "Veganlık, alerjen ve içerik riskleri için anlık uyarılar",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 127
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.esgBoykotVeMarkaEtikProfillerinin360Görünüm": {
+      "originalString": "ESG, boykot ve marka etik profillerinin 360° görünümü",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 128
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.akıllıKilerIsrafÖnlemeVeKarbonsuEtkisiTakib": {
+      "originalString": "Akıllı kiler, israf önleme ve karbon/su etkisi takibi",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 129
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.premiumu7GünÜcretsizDeneIstediğinZamanIptal": {
+      "originalString": "Premium’u 7 gün ücretsiz dene, istediğin zaman iptal et.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 133
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.ürünEtiketiAnalizi": {
+      "originalString": "ürün etiketi analizi",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 136
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.güncelIçerikEtiketVerisi": {
+      "originalString": "güncel içerik & etiket verisi",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 137
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.aktifCoriaTopluluğu": {
+      "originalString": "aktif CORIA topluluğu",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 138
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.toplulukVeIşOrtaklarımızdanDestek": {
+      "originalString": "Topluluk ve iş ortaklarımızdan destek",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 142
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.coriaSürdürülebilirDönüşümünKalbindeYerAlanB": {
+      "originalString": "CORIA, sürdürülebilir dönüşümün kalbinde yer alan bireylerin ve kurumların güvenilir yardımcısıdır.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 143
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.alışverişRutinimiKurtardı": {
+      "originalString": "Alışveriş rutinimi kurtardı",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 145
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.veriyeDayalıEsgRaporları": {
+      "originalString": "Veriye dayalı ESG raporları",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 146
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.foundationIleGerçekEtki": {
+      "originalString": "Foundation ile gerçek etki",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 147
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.veganVeganAdayları": {
+      "originalString": "Vegan & Vegan Adayları",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 152
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.ürünleriSaniyelerIçindeTarayarakVeganlığınıIç": {
+      "originalString": "Ürünleri saniyeler içinde tarayarak veganlığını, içerik risklerini ve daha iyi alternatifleri gör.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 153
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.özelVeganvejetaryenFiltreleri": {
+      "originalString": "Özel vegan/vejetaryen filtreleri",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 155
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.toplulukYorumlarıVeDeneyimleri": {
+      "originalString": "Topluluk yorumları ve deneyimleri",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 156
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.tarifÖnerileriVeMarketAlışverişListeleri": {
+      "originalString": "Tarif önerileri ve market alışveriş listeleri",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 157
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.alerjenŞekerTuzVeKatkıRiskleriniÇocuklarının": {
+      "originalString": "Alerjen, şeker, tuz ve katkı risklerini çocuklarının ihtiyaçlarına göre yönet.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 163
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.riskSeviyeleriyleAlerjenUyarıları": {
+      "originalString": "Risk seviyeleriyle alerjen uyarıları",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 165
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.detaylıIçerikAçıklamaları": {
+      "originalString": "Detaylı içerik açıklamaları",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 166
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.güvenliAlternatifÖnerileri": {
+      "originalString": "Güvenli alternatif önerileri",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 167
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.sağlıkOdaklıKullanıcılar": {
+      "originalString": "Sağlık Odaklı Kullanıcılar",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 172
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.besinDeğerleriniSağlıkSkorlarınıVeKişiselHed": {
+      "originalString": "Besin değerlerini, sağlık skorlarını ve kişisel hedeflerini tek ekranda takip et.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 173
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.şekertuzproteinSapmaUyarıları": {
+      "originalString": "Şeker/tuz/protein sapma uyarıları",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 176
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.uzmanlardanOnaylıIçerikKütüphanesi": {
+      "originalString": "Uzmanlardan onaylı içerik kütüphanesi",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 177
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.sürdürülebilirlikSavunucuları": {
+      "originalString": "Sürdürülebilirlik Savunucuları",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 182
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.karbonSuVeEtikEtkileriKarşılaştırFoundation": {
+      "originalString": "Karbon, su ve etik etkileri karşılaştır; Foundation projeleriyle gerçek değişimi destekle.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 183
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.karbonSuAyakIziSayaçları": {
+      "originalString": "Karbon & su ayak izi sayaçları",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 185
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.coriaFoundationProjeBağışları": {
+      "originalString": "CORIA Foundation proje bağışları",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 187
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.barkodTarayınÜrününVeganlıkDurumuAlerjenRisk": {
+      "originalString": "Barkod tarayın, ürünün veganlık durumu, alerjen riskleri ve içerik açıklamaları anında listelensin.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 195
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.aiYaşamAsistanı": {
+      "originalString": "AI Yaşam Asistanı",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 199
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.sorularınızıSorunTarifAlternatifÜrünVeAlışve": {
+      "originalString": "Sorularınızı sorun, tarif, alternatif ürün ve alışveriş listesi önerilerini kişiselleştirilmiş olarak alın.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 200
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.akıllıKiler": {
+      "originalString": "Akıllı Kiler",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 204
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.sktTakibiOtomatikHatırlatmalarVeIsrafıAzalta": {
+      "originalString": "SKT takibi, otomatik hatırlatmalar ve israfı azaltan kullanım önerileriyle kilerinizi yönetin.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 205
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.markalarınÇevreselSosyalVeYönetişimPerformans": {
+      "originalString": "Markaların çevresel, sosyal ve yönetişim performanslarını, boykot listelerini ve tedarik şeffaflığını inceleyin.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 210
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.herÜrünSeçimindekiKarbonSuVeDöngüsellikEtki": {
+      "originalString": "Her ürün seçimindeki karbon, su ve döngüsellik etkisini görün; alternatif senaryoları karşılaştırın.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 215
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.toplulukVeİçerikler": {
+      "originalString": "Topluluk ve İçerikler",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 219
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.öneÇıkanTariflerKullanıcıDeneyimleriUzmanYaz": {
+      "originalString": "Öne çıkan tarifler, kullanıcı deneyimleri, uzman yazıları ve sürdürülebilir yaşam rehberleri.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 220
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.taraAnalizEtDahaİyiSeçAkışınıInteraktifD": {
+      "originalString": "Tara → Analiz Et → Daha İyi Seç akışını interaktif demo ile keşfet.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 226
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.coriaUygulamaEkranAkışı": {
+      "originalString": "CORIA uygulama ekran akışı",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 227
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.barkoduOkuttuğunAndaÜrününTümBilgileriAçılır": {
+      "originalString": "Barkodu okuttuğun anda ürünün tüm bilgileri açılır.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 229
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.veganlıkAlerjenSağlıkVeEsgSkorlarınıTekBakı": {
+      "originalString": "Veganlık, alerjen, sağlık ve ESG skorlarını tek bakışta değerlendir.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 230
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.3DahaİyiSeç": {
+      "originalString": "3. Daha İyi Seç",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 231
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.demoSesliAnlatımVeAltyazıDesteklidir": {
+      "originalString": "Demo sesli anlatım ve altyazı desteklidir.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 233
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.topluluğumuzunBiriktirdiğiEtki": {
+      "originalString": "Topluluğumuzun biriktirdiği etki",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 237
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.gerçekZamanlıSayaçlarCoriaKullanıcılarınınGün": {
+      "originalString": "Gerçek zamanlı sayaçlar, CORIA kullanıcılarının günlük kararlarla oluşturduğu kolektif katkıyı gösterir.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 238
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.bugününCoTasarrufu": {
+      "originalString": "Bugünün CO₂ tasarrufu",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 240
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.suYoğunÜrünlerdenAkıllıAlternatiflereGeçişSa": {
+      "originalString": "Su yoğun ürünlerden akıllı alternatiflere geçiş sayesinde.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 241
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.buAyÖnlenenGıdaIsrafı": {
+      "originalString": "Bu ay önlenen gıda israfı",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 242
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.kişiselEtkiPaneli": {
+      "originalString": "Kişisel etki paneli",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 246
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.tümSeçimlerinizTonBazındaCoSuVeEtikPuanOl": {
+      "originalString": "Tüm seçimleriniz ton bazında CO₂, su ve etik puan olarak toplanır; hedefler belirleyip gelişiminizi takip edin.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 247
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.şehirBazlıLiderlikTablolarıSezonlukTüketimRe": {
+      "originalString": "Şehir bazlı liderlik tabloları, sezonluk tüketim rehberleri ve kampanyalarla harekete geçin.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 251
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.birlikteDahaBüyükEtkiYaratıyoruz": {
+      "originalString": "Birlikte daha büyük etki yaratıyoruz",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 257
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.uygulamaGelirlerinin5iVeCoriaTokenFeeGelirl": {
+      "originalString": "Uygulama gelirlerinin %5’i ve CORIA Token fee gelirleri yeşil enerji, veganlık ve sürdürülebilirlik projelerine aktarılıyor.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 258
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.believePlatformuÜzerindenÇıkarılacakSolanaTab": {
+      "originalString": "Believe platformu üzerinden çıkarılacak Solana tabanlı CORIA Token ile şeffaf, zincir üstü bağış ve etki raporlama modeli kuruyoruz.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 260
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.şeffafFonDağıtımı": {
+      "originalString": "Şeffaf fon dağıtımı",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 262
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.veganRestoranDönüşümüGıdaBankacılığıOrmanRes": {
+      "originalString": "Vegan restoran dönüşümü, gıda bankacılığı, orman restorasyonu gibi alanlara destek.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 263
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.toplulukOylaması": {
+      "originalString": "Topluluk oylaması",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 264
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.anadoluVeganMutfağı": {
+      "originalString": "Anadolu Vegan Mutfağı",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 267
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.yeşilEnerjiKooperatifi": {
+      "originalString": "Yeşil Enerji Kooperatifi",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 268
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.sıfırAtıkMarketleri": {
+      "originalString": "Sıfır Atık Marketleri",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 269
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.foundationDetaylarınıIncele": {
+      "originalString": "Foundation detaylarını incele",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 271
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.bilinçliTüketimRehberleri": {
+      "originalString": "Bilinçli tüketim rehberleri",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 274
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.uzmanYazılarıTariflerVeSürdürülebilirYaşamPr": {
+      "originalString": "Uzman yazıları, tarifler ve sürdürülebilir yaşam pratikleriyle her hafta güncellenen içerikler.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 275
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.alerjenEtiketlerini60SaniyedeÇöz": {
+      "originalString": "Alerjen etiketlerini 60 saniyede çöz",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 278
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.glutenLaktozFındıkVeDahaFazlasıIçinCorianın": {
+      "originalString": "Gluten, laktoz, fındık ve daha fazlası için CORIA’nın risk skorlarını nasıl yorumlayacağını öğren.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 279
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.karbonAyakIziniziMarketAlışverişindeAzaltın": {
+      "originalString": "Karbon ayak izinizi market alışverişinde azaltın",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 284
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.sezonlukÜrünSeçimiVeYerelÜreticiÖnerileriyle": {
+      "originalString": "Sezonluk ürün seçimi ve yerel üretici önerileriyle çevresel etkinizi minimuma indirin.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 285
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.foundationProjelerindeYeniDönem": {
+      "originalString": "Foundation projelerinde yeni dönem",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 290
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.solanaTokenModeliyleŞeffafFonlamaNasılÇalışı": {
+      "originalString": "Solana token modeliyle şeffaf fonlama nasıl çalışıyor? İlk raporlar yayınlandı.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 291
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.tümIçerikleriGörüntüle": {
+      "originalString": "Tüm içerikleri görüntüle",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 296
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.sıkSorulanSorular": {
+      "originalString": "Sık sorulan sorular",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 299
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.coriayıKullanmayaBaşlamadanÖnceEnÇokMerakEd": {
+      "originalString": "CORIA’yı kullanmaya başlamadan önce en çok merak edilenleri derledik.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 300
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.sınırsızÜrünTaramaDetaylıEtkiRaporlarıGelişm": {
+      "originalString": "Sınırsız ürün tarama, detaylı etki raporları, gelişmiş filtreler, israf azaltma önerileri ve Foundation projelerine katkı sertifikası.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 305
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.veriGizliliğiNasılSağlanıyor": {
+      "originalString": "Veri gizliliği nasıl sağlanıyor?",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 308
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.kişiselVerilerSadeceProfilDeneyiminiIyileştir": {
+      "originalString": "Kişisel veriler sadece profil deneyimini iyileştirmek için kullanılır, üçüncü taraflarla paylaşılmaz ve dilediğiniz an hesap verilerini silebilirsiniz.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 310
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.foundationProjelerineNasılBaşvurabilirim": {
+      "originalString": "Foundation projelerine nasıl başvurabilirim?",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 313
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.foundationSayfasındakiBaşvuruFormundanProjeniz": {
+      "originalString": "Foundation sayfasındaki başvuru formundan projenizi gönderebilir, değerlendirme süreci ve kriterleri detaylı inceleyebilirsiniz.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 315
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.coriaIleBilinçliTüketiminGücünüKeşfet": {
+      "originalString": "CORIA ile bilinçli tüketimin gücünü keşfet",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 320
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.topluluğumuzaKatılınEtkiPaneliniziAçınVeSürd": {
+      "originalString": "Topluluğumuza katılın, etki panelinizi açın ve sürdürülebilir geleceğe birlikte yön verin.",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 321
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.foundationaKatıl": {
+      "originalString": "Foundation’a katıl",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 322
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.özellikleriKeşfet": {
+      "originalString": "Özellikleri keşfet",
+      "files": [
+        {
+          "file": "content/home.ts",
+          "line": 323
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.contentfulGerekliKimlikBilgileriEksikIstemci": {
+      "originalString": "[Contentful] Gerekli kimlik bilgileri eksik; istemci başlatılamadı.",
+      "files": [
+        {
+          "file": "lib/contentful.ts",
+          "line": 14
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.contentfulİstemciOluşturulurkenHataOluştu": {
+      "originalString": "[Contentful] İstemci oluşturulurken hata oluştu:",
+      "files": [
+        {
+          "file": "lib/contentful.ts",
+          "line": 27
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.içerikleriIçinIstemciBulunamadıBoşSonuçDönüy": {
+      "originalString": "içerikleri için istemci bulunamadı. Boş sonuç dönüyor.",
+      "files": [
+        {
+          "file": "lib/contentful.ts",
+          "line": 193
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.içeriğiSlugIçinIstemciBulunamadı": {
+      "originalString": "içeriği (${slug}) için istemci bulunamadı.",
+      "files": [
+        {
+          "file": "lib/contentful.ts",
+          "line": 221
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.siEntryidOlanKayıtIçinIstemciBulunamadı": {
+      "originalString": "si ${entryId} olan kayıt için istemci bulunamadı.",
+      "files": [
+        {
+          "file": "lib/contentful.ts",
+          "line": 249
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.siAssetidOlanVarlıkIçinIstemciBulunamadı": {
+      "originalString": "si ${assetId} olan varlık için istemci bulunamadı.",
+      "files": [
+        {
+          "file": "lib/contentful.ts",
+          "line": 272
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.thisfieldAlanıGeçersizThismessage": {
+      "originalString": "${this.field} alanı geçersiz: ${this.message}",
+      "files": [
+        {
+          "file": "lib/errors.ts",
+          "line": 94
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.girilenBilgilerGeçersizThismessage": {
+      "originalString": "Girilen bilgiler geçersiz: ${this.message}",
+      "files": [
+        {
+          "file": "lib/errors.ts",
+          "line": 95
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.ungültigesThisfieldThismessage": {
+      "originalString": "Ungültiges ${this.field}: ${this.message}",
+      "files": [
+        {
+          "file": "lib/errors.ts",
+          "line": 100
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.ungültigeEingabeThismessage": {
+      "originalString": "Ungültige Eingabe: ${this.message}",
+      "files": [
+        {
+          "file": "lib/errors.ts",
+          "line": 101
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.sunucuHatasıOluştuLütfenDahaSonraTekrarDene": {
+      "originalString": "Sunucu hatası oluştu. Lütfen daha sonra tekrar deneyin.",
+      "files": [
+        {
+          "file": "lib/errors.ts",
+          "line": 142
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.i̇stekIşlenirkenBirHataOluştu": {
+      "originalString": "İstek işlenirken bir hata oluştu.",
+      "files": [
+        {
+          "file": "lib/errors.ts",
+          "line": 143
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.i̇nternetBağlantınızıKontrolEdinVeTekrarDeney": {
+      "originalString": "İnternet bağlantınızı kontrol edin ve tekrar deneyin.",
+      "files": [
+        {
+          "file": "lib/errors.ts",
+          "line": 185
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.ağBağlantısıHatasıLütfenTekrarDeneyin": {
+      "originalString": "Ağ bağlantısı hatası. Lütfen tekrar deneyin.",
+      "files": [
+        {
+          "file": "lib/errors.ts",
+          "line": 186
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.bitteÜberprüfenSieIhreInternetverbindungUndV": {
+      "originalString": "Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.",
+      "files": [
+        {
+          "file": "lib/errors.ts",
+          "line": 191
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.oturumAçmanızGerekiyor": {
+      "originalString": "Oturum açmanız gerekiyor.",
+      "files": [
+        {
+          "file": "lib/errors.ts",
+          "line": 229
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.buIşlemIçinYetkinizBulunmuyor": {
+      "originalString": "Bu işlem için yetkiniz bulunmuyor.",
+      "files": [
+        {
+          "file": "lib/errors.ts",
+          "line": 230
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.sieMüssenSichAnmelden": {
+      "originalString": "Sie müssen sich anmelden.",
+      "files": [
+        {
+          "file": "lib/errors.ts",
+          "line": 235
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.sieHabenKeineBerechtigungFürDieseAktion": {
+      "originalString": "Sie haben keine Berechtigung für diese Aktion.",
+      "files": [
+        {
+          "file": "lib/errors.ts",
+          "line": 236
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.thisresourcetypeBulunamadı": {
+      "originalString": "${this.resourceType} bulunamadı.",
+      "files": [
+        {
+          "file": "lib/errors.ts",
+          "line": 272
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.aradığınızSayfaBulunamadı": {
+      "originalString": "Aradığınız sayfa bulunamadı.",
+      "files": [
+        {
+          "file": "lib/errors.ts",
+          "line": 273
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.çokFazlaIstekGönderdinizLütfenBirazBekleyin": {
+      "originalString": "Çok fazla istek gönderdiniz. Lütfen biraz bekleyin.",
+      "files": [
+        {
+          "file": "lib/errors.ts",
+          "line": 314
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.sistemYapılandırmaHatasıLütfenYöneticiyeBaşvu": {
+      "originalString": "Sistem yapılandırma hatası. Lütfen yöneticiye başvurun.",
+      "files": [
+        {
+          "file": "lib/errors.ts",
+          "line": 353
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.beklenmeyenBirHataOluştu": {
+      "originalString": "Beklenmeyen bir hata oluştu.",
+      "files": [
+        {
+          "file": "lib/errors.ts",
+          "line": 495
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.okumaSüresi": {
+      "originalString": "okuma süresi",
+      "files": [
+        {
+          "file": "lib/formatting.ts",
+          "line": 208
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.pwaServiceWorkerDevelopmentModundaDevreDışı": {
+      "originalString": "[PWA] Service worker development modunda devre dışı bırakıldı",
+      "files": [
+        {
+          "file": "lib/pwa.ts",
+          "line": 28
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.pwaVarOlanServisWorkerKayıtlarıTemizlendi": {
+      "originalString": "[PWA] Var olan servis worker kayıtları temizlendi",
+      "files": [
+        {
+          "file": "lib/pwa.ts",
+          "line": 34
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.pwaServisWorkerTemizlemeBaşarısız": {
+      "originalString": "[PWA] Servis worker temizleme başarısız:",
+      "files": [
+        {
+          "file": "lib/pwa.ts",
+          "line": 36
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.texttürkçe": {
+      "originalString": "text=Türkçe",
+      "files": [
+        {
+          "file": "test/e2e/navigation.spec.ts",
+          "line": 41
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.testBaşlık": {
+      "originalString": "Test Başlık",
+      "files": [
+        {
+          "file": "test/integration/api-validation.test.ts",
+          "line": 27
+        },
+        {
+          "file": "test/types/generic-constraints.test-d.ts",
+          "line": 231
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.testÖzet": {
+      "originalString": "Test özet",
+      "files": [
+        {
+          "file": "test/integration/api-validation.test.ts",
+          "line": 33
+        },
+        {
+          "file": "test/types/generic-constraints.test-d.ts",
+          "line": 237
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.testIçerik": {
+      "originalString": "Test içerik",
+      "files": [
+        {
+          "file": "test/integration/api-validation.test.ts",
+          "line": 39
+        },
+        {
+          "file": "test/types/generic-constraints.test-d.ts",
+          "line": 243
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.yazarAvatarı": {
+      "originalString": "Yazar avatarı",
+      "files": [
+        {
+          "file": "test/integration/api-validation.test.ts",
+          "line": 59
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.sürdürülebilirlik": {
+      "originalString": "Sürdürülebilirlik",
+      "files": [
+        {
+          "file": "test/integration/api-validation.test.ts",
+          "line": 71
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.sürdürülebilirlikKategorisi": {
+      "originalString": "Sürdürülebilirlik kategorisi",
+      "files": [
+        {
+          "file": "test/integration/api-validation.test.ts",
+          "line": 83
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.öneÇıkanGörsel": {
+      "originalString": "Öne çıkan görsel",
+      "files": [
+        {
+          "file": "test/integration/api-validation.test.ts",
+          "line": 99
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.seoBaşlık": {
+      "originalString": "SEO Başlık",
+      "files": [
+        {
+          "file": "test/integration/api-validation.test.ts",
+          "line": 117
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.seoAçıklama": {
+      "originalString": "SEO açıklama",
+      "files": [
+        {
+          "file": "test/integration/api-validation.test.ts",
+          "line": 123
+        },
+        {
+          "file": "test/integration/api-validation.test.ts",
+          "line": 256
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.schlüssel": {
+      "originalString": "schlüssel",
+      "files": [
+        {
+          "file": "test/integration/api-validation.test.ts",
+          "line": 131
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.barkodTaramaIçeriği": {
+      "originalString": "Barkod tarama içeriği",
+      "files": [
+        {
+          "file": "test/integration/api-validation.test.ts",
+          "line": 240
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.ürünBarkodlarınıTarayın": {
+      "originalString": "Ürün barkodlarını tarayın",
+      "files": [
+        {
+          "file": "test/integration/api-validation.test.ts",
+          "line": 275
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.ekranGörüntüsü1": {
+      "originalString": "Ekran görüntüsü 1",
+      "files": [
+        {
+          "file": "test/integration/api-validation.test.ts",
+          "line": 286
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.hızlıTarama": {
+      "originalString": "Hızlı tarama",
+      "files": [
+        {
+          "file": "test/integration/api-validation.test.ts",
+          "line": 298
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.taramaÖzellikleri": {
+      "originalString": "Tarama özellikleri",
+      "files": [
+        {
+          "file": "test/integration/api-validation.test.ts",
+          "line": 318
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.türkçeBaşlık": {
+      "originalString": "Türkçe başlık",
+      "files": [
+        {
+          "file": "test/integration/api-validation.test.ts",
+          "line": 560
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.özet": {
+      "originalString": "özet",
+      "files": [
+        {
+          "file": "test/integration/api-validation.test.ts",
+          "line": 570
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.içerik": {
+      "originalString": "içerik",
+      "files": [
+        {
+          "file": "test/integration/api-validation.test.ts",
+          "line": 571
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.açıklama": {
+      "originalString": "açıklama",
+      "files": [
+        {
+          "file": "test/integration/api-validation.test.ts",
+          "line": 590
+        },
+        {
+          "file": "test/types/generic-constraints.test-d.ts",
+          "line": 270
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.türkçeIçerik": {
+      "originalString": "Türkçe içerik",
+      "files": [
+        {
+          "file": "test/lib/type-guards.test.ts",
+          "line": 227
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.contenuFrançais": {
+      "originalString": "Contenu français",
+      "files": [
+        {
+          "file": "test/lib/type-guards.test.ts",
+          "line": 230
+        }
+      ],
+      "category": "ui"
+    },
+    "common.ui.özellik": {
+      "originalString": "Özellik",
+      "files": [
+        {
+          "file": "test/types/generic-constraints.test-d.ts",
+          "line": 264
+        }
+      ],
+      "category": "ui"
+    }
+  },
+  "summary": {
+    "totalStrings": 233,
+    "pagesKeys": 41,
+    "commonKeys": 170,
+    "generatedKeys": 233
+  }
+}

@@ -1,0 +1,2608 @@
+{
+  "timestamp": "2025-10-11T16:28:52.429Z",
+  "summary": {
+    "emptyEN": 0,
+    "missingDE": 216,
+    "missingFR": 216,
+    "total": 432
+  },
+  "translations": {
+    "en": [],
+    "de": [
+      {
+        "key": "navigation.footer.basınYatırımcı",
+        "currentValue": "[DE] Basın & Yatırımcı",
+        "trSource": "Basın & Yatırımcı",
+        "needsTranslation": true
+      },
+      {
+        "key": "navigation.footer.gizlilikPolitikası",
+        "currentValue": "[DE] Gizlilik Politikası",
+        "trSource": "Gizlilik Politikası",
+        "needsTranslation": true
+      },
+      {
+        "key": "navigation.footer.kullanımKoşulları",
+        "currentValue": "[DE] Kullanım Koşulları",
+        "trSource": "Kullanım Koşulları",
+        "needsTranslation": true
+      },
+      {
+        "key": "navigation.footer.kvkkAydınlatması",
+        "currentValue": "[DE] KVKK Aydınlatması",
+        "trSource": "KVKK Aydınlatması",
+        "needsTranslation": true
+      },
+      {
+        "key": "navigation.footer.çerezPolitikası",
+        "currentValue": "[DE] Çerez Politikası",
+        "trSource": "Çerez Politikası",
+        "needsTranslation": true
+      },
+      {
+        "key": "hero.title.kalbinleSeçEtkiyleYaşa",
+        "currentValue": "[DE] Kalbinle Seç. Etkiyle Yaşa.",
+        "trSource": "Kalbinle Seç. Etkiyle Yaşa.",
+        "needsTranslation": true
+      },
+      {
+        "key": "hero.title.taradığınHerÜrününVeganlıkAlerjenSağlıkVeSü",
+        "currentValue": "[DE] Taradığın her ürünün veganlık, alerjen, sağlık ve sürdürülebilirlik skorlarını tek bakışta gör.",
+        "trSource": "Taradığın her ürünün veganlık, alerjen, sağlık ve sürdürülebilirlik skorlarını tek bakışta gör.",
+        "needsTranslation": true
+      },
+      {
+        "key": "hero.badge.veganYaşamAsistanı",
+        "currentValue": "[DE] Vegan Yaşam Asistanı",
+        "trSource": "Vegan Yaşam Asistanı",
+        "needsTranslation": true
+      },
+      {
+        "key": "hero.cta.iosIçinİndir",
+        "currentValue": "[DE] iOS için İndir",
+        "trSource": "iOS için İndir",
+        "needsTranslation": true
+      },
+      {
+        "key": "hero.cta.androidIçinİndir",
+        "currentValue": "[DE] Android için İndir",
+        "trSource": "Android için İndir",
+        "needsTranslation": true
+      },
+      {
+        "key": "hero.stats.milyarÜrünVerisi",
+        "currentValue": "[DE] Milyar Ürün Verisi",
+        "trSource": "Milyar Ürün Verisi",
+        "needsTranslation": true
+      },
+      {
+        "key": "hero.stats.etiketVeİçerik",
+        "currentValue": "[DE] Etiket ve İçerik",
+        "trSource": "Etiket ve İçerik",
+        "needsTranslation": true
+      },
+      {
+        "key": "hero.stats.aktifKullanıcı",
+        "currentValue": "[DE] Aktif Kullanıcı",
+        "trSource": "Aktif Kullanıcı",
+        "needsTranslation": true
+      },
+      {
+        "key": "features.descriptions.ürünlerinVeganUygunluğunuVeAlerjenIçeriğiniA",
+        "currentValue": "[DE] Ürünlerin vegan uygunluğunu ve alerjen içeriğini anında analiz edin. Kişisel beslenme tercihlerinize uygun seçimler yapın.",
+        "trSource": "Ürünlerin vegan uygunluğunu ve alerjen içeriğini anında analiz edin. Kişisel beslenme tercihlerinize uygun seçimler yapın.",
+        "needsTranslation": true
+      },
+      {
+        "key": "features.descriptions.yapayZekaDestekliKişiselAsistanınızIleBeslen",
+        "currentValue": "[DE] Yapay zeka destekli kişisel asistanınız ile beslenme önerilerinden sürdürülebilir yaşam ipuçlarına kadar her konuda destek alın.",
+        "trSource": "Yapay zeka destekli kişisel asistanınız ile beslenme önerilerinden sürdürülebilir yaşam ipuçlarına kadar her konuda destek alın.",
+        "needsTranslation": true
+      },
+      {
+        "key": "features.descriptions.kilerdekiÜrünleriTakipEdinSonKullanmaTarihle",
+        "currentValue": "[DE] Kilerdeki ürünleri takip edin, son kullanma tarihlerini izleyin ve israfı önlemek için akıllı öneriler alın.",
+        "trSource": "Kilerdeki ürünleri takip edin, son kullanma tarihlerini izleyin ve israfı önlemek için akıllı öneriler alın.",
+        "needsTranslation": true
+      },
+      {
+        "key": "features.descriptions.ürünVeMarkalarınÇevreselSosyalVeYönetişimPe",
+        "currentValue": "[DE] Ürün ve markaların çevresel, sosyal ve yönetişim performanslarını ESG skorları ile değerlendirin.",
+        "trSource": "Ürün ve markaların çevresel, sosyal ve yönetişim performanslarını ESG skorları ile değerlendirin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "features.descriptions.tüketimAlışkanlıklarınızınKarbonAyakIziniVeS",
+        "currentValue": "[DE] Tüketim alışkanlıklarınızın karbon ayak izini ve su kullanımını takip ederek çevresel etkilerinizi azaltın.",
+        "trSource": "Tüketim alışkanlıklarınızın karbon ayak izini ve su kullanımını takip ederek çevresel etkilerinizi azaltın.",
+        "needsTranslation": true
+      },
+      {
+        "key": "features.descriptions.sürdürülebilirYaşamTopluluğundanÖnerilerAlınD",
+        "currentValue": "[DE] Sürdürülebilir yaşam topluluğundan öneriler alın, deneyimlerinizi paylaşın ve birlikte öğrenin.",
+        "trSource": "Sürdürülebilir yaşam topluluğundan öneriler alın, deneyimlerinizi paylaşın ve birlikte öğrenin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "features.list.akıllıKiler",
+        "currentValue": "[DE] Akıllı Kiler",
+        "trSource": "Akıllı Kiler",
+        "needsTranslation": true
+      },
+      {
+        "key": "features.list.esgSkorları",
+        "currentValue": "[DE] ESG Skorları",
+        "trSource": "ESG Skorları",
+        "needsTranslation": true
+      },
+      {
+        "key": "features.list.toplulukÖnerileri",
+        "currentValue": "[DE] Topluluk Önerileri",
+        "trSource": "Topluluk Önerileri",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.meta.coriaSürdürülebilirYaşamUygulaması",
+        "currentValue": "[DE] CORIA - Sürdürülebilir Yaşam Uygulaması",
+        "trSource": "CORIA - Sürdürülebilir Yaşam Uygulaması",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.meta.bilinçliTüketimKararlarıAlınÇevreselEtkilerin",
+        "currentValue": "[DE] Bilinçli tüketim kararları alın, çevresel etkilerinizi takip edin ve sürdürülebilir alternatifleri keşfedin.",
+        "trSource": "Bilinçli tüketim kararları alın, çevresel etkilerinizi takip edin ve sürdürülebilir alternatifleri keşfedin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.meta.keywords.sürdürülebilirlik",
+        "currentValue": "[DE] sürdürülebilirlik",
+        "trSource": "sürdürülebilirlik",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.meta.keywords.grünesLeben",
+        "currentValue": "[DE] grünes Leben",
+        "trSource": "grünes Leben",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.ücretsiz",
+        "currentValue": "[DE] Ücretsiz",
+        "trSource": "Ücretsiz",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.nınTümÖzellikleriniKeşfetmekIçinUygulamayıIn",
+        "currentValue": "[DE] nın tüm özelliklerini keşfetmek için uygulamayı indirin",
+        "trSource": "nın tüm özelliklerini keşfetmek için uygulamayı indirin",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.coriaSürdürülebilirYaşamUygulaması",
+        "currentValue": "[DE] CORIA - Sürdürülebilir Yaşam Uygulaması",
+        "trSource": "CORIA - Sürdürülebilir Yaşam Uygulaması",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.bilinçliTüketimKararlarıAlınÇevreselEtkilerin",
+        "currentValue": "[DE] Bilinçli tüketim kararları alın, çevresel etkilerinizi takip edin ve sürdürülebilir alternatifleri keşfedin.",
+        "trSource": "Bilinçli tüketim kararları alın, çevresel etkilerinizi takip edin ve sürdürülebilir alternatifleri keşfedin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sürdürülebilirYaşamIçinMobilUygulamaGeliştire",
+        "currentValue": "[DE] Sürdürülebilir yaşam için mobil uygulama geliştiren teknoloji şirketi.",
+        "trSource": "Sürdürülebilir yaşam için mobil uygulama geliştiren teknoloji şirketi.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.technologieunternehmenDasMobileAnwendungenFür",
+        "currentValue": "[DE] Technologieunternehmen, das mobile Anwendungen für nachhaltiges Leben entwickelt.",
+        "trSource": "Technologieunternehmen, das mobile Anwendungen für nachhaltiges Leben entwickelt.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.coriaMobilUygulaması",
+        "currentValue": "[DE] CORIA Mobil Uygulaması",
+        "trSource": "CORIA Mobil Uygulaması",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sürdürülebilirYaşamIçinBarkodTaramaÇevreselE",
+        "currentValue": "[DE] Sürdürülebilir yaşam için barkod tarama, çevresel etki takibi ve bilinçli tüketim önerileri sunan mobil uygulama.",
+        "trSource": "Sürdürülebilir yaşam için barkod tarama, çevresel etki takibi ve bilinçli tüketim önerileri sunan mobil uygulama.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.mobileAppMitBarcodescanningUmweltauswirkungsve",
+        "currentValue": "[DE] Mobile App mit Barcode-Scanning, Umweltauswirkungsverfolgung und bewussten Konsumempfehlungen für nachhaltiges Leben.",
+        "trSource": "Mobile App mit Barcode-Scanning, Umweltauswirkungsverfolgung und bewussten Konsumempfehlungen für nachhaltiges Leben.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.türkçe",
+        "currentValue": "[DE] Türkçe",
+        "trSource": "Türkçe",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.français",
+        "currentValue": "[DE] Français",
+        "trSource": "Français",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.veganEtikVeSürdürülebilirSeçimAsistanı",
+        "currentValue": "[DE] Vegan, etik ve sürdürülebilir seçim asistanı",
+        "trSource": "Vegan, etik ve sürdürülebilir seçim asistanı",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.kalbinleSeçEtkiyleYaşa",
+        "currentValue": "[DE] Kalbinle Seç. Etkiyle Yaşa.",
+        "trSource": "Kalbinle Seç. Etkiyle Yaşa.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.taradığınHerÜrününVeganlıkAlerjenSağlıkVeSü",
+        "currentValue": "[DE] Taradığın her ürünün veganlık, alerjen, sağlık ve sürdürülebilirlik skorlarını tek bakışta gör. Bilimsel verilerle desteklenen önerilerle her seferinde daha iyi seçim yap.",
+        "trSource": "Taradığın her ürünün veganlık, alerjen, sağlık ve sürdürülebilirlik skorlarını tek bakışta gör. Bilimsel verilerle desteklenen önerilerle her seferinde daha iyi seçim yap.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.veganlıkAlerjenVeIçerikRiskleriIçinAnlıkUya",
+        "currentValue": "[DE] Veganlık, alerjen ve içerik riskleri için anlık uyarılar",
+        "trSource": "Veganlık, alerjen ve içerik riskleri için anlık uyarılar",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.esgBoykotVeMarkaEtikProfillerinin360Görünüm",
+        "currentValue": "[DE] ESG, boykot ve marka etik profillerinin 360° görünümü",
+        "trSource": "ESG, boykot ve marka etik profillerinin 360° görünümü",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.akıllıKilerIsrafÖnlemeVeKarbonsuEtkisiTakib",
+        "currentValue": "[DE] Akıllı kiler, israf önleme ve karbon/su etkisi takibi",
+        "trSource": "Akıllı kiler, israf önleme ve karbon/su etkisi takibi",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.premiumu7GünÜcretsizDeneIstediğinZamanIptal",
+        "currentValue": "[DE] Premium’u 7 gün ücretsiz dene, istediğin zaman iptal et.",
+        "trSource": "Premium’u 7 gün ücretsiz dene, istediğin zaman iptal et.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.ürünEtiketiAnalizi",
+        "currentValue": "[DE] ürün etiketi analizi",
+        "trSource": "ürün etiketi analizi",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.güncelIçerikEtiketVerisi",
+        "currentValue": "[DE] güncel içerik & etiket verisi",
+        "trSource": "güncel içerik & etiket verisi",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.aktifCoriaTopluluğu",
+        "currentValue": "[DE] aktif CORIA topluluğu",
+        "trSource": "aktif CORIA topluluğu",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.toplulukVeIşOrtaklarımızdanDestek",
+        "currentValue": "[DE] Topluluk ve iş ortaklarımızdan destek",
+        "trSource": "Topluluk ve iş ortaklarımızdan destek",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.coriaSürdürülebilirDönüşümünKalbindeYerAlanB",
+        "currentValue": "[DE] CORIA, sürdürülebilir dönüşümün kalbinde yer alan bireylerin ve kurumların güvenilir yardımcısıdır.",
+        "trSource": "CORIA, sürdürülebilir dönüşümün kalbinde yer alan bireylerin ve kurumların güvenilir yardımcısıdır.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.alışverişRutinimiKurtardı",
+        "currentValue": "[DE] Alışveriş rutinimi kurtardı",
+        "trSource": "Alışveriş rutinimi kurtardı",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.veriyeDayalıEsgRaporları",
+        "currentValue": "[DE] Veriye dayalı ESG raporları",
+        "trSource": "Veriye dayalı ESG raporları",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.foundationIleGerçekEtki",
+        "currentValue": "[DE] Foundation ile gerçek etki",
+        "trSource": "Foundation ile gerçek etki",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.veganVeganAdayları",
+        "currentValue": "[DE] Vegan & Vegan Adayları",
+        "trSource": "Vegan & Vegan Adayları",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.ürünleriSaniyelerIçindeTarayarakVeganlığınıIç",
+        "currentValue": "[DE] Ürünleri saniyeler içinde tarayarak veganlığını, içerik risklerini ve daha iyi alternatifleri gör.",
+        "trSource": "Ürünleri saniyeler içinde tarayarak veganlığını, içerik risklerini ve daha iyi alternatifleri gör.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.özelVeganvejetaryenFiltreleri",
+        "currentValue": "[DE] Özel vegan/vejetaryen filtreleri",
+        "trSource": "Özel vegan/vejetaryen filtreleri",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.toplulukYorumlarıVeDeneyimleri",
+        "currentValue": "[DE] Topluluk yorumları ve deneyimleri",
+        "trSource": "Topluluk yorumları ve deneyimleri",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.tarifÖnerileriVeMarketAlışverişListeleri",
+        "currentValue": "[DE] Tarif önerileri ve market alışveriş listeleri",
+        "trSource": "Tarif önerileri ve market alışveriş listeleri",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.alerjenŞekerTuzVeKatkıRiskleriniÇocuklarının",
+        "currentValue": "[DE] Alerjen, şeker, tuz ve katkı risklerini çocuklarının ihtiyaçlarına göre yönet.",
+        "trSource": "Alerjen, şeker, tuz ve katkı risklerini çocuklarının ihtiyaçlarına göre yönet.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.riskSeviyeleriyleAlerjenUyarıları",
+        "currentValue": "[DE] Risk seviyeleriyle alerjen uyarıları",
+        "trSource": "Risk seviyeleriyle alerjen uyarıları",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.detaylıIçerikAçıklamaları",
+        "currentValue": "[DE] Detaylı içerik açıklamaları",
+        "trSource": "Detaylı içerik açıklamaları",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.güvenliAlternatifÖnerileri",
+        "currentValue": "[DE] Güvenli alternatif önerileri",
+        "trSource": "Güvenli alternatif önerileri",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sağlıkOdaklıKullanıcılar",
+        "currentValue": "[DE] Sağlık Odaklı Kullanıcılar",
+        "trSource": "Sağlık Odaklı Kullanıcılar",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.besinDeğerleriniSağlıkSkorlarınıVeKişiselHed",
+        "currentValue": "[DE] Besin değerlerini, sağlık skorlarını ve kişisel hedeflerini tek ekranda takip et.",
+        "trSource": "Besin değerlerini, sağlık skorlarını ve kişisel hedeflerini tek ekranda takip et.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.şekertuzproteinSapmaUyarıları",
+        "currentValue": "[DE] Şeker/tuz/protein sapma uyarıları",
+        "trSource": "Şeker/tuz/protein sapma uyarıları",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.uzmanlardanOnaylıIçerikKütüphanesi",
+        "currentValue": "[DE] Uzmanlardan onaylı içerik kütüphanesi",
+        "trSource": "Uzmanlardan onaylı içerik kütüphanesi",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sürdürülebilirlikSavunucuları",
+        "currentValue": "[DE] Sürdürülebilirlik Savunucuları",
+        "trSource": "Sürdürülebilirlik Savunucuları",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.karbonSuVeEtikEtkileriKarşılaştırFoundation",
+        "currentValue": "[DE] Karbon, su ve etik etkileri karşılaştır; Foundation projeleriyle gerçek değişimi destekle.",
+        "trSource": "Karbon, su ve etik etkileri karşılaştır; Foundation projeleriyle gerçek değişimi destekle.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.karbonSuAyakIziSayaçları",
+        "currentValue": "[DE] Karbon & su ayak izi sayaçları",
+        "trSource": "Karbon & su ayak izi sayaçları",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.coriaFoundationProjeBağışları",
+        "currentValue": "[DE] CORIA Foundation proje bağışları",
+        "trSource": "CORIA Foundation proje bağışları",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.barkodTarayınÜrününVeganlıkDurumuAlerjenRisk",
+        "currentValue": "[DE] Barkod tarayın, ürünün veganlık durumu, alerjen riskleri ve içerik açıklamaları anında listelensin.",
+        "trSource": "Barkod tarayın, ürünün veganlık durumu, alerjen riskleri ve içerik açıklamaları anında listelensin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.aiYaşamAsistanı",
+        "currentValue": "[DE] AI Yaşam Asistanı",
+        "trSource": "AI Yaşam Asistanı",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sorularınızıSorunTarifAlternatifÜrünVeAlışve",
+        "currentValue": "[DE] Sorularınızı sorun, tarif, alternatif ürün ve alışveriş listesi önerilerini kişiselleştirilmiş olarak alın.",
+        "trSource": "Sorularınızı sorun, tarif, alternatif ürün ve alışveriş listesi önerilerini kişiselleştirilmiş olarak alın.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.akıllıKiler",
+        "currentValue": "[DE] Akıllı Kiler",
+        "trSource": "Akıllı Kiler",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sktTakibiOtomatikHatırlatmalarVeIsrafıAzalta",
+        "currentValue": "[DE] SKT takibi, otomatik hatırlatmalar ve israfı azaltan kullanım önerileriyle kilerinizi yönetin.",
+        "trSource": "SKT takibi, otomatik hatırlatmalar ve israfı azaltan kullanım önerileriyle kilerinizi yönetin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.markalarınÇevreselSosyalVeYönetişimPerformans",
+        "currentValue": "[DE] Markaların çevresel, sosyal ve yönetişim performanslarını, boykot listelerini ve tedarik şeffaflığını inceleyin.",
+        "trSource": "Markaların çevresel, sosyal ve yönetişim performanslarını, boykot listelerini ve tedarik şeffaflığını inceleyin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.herÜrünSeçimindekiKarbonSuVeDöngüsellikEtki",
+        "currentValue": "[DE] Her ürün seçimindeki karbon, su ve döngüsellik etkisini görün; alternatif senaryoları karşılaştırın.",
+        "trSource": "Her ürün seçimindeki karbon, su ve döngüsellik etkisini görün; alternatif senaryoları karşılaştırın.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.toplulukVeİçerikler",
+        "currentValue": "[DE] Topluluk ve İçerikler",
+        "trSource": "Topluluk ve İçerikler",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.öneÇıkanTariflerKullanıcıDeneyimleriUzmanYaz",
+        "currentValue": "[DE] Öne çıkan tarifler, kullanıcı deneyimleri, uzman yazıları ve sürdürülebilir yaşam rehberleri.",
+        "trSource": "Öne çıkan tarifler, kullanıcı deneyimleri, uzman yazıları ve sürdürülebilir yaşam rehberleri.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.taraAnalizEtDahaİyiSeçAkışınıInteraktifD",
+        "currentValue": "[DE] Tara → Analiz Et → Daha İyi Seç akışını interaktif demo ile keşfet.",
+        "trSource": "Tara → Analiz Et → Daha İyi Seç akışını interaktif demo ile keşfet.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.coriaUygulamaEkranAkışı",
+        "currentValue": "[DE] CORIA uygulama ekran akışı",
+        "trSource": "CORIA uygulama ekran akışı",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.barkoduOkuttuğunAndaÜrününTümBilgileriAçılır",
+        "currentValue": "[DE] Barkodu okuttuğun anda ürünün tüm bilgileri açılır.",
+        "trSource": "Barkodu okuttuğun anda ürünün tüm bilgileri açılır.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.veganlıkAlerjenSağlıkVeEsgSkorlarınıTekBakı",
+        "currentValue": "[DE] Veganlık, alerjen, sağlık ve ESG skorlarını tek bakışta değerlendir.",
+        "trSource": "Veganlık, alerjen, sağlık ve ESG skorlarını tek bakışta değerlendir.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.3DahaİyiSeç",
+        "currentValue": "[DE] 3. Daha İyi Seç",
+        "trSource": "3. Daha İyi Seç",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.demoSesliAnlatımVeAltyazıDesteklidir",
+        "currentValue": "[DE] Demo sesli anlatım ve altyazı desteklidir.",
+        "trSource": "Demo sesli anlatım ve altyazı desteklidir.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.topluluğumuzunBiriktirdiğiEtki",
+        "currentValue": "[DE] Topluluğumuzun biriktirdiği etki",
+        "trSource": "Topluluğumuzun biriktirdiği etki",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.gerçekZamanlıSayaçlarCoriaKullanıcılarınınGün",
+        "currentValue": "[DE] Gerçek zamanlı sayaçlar, CORIA kullanıcılarının günlük kararlarla oluşturduğu kolektif katkıyı gösterir.",
+        "trSource": "Gerçek zamanlı sayaçlar, CORIA kullanıcılarının günlük kararlarla oluşturduğu kolektif katkıyı gösterir.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.bugününCoTasarrufu",
+        "currentValue": "[DE] Bugünün CO₂ tasarrufu",
+        "trSource": "Bugünün CO₂ tasarrufu",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.suYoğunÜrünlerdenAkıllıAlternatiflereGeçişSa",
+        "currentValue": "[DE] Su yoğun ürünlerden akıllı alternatiflere geçiş sayesinde.",
+        "trSource": "Su yoğun ürünlerden akıllı alternatiflere geçiş sayesinde.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.buAyÖnlenenGıdaIsrafı",
+        "currentValue": "[DE] Bu ay önlenen gıda israfı",
+        "trSource": "Bu ay önlenen gıda israfı",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.kişiselEtkiPaneli",
+        "currentValue": "[DE] Kişisel etki paneli",
+        "trSource": "Kişisel etki paneli",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.tümSeçimlerinizTonBazındaCoSuVeEtikPuanOl",
+        "currentValue": "[DE] Tüm seçimleriniz ton bazında CO₂, su ve etik puan olarak toplanır; hedefler belirleyip gelişiminizi takip edin.",
+        "trSource": "Tüm seçimleriniz ton bazında CO₂, su ve etik puan olarak toplanır; hedefler belirleyip gelişiminizi takip edin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.şehirBazlıLiderlikTablolarıSezonlukTüketimRe",
+        "currentValue": "[DE] Şehir bazlı liderlik tabloları, sezonluk tüketim rehberleri ve kampanyalarla harekete geçin.",
+        "trSource": "Şehir bazlı liderlik tabloları, sezonluk tüketim rehberleri ve kampanyalarla harekete geçin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.birlikteDahaBüyükEtkiYaratıyoruz",
+        "currentValue": "[DE] Birlikte daha büyük etki yaratıyoruz",
+        "trSource": "Birlikte daha büyük etki yaratıyoruz",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.uygulamaGelirlerinin5iVeCoriaTokenFeeGelirl",
+        "currentValue": "[DE] Uygulama gelirlerinin %5’i ve CORIA Token fee gelirleri yeşil enerji, veganlık ve sürdürülebilirlik projelerine aktarılıyor.",
+        "trSource": "Uygulama gelirlerinin %5’i ve CORIA Token fee gelirleri yeşil enerji, veganlık ve sürdürülebilirlik projelerine aktarılıyor.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.believePlatformuÜzerindenÇıkarılacakSolanaTab",
+        "currentValue": "[DE] Believe platformu üzerinden çıkarılacak Solana tabanlı CORIA Token ile şeffaf, zincir üstü bağış ve etki raporlama modeli kuruyoruz.",
+        "trSource": "Believe platformu üzerinden çıkarılacak Solana tabanlı CORIA Token ile şeffaf, zincir üstü bağış ve etki raporlama modeli kuruyoruz.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.şeffafFonDağıtımı",
+        "currentValue": "[DE] Şeffaf fon dağıtımı",
+        "trSource": "Şeffaf fon dağıtımı",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.veganRestoranDönüşümüGıdaBankacılığıOrmanRes",
+        "currentValue": "[DE] Vegan restoran dönüşümü, gıda bankacılığı, orman restorasyonu gibi alanlara destek.",
+        "trSource": "Vegan restoran dönüşümü, gıda bankacılığı, orman restorasyonu gibi alanlara destek.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.toplulukOylaması",
+        "currentValue": "[DE] Topluluk oylaması",
+        "trSource": "Topluluk oylaması",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.anadoluVeganMutfağı",
+        "currentValue": "[DE] Anadolu Vegan Mutfağı",
+        "trSource": "Anadolu Vegan Mutfağı",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.yeşilEnerjiKooperatifi",
+        "currentValue": "[DE] Yeşil Enerji Kooperatifi",
+        "trSource": "Yeşil Enerji Kooperatifi",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sıfırAtıkMarketleri",
+        "currentValue": "[DE] Sıfır Atık Marketleri",
+        "trSource": "Sıfır Atık Marketleri",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.foundationDetaylarınıIncele",
+        "currentValue": "[DE] Foundation detaylarını incele",
+        "trSource": "Foundation detaylarını incele",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.bilinçliTüketimRehberleri",
+        "currentValue": "[DE] Bilinçli tüketim rehberleri",
+        "trSource": "Bilinçli tüketim rehberleri",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.uzmanYazılarıTariflerVeSürdürülebilirYaşamPr",
+        "currentValue": "[DE] Uzman yazıları, tarifler ve sürdürülebilir yaşam pratikleriyle her hafta güncellenen içerikler.",
+        "trSource": "Uzman yazıları, tarifler ve sürdürülebilir yaşam pratikleriyle her hafta güncellenen içerikler.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.alerjenEtiketlerini60SaniyedeÇöz",
+        "currentValue": "[DE] Alerjen etiketlerini 60 saniyede çöz",
+        "trSource": "Alerjen etiketlerini 60 saniyede çöz",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.glutenLaktozFındıkVeDahaFazlasıIçinCorianın",
+        "currentValue": "[DE] Gluten, laktoz, fındık ve daha fazlası için CORIA’nın risk skorlarını nasıl yorumlayacağını öğren.",
+        "trSource": "Gluten, laktoz, fındık ve daha fazlası için CORIA’nın risk skorlarını nasıl yorumlayacağını öğren.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.karbonAyakIziniziMarketAlışverişindeAzaltın",
+        "currentValue": "[DE] Karbon ayak izinizi market alışverişinde azaltın",
+        "trSource": "Karbon ayak izinizi market alışverişinde azaltın",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sezonlukÜrünSeçimiVeYerelÜreticiÖnerileriyle",
+        "currentValue": "[DE] Sezonluk ürün seçimi ve yerel üretici önerileriyle çevresel etkinizi minimuma indirin.",
+        "trSource": "Sezonluk ürün seçimi ve yerel üretici önerileriyle çevresel etkinizi minimuma indirin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.foundationProjelerindeYeniDönem",
+        "currentValue": "[DE] Foundation projelerinde yeni dönem",
+        "trSource": "Foundation projelerinde yeni dönem",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.solanaTokenModeliyleŞeffafFonlamaNasılÇalışı",
+        "currentValue": "[DE] Solana token modeliyle şeffaf fonlama nasıl çalışıyor? İlk raporlar yayınlandı.",
+        "trSource": "Solana token modeliyle şeffaf fonlama nasıl çalışıyor? İlk raporlar yayınlandı.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.tümIçerikleriGörüntüle",
+        "currentValue": "[DE] Tüm içerikleri görüntüle",
+        "trSource": "Tüm içerikleri görüntüle",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sıkSorulanSorular",
+        "currentValue": "[DE] Sık sorulan sorular",
+        "trSource": "Sık sorulan sorular",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.coriayıKullanmayaBaşlamadanÖnceEnÇokMerakEd",
+        "currentValue": "[DE] CORIA’yı kullanmaya başlamadan önce en çok merak edilenleri derledik.",
+        "trSource": "CORIA’yı kullanmaya başlamadan önce en çok merak edilenleri derledik.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sınırsızÜrünTaramaDetaylıEtkiRaporlarıGelişm",
+        "currentValue": "[DE] Sınırsız ürün tarama, detaylı etki raporları, gelişmiş filtreler, israf azaltma önerileri ve Foundation projelerine katkı sertifikası.",
+        "trSource": "Sınırsız ürün tarama, detaylı etki raporları, gelişmiş filtreler, israf azaltma önerileri ve Foundation projelerine katkı sertifikası.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.veriGizliliğiNasılSağlanıyor",
+        "currentValue": "[DE] Veri gizliliği nasıl sağlanıyor?",
+        "trSource": "Veri gizliliği nasıl sağlanıyor?",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.kişiselVerilerSadeceProfilDeneyiminiIyileştir",
+        "currentValue": "[DE] Kişisel veriler sadece profil deneyimini iyileştirmek için kullanılır, üçüncü taraflarla paylaşılmaz ve dilediğiniz an hesap verilerini silebilirsiniz.",
+        "trSource": "Kişisel veriler sadece profil deneyimini iyileştirmek için kullanılır, üçüncü taraflarla paylaşılmaz ve dilediğiniz an hesap verilerini silebilirsiniz.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.foundationProjelerineNasılBaşvurabilirim",
+        "currentValue": "[DE] Foundation projelerine nasıl başvurabilirim?",
+        "trSource": "Foundation projelerine nasıl başvurabilirim?",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.foundationSayfasındakiBaşvuruFormundanProjeniz",
+        "currentValue": "[DE] Foundation sayfasındaki başvuru formundan projenizi gönderebilir, değerlendirme süreci ve kriterleri detaylı inceleyebilirsiniz.",
+        "trSource": "Foundation sayfasındaki başvuru formundan projenizi gönderebilir, değerlendirme süreci ve kriterleri detaylı inceleyebilirsiniz.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.coriaIleBilinçliTüketiminGücünüKeşfet",
+        "currentValue": "[DE] CORIA ile bilinçli tüketimin gücünü keşfet",
+        "trSource": "CORIA ile bilinçli tüketimin gücünü keşfet",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.topluluğumuzaKatılınEtkiPaneliniziAçınVeSürd",
+        "currentValue": "[DE] Topluluğumuza katılın, etki panelinizi açın ve sürdürülebilir geleceğe birlikte yön verin.",
+        "trSource": "Topluluğumuza katılın, etki panelinizi açın ve sürdürülebilir geleceğe birlikte yön verin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.foundationaKatıl",
+        "currentValue": "[DE] Foundation’a katıl",
+        "trSource": "Foundation’a katıl",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.özellikleriKeşfet",
+        "currentValue": "[DE] Özellikleri keşfet",
+        "trSource": "Özellikleri keşfet",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.contentfulGerekliKimlikBilgileriEksikIstemci",
+        "currentValue": "[DE] [Contentful] Gerekli kimlik bilgileri eksik; istemci başlatılamadı.",
+        "trSource": "[Contentful] Gerekli kimlik bilgileri eksik; istemci başlatılamadı.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.contentfulİstemciOluşturulurkenHataOluştu",
+        "currentValue": "[DE] [Contentful] İstemci oluşturulurken hata oluştu:",
+        "trSource": "[Contentful] İstemci oluşturulurken hata oluştu:",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.içerikleriIçinIstemciBulunamadıBoşSonuçDönüy",
+        "currentValue": "[DE] içerikleri için istemci bulunamadı. Boş sonuç dönüyor.",
+        "trSource": "içerikleri için istemci bulunamadı. Boş sonuç dönüyor.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.içeriğiSlugIçinIstemciBulunamadı",
+        "currentValue": "[DE] içeriği (${slug}) için istemci bulunamadı.",
+        "trSource": "içeriği (${slug}) için istemci bulunamadı.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.siEntryidOlanKayıtIçinIstemciBulunamadı",
+        "currentValue": "[DE] si ${entryId} olan kayıt için istemci bulunamadı.",
+        "trSource": "si ${entryId} olan kayıt için istemci bulunamadı.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.siAssetidOlanVarlıkIçinIstemciBulunamadı",
+        "currentValue": "[DE] si ${assetId} olan varlık için istemci bulunamadı.",
+        "trSource": "si ${assetId} olan varlık için istemci bulunamadı.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.thisfieldAlanıGeçersizThismessage",
+        "currentValue": "[DE] ${this.field} alanı geçersiz: ${this.message}",
+        "trSource": "${this.field} alanı geçersiz: ${this.message}",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.girilenBilgilerGeçersizThismessage",
+        "currentValue": "[DE] Girilen bilgiler geçersiz: ${this.message}",
+        "trSource": "Girilen bilgiler geçersiz: ${this.message}",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.ungültigesThisfieldThismessage",
+        "currentValue": "[DE] Ungültiges ${this.field}: ${this.message}",
+        "trSource": "Ungültiges ${this.field}: ${this.message}",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.ungültigeEingabeThismessage",
+        "currentValue": "[DE] Ungültige Eingabe: ${this.message}",
+        "trSource": "Ungültige Eingabe: ${this.message}",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sunucuHatasıOluştuLütfenDahaSonraTekrarDene",
+        "currentValue": "[DE] Sunucu hatası oluştu. Lütfen daha sonra tekrar deneyin.",
+        "trSource": "Sunucu hatası oluştu. Lütfen daha sonra tekrar deneyin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.i̇stekIşlenirkenBirHataOluştu",
+        "currentValue": "[DE] İstek işlenirken bir hata oluştu.",
+        "trSource": "İstek işlenirken bir hata oluştu.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.i̇nternetBağlantınızıKontrolEdinVeTekrarDeney",
+        "currentValue": "[DE] İnternet bağlantınızı kontrol edin ve tekrar deneyin.",
+        "trSource": "İnternet bağlantınızı kontrol edin ve tekrar deneyin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.ağBağlantısıHatasıLütfenTekrarDeneyin",
+        "currentValue": "[DE] Ağ bağlantısı hatası. Lütfen tekrar deneyin.",
+        "trSource": "Ağ bağlantısı hatası. Lütfen tekrar deneyin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.bitteÜberprüfenSieIhreInternetverbindungUndV",
+        "currentValue": "[DE] Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.",
+        "trSource": "Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.oturumAçmanızGerekiyor",
+        "currentValue": "[DE] Oturum açmanız gerekiyor.",
+        "trSource": "Oturum açmanız gerekiyor.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.buIşlemIçinYetkinizBulunmuyor",
+        "currentValue": "[DE] Bu işlem için yetkiniz bulunmuyor.",
+        "trSource": "Bu işlem için yetkiniz bulunmuyor.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sieMüssenSichAnmelden",
+        "currentValue": "[DE] Sie müssen sich anmelden.",
+        "trSource": "Sie müssen sich anmelden.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sieHabenKeineBerechtigungFürDieseAktion",
+        "currentValue": "[DE] Sie haben keine Berechtigung für diese Aktion.",
+        "trSource": "Sie haben keine Berechtigung für diese Aktion.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.thisresourcetypeBulunamadı",
+        "currentValue": "[DE] ${this.resourceType} bulunamadı.",
+        "trSource": "${this.resourceType} bulunamadı.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.aradığınızSayfaBulunamadı",
+        "currentValue": "[DE] Aradığınız sayfa bulunamadı.",
+        "trSource": "Aradığınız sayfa bulunamadı.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.çokFazlaIstekGönderdinizLütfenBirazBekleyin",
+        "currentValue": "[DE] Çok fazla istek gönderdiniz. Lütfen biraz bekleyin.",
+        "trSource": "Çok fazla istek gönderdiniz. Lütfen biraz bekleyin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sistemYapılandırmaHatasıLütfenYöneticiyeBaşvu",
+        "currentValue": "[DE] Sistem yapılandırma hatası. Lütfen yöneticiye başvurun.",
+        "trSource": "Sistem yapılandırma hatası. Lütfen yöneticiye başvurun.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.beklenmeyenBirHataOluştu",
+        "currentValue": "[DE] Beklenmeyen bir hata oluştu.",
+        "trSource": "Beklenmeyen bir hata oluştu.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.okumaSüresi",
+        "currentValue": "[DE] okuma süresi",
+        "trSource": "okuma süresi",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.pwaServiceWorkerDevelopmentModundaDevreDışı",
+        "currentValue": "[DE] [PWA] Service worker development modunda devre dışı bırakıldı",
+        "trSource": "[PWA] Service worker development modunda devre dışı bırakıldı",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.pwaVarOlanServisWorkerKayıtlarıTemizlendi",
+        "currentValue": "[DE] [PWA] Var olan servis worker kayıtları temizlendi",
+        "trSource": "[PWA] Var olan servis worker kayıtları temizlendi",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.pwaServisWorkerTemizlemeBaşarısız",
+        "currentValue": "[DE] [PWA] Servis worker temizleme başarısız:",
+        "trSource": "[PWA] Servis worker temizleme başarısız:",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.texttürkçe",
+        "currentValue": "[DE] text=Türkçe",
+        "trSource": "text=Türkçe",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.testBaşlık",
+        "currentValue": "[DE] Test Başlık",
+        "trSource": "Test Başlık",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.testÖzet",
+        "currentValue": "[DE] Test özet",
+        "trSource": "Test özet",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.testIçerik",
+        "currentValue": "[DE] Test içerik",
+        "trSource": "Test içerik",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.yazarAvatarı",
+        "currentValue": "[DE] Yazar avatarı",
+        "trSource": "Yazar avatarı",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sürdürülebilirlik",
+        "currentValue": "[DE] Sürdürülebilirlik",
+        "trSource": "Sürdürülebilirlik",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sürdürülebilirlikKategorisi",
+        "currentValue": "[DE] Sürdürülebilirlik kategorisi",
+        "trSource": "Sürdürülebilirlik kategorisi",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.öneÇıkanGörsel",
+        "currentValue": "[DE] Öne çıkan görsel",
+        "trSource": "Öne çıkan görsel",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.seoBaşlık",
+        "currentValue": "[DE] SEO Başlık",
+        "trSource": "SEO Başlık",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.seoAçıklama",
+        "currentValue": "[DE] SEO açıklama",
+        "trSource": "SEO açıklama",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.schlüssel",
+        "currentValue": "[DE] schlüssel",
+        "trSource": "schlüssel",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.barkodTaramaIçeriği",
+        "currentValue": "[DE] Barkod tarama içeriği",
+        "trSource": "Barkod tarama içeriği",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.ürünBarkodlarınıTarayın",
+        "currentValue": "[DE] Ürün barkodlarını tarayın",
+        "trSource": "Ürün barkodlarını tarayın",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.ekranGörüntüsü1",
+        "currentValue": "[DE] Ekran görüntüsü 1",
+        "trSource": "Ekran görüntüsü 1",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.hızlıTarama",
+        "currentValue": "[DE] Hızlı tarama",
+        "trSource": "Hızlı tarama",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.taramaÖzellikleri",
+        "currentValue": "[DE] Tarama özellikleri",
+        "trSource": "Tarama özellikleri",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.türkçeBaşlık",
+        "currentValue": "[DE] Türkçe başlık",
+        "trSource": "Türkçe başlık",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.özet",
+        "currentValue": "[DE] özet",
+        "trSource": "özet",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.içerik",
+        "currentValue": "[DE] içerik",
+        "trSource": "içerik",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.açıklama",
+        "currentValue": "[DE] açıklama",
+        "trSource": "açıklama",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.türkçeIçerik",
+        "currentValue": "[DE] Türkçe içerik",
+        "trSource": "Türkçe içerik",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.contenuFrançais",
+        "currentValue": "[DE] Contenu français",
+        "trSource": "Contenu français",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.özellik",
+        "currentValue": "[DE] Özellik",
+        "trSource": "Özellik",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.aria.features.titleÖzelliği",
+        "currentValue": "[DE] ${title} özelliği",
+        "trSource": "${title} özelliği",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.aria.features.coriaPlatformÖzellikleri",
+        "currentValue": "[DE] CORIA platform özellikleri",
+        "trSource": "CORIA platform özellikleri",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.aria.daCoriaUygulamasınıIndirin",
+        "currentValue": "[DE] da CORIA uygulamasını indirin",
+        "trSource": "da CORIA uygulamasını indirin",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.aria.coriaIstatistikleriVeEtkiGöstergeleri",
+        "currentValue": "[DE] CORIA istatistikleri ve etki göstergeleri",
+        "trSource": "CORIA istatistikleri ve etki göstergeleri",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.aria.metricvalueMetriclabelCoriaEtkiGöstergesi",
+        "currentValue": "[DE] ${metric.value} ${metric.label} - CORIA etki göstergesi",
+        "trSource": "${metric.value} ${metric.label} - CORIA etki göstergesi",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.about.timeline.fikrinDoğuşuVeIlkVeriToplamaPrototipi",
+        "currentValue": "[DE] Fikrin doğuşu ve ilk veri toplama prototipi",
+        "trSource": "Fikrin doğuşu ve ilk veri toplama prototipi",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.about.timeline.mvpGeliştirmeVeKapalıBeta",
+        "currentValue": "[DE] MVP geliştirme ve kapalı beta",
+        "trSource": "MVP geliştirme ve kapalı beta",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.about.timeline.betaLansmanıVeIlk50kKullanıcı",
+        "currentValue": "[DE] Beta lansmanı ve ilk 50K kullanıcı",
+        "trSource": "Beta lansmanı ve ilk 50K kullanıcı",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.about.timeline.100kKullanıcıIlkFoundationBağışRaporu",
+        "currentValue": "[DE] 100K kullanıcı, ilk Foundation bağış raporu",
+        "trSource": "100K kullanıcı, ilk Foundation bağış raporu",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.about.timeline.coriaTokenLansmanıVeSolanaEntegrasyonu",
+        "currentValue": "[DE] CORIA Token lansmanı ve Solana entegrasyonu",
+        "trSource": "CORIA Token lansmanı ve Solana entegrasyonu",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.about.partnerships.solanaTabanlıTokenAltyapısıVeEtkiRaporlama",
+        "currentValue": "[DE] Solana tabanlı token altyapısı ve etki raporlama.",
+        "trSource": "Solana tabanlı token altyapısı ve etki raporlama.",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.about.partnerships.yeşilEnerjiKooperatifleri",
+        "currentValue": "[DE] Yeşil Enerji Kooperatifleri",
+        "trSource": "Yeşil Enerji Kooperatifleri",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.about.partnerships.veganRestoranDönüşümüVeEğitimProgramları",
+        "currentValue": "[DE] Vegan restoran dönüşümü ve eğitim programları.",
+        "trSource": "Vegan restoran dönüşümü ve eğitim programları.",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.contact.content.iletişim",
+        "currentValue": "[DE] iletişim",
+        "trSource": "iletişim",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.hero.subtitle.birlikteDahaBüyükEtkiYaratıyoruz",
+        "currentValue": "[DE] Birlikte Daha Büyük Etki Yaratıyoruz",
+        "trSource": "Birlikte Daha Büyük Etki Yaratıyoruz",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.features.coriaUygulamaGelirlerininBirKısmınıSürdürüleb",
+        "currentValue": "[DE] CORIA, uygulama gelirlerinin bir kısmını sürdürülebilirlik projelerine yatırım yapmak için CORIA Foundation",
+        "trSource": "CORIA, uygulama gelirlerinin bir kısmını sürdürülebilirlik projelerine yatırım yapmak için CORIA Foundation",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.features.believePlatformEntegrasyonuIleSolanaTabanlıT",
+        "currentValue": "[DE] Believe Platform entegrasyonu ile Solana tabanlı token kullanım alanları",
+        "trSource": "Believe Platform entegrasyonu ile Solana tabanlı token kullanım alanları",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.features.believePlatformÜzerindenÇıkarılacakÖzelSolana",
+        "currentValue": "[DE] Believe Platform üzerinden çıkarılacak özel Solana token",
+        "trSource": "Believe Platform üzerinden çıkarılacak özel Solana token",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.features.tokenIşlemÜcretleriDirektOlarakSürdürülebilir",
+        "currentValue": "[DE] Token işlem ücretleri direkt olarak sürdürülebilirlik projelerine aktarılır",
+        "trSource": "Token işlem ücretleri direkt olarak sürdürülebilirlik projelerine aktarılır",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.features.blockchainTabanlıŞeffafFonDağıtımıVeEtkiTak",
+        "currentValue": "[DE] Blockchain tabanlı şeffaf fon dağıtımı ve etki takibi",
+        "trSource": "Blockchain tabanlı şeffaf fon dağıtımı ve etki takibi",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.features.tümFonlamaKararlarıVeEtkiRaporlarıHalkaAçık",
+        "currentValue": "[DE] Tüm fonlama kararları ve etki raporları halka açık blockchain üzerinde",
+        "trSource": "Tüm fonlama kararları ve etki raporları halka açık blockchain üzerinde",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.features.coriaTokenSahipleriProjeSeçimindeOyKullanma",
+        "currentValue": "[DE] CORIA token sahipleri proje seçiminde oy kullanma hakkına sahip",
+        "trSource": "CORIA token sahipleri proje seçiminde oy kullanma hakkına sahip",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.features.herProjeninÖlçülebilirÇevreselVeSosyalEtkisi",
+        "currentValue": "[DE] Her projenin ölçülebilir çevresel ve sosyal etkisi raporlanır",
+        "trSource": "Her projenin ölçülebilir çevresel ve sosyal etkisi raporlanır",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.feeDağılımModeli",
+        "currentValue": "[DE] Fee Dağılım Modeli",
+        "trSource": "Fee Dağılım Modeli",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.şeffafFonlama",
+        "currentValue": "[DE] Şeffaf Fonlama",
+        "trSource": "Şeffaf Fonlama",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.ekolojikTarımProjesi",
+        "currentValue": "[DE] Ekolojik Tarım Projesi",
+        "trSource": "Ekolojik Tarım Projesi",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.5000HektarOrganikTarımAlanıOluşturuldu",
+        "currentValue": "[DE] 5000 hektar organik tarım alanı oluşturuldu",
+        "trSource": "5000 hektar organik tarım alanı oluşturuldu",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.veganlık",
+        "currentValue": "[DE] Veganlık",
+        "trSource": "Veganlık",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.güneşEnerjisiKooperatifi",
+        "currentValue": "[DE] Güneş Enerjisi Kooperatifi",
+        "trSource": "Güneş Enerjisi Kooperatifi",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.250AileyeTemizEnerjiErişimiSağlandı",
+        "currentValue": "[DE] 250 aileye temiz enerji erişimi sağlandı",
+        "trSource": "250 aileye temiz enerji erişimi sağlandı",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.yeşilEnerji",
+        "currentValue": "[DE] Yeşil Enerji",
+        "trSource": "Yeşil Enerji",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.sıfırAtıkİnisiyatifi",
+        "currentValue": "[DE] Sıfır Atık İnisiyatifi",
+        "trSource": "Sıfır Atık İnisiyatifi",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.12ŞehirdePlastikKullanımı60Azaltıldı",
+        "currentValue": "[DE] 12 şehirde plastik kullanımı %60 azaltıldı",
+        "trSource": "12 şehirde plastik kullanımı %60 azaltıldı",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.sürdürülebilirlik",
+        "currentValue": "[DE] Sürdürülebilirlik",
+        "trSource": "Sürdürülebilirlik",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.şeffaflık",
+        "currentValue": "[DE] Şeffaflık",
+        "trSource": "Şeffaflık",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.toplulukYönetimi",
+        "currentValue": "[DE] Topluluk Yönetimi",
+        "trSource": "Topluluk Yönetimi",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.etkiOdaklılık",
+        "currentValue": "[DE] Etki Odaklılık",
+        "trSource": "Etki Odaklılık",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.projeniziTanımlayanBaşlık",
+        "currentValue": "[DE] Projenizi tanımlayan başlık",
+        "trSource": "Projenizi tanımlayan başlık",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.projenizi280KarakterdeÖzetleyin",
+        "currentValue": "[DE] Projenizi 280 karakterde özetleyin",
+        "trSource": "Projenizi 280 karakterde özetleyin",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.roadmap.foundationKonseptiTasarlandı",
+        "currentValue": "[DE] Foundation konsepti tasarlandı",
+        "trSource": "Foundation konsepti tasarlandı",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.roadmap.solanaTabanlıCoriaTokenLansmanı",
+        "currentValue": "[DE] Solana tabanlı CORIA Token lansmanı",
+        "trSource": "Solana tabanlı CORIA Token lansmanı",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.roadmap.globalGenişleme",
+        "currentValue": "[DE] Global genişleme",
+        "trSource": "Global genişleme",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.pricing.content.fiyatlandırma",
+        "currentValue": "[DE] fiyatlandırma",
+        "trSource": "fiyatlandırma",
+        "needsTranslation": true
+      }
+    ],
+    "fr": [
+      {
+        "key": "navigation.footer.basınYatırımcı",
+        "currentValue": "[FR] Basın & Yatırımcı",
+        "trSource": "Basın & Yatırımcı",
+        "needsTranslation": true
+      },
+      {
+        "key": "navigation.footer.gizlilikPolitikası",
+        "currentValue": "[FR] Gizlilik Politikası",
+        "trSource": "Gizlilik Politikası",
+        "needsTranslation": true
+      },
+      {
+        "key": "navigation.footer.kullanımKoşulları",
+        "currentValue": "[FR] Kullanım Koşulları",
+        "trSource": "Kullanım Koşulları",
+        "needsTranslation": true
+      },
+      {
+        "key": "navigation.footer.kvkkAydınlatması",
+        "currentValue": "[FR] KVKK Aydınlatması",
+        "trSource": "KVKK Aydınlatması",
+        "needsTranslation": true
+      },
+      {
+        "key": "navigation.footer.çerezPolitikası",
+        "currentValue": "[FR] Çerez Politikası",
+        "trSource": "Çerez Politikası",
+        "needsTranslation": true
+      },
+      {
+        "key": "hero.title.kalbinleSeçEtkiyleYaşa",
+        "currentValue": "[FR] Kalbinle Seç. Etkiyle Yaşa.",
+        "trSource": "Kalbinle Seç. Etkiyle Yaşa.",
+        "needsTranslation": true
+      },
+      {
+        "key": "hero.title.taradığınHerÜrününVeganlıkAlerjenSağlıkVeSü",
+        "currentValue": "[FR] Taradığın her ürünün veganlık, alerjen, sağlık ve sürdürülebilirlik skorlarını tek bakışta gör.",
+        "trSource": "Taradığın her ürünün veganlık, alerjen, sağlık ve sürdürülebilirlik skorlarını tek bakışta gör.",
+        "needsTranslation": true
+      },
+      {
+        "key": "hero.badge.veganYaşamAsistanı",
+        "currentValue": "[FR] Vegan Yaşam Asistanı",
+        "trSource": "Vegan Yaşam Asistanı",
+        "needsTranslation": true
+      },
+      {
+        "key": "hero.cta.iosIçinİndir",
+        "currentValue": "[FR] iOS için İndir",
+        "trSource": "iOS için İndir",
+        "needsTranslation": true
+      },
+      {
+        "key": "hero.cta.androidIçinİndir",
+        "currentValue": "[FR] Android için İndir",
+        "trSource": "Android için İndir",
+        "needsTranslation": true
+      },
+      {
+        "key": "hero.stats.milyarÜrünVerisi",
+        "currentValue": "[FR] Milyar Ürün Verisi",
+        "trSource": "Milyar Ürün Verisi",
+        "needsTranslation": true
+      },
+      {
+        "key": "hero.stats.etiketVeİçerik",
+        "currentValue": "[FR] Etiket ve İçerik",
+        "trSource": "Etiket ve İçerik",
+        "needsTranslation": true
+      },
+      {
+        "key": "hero.stats.aktifKullanıcı",
+        "currentValue": "[FR] Aktif Kullanıcı",
+        "trSource": "Aktif Kullanıcı",
+        "needsTranslation": true
+      },
+      {
+        "key": "features.descriptions.ürünlerinVeganUygunluğunuVeAlerjenIçeriğiniA",
+        "currentValue": "[FR] Ürünlerin vegan uygunluğunu ve alerjen içeriğini anında analiz edin. Kişisel beslenme tercihlerinize uygun seçimler yapın.",
+        "trSource": "Ürünlerin vegan uygunluğunu ve alerjen içeriğini anında analiz edin. Kişisel beslenme tercihlerinize uygun seçimler yapın.",
+        "needsTranslation": true
+      },
+      {
+        "key": "features.descriptions.yapayZekaDestekliKişiselAsistanınızIleBeslen",
+        "currentValue": "[FR] Yapay zeka destekli kişisel asistanınız ile beslenme önerilerinden sürdürülebilir yaşam ipuçlarına kadar her konuda destek alın.",
+        "trSource": "Yapay zeka destekli kişisel asistanınız ile beslenme önerilerinden sürdürülebilir yaşam ipuçlarına kadar her konuda destek alın.",
+        "needsTranslation": true
+      },
+      {
+        "key": "features.descriptions.kilerdekiÜrünleriTakipEdinSonKullanmaTarihle",
+        "currentValue": "[FR] Kilerdeki ürünleri takip edin, son kullanma tarihlerini izleyin ve israfı önlemek için akıllı öneriler alın.",
+        "trSource": "Kilerdeki ürünleri takip edin, son kullanma tarihlerini izleyin ve israfı önlemek için akıllı öneriler alın.",
+        "needsTranslation": true
+      },
+      {
+        "key": "features.descriptions.ürünVeMarkalarınÇevreselSosyalVeYönetişimPe",
+        "currentValue": "[FR] Ürün ve markaların çevresel, sosyal ve yönetişim performanslarını ESG skorları ile değerlendirin.",
+        "trSource": "Ürün ve markaların çevresel, sosyal ve yönetişim performanslarını ESG skorları ile değerlendirin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "features.descriptions.tüketimAlışkanlıklarınızınKarbonAyakIziniVeS",
+        "currentValue": "[FR] Tüketim alışkanlıklarınızın karbon ayak izini ve su kullanımını takip ederek çevresel etkilerinizi azaltın.",
+        "trSource": "Tüketim alışkanlıklarınızın karbon ayak izini ve su kullanımını takip ederek çevresel etkilerinizi azaltın.",
+        "needsTranslation": true
+      },
+      {
+        "key": "features.descriptions.sürdürülebilirYaşamTopluluğundanÖnerilerAlınD",
+        "currentValue": "[FR] Sürdürülebilir yaşam topluluğundan öneriler alın, deneyimlerinizi paylaşın ve birlikte öğrenin.",
+        "trSource": "Sürdürülebilir yaşam topluluğundan öneriler alın, deneyimlerinizi paylaşın ve birlikte öğrenin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "features.list.akıllıKiler",
+        "currentValue": "[FR] Akıllı Kiler",
+        "trSource": "Akıllı Kiler",
+        "needsTranslation": true
+      },
+      {
+        "key": "features.list.esgSkorları",
+        "currentValue": "[FR] ESG Skorları",
+        "trSource": "ESG Skorları",
+        "needsTranslation": true
+      },
+      {
+        "key": "features.list.toplulukÖnerileri",
+        "currentValue": "[FR] Topluluk Önerileri",
+        "trSource": "Topluluk Önerileri",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.meta.coriaSürdürülebilirYaşamUygulaması",
+        "currentValue": "[FR] CORIA - Sürdürülebilir Yaşam Uygulaması",
+        "trSource": "CORIA - Sürdürülebilir Yaşam Uygulaması",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.meta.bilinçliTüketimKararlarıAlınÇevreselEtkilerin",
+        "currentValue": "[FR] Bilinçli tüketim kararları alın, çevresel etkilerinizi takip edin ve sürdürülebilir alternatifleri keşfedin.",
+        "trSource": "Bilinçli tüketim kararları alın, çevresel etkilerinizi takip edin ve sürdürülebilir alternatifleri keşfedin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.meta.keywords.sürdürülebilirlik",
+        "currentValue": "[FR] sürdürülebilirlik",
+        "trSource": "sürdürülebilirlik",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.meta.keywords.grünesLeben",
+        "currentValue": "[FR] grünes Leben",
+        "trSource": "grünes Leben",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.ücretsiz",
+        "currentValue": "[FR] Ücretsiz",
+        "trSource": "Ücretsiz",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.nınTümÖzellikleriniKeşfetmekIçinUygulamayıIn",
+        "currentValue": "[FR] nın tüm özelliklerini keşfetmek için uygulamayı indirin",
+        "trSource": "nın tüm özelliklerini keşfetmek için uygulamayı indirin",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.coriaSürdürülebilirYaşamUygulaması",
+        "currentValue": "[FR] CORIA - Sürdürülebilir Yaşam Uygulaması",
+        "trSource": "CORIA - Sürdürülebilir Yaşam Uygulaması",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.bilinçliTüketimKararlarıAlınÇevreselEtkilerin",
+        "currentValue": "[FR] Bilinçli tüketim kararları alın, çevresel etkilerinizi takip edin ve sürdürülebilir alternatifleri keşfedin.",
+        "trSource": "Bilinçli tüketim kararları alın, çevresel etkilerinizi takip edin ve sürdürülebilir alternatifleri keşfedin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sürdürülebilirYaşamIçinMobilUygulamaGeliştire",
+        "currentValue": "[FR] Sürdürülebilir yaşam için mobil uygulama geliştiren teknoloji şirketi.",
+        "trSource": "Sürdürülebilir yaşam için mobil uygulama geliştiren teknoloji şirketi.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.technologieunternehmenDasMobileAnwendungenFür",
+        "currentValue": "[FR] Technologieunternehmen, das mobile Anwendungen für nachhaltiges Leben entwickelt.",
+        "trSource": "Technologieunternehmen, das mobile Anwendungen für nachhaltiges Leben entwickelt.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.coriaMobilUygulaması",
+        "currentValue": "[FR] CORIA Mobil Uygulaması",
+        "trSource": "CORIA Mobil Uygulaması",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sürdürülebilirYaşamIçinBarkodTaramaÇevreselE",
+        "currentValue": "[FR] Sürdürülebilir yaşam için barkod tarama, çevresel etki takibi ve bilinçli tüketim önerileri sunan mobil uygulama.",
+        "trSource": "Sürdürülebilir yaşam için barkod tarama, çevresel etki takibi ve bilinçli tüketim önerileri sunan mobil uygulama.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.mobileAppMitBarcodescanningUmweltauswirkungsve",
+        "currentValue": "[FR] Mobile App mit Barcode-Scanning, Umweltauswirkungsverfolgung und bewussten Konsumempfehlungen für nachhaltiges Leben.",
+        "trSource": "Mobile App mit Barcode-Scanning, Umweltauswirkungsverfolgung und bewussten Konsumempfehlungen für nachhaltiges Leben.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.türkçe",
+        "currentValue": "[FR] Türkçe",
+        "trSource": "Türkçe",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.français",
+        "currentValue": "[FR] Français",
+        "trSource": "Français",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.veganEtikVeSürdürülebilirSeçimAsistanı",
+        "currentValue": "[FR] Vegan, etik ve sürdürülebilir seçim asistanı",
+        "trSource": "Vegan, etik ve sürdürülebilir seçim asistanı",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.kalbinleSeçEtkiyleYaşa",
+        "currentValue": "[FR] Kalbinle Seç. Etkiyle Yaşa.",
+        "trSource": "Kalbinle Seç. Etkiyle Yaşa.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.taradığınHerÜrününVeganlıkAlerjenSağlıkVeSü",
+        "currentValue": "[FR] Taradığın her ürünün veganlık, alerjen, sağlık ve sürdürülebilirlik skorlarını tek bakışta gör. Bilimsel verilerle desteklenen önerilerle her seferinde daha iyi seçim yap.",
+        "trSource": "Taradığın her ürünün veganlık, alerjen, sağlık ve sürdürülebilirlik skorlarını tek bakışta gör. Bilimsel verilerle desteklenen önerilerle her seferinde daha iyi seçim yap.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.veganlıkAlerjenVeIçerikRiskleriIçinAnlıkUya",
+        "currentValue": "[FR] Veganlık, alerjen ve içerik riskleri için anlık uyarılar",
+        "trSource": "Veganlık, alerjen ve içerik riskleri için anlık uyarılar",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.esgBoykotVeMarkaEtikProfillerinin360Görünüm",
+        "currentValue": "[FR] ESG, boykot ve marka etik profillerinin 360° görünümü",
+        "trSource": "ESG, boykot ve marka etik profillerinin 360° görünümü",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.akıllıKilerIsrafÖnlemeVeKarbonsuEtkisiTakib",
+        "currentValue": "[FR] Akıllı kiler, israf önleme ve karbon/su etkisi takibi",
+        "trSource": "Akıllı kiler, israf önleme ve karbon/su etkisi takibi",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.premiumu7GünÜcretsizDeneIstediğinZamanIptal",
+        "currentValue": "[FR] Premium’u 7 gün ücretsiz dene, istediğin zaman iptal et.",
+        "trSource": "Premium’u 7 gün ücretsiz dene, istediğin zaman iptal et.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.ürünEtiketiAnalizi",
+        "currentValue": "[FR] ürün etiketi analizi",
+        "trSource": "ürün etiketi analizi",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.güncelIçerikEtiketVerisi",
+        "currentValue": "[FR] güncel içerik & etiket verisi",
+        "trSource": "güncel içerik & etiket verisi",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.aktifCoriaTopluluğu",
+        "currentValue": "[FR] aktif CORIA topluluğu",
+        "trSource": "aktif CORIA topluluğu",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.toplulukVeIşOrtaklarımızdanDestek",
+        "currentValue": "[FR] Topluluk ve iş ortaklarımızdan destek",
+        "trSource": "Topluluk ve iş ortaklarımızdan destek",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.coriaSürdürülebilirDönüşümünKalbindeYerAlanB",
+        "currentValue": "[FR] CORIA, sürdürülebilir dönüşümün kalbinde yer alan bireylerin ve kurumların güvenilir yardımcısıdır.",
+        "trSource": "CORIA, sürdürülebilir dönüşümün kalbinde yer alan bireylerin ve kurumların güvenilir yardımcısıdır.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.alışverişRutinimiKurtardı",
+        "currentValue": "[FR] Alışveriş rutinimi kurtardı",
+        "trSource": "Alışveriş rutinimi kurtardı",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.veriyeDayalıEsgRaporları",
+        "currentValue": "[FR] Veriye dayalı ESG raporları",
+        "trSource": "Veriye dayalı ESG raporları",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.foundationIleGerçekEtki",
+        "currentValue": "[FR] Foundation ile gerçek etki",
+        "trSource": "Foundation ile gerçek etki",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.veganVeganAdayları",
+        "currentValue": "[FR] Vegan & Vegan Adayları",
+        "trSource": "Vegan & Vegan Adayları",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.ürünleriSaniyelerIçindeTarayarakVeganlığınıIç",
+        "currentValue": "[FR] Ürünleri saniyeler içinde tarayarak veganlığını, içerik risklerini ve daha iyi alternatifleri gör.",
+        "trSource": "Ürünleri saniyeler içinde tarayarak veganlığını, içerik risklerini ve daha iyi alternatifleri gör.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.özelVeganvejetaryenFiltreleri",
+        "currentValue": "[FR] Özel vegan/vejetaryen filtreleri",
+        "trSource": "Özel vegan/vejetaryen filtreleri",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.toplulukYorumlarıVeDeneyimleri",
+        "currentValue": "[FR] Topluluk yorumları ve deneyimleri",
+        "trSource": "Topluluk yorumları ve deneyimleri",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.tarifÖnerileriVeMarketAlışverişListeleri",
+        "currentValue": "[FR] Tarif önerileri ve market alışveriş listeleri",
+        "trSource": "Tarif önerileri ve market alışveriş listeleri",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.alerjenŞekerTuzVeKatkıRiskleriniÇocuklarının",
+        "currentValue": "[FR] Alerjen, şeker, tuz ve katkı risklerini çocuklarının ihtiyaçlarına göre yönet.",
+        "trSource": "Alerjen, şeker, tuz ve katkı risklerini çocuklarının ihtiyaçlarına göre yönet.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.riskSeviyeleriyleAlerjenUyarıları",
+        "currentValue": "[FR] Risk seviyeleriyle alerjen uyarıları",
+        "trSource": "Risk seviyeleriyle alerjen uyarıları",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.detaylıIçerikAçıklamaları",
+        "currentValue": "[FR] Detaylı içerik açıklamaları",
+        "trSource": "Detaylı içerik açıklamaları",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.güvenliAlternatifÖnerileri",
+        "currentValue": "[FR] Güvenli alternatif önerileri",
+        "trSource": "Güvenli alternatif önerileri",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sağlıkOdaklıKullanıcılar",
+        "currentValue": "[FR] Sağlık Odaklı Kullanıcılar",
+        "trSource": "Sağlık Odaklı Kullanıcılar",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.besinDeğerleriniSağlıkSkorlarınıVeKişiselHed",
+        "currentValue": "[FR] Besin değerlerini, sağlık skorlarını ve kişisel hedeflerini tek ekranda takip et.",
+        "trSource": "Besin değerlerini, sağlık skorlarını ve kişisel hedeflerini tek ekranda takip et.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.şekertuzproteinSapmaUyarıları",
+        "currentValue": "[FR] Şeker/tuz/protein sapma uyarıları",
+        "trSource": "Şeker/tuz/protein sapma uyarıları",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.uzmanlardanOnaylıIçerikKütüphanesi",
+        "currentValue": "[FR] Uzmanlardan onaylı içerik kütüphanesi",
+        "trSource": "Uzmanlardan onaylı içerik kütüphanesi",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sürdürülebilirlikSavunucuları",
+        "currentValue": "[FR] Sürdürülebilirlik Savunucuları",
+        "trSource": "Sürdürülebilirlik Savunucuları",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.karbonSuVeEtikEtkileriKarşılaştırFoundation",
+        "currentValue": "[FR] Karbon, su ve etik etkileri karşılaştır; Foundation projeleriyle gerçek değişimi destekle.",
+        "trSource": "Karbon, su ve etik etkileri karşılaştır; Foundation projeleriyle gerçek değişimi destekle.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.karbonSuAyakIziSayaçları",
+        "currentValue": "[FR] Karbon & su ayak izi sayaçları",
+        "trSource": "Karbon & su ayak izi sayaçları",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.coriaFoundationProjeBağışları",
+        "currentValue": "[FR] CORIA Foundation proje bağışları",
+        "trSource": "CORIA Foundation proje bağışları",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.barkodTarayınÜrününVeganlıkDurumuAlerjenRisk",
+        "currentValue": "[FR] Barkod tarayın, ürünün veganlık durumu, alerjen riskleri ve içerik açıklamaları anında listelensin.",
+        "trSource": "Barkod tarayın, ürünün veganlık durumu, alerjen riskleri ve içerik açıklamaları anında listelensin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.aiYaşamAsistanı",
+        "currentValue": "[FR] AI Yaşam Asistanı",
+        "trSource": "AI Yaşam Asistanı",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sorularınızıSorunTarifAlternatifÜrünVeAlışve",
+        "currentValue": "[FR] Sorularınızı sorun, tarif, alternatif ürün ve alışveriş listesi önerilerini kişiselleştirilmiş olarak alın.",
+        "trSource": "Sorularınızı sorun, tarif, alternatif ürün ve alışveriş listesi önerilerini kişiselleştirilmiş olarak alın.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.akıllıKiler",
+        "currentValue": "[FR] Akıllı Kiler",
+        "trSource": "Akıllı Kiler",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sktTakibiOtomatikHatırlatmalarVeIsrafıAzalta",
+        "currentValue": "[FR] SKT takibi, otomatik hatırlatmalar ve israfı azaltan kullanım önerileriyle kilerinizi yönetin.",
+        "trSource": "SKT takibi, otomatik hatırlatmalar ve israfı azaltan kullanım önerileriyle kilerinizi yönetin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.markalarınÇevreselSosyalVeYönetişimPerformans",
+        "currentValue": "[FR] Markaların çevresel, sosyal ve yönetişim performanslarını, boykot listelerini ve tedarik şeffaflığını inceleyin.",
+        "trSource": "Markaların çevresel, sosyal ve yönetişim performanslarını, boykot listelerini ve tedarik şeffaflığını inceleyin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.herÜrünSeçimindekiKarbonSuVeDöngüsellikEtki",
+        "currentValue": "[FR] Her ürün seçimindeki karbon, su ve döngüsellik etkisini görün; alternatif senaryoları karşılaştırın.",
+        "trSource": "Her ürün seçimindeki karbon, su ve döngüsellik etkisini görün; alternatif senaryoları karşılaştırın.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.toplulukVeİçerikler",
+        "currentValue": "[FR] Topluluk ve İçerikler",
+        "trSource": "Topluluk ve İçerikler",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.öneÇıkanTariflerKullanıcıDeneyimleriUzmanYaz",
+        "currentValue": "[FR] Öne çıkan tarifler, kullanıcı deneyimleri, uzman yazıları ve sürdürülebilir yaşam rehberleri.",
+        "trSource": "Öne çıkan tarifler, kullanıcı deneyimleri, uzman yazıları ve sürdürülebilir yaşam rehberleri.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.taraAnalizEtDahaİyiSeçAkışınıInteraktifD",
+        "currentValue": "[FR] Tara → Analiz Et → Daha İyi Seç akışını interaktif demo ile keşfet.",
+        "trSource": "Tara → Analiz Et → Daha İyi Seç akışını interaktif demo ile keşfet.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.coriaUygulamaEkranAkışı",
+        "currentValue": "[FR] CORIA uygulama ekran akışı",
+        "trSource": "CORIA uygulama ekran akışı",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.barkoduOkuttuğunAndaÜrününTümBilgileriAçılır",
+        "currentValue": "[FR] Barkodu okuttuğun anda ürünün tüm bilgileri açılır.",
+        "trSource": "Barkodu okuttuğun anda ürünün tüm bilgileri açılır.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.veganlıkAlerjenSağlıkVeEsgSkorlarınıTekBakı",
+        "currentValue": "[FR] Veganlık, alerjen, sağlık ve ESG skorlarını tek bakışta değerlendir.",
+        "trSource": "Veganlık, alerjen, sağlık ve ESG skorlarını tek bakışta değerlendir.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.3DahaİyiSeç",
+        "currentValue": "[FR] 3. Daha İyi Seç",
+        "trSource": "3. Daha İyi Seç",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.demoSesliAnlatımVeAltyazıDesteklidir",
+        "currentValue": "[FR] Demo sesli anlatım ve altyazı desteklidir.",
+        "trSource": "Demo sesli anlatım ve altyazı desteklidir.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.topluluğumuzunBiriktirdiğiEtki",
+        "currentValue": "[FR] Topluluğumuzun biriktirdiği etki",
+        "trSource": "Topluluğumuzun biriktirdiği etki",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.gerçekZamanlıSayaçlarCoriaKullanıcılarınınGün",
+        "currentValue": "[FR] Gerçek zamanlı sayaçlar, CORIA kullanıcılarının günlük kararlarla oluşturduğu kolektif katkıyı gösterir.",
+        "trSource": "Gerçek zamanlı sayaçlar, CORIA kullanıcılarının günlük kararlarla oluşturduğu kolektif katkıyı gösterir.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.bugününCoTasarrufu",
+        "currentValue": "[FR] Bugünün CO₂ tasarrufu",
+        "trSource": "Bugünün CO₂ tasarrufu",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.suYoğunÜrünlerdenAkıllıAlternatiflereGeçişSa",
+        "currentValue": "[FR] Su yoğun ürünlerden akıllı alternatiflere geçiş sayesinde.",
+        "trSource": "Su yoğun ürünlerden akıllı alternatiflere geçiş sayesinde.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.buAyÖnlenenGıdaIsrafı",
+        "currentValue": "[FR] Bu ay önlenen gıda israfı",
+        "trSource": "Bu ay önlenen gıda israfı",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.kişiselEtkiPaneli",
+        "currentValue": "[FR] Kişisel etki paneli",
+        "trSource": "Kişisel etki paneli",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.tümSeçimlerinizTonBazındaCoSuVeEtikPuanOl",
+        "currentValue": "[FR] Tüm seçimleriniz ton bazında CO₂, su ve etik puan olarak toplanır; hedefler belirleyip gelişiminizi takip edin.",
+        "trSource": "Tüm seçimleriniz ton bazında CO₂, su ve etik puan olarak toplanır; hedefler belirleyip gelişiminizi takip edin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.şehirBazlıLiderlikTablolarıSezonlukTüketimRe",
+        "currentValue": "[FR] Şehir bazlı liderlik tabloları, sezonluk tüketim rehberleri ve kampanyalarla harekete geçin.",
+        "trSource": "Şehir bazlı liderlik tabloları, sezonluk tüketim rehberleri ve kampanyalarla harekete geçin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.birlikteDahaBüyükEtkiYaratıyoruz",
+        "currentValue": "[FR] Birlikte daha büyük etki yaratıyoruz",
+        "trSource": "Birlikte daha büyük etki yaratıyoruz",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.uygulamaGelirlerinin5iVeCoriaTokenFeeGelirl",
+        "currentValue": "[FR] Uygulama gelirlerinin %5’i ve CORIA Token fee gelirleri yeşil enerji, veganlık ve sürdürülebilirlik projelerine aktarılıyor.",
+        "trSource": "Uygulama gelirlerinin %5’i ve CORIA Token fee gelirleri yeşil enerji, veganlık ve sürdürülebilirlik projelerine aktarılıyor.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.believePlatformuÜzerindenÇıkarılacakSolanaTab",
+        "currentValue": "[FR] Believe platformu üzerinden çıkarılacak Solana tabanlı CORIA Token ile şeffaf, zincir üstü bağış ve etki raporlama modeli kuruyoruz.",
+        "trSource": "Believe platformu üzerinden çıkarılacak Solana tabanlı CORIA Token ile şeffaf, zincir üstü bağış ve etki raporlama modeli kuruyoruz.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.şeffafFonDağıtımı",
+        "currentValue": "[FR] Şeffaf fon dağıtımı",
+        "trSource": "Şeffaf fon dağıtımı",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.veganRestoranDönüşümüGıdaBankacılığıOrmanRes",
+        "currentValue": "[FR] Vegan restoran dönüşümü, gıda bankacılığı, orman restorasyonu gibi alanlara destek.",
+        "trSource": "Vegan restoran dönüşümü, gıda bankacılığı, orman restorasyonu gibi alanlara destek.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.toplulukOylaması",
+        "currentValue": "[FR] Topluluk oylaması",
+        "trSource": "Topluluk oylaması",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.anadoluVeganMutfağı",
+        "currentValue": "[FR] Anadolu Vegan Mutfağı",
+        "trSource": "Anadolu Vegan Mutfağı",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.yeşilEnerjiKooperatifi",
+        "currentValue": "[FR] Yeşil Enerji Kooperatifi",
+        "trSource": "Yeşil Enerji Kooperatifi",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sıfırAtıkMarketleri",
+        "currentValue": "[FR] Sıfır Atık Marketleri",
+        "trSource": "Sıfır Atık Marketleri",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.foundationDetaylarınıIncele",
+        "currentValue": "[FR] Foundation detaylarını incele",
+        "trSource": "Foundation detaylarını incele",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.bilinçliTüketimRehberleri",
+        "currentValue": "[FR] Bilinçli tüketim rehberleri",
+        "trSource": "Bilinçli tüketim rehberleri",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.uzmanYazılarıTariflerVeSürdürülebilirYaşamPr",
+        "currentValue": "[FR] Uzman yazıları, tarifler ve sürdürülebilir yaşam pratikleriyle her hafta güncellenen içerikler.",
+        "trSource": "Uzman yazıları, tarifler ve sürdürülebilir yaşam pratikleriyle her hafta güncellenen içerikler.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.alerjenEtiketlerini60SaniyedeÇöz",
+        "currentValue": "[FR] Alerjen etiketlerini 60 saniyede çöz",
+        "trSource": "Alerjen etiketlerini 60 saniyede çöz",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.glutenLaktozFındıkVeDahaFazlasıIçinCorianın",
+        "currentValue": "[FR] Gluten, laktoz, fındık ve daha fazlası için CORIA’nın risk skorlarını nasıl yorumlayacağını öğren.",
+        "trSource": "Gluten, laktoz, fındık ve daha fazlası için CORIA’nın risk skorlarını nasıl yorumlayacağını öğren.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.karbonAyakIziniziMarketAlışverişindeAzaltın",
+        "currentValue": "[FR] Karbon ayak izinizi market alışverişinde azaltın",
+        "trSource": "Karbon ayak izinizi market alışverişinde azaltın",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sezonlukÜrünSeçimiVeYerelÜreticiÖnerileriyle",
+        "currentValue": "[FR] Sezonluk ürün seçimi ve yerel üretici önerileriyle çevresel etkinizi minimuma indirin.",
+        "trSource": "Sezonluk ürün seçimi ve yerel üretici önerileriyle çevresel etkinizi minimuma indirin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.foundationProjelerindeYeniDönem",
+        "currentValue": "[FR] Foundation projelerinde yeni dönem",
+        "trSource": "Foundation projelerinde yeni dönem",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.solanaTokenModeliyleŞeffafFonlamaNasılÇalışı",
+        "currentValue": "[FR] Solana token modeliyle şeffaf fonlama nasıl çalışıyor? İlk raporlar yayınlandı.",
+        "trSource": "Solana token modeliyle şeffaf fonlama nasıl çalışıyor? İlk raporlar yayınlandı.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.tümIçerikleriGörüntüle",
+        "currentValue": "[FR] Tüm içerikleri görüntüle",
+        "trSource": "Tüm içerikleri görüntüle",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sıkSorulanSorular",
+        "currentValue": "[FR] Sık sorulan sorular",
+        "trSource": "Sık sorulan sorular",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.coriayıKullanmayaBaşlamadanÖnceEnÇokMerakEd",
+        "currentValue": "[FR] CORIA’yı kullanmaya başlamadan önce en çok merak edilenleri derledik.",
+        "trSource": "CORIA’yı kullanmaya başlamadan önce en çok merak edilenleri derledik.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sınırsızÜrünTaramaDetaylıEtkiRaporlarıGelişm",
+        "currentValue": "[FR] Sınırsız ürün tarama, detaylı etki raporları, gelişmiş filtreler, israf azaltma önerileri ve Foundation projelerine katkı sertifikası.",
+        "trSource": "Sınırsız ürün tarama, detaylı etki raporları, gelişmiş filtreler, israf azaltma önerileri ve Foundation projelerine katkı sertifikası.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.veriGizliliğiNasılSağlanıyor",
+        "currentValue": "[FR] Veri gizliliği nasıl sağlanıyor?",
+        "trSource": "Veri gizliliği nasıl sağlanıyor?",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.kişiselVerilerSadeceProfilDeneyiminiIyileştir",
+        "currentValue": "[FR] Kişisel veriler sadece profil deneyimini iyileştirmek için kullanılır, üçüncü taraflarla paylaşılmaz ve dilediğiniz an hesap verilerini silebilirsiniz.",
+        "trSource": "Kişisel veriler sadece profil deneyimini iyileştirmek için kullanılır, üçüncü taraflarla paylaşılmaz ve dilediğiniz an hesap verilerini silebilirsiniz.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.foundationProjelerineNasılBaşvurabilirim",
+        "currentValue": "[FR] Foundation projelerine nasıl başvurabilirim?",
+        "trSource": "Foundation projelerine nasıl başvurabilirim?",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.foundationSayfasındakiBaşvuruFormundanProjeniz",
+        "currentValue": "[FR] Foundation sayfasındaki başvuru formundan projenizi gönderebilir, değerlendirme süreci ve kriterleri detaylı inceleyebilirsiniz.",
+        "trSource": "Foundation sayfasındaki başvuru formundan projenizi gönderebilir, değerlendirme süreci ve kriterleri detaylı inceleyebilirsiniz.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.coriaIleBilinçliTüketiminGücünüKeşfet",
+        "currentValue": "[FR] CORIA ile bilinçli tüketimin gücünü keşfet",
+        "trSource": "CORIA ile bilinçli tüketimin gücünü keşfet",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.topluluğumuzaKatılınEtkiPaneliniziAçınVeSürd",
+        "currentValue": "[FR] Topluluğumuza katılın, etki panelinizi açın ve sürdürülebilir geleceğe birlikte yön verin.",
+        "trSource": "Topluluğumuza katılın, etki panelinizi açın ve sürdürülebilir geleceğe birlikte yön verin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.foundationaKatıl",
+        "currentValue": "[FR] Foundation’a katıl",
+        "trSource": "Foundation’a katıl",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.özellikleriKeşfet",
+        "currentValue": "[FR] Özellikleri keşfet",
+        "trSource": "Özellikleri keşfet",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.contentfulGerekliKimlikBilgileriEksikIstemci",
+        "currentValue": "[FR] [Contentful] Gerekli kimlik bilgileri eksik; istemci başlatılamadı.",
+        "trSource": "[Contentful] Gerekli kimlik bilgileri eksik; istemci başlatılamadı.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.contentfulİstemciOluşturulurkenHataOluştu",
+        "currentValue": "[FR] [Contentful] İstemci oluşturulurken hata oluştu:",
+        "trSource": "[Contentful] İstemci oluşturulurken hata oluştu:",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.içerikleriIçinIstemciBulunamadıBoşSonuçDönüy",
+        "currentValue": "[FR] içerikleri için istemci bulunamadı. Boş sonuç dönüyor.",
+        "trSource": "içerikleri için istemci bulunamadı. Boş sonuç dönüyor.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.içeriğiSlugIçinIstemciBulunamadı",
+        "currentValue": "[FR] içeriği (${slug}) için istemci bulunamadı.",
+        "trSource": "içeriği (${slug}) için istemci bulunamadı.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.siEntryidOlanKayıtIçinIstemciBulunamadı",
+        "currentValue": "[FR] si ${entryId} olan kayıt için istemci bulunamadı.",
+        "trSource": "si ${entryId} olan kayıt için istemci bulunamadı.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.siAssetidOlanVarlıkIçinIstemciBulunamadı",
+        "currentValue": "[FR] si ${assetId} olan varlık için istemci bulunamadı.",
+        "trSource": "si ${assetId} olan varlık için istemci bulunamadı.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.thisfieldAlanıGeçersizThismessage",
+        "currentValue": "[FR] ${this.field} alanı geçersiz: ${this.message}",
+        "trSource": "${this.field} alanı geçersiz: ${this.message}",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.girilenBilgilerGeçersizThismessage",
+        "currentValue": "[FR] Girilen bilgiler geçersiz: ${this.message}",
+        "trSource": "Girilen bilgiler geçersiz: ${this.message}",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.ungültigesThisfieldThismessage",
+        "currentValue": "[FR] Ungültiges ${this.field}: ${this.message}",
+        "trSource": "Ungültiges ${this.field}: ${this.message}",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.ungültigeEingabeThismessage",
+        "currentValue": "[FR] Ungültige Eingabe: ${this.message}",
+        "trSource": "Ungültige Eingabe: ${this.message}",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sunucuHatasıOluştuLütfenDahaSonraTekrarDene",
+        "currentValue": "[FR] Sunucu hatası oluştu. Lütfen daha sonra tekrar deneyin.",
+        "trSource": "Sunucu hatası oluştu. Lütfen daha sonra tekrar deneyin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.i̇stekIşlenirkenBirHataOluştu",
+        "currentValue": "[FR] İstek işlenirken bir hata oluştu.",
+        "trSource": "İstek işlenirken bir hata oluştu.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.i̇nternetBağlantınızıKontrolEdinVeTekrarDeney",
+        "currentValue": "[FR] İnternet bağlantınızı kontrol edin ve tekrar deneyin.",
+        "trSource": "İnternet bağlantınızı kontrol edin ve tekrar deneyin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.ağBağlantısıHatasıLütfenTekrarDeneyin",
+        "currentValue": "[FR] Ağ bağlantısı hatası. Lütfen tekrar deneyin.",
+        "trSource": "Ağ bağlantısı hatası. Lütfen tekrar deneyin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.bitteÜberprüfenSieIhreInternetverbindungUndV",
+        "currentValue": "[FR] Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.",
+        "trSource": "Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.oturumAçmanızGerekiyor",
+        "currentValue": "[FR] Oturum açmanız gerekiyor.",
+        "trSource": "Oturum açmanız gerekiyor.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.buIşlemIçinYetkinizBulunmuyor",
+        "currentValue": "[FR] Bu işlem için yetkiniz bulunmuyor.",
+        "trSource": "Bu işlem için yetkiniz bulunmuyor.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sieMüssenSichAnmelden",
+        "currentValue": "[FR] Sie müssen sich anmelden.",
+        "trSource": "Sie müssen sich anmelden.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sieHabenKeineBerechtigungFürDieseAktion",
+        "currentValue": "[FR] Sie haben keine Berechtigung für diese Aktion.",
+        "trSource": "Sie haben keine Berechtigung für diese Aktion.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.thisresourcetypeBulunamadı",
+        "currentValue": "[FR] ${this.resourceType} bulunamadı.",
+        "trSource": "${this.resourceType} bulunamadı.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.aradığınızSayfaBulunamadı",
+        "currentValue": "[FR] Aradığınız sayfa bulunamadı.",
+        "trSource": "Aradığınız sayfa bulunamadı.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.çokFazlaIstekGönderdinizLütfenBirazBekleyin",
+        "currentValue": "[FR] Çok fazla istek gönderdiniz. Lütfen biraz bekleyin.",
+        "trSource": "Çok fazla istek gönderdiniz. Lütfen biraz bekleyin.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sistemYapılandırmaHatasıLütfenYöneticiyeBaşvu",
+        "currentValue": "[FR] Sistem yapılandırma hatası. Lütfen yöneticiye başvurun.",
+        "trSource": "Sistem yapılandırma hatası. Lütfen yöneticiye başvurun.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.beklenmeyenBirHataOluştu",
+        "currentValue": "[FR] Beklenmeyen bir hata oluştu.",
+        "trSource": "Beklenmeyen bir hata oluştu.",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.okumaSüresi",
+        "currentValue": "[FR] okuma süresi",
+        "trSource": "okuma süresi",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.pwaServiceWorkerDevelopmentModundaDevreDışı",
+        "currentValue": "[FR] [PWA] Service worker development modunda devre dışı bırakıldı",
+        "trSource": "[PWA] Service worker development modunda devre dışı bırakıldı",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.pwaVarOlanServisWorkerKayıtlarıTemizlendi",
+        "currentValue": "[FR] [PWA] Var olan servis worker kayıtları temizlendi",
+        "trSource": "[PWA] Var olan servis worker kayıtları temizlendi",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.pwaServisWorkerTemizlemeBaşarısız",
+        "currentValue": "[FR] [PWA] Servis worker temizleme başarısız:",
+        "trSource": "[PWA] Servis worker temizleme başarısız:",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.texttürkçe",
+        "currentValue": "[FR] text=Türkçe",
+        "trSource": "text=Türkçe",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.testBaşlık",
+        "currentValue": "[FR] Test Başlık",
+        "trSource": "Test Başlık",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.testÖzet",
+        "currentValue": "[FR] Test özet",
+        "trSource": "Test özet",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.testIçerik",
+        "currentValue": "[FR] Test içerik",
+        "trSource": "Test içerik",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.yazarAvatarı",
+        "currentValue": "[FR] Yazar avatarı",
+        "trSource": "Yazar avatarı",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sürdürülebilirlik",
+        "currentValue": "[FR] Sürdürülebilirlik",
+        "trSource": "Sürdürülebilirlik",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.sürdürülebilirlikKategorisi",
+        "currentValue": "[FR] Sürdürülebilirlik kategorisi",
+        "trSource": "Sürdürülebilirlik kategorisi",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.öneÇıkanGörsel",
+        "currentValue": "[FR] Öne çıkan görsel",
+        "trSource": "Öne çıkan görsel",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.seoBaşlık",
+        "currentValue": "[FR] SEO Başlık",
+        "trSource": "SEO Başlık",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.seoAçıklama",
+        "currentValue": "[FR] SEO açıklama",
+        "trSource": "SEO açıklama",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.schlüssel",
+        "currentValue": "[FR] schlüssel",
+        "trSource": "schlüssel",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.barkodTaramaIçeriği",
+        "currentValue": "[FR] Barkod tarama içeriği",
+        "trSource": "Barkod tarama içeriği",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.ürünBarkodlarınıTarayın",
+        "currentValue": "[FR] Ürün barkodlarını tarayın",
+        "trSource": "Ürün barkodlarını tarayın",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.ekranGörüntüsü1",
+        "currentValue": "[FR] Ekran görüntüsü 1",
+        "trSource": "Ekran görüntüsü 1",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.hızlıTarama",
+        "currentValue": "[FR] Hızlı tarama",
+        "trSource": "Hızlı tarama",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.taramaÖzellikleri",
+        "currentValue": "[FR] Tarama özellikleri",
+        "trSource": "Tarama özellikleri",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.türkçeBaşlık",
+        "currentValue": "[FR] Türkçe başlık",
+        "trSource": "Türkçe başlık",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.özet",
+        "currentValue": "[FR] özet",
+        "trSource": "özet",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.içerik",
+        "currentValue": "[FR] içerik",
+        "trSource": "içerik",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.açıklama",
+        "currentValue": "[FR] açıklama",
+        "trSource": "açıklama",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.türkçeIçerik",
+        "currentValue": "[FR] Türkçe içerik",
+        "trSource": "Türkçe içerik",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.contenuFrançais",
+        "currentValue": "[FR] Contenu français",
+        "trSource": "Contenu français",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.ui.özellik",
+        "currentValue": "[FR] Özellik",
+        "trSource": "Özellik",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.aria.features.titleÖzelliği",
+        "currentValue": "[FR] ${title} özelliği",
+        "trSource": "${title} özelliği",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.aria.features.coriaPlatformÖzellikleri",
+        "currentValue": "[FR] CORIA platform özellikleri",
+        "trSource": "CORIA platform özellikleri",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.aria.daCoriaUygulamasınıIndirin",
+        "currentValue": "[FR] da CORIA uygulamasını indirin",
+        "trSource": "da CORIA uygulamasını indirin",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.aria.coriaIstatistikleriVeEtkiGöstergeleri",
+        "currentValue": "[FR] CORIA istatistikleri ve etki göstergeleri",
+        "trSource": "CORIA istatistikleri ve etki göstergeleri",
+        "needsTranslation": true
+      },
+      {
+        "key": "common.aria.metricvalueMetriclabelCoriaEtkiGöstergesi",
+        "currentValue": "[FR] ${metric.value} ${metric.label} - CORIA etki göstergesi",
+        "trSource": "${metric.value} ${metric.label} - CORIA etki göstergesi",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.about.timeline.fikrinDoğuşuVeIlkVeriToplamaPrototipi",
+        "currentValue": "[FR] Fikrin doğuşu ve ilk veri toplama prototipi",
+        "trSource": "Fikrin doğuşu ve ilk veri toplama prototipi",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.about.timeline.mvpGeliştirmeVeKapalıBeta",
+        "currentValue": "[FR] MVP geliştirme ve kapalı beta",
+        "trSource": "MVP geliştirme ve kapalı beta",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.about.timeline.betaLansmanıVeIlk50kKullanıcı",
+        "currentValue": "[FR] Beta lansmanı ve ilk 50K kullanıcı",
+        "trSource": "Beta lansmanı ve ilk 50K kullanıcı",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.about.timeline.100kKullanıcıIlkFoundationBağışRaporu",
+        "currentValue": "[FR] 100K kullanıcı, ilk Foundation bağış raporu",
+        "trSource": "100K kullanıcı, ilk Foundation bağış raporu",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.about.timeline.coriaTokenLansmanıVeSolanaEntegrasyonu",
+        "currentValue": "[FR] CORIA Token lansmanı ve Solana entegrasyonu",
+        "trSource": "CORIA Token lansmanı ve Solana entegrasyonu",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.about.partnerships.solanaTabanlıTokenAltyapısıVeEtkiRaporlama",
+        "currentValue": "[FR] Solana tabanlı token altyapısı ve etki raporlama.",
+        "trSource": "Solana tabanlı token altyapısı ve etki raporlama.",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.about.partnerships.yeşilEnerjiKooperatifleri",
+        "currentValue": "[FR] Yeşil Enerji Kooperatifleri",
+        "trSource": "Yeşil Enerji Kooperatifleri",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.about.partnerships.veganRestoranDönüşümüVeEğitimProgramları",
+        "currentValue": "[FR] Vegan restoran dönüşümü ve eğitim programları.",
+        "trSource": "Vegan restoran dönüşümü ve eğitim programları.",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.contact.content.iletişim",
+        "currentValue": "[FR] iletişim",
+        "trSource": "iletişim",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.hero.subtitle.birlikteDahaBüyükEtkiYaratıyoruz",
+        "currentValue": "[FR] Birlikte Daha Büyük Etki Yaratıyoruz",
+        "trSource": "Birlikte Daha Büyük Etki Yaratıyoruz",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.features.coriaUygulamaGelirlerininBirKısmınıSürdürüleb",
+        "currentValue": "[FR] CORIA, uygulama gelirlerinin bir kısmını sürdürülebilirlik projelerine yatırım yapmak için CORIA Foundation",
+        "trSource": "CORIA, uygulama gelirlerinin bir kısmını sürdürülebilirlik projelerine yatırım yapmak için CORIA Foundation",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.features.believePlatformEntegrasyonuIleSolanaTabanlıT",
+        "currentValue": "[FR] Believe Platform entegrasyonu ile Solana tabanlı token kullanım alanları",
+        "trSource": "Believe Platform entegrasyonu ile Solana tabanlı token kullanım alanları",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.features.believePlatformÜzerindenÇıkarılacakÖzelSolana",
+        "currentValue": "[FR] Believe Platform üzerinden çıkarılacak özel Solana token",
+        "trSource": "Believe Platform üzerinden çıkarılacak özel Solana token",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.features.tokenIşlemÜcretleriDirektOlarakSürdürülebilir",
+        "currentValue": "[FR] Token işlem ücretleri direkt olarak sürdürülebilirlik projelerine aktarılır",
+        "trSource": "Token işlem ücretleri direkt olarak sürdürülebilirlik projelerine aktarılır",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.features.blockchainTabanlıŞeffafFonDağıtımıVeEtkiTak",
+        "currentValue": "[FR] Blockchain tabanlı şeffaf fon dağıtımı ve etki takibi",
+        "trSource": "Blockchain tabanlı şeffaf fon dağıtımı ve etki takibi",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.features.tümFonlamaKararlarıVeEtkiRaporlarıHalkaAçık",
+        "currentValue": "[FR] Tüm fonlama kararları ve etki raporları halka açık blockchain üzerinde",
+        "trSource": "Tüm fonlama kararları ve etki raporları halka açık blockchain üzerinde",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.features.coriaTokenSahipleriProjeSeçimindeOyKullanma",
+        "currentValue": "[FR] CORIA token sahipleri proje seçiminde oy kullanma hakkına sahip",
+        "trSource": "CORIA token sahipleri proje seçiminde oy kullanma hakkına sahip",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.features.herProjeninÖlçülebilirÇevreselVeSosyalEtkisi",
+        "currentValue": "[FR] Her projenin ölçülebilir çevresel ve sosyal etkisi raporlanır",
+        "trSource": "Her projenin ölçülebilir çevresel ve sosyal etkisi raporlanır",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.feeDağılımModeli",
+        "currentValue": "[FR] Fee Dağılım Modeli",
+        "trSource": "Fee Dağılım Modeli",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.şeffafFonlama",
+        "currentValue": "[FR] Şeffaf Fonlama",
+        "trSource": "Şeffaf Fonlama",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.ekolojikTarımProjesi",
+        "currentValue": "[FR] Ekolojik Tarım Projesi",
+        "trSource": "Ekolojik Tarım Projesi",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.5000HektarOrganikTarımAlanıOluşturuldu",
+        "currentValue": "[FR] 5000 hektar organik tarım alanı oluşturuldu",
+        "trSource": "5000 hektar organik tarım alanı oluşturuldu",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.veganlık",
+        "currentValue": "[FR] Veganlık",
+        "trSource": "Veganlık",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.güneşEnerjisiKooperatifi",
+        "currentValue": "[FR] Güneş Enerjisi Kooperatifi",
+        "trSource": "Güneş Enerjisi Kooperatifi",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.250AileyeTemizEnerjiErişimiSağlandı",
+        "currentValue": "[FR] 250 aileye temiz enerji erişimi sağlandı",
+        "trSource": "250 aileye temiz enerji erişimi sağlandı",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.yeşilEnerji",
+        "currentValue": "[FR] Yeşil Enerji",
+        "trSource": "Yeşil Enerji",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.sıfırAtıkİnisiyatifi",
+        "currentValue": "[FR] Sıfır Atık İnisiyatifi",
+        "trSource": "Sıfır Atık İnisiyatifi",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.12ŞehirdePlastikKullanımı60Azaltıldı",
+        "currentValue": "[FR] 12 şehirde plastik kullanımı %60 azaltıldı",
+        "trSource": "12 şehirde plastik kullanımı %60 azaltıldı",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.sürdürülebilirlik",
+        "currentValue": "[FR] Sürdürülebilirlik",
+        "trSource": "Sürdürülebilirlik",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.şeffaflık",
+        "currentValue": "[FR] Şeffaflık",
+        "trSource": "Şeffaflık",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.toplulukYönetimi",
+        "currentValue": "[FR] Topluluk Yönetimi",
+        "trSource": "Topluluk Yönetimi",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.etkiOdaklılık",
+        "currentValue": "[FR] Etki Odaklılık",
+        "trSource": "Etki Odaklılık",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.projeniziTanımlayanBaşlık",
+        "currentValue": "[FR] Projenizi tanımlayan başlık",
+        "trSource": "Projenizi tanımlayan başlık",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.content.projenizi280KarakterdeÖzetleyin",
+        "currentValue": "[FR] Projenizi 280 karakterde özetleyin",
+        "trSource": "Projenizi 280 karakterde özetleyin",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.roadmap.foundationKonseptiTasarlandı",
+        "currentValue": "[FR] Foundation konsepti tasarlandı",
+        "trSource": "Foundation konsepti tasarlandı",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.roadmap.solanaTabanlıCoriaTokenLansmanı",
+        "currentValue": "[FR] Solana tabanlı CORIA Token lansmanı",
+        "trSource": "Solana tabanlı CORIA Token lansmanı",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.foundation.roadmap.globalGenişleme",
+        "currentValue": "[FR] Global genişleme",
+        "trSource": "Global genişleme",
+        "needsTranslation": true
+      },
+      {
+        "key": "pages.pricing.content.fiyatlandırma",
+        "currentValue": "[FR] fiyatlandırma",
+        "trSource": "fiyatlandırma",
+        "needsTranslation": true
+      }
+    ]
+  }
+}

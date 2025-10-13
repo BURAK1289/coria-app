@@ -1,0 +1,2672 @@
+{
+  "locale": "de",
+  "totalMissing": 292,
+  "missingKeys": [
+    "navigation.foundation",
+    "navigation.downloadApp",
+    "navigation.sustainableLiving",
+    "features.meta.title",
+    "features.meta.description",
+    "features.sidebar.title",
+    "features.navigation.allFeatures",
+    "features.navigation.backToCategory",
+    "features.overview.title",
+    "features.overview.subtitle",
+    "features.overview.learnMore",
+    "features.overview.cta.title",
+    "features.overview.cta.description",
+    "features.overview.cta.downloadIos",
+    "features.overview.cta.downloadAndroid",
+    "features.categoryOverview.featuresTitle",
+    "features.categoryOverview.relatedTitle",
+    "features.categoryOverview.cta.title",
+    "features.categoryOverview.cta.description",
+    "features.categoryOverview.cta.downloadIos",
+    "features.categoryOverview.cta.downloadAndroid",
+    "features.featureDetail.howItWorks.title",
+    "features.featureDetail.technicalDetails.title",
+    "features.featureDetail.learnMore",
+    "features.featureDetail.cta.title",
+    "features.featureDetail.cta.description",
+    "features.featureDetail.cta.downloadIos",
+    "features.featureDetail.cta.downloadAndroid",
+    "features.gallery.title",
+    "features.gallery.watchDemo",
+    "features.gallery.videoPlaceholder",
+    "features.whyItMatters.title",
+    "features.whyItMatters.statisticsTitle",
+    "features.whyItMatters.joinMovement",
+    "features.whyItMatters.impactTypes.environmental",
+    "features.whyItMatters.impactTypes.health",
+    "features.whyItMatters.impactTypes.economic",
+    "features.whyItMatters.impactTypes.social",
+    "features.whyItMatters.impactTypes.ethical",
+    "features.whyItMatters.impactTypes.global",
+    "features.methodology.title",
+    "features.methodology.scoringSystem",
+    "features.methodology.scoringRange",
+    "features.methodology.updateFrequency",
+    "features.methodology.scoringFactors",
+    "features.methodology.ratings.poor",
+    "features.methodology.ratings.fair",
+    "features.methodology.ratings.good",
+    "features.methodology.ratings.excellent",
+    "features.methodology.dataProcessing.title",
+    "features.methodology.transparency.title",
+    "features.methodology.transparency.description",
+    "features.methodology.environmental-score.description",
+    "features.methodology.environmental-score.overview",
+    "features.methodology.environmental-score.updateFrequency",
+    "features.methodology.environmental-score.dataProcessing",
+    "features.methodology.environmental-score.factors.0.description",
+    "features.methodology.environmental-score.factors.1.description",
+    "features.methodology.environmental-score.factors.2.description",
+    "features.methodology.environmental-score.factors.3.description",
+    "features.methodology.environmental-score.factors.4.description",
+    "features.methodology.social-impact.description",
+    "features.methodology.social-impact.overview",
+    "features.methodology.social-impact.updateFrequency",
+    "features.methodology.social-impact.dataProcessing",
+    "features.methodology.social-impact.factors.0.description",
+    "features.methodology.social-impact.factors.1.description",
+    "features.methodology.social-impact.factors.2.description",
+    "features.methodology.social-impact.factors.3.description",
+    "features.methodology.social-impact.factors.4.description",
+    "features.methodology.health-rating.description",
+    "features.methodology.health-rating.overview",
+    "features.methodology.health-rating.updateFrequency",
+    "features.methodology.health-rating.dataProcessing",
+    "features.methodology.health-rating.factors.0.description",
+    "features.methodology.health-rating.factors.1.description",
+    "features.methodology.health-rating.factors.2.description",
+    "features.methodology.health-rating.factors.3.description",
+    "features.methodology.health-rating.factors.4.description",
+    "features.methodology.ethical-production.description",
+    "features.methodology.ethical-production.overview",
+    "features.methodology.ethical-production.updateFrequency",
+    "features.methodology.ethical-production.dataProcessing",
+    "features.methodology.ethical-production.factors.0.description",
+    "features.methodology.ethical-production.factors.1.description",
+    "features.methodology.ethical-production.factors.2.description",
+    "features.methodology.ethical-production.factors.3.description",
+    "features.methodology.ethical-production.factors.4.description",
+    "features.dataSources.title",
+    "features.dataSources.description",
+    "features.dataSources.verified",
+    "features.dataSources.coverage",
+    "features.dataSources.updates",
+    "features.dataSources.reliability",
+    "features.dataSources.visitSource",
+    "features.dataSources.quality.title",
+    "features.dataSources.quality.verification.title",
+    "features.dataSources.quality.verification.description",
+    "features.dataSources.quality.accuracy.title",
+    "features.dataSources.quality.accuracy.description",
+    "features.dataSources.attribution.title",
+    "features.dataSources.attribution.description",
+    "features.relatedFeatures.title",
+    "features.relatedFeatures.description",
+    "features.relatedFeatures.fromCategory",
+    "features.relatedFeatures.exploreAll.title",
+    "features.relatedFeatures.exploreAll.description",
+    "features.relatedFeatures.exploreAll.action",
+    "features.categories.scanning.title",
+    "features.categories.scanning.description",
+    "features.categories.scanning.badge",
+    "features.categories.scanning.longDescription",
+    "features.categories.scanning.benefits",
+    "features.categories.scanning.whyItMatters.description",
+    "features.categories.scanning.whyItMatters.impacts",
+    "features.categories.scanning.whyItMatters.statistics",
+    "features.categories.scanning.whyItMatters.cta.title",
+    "features.categories.scanning.whyItMatters.cta.description",
+    "features.categories.scanning.relatedCategories",
+    "features.categories.ai-recommendations.title",
+    "features.categories.ai-recommendations.description",
+    "features.categories.ai-recommendations.badge",
+    "features.categories.ai-recommendations.longDescription",
+    "features.categories.ai-recommendations.benefits",
+    "features.categories.ai-recommendations.whyItMatters.description",
+    "features.categories.ai-recommendations.whyItMatters.impacts",
+    "features.categories.ai-recommendations.whyItMatters.statistics",
+    "features.categories.ai-recommendations.whyItMatters.cta.title",
+    "features.categories.ai-recommendations.whyItMatters.cta.description",
+    "features.categories.ai-recommendations.relatedCategories",
+    "features.categories.impact-tracking.title",
+    "features.categories.impact-tracking.description",
+    "features.categories.impact-tracking.badge",
+    "features.categories.impact-tracking.longDescription",
+    "features.categories.impact-tracking.benefits",
+    "features.categories.impact-tracking.whyItMatters.description",
+    "features.categories.impact-tracking.whyItMatters.impacts",
+    "features.categories.impact-tracking.whyItMatters.statistics",
+    "features.categories.impact-tracking.whyItMatters.cta.title",
+    "features.categories.impact-tracking.whyItMatters.cta.description",
+    "features.categories.impact-tracking.relatedCategories",
+    "features.categories.smart-pantry.title",
+    "features.categories.smart-pantry.description",
+    "features.categories.smart-pantry.badge",
+    "features.categories.smart-pantry.longDescription",
+    "features.categories.smart-pantry.benefits",
+    "features.categories.smart-pantry.whyItMatters.description",
+    "features.categories.smart-pantry.whyItMatters.impacts",
+    "features.categories.smart-pantry.whyItMatters.statistics",
+    "features.categories.smart-pantry.whyItMatters.cta.title",
+    "features.categories.smart-pantry.whyItMatters.cta.description",
+    "features.categories.smart-pantry.relatedCategories",
+    "features.categories.sustainability-scoring.title",
+    "features.categories.sustainability-scoring.description",
+    "features.categories.sustainability-scoring.badge",
+    "features.categories.sustainability-scoring.longDescription",
+    "features.categories.sustainability-scoring.benefits",
+    "features.categories.sustainability-scoring.whyItMatters.description",
+    "features.categories.sustainability-scoring.whyItMatters.impacts",
+    "features.categories.sustainability-scoring.whyItMatters.statistics",
+    "features.categories.sustainability-scoring.whyItMatters.cta.title",
+    "features.categories.sustainability-scoring.whyItMatters.cta.description",
+    "features.categories.sustainability-scoring.relatedCategories",
+    "features.categories.community.title",
+    "features.categories.community.description",
+    "features.categories.community.badge",
+    "features.categories.community.longDescription",
+    "features.categories.community.benefits",
+    "features.categories.community.whyItMatters.description",
+    "features.categories.community.whyItMatters.impacts",
+    "features.categories.community.whyItMatters.statistics",
+    "features.categories.community.whyItMatters.cta.title",
+    "features.categories.community.whyItMatters.cta.description",
+    "features.categories.community.relatedCategories",
+    "features.categories.premium-features.title",
+    "features.categories.premium-features.description",
+    "features.categories.premium-features.badge",
+    "features.categories.premium-features.longDescription",
+    "features.categories.premium-features.benefits",
+    "features.categories.premium-features.whyItMatters.description",
+    "features.categories.premium-features.whyItMatters.impacts",
+    "features.categories.premium-features.whyItMatters.statistics",
+    "features.categories.premium-features.whyItMatters.cta.title",
+    "features.categories.premium-features.whyItMatters.cta.description",
+    "features.categories.premium-features.relatedCategories",
+    "features.categories.data-insights.title",
+    "features.categories.data-insights.description",
+    "features.categories.data-insights.badge",
+    "features.categories.data-insights.longDescription",
+    "features.categories.data-insights.benefits",
+    "features.categories.data-insights.whyItMatters.description",
+    "features.categories.data-insights.whyItMatters.impacts",
+    "features.categories.data-insights.whyItMatters.statistics",
+    "features.categories.data-insights.whyItMatters.cta.title",
+    "features.categories.data-insights.whyItMatters.cta.description",
+    "features.categories.data-insights.relatedCategories",
+    "features.features.barcode-scan.title",
+    "features.features.barcode-scan.shortDescription",
+    "features.features.barcode-scan.longDescription",
+    "features.features.barcode-scan.benefits",
+    "features.features.barcode-scan.howItWorks",
+    "features.features.barcode-scan.technicalDetails",
+    "features.features.environmental-score.title",
+    "features.features.environmental-score.shortDescription",
+    "features.features.environmental-score.longDescription",
+    "features.features.environmental-score.benefits",
+    "features.features.environmental-score.howItWorks",
+    "features.features.environmental-score.technicalDetails",
+    "features.features.personalized-suggestions.title",
+    "features.features.personalized-suggestions.shortDescription",
+    "features.features.personalized-suggestions.longDescription",
+    "features.features.personalized-suggestions.benefits",
+    "features.features.personalized-suggestions.howItWorks",
+    "features.features.personalized-suggestions.technicalDetails",
+    "features.features.carbon-footprint.title",
+    "features.features.carbon-footprint.shortDescription",
+    "features.features.carbon-footprint.longDescription",
+    "features.features.carbon-footprint.benefits",
+    "features.features.carbon-footprint.howItWorks",
+    "features.features.carbon-footprint.technicalDetails",
+    "features.sustainabilityInsights.title",
+    "features.sustainabilityInsights.description",
+    "features.socialCommitment.title",
+    "features.socialCommitment.description",
+    "pricing.meta.title",
+    "pricing.meta.description",
+    "pricing.plans.free.name",
+    "pricing.plans.free.price",
+    "pricing.plans.free.period",
+    "pricing.plans.free.description",
+    "pricing.plans.free.features",
+    "pricing.plans.free.cta",
+    "pricing.plans.free.popular",
+    "pricing.plans.premium.name",
+    "pricing.plans.premium.price",
+    "pricing.plans.premium.period",
+    "pricing.plans.premium.description",
+    "pricing.plans.premium.features",
+    "pricing.plans.premium.cta",
+    "pricing.plans.premium.popular",
+    "pricing.comparison.title",
+    "pricing.comparison.features.scanning.name",
+    "pricing.comparison.features.scanning.free",
+    "pricing.comparison.features.scanning.premium",
+    "pricing.comparison.features.reports.name",
+    "pricing.comparison.features.reports.free",
+    "pricing.comparison.features.reports.premium",
+    "pricing.comparison.features.analytics.name",
+    "pricing.comparison.features.analytics.free",
+    "pricing.comparison.features.analytics.premium",
+    "pricing.comparison.features.recommendations.name",
+    "pricing.comparison.features.recommendations.free",
+    "pricing.comparison.features.recommendations.premium",
+    "pricing.comparison.features.support.name",
+    "pricing.comparison.features.support.free",
+    "pricing.comparison.features.support.premium",
+    "pricing.comparison.features.ads.name",
+    "pricing.comparison.features.ads.free",
+    "pricing.comparison.features.ads.premium",
+    "pricing.comparison.features.export.name",
+    "pricing.comparison.features.export.free",
+    "pricing.comparison.features.export.premium",
+    "pricing.comparison.features.earlyAccess.name",
+    "pricing.comparison.features.earlyAccess.free",
+    "pricing.comparison.features.earlyAccess.premium",
+    "pricing.trust.title",
+    "pricing.trust.benefits",
+    "pricing.faq.title",
+    "pricing.faq.questions",
+    "pricing.testimonials.title",
+    "pricing.testimonials.reviews",
+    "pricing.cta.title",
+    "pricing.cta.description",
+    "pricing.cta.downloadIos",
+    "pricing.cta.downloadAndroid",
+    "pricing.cta.note",
+    "pricing.support.title",
+    "pricing.support.description",
+    "pricing.support.methods",
+    "pwa.install.title",
+    "pwa.install.description",
+    "pwa.install.button",
+    "pwa.install.dismiss",
+    "pwa.update.title",
+    "pwa.update.description",
+    "pwa.update.button",
+    "pwa.update.updating",
+    "pwa.update.dismiss",
+    "pwa.notifications.title",
+    "pwa.notifications.description",
+    "pwa.notifications.allow",
+    "pwa.notifications.dismiss"
+  ],
+  "translations": [
+    {
+      "key": "navigation.foundation",
+      "tr": "Foundation",
+      "en": "Foundation"
+    },
+    {
+      "key": "navigation.downloadApp",
+      "tr": "Download the CORIA App",
+      "en": "Download the CORIA App"
+    },
+    {
+      "key": "navigation.sustainableLiving",
+      "tr": "Sustainable living made simple",
+      "en": "Sustainable living made simple"
+    },
+    {
+      "key": "features.meta.title",
+      "tr": "CORIA Features - Sustainable Living Made Easy",
+      "en": "CORIA Features - Sustainable Living Made Easy"
+    },
+    {
+      "key": "features.meta.description",
+      "tr": "Discover CORIA's powerful features including barcode scanning, AI recommendations, impact tracking, and smart pantry management for sustainable living.",
+      "en": "Discover CORIA's powerful features including barcode scanning, AI recommendations, impact tracking, and smart pantry management for sustainable living."
+    },
+    {
+      "key": "features.sidebar.title",
+      "tr": "Feature Categories",
+      "en": "Feature Categories"
+    },
+    {
+      "key": "features.navigation.allFeatures",
+      "tr": "All Features",
+      "en": "All Features"
+    },
+    {
+      "key": "features.navigation.backToCategory",
+      "tr": "Back to Category",
+      "en": "Back to Category"
+    },
+    {
+      "key": "features.overview.title",
+      "tr": "Powerful Features for Sustainable Living",
+      "en": "Powerful Features for Sustainable Living"
+    },
+    {
+      "key": "features.overview.subtitle",
+      "tr": "Discover how CORIA's comprehensive feature set helps you make conscious consumption choices and track your environmental impact.",
+      "en": "Discover how CORIA's comprehensive feature set helps you make conscious consumption choices and track your environmental impact."
+    },
+    {
+      "key": "features.overview.learnMore",
+      "tr": "Learn More",
+      "en": "Learn More"
+    },
+    {
+      "key": "features.overview.cta.title",
+      "tr": "Ready to Start Your Sustainable Journey?",
+      "en": "Ready to Start Your Sustainable Journey?"
+    },
+    {
+      "key": "features.overview.cta.description",
+      "tr": "Download CORIA today and begin making conscious consumption choices.",
+      "en": "Download CORIA today and begin making conscious consumption choices."
+    },
+    {
+      "key": "features.overview.cta.downloadIos",
+      "tr": "Download on App Store",
+      "en": "Download on App Store"
+    },
+    {
+      "key": "features.overview.cta.downloadAndroid",
+      "tr": "Get it on Google Play",
+      "en": "Get it on Google Play"
+    },
+    {
+      "key": "features.categoryOverview.featuresTitle",
+      "tr": "Features in This Category",
+      "en": "Features in This Category"
+    },
+    {
+      "key": "features.categoryOverview.relatedTitle",
+      "tr": "Related Categories",
+      "en": "Related Categories"
+    },
+    {
+      "key": "features.categoryOverview.cta.title",
+      "tr": "Experience These Features",
+      "en": "Experience These Features"
+    },
+    {
+      "key": "features.categoryOverview.cta.description",
+      "tr": "Download CORIA to access all these powerful sustainability features.",
+      "en": "Download CORIA to access all these powerful sustainability features."
+    },
+    {
+      "key": "features.categoryOverview.cta.downloadIos",
+      "tr": "Download on App Store",
+      "en": "Download on App Store"
+    },
+    {
+      "key": "features.categoryOverview.cta.downloadAndroid",
+      "tr": "Get it on Google Play",
+      "en": "Get it on Google Play"
+    },
+    {
+      "key": "features.featureDetail.howItWorks.title",
+      "tr": "How It Works",
+      "en": "How It Works"
+    },
+    {
+      "key": "features.featureDetail.technicalDetails.title",
+      "tr": "Technical Details",
+      "en": "Technical Details"
+    },
+    {
+      "key": "features.featureDetail.learnMore",
+      "tr": "Learn More",
+      "en": "Learn More"
+    },
+    {
+      "key": "features.featureDetail.cta.title",
+      "tr": "Try This Feature",
+      "en": "Try This Feature"
+    },
+    {
+      "key": "features.featureDetail.cta.description",
+      "tr": "Download CORIA to experience this feature and many more.",
+      "en": "Download CORIA to experience this feature and many more."
+    },
+    {
+      "key": "features.featureDetail.cta.downloadIos",
+      "tr": "Download on App Store",
+      "en": "Download on App Store"
+    },
+    {
+      "key": "features.featureDetail.cta.downloadAndroid",
+      "tr": "Get it on Google Play",
+      "en": "Get it on Google Play"
+    },
+    {
+      "key": "features.gallery.title",
+      "tr": "See It in Action",
+      "en": "See It in Action"
+    },
+    {
+      "key": "features.gallery.watchDemo",
+      "tr": "Watch Demo",
+      "en": "Watch Demo"
+    },
+    {
+      "key": "features.gallery.videoPlaceholder",
+      "tr": "Demo video coming soon",
+      "en": "Demo video coming soon"
+    },
+    {
+      "key": "features.whyItMatters.title",
+      "tr": "Why This Matters",
+      "en": "Why This Matters"
+    },
+    {
+      "key": "features.whyItMatters.statisticsTitle",
+      "tr": "Impact Statistics",
+      "en": "Impact Statistics"
+    },
+    {
+      "key": "features.whyItMatters.joinMovement",
+      "tr": "Join the sustainable living movement",
+      "en": "Join the sustainable living movement"
+    },
+    {
+      "key": "features.whyItMatters.impactTypes.environmental",
+      "tr": "Environmental",
+      "en": "Environmental"
+    },
+    {
+      "key": "features.whyItMatters.impactTypes.health",
+      "tr": "Health",
+      "en": "Health"
+    },
+    {
+      "key": "features.whyItMatters.impactTypes.economic",
+      "tr": "Economic",
+      "en": "Economic"
+    },
+    {
+      "key": "features.whyItMatters.impactTypes.social",
+      "tr": "Social",
+      "en": "Social"
+    },
+    {
+      "key": "features.whyItMatters.impactTypes.ethical",
+      "tr": "Ethical",
+      "en": "Ethical"
+    },
+    {
+      "key": "features.whyItMatters.impactTypes.global",
+      "tr": "Global",
+      "en": "Global"
+    },
+    {
+      "key": "features.methodology.title",
+      "tr": "How We Calculate Scores",
+      "en": "How We Calculate Scores"
+    },
+    {
+      "key": "features.methodology.scoringSystem",
+      "tr": "Scoring System",
+      "en": "Scoring System"
+    },
+    {
+      "key": "features.methodology.scoringRange",
+      "tr": "Score Range",
+      "en": "Score Range"
+    },
+    {
+      "key": "features.methodology.updateFrequency",
+      "tr": "Update Frequency",
+      "en": "Update Frequency"
+    },
+    {
+      "key": "features.methodology.scoringFactors",
+      "tr": "Scoring Factors",
+      "en": "Scoring Factors"
+    },
+    {
+      "key": "features.methodology.ratings.poor",
+      "tr": "Poor",
+      "en": "Poor"
+    },
+    {
+      "key": "features.methodology.ratings.fair",
+      "tr": "Fair",
+      "en": "Fair"
+    },
+    {
+      "key": "features.methodology.ratings.good",
+      "tr": "Good",
+      "en": "Good"
+    },
+    {
+      "key": "features.methodology.ratings.excellent",
+      "tr": "Excellent",
+      "en": "Excellent"
+    },
+    {
+      "key": "features.methodology.dataProcessing.title",
+      "tr": "Data Processing & Analysis",
+      "en": "Data Processing & Analysis"
+    },
+    {
+      "key": "features.methodology.transparency.title",
+      "tr": "Transparency & Accuracy",
+      "en": "Transparency & Accuracy"
+    },
+    {
+      "key": "features.methodology.transparency.description",
+      "tr": "Our scoring methodology is continuously reviewed and updated based on the latest scientific research and industry standards.",
+      "en": "Our scoring methodology is continuously reviewed and updated based on the latest scientific research and industry standards."
+    },
+    {
+      "key": "features.methodology.environmental-score.description",
+      "tr": "Our environmental scoring evaluates products across multiple environmental impact factors.",
+      "en": "Our environmental scoring evaluates products across multiple environmental impact factors."
+    },
+    {
+      "key": "features.methodology.environmental-score.overview",
+      "tr": "Environmental scores range from 0-10, with higher scores indicating lower environmental impact.",
+      "en": "Environmental scores range from 0-10, with higher scores indicating lower environmental impact."
+    },
+    {
+      "key": "features.methodology.environmental-score.updateFrequency",
+      "tr": "Updated weekly with new research data",
+      "en": "Updated weekly with new research data"
+    },
+    {
+      "key": "features.methodology.environmental-score.dataProcessing",
+      "tr": "Environmental data is processed using life cycle assessment (LCA) principles and weighted based on scientific impact studies.",
+      "en": "Environmental data is processed using life cycle assessment (LCA) principles and weighted based on scientific impact studies."
+    },
+    {
+      "key": "features.methodology.environmental-score.factors.0.description",
+      "tr": "Greenhouse gas emissions during production, transportation, and disposal",
+      "en": "Greenhouse gas emissions during production, transportation, and disposal"
+    },
+    {
+      "key": "features.methodology.environmental-score.factors.1.description",
+      "tr": "Water consumption and pollution impact during manufacturing",
+      "en": "Water consumption and pollution impact during manufacturing"
+    },
+    {
+      "key": "features.methodology.environmental-score.factors.2.description",
+      "tr": "Recyclability and sustainability of product packaging",
+      "en": "Recyclability and sustainability of product packaging"
+    },
+    {
+      "key": "features.methodology.environmental-score.factors.3.description",
+      "tr": "Carbon emissions from transportation and distribution",
+      "en": "Carbon emissions from transportation and distribution"
+    },
+    {
+      "key": "features.methodology.environmental-score.factors.4.description",
+      "tr": "Environmental impact of disposal and end-of-life management",
+      "en": "Environmental impact of disposal and end-of-life management"
+    },
+    {
+      "key": "features.methodology.social-impact.description",
+      "tr": "Social impact scoring evaluates the social responsibility aspects of product manufacturing and distribution.",
+      "en": "Social impact scoring evaluates the social responsibility aspects of product manufacturing and distribution."
+    },
+    {
+      "key": "features.methodology.social-impact.overview",
+      "tr": "Social scores assess fair labor practices, community impact, and supply chain transparency.",
+      "en": "Social scores assess fair labor practices, community impact, and supply chain transparency."
+    },
+    {
+      "key": "features.methodology.social-impact.updateFrequency",
+      "tr": "Updated monthly with new certification data",
+      "en": "Updated monthly with new certification data"
+    },
+    {
+      "key": "features.methodology.social-impact.dataProcessing",
+      "tr": "Social data is gathered from certification bodies, NGO reports, and company transparency reports.",
+      "en": "Social data is gathered from certification bodies, NGO reports, and company transparency reports."
+    },
+    {
+      "key": "features.methodology.social-impact.factors.0.description",
+      "tr": "Worker rights, safety standards, and fair wage practices",
+      "en": "Worker rights, safety standards, and fair wage practices"
+    },
+    {
+      "key": "features.methodology.social-impact.factors.1.description",
+      "tr": "Positive or negative impact on local communities",
+      "en": "Positive or negative impact on local communities"
+    },
+    {
+      "key": "features.methodology.social-impact.factors.2.description",
+      "tr": "Transparency in supply chain and sourcing practices",
+      "en": "Transparency in supply chain and sourcing practices"
+    },
+    {
+      "key": "features.methodology.social-impact.factors.3.description",
+      "tr": "Compliance with international labor and safety standards",
+      "en": "Compliance with international labor and safety standards"
+    },
+    {
+      "key": "features.methodology.social-impact.factors.4.description",
+      "tr": "Contribution to local economic development and job creation",
+      "en": "Contribution to local economic development and job creation"
+    },
+    {
+      "key": "features.methodology.health-rating.description",
+      "tr": "Health ratings evaluate the nutritional value and health impact of food products.",
+      "en": "Health ratings evaluate the nutritional value and health impact of food products."
+    },
+    {
+      "key": "features.methodology.health-rating.overview",
+      "tr": "Health scores consider nutritional content, processing level, and additive safety.",
+      "en": "Health scores consider nutritional content, processing level, and additive safety."
+    },
+    {
+      "key": "features.methodology.health-rating.updateFrequency",
+      "tr": "Updated as new nutritional research becomes available",
+      "en": "Updated as new nutritional research becomes available"
+    },
+    {
+      "key": "features.methodology.health-rating.dataProcessing",
+      "tr": "Health data combines nutritional databases with latest health research and dietary guidelines.",
+      "en": "Health data combines nutritional databases with latest health research and dietary guidelines."
+    },
+    {
+      "key": "features.methodology.health-rating.factors.0.description",
+      "tr": "Macro and micronutrient content and balance",
+      "en": "Macro and micronutrient content and balance"
+    },
+    {
+      "key": "features.methodology.health-rating.factors.1.description",
+      "tr": "Presence and safety of food additives and preservatives",
+      "en": "Presence and safety of food additives and preservatives"
+    },
+    {
+      "key": "features.methodology.health-rating.factors.2.description",
+      "tr": "Level of processing and impact on nutritional value",
+      "en": "Level of processing and impact on nutritional value"
+    },
+    {
+      "key": "features.methodology.health-rating.factors.3.description",
+      "tr": "Allergen information and safety warnings",
+      "en": "Allergen information and safety warnings"
+    },
+    {
+      "key": "features.methodology.health-rating.factors.4.description",
+      "tr": "Verification of health claims and nutritional benefits",
+      "en": "Verification of health claims and nutritional benefits"
+    },
+    {
+      "key": "features.methodology.ethical-production.description",
+      "tr": "Ethical production scores evaluate animal welfare, organic practices, and fair trade compliance.",
+      "en": "Ethical production scores evaluate animal welfare, organic practices, and fair trade compliance."
+    },
+    {
+      "key": "features.methodology.ethical-production.overview",
+      "tr": "Ethical scores assess production methods and their alignment with ethical standards.",
+      "en": "Ethical scores assess production methods and their alignment with ethical standards."
+    },
+    {
+      "key": "features.methodology.ethical-production.updateFrequency",
+      "tr": "Updated quarterly with new certification data",
+      "en": "Updated quarterly with new certification data"
+    },
+    {
+      "key": "features.methodology.ethical-production.dataProcessing",
+      "tr": "Ethical data is sourced from certification bodies, audits, and third-party verification systems.",
+      "en": "Ethical data is sourced from certification bodies, audits, and third-party verification systems."
+    },
+    {
+      "key": "features.methodology.ethical-production.factors.0.description",
+      "tr": "Animal welfare standards and humane treatment practices",
+      "en": "Animal welfare standards and humane treatment practices"
+    },
+    {
+      "key": "features.methodology.ethical-production.factors.1.description",
+      "tr": "Organic certification and sustainable farming practices",
+      "en": "Organic certification and sustainable farming practices"
+    },
+    {
+      "key": "features.methodology.ethical-production.factors.2.description",
+      "tr": "Fair trade compliance and ethical sourcing",
+      "en": "Fair trade compliance and ethical sourcing"
+    },
+    {
+      "key": "features.methodology.ethical-production.factors.3.description",
+      "tr": "Ethical sourcing of raw materials and ingredients",
+      "en": "Ethical sourcing of raw materials and ingredients"
+    },
+    {
+      "key": "features.methodology.ethical-production.factors.4.description",
+      "tr": "Corporate social responsibility and ethical business practices",
+      "en": "Corporate social responsibility and ethical business practices"
+    },
+    {
+      "key": "features.dataSources.title",
+      "tr": "Data Sources & Attribution",
+      "en": "Data Sources & Attribution"
+    },
+    {
+      "key": "features.dataSources.description",
+      "tr": "CORIA uses trusted, verified data sources to provide accurate sustainability information.",
+      "en": "CORIA uses trusted, verified data sources to provide accurate sustainability information."
+    },
+    {
+      "key": "features.dataSources.verified",
+      "tr": "Verified",
+      "en": "Verified"
+    },
+    {
+      "key": "features.dataSources.coverage",
+      "tr": "Coverage",
+      "en": "Coverage"
+    },
+    {
+      "key": "features.dataSources.updates",
+      "tr": "Updates",
+      "en": "Updates"
+    },
+    {
+      "key": "features.dataSources.reliability",
+      "tr": "Reliability",
+      "en": "Reliability"
+    },
+    {
+      "key": "features.dataSources.visitSource",
+      "tr": "Visit Source",
+      "en": "Visit Source"
+    },
+    {
+      "key": "features.dataSources.quality.title",
+      "tr": "Data Quality Assurance",
+      "en": "Data Quality Assurance"
+    },
+    {
+      "key": "features.dataSources.quality.verification.title",
+      "tr": "Verification Process",
+      "en": "Verification Process"
+    },
+    {
+      "key": "features.dataSources.quality.verification.description",
+      "tr": "All data sources undergo rigorous verification to ensure accuracy and reliability.",
+      "en": "All data sources undergo rigorous verification to ensure accuracy and reliability."
+    },
+    {
+      "key": "features.dataSources.quality.accuracy.title",
+      "tr": "Accuracy Standards",
+      "en": "Accuracy Standards"
+    },
+    {
+      "key": "features.dataSources.quality.accuracy.description",
+      "tr": "We maintain high accuracy standards through continuous monitoring and validation.",
+      "en": "We maintain high accuracy standards through continuous monitoring and validation."
+    },
+    {
+      "key": "features.dataSources.attribution.title",
+      "tr": "Data Attribution",
+      "en": "Data Attribution"
+    },
+    {
+      "key": "features.dataSources.attribution.description",
+      "tr": "We acknowledge and respect the valuable work of our data source partners in making sustainability information accessible.",
+      "en": "We acknowledge and respect the valuable work of our data source partners in making sustainability information accessible."
+    },
+    {
+      "key": "features.relatedFeatures.title",
+      "tr": "Related Features",
+      "en": "Related Features"
+    },
+    {
+      "key": "features.relatedFeatures.description",
+      "tr": "Explore other features that work together to enhance your sustainable living experience.",
+      "en": "Explore other features that work together to enhance your sustainable living experience."
+    },
+    {
+      "key": "features.relatedFeatures.fromCategory",
+      "tr": "from this category",
+      "en": "from this category"
+    },
+    {
+      "key": "features.relatedFeatures.exploreAll.title",
+      "tr": "Explore All Features",
+      "en": "Explore All Features"
+    },
+    {
+      "key": "features.relatedFeatures.exploreAll.description",
+      "tr": "Discover the complete range of CORIA's sustainability features.",
+      "en": "Discover the complete range of CORIA's sustainability features."
+    },
+    {
+      "key": "features.relatedFeatures.exploreAll.action",
+      "tr": "View All Features",
+      "en": "View All Features"
+    },
+    {
+      "key": "features.categories.scanning.title",
+      "tr": "Product Scanning",
+      "en": "Product Scanning"
+    },
+    {
+      "key": "features.categories.scanning.description",
+      "tr": "Instantly scan and analyze products for sustainability information",
+      "en": "Instantly scan and analyze products for sustainability information"
+    },
+    {
+      "key": "features.categories.scanning.badge",
+      "tr": "Core Feature",
+      "en": "Core Feature"
+    },
+    {
+      "key": "features.categories.scanning.longDescription",
+      "tr": "Our advanced scanning technology allows you to instantly access comprehensive sustainability information for millions of products. Simply scan a barcode to get detailed environmental, health, and social impact scores.",
+      "en": "Our advanced scanning technology allows you to instantly access comprehensive sustainability information for millions of products. Simply scan a barcode to get detailed environmental, health, and social impact scores."
+    },
+    {
+      "key": "features.categories.scanning.benefits",
+      "tr": [
+        "Instant product recognition",
+        "Comprehensive sustainability data",
+        "Offline scanning capability",
+        "Global product database"
+      ],
+      "en": [
+        "Instant product recognition",
+        "Comprehensive sustainability data",
+        "Offline scanning capability",
+        "Global product database"
+      ]
+    },
+    {
+      "key": "features.categories.scanning.whyItMatters.description",
+      "tr": "Product scanning is the foundation of conscious consumption, enabling informed decisions at the point of purchase.",
+      "en": "Product scanning is the foundation of conscious consumption, enabling informed decisions at the point of purchase."
+    },
+    {
+      "key": "features.categories.scanning.whyItMatters.impacts",
+      "tr": [
+        {
+          "type": "environmental",
+          "title": "Reduce Environmental Impact",
+          "description": "Make choices that minimize your carbon footprint and environmental damage."
+        },
+        {
+          "type": "health",
+          "title": "Improve Health Outcomes",
+          "description": "Choose products that are better for your health and wellbeing."
+        }
+      ],
+      "en": [
+        {
+          "type": "environmental",
+          "title": "Reduce Environmental Impact",
+          "description": "Make choices that minimize your carbon footprint and environmental damage."
+        },
+        {
+          "type": "health",
+          "title": "Improve Health Outcomes",
+          "description": "Choose products that are better for your health and wellbeing."
+        }
+      ]
+    },
+    {
+      "key": "features.categories.scanning.whyItMatters.statistics",
+      "tr": [
+        {
+          "value": "2.8M+",
+          "label": "Products in database",
+          "description": "Comprehensive global coverage"
+        },
+        {
+          "value": "95%",
+          "label": "Scan accuracy",
+          "description": "Reliable product recognition"
+        }
+      ],
+      "en": [
+        {
+          "value": "2.8M+",
+          "label": "Products in database",
+          "description": "Comprehensive global coverage"
+        },
+        {
+          "value": "95%",
+          "label": "Scan accuracy",
+          "description": "Reliable product recognition"
+        }
+      ]
+    },
+    {
+      "key": "features.categories.scanning.whyItMatters.cta.title",
+      "tr": "Start Scanning Today",
+      "en": "Start Scanning Today"
+    },
+    {
+      "key": "features.categories.scanning.whyItMatters.cta.description",
+      "tr": "Join millions making conscious choices through product scanning.",
+      "en": "Join millions making conscious choices through product scanning."
+    },
+    {
+      "key": "features.categories.scanning.relatedCategories",
+      "tr": [
+        "ai-recommendations",
+        "sustainability-scoring"
+      ],
+      "en": [
+        "ai-recommendations",
+        "sustainability-scoring"
+      ]
+    },
+    {
+      "key": "features.categories.ai-recommendations.title",
+      "tr": "AI Recommendations",
+      "en": "AI Recommendations"
+    },
+    {
+      "key": "features.categories.ai-recommendations.description",
+      "tr": "Get personalized sustainable product suggestions powered by AI",
+      "en": "Get personalized sustainable product suggestions powered by AI"
+    },
+    {
+      "key": "features.categories.ai-recommendations.badge",
+      "tr": "AI-Powered",
+      "en": "AI-Powered"
+    },
+    {
+      "key": "features.categories.ai-recommendations.longDescription",
+      "tr": "Our advanced AI analyzes your preferences, dietary needs, and sustainability goals to provide personalized recommendations for more sustainable alternatives.",
+      "en": "Our advanced AI analyzes your preferences, dietary needs, and sustainability goals to provide personalized recommendations for more sustainable alternatives."
+    },
+    {
+      "key": "features.categories.ai-recommendations.benefits",
+      "tr": [
+        "Personalized suggestions",
+        "Learning algorithm",
+        "Alternative products",
+        "Smart matching"
+      ],
+      "en": [
+        "Personalized suggestions",
+        "Learning algorithm",
+        "Alternative products",
+        "Smart matching"
+      ]
+    },
+    {
+      "key": "features.categories.ai-recommendations.whyItMatters.description",
+      "tr": "AI recommendations help you discover sustainable alternatives you might never have found on your own.",
+      "en": "AI recommendations help you discover sustainable alternatives you might never have found on your own."
+    },
+    {
+      "key": "features.categories.ai-recommendations.whyItMatters.impacts",
+      "tr": [
+        {
+          "type": "environmental",
+          "title": "Discover Better Alternatives",
+          "description": "Find products with lower environmental impact that match your needs."
+        },
+        {
+          "type": "economic",
+          "title": "Save Money",
+          "description": "Often sustainable alternatives are more cost-effective in the long run."
+        }
+      ],
+      "en": [
+        {
+          "type": "environmental",
+          "title": "Discover Better Alternatives",
+          "description": "Find products with lower environmental impact that match your needs."
+        },
+        {
+          "type": "economic",
+          "title": "Save Money",
+          "description": "Often sustainable alternatives are more cost-effective in the long run."
+        }
+      ]
+    },
+    {
+      "key": "features.categories.ai-recommendations.whyItMatters.statistics",
+      "tr": [
+        {
+          "value": "87%",
+          "label": "User satisfaction",
+          "description": "With AI recommendations"
+        },
+        {
+          "value": "3.2x",
+          "label": "More alternatives found",
+          "description": "Compared to manual search"
+        }
+      ],
+      "en": [
+        {
+          "value": "87%",
+          "label": "User satisfaction",
+          "description": "With AI recommendations"
+        },
+        {
+          "value": "3.2x",
+          "label": "More alternatives found",
+          "description": "Compared to manual search"
+        }
+      ]
+    },
+    {
+      "key": "features.categories.ai-recommendations.whyItMatters.cta.title",
+      "tr": "Get Smart Recommendations",
+      "en": "Get Smart Recommendations"
+    },
+    {
+      "key": "features.categories.ai-recommendations.whyItMatters.cta.description",
+      "tr": "Let AI help you make better sustainable choices.",
+      "en": "Let AI help you make better sustainable choices."
+    },
+    {
+      "key": "features.categories.ai-recommendations.relatedCategories",
+      "tr": [
+        "scanning",
+        "impact-tracking"
+      ],
+      "en": [
+        "scanning",
+        "impact-tracking"
+      ]
+    },
+    {
+      "key": "features.categories.impact-tracking.title",
+      "tr": "Impact Tracking",
+      "en": "Impact Tracking"
+    },
+    {
+      "key": "features.categories.impact-tracking.description",
+      "tr": "Monitor your environmental footprint and sustainability progress",
+      "en": "Monitor your environmental footprint and sustainability progress"
+    },
+    {
+      "key": "features.categories.impact-tracking.badge",
+      "tr": "Analytics",
+      "en": "Analytics"
+    },
+    {
+      "key": "features.categories.impact-tracking.longDescription",
+      "tr": "Track your environmental impact over time with detailed analytics on carbon footprint, water consumption, and other sustainability metrics.",
+      "en": "Track your environmental impact over time with detailed analytics on carbon footprint, water consumption, and other sustainability metrics."
+    },
+    {
+      "key": "features.categories.impact-tracking.benefits",
+      "tr": [
+        "Carbon footprint tracking",
+        "Water usage monitoring",
+        "Progress visualization",
+        "Goal setting"
+      ],
+      "en": [
+        "Carbon footprint tracking",
+        "Water usage monitoring",
+        "Progress visualization",
+        "Goal setting"
+      ]
+    },
+    {
+      "key": "features.categories.impact-tracking.whyItMatters.description",
+      "tr": "Understanding your impact is the first step toward meaningful change and sustainable living.",
+      "en": "Understanding your impact is the first step toward meaningful change and sustainable living."
+    },
+    {
+      "key": "features.categories.impact-tracking.whyItMatters.impacts",
+      "tr": [
+        {
+          "type": "environmental",
+          "title": "Measure Real Impact",
+          "description": "See the tangible environmental benefits of your sustainable choices."
+        },
+        {
+          "type": "social",
+          "title": "Inspire Others",
+          "description": "Share your progress and inspire friends and family to join the movement."
+        }
+      ],
+      "en": [
+        {
+          "type": "environmental",
+          "title": "Measure Real Impact",
+          "description": "See the tangible environmental benefits of your sustainable choices."
+        },
+        {
+          "type": "social",
+          "title": "Inspire Others",
+          "description": "Share your progress and inspire friends and family to join the movement."
+        }
+      ]
+    },
+    {
+      "key": "features.categories.impact-tracking.whyItMatters.statistics",
+      "tr": [
+        {
+          "value": "23%",
+          "label": "Average CO2 reduction",
+          "description": "Among active users"
+        },
+        {
+          "value": "156L",
+          "label": "Water saved per month",
+          "description": "Average user impact"
+        }
+      ],
+      "en": [
+        {
+          "value": "23%",
+          "label": "Average CO2 reduction",
+          "description": "Among active users"
+        },
+        {
+          "value": "156L",
+          "label": "Water saved per month",
+          "description": "Average user impact"
+        }
+      ]
+    },
+    {
+      "key": "features.categories.impact-tracking.whyItMatters.cta.title",
+      "tr": "Start Tracking Your Impact",
+      "en": "Start Tracking Your Impact"
+    },
+    {
+      "key": "features.categories.impact-tracking.whyItMatters.cta.description",
+      "tr": "See how your choices make a difference for the planet.",
+      "en": "See how your choices make a difference for the planet."
+    },
+    {
+      "key": "features.categories.impact-tracking.relatedCategories",
+      "tr": [
+        "sustainability-scoring",
+        "data-insights"
+      ],
+      "en": [
+        "sustainability-scoring",
+        "data-insights"
+      ]
+    },
+    {
+      "key": "features.categories.smart-pantry.title",
+      "tr": "Smart Pantry",
+      "en": "Smart Pantry"
+    },
+    {
+      "key": "features.categories.smart-pantry.description",
+      "tr": "Manage your food inventory and reduce waste intelligently",
+      "en": "Manage your food inventory and reduce waste intelligently"
+    },
+    {
+      "key": "features.categories.smart-pantry.badge",
+      "tr": "Smart Home",
+      "en": "Smart Home"
+    },
+    {
+      "key": "features.categories.smart-pantry.longDescription",
+      "tr": "Transform your pantry into a smart, sustainable food management system that reduces waste, saves money, and helps you shop more efficiently.",
+      "en": "Transform your pantry into a smart, sustainable food management system that reduces waste, saves money, and helps you shop more efficiently."
+    },
+    {
+      "key": "features.categories.smart-pantry.benefits",
+      "tr": [
+        "Inventory management",
+        "Expiry tracking",
+        "Smart shopping lists",
+        "Waste reduction"
+      ],
+      "en": [
+        "Inventory management",
+        "Expiry tracking",
+        "Smart shopping lists",
+        "Waste reduction"
+      ]
+    },
+    {
+      "key": "features.categories.smart-pantry.whyItMatters.description",
+      "tr": "Food waste is a major environmental issue. Smart pantry management can significantly reduce your household's food waste.",
+      "en": "Food waste is a major environmental issue. Smart pantry management can significantly reduce your household's food waste."
+    },
+    {
+      "key": "features.categories.smart-pantry.whyItMatters.impacts",
+      "tr": [
+        {
+          "type": "environmental",
+          "title": "Reduce Food Waste",
+          "description": "Minimize food waste and its environmental impact."
+        },
+        {
+          "type": "economic",
+          "title": "Save Money",
+          "description": "Reduce food costs by avoiding unnecessary purchases and waste."
+        }
+      ],
+      "en": [
+        {
+          "type": "environmental",
+          "title": "Reduce Food Waste",
+          "description": "Minimize food waste and its environmental impact."
+        },
+        {
+          "type": "economic",
+          "title": "Save Money",
+          "description": "Reduce food costs by avoiding unnecessary purchases and waste."
+        }
+      ]
+    },
+    {
+      "key": "features.categories.smart-pantry.whyItMatters.statistics",
+      "tr": [
+        {
+          "value": "40%",
+          "label": "Food waste reduction",
+          "description": "Average among users"
+        },
+        {
+          "value": "₺180",
+          "label": "Monthly savings",
+          "description": "Average household"
+        }
+      ],
+      "en": [
+        {
+          "value": "40%",
+          "label": "Food waste reduction",
+          "description": "Average among users"
+        },
+        {
+          "value": "₺180",
+          "label": "Monthly savings",
+          "description": "Average household"
+        }
+      ]
+    },
+    {
+      "key": "features.categories.smart-pantry.whyItMatters.cta.title",
+      "tr": "Smart Pantry Management",
+      "en": "Smart Pantry Management"
+    },
+    {
+      "key": "features.categories.smart-pantry.whyItMatters.cta.description",
+      "tr": "Reduce waste and save money with intelligent food management.",
+      "en": "Reduce waste and save money with intelligent food management."
+    },
+    {
+      "key": "features.categories.smart-pantry.relatedCategories",
+      "tr": [
+        "scanning",
+        "ai-recommendations"
+      ],
+      "en": [
+        "scanning",
+        "ai-recommendations"
+      ]
+    },
+    {
+      "key": "features.categories.sustainability-scoring.title",
+      "tr": "Sustainability Scoring",
+      "en": "Sustainability Scoring"
+    },
+    {
+      "key": "features.categories.sustainability-scoring.description",
+      "tr": "Comprehensive environmental, social, and health impact scores",
+      "en": "Comprehensive environmental, social, and health impact scores"
+    },
+    {
+      "key": "features.categories.sustainability-scoring.badge",
+      "tr": "Core Metric",
+      "en": "Core Metric"
+    },
+    {
+      "key": "features.categories.sustainability-scoring.longDescription",
+      "tr": "Our comprehensive scoring system evaluates products across multiple dimensions including environmental impact, social responsibility, health effects, and ethical production practices.",
+      "en": "Our comprehensive scoring system evaluates products across multiple dimensions including environmental impact, social responsibility, health effects, and ethical production practices."
+    },
+    {
+      "key": "features.categories.sustainability-scoring.benefits",
+      "tr": [
+        "Multi-dimensional scoring",
+        "Scientific methodology",
+        "Regular updates",
+        "Transparent criteria"
+      ],
+      "en": [
+        "Multi-dimensional scoring",
+        "Scientific methodology",
+        "Regular updates",
+        "Transparent criteria"
+      ]
+    },
+    {
+      "key": "features.categories.sustainability-scoring.whyItMatters.description",
+      "tr": "Sustainability scoring provides a clear, objective way to compare products and make informed decisions.",
+      "en": "Sustainability scoring provides a clear, objective way to compare products and make informed decisions."
+    },
+    {
+      "key": "features.categories.sustainability-scoring.whyItMatters.impacts",
+      "tr": [
+        {
+          "type": "environmental",
+          "title": "Environmental Protection",
+          "description": "Choose products that minimize environmental damage."
+        },
+        {
+          "type": "social",
+          "title": "Social Responsibility",
+          "description": "Support companies with ethical labor practices and community impact."
+        },
+        {
+          "type": "health",
+          "title": "Health & Wellness",
+          "description": "Select products that are better for your health and wellbeing."
+        }
+      ],
+      "en": [
+        {
+          "type": "environmental",
+          "title": "Environmental Protection",
+          "description": "Choose products that minimize environmental damage."
+        },
+        {
+          "type": "social",
+          "title": "Social Responsibility",
+          "description": "Support companies with ethical labor practices and community impact."
+        },
+        {
+          "type": "health",
+          "title": "Health & Wellness",
+          "description": "Select products that are better for your health and wellbeing."
+        }
+      ]
+    },
+    {
+      "key": "features.categories.sustainability-scoring.whyItMatters.statistics",
+      "tr": [
+        {
+          "value": "12",
+          "label": "Scoring criteria",
+          "description": "Comprehensive evaluation"
+        },
+        {
+          "value": "98%",
+          "label": "Data accuracy",
+          "description": "Verified information"
+        }
+      ],
+      "en": [
+        {
+          "value": "12",
+          "label": "Scoring criteria",
+          "description": "Comprehensive evaluation"
+        },
+        {
+          "value": "98%",
+          "label": "Data accuracy",
+          "description": "Verified information"
+        }
+      ]
+    },
+    {
+      "key": "features.categories.sustainability-scoring.whyItMatters.cta.title",
+      "tr": "Understand Sustainability Scores",
+      "en": "Understand Sustainability Scores"
+    },
+    {
+      "key": "features.categories.sustainability-scoring.whyItMatters.cta.description",
+      "tr": "Learn how our scoring system helps you make better choices.",
+      "en": "Learn how our scoring system helps you make better choices."
+    },
+    {
+      "key": "features.categories.sustainability-scoring.relatedCategories",
+      "tr": [
+        "scanning",
+        "methodology"
+      ],
+      "en": [
+        "scanning",
+        "methodology"
+      ]
+    },
+    {
+      "key": "features.categories.community.title",
+      "tr": "Community Features",
+      "en": "Community Features"
+    },
+    {
+      "key": "features.categories.community.description",
+      "tr": "Connect with other conscious consumers and share experiences",
+      "en": "Connect with other conscious consumers and share experiences"
+    },
+    {
+      "key": "features.categories.community.badge",
+      "tr": "Social",
+      "en": "Social"
+    },
+    {
+      "key": "features.categories.community.longDescription",
+      "tr": "Join a community of conscious consumers, share your experiences, read reviews, and learn from others on their sustainability journey.",
+      "en": "Join a community of conscious consumers, share your experiences, read reviews, and learn from others on their sustainability journey."
+    },
+    {
+      "key": "features.categories.community.benefits",
+      "tr": [
+        "User reviews",
+        "Community ratings",
+        "Experience sharing",
+        "Social learning"
+      ],
+      "en": [
+        "User reviews",
+        "Community ratings",
+        "Experience sharing",
+        "Social learning"
+      ]
+    },
+    {
+      "key": "features.categories.community.whyItMatters.description",
+      "tr": "Community support and shared knowledge accelerate the adoption of sustainable practices.",
+      "en": "Community support and shared knowledge accelerate the adoption of sustainable practices."
+    },
+    {
+      "key": "features.categories.community.whyItMatters.impacts",
+      "tr": [
+        {
+          "type": "social",
+          "title": "Collective Impact",
+          "description": "Together we can create greater positive change than individually."
+        },
+        {
+          "type": "educational",
+          "title": "Shared Learning",
+          "description": "Learn from others' experiences and share your own insights."
+        }
+      ],
+      "en": [
+        {
+          "type": "social",
+          "title": "Collective Impact",
+          "description": "Together we can create greater positive change than individually."
+        },
+        {
+          "type": "educational",
+          "title": "Shared Learning",
+          "description": "Learn from others' experiences and share your own insights."
+        }
+      ]
+    },
+    {
+      "key": "features.categories.community.whyItMatters.statistics",
+      "tr": [
+        {
+          "value": "50K+",
+          "label": "Active community members",
+          "description": "Growing daily"
+        },
+        {
+          "value": "4.8/5",
+          "label": "Average community rating",
+          "description": "High user satisfaction"
+        }
+      ],
+      "en": [
+        {
+          "value": "50K+",
+          "label": "Active community members",
+          "description": "Growing daily"
+        },
+        {
+          "value": "4.8/5",
+          "label": "Average community rating",
+          "description": "High user satisfaction"
+        }
+      ]
+    },
+    {
+      "key": "features.categories.community.whyItMatters.cta.title",
+      "tr": "Join Our Community",
+      "en": "Join Our Community"
+    },
+    {
+      "key": "features.categories.community.whyItMatters.cta.description",
+      "tr": "Connect with like-minded individuals on the sustainability journey.",
+      "en": "Connect with like-minded individuals on the sustainability journey."
+    },
+    {
+      "key": "features.categories.community.relatedCategories",
+      "tr": [
+        "scanning",
+        "impact-tracking"
+      ],
+      "en": [
+        "scanning",
+        "impact-tracking"
+      ]
+    },
+    {
+      "key": "features.categories.premium-features.title",
+      "tr": "Premium Features",
+      "en": "Premium Features"
+    },
+    {
+      "key": "features.categories.premium-features.description",
+      "tr": "Advanced features for serious sustainability enthusiasts",
+      "en": "Advanced features for serious sustainability enthusiasts"
+    },
+    {
+      "key": "features.categories.premium-features.badge",
+      "tr": "Premium",
+      "en": "Premium"
+    },
+    {
+      "key": "features.categories.premium-features.longDescription",
+      "tr": "Unlock advanced features including unlimited scanning, detailed reports, advanced analytics, and an ad-free experience for the ultimate sustainability toolkit.",
+      "en": "Unlock advanced features including unlimited scanning, detailed reports, advanced analytics, and an ad-free experience for the ultimate sustainability toolkit."
+    },
+    {
+      "key": "features.categories.premium-features.benefits",
+      "tr": [
+        "Unlimited scanning",
+        "Detailed reports",
+        "Advanced analytics",
+        "Ad-free experience"
+      ],
+      "en": [
+        "Unlimited scanning",
+        "Detailed reports",
+        "Advanced analytics",
+        "Ad-free experience"
+      ]
+    },
+    {
+      "key": "features.categories.premium-features.whyItMatters.description",
+      "tr": "Premium features provide deeper insights and more comprehensive tools for serious sustainability practitioners.",
+      "en": "Premium features provide deeper insights and more comprehensive tools for serious sustainability practitioners."
+    },
+    {
+      "key": "features.categories.premium-features.whyItMatters.impacts",
+      "tr": [
+        {
+          "type": "analytical",
+          "title": "Deeper Insights",
+          "description": "Get comprehensive analytics and detailed reports on your sustainability journey."
+        },
+        {
+          "type": "efficiency",
+          "title": "Enhanced Experience",
+          "description": "Enjoy unlimited access and an ad-free experience for focused sustainability practice."
+        }
+      ],
+      "en": [
+        {
+          "type": "analytical",
+          "title": "Deeper Insights",
+          "description": "Get comprehensive analytics and detailed reports on your sustainability journey."
+        },
+        {
+          "type": "efficiency",
+          "title": "Enhanced Experience",
+          "description": "Enjoy unlimited access and an ad-free experience for focused sustainability practice."
+        }
+      ]
+    },
+    {
+      "key": "features.categories.premium-features.whyItMatters.statistics",
+      "tr": [
+        {
+          "value": "₺29.99",
+          "label": "Monthly subscription",
+          "description": "Affordable premium access"
+        },
+        {
+          "value": "5x",
+          "label": "More detailed insights",
+          "description": "Compared to free version"
+        }
+      ],
+      "en": [
+        {
+          "value": "₺29.99",
+          "label": "Monthly subscription",
+          "description": "Affordable premium access"
+        },
+        {
+          "value": "5x",
+          "label": "More detailed insights",
+          "description": "Compared to free version"
+        }
+      ]
+    },
+    {
+      "key": "features.categories.premium-features.whyItMatters.cta.title",
+      "tr": "Upgrade to Premium",
+      "en": "Upgrade to Premium"
+    },
+    {
+      "key": "features.categories.premium-features.whyItMatters.cta.description",
+      "tr": "Unlock the full potential of sustainable living with premium features.",
+      "en": "Unlock the full potential of sustainable living with premium features."
+    },
+    {
+      "key": "features.categories.premium-features.relatedCategories",
+      "tr": [
+        "data-insights",
+        "impact-tracking"
+      ],
+      "en": [
+        "data-insights",
+        "impact-tracking"
+      ]
+    },
+    {
+      "key": "features.categories.data-insights.title",
+      "tr": "Data Insights",
+      "en": "Data Insights"
+    },
+    {
+      "key": "features.categories.data-insights.description",
+      "tr": "Advanced analytics and insights into your consumption patterns",
+      "en": "Advanced analytics and insights into your consumption patterns"
+    },
+    {
+      "key": "features.categories.data-insights.badge",
+      "tr": "Analytics",
+      "en": "Analytics"
+    },
+    {
+      "key": "features.categories.data-insights.longDescription",
+      "tr": "Gain deep insights into your consumption patterns, visualize your impact over time, and track progress toward your sustainability goals with advanced analytics.",
+      "en": "Gain deep insights into your consumption patterns, visualize your impact over time, and track progress toward your sustainability goals with advanced analytics."
+    },
+    {
+      "key": "features.categories.data-insights.benefits",
+      "tr": [
+        "Consumption analysis",
+        "Impact visualization",
+        "Progress tracking",
+        "Trend analysis"
+      ],
+      "en": [
+        "Consumption analysis",
+        "Impact visualization",
+        "Progress tracking",
+        "Trend analysis"
+      ]
+    },
+    {
+      "key": "features.categories.data-insights.whyItMatters.description",
+      "tr": "Data-driven insights help you understand your consumption patterns and make more informed decisions.",
+      "en": "Data-driven insights help you understand your consumption patterns and make more informed decisions."
+    },
+    {
+      "key": "features.categories.data-insights.whyItMatters.impacts",
+      "tr": [
+        {
+          "type": "analytical",
+          "title": "Pattern Recognition",
+          "description": "Identify trends and patterns in your consumption behavior."
+        },
+        {
+          "type": "optimization",
+          "title": "Continuous Improvement",
+          "description": "Use insights to continuously improve your sustainability practices."
+        }
+      ],
+      "en": [
+        {
+          "type": "analytical",
+          "title": "Pattern Recognition",
+          "description": "Identify trends and patterns in your consumption behavior."
+        },
+        {
+          "type": "optimization",
+          "title": "Continuous Improvement",
+          "description": "Use insights to continuously improve your sustainability practices."
+        }
+      ]
+    },
+    {
+      "key": "features.categories.data-insights.whyItMatters.statistics",
+      "tr": [
+        {
+          "value": "15+",
+          "label": "Analytics dashboards",
+          "description": "Comprehensive insights"
+        },
+        {
+          "value": "92%",
+          "label": "Users improve habits",
+          "description": "With data insights"
+        }
+      ],
+      "en": [
+        {
+          "value": "15+",
+          "label": "Analytics dashboards",
+          "description": "Comprehensive insights"
+        },
+        {
+          "value": "92%",
+          "label": "Users improve habits",
+          "description": "With data insights"
+        }
+      ]
+    },
+    {
+      "key": "features.categories.data-insights.whyItMatters.cta.title",
+      "tr": "Explore Your Data",
+      "en": "Explore Your Data"
+    },
+    {
+      "key": "features.categories.data-insights.whyItMatters.cta.description",
+      "tr": "Discover insights that help you live more sustainably.",
+      "en": "Discover insights that help you live more sustainably."
+    },
+    {
+      "key": "features.categories.data-insights.relatedCategories",
+      "tr": [
+        "impact-tracking",
+        "premium-features"
+      ],
+      "en": [
+        "impact-tracking",
+        "premium-features"
+      ]
+    },
+    {
+      "key": "features.features.barcode-scan.title",
+      "tr": "Barcode Scanning",
+      "en": "Barcode Scanning"
+    },
+    {
+      "key": "features.features.barcode-scan.shortDescription",
+      "tr": "Instantly scan product barcodes for sustainability information",
+      "en": "Instantly scan product barcodes for sustainability information"
+    },
+    {
+      "key": "features.features.barcode-scan.longDescription",
+      "tr": "Use your phone's camera to scan any product barcode and instantly access comprehensive sustainability information including environmental impact, health ratings, and ethical production details.",
+      "en": "Use your phone's camera to scan any product barcode and instantly access comprehensive sustainability information including environmental impact, health ratings, and ethical production details."
+    },
+    {
+      "key": "features.features.barcode-scan.benefits",
+      "tr": [
+        "Instant product recognition with 95% accuracy",
+        "Access to 2.8M+ products in our global database",
+        "Works offline for previously scanned products",
+        "Fast scanning with advanced image recognition"
+      ],
+      "en": [
+        "Instant product recognition with 95% accuracy",
+        "Access to 2.8M+ products in our global database",
+        "Works offline for previously scanned products",
+        "Fast scanning with advanced image recognition"
+      ]
+    },
+    {
+      "key": "features.features.barcode-scan.howItWorks",
+      "tr": [
+        {
+          "title": "Point & Scan",
+          "description": "Simply point your camera at any product barcode"
+        },
+        {
+          "title": "Instant Recognition",
+          "description": "Our AI instantly identifies the product and retrieves data"
+        },
+        {
+          "title": "View Results",
+          "description": "See comprehensive sustainability scores and information"
+        }
+      ],
+      "en": [
+        {
+          "title": "Point & Scan",
+          "description": "Simply point your camera at any product barcode"
+        },
+        {
+          "title": "Instant Recognition",
+          "description": "Our AI instantly identifies the product and retrieves data"
+        },
+        {
+          "title": "View Results",
+          "description": "See comprehensive sustainability scores and information"
+        }
+      ]
+    },
+    {
+      "key": "features.features.barcode-scan.technicalDetails",
+      "tr": [
+        {
+          "title": "Recognition Technology",
+          "description": "Advanced computer vision and machine learning algorithms for accurate barcode recognition",
+          "link": "https://developers.google.com/ml-kit/vision/barcode-scanning"
+        },
+        {
+          "title": "Database Coverage",
+          "description": "Integration with multiple global product databases for comprehensive coverage"
+        }
+      ],
+      "en": [
+        {
+          "title": "Recognition Technology",
+          "description": "Advanced computer vision and machine learning algorithms for accurate barcode recognition",
+          "link": "https://developers.google.com/ml-kit/vision/barcode-scanning"
+        },
+        {
+          "title": "Database Coverage",
+          "description": "Integration with multiple global product databases for comprehensive coverage"
+        }
+      ]
+    },
+    {
+      "key": "features.features.environmental-score.title",
+      "tr": "Environmental Score",
+      "en": "Environmental Score"
+    },
+    {
+      "key": "features.features.environmental-score.shortDescription",
+      "tr": "Comprehensive environmental impact assessment",
+      "en": "Comprehensive environmental impact assessment"
+    },
+    {
+      "key": "features.features.environmental-score.longDescription",
+      "tr": "Our environmental scoring system evaluates products across multiple environmental factors including carbon footprint, water usage, packaging sustainability, and production methods.",
+      "en": "Our environmental scoring system evaluates products across multiple environmental factors including carbon footprint, water usage, packaging sustainability, and production methods."
+    },
+    {
+      "key": "features.features.environmental-score.benefits",
+      "tr": [
+        "Multi-factor environmental assessment",
+        "Science-based scoring methodology",
+        "Regular updates based on latest research",
+        "Transparent scoring criteria"
+      ],
+      "en": [
+        "Multi-factor environmental assessment",
+        "Science-based scoring methodology",
+        "Regular updates based on latest research",
+        "Transparent scoring criteria"
+      ]
+    },
+    {
+      "key": "features.features.environmental-score.howItWorks",
+      "tr": [
+        {
+          "title": "Data Collection",
+          "description": "Gather environmental data from verified sources and databases"
+        },
+        {
+          "title": "Impact Analysis",
+          "description": "Analyze carbon footprint, water usage, and other environmental factors"
+        },
+        {
+          "title": "Score Calculation",
+          "description": "Calculate weighted environmental score from 0-10"
+        }
+      ],
+      "en": [
+        {
+          "title": "Data Collection",
+          "description": "Gather environmental data from verified sources and databases"
+        },
+        {
+          "title": "Impact Analysis",
+          "description": "Analyze carbon footprint, water usage, and other environmental factors"
+        },
+        {
+          "title": "Score Calculation",
+          "description": "Calculate weighted environmental score from 0-10"
+        }
+      ]
+    },
+    {
+      "key": "features.features.environmental-score.technicalDetails",
+      "tr": [
+        {
+          "title": "Scoring Algorithm",
+          "description": "Proprietary algorithm based on life cycle assessment (LCA) principles"
+        },
+        {
+          "title": "Data Sources",
+          "description": "Integration with environmental databases and scientific research"
+        }
+      ],
+      "en": [
+        {
+          "title": "Scoring Algorithm",
+          "description": "Proprietary algorithm based on life cycle assessment (LCA) principles"
+        },
+        {
+          "title": "Data Sources",
+          "description": "Integration with environmental databases and scientific research"
+        }
+      ]
+    },
+    {
+      "key": "features.features.personalized-suggestions.title",
+      "tr": "Personalized Suggestions",
+      "en": "Personalized Suggestions"
+    },
+    {
+      "key": "features.features.personalized-suggestions.shortDescription",
+      "tr": "AI-powered recommendations tailored to your preferences",
+      "en": "AI-powered recommendations tailored to your preferences"
+    },
+    {
+      "key": "features.features.personalized-suggestions.longDescription",
+      "tr": "Our AI learns from your scanning history, preferences, and sustainability goals to provide personalized product recommendations that match your values and needs.",
+      "en": "Our AI learns from your scanning history, preferences, and sustainability goals to provide personalized product recommendations that match your values and needs."
+    },
+    {
+      "key": "features.features.personalized-suggestions.benefits",
+      "tr": [
+        "Machine learning-powered recommendations",
+        "Learns from your preferences over time",
+        "Considers dietary restrictions and allergies",
+        "Balances sustainability with personal needs"
+      ],
+      "en": [
+        "Machine learning-powered recommendations",
+        "Learns from your preferences over time",
+        "Considers dietary restrictions and allergies",
+        "Balances sustainability with personal needs"
+      ]
+    },
+    {
+      "key": "features.features.personalized-suggestions.howItWorks",
+      "tr": [
+        {
+          "title": "Profile Analysis",
+          "description": "Analyze your scanning history and stated preferences"
+        },
+        {
+          "title": "AI Processing",
+          "description": "Machine learning algorithms identify patterns and preferences"
+        },
+        {
+          "title": "Smart Recommendations",
+          "description": "Generate personalized suggestions for sustainable alternatives"
+        }
+      ],
+      "en": [
+        {
+          "title": "Profile Analysis",
+          "description": "Analyze your scanning history and stated preferences"
+        },
+        {
+          "title": "AI Processing",
+          "description": "Machine learning algorithms identify patterns and preferences"
+        },
+        {
+          "title": "Smart Recommendations",
+          "description": "Generate personalized suggestions for sustainable alternatives"
+        }
+      ]
+    },
+    {
+      "key": "features.features.personalized-suggestions.technicalDetails",
+      "tr": [
+        {
+          "title": "Machine Learning",
+          "description": "Advanced recommendation algorithms using collaborative and content-based filtering"
+        },
+        {
+          "title": "Privacy Protection",
+          "description": "All personal data processing follows strict privacy guidelines"
+        }
+      ],
+      "en": [
+        {
+          "title": "Machine Learning",
+          "description": "Advanced recommendation algorithms using collaborative and content-based filtering"
+        },
+        {
+          "title": "Privacy Protection",
+          "description": "All personal data processing follows strict privacy guidelines"
+        }
+      ]
+    },
+    {
+      "key": "features.features.carbon-footprint.title",
+      "tr": "Carbon Footprint Tracking",
+      "en": "Carbon Footprint Tracking"
+    },
+    {
+      "key": "features.features.carbon-footprint.shortDescription",
+      "tr": "Monitor your personal carbon footprint from consumption",
+      "en": "Monitor your personal carbon footprint from consumption"
+    },
+    {
+      "key": "features.features.carbon-footprint.longDescription",
+      "tr": "Track the carbon footprint of your purchases and consumption patterns over time. See how your choices impact the environment and work toward carbon reduction goals.",
+      "en": "Track the carbon footprint of your purchases and consumption patterns over time. See how your choices impact the environment and work toward carbon reduction goals."
+    },
+    {
+      "key": "features.features.carbon-footprint.benefits",
+      "tr": [
+        "Real-time carbon footprint calculation",
+        "Historical tracking and trends",
+        "Goal setting and progress monitoring",
+        "Comparison with average consumption"
+      ],
+      "en": [
+        "Real-time carbon footprint calculation",
+        "Historical tracking and trends",
+        "Goal setting and progress monitoring",
+        "Comparison with average consumption"
+      ]
+    },
+    {
+      "key": "features.features.carbon-footprint.howItWorks",
+      "tr": [
+        {
+          "title": "Purchase Tracking",
+          "description": "Automatically track carbon impact of scanned products"
+        },
+        {
+          "title": "Impact Calculation",
+          "description": "Calculate total carbon footprint based on consumption data"
+        },
+        {
+          "title": "Progress Visualization",
+          "description": "View trends and progress toward reduction goals"
+        }
+      ],
+      "en": [
+        {
+          "title": "Purchase Tracking",
+          "description": "Automatically track carbon impact of scanned products"
+        },
+        {
+          "title": "Impact Calculation",
+          "description": "Calculate total carbon footprint based on consumption data"
+        },
+        {
+          "title": "Progress Visualization",
+          "description": "View trends and progress toward reduction goals"
+        }
+      ]
+    },
+    {
+      "key": "features.features.carbon-footprint.technicalDetails",
+      "tr": [
+        {
+          "title": "Carbon Calculation",
+          "description": "Based on life cycle assessment data and scientific research"
+        },
+        {
+          "title": "Data Accuracy",
+          "description": "Regular updates from environmental databases and research institutions"
+        }
+      ],
+      "en": [
+        {
+          "title": "Carbon Calculation",
+          "description": "Based on life cycle assessment data and scientific research"
+        },
+        {
+          "title": "Data Accuracy",
+          "description": "Regular updates from environmental databases and research institutions"
+        }
+      ]
+    },
+    {
+      "key": "features.sustainabilityInsights.title",
+      "tr": "Sürdürülebilirlik İçgörüleri",
+      "en": "Sustainability Insights"
+    },
+    {
+      "key": "features.sustainabilityInsights.description",
+      "tr": "Detaylı analitiklerle çevresel etkinizi takip edin",
+      "en": "Track your environmental impact with detailed analytics"
+    },
+    {
+      "key": "features.socialCommitment.title",
+      "tr": "Sosyal Sorumluluk",
+      "en": "Social Commitment"
+    },
+    {
+      "key": "features.socialCommitment.description",
+      "tr": "Etik uygulamalar ve sosyal sorumluluk sahibi markaları destekleyin",
+      "en": "Support brands with ethical practices and social responsibility"
+    },
+    {
+      "key": "pricing.meta.title",
+      "tr": "CORIA Fiyatlandırma - Ücretsiz ve Premium Planlar",
+      "en": "CORIA Pricing - Free & Premium Plans"
+    },
+    {
+      "key": "pricing.meta.description",
+      "tr": "CORIA'nın temel özelliklerle ücretsiz planı veya sınırsız tarama, detaylı raporlar ve gelişmiş analizlerle aylık ₺29,99 premium planı arasından seçim yapın.",
+      "en": "Choose between CORIA's free plan with basic features or premium plan with unlimited scanning, detailed reports, and advanced analytics for ₺29.99/month."
+    },
+    {
+      "key": "pricing.plans.free.name",
+      "tr": "Ücretsiz",
+      "en": "Free"
+    },
+    {
+      "key": "pricing.plans.free.price",
+      "tr": "0",
+      "en": "0"
+    },
+    {
+      "key": "pricing.plans.free.period",
+      "tr": "sonsuza kadar",
+      "en": "forever"
+    },
+    {
+      "key": "pricing.plans.free.description",
+      "tr": "Sürdürülebilir yaşama başlamak için mükemmel",
+      "en": "Perfect for getting started with sustainable living"
+    },
+    {
+      "key": "pricing.plans.free.features",
+      "tr": [
+        "Günde 10 ürün tarama",
+        "Temel sürdürülebilirlik skorları",
+        "Basit etki takibi",
+        "Topluluk erişimi",
+        "Temel öneriler"
+      ],
+      "en": [
+        "10 product scans per day",
+        "Basic sustainability scores",
+        "Simple impact tracking",
+        "Community access",
+        "Basic recommendations"
+      ]
+    },
+    {
+      "key": "pricing.plans.free.cta",
+      "tr": "Başlayın",
+      "en": "Get Started"
+    },
+    {
+      "key": "pricing.plans.free.popular",
+      "tr": false,
+      "en": false
+    },
+    {
+      "key": "pricing.plans.premium.name",
+      "tr": "Premium",
+      "en": "Premium"
+    },
+    {
+      "key": "pricing.plans.premium.price",
+      "tr": "29,99",
+      "en": "29.99"
+    },
+    {
+      "key": "pricing.plans.premium.period",
+      "tr": "aylık",
+      "en": "monthly"
+    },
+    {
+      "key": "pricing.plans.premium.description",
+      "tr": "Ciddi sürdürülebilirlik meraklıları için",
+      "en": "For serious sustainability enthusiasts"
+    },
+    {
+      "key": "pricing.plans.premium.features",
+      "tr": [
+        "Sınırsız ürün tarama",
+        "Detaylı sürdürülebilirlik raporları",
+        "Gelişmiş etki analizleri",
+        "Kişiselleştirilmiş AI önerileri",
+        "Öncelikli müşteri desteği",
+        "Reklamsız deneyim",
+        "Veri ve rapor dışa aktarma",
+        "Yeni özelliklere erken erişim"
+      ],
+      "en": [
+        "Unlimited product scanning",
+        "Detailed sustainability reports",
+        "Advanced impact analytics",
+        "Personalized AI recommendations",
+        "Priority customer support",
+        "Ad-free experience",
+        "Export data & reports",
+        "Early access to new features"
+      ]
+    },
+    {
+      "key": "pricing.plans.premium.cta",
+      "tr": "Premium Seç",
+      "en": "Choose Premium"
+    },
+    {
+      "key": "pricing.plans.premium.popular",
+      "tr": true,
+      "en": true
+    },
+    {
+      "key": "pricing.comparison.title",
+      "tr": "Özellik Karşılaştırması",
+      "en": "Feature Comparison"
+    },
+    {
+      "key": "pricing.comparison.features.scanning.name",
+      "tr": "Ürün Tarama",
+      "en": "Product Scanning"
+    },
+    {
+      "key": "pricing.comparison.features.scanning.free",
+      "tr": "10 tarama/gün",
+      "en": "10 scans/day"
+    },
+    {
+      "key": "pricing.comparison.features.scanning.premium",
+      "tr": "Sınırsız",
+      "en": "Unlimited"
+    },
+    {
+      "key": "pricing.comparison.features.reports.name",
+      "tr": "Sürdürülebilirlik Raporları",
+      "en": "Sustainability Reports"
+    },
+    {
+      "key": "pricing.comparison.features.reports.free",
+      "tr": "Temel",
+      "en": "Basic"
+    },
+    {
+      "key": "pricing.comparison.features.reports.premium",
+      "tr": "Detaylı ve Dışa Aktarılabilir",
+      "en": "Detailed & Exportable"
+    },
+    {
+      "key": "pricing.comparison.features.analytics.name",
+      "tr": "Etki Analizleri",
+      "en": "Impact Analytics"
+    },
+    {
+      "key": "pricing.comparison.features.analytics.free",
+      "tr": "Basit takip",
+      "en": "Simple tracking"
+    },
+    {
+      "key": "pricing.comparison.features.analytics.premium",
+      "tr": "Gelişmiş içgörüler",
+      "en": "Advanced insights"
+    },
+    {
+      "key": "pricing.comparison.features.recommendations.name",
+      "tr": "AI Önerileri",
+      "en": "AI Recommendations"
+    },
+    {
+      "key": "pricing.comparison.features.recommendations.free",
+      "tr": "Temel öneriler",
+      "en": "Basic suggestions"
+    },
+    {
+      "key": "pricing.comparison.features.recommendations.premium",
+      "tr": "Kişiselleştirilmiş ve Akıllı",
+      "en": "Personalized & Smart"
+    },
+    {
+      "key": "pricing.comparison.features.support.name",
+      "tr": "Müşteri Desteği",
+      "en": "Customer Support"
+    },
+    {
+      "key": "pricing.comparison.features.support.free",
+      "tr": "Topluluk desteği",
+      "en": "Community support"
+    },
+    {
+      "key": "pricing.comparison.features.support.premium",
+      "tr": "Öncelikli destek",
+      "en": "Priority support"
+    },
+    {
+      "key": "pricing.comparison.features.ads.name",
+      "tr": "Reklamlar",
+      "en": "Advertisements"
+    },
+    {
+      "key": "pricing.comparison.features.ads.free",
+      "tr": "Reklamlı",
+      "en": "With ads"
+    },
+    {
+      "key": "pricing.comparison.features.ads.premium",
+      "tr": "Reklamsız",
+      "en": "Ad-free"
+    },
+    {
+      "key": "pricing.comparison.features.export.name",
+      "tr": "Veri Dışa Aktarma",
+      "en": "Data Export"
+    },
+    {
+      "key": "pricing.comparison.features.export.free",
+      "tr": "Mevcut değil",
+      "en": "Not available"
+    },
+    {
+      "key": "pricing.comparison.features.export.premium",
+      "tr": "Tam dışa aktarma",
+      "en": "Full export"
+    },
+    {
+      "key": "pricing.comparison.features.earlyAccess.name",
+      "tr": "Erken Erişim",
+      "en": "Early Access"
+    },
+    {
+      "key": "pricing.comparison.features.earlyAccess.free",
+      "tr": "Standart sürümler",
+      "en": "Standard releases"
+    },
+    {
+      "key": "pricing.comparison.features.earlyAccess.premium",
+      "tr": "Beta özellikler",
+      "en": "Beta features"
+    },
+    {
+      "key": "pricing.trust.title",
+      "tr": "Neden CORIA Premium?",
+      "en": "Why Choose CORIA Premium?"
+    },
+    {
+      "key": "pricing.trust.benefits",
+      "tr": [
+        {
+          "title": "İstediğiniz Zaman İptal",
+          "description": "Uzun vadeli taahhüt yok. Aboneliğinizi istediğiniz zaman tek tıkla iptal edin.",
+          "icon": "cancel"
+        },
+        {
+          "title": "30 Gün Para İade Garantisi",
+          "description": "Memnun değil misiniz? 30 gün içinde soru sorulmadan tam para iadesi.",
+          "icon": "refund"
+        },
+        {
+          "title": "Güvenli Ödemeler",
+          "description": "Ödeme bilgileriniz banka düzeyinde güvenlikle korunur.",
+          "icon": "security"
+        },
+        {
+          "title": "Düzenli Güncellemeler",
+          "description": "Sürekli iyileştirmeler ve yeni özellikler düzenli olarak eklenir.",
+          "icon": "updates"
+        }
+      ],
+      "en": [
+        {
+          "title": "Cancel Anytime",
+          "description": "No long-term commitments. Cancel your subscription anytime with one click.",
+          "icon": "cancel"
+        },
+        {
+          "title": "30-Day Money Back",
+          "description": "Not satisfied? Get a full refund within 30 days, no questions asked.",
+          "icon": "refund"
+        },
+        {
+          "title": "Secure Payments",
+          "description": "Your payment information is protected with bank-level security.",
+          "icon": "security"
+        },
+        {
+          "title": "Regular Updates",
+          "description": "Continuous improvements and new features added regularly.",
+          "icon": "updates"
+        }
+      ]
+    },
+    {
+      "key": "pricing.faq.title",
+      "tr": "Fiyatlandırma SSS",
+      "en": "Pricing FAQ"
+    },
+    {
+      "key": "pricing.faq.questions",
+      "tr": [
+        {
+          "question": "Planımı istediğim zaman yükseltebilir veya düşürebilir miyim?",
+          "answer": "Evet, istediğiniz zaman Premium'a yükseltebilir veya Ücretsiz'e düşürebilirsiniz. Değişiklikler hemen etkili olur ve faturalandırma orantılı olarak yapılır."
+        },
+        {
+          "question": "Hangi ödeme yöntemlerini kabul ediyorsunuz?",
+          "answer": "Güvenli uygulama mağazası faturalandırma sistemleri aracılığıyla tüm büyük kredi kartları, banka kartları ve mobil ödeme yöntemlerini kabul ediyoruz."
+        },
+        {
+          "question": "Premium için ücretsiz deneme var mı?",
+          "answer": "Evet! Yeni kullanıcılar uygulamayı ilk indirdiklerinde Premium özelliklerinin 7 günlük ücretsiz denemesini alırlar."
+        },
+        {
+          "question": "Premium'u iptal edersem verilerime ne olur?",
+          "answer": "Verileriniz güvende kalır ve erişilebilir durumda olur. Temel özelliklere erişiminiz devam eder, ancak gelişmiş analizler ve sınırsız tarama sınırlanır."
+        },
+        {
+          "question": "Öğrenci veya aile indirimleri sunuyor musunuz?",
+          "answer": "Öğrenciler ve aileler için özel fiyatlandırma üzerinde çalışıyoruz. Bunlar mevcut olduğunda bildirim almak için bültenimize kaydolun."
+        },
+        {
+          "question": "Premium özelliklerini çevrimdışı kullanabilir miyim?",
+          "answer": "Birçok Premium özellik çevrimdışı çalışır, önceden önbelleğe alınmış ürünlerin sınırsız taranması ve kayıtlı raporlarınızın görüntülenmesi dahil."
+        }
+      ],
+      "en": [
+        {
+          "question": "Can I upgrade or downgrade my plan anytime?",
+          "answer": "Yes, you can upgrade to Premium or downgrade to Free at any time. Changes take effect immediately, and billing is prorated accordingly."
+        },
+        {
+          "question": "What payment methods do you accept?",
+          "answer": "We accept all major credit cards, debit cards, and mobile payment methods through secure app store billing systems."
+        },
+        {
+          "question": "Is there a free trial for Premium?",
+          "answer": "Yes! New users get a 7-day free trial of Premium features when they first download the app."
+        },
+        {
+          "question": "What happens to my data if I cancel Premium?",
+          "answer": "Your data remains safe and accessible. You'll continue to have access to basic features, but advanced analytics and unlimited scanning will be limited."
+        },
+        {
+          "question": "Do you offer student or family discounts?",
+          "answer": "We're working on special pricing for students and families. Sign up for our newsletter to be notified when these become available."
+        },
+        {
+          "question": "Can I use Premium features offline?",
+          "answer": "Many Premium features work offline, including unlimited scanning of previously cached products and viewing your saved reports."
+        }
+      ]
+    },
+    {
+      "key": "pricing.testimonials.title",
+      "tr": "Premium Kullanıcılar Ne Diyor",
+      "en": "What Premium Users Say"
+    },
+    {
+      "key": "pricing.testimonials.reviews",
+      "tr": [
+        {
+          "name": "Ayşe K.",
+          "location": "İstanbul",
+          "rating": 5,
+          "text": "Sınırsız tarama özelliği alışveriş şeklimi tamamen değiştirdi. Günlük limitlerden endişe etmeden her ürünü kontrol edebiliyorum.",
+          "feature": "Sınırsız Tarama"
+        },
+        {
+          "name": "Mehmet D.",
+          "location": "Ankara",
+          "rating": 5,
+          "text": "Detaylı raporlar ailemin çevresel etkisini takip etmeme yardımcı oluyor. Sadece 3 ayda karbon ayak izimizi %30 azalttık!",
+          "feature": "Detaylı Raporlar"
+        },
+        {
+          "name": "Zeynep M.",
+          "location": "İzmir",
+          "rating": 5,
+          "text": "Premium öneriler inanılmaz derecede doğru. AI gerçekten tercihlerimi ve beslenme ihtiyaçlarımı anlıyor.",
+          "feature": "AI Önerileri"
+        }
+      ],
+      "en": [
+        {
+          "name": "Ayşe K.",
+          "location": "Istanbul",
+          "rating": 5,
+          "text": "The unlimited scanning feature has completely changed how I shop. I can check every product without worrying about daily limits.",
+          "feature": "Unlimited Scanning"
+        },
+        {
+          "name": "Mehmet D.",
+          "location": "Ankara",
+          "rating": 5,
+          "text": "The detailed reports help me track my family's environmental impact. We've reduced our carbon footprint by 30% in just 3 months!",
+          "feature": "Detailed Reports"
+        },
+        {
+          "name": "Zeynep M.",
+          "location": "Izmir",
+          "rating": 5,
+          "text": "Premium recommendations are incredibly accurate. The AI really understands my preferences and dietary needs.",
+          "feature": "AI Recommendations"
+        }
+      ]
+    },
+    {
+      "key": "pricing.cta.title",
+      "tr": "Daha Büyük Etki Yapmaya Hazır mısınız?",
+      "en": "Ready to Make a Bigger Impact?"
+    },
+    {
+      "key": "pricing.cta.description",
+      "tr": "CORIA Premium ile bilinçli seçimler yapan binlerce kullanıcıya katılın.",
+      "en": "Join thousands of users making conscious choices with CORIA Premium."
+    },
+    {
+      "key": "pricing.cta.downloadIos",
+      "tr": "App Store'dan İndir",
+      "en": "Download on App Store"
+    },
+    {
+      "key": "pricing.cta.downloadAndroid",
+      "tr": "Google Play'den İndir",
+      "en": "Get it on Google Play"
+    },
+    {
+      "key": "pricing.cta.note",
+      "tr": "Premium abonelik, uygulama mağazası hesabınız üzerinden yönetilir.",
+      "en": "Premium subscription is managed through your app store account."
+    },
+    {
+      "key": "pricing.support.title",
+      "tr": "Müşteri Desteği",
+      "en": "Customer Support"
+    },
+    {
+      "key": "pricing.support.description",
+      "tr": "Sorularınız mı var? Size yardımcı olmaktan mutluluk duyarız.",
+      "en": "Have questions? We're here to help you succeed."
+    },
+    {
+      "key": "pricing.support.methods",
+      "tr": [
+        {
+          "title": "E-posta Desteği",
+          "description": "24 saat içinde yanıt alın",
+          "contact": "destek@coria.app",
+          "icon": "email"
+        },
+        {
+          "title": "Canlı Sohbet",
+          "description": "Pazartesi-Cuma 09:00-18:00",
+          "contact": "Sohbeti Başlat",
+          "icon": "chat"
+        },
+        {
+          "title": "Yardım Merkezi",
+          "description": "SSS ve rehberler",
+          "contact": "Yardım Merkezini Ziyaret Et",
+          "icon": "help"
+        }
+      ],
+      "en": [
+        {
+          "title": "Email Support",
+          "description": "Get response within 24 hours",
+          "contact": "support@coria.app",
+          "icon": "email"
+        },
+        {
+          "title": "Live Chat",
+          "description": "Monday-Friday 9AM-6PM",
+          "contact": "Start Chat",
+          "icon": "chat"
+        },
+        {
+          "title": "Help Center",
+          "description": "FAQs and guides",
+          "contact": "Visit Help Center",
+          "icon": "help"
+        }
+      ]
+    },
+    {
+      "key": "pwa.install.title",
+      "tr": "CORIA'yı Yükle",
+      "en": "Install CORIA"
+    },
+    {
+      "key": "pwa.install.description",
+      "tr": "CORIA'nın sürdürülebilirlik özelliklerine ana ekranınızdan hızlıca erişin.",
+      "en": "Get quick access to CORIA's sustainability features right from your home screen."
+    },
+    {
+      "key": "pwa.install.button",
+      "tr": "Uygulamayı Yükle",
+      "en": "Install App"
+    },
+    {
+      "key": "pwa.install.dismiss",
+      "tr": "Şimdi değil",
+      "en": "Not now"
+    },
+    {
+      "key": "pwa.update.title",
+      "tr": "Güncelleme Mevcut",
+      "en": "Update Available"
+    },
+    {
+      "key": "pwa.update.description",
+      "tr": "CORIA'nın iyileştirmeler ve yeni özellikler içeren yeni sürümü mevcut.",
+      "en": "A new version of CORIA is available with improvements and new features."
+    },
+    {
+      "key": "pwa.update.button",
+      "tr": "Şimdi Güncelle",
+      "en": "Update Now"
+    },
+    {
+      "key": "pwa.update.updating",
+      "tr": "Güncelleniyor...",
+      "en": "Updating..."
+    },
+    {
+      "key": "pwa.update.dismiss",
+      "tr": "Sonra",
+      "en": "Later"
+    },
+    {
+      "key": "pwa.notifications.title",
+      "tr": "Güncel Kalın",
+      "en": "Stay Updated"
+    },
+    {
+      "key": "pwa.notifications.description",
+      "tr": "Yeni sürdürülebilir ürünler ve çevre dostu ipuçları hakkında bildirim alın.",
+      "en": "Get notified about new sustainable products and eco-friendly tips."
+    },
+    {
+      "key": "pwa.notifications.allow",
+      "tr": "Bildirimlere İzin Ver",
+      "en": "Allow Notifications"
+    },
+    {
+      "key": "pwa.notifications.dismiss",
+      "tr": "Hayır teşekkürler",
+      "en": "No thanks"
+    }
+  ]
+}

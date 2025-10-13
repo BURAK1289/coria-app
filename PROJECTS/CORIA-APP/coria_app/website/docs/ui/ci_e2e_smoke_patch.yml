@@ -1,0 +1,161 @@
+# CI E2E Smoke Test Job - Enhanced Configuration Patch
+#
+# This patch shows the complete enhanced e2e-smoke job configuration
+# for GitHub Actions CI/CD pipeline with retry, trace, and artifact management.
+#
+# Apply this configuration to .github/workflows/ci.yml
+
+# ============================================
+# Job 3: E2E Smoke Tests (Enhanced)
+# ============================================
+e2e-smoke:
+  name: 🎭 E2E Smoke Tests
+  runs-on: ubuntu-latest
+  timeout-minutes: 15
+
+  # Environment variables for Playwright configuration
+  env:
+    CI: true  # Enables: retries=2, trace=on-first-retry, video=retain-on-failure
+    BASE_URL: http://localhost:3000  # Standardized baseURL for all E2E tests
+
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+        cache-dependency-path: website/package-lock.json
+
+    - name: Install dependencies
+      working-directory: ./website
+      run: npm ci
+
+    - name: Install Playwright browsers
+      working-directory: ./website
+      run: npx playwright install --with-deps chromium
+
+    # Production build for stable test performance (<2 min target)
+    - name: Build for E2E tests
+      working-directory: ./website
+      run: npm run build
+      env:
+        NODE_ENV: production
+
+    - name: Run E2E smoke tests
+      working-directory: ./website
+      run: npm run test:e2e:smoke
+      # Playwright config automatically applies CI-optimized settings:
+      # • retries: 2 (from process.env.CI)
+      # • trace: 'on-first-retry' (captures debugging info on retry)
+      # • video: 'retain-on-failure' (saves video only for failed tests)
+      # • baseURL: process.env.BASE_URL (http://localhost:3000)
+
+    - name: Upload Playwright report
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: playwright-smoke-report
+        path: ./website/playwright-report/
+        retention-days: 7
+
+    - name: Upload test results (includes traces and videos)
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: playwright-smoke-results
+        path: ./website/test-results/
+        retention-days: 7
+        # Artifacts include:
+        # • Test traces (*.zip) for failed/retried tests
+        # • Videos (*.webm) for failed tests
+        # • Screenshots at failure points
+
+    # Provide flakiness triage guidance on failure
+    - name: Add flakiness triage comment
+      if: failure()
+      run: |
+        echo "::notice::E2E smoke tests failed. For debugging guidance, see:"
+        echo "::notice::📖 Flakiness Triage Guide: docs/ui/E2E_Flakiness_Triage.md"
+        echo "::notice::📊 Download artifacts above for traces, videos, and screenshots"
+
+# ============================================
+# Configuration Notes
+# ============================================
+#
+# Key Enhancements:
+# -----------------
+# 1. Environment Variables
+#    - CI=true triggers playwright.config.ts CI optimizations
+#    - BASE_URL standardizes test URL across environments
+#
+# 2. Retry Strategy
+#    - Configured in playwright.config.ts: retries: process.env.CI ? 2 : 0
+#    - Allows 2 automatic retries for flaky tests
+#    - Reduces false failures without masking real issues
+#
+# 3. Trace Capture (trace: 'on-first-retry')
+#    - Only captures traces when tests are retried
+#    - Reduces artifact size for successful tests
+#    - Provides full debugging context for failures
+#    - Download via "playwright-smoke-results" artifact
+#    - View with: npx playwright show-trace test-results/**/trace.zip
+#
+# 4. Video Recording (video: 'retain-on-failure')
+#    - Records video only for failed tests
+#    - Automatically deleted for passing tests
+#    - Saves storage and upload time
+#    - Videos stored in test-results/ directory
+#
+# 5. Production Build
+#    - Eliminates dev server warm-up delays
+#    - Provides stable, optimized rendering
+#    - Targets <2 minute total job execution time
+#    - Ensures production-like test environment
+#
+# 6. Artifact Management
+#    - playwright-smoke-report: Interactive HTML report (7 days)
+#    - playwright-smoke-results: Traces, videos, screenshots (7 days)
+#    - Automatic cleanup after retention period
+#    - Download from GitHub Actions "Artifacts" section
+#
+# 7. Flakiness Triage
+#    - Automatic link to debugging guide on failure
+#    - Systematic approach to diagnosing intermittent failures
+#    - See: docs/ui/E2E_Flakiness_Triage.md
+#
+# Performance Targets:
+# -------------------
+# - Total job time: <2 minutes (with production build)
+# - Current timeout: 15 minutes (safety margin)
+# - Test execution: 2 parallel workers in CI
+# - Browser: Chromium only (faster than full matrix)
+#
+# Debugging Failed Tests:
+# -----------------------
+# 1. Check GitHub Actions job output for error messages
+# 2. Download "playwright-smoke-results" artifact
+# 3. Extract and view trace: npx playwright show-trace trace.zip
+# 4. Review video files for visual debugging
+# 5. Check screenshots at failure points
+# 6. Follow E2E_Flakiness_Triage.md systematic approach
+#
+# Integration with playwright.config.ts:
+# --------------------------------------
+# The following settings are already configured in playwright.config.ts
+# and automatically activated by the CI environment variable:
+#
+# use: {
+#   baseURL: process.env.BASE_URL || 'http://localhost:3000',
+#   trace: process.env.CI ? 'on-first-retry' : 'on',
+#   screenshot: 'only-on-failure',
+#   video: process.env.CI ? 'retain-on-failure' : 'on',
+#   actionTimeout: 15000,
+#   navigationTimeout: 20000,
+# },
+# retries: process.env.CI ? 2 : 0,
+# workers: process.env.CI ? 2 : 4,
+#
+# No additional playwright.config.ts changes needed!

@@ -1,22 +1,17 @@
 import { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { 
-  Activity, 
-  AlertTriangle, 
-  CheckCircle, 
-  Clock, 
-  Globe, 
-  Server, 
-  Shield, 
-  TrendingUp,
-  Zap
-} from 'lucide-react';
+import { Icon } from '@/components/icons/Icon';
 
 export const metadata: Metadata = {
   title: 'Monitoring Dashboard - CORIA Admin',
   description: 'Real-time monitoring and performance metrics for CORIA website',
 };
+
+// Disable SSR for real-time monitoring dashboard
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 // This would typically fetch real data from your monitoring APIs
 async function getMonitoringData() {
@@ -74,19 +69,19 @@ export default async function MonitoringPage() {
         </div>
         <div className="flex items-center gap-2">
           <div className={`flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium ${
-            data.status === 'healthy' 
-              ? 'bg-green-100 text-green-800' 
+            data.status === 'healthy'
+              ? 'bg-green-100 text-green-800'
               : 'bg-red-100 text-red-800'
           }`}>
             {data.status === 'healthy' ? (
-              <CheckCircle className="h-4 w-4" />
+              <Icon name="check" size={16} aria-hidden="true" />
             ) : (
-              <AlertTriangle className="h-4 w-4" />
+              <Icon name="alert-triangle" size={16} aria-hidden="true" />
             )}
             {data.status === 'healthy' ? 'All Systems Operational' : 'Issues Detected'}
           </div>
           <Button variant="outline" size="sm">
-            <Activity className="h-4 w-4 mr-2" />
+            <Icon name="activity" size={16} className="mr-2" aria-hidden="true" />
             Refresh
           </Button>
         </div>
@@ -101,11 +96,11 @@ export default async function MonitoringPage() {
               <p className="text-2xl font-bold text-green-600">{data.uptime}%</p>
             </div>
             <div className="p-3 bg-green-100 rounded-full">
-              <CheckCircle className="h-6 w-6 text-green-600" />
+              <Icon name="check" size={24} className="text-green-600" aria-hidden="true" />
             </div>
           </div>
           <div className="mt-4 flex items-center text-sm text-green-600">
-            <TrendingUp className="h-4 w-4 mr-1" />
+            <Icon name="trending-up" size={16} className="mr-1" aria-hidden="true" />
             +0.02% from last month
           </div>
         </Card>
@@ -117,11 +112,11 @@ export default async function MonitoringPage() {
               <p className="text-2xl font-bold">{data.responseTime}ms</p>
             </div>
             <div className="p-3 bg-blue-100 rounded-full">
-              <Zap className="h-6 w-6 text-blue-600" />
+              <Icon name="zap" size={24} className="text-blue-600" aria-hidden="true" />
             </div>
           </div>
           <div className="mt-4 flex items-center text-sm text-gray-600">
-            <Clock className="h-4 w-4 mr-1" />
+            <Icon name="clock" size={16} className="mr-1" aria-hidden="true" />
             Average last 24h
           </div>
         </Card>
@@ -133,11 +128,11 @@ export default async function MonitoringPage() {
               <p className="text-2xl font-bold text-green-600">0.02%</p>
             </div>
             <div className="p-3 bg-green-100 rounded-full">
-              <Shield className="h-6 w-6 text-green-600" />
+              <Icon name="shield" size={24} className="text-green-600" aria-hidden="true" />
             </div>
           </div>
           <div className="mt-4 flex items-center text-sm text-green-600">
-            <TrendingUp className="h-4 w-4 mr-1 rotate-180" />
+            <Icon name="trending-up" size={16} className="mr-1 rotate-180" aria-hidden="true" />
             -0.01% from yesterday
           </div>
         </Card>
@@ -149,11 +144,11 @@ export default async function MonitoringPage() {
               <p className="text-2xl font-bold">1,250</p>
             </div>
             <div className="p-3 bg-purple-100 rounded-full">
-              <Globe className="h-6 w-6 text-purple-600" />
+              <Icon name="globe" size={24} className="text-purple-600" aria-hidden="true" />
             </div>
           </div>
           <div className="mt-4 flex items-center text-sm text-purple-600">
-            <TrendingUp className="h-4 w-4 mr-1" />
+            <Icon name="trending-up" size={16} className="mr-1" aria-hidden="true" />
             +12% from last hour
           </div>
         </Card>
@@ -163,7 +158,7 @@ export default async function MonitoringPage() {
       {data.alerts.length > 0 && (
         <Card className="p-6">
           <h2 className="text-xl font-semibold mb-4 flex items-center">
-            <AlertTriangle className="h-5 w-5 mr-2 text-yellow-500" />
+            <Icon name="alert-triangle" size={20} className="mr-2 text-yellow-500" aria-hidden="true" />
             Active Alerts
           </h2>
           <div className="space-y-3">
@@ -197,7 +192,7 @@ export default async function MonitoringPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <Card className="p-6">
           <h2 className="text-xl font-semibold mb-4 flex items-center">
-            <Server className="h-5 w-5 mr-2" />
+            <Icon name="server" size={20} className="mr-2" aria-hidden="true" />
             Service Status
           </h2>
           <div className="space-y-4">
@@ -254,7 +249,7 @@ export default async function MonitoringPage() {
         <h2 className="text-xl font-semibold mb-4">Performance Trends</h2>
         <div className="h-64 bg-gray-50 rounded-lg flex items-center justify-center">
           <div className="text-center text-gray-500">
-            <Activity className="h-12 w-12 mx-auto mb-2" />
+            <Icon name="activity" size={48} className="mx-auto mb-2" aria-hidden="true" />
             <p>Performance charts would be displayed here</p>
             <p className="text-sm">Integration with monitoring service required</p>
           </div>
@@ -266,19 +261,19 @@ export default async function MonitoringPage() {
         <h2 className="text-xl font-semibold mb-4">Quick Actions</h2>
         <div className="flex flex-wrap gap-3">
           <Button variant="outline">
-            <Activity className="h-4 w-4 mr-2" />
+            <Icon name="activity" size={16} className="mr-2" aria-hidden="true" />
             Run Health Check
           </Button>
           <Button variant="outline">
-            <Zap className="h-4 w-4 mr-2" />
+            <Icon name="zap" size={16} className="mr-2" aria-hidden="true" />
             Performance Test
           </Button>
           <Button variant="outline">
-            <Shield className="h-4 w-4 mr-2" />
+            <Icon name="shield" size={16} className="mr-2" aria-hidden="true" />
             Security Scan
           </Button>
           <Button variant="outline">
-            <Globe className="h-4 w-4 mr-2" />
+            <Icon name="globe" size={16} className="mr-2" aria-hidden="true" />
             DNS Check
           </Button>
         </div>

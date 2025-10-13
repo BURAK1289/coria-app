@@ -256,3 +256,12 @@ export {
   TestimonialChatSvgIcon,
   TestimonialFoundationSvgIcon,
 } from './svg-icons';
+
+// Export all social media icons
+export {
+  TwitterIcon,
+  LinkedInIcon,
+  InstagramIcon,
+  YouTubeIcon,
+  FacebookIcon,
+} from './social-icons';

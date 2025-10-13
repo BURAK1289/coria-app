@@ -1,0 +1,278 @@
+{
+  "pages": {
+    "about": {
+      "timeline": {
+        "fikrinDoğuşuVeIlkVeriToplamaPrototipi": "Fikrin doğuşu ve ilk veri toplama prototipi",
+        "mvpGeliştirmeVeKapalıBeta": "MVP geliştirme ve kapalı beta",
+        "betaLansmanıVeIlk50kKullanıcı": "Beta lansmanı ve ilk 50K kullanıcı",
+        "100kKullanıcıIlkFoundationBağışRaporu": "100K kullanıcı, ilk Foundation bağış raporu",
+        "coriaTokenLansmanıVeSolanaEntegrasyonu": "CORIA Token lansmanı ve Solana entegrasyonu"
+      },
+      "partnerships": {
+        "solanaTabanlıTokenAltyapısıVeEtkiRaporlama": "Solana tabanlı token altyapısı ve etki raporlama.",
+        "yeşilEnerjiKooperatifleri": "Yeşil Enerji Kooperatifleri",
+        "veganRestoranDönüşümüVeEğitimProgramları": "Vegan restoran dönüşümü ve eğitim programları."
+      }
+    },
+    "contact": {
+      "content": {
+        "iletişim": "iletişim"
+      }
+    },
+    "foundation": {
+      "hero": {
+        "subtitle": {
+          "birlikteDahaBüyükEtkiYaratıyoruz": "Birlikte Daha Büyük Etki Yaratıyoruz"
+        }
+      },
+      "features": {
+        "coriaUygulamaGelirlerininBirKısmınıSürdürüleb": "CORIA, uygulama gelirlerinin bir kısmını sürdürülebilirlik projelerine yatırım yapmak için CORIA Foundation",
+        "believePlatformEntegrasyonuIleSolanaTabanlıT": "Believe Platform entegrasyonu ile Solana tabanlı token kullanım alanları",
+        "believePlatformÜzerindenÇıkarılacakÖzelSolana": "Believe Platform üzerinden çıkarılacak özel Solana token",
+        "tokenIşlemÜcretleriDirektOlarakSürdürülebilir": "Token işlem ücretleri direkt olarak sürdürülebilirlik projelerine aktarılır",
+        "blockchainTabanlıŞeffafFonDağıtımıVeEtkiTak": "Blockchain tabanlı şeffaf fon dağıtımı ve etki takibi",
+        "tümFonlamaKararlarıVeEtkiRaporlarıHalkaAçık": "Tüm fonlama kararları ve etki raporları halka açık blockchain üzerinde",
+        "coriaTokenSahipleriProjeSeçimindeOyKullanma": "CORIA token sahipleri proje seçiminde oy kullanma hakkına sahip",
+        "herProjeninÖlçülebilirÇevreselVeSosyalEtkisi": "Her projenin ölçülebilir çevresel ve sosyal etkisi raporlanır"
+      },
+      "content": {
+        "feeDağılımModeli": "Fee Dağılım Modeli",
+        "şeffafFonlama": "Şeffaf Fonlama",
+        "ekolojikTarımProjesi": "Ekolojik Tarım Projesi",
+        "5000HektarOrganikTarımAlanıOluşturuldu": "5000 hektar organik tarım alanı oluşturuldu",
+        "veganlık": "Veganlık",
+        "güneşEnerjisiKooperatifi": "Güneş Enerjisi Kooperatifi",
+        "250AileyeTemizEnerjiErişimiSağlandı": "250 aileye temiz enerji erişimi sağlandı",
+        "yeşilEnerji": "Yeşil Enerji",
+        "sıfırAtıkİnisiyatifi": "Sıfır Atık İnisiyatifi",
+        "12ŞehirdePlastikKullanımı60Azaltıldı": "12 şehirde plastik kullanımı %60 azaltıldı",
+        "sürdürülebilirlik": "Sürdürülebilirlik",
+        "şeffaflık": "Şeffaflık",
+        "toplulukYönetimi": "Topluluk Yönetimi",
+        "etkiOdaklılık": "Etki Odaklılık",
+        "projeniziTanımlayanBaşlık": "Projenizi tanımlayan başlık",
+        "projenizi280KarakterdeÖzetleyin": "Projenizi 280 karakterde özetleyin"
+      },
+      "roadmap": {
+        "foundationKonseptiTasarlandı": "Foundation konsepti tasarlandı",
+        "solanaTabanlıCoriaTokenLansmanı": "Solana tabanlı CORIA Token lansmanı",
+        "globalGenişleme": "Global genişleme"
+      }
+    },
+    "pricing": {
+      "content": {
+        "fiyatlandırma": "fiyatlandırma"
+      }
+    }
+  },
+  "common": {
+    "meta": {
+      "coriaSürdürülebilirYaşamUygulaması": "CORIA - Sürdürülebilir Yaşam Uygulaması",
+      "bilinçliTüketimKararlarıAlınÇevreselEtkilerin": "Bilinçli tüketim kararları alın, çevresel etkilerinizi takip edin ve sürdürülebilir alternatifleri keşfedin.",
+      "keywords": {
+        "sürdürülebilirlik": "sürdürülebilirlik",
+        "grünesLeben": "grünes Leben"
+      }
+    },
+    "ui": {
+      "ücretsiz": "Ücretsiz",
+      "nınTümÖzellikleriniKeşfetmekIçinUygulamayıIn": "nın tüm özelliklerini keşfetmek için uygulamayı indirin",
+      "coriaSürdürülebilirYaşamUygulaması": "CORIA - Sürdürülebilir Yaşam Uygulaması",
+      "bilinçliTüketimKararlarıAlınÇevreselEtkilerin": "Bilinçli tüketim kararları alın, çevresel etkilerinizi takip edin ve sürdürülebilir alternatifleri keşfedin.",
+      "sürdürülebilirYaşamIçinMobilUygulamaGeliştire": "Sürdürülebilir yaşam için mobil uygulama geliştiren teknoloji şirketi.",
+      "technologieunternehmenDasMobileAnwendungenFür": "Technologieunternehmen, das mobile Anwendungen für nachhaltiges Leben entwickelt.",
+      "coriaMobilUygulaması": "CORIA Mobil Uygulaması",
+      "sürdürülebilirYaşamIçinBarkodTaramaÇevreselE": "Sürdürülebilir yaşam için barkod tarama, çevresel etki takibi ve bilinçli tüketim önerileri sunan mobil uygulama.",
+      "mobileAppMitBarcodescanningUmweltauswirkungsve": "Mobile App mit Barcode-Scanning, Umweltauswirkungsverfolgung und bewussten Konsumempfehlungen für nachhaltiges Leben.",
+      "türkçe": "Türkçe",
+      "français": "Français",
+      "veganEtikVeSürdürülebilirSeçimAsistanı": "Vegan, etik ve sürdürülebilir seçim asistanı",
+      "kalbinleSeçEtkiyleYaşa": "Kalbinle Seç. Etkiyle Yaşa.",
+      "taradığınHerÜrününVeganlıkAlerjenSağlıkVeSü": "Taradığın her ürünün veganlık, alerjen, sağlık ve sürdürülebilirlik skorlarını tek bakışta gör. Bilimsel verilerle desteklenen önerilerle her seferinde daha iyi seçim yap.",
+      "veganlıkAlerjenVeIçerikRiskleriIçinAnlıkUya": "Veganlık, alerjen ve içerik riskleri için anlık uyarılar",
+      "esgBoykotVeMarkaEtikProfillerinin360Görünüm": "ESG, boykot ve marka etik profillerinin 360° görünümü",
+      "akıllıKilerIsrafÖnlemeVeKarbonsuEtkisiTakib": "Akıllı kiler, israf önleme ve karbon/su etkisi takibi",
+      "premiumu7GünÜcretsizDeneIstediğinZamanIptal": "Premium’u 7 gün ücretsiz dene, istediğin zaman iptal et.",
+      "ürünEtiketiAnalizi": "ürün etiketi analizi",
+      "güncelIçerikEtiketVerisi": "güncel içerik & etiket verisi",
+      "aktifCoriaTopluluğu": "aktif CORIA topluluğu",
+      "toplulukVeIşOrtaklarımızdanDestek": "Topluluk ve iş ortaklarımızdan destek",
+      "coriaSürdürülebilirDönüşümünKalbindeYerAlanB": "CORIA, sürdürülebilir dönüşümün kalbinde yer alan bireylerin ve kurumların güvenilir yardımcısıdır.",
+      "alışverişRutinimiKurtardı": "Alışveriş rutinimi kurtardı",
+      "veriyeDayalıEsgRaporları": "Veriye dayalı ESG raporları",
+      "foundationIleGerçekEtki": "Foundation ile gerçek etki",
+      "veganVeganAdayları": "Vegan & Vegan Adayları",
+      "ürünleriSaniyelerIçindeTarayarakVeganlığınıIç": "Ürünleri saniyeler içinde tarayarak veganlığını, içerik risklerini ve daha iyi alternatifleri gör.",
+      "özelVeganvejetaryenFiltreleri": "Özel vegan/vejetaryen filtreleri",
+      "toplulukYorumlarıVeDeneyimleri": "Topluluk yorumları ve deneyimleri",
+      "tarifÖnerileriVeMarketAlışverişListeleri": "Tarif önerileri ve market alışveriş listeleri",
+      "alerjenŞekerTuzVeKatkıRiskleriniÇocuklarının": "Alerjen, şeker, tuz ve katkı risklerini çocuklarının ihtiyaçlarına göre yönet.",
+      "riskSeviyeleriyleAlerjenUyarıları": "Risk seviyeleriyle alerjen uyarıları",
+      "detaylıIçerikAçıklamaları": "Detaylı içerik açıklamaları",
+      "güvenliAlternatifÖnerileri": "Güvenli alternatif önerileri",
+      "sağlıkOdaklıKullanıcılar": "Sağlık Odaklı Kullanıcılar",
+      "besinDeğerleriniSağlıkSkorlarınıVeKişiselHed": "Besin değerlerini, sağlık skorlarını ve kişisel hedeflerini tek ekranda takip et.",
+      "şekertuzproteinSapmaUyarıları": "Şeker/tuz/protein sapma uyarıları",
+      "uzmanlardanOnaylıIçerikKütüphanesi": "Uzmanlardan onaylı içerik kütüphanesi",
+      "sürdürülebilirlikSavunucuları": "Sürdürülebilirlik Savunucuları",
+      "karbonSuVeEtikEtkileriKarşılaştırFoundation": "Karbon, su ve etik etkileri karşılaştır; Foundation projeleriyle gerçek değişimi destekle.",
+      "karbonSuAyakIziSayaçları": "Karbon & su ayak izi sayaçları",
+      "coriaFoundationProjeBağışları": "CORIA Foundation proje bağışları",
+      "barkodTarayınÜrününVeganlıkDurumuAlerjenRisk": "Barkod tarayın, ürünün veganlık durumu, alerjen riskleri ve içerik açıklamaları anında listelensin.",
+      "aiYaşamAsistanı": "AI Yaşam Asistanı",
+      "sorularınızıSorunTarifAlternatifÜrünVeAlışve": "Sorularınızı sorun, tarif, alternatif ürün ve alışveriş listesi önerilerini kişiselleştirilmiş olarak alın.",
+      "akıllıKiler": "Akıllı Kiler",
+      "sktTakibiOtomatikHatırlatmalarVeIsrafıAzalta": "SKT takibi, otomatik hatırlatmalar ve israfı azaltan kullanım önerileriyle kilerinizi yönetin.",
+      "markalarınÇevreselSosyalVeYönetişimPerformans": "Markaların çevresel, sosyal ve yönetişim performanslarını, boykot listelerini ve tedarik şeffaflığını inceleyin.",
+      "herÜrünSeçimindekiKarbonSuVeDöngüsellikEtki": "Her ürün seçimindeki karbon, su ve döngüsellik etkisini görün; alternatif senaryoları karşılaştırın.",
+      "toplulukVeİçerikler": "Topluluk ve İçerikler",
+      "öneÇıkanTariflerKullanıcıDeneyimleriUzmanYaz": "Öne çıkan tarifler, kullanıcı deneyimleri, uzman yazıları ve sürdürülebilir yaşam rehberleri.",
+      "taraAnalizEtDahaİyiSeçAkışınıInteraktifD": "Tara → Analiz Et → Daha İyi Seç akışını interaktif demo ile keşfet.",
+      "coriaUygulamaEkranAkışı": "CORIA uygulama ekran akışı",
+      "barkoduOkuttuğunAndaÜrününTümBilgileriAçılır": "Barkodu okuttuğun anda ürünün tüm bilgileri açılır.",
+      "veganlıkAlerjenSağlıkVeEsgSkorlarınıTekBakı": "Veganlık, alerjen, sağlık ve ESG skorlarını tek bakışta değerlendir.",
+      "3DahaİyiSeç": "3. Daha İyi Seç",
+      "demoSesliAnlatımVeAltyazıDesteklidir": "Demo sesli anlatım ve altyazı desteklidir.",
+      "topluluğumuzunBiriktirdiğiEtki": "Topluluğumuzun biriktirdiği etki",
+      "gerçekZamanlıSayaçlarCoriaKullanıcılarınınGün": "Gerçek zamanlı sayaçlar, CORIA kullanıcılarının günlük kararlarla oluşturduğu kolektif katkıyı gösterir.",
+      "bugününCoTasarrufu": "Bugünün CO₂ tasarrufu",
+      "suYoğunÜrünlerdenAkıllıAlternatiflereGeçişSa": "Su yoğun ürünlerden akıllı alternatiflere geçiş sayesinde.",
+      "buAyÖnlenenGıdaIsrafı": "Bu ay önlenen gıda israfı",
+      "kişiselEtkiPaneli": "Kişisel etki paneli",
+      "tümSeçimlerinizTonBazındaCoSuVeEtikPuanOl": "Tüm seçimleriniz ton bazında CO₂, su ve etik puan olarak toplanır; hedefler belirleyip gelişiminizi takip edin.",
+      "şehirBazlıLiderlikTablolarıSezonlukTüketimRe": "Şehir bazlı liderlik tabloları, sezonluk tüketim rehberleri ve kampanyalarla harekete geçin.",
+      "birlikteDahaBüyükEtkiYaratıyoruz": "Birlikte daha büyük etki yaratıyoruz",
+      "uygulamaGelirlerinin5iVeCoriaTokenFeeGelirl": "Uygulama gelirlerinin %5’i ve CORIA Token fee gelirleri yeşil enerji, veganlık ve sürdürülebilirlik projelerine aktarılıyor.",
+      "believePlatformuÜzerindenÇıkarılacakSolanaTab": "Believe platformu üzerinden çıkarılacak Solana tabanlı CORIA Token ile şeffaf, zincir üstü bağış ve etki raporlama modeli kuruyoruz.",
+      "şeffafFonDağıtımı": "Şeffaf fon dağıtımı",
+      "veganRestoranDönüşümüGıdaBankacılığıOrmanRes": "Vegan restoran dönüşümü, gıda bankacılığı, orman restorasyonu gibi alanlara destek.",
+      "toplulukOylaması": "Topluluk oylaması",
+      "anadoluVeganMutfağı": "Anadolu Vegan Mutfağı",
+      "yeşilEnerjiKooperatifi": "Yeşil Enerji Kooperatifi",
+      "sıfırAtıkMarketleri": "Sıfır Atık Marketleri",
+      "foundationDetaylarınıIncele": "Foundation detaylarını incele",
+      "bilinçliTüketimRehberleri": "Bilinçli tüketim rehberleri",
+      "uzmanYazılarıTariflerVeSürdürülebilirYaşamPr": "Uzman yazıları, tarifler ve sürdürülebilir yaşam pratikleriyle her hafta güncellenen içerikler.",
+      "alerjenEtiketlerini60SaniyedeÇöz": "Alerjen etiketlerini 60 saniyede çöz",
+      "glutenLaktozFındıkVeDahaFazlasıIçinCorianın": "Gluten, laktoz, fındık ve daha fazlası için CORIA’nın risk skorlarını nasıl yorumlayacağını öğren.",
+      "karbonAyakIziniziMarketAlışverişindeAzaltın": "Karbon ayak izinizi market alışverişinde azaltın",
+      "sezonlukÜrünSeçimiVeYerelÜreticiÖnerileriyle": "Sezonluk ürün seçimi ve yerel üretici önerileriyle çevresel etkinizi minimuma indirin.",
+      "foundationProjelerindeYeniDönem": "Foundation projelerinde yeni dönem",
+      "solanaTokenModeliyleŞeffafFonlamaNasılÇalışı": "Solana token modeliyle şeffaf fonlama nasıl çalışıyor? İlk raporlar yayınlandı.",
+      "tümIçerikleriGörüntüle": "Tüm içerikleri görüntüle",
+      "sıkSorulanSorular": "Sık sorulan sorular",
+      "coriayıKullanmayaBaşlamadanÖnceEnÇokMerakEd": "CORIA’yı kullanmaya başlamadan önce en çok merak edilenleri derledik.",
+      "sınırsızÜrünTaramaDetaylıEtkiRaporlarıGelişm": "Sınırsız ürün tarama, detaylı etki raporları, gelişmiş filtreler, israf azaltma önerileri ve Foundation projelerine katkı sertifikası.",
+      "veriGizliliğiNasılSağlanıyor": "Veri gizliliği nasıl sağlanıyor?",
+      "kişiselVerilerSadeceProfilDeneyiminiIyileştir": "Kişisel veriler sadece profil deneyimini iyileştirmek için kullanılır, üçüncü taraflarla paylaşılmaz ve dilediğiniz an hesap verilerini silebilirsiniz.",
+      "foundationProjelerineNasılBaşvurabilirim": "Foundation projelerine nasıl başvurabilirim?",
+      "foundationSayfasındakiBaşvuruFormundanProjeniz": "Foundation sayfasındaki başvuru formundan projenizi gönderebilir, değerlendirme süreci ve kriterleri detaylı inceleyebilirsiniz.",
+      "coriaIleBilinçliTüketiminGücünüKeşfet": "CORIA ile bilinçli tüketimin gücünü keşfet",
+      "topluluğumuzaKatılınEtkiPaneliniziAçınVeSürd": "Topluluğumuza katılın, etki panelinizi açın ve sürdürülebilir geleceğe birlikte yön verin.",
+      "foundationaKatıl": "Foundation’a katıl",
+      "özellikleriKeşfet": "Özellikleri keşfet",
+      "contentfulGerekliKimlikBilgileriEksikIstemci": "[Contentful] Gerekli kimlik bilgileri eksik; istemci başlatılamadı.",
+      "contentfulİstemciOluşturulurkenHataOluştu": "[Contentful] İstemci oluşturulurken hata oluştu:",
+      "içerikleriIçinIstemciBulunamadıBoşSonuçDönüy": "içerikleri için istemci bulunamadı. Boş sonuç dönüyor.",
+      "içeriğiSlugIçinIstemciBulunamadı": "içeriği (${slug}) için istemci bulunamadı.",
+      "siEntryidOlanKayıtIçinIstemciBulunamadı": "si ${entryId} olan kayıt için istemci bulunamadı.",
+      "siAssetidOlanVarlıkIçinIstemciBulunamadı": "si ${assetId} olan varlık için istemci bulunamadı.",
+      "thisfieldAlanıGeçersizThismessage": "${this.field} alanı geçersiz: ${this.message}",
+      "girilenBilgilerGeçersizThismessage": "Girilen bilgiler geçersiz: ${this.message}",
+      "ungültigesThisfieldThismessage": "Ungültiges ${this.field}: ${this.message}",
+      "ungültigeEingabeThismessage": "Ungültige Eingabe: ${this.message}",
+      "sunucuHatasıOluştuLütfenDahaSonraTekrarDene": "Sunucu hatası oluştu. Lütfen daha sonra tekrar deneyin.",
+      "i̇stekIşlenirkenBirHataOluştu": "İstek işlenirken bir hata oluştu.",
+      "i̇nternetBağlantınızıKontrolEdinVeTekrarDeney": "İnternet bağlantınızı kontrol edin ve tekrar deneyin.",
+      "ağBağlantısıHatasıLütfenTekrarDeneyin": "Ağ bağlantısı hatası. Lütfen tekrar deneyin.",
+      "bitteÜberprüfenSieIhreInternetverbindungUndV": "Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.",
+      "oturumAçmanızGerekiyor": "Oturum açmanız gerekiyor.",
+      "buIşlemIçinYetkinizBulunmuyor": "Bu işlem için yetkiniz bulunmuyor.",
+      "sieMüssenSichAnmelden": "Sie müssen sich anmelden.",
+      "sieHabenKeineBerechtigungFürDieseAktion": "Sie haben keine Berechtigung für diese Aktion.",
+      "thisresourcetypeBulunamadı": "${this.resourceType} bulunamadı.",
+      "aradığınızSayfaBulunamadı": "Aradığınız sayfa bulunamadı.",
+      "çokFazlaIstekGönderdinizLütfenBirazBekleyin": "Çok fazla istek gönderdiniz. Lütfen biraz bekleyin.",
+      "sistemYapılandırmaHatasıLütfenYöneticiyeBaşvu": "Sistem yapılandırma hatası. Lütfen yöneticiye başvurun.",
+      "beklenmeyenBirHataOluştu": "Beklenmeyen bir hata oluştu.",
+      "okumaSüresi": "okuma süresi",
+      "pwaServiceWorkerDevelopmentModundaDevreDışı": "[PWA] Service worker development modunda devre dışı bırakıldı",
+      "pwaVarOlanServisWorkerKayıtlarıTemizlendi": "[PWA] Var olan servis worker kayıtları temizlendi",
+      "pwaServisWorkerTemizlemeBaşarısız": "[PWA] Servis worker temizleme başarısız:",
+      "texttürkçe": "text=Türkçe",
+      "testBaşlık": "Test Başlık",
+      "testÖzet": "Test özet",
+      "testIçerik": "Test içerik",
+      "yazarAvatarı": "Yazar avatarı",
+      "sürdürülebilirlik": "Sürdürülebilirlik",
+      "sürdürülebilirlikKategorisi": "Sürdürülebilirlik kategorisi",
+      "öneÇıkanGörsel": "Öne çıkan görsel",
+      "seoBaşlık": "SEO Başlık",
+      "seoAçıklama": "SEO açıklama",
+      "schlüssel": "schlüssel",
+      "barkodTaramaIçeriği": "Barkod tarama içeriği",
+      "ürünBarkodlarınıTarayın": "Ürün barkodlarını tarayın",
+      "ekranGörüntüsü1": "Ekran görüntüsü 1",
+      "hızlıTarama": "Hızlı tarama",
+      "taramaÖzellikleri": "Tarama özellikleri",
+      "türkçeBaşlık": "Türkçe başlık",
+      "özet": "özet",
+      "içerik": "içerik",
+      "açıklama": "açıklama",
+      "türkçeIçerik": "Türkçe içerik",
+      "contenuFrançais": "Contenu français",
+      "özellik": "Özellik"
+    },
+    "aria": {
+      "features": {
+        "titleÖzelliği": "${title} özelliği",
+        "coriaPlatformÖzellikleri": "CORIA platform özellikleri"
+      },
+      "daCoriaUygulamasınıIndirin": "da CORIA uygulamasını indirin",
+      "coriaIstatistikleriVeEtkiGöstergeleri": "CORIA istatistikleri ve etki göstergeleri",
+      "metricvalueMetriclabelCoriaEtkiGöstergesi": "${metric.value} ${metric.label} - CORIA etki göstergesi"
+    }
+  },
+  "navigation": {
+    "footer": {
+      "basınYatırımcı": "Basın & Yatırımcı",
+      "gizlilikPolitikası": "Gizlilik Politikası",
+      "kullanımKoşulları": "Kullanım Koşulları",
+      "kvkkAydınlatması": "KVKK Aydınlatması",
+      "çerezPolitikası": "Çerez Politikası"
+    }
+  },
+  "features": {
+    "descriptions": {
+      "ürünlerinVeganUygunluğunuVeAlerjenIçeriğiniA": "Ürünlerin vegan uygunluğunu ve alerjen içeriğini anında analiz edin. Kişisel beslenme tercihlerinize uygun seçimler yapın.",
+      "yapayZekaDestekliKişiselAsistanınızIleBeslen": "Yapay zeka destekli kişisel asistanınız ile beslenme önerilerinden sürdürülebilir yaşam ipuçlarına kadar her konuda destek alın.",
+      "kilerdekiÜrünleriTakipEdinSonKullanmaTarihle": "Kilerdeki ürünleri takip edin, son kullanma tarihlerini izleyin ve israfı önlemek için akıllı öneriler alın.",
+      "ürünVeMarkalarınÇevreselSosyalVeYönetişimPe": "Ürün ve markaların çevresel, sosyal ve yönetişim performanslarını ESG skorları ile değerlendirin.",
+      "tüketimAlışkanlıklarınızınKarbonAyakIziniVeS": "Tüketim alışkanlıklarınızın karbon ayak izini ve su kullanımını takip ederek çevresel etkilerinizi azaltın.",
+      "sürdürülebilirYaşamTopluluğundanÖnerilerAlınD": "Sürdürülebilir yaşam topluluğundan öneriler alın, deneyimlerinizi paylaşın ve birlikte öğrenin."
+    },
+    "list": {
+      "akıllıKiler": "Akıllı Kiler",
+      "esgSkorları": "ESG Skorları",
+      "toplulukÖnerileri": "Topluluk Önerileri"
+    }
+  },
+  "hero": {
+    "badge": {
+      "veganYaşamAsistanı": "Vegan Yaşam Asistanı"
+    },
+    "title": {
+      "kalbinleSeçEtkiyleYaşa": "Kalbinle Seç. Etkiyle Yaşa.",
+      "taradığınHerÜrününVeganlıkAlerjenSağlıkVeSü": "Taradığın her ürünün veganlık, alerjen, sağlık ve sürdürülebilirlik skorlarını tek bakışta gör."
+    },
+    "cta": {
+      "iosIçinİndir": "iOS için İndir",
+      "androidIçinİndir": "Android için İndir"
+    },
+    "stats": {
+      "milyarÜrünVerisi": "Milyar Ürün Verisi",
+      "etiketVeİçerik": "Etiket ve İçerik",
+      "aktifKullanıcı": "Aktif Kullanıcı"
+    }
+  }
+}
