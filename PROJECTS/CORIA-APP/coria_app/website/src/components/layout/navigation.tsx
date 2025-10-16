@@ -6,7 +6,7 @@ import type { MouseEvent as ReactMouseEvent } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/routing';
 import { LanguageSwitcher } from '@/components/ui/language-switcher';
-import { Button, ThemeToggle } from '@/components/ui';
+import { Button } from '@/components/ui';
 import { MobileNavigation } from '@/components/ui/mobile-navigation';
 import { cn } from '@/lib/utils';
 import { getHomeContent } from '@/content/home';
@@ -16,12 +16,11 @@ interface NavigationProps {
 }
 
 const NAVIGATION_ITEMS = [
-  { key: 'features', href: '/features' },
-  { key: 'pricing', href: '/pricing' },
-  { key: 'blog', href: '/blog' },
-  { key: 'foundation', href: '/foundation' },
-  { key: 'about', href: '/about' },
-  { key: 'contact', href: '/contact' }
+  { key: 'features', href: '/features', external: false },
+  { key: 'pricing', href: '/pricing', external: false },
+  { key: 'blog', href: 'https://medium.com/@coria.app.com', external: true },
+  { key: 'foundation', href: '/foundation', external: false },
+  { key: 'about', href: '/about', external: false }
 ] as const;
 
 export function Navigation({ className = '' }: NavigationProps) {
@@ -105,16 +104,14 @@ export function Navigation({ className = '' }: NavigationProps) {
       {/* Desktop Navigation */}
       <header
         className={cn(
-          'hidden lg:block fixed inset-x-0 top-0 z-50 transition-transform duration-500',
-          isScrolled ? 'translate-y-0' : 'translate-y-0',
+          'hidden lg:block fixed inset-x-0 top-0 z-[9999] transition-all duration-500',
           className
         )}
       >
-        <div className="px-6 pt-6">
+        <div className="px-6 py-4">
           <nav
             className={cn(
-              'mx-auto flex w-full max-w-6xl items-center justify-between rounded-full border border-white/40 bg-glass-surface px-8 py-4 shadow-soft transition-all duration-500',
-              isScrolled ? 'backdrop-blur-xl shadow-lg' : 'backdrop-blur-md'
+              'mx-auto flex w-full max-w-6xl items-center justify-between rounded-full border-none bg-[var(--foam)] px-8 py-4 transition-all duration-500'
             )}
             aria-label="Primary navigation"
           >
@@ -123,17 +120,19 @@ export function Navigation({ className = '' }: NavigationProps) {
               <Link
                 href="/"
                 locale={locale}
-                className="group flex items-center rounded-full border border-[rgba(27,94,63,0.08)] bg-white/85 p-2 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
+                className="group inline-block align-middle transition-all duration-300 hover:-translate-y-0.5"
                 onClick={(e) => handleSmoothScroll(e, '/')}
                 aria-label={t('logoAria')}
+                data-testid="nav-logo"
               >
-                <span className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-full bg-[var(--foam)] shadow-sm ring-1 ring-[rgba(27,94,63,0.08)] ring-offset-1 ring-offset-white group-hover:ring-[rgba(27,94,63,0.18)]">
+                <span className="logo-ring-3 relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-[var(--foam)] p-0">
                   <Image
-                    src="/coria-app-logo.svg"
+                    src="/coria-app-logo.webp"
                     alt="CORIA logosu"
-                    width={36}
-                    height={36}
-                    className="h-9 w-9 object-contain"
+                    width={48}
+                    height={48}
+                    className="object-contain"
+                    style={{ width: 'auto', height: '100%' }}
                     priority
                   />
                 </span>
@@ -142,40 +141,62 @@ export function Navigation({ className = '' }: NavigationProps) {
 
             {/* Desktop Navigation */}
             <div className="flex items-center gap-2">
-              {NAVIGATION_ITEMS.map((item) => (
-                <Link
-                  key={item.key}
-                  href={item.href}
-                  locale={locale}
-                  className={cn(
-                    'rounded-full px-4 py-2 text-sm font-medium transition-all duration-300',
-                    isActive(item.href)
-                      ? 'bg-coria-primary/10 text-coria-primary shadow-sm'
-                      : 'text-gray-600 hover:bg-coria-primary/5 hover:text-coria-primary'
-                  )}
-                  onClick={(e) => handleSmoothScroll(e, item.href)}
-                >
-                  {t(item.key)}
-                </Link>
-              ))}
+              {NAVIGATION_ITEMS.map((item) => {
+                if (item.external) {
+                  return (
+                    <a
+                      key={item.key}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={cn(
+                        'rounded-full px-4 py-2 text-sm font-medium transition-all duration-300',
+                        'text-gray-600 hover:bg-coria-primary/5 hover:text-coria-primary'
+                      )}
+                      data-testid={`nav-${item.key}`}
+                    >
+                      {t(item.key)}
+                    </a>
+                  );
+                }
+
+                return (
+                  <Link
+                    key={item.key}
+                    href={item.href}
+                    locale={locale}
+                    className={cn(
+                      'rounded-full px-4 py-2 text-sm font-medium transition-all duration-300',
+                      isActive(item.href)
+                        ? 'bg-coria-primary/10 text-coria-primary shadow-sm'
+                        : 'text-gray-600 hover:bg-coria-primary/5 hover:text-coria-primary'
+                    )}
+                    onClick={(e) => handleSmoothScroll(e, item.href)}
+                    data-testid={`nav-${item.key}`}
+                  >
+                    {t(item.key)}
+                  </Link>
+                );
+              })}
             </div>
 
             {/* Desktop Actions */}
             <div className="flex items-center gap-3">
               <LanguageSwitcher />
-              <ThemeToggle />
               <Button
                 variant="primary"
                 size="sm"
                 asChild
-                className="hidden xl:inline-flex shadow-md"
+                className="hidden xl:inline-flex shadow-md !text-white"
               >
                 <a
-                  href="https://apps.apple.com/app/coria"
+                  href="https://play.google.com/store/apps/details?id=com.coria.app"
                   target="_blank"
                   rel="noopener noreferrer"
+                  data-testid="cta-android-nav"
+                  className="!text-white hover:!text-white"
                 >
-                  {homeContent.hero.primaryCta.label}
+                  {t('downloadAndroid')}
                 </a>
               </Button>
             </div>

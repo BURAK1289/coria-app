@@ -6,8 +6,7 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { LanguageSwitcher } from '@/components/ui/language-switcher';
-import { ThemeToggle } from '@/components/ui';
-import { X, Menu, Star, DollarSign, Info, MessageCircle, BookOpen, Leaf } from 'lucide-react';
+import { Icon } from '@/components/icons/Icon';
 import { cn } from '@/lib/utils';
 import type { 
   MouseEventHandler,
@@ -73,12 +72,12 @@ export function MobileNavigation({ className = '', onNavigate }: MobileNavigatio
   }, [isOpen]);
 
   const navigationItems = [
-    { key: 'features', href: '/features', icon: Star },
-    { key: 'pricing', href: '/pricing', icon: DollarSign },
-    { key: 'blog', href: '/blog', icon: BookOpen },
-    { key: 'foundation', href: '/foundation', icon: Leaf },
-    { key: 'about', href: '/about', icon: Info },
-    { key: 'contact', href: '/contact', icon: MessageCircle },
+    { key: 'features', href: '/features', iconName: 'star', external: false },
+    { key: 'pricing', href: '/pricing', iconName: 'star', external: false }, // Note: dollar-sign icon not available, using star temporarily
+    { key: 'blog', href: 'https://medium.com/@coria.app.com', iconName: 'book-open', external: true },
+    { key: 'foundation', href: '/foundation', iconName: 'leaf', external: false },
+    { key: 'about', href: '/about', iconName: 'info', external: false },
+    { key: 'contact', href: '/contact', iconName: 'chat', external: false }, // Note: MessageCircle → chat
   ];
 
   const handleToggle = useCallback(() => {
@@ -134,8 +133,8 @@ export function MobileNavigation({ className = '', onNavigate }: MobileNavigatio
         onClick={handleMenuButtonClick}
         onKeyDown={handleMenuButtonKeyDown}
         className={cn(
-          'mobile-nav-button lg:hidden fixed top-4 right-4 z-50',
-          'bg-white/90 backdrop-blur-sm rounded-full p-3',
+          'mobile-nav-button lg:hidden fixed top-4 right-4 z-[9999]',
+          'bg-white backdrop-blur-sm rounded-full p-3',
           'shadow-lg border border-gray-200',
           'touch-target transition-all duration-200',
           'hover:bg-white active:scale-95',
@@ -147,11 +146,12 @@ export function MobileNavigation({ className = '', onNavigate }: MobileNavigatio
         aria-controls="mobile-navigation-menu"
         aria-haspopup="true"
       >
-        {isOpen ? (
-          <X className="h-6 w-6 text-gray-700" aria-hidden="true" />
-        ) : (
-          <Menu className="h-6 w-6 text-gray-700" aria-hidden="true" />
-        )}
+        <Icon
+          name={isOpen ? 'close' : 'menu'}
+          size={24}
+          className="text-gray-700"
+          aria-hidden="true"
+        />
       </button>
 
       {/* Overlay */}
@@ -179,21 +179,22 @@ export function MobileNavigation({ className = '', onNavigate }: MobileNavigatio
       >
         <div className="flex flex-col h-full">
           {/* Header */}
-          <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
+          <div className="flex items-center justify-between p-6 border-b border-gray-200">
             <div className="flex items-center space-x-3">
               <span className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-full bg-[var(--foam)] shadow-sm">
                 <Image
-                  src="/coria-app-logo.svg"
+                  src="/coria-app-logo.webp"
                   alt="CORIA logosu"
                   width={36}
                   height={36}
-                  className="h-9 w-9 object-contain"
+                  className="object-contain"
+                  style={{ width: 'auto', height: '100%' }}
                   priority
                 />
               </span>
               <span 
                 id="mobile-nav-title"
-                className="text-xl font-bold text-gray-900 dark:text-white"
+                className="text-xl font-bold text-gray-900"
               >
                 CORIA
               </span>
@@ -201,7 +202,6 @@ export function MobileNavigation({ className = '', onNavigate }: MobileNavigatio
             
             <div className="flex items-center space-x-2">
               <LanguageSwitcher />
-              <ThemeToggle />
             </div>
           </div>
 
@@ -209,9 +209,31 @@ export function MobileNavigation({ className = '', onNavigate }: MobileNavigatio
           <nav className="flex-1 py-6" role="navigation" aria-label="Main navigation">
             <div className="space-y-2 px-4">
               {navigationItems.map((item) => {
-                const Icon = item.icon;
                 const isActive = pathname === item.href;
-                
+
+                if (item.external) {
+                  return (
+                    <a
+                      key={item.key}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => handleLinkClick(item.href)}
+                      onKeyDown={handleNavItemKeyDown(item.href)}
+                      className={cn(
+                        'mobile-nav-item flex items-center space-x-3 rounded-lg transition-colors',
+                        'touch-target w-full text-left',
+                        'focus:outline-none focus:ring-2 focus:ring-coria-primary focus:ring-offset-2',
+                        'text-gray-700 hover:bg-gray-100',
+                      )}
+                      tabIndex={isOpen ? 0 : -1}
+                    >
+                      <Icon name={item.iconName} size={20} aria-hidden="true" />
+                      <span className="font-medium">{t(item.key)}</span>
+                    </a>
+                  );
+                }
+
                 return (
                   <Link
                     key={item.key}
@@ -224,12 +246,12 @@ export function MobileNavigation({ className = '', onNavigate }: MobileNavigatio
                       'focus:outline-none focus:ring-2 focus:ring-coria-primary focus:ring-offset-2',
                       isActive
                         ? 'bg-coria-green text-white'
-                        : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
+                        : 'text-gray-700 hover:bg-gray-100',
                     )}
                     aria-current={isActive ? 'page' : undefined}
                     tabIndex={isOpen ? 0 : -1}
                   >
-                    <Icon className="h-5 w-5" aria-hidden="true" />
+                    <Icon name={item.iconName} size={20} aria-hidden="true" />
                     <span className="font-medium">{t(item.key)}</span>
                   </Link>
                 );
@@ -238,11 +260,11 @@ export function MobileNavigation({ className = '', onNavigate }: MobileNavigatio
           </nav>
 
           {/* Footer */}
-          <div className="p-6 border-t border-gray-200 dark:border-gray-700 safe-area-bottom">
+          <div className="p-6 border-t border-gray-200 safe-area-bottom">
             <div className="space-y-4">
               {/* App Download Links */}
               <div className="space-y-2">
-                <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                <p className="text-sm font-medium text-gray-700">
                   {t('downloadApp')}
                 </p>
                 <div className="flex space-x-2">
@@ -270,7 +292,7 @@ export function MobileNavigation({ className = '', onNavigate }: MobileNavigatio
               </div>
 
               {/* Contact Info */}
-              <div className="text-xs text-gray-500 dark:text-gray-400 text-center" role="contentinfo">
+              <div className="text-xs text-gray-500 text-center" role="contentinfo">
                 <p>© 2024 CORIA</p>
                 <p>{t('sustainableLiving')}</p>
               </div>
