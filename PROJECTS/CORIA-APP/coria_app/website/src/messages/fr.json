@@ -6,18 +6,29 @@
     "about": "À propos",
     "contact": "Contact",
     "blog": "Blog",
-    "logoAria": "Aller à la page d'accueil CORIA"
+    "logoAria": "Aller à la page d'accueil CORIA",
+    "foundation": "Foundation",
+    "downloadApp": "Télécharger pour Android",
+    "downloadAndroid": "Télécharger pour Android",
+    "sustainableLiving": "Vie durable simplifiée"
   },
   "hero": {
-    "title": "See the impact behind every product.",
-    "subtitle": "Vegan, allergen, health and sustainability insights — at a glance.",
-    "downloadIos": "Download on the App Store",
-    "downloadAndroid": "Get it on Google Play",
-    "watchDemo": "Watch Demo",
-    "badge": "Choose with heart, live with impact",
-    "highlightImpact": "Multi-source product intelligence",
-    "highlightScans": "360° impact insights",
-    "highlightMarkets": "180+ brands & retailers"
+    "badge": {
+      "veganYaşamAsistanı": "Assistant de mode de vie végétalien"
+    },
+    "title": {
+      "kalbinleSeçEtkiyleYaşa": "Choisissez avec le cœur. Vivez avec impact.",
+      "taradığınHerÜrününVeganlıkAlerjenSağlıkVeSü": "Consultez instantanément les scores végétaliens, allergènes, santé et durabilité de chaque produit scanné."
+    },
+    "cta": {
+      "iosIçinİndir": "Télécharger pour iOS",
+      "androidIçinİndir": "Télécharger pour Android"
+    },
+    "stats": {
+      "milyarÜrünVerisi": "Milliards de données produit",
+      "etiketVeİçerik": "Étiquettes et contenu",
+      "aktifKullanıcı": "Utilisateurs actifs"
+    }
   },
   "features": {
     "title": "Fonctionnalités",
@@ -37,32 +48,702 @@
     "smartPantry": {
       "title": "Garde-manger intelligent",
       "description": "Réduisez le gaspillage alimentaire et achetez intelligemment"
+    },
+    "meta": {
+      "title": "Fonctionnalités CORIA - Vie Durable Simplifiée",
+      "description": "Découvrez les puissantes fonctionnalités de CORIA : scan de code-barres, recommandations IA, suivi d'impact et gestion de garde-manger intelligent pour une vie durable."
+    },
+    "sidebar": {
+      "title": "Explorer les fonctionnalités"
+    },
+    "navigation": {
+      "allFeatures": "Toutes les fonctionnalités",
+      "backToCategory": "Retour à la catégorie"
+    },
+    "overview": {
+      "title": "Toutes les fonctionnalités",
+      "subtitle": "Découvrez les outils puissants de CORIA pour une vie durable",
+      "learnMore": "En savoir plus",
+      "cta": {
+        "title": "Prêt à commencer ?",
+        "description": "Téléchargez CORIA et commencez votre voyage vers une vie durable aujourd'hui",
+        "downloadIos": "Télécharger pour iOS",
+        "downloadAndroid": "Télécharger pour Android"
+      }
+    },
+    "categoryOverview": {
+      "featuresTitle": "Fonctionnalités dans cette catégorie",
+      "relatedTitle": "Fonctionnalités associées",
+      "cta": {
+        "title": "Essayer ces fonctionnalités",
+        "description": "Téléchargez CORIA et découvrez toutes les fonctionnalités",
+        "downloadIos": "Télécharger pour iOS",
+        "downloadAndroid": "Télécharger pour Android"
+      }
+    },
+    "featureDetail": {
+      "howItWorks": {
+        "title": "Comment ça marche"
+      },
+      "technicalDetails": {
+        "title": "Détails techniques"
+      },
+      "learnMore": "En savoir plus sur cette fonctionnalité",
+      "cta": {
+        "title": "Essayer cette fonctionnalité",
+        "description": "Téléchargez CORIA et commencez à l'utiliser",
+        "downloadIos": "Télécharger pour iOS",
+        "downloadAndroid": "Télécharger pour Android"
+      }
+    },
+    "gallery": {
+      "title": "Voir en action",
+      "watchDemo": "Regarder la démo",
+      "videoPlaceholder": "Chargement de la fonctionnalité..."
+    },
+    "whyItMatters": {
+      "title": "Pourquoi c'est important",
+      "statisticsTitle": "Statistiques d'impact",
+      "joinMovement": "Rejoignez le mouvement",
+      "impactTypes": {
+        "environmental": "Environnemental",
+        "health": "Santé",
+        "economic": "Économique",
+        "social": "Social",
+        "ethical": "Éthique",
+        "global": "Global"
+      }
+    },
+    "methodology": {
+      "title": "Notre méthodologie",
+      "scoringSystem": "Système de notation",
+      "scoringRange": "Plage de notation : 0-100",
+      "updateFrequency": "Fréquence de mise à jour",
+      "scoringFactors": "Facteurs de notation",
+      "ratings": {
+        "poor": "Médiocre (0-25)",
+        "fair": "Passable (26-50)",
+        "good": "Bon (51-75)",
+        "excellent": "Excellent (76-100)"
+      },
+      "dataProcessing": {
+        "title": "Traitement des données"
+      },
+      "transparency": {
+        "title": "Transparence et précision",
+        "description": "Notre système de notation est basé sur des données scientifiques et mis à jour régulièrement"
+      },
+      "environmental-score": {
+        "description": "Impact environnemental des produits basé sur plusieurs facteurs",
+        "overview": "Nous évaluons les produits selon l'empreinte carbone, l'utilisation de l'eau et les déchets",
+        "updateFrequency": "Mis à jour quotidiennement",
+        "dataProcessing": "Traitement automatique avec vérification manuelle",
+        "factors": {
+          "0": {
+            "description": "Émissions de CO2 pendant la production et le transport"
+          },
+          "1": {
+            "description": "Consommation d'eau et impacts"
+          },
+          "2": {
+            "description": "Emballage et gestion des déchets"
+          },
+          "3": {
+            "description": "Biodiversité et utilisation des terres"
+          },
+          "4": {
+            "description": "Analyse complète du cycle de vie"
+          }
+        }
+      },
+      "social-impact": {
+        "description": "Évaluation de la responsabilité sociale et des pratiques éthiques",
+        "overview": "Évaluation des conditions de travail, du commerce équitable et de l'impact communautaire",
+        "updateFrequency": "Mis à jour hebdomadairement",
+        "dataProcessing": "Combinaison de vérifications automatisées et humaines",
+        "factors": {
+          "0": {
+            "description": "Pratiques de travail équitable et salaires"
+          },
+          "1": {
+            "description": "Certifications de commerce équitable"
+          },
+          "2": {
+            "description": "Engagement communautaire"
+          },
+          "3": {
+            "description": "Droits humains dans la chaîne d'approvisionnement"
+          },
+          "4": {
+            "description": "Transparence de l'impact social"
+          }
+        }
+      },
+      "health-rating": {
+        "description": "Qualité nutritionnelle et impacts sur la santé des produits",
+        "overview": "Analyse des nutriments, additifs et avantages pour la santé",
+        "updateFrequency": "Mis à jour quotidiennement",
+        "dataProcessing": "Analyse nutritionnelle assistée par IA",
+        "factors": {
+          "0": {
+            "description": "Densité et qualité nutritionnelles"
+          },
+          "1": {
+            "description": "Niveau de transformation"
+          },
+          "2": {
+            "description": "Additifs et conservateurs"
+          },
+          "3": {
+            "description": "Allergènes et compatibilité alimentaire"
+          },
+          "4": {
+            "description": "Avantages pour la santé fondés sur des preuves"
+          }
+        }
+      },
+      "ethical-production": {
+        "description": "Évaluation du bien-être animal et des normes de production éthique",
+        "overview": "Évaluation du traitement des animaux et des pratiques d'approvisionnement éthique",
+        "updateFrequency": "Mis à jour hebdomadairement",
+        "dataProcessing": "Vérification manuelle avec validation d'experts",
+        "factors": {
+          "0": {
+            "description": "Normes de bien-être animal"
+          },
+          "1": {
+            "description": "Certifications et audits"
+          },
+          "2": {
+            "description": "Transparence de la chaîne d'approvisionnement"
+          },
+          "3": {
+            "description": "Pas de tests sur les animaux"
+          },
+          "4": {
+            "description": "Alternatives véganes et végétales"
+          }
+        }
+      }
+    },
+    "dataSources": {
+      "title": "Sources de données",
+      "description": "Nous utilisons des sources de données fiables pour des évaluations précises",
+      "verified": "Données vérifiées",
+      "coverage": "Couverture mondiale",
+      "updates": "Mises à jour régulières",
+      "reliability": "Note de fiabilité",
+      "visitSource": "Visiter la source",
+      "quality": {
+        "title": "Assurance qualité des données",
+        "verification": {
+          "title": "Processus de vérification",
+          "description": "Toutes les sources de données subissent une vérification rigoureuse pour garantir précision et fiabilité."
+        },
+        "accuracy": {
+          "title": "Normes de précision",
+          "description": "Nous maintenons des normes de précision élevées grâce à une surveillance et une validation continues."
+        }
+      },
+      "attribution": {
+        "title": "Attribution des sources de données",
+        "description": "Transparence totale sur l'origine de nos données"
+      }
+    },
+    "relatedFeatures": {
+      "title": "Fonctionnalités associées",
+      "description": "Découvrez d'autres fonctionnalités qui fonctionnent ensemble pour améliorer votre expérience de vie durable.",
+      "fromCategory": "de cette catégorie",
+      "exploreAll": {
+        "title": "Explorer toutes les fonctionnalités",
+        "description": "Découvrez la gamme complète des fonctionnalités de durabilité de CORIA.",
+        "action": "Voir toutes les fonctionnalités"
+      },
+      "connections": {}
+    },
+    "categories": {
+      "scanning": {
+        "title": "Scan de produits",
+        "description": "Scannez et analysez instantanément des produits pour obtenir des informations sur la durabilité",
+        "badge": "Fonctionnalité principale",
+        "longDescription": "Notre technologie de scan avancée vous permet d'accéder instantanément à des informations complètes sur la durabilité pour des millions de produits. Scannez simplement un code-barres pour obtenir des scores détaillés sur l'impact environnemental, sanitaire et social.",
+        "benefits": [
+          "Reconnaissance instantanée des produits",
+          "Données complètes sur la durabilité",
+          "Capacité de scan hors ligne",
+          "Base de données mondiale de produits"
+        ],
+        "whyItMatters": {
+          "description": "Le scan de produits est la base de la consommation consciente, permettant des décisions éclairées au point d'achat.",
+          "impacts": [
+            {
+              "type": "environmental",
+              "title": "Réduire l'impact environnemental",
+              "description": "Faites des choix qui minimisent votre empreinte carbone et les dommages environnementaux."
+            },
+            {
+              "type": "health",
+              "title": "Améliorer les résultats de santé",
+              "description": "Choisissez des produits meilleurs pour votre santé et votre bien-être."
+            }
+          ],
+          "statistics": [
+            {
+              "value": "2,8M+",
+              "label": "Produits en base de données",
+              "description": "Couverture mondiale complète"
+            },
+            {
+              "value": "95%",
+              "label": "Précision du scan",
+              "description": "Reconnaissance fiable des produits"
+            }
+          ],
+          "cta": {
+            "title": "Commencez à scanner aujourd'hui",
+            "description": "Rejoignez des millions de personnes faisant des choix conscients grâce au scan de produits."
+          }
+        },
+        "relatedCategories": [
+          "ai-recommendations",
+          "sustainability-scoring"
+        ]
+      },
+      "analysis": "Analyse",
+      "tracking": "Suivi",
+      "community": {
+        "title": "Communauté",
+        "description": "Connectez-vous avec des passionnés de durabilité partageant les mêmes idées",
+        "badge": "Social",
+        "longDescription": "Rejoignez une communauté dynamique de personnes passionnées par la vie durable. Partagez des conseils, apprenez les uns des autres et motivez-vous mutuellement.",
+        "benefits": [
+          "Forums communautaires",
+          "Partage de conseils",
+          "Défis de groupe",
+          "Événements locaux"
+        ],
+        "whyItMatters": {
+          "description": "Le soutien communautaire amplifie les efforts individuels et crée un changement durable.",
+          "impacts": [
+            {
+              "type": "social",
+              "title": "Impact collectif",
+              "description": "Ensemble, obtenez des changements plus importants."
+            },
+            {
+              "type": "global",
+              "title": "Construire un mouvement",
+              "description": "Faites partie d'un mouvement mondial de durabilité."
+            }
+          ],
+          "statistics": [
+            {
+              "value": "500K+",
+              "label": "Membres de la communauté",
+              "description": "Dans le monde entier"
+            },
+            {
+              "value": "15K",
+              "label": "Contributions mensuelles",
+              "description": "Conseils et insights partagés"
+            }
+          ],
+          "cta": {
+            "title": "Rejoignez la communauté",
+            "description": "Connectez-vous avec des leaders durables."
+          }
+        },
+        "relatedCategories": [
+          "impact-tracking",
+          "ai-recommendations"
+        ]
+      },
+      "sustainability": "Durabilité",
+      "ai-recommendations": {
+        "title": "Recommandations IA",
+        "description": "Suggestions de produits personnalisées basées sur vos valeurs et préférences",
+        "badge": "Alimenté par l'IA",
+        "longDescription": "Notre système d'IA apprend de vos décisions et fournit des recommandations sur mesure alignées sur vos objectifs de durabilité et vos préférences personnelles.",
+        "benefits": [
+          "Suggestions personnalisées",
+          "Apprentissage continu",
+          "Recommandations axées sur la durabilité",
+          "Filtrage basé sur les préférences"
+        ],
+        "whyItMatters": {
+          "description": "Les recommandations IA vous aident à prendre de meilleures décisions plus rapidement et soutiennent votre mode de vie durable.",
+          "impacts": [
+            {
+              "type": "environmental",
+              "title": "Choix plus durables",
+              "description": "Trouvez des produits qui correspondent à vos valeurs environnementales."
+            },
+            {
+              "type": "social",
+              "title": "Options éthiques",
+              "description": "Découvrez des produits de marques socialement responsables."
+            }
+          ],
+          "statistics": [
+            {
+              "value": "85%",
+              "label": "Précision des recommandations",
+              "description": "Suggestions très pertinentes"
+            },
+            {
+              "value": "1M+",
+              "label": "Utilisateurs actifs",
+              "description": "Font confiance aux recommandations IA"
+            }
+          ],
+          "cta": {
+            "title": "Obtenez des recommandations personnalisées",
+            "description": "Laissez l'IA vous aider à prendre de meilleures décisions."
+          }
+        },
+        "relatedCategories": [
+          "scanning",
+          "impact-tracking"
+        ]
+      },
+      "impact-tracking": {
+        "title": "Suivi d'impact",
+        "description": "Surveillez votre impact environnemental et social au fil du temps",
+        "badge": "Insights",
+        "longDescription": "Suivez votre parcours de durabilité avec des métriques complètes montrant votre impact positif sur l'environnement, la santé et la société.",
+        "benefits": [
+          "Métriques d'impact détaillées",
+          "Analyse des tendances historiques",
+          "Suivi par catégorie",
+          "Objectifs personnalisés"
+        ],
+        "whyItMatters": {
+          "description": "Comprendre votre impact motive les progrès continus et montre la vraie valeur des choix durables.",
+          "impacts": [
+            {
+              "type": "environmental",
+              "title": "Mesurer les économies de carbone",
+              "description": "Voyez comment vos choix réduisent les émissions de carbone."
+            },
+            {
+              "type": "global",
+              "title": "Contribuer au changement mondial",
+              "description": "Comprenez votre rôle dans les mouvements de durabilité plus larges."
+            }
+          ],
+          "statistics": [
+            {
+              "value": "5,2M",
+              "label": "Tonnes de CO2 évitées",
+              "description": "Par les utilisateurs CORIA"
+            },
+            {
+              "value": "92%",
+              "label": "Utilisateurs motivés",
+              "description": "Rapport d'engagement accru"
+            }
+          ],
+          "cta": {
+            "title": "Commencez à suivre votre impact",
+            "description": "Voyez la différence que vous faites."
+          }
+        },
+        "relatedCategories": [
+          "sustainability-scoring",
+          "data-insights"
+        ]
+      },
+      "smart-pantry": {
+        "title": "Garde-manger intelligent",
+        "description": "Gérez votre inventaire alimentaire et réduisez le gaspillage",
+        "badge": "Pratique",
+        "longDescription": "Gardez une trace de votre inventaire alimentaire, recevez des alertes d'expiration et obtenez des suggestions de recettes basées sur ce que vous avez.",
+        "benefits": [
+          "Suivi des stocks",
+          "Rappels d'expiration",
+          "Suggestions de recettes",
+          "Réduction du gaspillage"
+        ],
+        "whyItMatters": {
+          "description": "Le gaspillage alimentaire contribue de manière significative aux problèmes environnementaux. La gestion intelligente du garde-manger aide à réduire le gaspillage et à économiser de l'argent.",
+          "impacts": [
+            {
+              "type": "environmental",
+              "title": "Réduire le gaspillage",
+              "description": "Empêchez les aliments de finir dans les décharges."
+            },
+            {
+              "type": "economic",
+              "title": "Économiser de l'argent",
+              "description": "Réduisez les achats alimentaires inutiles."
+            }
+          ],
+          "statistics": [
+            {
+              "value": "30%",
+              "label": "Gaspillage réduit",
+              "description": "Économie moyenne des utilisateurs"
+            },
+            {
+              "value": "200€",
+              "label": "Économies annuelles",
+              "description": "Par foyer"
+            }
+          ],
+          "cta": {
+            "title": "Commencez avec le garde-manger intelligent",
+            "description": "Réduisez le gaspillage et économisez de l'argent."
+          }
+        },
+        "relatedCategories": [
+          "impact-tracking",
+          "ai-recommendations"
+        ]
+      },
+      "sustainability-scoring": {
+        "title": "Notation de durabilité",
+        "description": "Évaluations complètes de l'impact environnemental, sanitaire et social",
+        "badge": "Métriques principales",
+        "longDescription": "Notre système de notation multidimensionnel évalue les produits selon plusieurs dimensions de durabilité, vous offrant une vue complète de l'impact d'un produit.",
+        "benefits": [
+          "Notations multidimensionnelles",
+          "Méthodologie transparente",
+          "Mises à jour régulières",
+          "Insights comparatifs"
+        ],
+        "whyItMatters": {
+          "description": "Les notations de durabilité simplifient les informations complexes, facilitant les choix conscients.",
+          "impacts": [
+            {
+              "type": "environmental",
+              "title": "Comprendre l'impact environnemental",
+              "description": "Métriques claires pour les empreintes écologiques."
+            },
+            {
+              "type": "health",
+              "title": "Choix plus sains",
+              "description": "Identifiez les produits avec de meilleurs profils de santé."
+            }
+          ],
+          "statistics": [
+            {
+              "value": "2,8M+",
+              "label": "Produits notés",
+              "description": "Base de données complète"
+            },
+            {
+              "value": "98%",
+              "label": "Confiance des utilisateurs",
+              "description": "Dans la précision des notations"
+            }
+          ],
+          "cta": {
+            "title": "Explorez les notations de produits",
+            "description": "Prenez des décisions éclairées avec des notations fiables."
+          }
+        },
+        "relatedCategories": [
+          "scanning",
+          "impact-tracking"
+        ]
+      },
+      "premium-features": {
+        "title": "Fonctionnalités Premium",
+        "description": "Outils avancés pour les passionnés sérieux de durabilité",
+        "badge": "Premium",
+        "longDescription": "Débloquez des fonctionnalités puissantes, y compris des analyses détaillées, des rapports personnalisés et un support prioritaire.",
+        "benefits": [
+          "Scans illimités",
+          "Rapports détaillés",
+          "Support prioritaire",
+          "Fonctions d'export"
+        ],
+        "whyItMatters": {
+          "description": "Les fonctionnalités premium offrent des insights plus profonds et plus de contrôle sur votre parcours de durabilité.",
+          "impacts": [
+            {
+              "type": "environmental",
+              "title": "Insights plus profonds",
+              "description": "Accès aux métriques environnementales avancées."
+            },
+            {
+              "type": "economic",
+              "title": "Meilleure valeur",
+              "description": "Décisions d'achat plus éclairées."
+            }
+          ],
+          "statistics": [
+            {
+              "value": "3x",
+              "label": "Plus d'insights",
+              "description": "Par rapport au plan gratuit"
+            },
+            {
+              "value": "95%",
+              "label": "Taux de satisfaction",
+              "description": "Parmi les utilisateurs premium"
+            }
+          ],
+          "cta": {
+            "title": "Passez à Premium",
+            "description": "Débloquez la fonctionnalité complète de CORIA."
+          }
+        },
+        "relatedCategories": [
+          "data-insights",
+          "impact-tracking"
+        ]
+      },
+      "data-insights": {
+        "title": "Insights de données",
+        "description": "Analyses approfondies de vos données de durabilité",
+        "badge": "Analytique",
+        "longDescription": "Obtenez des insights exploitables à partir de vos données de durabilité avec des analyses et des visualisations avancées.",
+        "benefits": [
+          "Analyses détaillées",
+          "Visualisations de tendances",
+          "Insights prédictifs",
+          "Fonctions d'export"
+        ],
+        "whyItMatters": {
+          "description": "Les insights basés sur les données vous aident à comprendre les progrès et à prendre des décisions éclairées sur votre parcours de durabilité.",
+          "impacts": [
+            {
+              "type": "environmental",
+              "title": "Optimiser l'impact",
+              "description": "Identifiez les domaines pour une amélioration maximale."
+            },
+            {
+              "type": "global",
+              "title": "Suivre les progrès",
+              "description": "Voyez votre évolution au fil du temps."
+            }
+          ],
+          "statistics": [
+            {
+              "value": "50+",
+              "label": "Métriques de données",
+              "description": "Suivi complet"
+            },
+            {
+              "value": "90%",
+              "label": "Découverte des utilisateurs",
+              "description": "Nouveaux insights à partir des données"
+            }
+          ],
+          "cta": {
+            "title": "Explorez vos données",
+            "description": "Découvrez des modèles et opportunités cachés."
+          }
+        },
+        "relatedCategories": [
+          "impact-tracking",
+          "premium-features"
+        ]
+      }
+    },
+    "features": {
+      "barcode-scan": {
+        "title": "Scan de code-barres",
+        "shortDescription": "Scannez et analysez instantanément des produits",
+        "longDescription": "Utilisez votre appareil photo pour scanner des codes-barres et obtenir des informations instantanées sur la durabilité",
+        "benefits": [
+          "Résultats instantanés",
+          "Fonction hors ligne",
+          "Base de données mondiale de produits"
+        ],
+        "howItWorks": "Pointez simplement votre appareil photo vers un code-barres pour obtenir des informations détaillées sur le produit et des notations de durabilité.",
+        "technicalDetails": "Utilise un traitement d'image avancé et des algorithmes de reconnaissance de motifs pour une reconnaissance rapide et précise des codes-barres."
+      },
+      "environmental-score": {
+        "title": "Score environnemental",
+        "shortDescription": "Évaluations complètes de l'impact environnemental",
+        "longDescription": "Comprenez l'impact environnemental des produits avec des notations détaillées",
+        "benefits": [
+          "Analyse de l'empreinte carbone",
+          "Évaluation de l'utilisation de l'eau",
+          "Mesure de l'impact des déchets"
+        ],
+        "howItWorks": "Nous agrégeons des données de plusieurs sources pour créer une évaluation complète de l'impact environnemental.",
+        "technicalDetails": "Utilise un système de notation multidimensionnel avec des facteurs tels que les émissions de CO2, l'utilisation de l'eau, les déchets et l'analyse du cycle de vie."
+      },
+      "personalized-suggestions": {
+        "title": "Suggestions personnalisées",
+        "shortDescription": "Recommandations de produits alimentées par l'IA",
+        "longDescription": "Obtenez des suggestions de produits sur mesure basées sur vos valeurs et préférences",
+        "benefits": [
+          "Apprentissage automatique",
+          "Basé sur les préférences",
+          "Amélioration continue"
+        ],
+        "howItWorks": "Notre système d'IA apprend de vos décisions pour fournir des recommandations de plus en plus pertinentes.",
+        "technicalDetails": "Utilise le filtrage collaboratif et des algorithmes de recommandation basés sur le contenu pour générer des suggestions personnalisées."
+      },
+      "carbon-footprint": {
+        "title": "Empreinte carbone",
+        "shortDescription": "Suivez votre impact carbone",
+        "longDescription": "Surveillez votre empreinte carbone et voyez comment vos choix font la différence",
+        "benefits": [
+          "Suivi en temps réel",
+          "Tendances historiques",
+          "Insights exploitables"
+        ],
+        "howItWorks": "Nous calculons l'impact carbone de vos choix de produits et montrons les économies cumulatives.",
+        "technicalDetails": "Intègre des données d'analyse du cycle de vie et des facteurs d'émission pour fournir des estimations précises de l'empreinte carbone."
+      }
+    },
+    "sustainabilityInsights": {
+      "title": "Insights de durabilité",
+      "description": "Analyses approfondies et tendances pour des décisions éclairées"
+    },
+    "socialCommitment": {
+      "title": "Engagement social",
+      "description": "Informations transparentes sur les impacts éthiques et sociaux"
     }
-  },
-  "pricing": {
-    "title": "Tarifs",
-    "subtitle": "Choisissez le plan qui vous convient",
-    "free": "Gratuit",
-    "premium": "Premium",
-    "monthly": "mensuel",
-    "currency": "₺",
-    "getStarted": "Commencer",
-    "choosePlan": "Choisir le plan"
   },
   "footer": {
     "description": "Faites des choix intelligents pour une vie durable",
+    "product": {
+      "title": "Produit",
+      "features": "Fonctionnalités",
+      "pricing": "Tarifs",
+      "foundation": "Foundation",
+      "blog": "Blog"
+    },
+    "company": {
+      "title": "Entreprise",
+      "about": "À propos",
+      "contact": "Contact",
+      "careers": "Carrières"
+    },
+    "resources": {
+      "title": "Ressources",
+      "faq": "FAQ",
+      "foundationApply": "Candidature Foundation"
+    },
+    "legal": {
+      "title": "Légal",
+      "privacy": "Politique de confidentialité",
+      "terms": "Conditions d'utilisation",
+      "kvkk": "RGPD",
+      "cookies": "Politique de cookies"
+    },
+    "social": {
+      "twitter": "CORIA sur Twitter",
+      "linkedin": "CORIA sur LinkedIn",
+      "instagram": "CORIA sur Instagram",
+      "medium": "CORIA sur Medium",
+      "youtube": "CORIA sur YouTube"
+    },
     "newsletter": {
       "title": "Newsletter",
+      "description": "Recevez des conseils pour une vie durable et des mises à jour",
       "placeholder": "Votre adresse e-mail",
-      "subscribe": "S'abonner"
+      "button": "S'abonner"
     },
-    "links": {
-      "product": "Produit",
-      "company": "Entreprise",
-      "support": "Support",
-      "legal": "Légal"
-    },
-    "copyright": "© 2024 CORIA. Tous droits réservés."
+    "copyright": {
+      "text": "© {year} CORIA. Tous droits réservés."
+    }
   },
   "blog": {
     "title": "Blog",
@@ -102,8 +783,39 @@
     "hero": {
       "title": "Construire ensemble un avenir durable",
       "subtitle": "Nous croyons que de petits choix conscients peuvent créer un impact positif massif sur notre planète. CORIA permet à des millions de personnes de prendre des décisions durables chaque jour.",
+      "description": "Nous croyons que de petits choix conscients peuvent créer un impact positif massif sur notre planète. Chaque produit scanné, chaque alternative durable choisie, chaque décision consciente contribue à un mouvement mondial vers une consommation responsable. CORIA rend ce parcours facile, accessible et enrichissant pour tous.",
       "downloadIos": "Download on App Store",
       "downloadAndroid": "Get it on Google Play"
+    },
+    "vision": {
+      "title": "Notre vision",
+      "description": "Un monde où chaque décision d'achat contribue à une planète plus durable, équitable et saine pour les générations futures. Nous imaginons un avenir où la consommation consciente n'est pas un luxe mais la norme, où la transparence stimule le changement positif, et où la technologie autonomise chacun à faire la différence."
+    },
+    "positioning": {
+      "title": "Notre positionnement",
+      "description": "CORIA se situe à l'intersection de la technologie et de la durabilité, comblant le fossé entre les intentions du consommateur et l'action. Nous ne sommes pas seulement une application - nous sommes un mouvement qui transforme la façon dont le monde pense à la consommation. En combinant la puissance de l'IA, des données complètes sur les produits et l'engagement communautaire, nous créons un écosystème où des choix durables sont accessibles à tous."
+    },
+    "roadmap": {
+      "title": "Notre feuille de route",
+      "timeline": [
+        {
+          "year": "2025 Q3",
+          "detail": "Première phase MVP"
+        },
+        {
+          "year": "2025 Q4",
+          "detail": "Lancement et processus de sortie du token"
+        }
+      ]
+    },
+    "partnerships": {
+      "title": "Nos partenariats",
+      "items": [
+        {
+          "name": "Heaven ICM",
+          "description": "Notre partenaire stratégique"
+        }
+      ]
     },
     "missionVision": {
       "title": "Notre mission et vision",
@@ -382,14 +1094,32 @@
         "messageTooShort": "Le message doit contenir au moins 10 caractères"
       },
       "charactersRemaining": "caractères restants",
-      "submit": "Envoyer le Message",
+      "submit": "Envoyer le message",
       "submitting": "Envoi en cours...",
       "success": {
-        "title": "Message Envoyé avec Succès !",
-        "message": "Merci de nous avoir contactés. Nous avons reçu votre message et répondrons dans les 24 heures.",
-        "sendAnother": "Envoyer un Autre Message"
+        "title": "Message envoyé !",
+        "message": "Merci de nous avoir contactés. Nous vous répondrons bientôt.",
+        "sendAnother": "Envoyer un autre message"
       },
-      "messageHelp": "Please share as much detail as possible."
+      "messageHelp": "Please share as much detail as possible.",
+      "name": {
+        "label": "Nom",
+        "placeholder": "Votre nom complet"
+      },
+      "email": {
+        "label": "E-mail",
+        "placeholder": "votre.email@exemple.fr"
+      },
+      "subject": {
+        "label": "Sujet",
+        "placeholder": "Comment pouvons-nous vous aider ?"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Dites-nous comment nous pouvons vous aider..."
+      },
+      "sending": "Envoi en cours...",
+      "error": "Erreur lors de l'envoi du message. Veuillez réessayer."
     },
     "support": {
       "title": "Système de Tickets de Support",
@@ -571,9 +1301,17 @@
       "description": "Partner with CORIA for data collaborations, enterprise enablement, or community programs. Our team will get back within one business day.",
       "primaryLabel": "partners@coria.app",
       "secondaryLabel": "Book a meeting"
+    },
+    "info": {
+      "title": "Informations de contact",
+      "email": "E-mail",
+      "phone": "Téléphone",
+      "address": "Adresse",
+      "followUs": "Suivez-nous"
     }
   },
   "common": {
+    "skipToMainContent": "Passer au contenu principal",
     "loading": "Chargement...",
     "error": "Une erreur s'est produite",
     "retry": "Réessayer",
@@ -582,7 +1320,12 @@
     "cancel": "Annuler",
     "continue": "Continuer",
     "back": "Retour",
-    "next": "Suivant"
+    "next": "Suivant",
+    "aria": {
+      "daCoriaUygulamasınıIndirin": " télécharger l'application CORIA",
+      "coriaIstatistikleriVeEtkiGöstergeleri": "Statistiques CORIA et indicateurs d'impact",
+      "coriaEtkiGöstergesi": "Indicateur d'impact CORIA"
+    }
   },
   "consent": {
     "banner": {
@@ -763,6 +1506,39 @@
           ]
         }
       ]
+    },
+    "features": {
+      "title": "Plateforme 360° pour la vie végane",
+      "subtitle": "CORIA rassemble l'analyse de produits, les conseils IA, le garde-manger intelligent, les scores ESG, le suivi carbone et les recommandations communautaires—tout ce dont vous avez besoin pour une consommation consciente.",
+      "cta": "Explorer toutes les fonctionnalités",
+      "veganAllergen": {
+        "title": "Analyse Végane & Allergènes",
+        "description": "Vérifiez en quelques secondes le statut végane, les allergènes et les risques d'ingrédients des produits"
+      },
+      "aiAssistant": {
+        "title": "Assistant IA",
+        "description": "Obtenez des recommandations personnalisées et des conseils de votre compagnon IA pour un mode de vie végane"
+      },
+      "smartPantry": {
+        "title": "Garde-manger Intelligent",
+        "description": "Suivi intelligent des stocks avec alertes d'expiration et automatisation de réduction des déchets"
+      },
+      "esgScores": {
+        "title": "Scores ESG",
+        "description": "Transparence environnementale, sociale et de gouvernance pour chaque marque et produit"
+      },
+      "carbonWater": {
+        "title": "Suivi Carbone/Eau",
+        "description": "Surveillez et réduisez votre empreinte environnementale avec des tableaux de bord d'impact en temps réel"
+      },
+      "community": {
+        "title": "Recommandations Communautaires",
+        "description": "Découvrez les produits et alternatives recommandés par la communauté des consommateurs conscients"
+      }
+    },
+    "audience": {
+      "title": "Expérience personnalisée pour chaque persona",
+      "description": "Des candidats véganes aux défenseurs de la durabilité, des parents aux passionnés de santé—CORIA s'adapte à votre parcours"
     },
     "featureHighlights": {
       "badge": "360° platform",
@@ -1080,6 +1856,742 @@
             "avatar": "SJ"
           }
         ]
+      }
+    }
+  },
+  "legal": {
+    "privacy": {
+      "title": "Politique de confidentialité",
+      "lastUpdated": "Dernière mise à jour",
+      "intro": "Cette politique de confidentialité décrit comment CORIA collecte, utilise et protège vos données personnelles.",
+      "sections": {
+        "dataCollection": {
+          "title": "Collecte de données",
+          "content": "Nous collectons les informations que vous nous fournissez lorsque vous utilisez CORIA, y compris :"
+        },
+        "dataUsage": {
+          "title": "Utilisation des données",
+          "content": "Nous utilisons vos données pour :"
+        },
+        "dataProtection": {
+          "title": "Protection des données",
+          "content": "Nous mettons en œuvre des mesures de sécurité appropriées pour protéger vos données personnelles."
+        },
+        "yourRights": {
+          "title": "Vos droits",
+          "content": "Vous avez le droit d'accéder, de corriger ou de supprimer vos données personnelles."
+        },
+        "cookies": {
+          "title": "Cookies",
+          "content": "Nous utilisons des cookies pour améliorer votre expérience sur notre plateforme."
+        },
+        "thirdParty": {
+          "title": "Services tiers",
+          "content": "Nous pouvons utiliser des services tiers qui ont leurs propres politiques de confidentialité."
+        },
+        "contact": {
+          "title": "Contact",
+          "content": "Si vous avez des questions sur cette politique de confidentialité, veuillez nous contacter."
+        }
+      }
+    }
+  },
+  "pwa": {
+    "install": {
+      "title": "Installer CORIA",
+      "description": "Installez CORIA sur votre écran d'accueil pour un accès rapide",
+      "button": "Installer",
+      "dismiss": "Pas maintenant"
+    },
+    "update": {
+      "title": "Mise à jour disponible",
+      "description": "Une nouvelle version de CORIA est disponible",
+      "button": "Mettre à jour",
+      "updating": "Mise à jour en cours...",
+      "dismiss": "Plus tard"
+    },
+    "notifications": {
+      "title": "Activer les notifications",
+      "description": "Recevez des mises à jour sur votre parcours de durabilité",
+      "allow": "Activer",
+      "dismiss": "Pas maintenant"
+    }
+  },
+  "pricing": {
+    "title": "Tarifs",
+    "subtitle": "Choisissez le plan qui vous convient",
+    "tagline": "Numérisation illimitée pour tous. Alertes personnalisées, recettes et alternatives, automatisation intelligente du garde-manger et rapports avancés → Premium.",
+    "mostPopular": "Le plus populaire",
+    "free": "Gratuit",
+    "meta": {
+      "title": "Tarifs CORIA - Plans Gratuit et Premium",
+      "description": "Plan gratuit avec fonctionnalités de base ou Premium avec recommandations personnalisées, chat AI illimité et automatisation intelligente du garde-manger. Essai gratuit de 14 jours."
+    },
+    "trial": {
+      "duration": "14 jours",
+      "noCard": "Aucune carte requise",
+      "afterTrial": "Bascule automatiquement vers le plan gratuit après l'essai",
+      "description": "Essayez les fonctionnalités Premium gratuitement pendant 14 jours. Aucune carte de crédit requise."
+    },
+    "plans": {
+      "free": {
+        "name": "Gratuit",
+        "price": "0",
+        "period": "pour toujours",
+        "description": "Commencez avec les fonctionnalités de base",
+        "highlights": [
+          "Numérisation illimitée",
+          "Résumé nutritionnel de base",
+          "Garde-manger de 20 articles",
+          "10 messages AI/jour"
+        ],
+        "cta": "Commencer",
+        "popular": false
+      },
+      "premium": {
+        "name": "Premium",
+        "description": "Expérience complète avec toutes les fonctionnalités",
+        "highlights": [
+          "Recommandations personnalisées",
+          "Chat AI illimité",
+          "Recettes et alternatives",
+          "Automatisation intelligente du garde-manger",
+          "Planificateur de repas",
+          "Rapports détaillés"
+        ],
+        "cta": "Passer à Premium",
+        "popular": true
+      }
+    },
+    "billingPeriods": {
+      "monthly": "Mensuel",
+      "yearly": "Annuel",
+      "family": "Plan Famille",
+      "lifetime": "À vie"
+    },
+    "regional": {
+      "title": "Tarification régionale",
+      "subtitle": "Consultez les tarifs dans votre devise locale",
+      "vatIncluded": "TVA incluse",
+      "discount": "{percent}% de réduction",
+      "perMonth": "/mois",
+      "perYear": "/an",
+      "oneTime": "Paiement unique",
+      "regions": {
+        "US": {
+          "name": "États-Unis",
+          "currency": "USD",
+          "monthly": "$5,49",
+          "yearly": "$39,99",
+          "family": "$9,99",
+          "lifetime": "$99"
+        },
+        "EU": {
+          "name": "Zone Euro",
+          "currency": "EUR",
+          "monthly": "€4,99",
+          "yearly": "€39,99",
+          "family": "€10,49",
+          "lifetime": "€109"
+        },
+        "TR": {
+          "name": "Turquie",
+          "currency": "TRY",
+          "monthly": "₺89,99",
+          "yearly": "₺649,99",
+          "family": "₺139,99",
+          "lifetime": "₺1 499"
+        }
+      },
+      "note": "Les prix peuvent varier selon la région et la boutique d'applications"
+    },
+    "features": {
+      "title": "Comparaison des fonctionnalités",
+      "subtitle": "Découvrez les différences entre les plans Gratuit et Premium",
+      "scanningAndNutrition": {
+        "name": "Numérisation et résumé nutritionnel",
+        "free": "Illimité",
+        "premium": "Illimité",
+        "note": "Numérisation illimitée pour tous"
+      },
+      "sustainabilityMetrics": {
+        "name": "Métriques de durabilité",
+        "free": "Consultation",
+        "premium": "Rapports détaillés",
+        "note": "Gratuit : consultation ; Premium : analyse approfondie et rapports"
+      },
+      "alternativesAndRecipes": {
+        "name": "Alternatives et recettes",
+        "free": false,
+        "premium": true,
+        "note": "Fonctionnalité Premium",
+        "tooltip": "Passez à Premium pour des alternatives et recettes personnalisées"
+      },
+      "smartPantry": {
+        "name": "Garde-manger intelligent",
+        "free": "20 articles",
+        "premium": "Illimité + Automatisation",
+        "note": "Gratuit : 20 articles ; Premium : illimité + automatisation",
+        "tooltip": "Limite de 20 articles du garde-manger atteinte—passez à Premium pour une capacité illimitée et des alertes automatiques"
+      },
+      "shoppingList": {
+        "name": "Liste de courses",
+        "free": "Illimitée",
+        "premium": "Illimitée + Partage + Tri intelligent",
+        "note": "Illimitée pour tous ; Premium : partage + tri intelligent"
+      },
+      "aiChat": {
+        "name": "Assistant de chat AI",
+        "free": "10 messages/jour (allergènes uniquement)",
+        "premium": "Illimité + Préférences personnelles + Historique",
+        "note": "Gratuit : 10 messages/jour, allergènes uniquement ; Premium : illimité + personnalisé",
+        "tooltip": "Limite de 10 messages quotidiens atteinte—passez à Premium pour des suggestions personnalisées et un chat illimité"
+      },
+      "mealPlanner": {
+        "name": "Planificateur de repas",
+        "free": false,
+        "premium": true,
+        "note": "Fonctionnalité Premium",
+        "tooltip": "La planification des repas est une fonctionnalité Premium"
+      },
+      "scanHistory": {
+        "name": "Historique des numérisations",
+        "free": "1 mois",
+        "premium": "Illimité",
+        "note": "Gratuit : 1 mois ; Premium : illimité"
+      },
+      "reports": {
+        "name": "Rapports d'impact",
+        "free": "Mensuel basique",
+        "premium": "Détaillé hebdomadaire"
+      },
+      "weeklySummary": {
+        "name": "Résumé hebdomadaire",
+        "free": "Basique",
+        "premium": "Détaillé + Analyse des tendances",
+        "note": "Gratuit : basique ; Premium : détaillé + analyse des tendances"
+      },
+      "notifications": {
+        "name": "Notifications",
+        "free": "Basiques",
+        "premium": "Intelligentes",
+        "note": "Gratuit : basiques ; Premium : notifications intelligentes"
+      },
+      "ads": {
+        "name": "Publicités",
+        "free": false,
+        "premium": false,
+        "note": "Aucune publicité dans les deux plans"
+      }
+    },
+    "paywallTriggers": {
+      "title": "Pourquoi Premium ?",
+      "description": "Vous adorerez le forfait gratuit, mais Premium débloque l'expérience CORIA complète avec des recommandations personnalisées et des fonctionnalités illimitées.",
+      "trustSignal": "Essai gratuit de 14 jours • Aucune carte de crédit requise",
+      "alternatives": {
+        "title": "Passez à Premium pour des alternatives personnalisées",
+        "description": "Découvrez des alternatives de produits personnalisées qui correspondent à vos préférences et valeurs",
+        "cta": "Débloquer avec Premium",
+        "featureHighlight": "Recommandations basées sur l'IA selon vos valeurs"
+      },
+      "recipes": {
+        "title": "Recettes en Premium",
+        "description": "Créez des recettes délicieuses et durables avec vos produits",
+        "cta": "Accéder aux recettes",
+        "featureHighlight": "Recettes personnalisées avec les produits de votre garde-manger"
+      },
+      "aiLimit": {
+        "title": "Vous avez atteint la limite quotidienne de 10 messages",
+        "description": "Passez à Premium pour des suggestions personnalisées et un chat illimité",
+        "cta": "Passer au chat AI illimité",
+        "featureHighlight": "Conversations IA illimitées pour toutes vos questions"
+      },
+      "pantryLimit": {
+        "title": "Vous avez atteint la limite de 20 articles du garde-manger",
+        "description": "Passez à Premium pour un stockage de produits illimité et des alertes automatiques",
+        "cta": "Augmenter la capacité du garde-manger",
+        "featureHighlight": "Suivi illimité de produits avec alertes d'expiration intelligentes"
+      },
+      "mealPlanner": {
+        "title": "Le planificateur de repas est une fonctionnalité Premium",
+        "description": "Créez des plans de repas hebdomadaires et obtenez des listes de courses automatiques",
+        "cta": "Activer le planificateur de repas",
+        "featureHighlight": "Planification hebdomadaire avec listes de courses automatisées"
+      }
+    },
+    "upgradeReasons": {
+      "title": "Pourquoi Premium ?",
+      "reasons": [
+        {
+          "title": "Expérience personnalisée",
+          "description": "Suggestions et alternatives adaptées à vos préférences et valeurs",
+          "icon": "user-check"
+        },
+        {
+          "title": "Fonctionnalités illimitées",
+          "description": "Aucune limite sur le chat AI, la gestion du garde-manger et l'historique des numérisations",
+          "icon": "infinity"
+        },
+        {
+          "title": "Analyse avancée",
+          "description": "Rapports de durabilité détaillés et analyses des tendances",
+          "icon": "chart-line"
+        },
+        {
+          "title": "Automatisation",
+          "description": "Alertes intelligentes du garde-manger et listes de courses automatiques",
+          "icon": "bot"
+        }
+      ]
+    },
+    "comparison": {
+      "title": "Comparaison détaillée des fonctionnalités",
+      "free": "Gratuit",
+      "premium": "Premium",
+      "available": "Disponible",
+      "notAvailable": "Non disponible",
+      "limited": "Limité",
+      "unlimited": "Illimité"
+    },
+    "trust": {
+      "title": "Pourquoi CORIA Premium ?",
+      "benefits": [
+        {
+          "title": "Essai gratuit de 14 jours",
+          "description": "Essayez toutes les fonctionnalités Premium sans carte de crédit. Bascule automatiquement vers le plan gratuit après l'essai.",
+          "icon": "gift"
+        },
+        {
+          "title": "Annulation à tout moment",
+          "description": "Aucun engagement à long terme. Annulez votre abonnement à tout moment en un clic.",
+          "icon": "x-circle"
+        },
+        {
+          "title": "Paiements sécurisés",
+          "description": "Vos informations de paiement sont protégées par la sécurité de la boutique d'applications.",
+          "icon": "shield-check"
+        },
+        {
+          "title": "Mises à jour régulières",
+          "description": "Améliorations continues et nouvelles fonctionnalités ajoutées régulièrement.",
+          "icon": "refresh"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Questions fréquemment posées",
+      "questions": [
+        {
+          "question": "Comment fonctionne l'essai de 14 jours ?",
+          "answer": "Lorsque vous vous inscrivez à Premium, vous bénéficiez d'un accès gratuit à toutes les fonctionnalités pendant 14 jours. Aucune carte de crédit requise. Après la fin de l'essai, vous basculez automatiquement vers le plan gratuit."
+        },
+        {
+          "question": "Que se passe-t-il après la fin de l'essai ?",
+          "answer": "À la fin de l'essai, vous basculez automatiquement vers le plan gratuit. Vos données sont conservées et vous continuez d'accéder aux fonctionnalités de base. Vous pouvez passer à Premium à tout moment."
+        },
+        {
+          "question": "Combien j'économise avec le plan annuel ?",
+          "answer": "Le plan annuel permet d'économiser environ 35 % par rapport à la facturation mensuelle. Par exemple, en Turquie, vous payez ₺649,99/an au lieu de ₺1 079,88 (₺89,99/mois)."
+        },
+        {
+          "question": "Qu'est-ce que le plan Famille ?",
+          "answer": "Le plan Famille permet à jusqu'à 6 personnes d'utiliser les fonctionnalités Premium. Chaque membre de la famille obtient son propre compte avec une expérience personnalisée et un accès à toutes les fonctionnalités Premium."
+        },
+        {
+          "question": "Que signifie À vie ?",
+          "answer": "Le plan À vie offre un accès à vie aux fonctionnalités Premium avec un paiement unique. Au lieu d'un abonnement mensuel ou annuel, vous payez une fois et obtenez toutes les fonctionnalités en permanence."
+        },
+        {
+          "question": "Puis-je changer de plan à tout moment ?",
+          "answer": "Oui, vous pouvez passer à Premium ou revenir au plan gratuit à tout moment. Les modifications prennent effet immédiatement et la facturation est calculée au prorata."
+        },
+        {
+          "question": "Quels modes de paiement acceptez-vous ?",
+          "answer": "Nous acceptons toutes les principales cartes de crédit, cartes de débit et méthodes de paiement mobile via la boutique d'applications (App Store/Google Play)."
+        },
+        {
+          "question": "Mes données sont-elles en sécurité ?",
+          "answer": "Oui, toutes vos données sont cryptées et stockées en toute sécurité. Même si vous annulez Premium, vos données restent protégées et accessibles avec le plan gratuit."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Ce que disent les utilisateurs Premium",
+      "reviews": [
+        {
+          "name": "Ayşe K.",
+          "location": "Istanbul",
+          "rating": 5,
+          "text": "La fonctionnalité de chat AI illimité est incroyable ! Je peux poser toutes mes questions sans m'inquiéter de la limite quotidienne de messages. Les recommandations personnalisées fonctionnent vraiment.",
+          "feature": "Chat AI illimité"
+        },
+        {
+          "name": "Mehmet D.",
+          "location": "Ankara",
+          "rating": 5,
+          "text": "L'automatisation intelligente du garde-manger facilite le suivi des dates de péremption. J'ai réduit le gaspillage alimentaire de 40 % !",
+          "feature": "Garde-manger intelligent"
+        },
+        {
+          "name": "Zeynep M.",
+          "location": "Izmir",
+          "rating": 5,
+          "text": "Les suggestions de recettes et d'alternatives sont fantastiques. Je découvre chaque semaine de nouveaux repas durables. Très heureuse d'être passée à Premium.",
+          "feature": "Recettes et alternatives"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Prêt pour une vie plus durable ?",
+      "description": "Accédez à des recommandations personnalisées et à des fonctionnalités illimitées avec CORIA Premium. Essayez gratuitement pendant 14 jours.",
+      "startTrial": "Essayer 14 jours gratuitement",
+      "downloadIos": "Télécharger sur l'App Store",
+      "downloadAndroid": "Télécharger sur Google Play",
+      "note": "Aucune carte de crédit requise • Bascule automatiquement vers le plan gratuit après l'essai"
+    },
+    "support": {
+      "title": "Support client",
+      "description": "Des questions ? Nous sommes là pour vous aider.",
+      "methods": [
+        {
+          "title": "Support par e-mail",
+          "description": "Réponse sous 24 heures",
+          "contact": "support@coria.app",
+          "icon": "mail"
+        },
+        {
+          "title": "Chat en direct",
+          "description": "Lundi-vendredi 9h-18h",
+          "contact": "Démarrer le chat",
+          "icon": "message-circle"
+        },
+        {
+          "title": "Centre d'aide",
+          "description": "FAQ et guides",
+          "contact": "Visiter le centre d'aide",
+          "icon": "help-circle"
+        }
+      ]
+    }
+  },
+  "foundation": {
+    "hero": {
+      "title": "CORIA Foundation",
+      "subtitle": "Ensemble, nous créons un impact plus grand",
+      "description": "CORIA établit la CORIA Foundation pour investir une partie des revenus de l'application dans des projets de durabilité. Avec un token Solana spécial à émettre sur la plateforme Believe, nous participerons à l'écosystème blockchain et utiliserons les revenus des frais de tokens pour financer des projets d'énergie verte, de véganisme et de durabilité.",
+      "cta": "Demander un financement de projet"
+    },
+    "tokenEconomy": {
+      "title": "Économie du token CORIA",
+      "description": "Cas d'utilisation du token basé sur Solana avec intégration de la plateforme Believe",
+      "features": {
+        "0": {
+          "title": "Token CORIA",
+          "description": "Token Solana spécial à émettre via la plateforme Believe"
+        },
+        "1": {
+          "title": "Modèle de distribution des frais",
+          "description": "Les frais de transaction de tokens sont directement transférés aux projets de durabilité"
+        },
+        "2": {
+          "title": "Financement transparent",
+          "description": "Distribution transparente des fonds basée sur la blockchain et suivi de l'impact"
+        }
+      }
+    },
+    "principles": {
+      "title": "Nos principes",
+      "description": "Les valeurs qui guident la CORIA Foundation",
+      "items": {
+        "0": {
+          "title": "Transparence",
+          "description": "Toutes les décisions de financement et les rapports d'impact sont publiquement disponibles sur la blockchain"
+        },
+        "1": {
+          "title": "Gouvernance communautaire",
+          "description": "Les détenteurs de tokens CORIA ont un droit de vote dans la sélection des projets"
+        },
+        "2": {
+          "title": "Focus sur l'impact",
+          "description": "L'impact environnemental et social mesurable de chaque projet est rapporté"
+        }
+      }
+    },
+    "projects": {
+      "title": "Projets soutenus",
+      "description": "Projets que nous avons financés et leurs impacts",
+      "comingSoon": {
+        "title": "Bientôt disponible",
+        "description": "Après le lancement officiel de la CORIA Foundation, nous présenterons ici les projets de durabilité que nous soutenons et leurs impacts environnementaux.",
+        "cta": "Restez à l'écoute pour nos premiers projets financés"
+      }
+    },
+    "form": {
+      "title": "Demander un financement de projet",
+      "description": "Si vous avez un projet de durabilité, postulez pour recevoir un financement de la CORIA Foundation.",
+      "timeline": {
+        "0": {
+          "year": "2025 T3",
+          "items": {
+            "0": "Concept de la CORIA Foundation développé et partenariat établi avec Heaven ICM"
+          }
+        },
+        "1": {
+          "year": "2025 T4",
+          "items": {
+            "0": "Lancement du Token et de la Foundation avec Heaven ICM",
+            "1": "Soutien à la mise en œuvre de projets RWA (Real World Assets)"
+          }
+        }
+      },
+      "fields": {
+        "projectName": {
+          "label": "Nom du projet",
+          "placeholder": "Entrez le nom de votre projet"
+        },
+        "category": {
+          "label": "Catégorie",
+          "options": {
+            "veganism": "Véganisme",
+            "sustainability": "Durabilité",
+            "greenEnergy": "Énergie verte"
+          }
+        },
+        "email": {
+          "label": "E-mail",
+          "placeholder": "votre@email.com"
+        },
+        "shortDescription": {
+          "label": "Description courte",
+          "placeholder": "Résumez votre projet en 2-3 phrases"
+        },
+        "detailedDescription": {
+          "label": "Description détaillée",
+          "placeholder": "Décrivez en détail les objectifs, la méthodologie et l'impact attendu de votre projet"
+        }
+      },
+      "submit": "Soumettre la candidature"
+    },
+    "apply": {
+      "cta": {
+        "title": "Postuler maintenant",
+        "description": "Vous avez un projet de durabilité, de véganisme ou d'énergie verte ? Contactez-nous. Nous aimerions évaluer votre projet et discuter de la façon dont nous pouvons vous soutenir.",
+        "button": "Remplir le formulaire de candidature"
+      },
+      "meta": {
+        "title": "Demander un financement de la Foundation - CORIA Foundation",
+        "description": "Soumettez votre projet de durabilité, de véganisme ou d'énergie verte pour un financement de la CORIA Foundation"
+      },
+      "hero": {
+        "title": "Demander un financement de projet",
+        "subtitle": "Nous finançons des projets innovants dans le véganisme, l'énergie verte et la durabilité",
+        "description": "Remplissez le formulaire de candidature ci-dessous pour être considéré pour un financement de la CORIA Foundation. Nous soutenons les projets qui créent un impact environnemental et social mesurable."
+      },
+      "steps": {
+        "0": {
+          "title": "Informations sur le projet",
+          "description": "Parlez-nous de votre projet et de votre organisation"
+        },
+        "1": {
+          "title": "Détails du projet",
+          "description": "Décrivez vos objectifs, votre budget et votre calendrier"
+        },
+        "2": {
+          "title": "Révision et soumission",
+          "description": "Vérifiez votre candidature et soumettez-la"
+        }
+      },
+      "fields": {
+        "projectName": {
+          "label": "Nom du projet",
+          "placeholder": "Entrez le nom de votre projet",
+          "helper": "Donnez à votre projet un nom clair et descriptif"
+        },
+        "category": {
+          "label": "Catégorie du projet",
+          "placeholder": "Sélectionner une catégorie",
+          "helper": "Choisissez le focus principal de votre projet"
+        },
+        "orgType": {
+          "label": "Type d'organisation",
+          "placeholder": "Sélectionner le type d'organisation",
+          "helper": "Quel type d'organisation êtes-vous ?"
+        },
+        "contactName": {
+          "label": "Personne de contact",
+          "placeholder": "Nom complet",
+          "helper": "Contact principal pour cette candidature"
+        },
+        "contactEmail": {
+          "label": "Adresse e-mail",
+          "placeholder": "votre@email.com",
+          "helper": "Nous enverrons les mises à jour à cet e-mail"
+        },
+        "country": {
+          "label": "Pays",
+          "placeholder": "Sélectionner votre pays",
+          "helper": "Où votre projet est-il basé ?"
+        },
+        "shortSummary": {
+          "label": "Résumé du projet",
+          "placeholder": "Résumez votre projet en 280 caractères ou moins",
+          "helper": "{remaining} caractères restants"
+        },
+        "detailedDescription": {
+          "label": "Description détaillée",
+          "placeholder": "Décrivez vos objectifs, méthodologie, public cible et résultats attendus",
+          "helper": "Fournissez des détails complets sur votre projet (200-5000 caractères)"
+        },
+        "budget": {
+          "label": "Budget total du projet",
+          "placeholder": "Entrer le montant en TRY",
+          "helper": "Budget total pour l'ensemble du projet"
+        },
+        "requestedAmount": {
+          "label": "Montant de financement demandé",
+          "placeholder": "Entrer le montant en TRY",
+          "helper": "Combien de financement demandez-vous à la CORIA Foundation ?"
+        },
+        "timelineStart": {
+          "label": "Date de début du projet",
+          "placeholder": "AAAA-MM-JJ",
+          "helper": "Quand le projet commencera-t-il ?"
+        },
+        "timelineEnd": {
+          "label": "Date de fin du projet",
+          "placeholder": "AAAA-MM-JJ",
+          "helper": "Quand le projet sera-t-il terminé ?"
+        },
+        "website": {
+          "label": "Site web (Optionnel)",
+          "placeholder": "https://votreprojet.com",
+          "helper": "Site web du projet ou de l'organisation"
+        },
+        "socialMedia": {
+          "label": "Réseaux sociaux (Optionnel)",
+          "twitter": {
+            "label": "Twitter/X",
+            "placeholder": "https://twitter.com/votreprojet"
+          },
+          "instagram": {
+            "label": "Instagram",
+            "placeholder": "https://instagram.com/votreprojet"
+          },
+          "linkedin": {
+            "label": "LinkedIn",
+            "placeholder": "https://linkedin.com/company/votreprojet"
+          }
+        },
+        "impactMetrics": {
+          "label": "Métriques d'impact attendues (Optionnel)",
+          "placeholder": "Décrivez les résultats mesurables (ex: CO2 réduit, personnes touchées, hectares protégés)",
+          "helper": "Quel impact mesurable votre projet atteindra-t-il ?"
+        },
+        "attachments": {
+          "label": "Documents de soutien (Optionnel)",
+          "helper": "Téléchargez jusqu'à 3 fichiers (PDF, PNG, JPG - max 10 Mo chacun)",
+          "button": "Choisir les fichiers",
+          "selected": "{count} fichier(s) sélectionné(s)",
+          "remove": "Retirer"
+        },
+        "consent": {
+          "label": "J'accepte la {privacyPolicy} et confirme que toutes les informations fournies sont exactes",
+          "privacyPolicyLink": "Politique de confidentialité et conditions RGPD",
+          "helper": "Requis pour traiter votre candidature"
+        },
+        "marketingConsent": {
+          "label": "J'accepte de recevoir des mises à jour sur la CORIA Foundation et les projets financés",
+          "helper": "Optionnel - vous pouvez vous désabonner à tout moment"
+        }
+      },
+      "categories": {
+        "veganism": "Véganisme et vie végétale",
+        "greenEnergy": "Énergie verte et ressources renouvelables",
+        "sustainability": "Durabilité et protection de l'environnement"
+      },
+      "orgTypes": {
+        "nonprofit": "Organisation à but non lucratif",
+        "cooperative": "Coopérative",
+        "socialEnterprise": "Entreprise sociale",
+        "community": "Groupe communautaire",
+        "startup": "Startup",
+        "other": "Autre"
+      },
+      "errors": {
+        "projectNameTooShort": "Le nom du projet doit comporter au moins 3 caractères",
+        "projectNameTooLong": "Le nom du projet ne doit pas dépasser 100 caractères",
+        "projectNameInvalidChars": "Le nom du projet contient des caractères non valides",
+        "invalidCategory": "Veuillez sélectionner une catégorie valide",
+        "invalidOrgType": "Veuillez sélectionner un type d'organisation valide",
+        "contactNameTooShort": "Le nom du contact doit comporter au moins 2 caractères",
+        "contactNameTooLong": "Le nom du contact ne doit pas dépasser 100 caractères",
+        "invalidEmail": "Veuillez entrer une adresse e-mail valide",
+        "countryRequired": "Le pays est requis",
+        "countryTooLong": "Le nom du pays est trop long",
+        "summaryTooShort": "Le résumé doit comporter au moins 50 caractères",
+        "summaryTooLong": "Le résumé ne doit pas dépasser 280 caractères",
+        "descriptionTooShort": "La description doit comporter au moins 200 caractères",
+        "descriptionTooLong": "La description ne doit pas dépasser 5000 caractères",
+        "budgetTooLow": "Le budget doit être d'au moins ₺1 000",
+        "budgetTooHigh": "Le budget dépasse le montant maximum autorisé",
+        "requestedAmountTooLow": "Le montant demandé doit être d'au moins ₺1 000",
+        "requestedAmountTooHigh": "Le montant demandé dépasse le maximum autorisé",
+        "requestedExceedsBudget": "Le montant demandé ne peut pas dépasser le budget total",
+        "invalidDate": "Veuillez entrer une date valide (AAAA-MM-JJ)",
+        "invalidTimeline": "La date de fin doit être postérieure à la date de début",
+        "invalidUrl": "Veuillez entrer une URL valide",
+        "impactMetricsTooLong": "La description des métriques d'impact est trop longue",
+        "fileTooLarge": "La taille du fichier dépasse la limite de 10 Mo",
+        "invalidFileType": "Seuls les fichiers PDF, PNG et JPG sont acceptés",
+        "tooManyFiles": "Maximum 3 fichiers autorisés",
+        "consentRequired": "Vous devez accepter les conditions pour soumettre"
+      },
+      "validation": {
+        "required": "Ce champ est requis",
+        "checking": "Validation...",
+        "valid": "Valide",
+        "invalid": "Non valide"
+      },
+      "buttons": {
+        "previous": "Précédent",
+        "next": "Suivant",
+        "submit": "Soumettre la candidature",
+        "submitting": "Envoi en cours...",
+        "cancel": "Annuler",
+        "saveDraft": "Sauvegarder le brouillon",
+        "loadDraft": "Charger le brouillon"
+      },
+      "success": {
+        "title": "Candidature soumise avec succès !",
+        "message": "Merci d'avoir postulé à la CORIA Foundation. Nous avons reçu votre candidature et l'examinerons attentivement.",
+        "applicationId": "Votre ID de candidature : {id}",
+        "nextSteps": "Prochaines étapes :",
+        "steps": {
+          "0": "Notre équipe examinera votre candidature sous 2-3 semaines",
+          "1": "Nous pourrions vous contacter pour des informations supplémentaires",
+          "2": "Vous recevrez notre décision par e-mail",
+          "3": "Si approuvé, nous discuterons des détails et du calendrier du financement"
+        },
+        "checkEmail": "Nous avons envoyé un e-mail de confirmation à {email}",
+        "downloadPdf": "Télécharger la copie de candidature",
+        "backToHome": "Retour à la page Foundation"
+      },
+      "draft": {
+        "saved": "Brouillon sauvegardé avec succès",
+        "loaded": "Brouillon chargé avec succès",
+        "cleared": "Brouillon effacé"
+      },
+      "progress": {
+        "step": "Étape {current} sur {total}",
+        "complete": "{percent}% terminé",
+        "indicator": "Étape {current} sur {total}"
+      },
+      "help": {
+        "title": "Besoin d'aide?",
+        "description": "Si vous avez des questions sur le processus de candidature ou si vous avez besoin d'assistance, notre équipe est là pour vous aider."
+      },
+      "review": {
+        "title": "Vérifiez votre candidature"
       }
     }
   }
