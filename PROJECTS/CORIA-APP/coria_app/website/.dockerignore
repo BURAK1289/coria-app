@@ -1,3 +1,18 @@
+# Ignore parent directories
+../android
+../ios
+../lib
+../test
+../assets
+../.dart_tool
+../.flutter-plugins
+../.flutter-plugins-dependencies
+../.metadata
+../build
+../pubspec.yaml
+../pubspec.lock
+
+# Node modules and build
 node_modules
 .next
 .git
