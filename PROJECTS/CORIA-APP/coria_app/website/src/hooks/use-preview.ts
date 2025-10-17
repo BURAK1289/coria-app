@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { isValidObject, isNonEmptyString } from '@/lib/type-guards';
+import { logger } from '@/lib/logger';
 
 interface PreviewData {
   [key: string]: unknown;
@@ -36,7 +37,7 @@ export function usePreview(): UsePreviewReturn {
               }
             }
           } catch (error) {
-            console.error('Error parsing preview data:', error);
+            logger.error('Error parsing preview data:', error);
           }
         }
       }
@@ -54,7 +55,7 @@ export function usePreview(): UsePreviewReturn {
         window.location.reload();
       }
     } catch (error) {
-      console.error('Error exiting preview mode:', error);
+      logger.error('Error exiting preview mode:', error);
     }
   };
   

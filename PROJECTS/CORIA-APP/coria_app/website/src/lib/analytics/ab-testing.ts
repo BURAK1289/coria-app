@@ -5,6 +5,7 @@
 
 import { trackEvent } from './gtag';
 import { isNonEmptyString, isValidObject } from '../type-guards';
+import { logger } from '@/lib/logger';
 
 type JsonPrimitive = string | number | boolean | null;
 export type JsonValue = JsonPrimitive | JsonPrimitive[] | { [key: string]: JsonValue };
@@ -145,7 +146,7 @@ const saveUserTestAssignments = (assignments: Record<string, string>) => {
   try {
     localStorage.setItem(AB_STORAGE_KEY, JSON.stringify(assignments));
   } catch (error) {
-    console.warn('Failed to save A/B test assignments:', error);
+    logger.warn('Failed to save A/B test assignments:', error);
   }
 };
 
@@ -282,7 +283,7 @@ function isValidTestId(testId: unknown): testId is string {
 export const useABTest = (testId: string): UseABTestReturn => {
   // Validate test ID parameter
   if (!isValidTestId(testId)) {
-    console.warn(`Invalid test ID provided to useABTest: ${testId}`);
+    logger.warn(`Invalid test ID provided to useABTest: ${testId}`);
     return { 
       variant: null, 
       config: {}, 
@@ -309,12 +310,12 @@ export const useABTest = (testId: string): UseABTestReturn => {
     trackConversion: (conversionType: string, value?: number, additionalData?: Record<string, unknown>): void => {
       // Validate conversion parameters
       if (!isValidTestId(conversionType)) {
-        console.warn(`Invalid conversion type provided: ${conversionType}`);
+        logger.warn(`Invalid conversion type provided: ${conversionType}`);
         return;
       }
       
       if (value !== undefined && (typeof value !== 'number' || isNaN(value))) {
-        console.warn(`Invalid conversion value provided: ${value}`);
+        logger.warn(`Invalid conversion value provided: ${value}`);
         return;
       }
       

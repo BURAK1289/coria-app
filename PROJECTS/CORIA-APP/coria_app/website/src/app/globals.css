@@ -24,6 +24,12 @@
   --coral: var(--mercan);        /* Mapped to new Mercan */
   --gold: #FFD93D;               /* Achievements */
 
+  /* Brand Background Cream Tones */
+  --cream-50: #FBF7F1;           /* Lightest cream - Background base */
+  --cream-100: #F6EFE3;          /* Light cream - Mid tone */
+  --cream-200: #EFE2CE;          /* Medium cream - Depth layer */
+  --cream-300: #E8D5B9;          /* Warm cream - Accent */
+
   /* Extended CORIA Palette */
   --coria-primary: var(--coria-green);
   --coria-primary-light: #3F7C5A;
@@ -67,61 +73,10 @@
 }
 
 @theme inline {
-  /* CORIA Brand Colors */
-  --color-coria-green: var(--coria-green);
-  --color-coral: var(--coral);
-  --color-earth: var(--earth);
-  --color-leaf: var(--leaf);
-  --color-water: var(--sky);
-  
-  /* Extended CORIA Palette */
-  --color-coria-primary: var(--coria-primary);
-  --color-coria-primary-light: var(--coria-primary-light);
-  --color-coria-primary-dark: var(--coria-primary-dark);
-  --color-coria-secondary: var(--coria-secondary);
-  --color-coria-accent: var(--coria-accent);
-  --color-coria-accent-light: var(--coria-accent-light);
-  --color-coria-lime: var(--lime);
-  --color-coria-earth: var(--earth);
-  --color-coria-gold: var(--gold);
-
-  /* Neutral Colors */
-  --color-coria-white: var(--coria-white);
-  --color-coria-gray-50: var(--coria-gray-50);
-  --color-coria-gray-100: var(--coria-gray-100);
-  --color-coria-gray-200: var(--coria-gray-200);
-  --color-coria-gray-300: var(--coria-gray-300);
-  --color-coria-gray-400: var(--coria-gray-400);
-  --color-coria-gray-500: var(--coria-gray-500);
-  --color-coria-gray-600: var(--coria-gray-600);
-  --color-coria-gray-700: var(--coria-gray-700);
-  --color-coria-gray-800: var(--coria-gray-800);
-  --color-coria-gray-900: var(--coria-gray-900);
-  --color-coria-black: var(--coria-black);
-
-  /* Semantic Colors */
-  --color-coria-success: var(--coria-success);
-  --color-coria-warning: var(--coria-warning);
-  --color-coria-error: var(--coria-error);
-  --color-coria-info: var(--coria-info);
-
-  /* Background & Text */
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-text-primary: var(--text-primary);
-  --color-text-secondary: var(--text-secondary);
-
   /* Typography - yeni-tasarım.md v2.0 System */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-technical: 'IBM Plex Sans', 'Inter', system-ui, -apple-system, sans-serif; /* Technical content */
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-
-  /* Typography Weights */
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  --font-weight-black: 900;
 
   /* Spacing Scale */
   --spacing-xs: 0.25rem;
@@ -147,76 +102,16 @@
   --shadow-xl:
     0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --shadow-soft:
-    0 32px 80px -48px rgb(27 94 63 / 0.45),
-    0 12px 35px -20px rgb(27 94 63 / 0.35);
+    0 32px 80px -48px rgb(107 114 128 / 0.25),
+    0 12px 35px -20px rgb(107 114 128 / 0.20);
 }
 
-/* Dark Mode Palette (80% brightness variants) - yeni-tasarım.md v2.0 */
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Dark Mode Background & Text */
-    --background: #1A1A1A;              /* Dark mode background */
-    --foreground: #E0E0E0;              /* Dark mode text */
-    --text-primary: #E0E0E0;
-    --text-secondary: var(--coria-gray-300);
-
-    /* Dark Mode Color Variants (80% brightness) */
-    --coria-green: #2E7E5B;             /* CORIA Yeşili 80% */
-    --acik-yesil: #85CC89;              /* Açık Yeşil 80% */
-    --su-yesili: #40B5AA;               /* Su Yeşili 80% */
-    --mercan: #FF8A8A;                  /* Mercan 80% */
-    --toprak: #A38A7E;                  /* Toprak 80% */
-    --koyu-gri: #454545;                /* Koyu Gri 80% */
-    --acik-gri: #2C2C2C;                /* Açık Gri → Card background */
-
-    /* Legacy dark mode colors */
-    --foam: #1f2622;
-    --mist: #27332c;
-    --coria-sand: #2c3b32;
-    --coria-mint: #1f3329;
-  }
-}
-
-[data-theme="dark"] {
-  /* Dark Mode Background & Text */
-  --background: #1A1A1A;              /* Dark mode background */
-  --foreground: #E0E0E0;              /* Dark mode text */
-  --text-primary: #E0E0E0;
-  --text-secondary: var(--coria-gray-300);
-
-  /* Dark Mode Color Variants (80% brightness) */
-  --coria-green: #2E7E5B;             /* CORIA Yeşili 80% */
-  --acik-yesil: #85CC89;              /* Açık Yeşil 80% */
-  --su-yesili: #40B5AA;               /* Su Yeşili 80% */
-  --mercan: #FF8A8A;                  /* Mercan 80% */
-  --toprak: #A38A7E;                  /* Toprak 80% */
-  --koyu-gri: #454545;                /* Koyu Gri 80% */
-  --acik-gri: #2C2C2C;                /* Açık Gri → Card background */
-
-  /* Legacy dark mode colors */
-  --foam: #1f2622;
-  --mist: #27332c;
-  --coria-sand: #2c3b32;
-  --coria-mint: #1f3329;
-}
-
-[data-theme="light"] {
-  --background: var(--coria-white);
-  --foreground: var(--coria-gray-900);
-  --text-primary: var(--coria-gray-900);
-  --text-secondary: #718096;
-}
-
-[data-theme="dark"] body {
-  background:
-    linear-gradient(180deg, #161d19 0%, var(--coria-gray-900) 55%, #121813 100%);
-}
+/* Light mode only - Dark mode removed */
 
 body {
   position: relative;
   min-height: 100vh;
-  background:
-    linear-gradient(180deg, var(--foam) 0%, var(--coria-white) 55%, var(--mist) 100%);
+  background: transparent;
   color: var(--foreground);
   font-family: var(--font-sans);
 }
@@ -227,13 +122,21 @@ body::before {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background:
-    radial-gradient(120% 120% at 20% -20%, rgba(127, 176, 105, 0.14) 0%, transparent 60%),
-    radial-gradient(120% 120% at 80% -15%, rgba(135, 206, 235, 0.14) 0%, transparent 65%),
-    radial-gradient(140% 160% at 50% 120%, rgba(27, 94, 63, 0.08) 0%, transparent 70%);
+  background: transparent;
+}
+
+/* Ensure main content starts below fixed header */
+main {
+  position: relative;
+  z-index: 1;
 }
 
 /* Utility Classes for CORIA "Organic Minimalism" Design System v2.0 */
+
+/* Logo Ring - 3px cream border using box-shadow */
+.logo-ring-3 {
+  box-shadow: 0 0 0 3px var(--coria-sand);
+}
 
 /* Text Colors */
 .text-coria-primary { color: var(--coria-primary); }
@@ -282,9 +185,9 @@ body::before {
 .bg-gradient-organic-soft {
   background: linear-gradient(
     135deg,
-    rgba(27, 94, 63, 0.1) 0%,
-    rgba(102, 187, 106, 0.05) 50%,
-    rgba(38, 166, 154, 0.1) 100%
+    rgba(107, 114, 128, 0.05) 0%,
+    rgba(156, 163, 175, 0.03) 50%,
+    rgba(107, 114, 128, 0.05) 100%
   );
 }
 
@@ -524,7 +427,7 @@ body::before {
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(4px);
-  z-index: 40;
+  z-index: 9998;
 }
 
 .mobile-nav-panel {
@@ -537,7 +440,7 @@ body::before {
   box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
   transform: translateX(100%);
   transition: transform 0.3s ease;
-  z-index: 50;
+  z-index: 9999;
 }
 
 .mobile-nav-panel.open {
@@ -586,7 +489,7 @@ body::before {
 .cta-button:hover,
 .organic-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(27, 94, 63, 0.2);
+  box-shadow: 0 10px 20px rgba(107, 114, 128, 0.15);
 }
 
 /* Card hover effects */
@@ -608,7 +511,7 @@ body::before {
 
 .organic-input:focus {
   border-color: var(--coria-primary);
-  box-shadow: 0 0 0 3px rgba(27, 94, 63, 0.1);
+  box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.1);
   transform: scale(1.02);
 }
 
@@ -632,9 +535,9 @@ body::before {
 }
 
 @keyframes organicGlow {
-  0% { box-shadow: 0 0 5px rgba(27, 94, 63, 0.2); }
-  50% { box-shadow: 0 0 20px rgba(27, 94, 63, 0.4); }
-  100% { box-shadow: 0 0 5px rgba(27, 94, 63, 0.2); }
+  0% { box-shadow: 0 0 5px rgba(107, 114, 128, 0.15); }
+  50% { box-shadow: 0 0 20px rgba(107, 114, 128, 0.3); }
+  100% { box-shadow: 0 0 5px rgba(107, 114, 128, 0.15); }
 }
 
 .floating-blob {
@@ -659,7 +562,7 @@ body::before {
   inset: -20%;
   z-index: -1;
   border-radius: inherit;
-  background: radial-gradient(circle at 50% 50%, rgba(27, 94, 63, 0.22), transparent 65%);
+  background: radial-gradient(circle at 50% 50%, rgba(107, 114, 128, 0.15), transparent 65%);
   filter: blur(28px);
 }
 
@@ -668,14 +571,15 @@ body::before {
    ====================================== */
 
 /* WCAG AA Compliant Touch Targets (Desktop + Mobile) */
-button:not(.mobile-nav-button),
-a,
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-[role="button"],
-[tabindex="0"],
-.interactive-element {
+/* Using :where() for low specificity to allow Tailwind overrides */
+:where(button:not(.mobile-nav-button)),
+:where(a),
+:where(input[type="button"]),
+:where(input[type="submit"]),
+:where(input[type="reset"]),
+:where([role="button"]),
+:where([tabindex="0"]),
+:where(.interactive-element) {
   min-height: 44px;
   min-width: 44px;
   display: inline-flex;
@@ -698,7 +602,7 @@ textarea:focus-visible,
 [tabindex]:focus-visible {
   outline: 3px solid var(--coria-primary);
   outline-offset: 2px;
-  box-shadow: 0 0 0 6px rgba(27, 94, 63, 0.2);
+  box-shadow: 0 0 0 6px rgba(107, 114, 128, 0.15);
 }
 
 /* Minimum font size compliance (WCAG) */
@@ -777,7 +681,7 @@ body {
 a {
   color: var(--coria-primary);
   text-decoration: underline;
-  text-decoration-color: rgba(27, 94, 63, 0.3);
+  text-decoration-color: rgba(107, 114, 128, 0.3);
   text-underline-offset: 3px;
 }
 
@@ -803,7 +707,7 @@ input:focus,
 select:focus,
 textarea:focus {
   border-color: var(--coria-primary);
-  box-shadow: 0 0 0 3px rgba(27, 94, 63, 0.2);
+  box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.15);
   outline: none;
 }
 
@@ -1070,7 +974,7 @@ textarea:focus-visible {
   outline: 3px solid var(--coria-primary) !important;
   outline-offset: 2px !important;
   border-color: var(--coria-primary) !important;
-  box-shadow: 0 0 0 3px rgba(27, 94, 63, 0.2) !important;
+  box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.15) !important;
 }
 
 /* Keyboard navigation improvements */
@@ -1283,4 +1187,117 @@ ul, ol {
 li {
   margin-bottom: 0.5rem;
   line-height: 1.7;
+}
+
+/* ============================================ */
+/* Accessibility: Reduced Motion Support       */
+/* ============================================ */
+
+/**
+ * Respect user's motion preference for accessibility
+ * Disables animations for users with vestibular disorders or motion sensitivity
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Disable Framer Motion animations */
+  [data-framer-motion] {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ============================================ */
+/* Gradient Design System                     */
+/* ============================================ */
+
+:root {
+  /* Brand Gradients - Primary actions and CTAs */
+  --gradient-primary: linear-gradient(to right, var(--coria-primary), var(--coria-primary-dark));
+  --gradient-primary-hover: linear-gradient(to right, var(--coria-primary-dark), var(--coria-primary));
+  
+  /* Background Gradients - Section backgrounds */
+  --gradient-bg-white-foam: linear-gradient(to bottom, white, #FAFAFA, white);
+  --gradient-bg-white-mist: linear-gradient(to bottom, white, white 98%, #F5F5F5);
+  --gradient-bg-foam-white-mist: linear-gradient(to bottom, #FAFAFA, white, #F5F5F5);
+  
+  /* Radial Gradients - Decorative backgrounds */
+  --gradient-radial-leaf: radial-gradient(circle, rgba(156, 163, 175, 0.05) 0%, rgba(156, 163, 175, 0.03) 50%, transparent 70%);
+  --gradient-radial-sky: radial-gradient(circle, rgba(147, 197, 253, 0.05) 0%, rgba(148, 163, 184, 0.03) 50%, transparent 70%);
+  
+  /* Text Gradients - Headings and emphasis */
+  --gradient-text-primary: linear-gradient(to right, var(--coria-primary), var(--coria-primary-dark), var(--coria-primary));
+  --gradient-text-colorful: linear-gradient(to right, var(--coria-primary), var(--leaf), var(--sky));
+  
+  /* Glass Effect Gradients - Frosted glass cards */
+  --gradient-glass-light: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5));
+  --gradient-glass-dark: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+  
+  /* Overlay Gradients - Image overlays and shadows */
+  --gradient-overlay-top: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), transparent);
+  --gradient-overlay-bottom: linear-gradient(to top, rgba(0, 0, 0, 0.2), transparent);
+}
+
+.dark {
+  /* Dark mode gradient overrides */
+  --gradient-radial-leaf: radial-gradient(circle, rgba(0, 0, 0, 0.18) 0%, transparent 60%);
+  --gradient-radial-sky: radial-gradient(circle, rgba(0, 0, 0, 0.18) 0%, transparent 60%);
+}
+
+/* Gradient Utility Classes */
+.bg-gradient-primary {
+  background-image: var(--gradient-primary);
+}
+
+.bg-gradient-primary-hover {
+  background-image: var(--gradient-primary-hover);
+}
+
+.bg-gradient-bg-white-foam {
+  background-image: var(--gradient-bg-white-foam);
+}
+
+.bg-gradient-bg-white-mist {
+  background-image: var(--gradient-bg-white-mist);
+}
+
+.bg-gradient-bg-foam-white-mist {
+  background-image: var(--gradient-bg-foam-white-mist);
+}
+
+.bg-gradient-radial-leaf {
+  background-image: var(--gradient-radial-leaf);
+}
+
+.bg-gradient-radial-sky {
+  background-image: var(--gradient-radial-sky);
+}
+
+.bg-gradient-text-primary {
+  background-image: var(--gradient-text-primary);
+}
+
+.bg-gradient-text-colorful {
+  background-image: var(--gradient-text-colorful);
+}
+
+.bg-gradient-overlay-top {
+  background-image: var(--gradient-overlay-top);
+}
+
+.bg-gradient-overlay-bottom {
+  background-image: var(--gradient-overlay-bottom);
+}
+
+/* Footer Duplication Safety Net - Temporary hotfix */
+/* Suppresses duplicate footer instances if they somehow render */
+footer#coria-footer:not(:first-of-type) {
+  display: none !important;
 }

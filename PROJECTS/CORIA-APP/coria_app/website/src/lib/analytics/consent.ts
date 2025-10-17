@@ -67,7 +67,7 @@ export const saveConsentPreferences = (preferences: Partial<ConsentPreferences>)
       detail: updated 
     }));
   } catch (error) {
-    console.warn('Failed to save consent preferences:', error);
+    logger.warn('Failed to save consent preferences:', error);
   }
 };
 

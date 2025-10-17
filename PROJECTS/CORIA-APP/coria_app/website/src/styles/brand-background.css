@@ -1,0 +1,108 @@
+/* Brand Background Cream Tones */
+:root {
+  --cream-50: #FBF7F1;
+  --cream-100: #F6EFE3;
+  --cream-200: #EFE2CE;
+  --cream-300: #E8D5B9;
+  --brand-green-muted: rgba(74, 158, 114, 0.08);
+}
+
+/* Static gradient fallback for reduced motion */
+.brand-bg-static {
+  background: linear-gradient(135deg, var(--cream-50) 0%, var(--cream-100) 50%, var(--cream-200) 100%);
+  background-attachment: fixed;
+}
+
+/* Animated gradient fallback for non-WebGL browsers */
+.brand-bg-animated-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--cream-50) 0%,
+    var(--cream-100) 25%,
+    var(--cream-200) 50%,
+    var(--cream-100) 75%,
+    var(--cream-50) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradient-flow 20s ease-in-out infinite;
+  background-attachment: fixed;
+}
+
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Reduced motion: slow down animation */
+@media (prefers-reduced-motion: reduce) {
+  .brand-bg-animated-gradient {
+    animation-duration: 60s;
+  }
+}
+
+/* Soft noise texture overlay for depth */
+.brand-bg-soft-noise {
+  position: relative;
+}
+
+.brand-bg-soft-noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.02;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+}
+
+/* Leaf vein pattern overlay - very subtle */
+.brand-bg-leaf-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='leaf-veins' x='0' y='0' width='100' height='100' patternUnits='userSpaceOnUse'%3E%3Cpath d='M50 10 Q30 30 50 50 Q70 30 50 10 M50 50 L50 90 M50 30 L30 40 M50 30 L70 40 M50 40 L35 50 M50 40 L65 50' stroke='%234A9E72' stroke-width='0.5' fill='none' opacity='0.3'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23leaf-veins)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 100px 100px;
+}
+
+/* Reduced data fallback */
+@media (prefers-reduced-data: reduce) {
+  .brand-bg-leaf-pattern {
+    display: none;
+  }
+}
+
+/* Ensure no layout shift */
+#brand-bg-canvas,
+.brand-bg-static,
+.brand-bg-leaf-pattern {
+  will-change: auto;
+  contain: layout style paint;
+}
+
+/* Mobile optimization - hide complex patterns */
+@media (max-width: 768px) {
+  .brand-bg-leaf-pattern {
+    opacity: 0.02 !important;
+  }
+}
+
+/* Dark mode support - subtle adjustments */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cream-50: #2A2622;
+    --cream-100: #352F2A;
+    --cream-200: #403933;
+  }
+}

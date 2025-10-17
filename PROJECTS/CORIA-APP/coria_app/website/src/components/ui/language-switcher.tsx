@@ -4,11 +4,12 @@ import { useLocale } from 'next-intl';
 import { useRouter, usePathname } from '@/i18n/routing';
 import { routing } from '@/i18n/routing';
 import { useState, useTransition, useCallback, useEffect, useRef } from 'react';
-import type { 
+import type {
   MouseEventHandler,
   KeyboardEventHandler,
   FocusEventHandler
 } from '@/types/events';
+import { logger } from '@/lib/logger';
 
 const languages = {
   tr: { name: 'Türkçe', flag: '🇹🇷', label: 'TR' },
@@ -64,11 +65,14 @@ const locale: LanguageKey = isLanguageKey(currentLocale) ? currentLocale : 'tr';
   const handleLanguageChange = useCallback((newLocale: LanguageKey) => {
     startTransition(() => {
       try {
+        // Set cookie for persistence (middleware will also set it, but this ensures immediate availability)
+        document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000; samesite=lax`;
+
         const nextHref = pathname as Parameters<typeof router.replace>[0];
         router.replace(nextHref, { locale: newLocale });
         setIsOpen(false);
       } catch (error) {
-        console.error('Failed to change language:', error);
+        logger.error('Failed to change language:', error);
       }
     });
   }, [router, pathname]);
@@ -156,6 +160,7 @@ const locale: LanguageKey = isLanguageKey(currentLocale) ? currentLocale : 'tr';
         aria-haspopup="listbox"
         aria-label={`Current language: ${languages[locale]?.name} (${languages[locale]?.label}). Click to change language.`}
         id="language-switcher-button"
+        data-testid="locale-selector"
       >
         <span aria-hidden="true">{languages[locale]?.flag}</span>
         <span>{languages[locale]?.label}</span>
@@ -201,6 +206,7 @@ const locale: LanguageKey = isLanguageKey(currentLocale) ? currentLocale : 'tr';
                   aria-label={`Switch to ${languages[langKey]?.name} (${languages[langKey]?.label})`}
                   aria-selected={isSelected}
                   tabIndex={isOpen ? 0 : -1}
+                  data-testid={`locale-option-${langKey}`}
                 >
                   <span aria-hidden="true">{languages[langKey]?.flag}</span>
                   <span>{languages[langKey]?.label}</span>

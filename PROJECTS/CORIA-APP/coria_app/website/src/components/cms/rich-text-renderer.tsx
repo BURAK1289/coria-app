@@ -31,7 +31,7 @@ const renderOptions: Options = {
     [MARKS.ITALIC]: (text: ReactNode) => <em className="italic">{text}</em>,
     [MARKS.UNDERLINE]: (text: ReactNode) => <u className="underline">{text}</u>,
     [MARKS.CODE]: (text: ReactNode) => (
-      <code className="bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono">
+      <code className="bg-gray-100 px-1 py-0.5 rounded text-sm font-mono">
         {text}
       </code>
     ),
@@ -41,22 +41,22 @@ const renderOptions: Options = {
       <p className="mb-4 leading-relaxed">{children}</p>
     ),
     [BLOCKS.HEADING_1]: (node: Block | Inline, children: ReactNode) => (
-      <h1 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">{children}</h1>
+      <h1 className="text-4xl font-bold mb-6 text-gray-900">{children}</h1>
     ),
     [BLOCKS.HEADING_2]: (node: Block | Inline, children: ReactNode) => (
-      <h2 className="text-3xl font-bold mb-5 text-gray-900 dark:text-white">{children}</h2>
+      <h2 className="text-3xl font-bold mb-5 text-gray-900">{children}</h2>
     ),
     [BLOCKS.HEADING_3]: (node: Block | Inline, children: ReactNode) => (
-      <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">{children}</h3>
+      <h3 className="text-2xl font-bold mb-4 text-gray-900">{children}</h3>
     ),
     [BLOCKS.HEADING_4]: (node: Block | Inline, children: ReactNode) => (
-      <h4 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">{children}</h4>
+      <h4 className="text-xl font-bold mb-3 text-gray-900">{children}</h4>
     ),
     [BLOCKS.HEADING_5]: (node: Block | Inline, children: ReactNode) => (
-      <h5 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">{children}</h5>
+      <h5 className="text-lg font-bold mb-3 text-gray-900">{children}</h5>
     ),
     [BLOCKS.HEADING_6]: (node: Block | Inline, children: ReactNode) => (
-      <h6 className="text-base font-bold mb-2 text-gray-900 dark:text-white">{children}</h6>
+      <h6 className="text-base font-bold mb-2 text-gray-900">{children}</h6>
     ),
     [BLOCKS.UL_LIST]: (node: Block | Inline, children: ReactNode) => (
       <ul className="list-disc list-inside mb-4 space-y-2">{children}</ul>
@@ -65,14 +65,14 @@ const renderOptions: Options = {
       <ol className="list-decimal list-inside mb-4 space-y-2">{children}</ol>
     ),
     [BLOCKS.LIST_ITEM]: (node: Block | Inline, children: ReactNode) => (
-      <li className="text-gray-700 dark:text-gray-300">{children}</li>
+      <li className="text-gray-700">{children}</li>
     ),
     [BLOCKS.QUOTE]: (node: Block | Inline, children: ReactNode) => (
-      <blockquote className="border-l-4 border-coria-green pl-4 py-2 mb-4 italic text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-800">
+      <blockquote className="border-l-4 border-coria-green pl-4 py-2 mb-4 italic text-gray-700 bg-gray-50">
         {children}
       </blockquote>
     ),
-    [BLOCKS.HR]: () => <hr className="my-8 border-gray-300 dark:border-gray-600" />,
+    [BLOCKS.HR]: () => <hr className="my-8 border-gray-300" />,
     [BLOCKS.EMBEDDED_ASSET]: (node: Block | Inline) => {
       const asset = node.data?.target;
       
@@ -98,7 +98,7 @@ const renderOptions: Options = {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
             />
             {typeof description === 'string' && (
-              <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 text-center italic">
+              <p className="text-sm text-gray-600 mt-2 text-center italic">
                 {description}
               </p>
             )}
@@ -108,7 +108,7 @@ const renderOptions: Options = {
       
       // For non-image assets, show a download link
       return (
-        <div className="my-4 p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
+        <div className="my-4 p-4 border border-gray-200 rounded-lg">
           {typeof url === 'string' &&
             <a
               href={url}
@@ -120,7 +120,7 @@ const renderOptions: Options = {
             </a>
           }
           {typeof description === 'string' && (
-            <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+            <p className="text-sm text-gray-600 mt-1">
               {description}
             </p>
           )}
@@ -187,7 +187,7 @@ export default function RichTextRenderer({ document, className = '' }: RichTextR
   }
   
   return (
-    <div className={`prose prose-lg max-w-none dark:prose-invert ${className}`}>
+    <div className={`prose prose-lg max-w-none ${className}`}>
       {documentToReactComponents(document, renderOptions)}
     </div>
   );

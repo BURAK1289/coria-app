@@ -1,15 +1,10 @@
 import { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-
-import { Navigation, Footer } from '@/components/layout';
-import { PricingHero } from '@/components/pricing/pricing-hero';
-import { PricingPlans } from '@/components/pricing/pricing-plans';
 import { FeatureComparison } from '@/components/pricing/feature-comparison';
+import { RegionalPricing } from '@/components/pricing/regional-pricing';
+import { PaywallShowcase } from '@/components/pricing/paywall-showcase';
 import { TrustIndicators } from '@/components/pricing/trust-indicators';
 import { PricingFAQ } from '@/components/pricing/pricing-faq';
-import { PremiumTestimonials } from '@/components/pricing/premium-testimonials';
-import { CustomerSupport } from '@/components/pricing/customer-support';
-import { PricingCTA } from '@/components/pricing/pricing-cta';
 import { generateLocalizedMetadata } from '@/lib/metadata';
 import { LocalizedPageProps } from '@/types/global';
 import { Locale } from '@/types/localization';
@@ -51,24 +46,12 @@ export default async function PricingPage({ params }: PricingPageProps) {
   setRequestLocale(locale);
 
   return (
-    <div className="min-h-screen bg-background text-text-primary">
-      <Navigation />
-
-      <main className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white via-foam to-white" aria-hidden />
-        <div className="absolute inset-x-0 top-0 -z-10 h-32 bg-gradient-to-b from-coria-primary/10 via-transparent to-transparent" aria-hidden />
-
-        <PricingHero />
-        <PricingPlans />
-        <FeatureComparison />
-        <TrustIndicators />
-        <PremiumTestimonials />
-        <PricingFAQ />
-        <CustomerSupport />
-        <PricingCTA />
-      </main>
-
-      <Footer className="mt-12" />
-    </div>
+    <main className="relative overflow-hidden min-h-screen text-text-primary pt-32">
+      <RegionalPricing />
+      <PaywallShowcase />
+      <FeatureComparison />
+      <TrustIndicators />
+      <PricingFAQ />
+    </main>
   );
 }

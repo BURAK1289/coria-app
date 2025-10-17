@@ -13,7 +13,7 @@ export default function BlogPostHeader({ post }: BlogPostHeaderProps) {
       <div className="mb-4">
         <span 
           className="inline-block px-3 py-1 text-sm font-medium rounded-full"
-          style={{ backgroundColor: post.category.color || '#1B5E3F' }}
+          style={{ backgroundColor: post.category.color || 'var(--coria-primary)' }}
         >
           {post.category.name}
         </span>

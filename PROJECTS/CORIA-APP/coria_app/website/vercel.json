@@ -3,7 +3,6 @@
   "outputDirectory": ".next",
   "installCommand": "npm ci",
   "framework": "nextjs",
-  "regions": ["fra1", "iad1", "sfo1"],
   "functions": {
     "app/**/*.tsx": {
       "maxDuration": 30
@@ -49,7 +48,14 @@
       ]
     },
     {
-      "source": "/(.*\\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot))",
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "(text/javascript|text/css|image/.*|font/.*)"
+        }
+      ],
       "headers": [
         {
           "key": "Cache-Control",
@@ -74,16 +80,5 @@
       "source": "/robots.txt",
       "destination": "/api/robots"
     }
-  ],
-  "env": {
-    "NEXT_PUBLIC_SITE_URL": "@site_url",
-    "CONTENTFUL_SPACE_ID": "@contentful_space_id",
-    "CONTENTFUL_ACCESS_TOKEN": "@contentful_access_token",
-    "CONTENTFUL_PREVIEW_ACCESS_TOKEN": "@contentful_preview_access_token",
-    "NEXT_PUBLIC_GA_ID": "@ga_id",
-    "SENTRY_DSN": "@sentry_dsn",
-    "SENTRY_ORG": "@sentry_org",
-    "SENTRY_PROJECT": "@sentry_project",
-    "SENTRY_AUTH_TOKEN": "@sentry_auth_token"
-  }
+  ]
 }

@@ -14,4 +14,4 @@ export type { ContainerProps } from './container';
 export { Grid, GridItem } from './grid';
 export type { GridProps, GridItemProps } from './grid';
 
-export { ThemeToggle, ThemeSelect } from './theme-toggle';
+// ThemeToggle removed - using light mode only

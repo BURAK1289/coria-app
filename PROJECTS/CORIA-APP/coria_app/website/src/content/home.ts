@@ -130,7 +130,7 @@ const trContent: HomeContent = {
     ],
     primaryCta: { label: 'iOS için indir', href: 'https://apps.apple.com/app/coria' },
     secondaryCta: { label: 'Android için indir', href: 'https://play.google.com/store/apps/details?id=com.coria.app' },
-    note: 'Premium’u 7 gün ücretsiz dene, istediğin zaman iptal et.'
+    note: 'Premium\'u 7 gün ücretsiz dene, istediğin zaman iptal et.'
   },
   metrics: [
     { value: '2.5B+', label: 'ürün etiketi analizi' },
@@ -255,11 +255,11 @@ const trContent: HomeContent = {
   foundation: {
     eyebrow: 'CORIA Foundation',
     title: 'Birlikte daha büyük etki yaratıyoruz',
-    subtitle: 'Uygulama gelirlerinin %5’i ve CORIA Token fee gelirleri yeşil enerji, veganlık ve sürdürülebilirlik projelerine aktarılıyor.',
+    subtitle: 'Uygulama gelirlerinin %5\'i ve CORIA Token fee gelirleri yeşil enerji, veganlık ve sürdürülebilirlik projelerine aktarılıyor.',
     description:
       'Believe platformu üzerinden çıkarılacak Solana tabanlı CORIA Token ile şeffaf, zincir üstü bağış ve etki raporlama modeli kuruyoruz.',
     pillars: [
-      { title: 'Şeffaf fon dağıtımı', description: 'Toplanan her token ve TL, zincir üstü dashboard’da takip edilebiliyor.' },
+      { title: 'Şeffaf fon dağıtımı', description: 'Toplanan her token ve TL, zincir üstü dashboard\'da takip edilebiliyor.' },
       { title: 'Yerel projelere odak', description: 'Vegan restoran dönüşümü, gıda bankacılığı, orman restorasyonu gibi alanlara destek.' },
       { title: 'Topluluk oylaması', description: 'Yeni projeler CORIA topluluğunun oylarıyla seçiliyor ve ilerleme aylık raporlarla paylaşılıyor.' }
     ],
@@ -276,28 +276,28 @@ const trContent: HomeContent = {
     articles: [
       {
         title: 'Alerjen etiketlerini 60 saniyede çöz',
-        excerpt: 'Gluten, laktoz, fındık ve daha fazlası için CORIA’nın risk skorlarını nasıl yorumlayacağını öğren.',
-        url: '/blog',
+        excerpt: 'Gluten, laktoz, fındık ve daha fazlası için CORIA\'nın risk skorlarını nasıl yorumlayacağını öğren.',
+        url: 'https://medium.com/@coria.app.com',
         readTime: '4 dk okuma'
       },
       {
         title: 'Karbon ayak izinizi market alışverişinde azaltın',
         excerpt: 'Sezonluk ürün seçimi ve yerel üretici önerileriyle çevresel etkinizi minimuma indirin.',
-        url: '/blog',
+        url: 'https://medium.com/@coria.app.com',
         readTime: '5 dk okuma'
       },
       {
         title: 'Foundation projelerinde yeni dönem',
         excerpt: 'Solana token modeliyle şeffaf fonlama nasıl çalışıyor? İlk raporlar yayınlandı.',
-        url: '/blog',
+        url: 'https://medium.com/@coria.app.com',
         readTime: '3 dk okuma'
       }
     ],
-    cta: { label: 'Tüm içerikleri görüntüle', href: '/blog' }
+    cta: { label: 'Tüm içerikleri görüntüle', href: 'https://medium.com/@coria.app.com' }
   },
   faq: {
     title: 'Sık sorulan sorular',
-    subtitle: 'CORIA’yı kullanmaya başlamadan önce en çok merak edilenleri derledik.',
+    subtitle: 'CORIA\'yı kullanmaya başlamadan önce en çok merak edilenleri derledik.',
     items: [
       {
         question: 'CORIA Premium neler sunuyor?',
@@ -319,7 +319,7 @@ const trContent: HomeContent = {
   finalCta: {
     title: 'CORIA ile bilinçli tüketimin gücünü keşfet',
     subtitle: 'Topluluğumuza katılın, etki panelinizi açın ve sürdürülebilir geleceğe birlikte yön verin.',
-    primary: { label: 'Foundation’a katıl', href: '/foundation' },
+    primary: { label: 'Foundation\'a katıl', href: '/foundation' },
     secondary: { label: 'Özellikleri keşfet', href: '/features' }
   }
 };
@@ -484,23 +484,23 @@ const enContent: HomeContent = {
       {
         title: 'Decode allergen labels in 60 seconds',
         excerpt: 'Learn how CORIA’s risk scoring keeps families safe from hidden triggers.',
-        url: '/blog',
+        url: 'https://medium.com/@coria.app.com',
         readTime: '4 min read'
       },
       {
         title: 'Shrink your carbon footprint at the grocery store',
         excerpt: 'Seasonal produce tips, local sourcing and waste-free planning strategies.',
-        url: '/blog',
+        url: 'https://medium.com/@coria.app.com',
         readTime: '5 min read'
       },
       {
         title: 'What’s new at CORIA Foundation?',
         excerpt: 'Our first Solana-powered impact reports and the projects they fuelled.',
-        url: '/blog',
+        url: 'https://medium.com/@coria.app.com',
         readTime: '3 min read'
       }
     ],
-    cta: { label: 'Browse all stories', href: '/blog' }
+    cta: { label: 'Browse all stories', href: 'https://medium.com/@coria.app.com' }
   },
   faq: {
     title: 'Frequently asked questions',

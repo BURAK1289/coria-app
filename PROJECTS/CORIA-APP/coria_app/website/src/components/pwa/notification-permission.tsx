@@ -2,10 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
-import { Bell, X } from 'lucide-react';
+import { Icon } from '@/components/icons/Icon';
 import { usePWA } from '@/lib/pwa';
 import { MobileButton } from '@/components/ui/mobile-button';
 import { cn } from '@/lib/utils';
+import { logger } from '@/lib/logger';
 
 interface NotificationPermissionProps {
   className?: string;
@@ -48,7 +49,7 @@ export function NotificationPermission({ className }: NotificationPermissionProp
         setIsVisible(false);
       }
     } catch (error) {
-      console.error('Notification permission failed:', error);
+      logger.error('Notification permission failed:', error);
     } finally {
       setIsRequesting(false);
     }
@@ -81,19 +82,19 @@ export function NotificationPermission({ className }: NotificationPermissionProp
     <div
       className={cn(
         'fixed bottom-20 left-4 right-4 z-40',
-        'bg-white dark:bg-gray-800 rounded-lg shadow-lg border',
+        'bg-white rounded-lg shadow-lg border',
         'p-4 safe-area-bottom',
         className
       )}
     >
       <div className="flex items-start space-x-3">
-        <Bell className="h-5 w-5 text-coria-primary mt-0.5" />
+        <Icon name="bell" size={20} className="text-coria-primary mt-0.5" aria-hidden="true" />
         
         <div className="flex-1">
           <h3 className="text-sm font-semibold">
             {t('notifications.title')}
           </h3>
-          <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
+          <p className="text-sm text-gray-600 mt-1">
             {t('notifications.description')}
           </p>
           
@@ -116,8 +117,8 @@ export function NotificationPermission({ className }: NotificationPermissionProp
           </div>
         </div>
         
-        <button onClick={handleDismiss}>
-          <X className="h-4 w-4" />
+        <button onClick={handleDismiss} aria-label="Close notification prompt">
+          <Icon name="close" size={16} aria-hidden="true" />
         </button>
       </div>
     </div>

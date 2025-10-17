@@ -69,8 +69,8 @@ export default function BlogPostNavigation() {
   }
   
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+    <div className="bg-white rounded-lg shadow-md p-6">
+      <h3 className="text-lg font-semibold text-gray-900 mb-4">
         {t('tableOfContents')}
       </h3>
       
@@ -83,7 +83,7 @@ export default function BlogPostNavigation() {
                 className={`block w-full text-left text-sm transition-colors ${
                   activeId === item.id
                     ? 'text-coria-green font-medium'
-                    : 'text-gray-600 dark:text-gray-300 hover:text-coria-green'
+                    : 'text-gray-600 hover:text-coria-green'
                 }`}
                 style={{
                   paddingLeft: `${(item.level - 1) * 12}px`,
@@ -97,8 +97,8 @@ export default function BlogPostNavigation() {
       </nav>
       
       {/* Share Buttons */}
-      <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
-        <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">
+      <div className="mt-8 pt-6 border-t border-gray-200">
+        <h4 className="text-sm font-semibold text-gray-900 mb-3">
           {t('sharePost')}
         </h4>
         <div className="flex space-x-2">
@@ -113,7 +113,7 @@ export default function BlogPostNavigation() {
                 navigator.clipboard.writeText(window.location.href);
               }
             }}
-            className="flex items-center justify-center w-8 h-8 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+            className="flex items-center justify-center w-8 h-8 bg-gray-100 text-gray-600 rounded hover:bg-gray-200 transition-colors"
             title={t('copyLink')}
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

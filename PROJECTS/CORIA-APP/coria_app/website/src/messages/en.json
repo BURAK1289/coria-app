@@ -7,20 +7,28 @@
     "foundation": "Foundation",
     "about": "About",
     "contact": "Contact",
-    "downloadApp": "Download the CORIA App",
+    "downloadApp": "Download for Android",
+    "downloadAndroid": "Download for Android",
     "sustainableLiving": "Sustainable living made simple",
     "logoAria": "Go to CORIA homepage"
   },
   "hero": {
-    "title": "See the impact behind every product.",
-    "subtitle": "Vegan, allergen, health and sustainability insights — at a glance.",
-    "downloadIos": "Download on the App Store",
-    "downloadAndroid": "Get it on Google Play",
-    "watchDemo": "Watch Demo",
-    "badge": "Choose with heart, live with impact",
-    "highlightImpact": "Multi-source product intelligence",
-    "highlightScans": "360° impact insights",
-    "highlightMarkets": "180+ brands & retailers"
+    "badge": {
+      "veganYaşamAsistanı": "Vegan Lifestyle Assistant"
+    },
+    "title": {
+      "kalbinleSeçEtkiyleYaşa": "Choose with Heart. Live with Impact.",
+      "taradığınHerÜrününVeganlıkAlerjenSağlıkVeSü": "Instantly see vegan, allergen, health and sustainability scores for every product you scan."
+    },
+    "cta": {
+      "iosIçinİndir": "Download for iOS",
+      "androidIçinİndir": "Download for Android"
+    },
+    "stats": {
+      "milyarÜrünVerisi": "Billion Product Data",
+      "etiketVeİçerik": "Labels and Content",
+      "aktifKullanıcı": "Active Users"
+    }
   },
   "features": {
     "title": "Features",
@@ -762,222 +770,75 @@
           }
         ]
       }
-    }
-  },
-  "pricing": {
-    "title": "Pricing",
-    "subtitle": "Choose the plan that's right for you",
-    "meta": {
-      "title": "CORIA Pricing - Free & Premium Plans",
-      "description": "Choose between CORIA's free plan with basic features or premium plan with unlimited scanning, detailed reports, and advanced analytics for ₺29.99/month."
     },
-    "plans": {
-      "free": {
-        "name": "Free",
-        "price": "0",
-        "period": "forever",
-        "description": "Perfect for getting started with sustainable living",
-        "features": [
-          "10 product scans per day",
-          "Basic sustainability scores",
-          "Simple impact tracking",
-          "Community access",
-          "Basic recommendations"
-        ],
-        "cta": "Get Started",
-        "popular": false
-      },
-      "premium": {
-        "name": "Premium",
-        "price": "29.99",
-        "period": "monthly",
-        "description": "For serious sustainability enthusiasts",
-        "features": [
-          "Unlimited product scanning",
-          "Detailed sustainability reports",
-          "Advanced impact analytics",
-          "Personalized AI recommendations",
-          "Priority customer support",
-          "Ad-free experience",
-          "Export data & reports",
-          "Early access to new features"
-        ],
-        "cta": "Choose Premium",
-        "popular": true
-      }
+    "barcodeScan": {
+      "title": "Barcode Scanning",
+      "description": "Instantly discover product sustainability scores"
     },
-    "currency": "₺",
-    "comparison": {
-      "title": "Feature Comparison",
-      "features": {
-        "scanning": {
-          "name": "Product Scanning",
-          "free": "10 scans/day",
-          "premium": "Unlimited"
-        },
-        "reports": {
-          "name": "Sustainability Reports",
-          "free": "Basic",
-          "premium": "Detailed & Exportable"
-        },
-        "analytics": {
-          "name": "Impact Analytics",
-          "free": "Simple tracking",
-          "premium": "Advanced insights"
-        },
-        "recommendations": {
-          "name": "AI Recommendations",
-          "free": "Basic suggestions",
-          "premium": "Personalized & Smart"
-        },
-        "support": {
-          "name": "Customer Support",
-          "free": "Community support",
-          "premium": "Priority support"
-        },
-        "ads": {
-          "name": "Advertisements",
-          "free": "With ads",
-          "premium": "Ad-free"
-        },
-        "export": {
-          "name": "Data Export",
-          "free": "Not available",
-          "premium": "Full export"
-        },
-        "earlyAccess": {
-          "name": "Early Access",
-          "free": "Standard releases",
-          "premium": "Beta features"
-        }
-      }
+    "aiRecommendations": {
+      "title": "AI Recommendations",
+      "description": "Get personalized sustainable product recommendations"
     },
-    "trust": {
-      "title": "Why Choose CORIA Premium?",
-      "benefits": [
-        {
-          "title": "Cancel Anytime",
-          "description": "No long-term commitments. Cancel your subscription anytime with one click.",
-          "icon": "cancel"
-        },
-        {
-          "title": "30-Day Money Back",
-          "description": "Not satisfied? Get a full refund within 30 days, no questions asked.",
-          "icon": "refund"
-        },
-        {
-          "title": "Secure Payments",
-          "description": "Your payment information is protected with bank-level security.",
-          "icon": "security"
-        },
-        {
-          "title": "Regular Updates",
-          "description": "Continuous improvements and new features added regularly.",
-          "icon": "updates"
-        }
-      ]
+    "sustainabilityInsights": {
+      "title": "Sustainability Insights",
+      "description": "Track your environmental impact with detailed analytics"
     },
-    "faq": {
-      "title": "Pricing FAQ",
-      "questions": [
-        {
-          "question": "Can I upgrade or downgrade my plan anytime?",
-          "answer": "Yes, you can upgrade to Premium or downgrade to Free at any time. Changes take effect immediately, and billing is prorated accordingly."
-        },
-        {
-          "question": "What payment methods do you accept?",
-          "answer": "We accept all major credit cards, debit cards, and mobile payment methods through secure app store billing systems."
-        },
-        {
-          "question": "Is there a free trial for Premium?",
-          "answer": "Yes! New users get a 7-day free trial of Premium features when they first download the app."
-        },
-        {
-          "question": "What happens to my data if I cancel Premium?",
-          "answer": "Your data remains safe and accessible. You'll continue to have access to basic features, but advanced analytics and unlimited scanning will be limited."
-        },
-        {
-          "question": "Do you offer student or family discounts?",
-          "answer": "We're working on special pricing for students and families. Sign up for our newsletter to be notified when these become available."
-        },
-        {
-          "question": "Can I use Premium features offline?",
-          "answer": "Many Premium features work offline, including unlimited scanning of previously cached products and viewing your saved reports."
-        }
-      ]
+    "socialCommitment": {
+      "title": "Social Commitment",
+      "description": "Support brands with ethical practices and social responsibility"
     },
-    "testimonials": {
-      "title": "What Premium Users Say",
-      "reviews": [
-        {
-          "name": "Ayşe K.",
-          "location": "Istanbul",
-          "rating": 5,
-          "text": "The unlimited scanning feature has completely changed how I shop. I can check every product without worrying about daily limits.",
-          "feature": "Unlimited Scanning"
-        },
-        {
-          "name": "Mehmet D.",
-          "location": "Ankara",
-          "rating": 5,
-          "text": "The detailed reports help me track my family's environmental impact. We've reduced our carbon footprint by 30% in just 3 months!",
-          "feature": "Detailed Reports"
-        },
-        {
-          "name": "Zeynep M.",
-          "location": "Izmir",
-          "rating": 5,
-          "text": "Premium recommendations are incredibly accurate. The AI really understands my preferences and dietary needs.",
-          "feature": "AI Recommendations"
-        }
-      ]
+    "impactTracking": {
+      "title": "Impact Tracking",
+      "description": "Monitor your carbon footprint and environmental impact"
     },
-    "cta": {
-      "title": "Ready to Make a Bigger Impact?",
-      "description": "Join thousands of users making conscious choices with CORIA Premium.",
-      "downloadIos": "Download on App Store",
-      "downloadAndroid": "Get it on Google Play",
-      "note": "Premium subscription is managed through your app store account."
-    },
-    "support": {
-      "title": "Customer Support",
-      "description": "Have questions? We're here to help you succeed.",
-      "methods": [
-        {
-          "title": "Email Support",
-          "description": "Get response within 24 hours",
-          "contact": "support@coria.app",
-          "icon": "email"
-        },
-        {
-          "title": "Live Chat",
-          "description": "Monday-Friday 9AM-6PM",
-          "contact": "Start Chat",
-          "icon": "chat"
-        },
-        {
-          "title": "Help Center",
-          "description": "FAQs and guides",
-          "contact": "Visit Help Center",
-          "icon": "help"
-        }
-      ]
+    "smartPantry": {
+      "title": "Smart Pantry",
+      "description": "Reduce food waste and shop smarter"
     }
   },
   "footer": {
     "description": "Make smart choices for sustainable living",
+    "product": {
+      "title": "Product",
+      "features": "Features",
+      "pricing": "Pricing",
+      "foundation": "Foundation",
+      "blog": "Blog"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About",
+      "contact": "Contact",
+      "careers": "Careers"
+    },
+    "resources": {
+      "title": "Resources",
+      "faq": "FAQ",
+      "foundationApply": "Foundation Application"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "kvkk": "GDPR",
+      "cookies": "Cookie Policy"
+    },
+    "social": {
+      "twitter": "CORIA on Twitter",
+      "linkedin": "CORIA on LinkedIn",
+      "instagram": "CORIA on Instagram",
+      "medium": "CORIA on Medium",
+      "youtube": "CORIA on YouTube"
+    },
     "newsletter": {
       "title": "Newsletter",
+      "description": "Get sustainable living tips and updates",
       "placeholder": "Your email address",
-      "subscribe": "Subscribe"
+      "button": "Subscribe"
     },
-    "links": {
-      "product": "Product",
-      "company": "Company",
-      "support": "Support",
-      "legal": "Legal"
-    },
-    "copyright": "© 2024 CORIA. All rights reserved."
+    "copyright": {
+      "text": "© {year} CORIA. All rights reserved."
+    }
   },
   "blog": {
     "title": "Blog",
@@ -1017,8 +878,39 @@
     "hero": {
       "title": "Building a Sustainable Future Together",
       "subtitle": "We believe that small, conscious choices can create a massive positive impact on our planet. CORIA empowers millions to make sustainable decisions every day.",
+      "description": "We believe that small, conscious choices can create a massive positive impact on our planet. CORIA empowers millions to make sustainable decisions every day.",
       "downloadIos": "Download on App Store",
       "downloadAndroid": "Get it on Google Play"
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "A world where every purchase decision contributes to a more sustainable, equitable, and healthy planet for future generations."
+    },
+    "positioning": {
+      "title": "Our Positioning",
+      "description": "CORIA stands at the intersection of technology and sustainability, providing the tools and information needed to make conscious consumption accessible to everyone."
+    },
+    "roadmap": {
+      "title": "Our Roadmap",
+      "timeline": [
+        {
+          "year": "2025 Q3",
+          "detail": "First MVP phase"
+        },
+        {
+          "year": "2025 Q4",
+          "detail": "Launch and token release process"
+        }
+      ]
+    },
+    "partnerships": {
+      "title": "Our Partnerships",
+      "items": [
+        {
+          "name": "Heaven ICM",
+          "description": "Our strategic partner"
+        }
+      ]
     },
     "missionVision": {
       "title": "Our Mission & Vision",
@@ -1489,6 +1381,7 @@
     }
   },
   "common": {
+    "skipToMainContent": "Skip to main content",
     "loading": "Loading...",
     "error": "An error occurred",
     "retry": "Try Again",
@@ -1497,7 +1390,12 @@
     "cancel": "Cancel",
     "continue": "Continue",
     "back": "Back",
-    "next": "Next"
+    "next": "Next",
+    "aria": {
+      "daCoriaUygulamasınıIndirin": " download CORIA app",
+      "coriaIstatistikleriVeEtkiGöstergeleri": "CORIA statistics and impact indicators",
+      "coriaEtkiGöstergesi": "CORIA impact indicator"
+    }
   },
   "consent": {
     "banner": {
@@ -1699,6 +1597,39 @@
           ]
         }
       ]
+    },
+    "features": {
+      "title": "360° platform for vegan living",
+      "subtitle": "CORIA brings together product analysis, AI guidance, smart pantry, ESG scores, carbon tracking, and community recommendations—all you need for conscious consumption.",
+      "cta": "Explore All Features",
+      "veganAllergen": {
+        "title": "Vegan & Allergen Analysis",
+        "description": "Check product vegan status, allergens, and ingredient risks in seconds"
+      },
+      "aiAssistant": {
+        "title": "AI Assistant",
+        "description": "Get personalized recommendations and guidance from your vegan lifestyle AI companion"
+      },
+      "smartPantry": {
+        "title": "Smart Pantry",
+        "description": "Intelligent inventory tracking with expiry alerts and waste reduction automation"
+      },
+      "esgScores": {
+        "title": "ESG Scores",
+        "description": "Environmental, social, and governance transparency for every brand and product"
+      },
+      "carbonWater": {
+        "title": "Carbon/Water Tracking",
+        "description": "Monitor and reduce your environmental footprint with real-time impact dashboards"
+      },
+      "community": {
+        "title": "Community Recommendations",
+        "description": "Discover products and alternatives recommended by the conscious consumer community"
+      }
+    },
+    "audience": {
+      "title": "Personalized experience for every persona",
+      "description": "From vegan candidates to sustainability advocates, parents to health enthusiasts—CORIA adapts to your journey"
     },
     "featureHighlights": {
       "badge": "360° platform",
@@ -2016,6 +1947,684 @@
             "avatar": "SJ"
           }
         ]
+      }
+    }
+  },
+  "pricing": {
+    "title": "Pricing",
+    "subtitle": "Choose the plan that suits you",
+    "tagline": "Unlimited scanning for everyone. Personalized alerts, recipes & alternatives, smart pantry automation, and advanced reports → Premium.",
+    "mostPopular": "Most Popular",
+    "free": "Free",
+    "meta": {
+      "title": "CORIA Pricing - Freemium & Premium Plans",
+      "description": "Free plan with basic features or Premium with personalized recommendations, unlimited AI chat, and smart pantry automation. 14-day free trial."
+    },
+    "trial": {
+      "duration": "14 days",
+      "noCard": "No card required",
+      "afterTrial": "Automatically switches to Free plan after trial ends",
+      "description": "Try Premium features free for 14 days. No credit card required."
+    },
+    "plans": {
+      "free": {
+        "name": "Free",
+        "price": "0",
+        "period": "forever",
+        "description": "Start with basic features",
+        "highlights": [
+          "Unlimited scanning",
+          "Basic nutrition summary",
+          "20-item pantry",
+          "10 AI messages/day"
+        ],
+        "cta": "Get Started",
+        "popular": false
+      },
+      "premium": {
+        "name": "Premium",
+        "description": "Full experience with all features",
+        "highlights": [
+          "Personalized recommendations",
+          "Unlimited AI chat",
+          "Recipes and alternatives",
+          "Smart pantry automation",
+          "Meal planner",
+          "Detailed reports"
+        ],
+        "cta": "Upgrade to Premium",
+        "popular": true
+      }
+    },
+    "billingPeriods": {
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "family": "Family Plan",
+      "lifetime": "Lifetime"
+    },
+    "regional": {
+      "title": "Regional Pricing",
+      "subtitle": "View pricing in your local currency",
+      "vatIncluded": "VAT included",
+      "discount": "{percent}% off",
+      "perMonth": "/month",
+      "perYear": "/year",
+      "oneTime": "One-time",
+      "regions": {
+        "US": {
+          "name": "United States",
+          "currency": "USD",
+          "monthly": "$5.49",
+          "yearly": "$39.99",
+          "family": "$9.99",
+          "lifetime": "$99"
+        },
+        "EU": {
+          "name": "Euro Zone",
+          "currency": "EUR",
+          "monthly": "€4.99",
+          "yearly": "€39.99",
+          "family": "€10.49",
+          "lifetime": "€109"
+        },
+        "TR": {
+          "name": "Turkey",
+          "currency": "TRY",
+          "monthly": "₺89.99",
+          "yearly": "₺649.99",
+          "family": "₺139.99",
+          "lifetime": "₺1,499"
+        }
+      },
+      "note": "Prices may vary by region and app store"
+    },
+    "features": {
+      "title": "Feature Comparison",
+      "subtitle": "See differences between Free and Premium plans",
+      "scanningAndNutrition": {
+        "name": "Scanning & Nutrition Summary",
+        "free": "Unlimited",
+        "premium": "Unlimited",
+        "note": "Unlimited scanning for everyone"
+      },
+      "sustainabilityMetrics": {
+        "name": "Sustainability Metrics",
+        "free": "View",
+        "premium": "Deep Reports",
+        "note": "Free: viewing; Premium: deep analysis and reports"
+      },
+      "alternativesAndRecipes": {
+        "name": "Alternatives & Recipes",
+        "free": false,
+        "premium": true,
+        "note": "Premium feature",
+        "tooltip": "Upgrade to Premium for personalized alternatives and recipes"
+      },
+      "smartPantry": {
+        "name": "Smart Pantry",
+        "free": "20 items",
+        "premium": "Unlimited + Automation",
+        "note": "Free: 20 items; Premium: unlimited + automation",
+        "tooltip": "Reached 20-item pantry limit—upgrade to Premium for unlimited and automatic alerts"
+      },
+      "shoppingList": {
+        "name": "Shopping List",
+        "free": "Unlimited",
+        "premium": "Unlimited + Sharing + Smart Sorting",
+        "note": "Unlimited for everyone; Premium: sharing + smart sorting"
+      },
+      "aiChat": {
+        "name": "AI Chat Assistant",
+        "free": "10 messages/day (allergens only)",
+        "premium": "Unlimited + Personal Preferences + History",
+        "note": "Free: 10 messages/day, allergens only; Premium: unlimited + personalized",
+        "tooltip": "Reached daily 10-message limit—upgrade to Premium for personalized suggestions and unlimited chat"
+      },
+      "mealPlanner": {
+        "name": "Meal Planner",
+        "free": false,
+        "premium": true,
+        "note": "Premium feature",
+        "tooltip": "Meal planning is a Premium feature"
+      },
+      "scanHistory": {
+        "name": "Scan History",
+        "free": "1 month",
+        "premium": "Unlimited",
+        "note": "Free: 1 month; Premium: unlimited"
+      },
+      "weeklySummary": {
+        "name": "Weekly Summary",
+        "free": "Basic",
+        "premium": "Detailed + Trend Analysis",
+        "note": "Free: basic; Premium: detailed + trend analysis"
+      },
+      "notifications": {
+        "name": "Notifications",
+        "free": "Basic",
+        "premium": "Smart",
+        "note": "Free: basic; Premium: smart notifications"
+      },
+      "ads": {
+        "name": "Advertisements",
+        "free": false,
+        "premium": false,
+        "note": "No ads in either plan"
+      },
+      "reports": {
+        "name": "Impact Reports",
+        "free": "Basic monthly",
+        "premium": "Detailed weekly"
+      }
+    },
+    "paywallTriggers": {
+      "title": "Why Upgrade to Premium?",
+      "description": "You'll love the free plan, but Premium unlocks the full CORIA experience with personalized recommendations and unlimited features.",
+      "trustSignal": "Try free for 14 days • No credit card required",
+      "alternatives": {
+        "title": "Upgrade to Premium for personalized alternatives",
+        "description": "Discover personalized product alternatives that match your preferences and values",
+        "cta": "Unlock with Premium",
+        "featureHighlight": "AI-powered recommendations based on your values"
+      },
+      "recipes": {
+        "title": "Recipes in Premium",
+        "description": "Create delicious, sustainable recipes with your products",
+        "cta": "Get Access to Recipes",
+        "featureHighlight": "Custom recipes using products in your pantry"
+      },
+      "aiLimit": {
+        "title": "You've reached the daily 10-message limit",
+        "description": "Upgrade to Premium for personalized suggestions and unlimited chat",
+        "cta": "Switch to Unlimited AI Chat",
+        "featureHighlight": "Unlimited AI conversations for all your questions"
+      },
+      "pantryLimit": {
+        "title": "You've reached the 20-item pantry limit",
+        "description": "Upgrade to Premium for unlimited product storage and automatic alerts",
+        "cta": "Increase Pantry Capacity",
+        "featureHighlight": "Track unlimited products with smart expiry alerts"
+      },
+      "mealPlanner": {
+        "title": "Meal Planner is a Premium Feature",
+        "description": "Create weekly meal plans and get automatic shopping lists",
+        "cta": "Enable Meal Planner",
+        "featureHighlight": "Weekly planning with automated shopping lists"
+      }
+    },
+    "upgradeReasons": {
+      "title": "Why Premium?",
+      "reasons": [
+        {
+          "title": "Personalized Experience",
+          "description": "Suggestions and alternatives tailored to your preferences and values",
+          "icon": "user-check"
+        },
+        {
+          "title": "Unlimited Features",
+          "description": "No limits on AI chat, pantry management, and scan history",
+          "icon": "infinity"
+        },
+        {
+          "title": "Advanced Analysis",
+          "description": "Detailed sustainability reports and trend analyses",
+          "icon": "chart-line"
+        },
+        {
+          "title": "Automation",
+          "description": "Smart pantry alerts and automatic shopping lists",
+          "icon": "bot"
+        }
+      ]
+    },
+    "comparison": {
+      "title": "Detailed Feature Comparison",
+      "free": "Free",
+      "premium": "Premium",
+      "available": "Available",
+      "notAvailable": "Not Available",
+      "limited": "Limited",
+      "unlimited": "Unlimited"
+    },
+    "trust": {
+      "title": "Why CORIA Premium?",
+      "benefits": [
+        {
+          "title": "14-Day Free Trial",
+          "description": "Try all Premium features without credit card. Automatically switches to Free plan after trial.",
+          "icon": "gift"
+        },
+        {
+          "title": "Cancel Anytime",
+          "description": "No long-term commitment. Cancel your subscription anytime with one click.",
+          "icon": "x-circle"
+        },
+        {
+          "title": "Secure Payments",
+          "description": "Your payment information is protected with app store security.",
+          "icon": "shield-check"
+        },
+        {
+          "title": "Regular Updates",
+          "description": "Continuous improvements and new features added regularly.",
+          "icon": "refresh"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "questions": [
+        {
+          "question": "How does the 14-day trial work?",
+          "answer": "When you sign up for Premium, you get free access to all features for 14 days. No credit card required. After the trial ends, you'll automatically switch to the Free plan."
+        },
+        {
+          "question": "What happens after the trial ends?",
+          "answer": "When the trial ends, you'll automatically switch to the Free plan. Your data is preserved and you'll continue to access basic features. You can upgrade to Premium anytime."
+        },
+        {
+          "question": "How much do I save with the yearly plan?",
+          "answer": "The yearly plan saves approximately 35% compared to monthly billing. For example, in Turkey you pay ₺649.99/year instead of ₺1,079.88 (₺89.99/month)."
+        },
+        {
+          "question": "What is the Family Plan?",
+          "answer": "The Family Plan allows up to 6 people to use Premium features. Each family member gets their own account with personalized experience and access to all Premium features."
+        },
+        {
+          "question": "What does Lifetime mean?",
+          "answer": "Lifetime plan provides lifetime access to Premium features with one-time payment. Instead of monthly or yearly subscription, you pay once and get all features permanently."
+        },
+        {
+          "question": "Can I change my plan anytime?",
+          "answer": "Yes, you can upgrade to Premium or downgrade to Free at any time. Changes take effect immediately and billing is prorated."
+        },
+        {
+          "question": "What payment methods do you accept?",
+          "answer": "We accept all major credit cards, debit cards, and mobile payment methods through the app store (App Store/Google Play)."
+        },
+        {
+          "question": "Is my data safe?",
+          "answer": "Yes, all your data is encrypted and stored securely. Even if you cancel Premium, your data remains protected and accessible with the Free plan."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "What Premium Users Say",
+      "reviews": [
+        {
+          "name": "Ayşe K.",
+          "location": "Istanbul",
+          "rating": 5,
+          "text": "The unlimited AI chat feature is amazing! I can ask all my questions without worrying about the daily message limit. Personalized recommendations really work.",
+          "feature": "Unlimited AI Chat"
+        },
+        {
+          "name": "Mehmet D.",
+          "location": "Ankara",
+          "rating": 5,
+          "text": "Smart pantry automation makes tracking expiration dates so easy. I've reduced food waste by 40%!",
+          "feature": "Smart Pantry"
+        },
+        {
+          "name": "Zeynep M.",
+          "location": "Izmir",
+          "rating": 5,
+          "text": "Recipe and alternative suggestions are amazing. I discover new, sustainable meals every week. So happy I upgraded to Premium.",
+          "feature": "Recipes & Alternatives"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready for a More Sustainable Life?",
+      "description": "Access personalized recommendations and unlimited features with CORIA Premium. Try free for 14 days.",
+      "startTrial": "Try 14 Days Free",
+      "downloadIos": "Download on App Store",
+      "downloadAndroid": "Get it on Google Play",
+      "note": "No credit card required • Automatically switches to Free plan after trial"
+    },
+    "support": {
+      "title": "Customer Support",
+      "description": "Have questions? We're happy to help you.",
+      "methods": [
+        {
+          "title": "Email Support",
+          "description": "Get response within 24 hours",
+          "contact": "support@coria.app",
+          "icon": "mail"
+        },
+        {
+          "title": "Live Chat",
+          "description": "Monday-Friday 9AM-6PM",
+          "contact": "Start Chat",
+          "icon": "message-circle"
+        },
+        {
+          "title": "Help Center",
+          "description": "FAQs and guides",
+          "contact": "Visit Help Center",
+          "icon": "help-circle"
+        }
+      ]
+    }
+  },
+  "foundation": {
+    "hero": {
+      "title": "CORIA Foundation",
+      "subtitle": "Together We Create Greater Impact",
+      "description": "CORIA establishes the CORIA Foundation to invest a portion of app revenues in sustainability projects. With a special Solana token to be issued on the Believe platform, we will participate in the blockchain ecosystem and use token fee revenues to fund green energy, veganism, and sustainability projects.",
+      "cta": "Apply for Project Funding"
+    },
+    "tokenEconomy": {
+      "title": "CORIA Token Economy",
+      "description": "Solana-based token use cases with Heaven ICM integration",
+      "features": {
+        "0": {
+          "title": "CORIA Token",
+          "description": "Special Solana token to be issued through Heaven ICM"
+        },
+        "1": {
+          "title": "Fee Distribution Model",
+          "description": "Token transaction fees are directly transferred to sustainability projects"
+        },
+        "2": {
+          "title": "Transparent Funding",
+          "description": "Blockchain-based transparent fund distribution and impact tracking"
+        }
+      }
+    },
+    "principles": {
+      "title": "Our Principles",
+      "description": "The values that guide the CORIA Foundation",
+      "items": {
+        "0": {
+          "title": "Transparency",
+          "description": "All funding decisions and impact reports are publicly available on blockchain"
+        },
+        "1": {
+          "title": "Community Governance",
+          "description": "CORIA token holders and early angel investors have voting rights in project selection"
+        },
+        "2": {
+          "title": "Impact Focus",
+          "description": "Measurable environmental and social impact of each project is reported"
+        }
+      }
+    },
+    "projects": {
+      "title": "Supported Projects",
+      "description": "Projects we have funded and their impacts",
+      "comingSoon": {
+        "title": "Coming Soon",
+        "description": "After the CORIA Foundation is officially launched, we will showcase the sustainability projects we support and their environmental impacts here.",
+        "cta": "Stay tuned for our first funded projects"
+      }
+    },
+    "form": {
+      "title": "Apply for Project Funding",
+      "description": "If you have a sustainability project, apply to receive funding from CORIA Foundation.",
+      "timeline": {
+        "0": {
+          "year": "2025 Q3",
+          "items": {
+            "0": "CORIA Foundation concept designed and partnership established with Heaven ICM"
+          }
+        },
+        "1": {
+          "year": "2025 Q4",
+          "items": {
+            "0": "Token and Foundation launch with Heaven ICM",
+            "1": "Support for implementing RWA (Real World Asset) projects"
+          }
+        }
+      },
+      "fields": {
+        "projectName": {
+          "label": "Project Name",
+          "placeholder": "Enter your project name"
+        },
+        "category": {
+          "label": "Category",
+          "options": {
+            "veganism": "Veganism",
+            "sustainability": "Sustainability",
+            "greenEnergy": "Green Energy"
+          }
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "your@email.com"
+        },
+        "shortDescription": {
+          "label": "Short Description",
+          "placeholder": "Summarize your project in 2-3 sentences"
+        },
+        "detailedDescription": {
+          "label": "Detailed Description",
+          "placeholder": "Describe your project goals, methodology, and expected impact in detail"
+        }
+      },
+      "submit": "Submit Application"
+    },
+    "apply": {
+      "cta": {
+        "title": "Apply Now",
+        "description": "Have a sustainability, veganism, or green energy project? Get in touch with us. We'd love to evaluate your project and discuss how we can support you.",
+        "button": "Fill Application Form"
+      },
+      "meta": {
+        "title": "Apply for Foundation Funding - CORIA Foundation",
+        "description": "Submit your sustainability, veganism, or green energy project for funding consideration from CORIA Foundation"
+      },
+      "hero": {
+        "title": "Apply for Project Funding",
+        "subtitle": "We fund innovative projects in veganism, green energy, and sustainability",
+        "description": "Complete the application form below to be considered for CORIA Foundation funding. We support projects that create measurable environmental and social impact."
+      },
+      "steps": {
+        "0": {
+          "title": "Project Information",
+          "description": "Tell us about your project and organization"
+        },
+        "1": {
+          "title": "Project Details",
+          "description": "Describe your project goals, budget, and timeline"
+        },
+        "2": {
+          "title": "Review & Submit",
+          "description": "Review your application and submit"
+        }
+      },
+      "fields": {
+        "projectName": {
+          "label": "Project Name",
+          "placeholder": "Enter your project name",
+          "helper": "Give your project a clear, descriptive name"
+        },
+        "category": {
+          "label": "Project Category",
+          "placeholder": "Select a category",
+          "helper": "Choose the primary focus of your project"
+        },
+        "orgType": {
+          "label": "Organization Type",
+          "placeholder": "Select organization type",
+          "helper": "What type of organization are you?"
+        },
+        "contactName": {
+          "label": "Contact Person",
+          "placeholder": "Full name",
+          "helper": "Primary contact for this application"
+        },
+        "contactEmail": {
+          "label": "Email Address",
+          "placeholder": "your@email.com",
+          "helper": "We'll send updates to this email"
+        },
+        "country": {
+          "label": "Country",
+          "placeholder": "Select your country",
+          "helper": "Where is your project based?"
+        },
+        "shortSummary": {
+          "label": "Project Summary",
+          "placeholder": "Summarize your project in 280 characters or less",
+          "helper": "{remaining} characters remaining"
+        },
+        "detailedDescription": {
+          "label": "Detailed Description",
+          "placeholder": "Describe your project goals, methodology, target audience, and expected outcomes",
+          "helper": "Provide comprehensive details about your project (200-5000 characters)"
+        },
+        "budget": {
+          "label": "Total Project Budget",
+          "placeholder": "Enter amount in TRY",
+          "helper": "Total budget for the entire project"
+        },
+        "requestedAmount": {
+          "label": "Requested Funding Amount",
+          "placeholder": "Enter amount in TRY",
+          "helper": "How much funding are you requesting from CORIA Foundation?"
+        },
+        "timelineStart": {
+          "label": "Project Start Date",
+          "placeholder": "YYYY-MM-DD",
+          "helper": "When will the project begin?"
+        },
+        "timelineEnd": {
+          "label": "Project End Date",
+          "placeholder": "YYYY-MM-DD",
+          "helper": "When will the project be completed?"
+        },
+        "website": {
+          "label": "Website (Optional)",
+          "placeholder": "https://yourproject.com",
+          "helper": "Project or organization website"
+        },
+        "socialMedia": {
+          "label": "Social Media (Optional)",
+          "twitter": {
+            "label": "Twitter/X",
+            "placeholder": "https://twitter.com/yourproject"
+          },
+          "instagram": {
+            "label": "Instagram",
+            "placeholder": "https://instagram.com/yourproject"
+          },
+          "linkedin": {
+            "label": "LinkedIn",
+            "placeholder": "https://linkedin.com/company/yourproject"
+          }
+        },
+        "impactMetrics": {
+          "label": "Expected Impact Metrics (Optional)",
+          "placeholder": "Describe measurable outcomes (e.g., CO2 reduced, people reached, hectares protected)",
+          "helper": "What measurable impact will your project achieve?"
+        },
+        "attachments": {
+          "label": "Supporting Documents (Optional)",
+          "helper": "Upload up to 3 files (PDF, PNG, JPG - max 10MB each)",
+          "button": "Choose Files",
+          "selected": "{count} file(s) selected",
+          "remove": "Remove"
+        },
+        "consent": {
+          "label": "I agree to the {privacyPolicy} and confirm that all information provided is accurate",
+          "privacyPolicyLink": "Privacy Policy & KVKK Terms",
+          "helper": "Required to process your application"
+        },
+        "marketingConsent": {
+          "label": "I agree to receive updates about CORIA Foundation and funded projects",
+          "helper": "Optional - you can unsubscribe anytime"
+        }
+      },
+      "categories": {
+        "veganism": "Veganism & Plant-Based Living",
+        "greenEnergy": "Green Energy & Renewable Resources",
+        "sustainability": "Sustainability & Environmental Protection"
+      },
+      "orgTypes": {
+        "nonprofit": "Non-Profit Organization",
+        "cooperative": "Cooperative",
+        "socialEnterprise": "Social Enterprise",
+        "community": "Community Group",
+        "startup": "Startup",
+        "other": "Other"
+      },
+      "errors": {
+        "projectNameTooShort": "Project name must be at least 3 characters",
+        "projectNameTooLong": "Project name must not exceed 100 characters",
+        "projectNameInvalidChars": "Project name contains invalid characters",
+        "invalidCategory": "Please select a valid category",
+        "invalidOrgType": "Please select a valid organization type",
+        "contactNameTooShort": "Contact name must be at least 2 characters",
+        "contactNameTooLong": "Contact name must not exceed 100 characters",
+        "invalidEmail": "Please enter a valid email address",
+        "countryRequired": "Country is required",
+        "countryTooLong": "Country name is too long",
+        "summaryTooShort": "Summary must be at least 50 characters",
+        "summaryTooLong": "Summary must not exceed 280 characters",
+        "descriptionTooShort": "Description must be at least 200 characters",
+        "descriptionTooLong": "Description must not exceed 5000 characters",
+        "budgetTooLow": "Budget must be at least ₺1,000",
+        "budgetTooHigh": "Budget exceeds maximum allowed amount",
+        "requestedAmountTooLow": "Requested amount must be at least ₺1,000",
+        "requestedAmountTooHigh": "Requested amount exceeds maximum allowed",
+        "requestedExceedsBudget": "Requested amount cannot exceed total budget",
+        "invalidDate": "Please enter a valid date (YYYY-MM-DD)",
+        "invalidTimeline": "End date must be after start date",
+        "invalidUrl": "Please enter a valid URL",
+        "impactMetricsTooLong": "Impact metrics description is too long",
+        "fileTooLarge": "File size exceeds 10MB limit",
+        "invalidFileType": "Only PDF, PNG, and JPG files are accepted",
+        "tooManyFiles": "Maximum 3 files allowed",
+        "consentRequired": "You must agree to the terms to submit"
+      },
+      "validation": {
+        "required": "This field is required",
+        "checking": "Validating...",
+        "valid": "Valid",
+        "invalid": "Invalid"
+      },
+      "buttons": {
+        "previous": "Previous",
+        "next": "Next",
+        "submit": "Submit Application",
+        "submitting": "Submitting...",
+        "cancel": "Cancel",
+        "saveDraft": "Save Draft",
+        "loadDraft": "Load Draft"
+      },
+      "success": {
+        "title": "Application Submitted Successfully!",
+        "message": "Thank you for applying to CORIA Foundation. We have received your application and will review it carefully.",
+        "applicationId": "Your application ID: {id}",
+        "nextSteps": "What happens next:",
+        "steps": {
+          "0": "Our team will review your application within 2-3 weeks",
+          "1": "We may contact you for additional information",
+          "2": "You'll receive an email with our decision",
+          "3": "If approved, we'll discuss funding details and timeline"
+        },
+        "checkEmail": "We've sent a confirmation email to {email}",
+        "downloadPdf": "Download Application Copy",
+        "backToHome": "Back to Foundation Page"
+      },
+      "draft": {
+        "saved": "Draft saved successfully",
+        "loaded": "Draft loaded successfully",
+        "cleared": "Draft cleared"
+      },
+      "progress": {
+        "step": "Step {current} of {total}",
+        "complete": "{percent}% complete",
+        "indicator": "Step {current} of {total}"
+      },
+      "help": {
+        "title": "Need Help?",
+        "description": "If you have questions about the application process or need assistance, our team is here to help."
+      },
+      "review": {
+        "title": "Review Your Application"
       }
     }
   }

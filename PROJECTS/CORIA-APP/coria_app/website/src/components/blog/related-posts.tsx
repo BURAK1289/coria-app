@@ -17,7 +17,7 @@ export default function RelatedPosts({ posts }: RelatedPostsProps) {
   
   return (
     <section>
-      <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">
+      <h2 className="text-3xl font-bold text-gray-900 mb-8">
         {t('relatedPosts')}
       </h2>
       

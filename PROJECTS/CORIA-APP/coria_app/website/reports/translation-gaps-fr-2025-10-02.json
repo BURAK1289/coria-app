@@ -1,0 +1,2797 @@
+{
+  "locale": "fr",
+  "generatedAt": "2025-10-02T22:10:51.893Z",
+  "summary": {
+    "total": 288,
+    "byCategory": {
+      "common": {
+        "count": 14,
+        "label": "Common UI",
+        "priority": 1
+      },
+      "features": {
+        "count": 217,
+        "label": "Features",
+        "priority": 2
+      },
+      "pricing": {
+        "count": 55,
+        "label": "Pricing",
+        "priority": 2
+      },
+      "cta": {
+        "count": 2,
+        "label": "Call-to-Actions",
+        "priority": 1
+      }
+    },
+    "byPriority": {
+      "1": 16,
+      "2": 272,
+      "3": 0
+    },
+    "avgNestingLevel": "3.19"
+  },
+  "missingKeys": [
+    {
+      "key": "navigation.foundation",
+      "sourceText": "Foundation",
+      "category": "common",
+      "priority": 1,
+      "context": "Common UI elements and labels",
+      "nestingLevel": 1
+    },
+    {
+      "key": "navigation.downloadApp",
+      "sourceText": "Download the CORIA App",
+      "category": "common",
+      "priority": 1,
+      "context": "Common UI elements and labels",
+      "nestingLevel": 1
+    },
+    {
+      "key": "navigation.sustainableLiving",
+      "sourceText": "Sustainable living made simple",
+      "category": "common",
+      "priority": 1,
+      "context": "Common UI elements and labels",
+      "nestingLevel": 1
+    },
+    {
+      "key": "pwa.install.title",
+      "sourceText": "CORIA'yı Yükle",
+      "category": "common",
+      "priority": 1,
+      "context": "Common UI elements and labels",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pwa.install.description",
+      "sourceText": "CORIA'nın sürdürülebilirlik özelliklerine ana ekranınızdan hızlıca erişin.",
+      "category": "common",
+      "priority": 1,
+      "context": "Common UI elements and labels",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pwa.install.dismiss",
+      "sourceText": "Şimdi değil",
+      "category": "common",
+      "priority": 1,
+      "context": "Common UI elements and labels",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pwa.update.title",
+      "sourceText": "Güncelleme Mevcut",
+      "category": "common",
+      "priority": 1,
+      "context": "Common UI elements and labels",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pwa.update.description",
+      "sourceText": "CORIA'nın iyileştirmeler ve yeni özellikler içeren yeni sürümü mevcut.",
+      "category": "common",
+      "priority": 1,
+      "context": "Common UI elements and labels",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pwa.update.updating",
+      "sourceText": "Güncelleniyor...",
+      "category": "common",
+      "priority": 1,
+      "context": "Common UI elements and labels",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pwa.update.dismiss",
+      "sourceText": "Sonra",
+      "category": "common",
+      "priority": 1,
+      "context": "Common UI elements and labels",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pwa.notifications.title",
+      "sourceText": "Güncel Kalın",
+      "category": "common",
+      "priority": 1,
+      "context": "Common UI elements and labels",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pwa.notifications.description",
+      "sourceText": "Yeni sürdürülebilir ürünler ve çevre dostu ipuçları hakkında bildirim alın.",
+      "category": "common",
+      "priority": 1,
+      "context": "Common UI elements and labels",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pwa.notifications.allow",
+      "sourceText": "Bildirimlere İzin Ver",
+      "category": "common",
+      "priority": 1,
+      "context": "Common UI elements and labels",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pwa.notifications.dismiss",
+      "sourceText": "Hayır teşekkürler",
+      "category": "common",
+      "priority": 1,
+      "context": "Common UI elements and labels",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pwa.install.button",
+      "sourceText": "Uygulamayı Yükle",
+      "category": "cta",
+      "priority": 1,
+      "context": "Buttons and action triggers",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pwa.update.button",
+      "sourceText": "Şimdi Güncelle",
+      "category": "cta",
+      "priority": 1,
+      "context": "Buttons and action triggers",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.meta.title",
+      "sourceText": "CORIA Features - Sustainable Living Made Easy",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.meta.description",
+      "sourceText": "Discover CORIA's powerful features including barcode scanning, AI recommendations, impact tracking, and smart pantry management for sustainable living.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.sidebar.title",
+      "sourceText": "Feature Categories",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.navigation.allFeatures",
+      "sourceText": "All Features",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.navigation.backToCategory",
+      "sourceText": "Back to Category",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.overview.title",
+      "sourceText": "Powerful Features for Sustainable Living",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.overview.subtitle",
+      "sourceText": "Discover how CORIA's comprehensive feature set helps you make conscious consumption choices and track your environmental impact.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.overview.learnMore",
+      "sourceText": "Learn More",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.overview.cta.title",
+      "sourceText": "Ready to Start Your Sustainable Journey?",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.overview.cta.description",
+      "sourceText": "Download CORIA today and begin making conscious consumption choices.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.overview.cta.downloadIos",
+      "sourceText": "Download on App Store",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.overview.cta.downloadAndroid",
+      "sourceText": "Get it on Google Play",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categoryOverview.featuresTitle",
+      "sourceText": "Features in This Category",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.categoryOverview.relatedTitle",
+      "sourceText": "Related Categories",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.categoryOverview.cta.title",
+      "sourceText": "Experience These Features",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categoryOverview.cta.description",
+      "sourceText": "Download CORIA to access all these powerful sustainability features.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categoryOverview.cta.downloadIos",
+      "sourceText": "Download on App Store",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categoryOverview.cta.downloadAndroid",
+      "sourceText": "Get it on Google Play",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.featureDetail.howItWorks.title",
+      "sourceText": "How It Works",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.featureDetail.technicalDetails.title",
+      "sourceText": "Technical Details",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.featureDetail.learnMore",
+      "sourceText": "Learn More",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.featureDetail.cta.title",
+      "sourceText": "Try This Feature",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.featureDetail.cta.description",
+      "sourceText": "Download CORIA to experience this feature and many more.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.featureDetail.cta.downloadIos",
+      "sourceText": "Download on App Store",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.featureDetail.cta.downloadAndroid",
+      "sourceText": "Get it on Google Play",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.gallery.title",
+      "sourceText": "See It in Action",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.gallery.watchDemo",
+      "sourceText": "Watch Demo",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.gallery.videoPlaceholder",
+      "sourceText": "Demo video coming soon",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.whyItMatters.title",
+      "sourceText": "Why This Matters",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.whyItMatters.statisticsTitle",
+      "sourceText": "Impact Statistics",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.whyItMatters.joinMovement",
+      "sourceText": "Join the sustainable living movement",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.whyItMatters.impactTypes.environmental",
+      "sourceText": "Environmental",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.whyItMatters.impactTypes.health",
+      "sourceText": "Health",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.whyItMatters.impactTypes.economic",
+      "sourceText": "Economic",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.whyItMatters.impactTypes.social",
+      "sourceText": "Social",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.whyItMatters.impactTypes.ethical",
+      "sourceText": "Ethical",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.whyItMatters.impactTypes.global",
+      "sourceText": "Global",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.methodology.title",
+      "sourceText": "How We Calculate Scores",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.methodology.scoringSystem",
+      "sourceText": "Scoring System",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.methodology.scoringRange",
+      "sourceText": "Score Range",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.methodology.updateFrequency",
+      "sourceText": "Update Frequency",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.methodology.scoringFactors",
+      "sourceText": "Scoring Factors",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.methodology.ratings.poor",
+      "sourceText": "Poor",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.methodology.ratings.fair",
+      "sourceText": "Fair",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.methodology.ratings.good",
+      "sourceText": "Good",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.methodology.ratings.excellent",
+      "sourceText": "Excellent",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.methodology.dataProcessing.title",
+      "sourceText": "Data Processing & Analysis",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.methodology.transparency.title",
+      "sourceText": "Transparency & Accuracy",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.methodology.transparency.description",
+      "sourceText": "Our scoring methodology is continuously reviewed and updated based on the latest scientific research and industry standards.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.methodology.environmental-score.description",
+      "sourceText": "Our environmental scoring evaluates products across multiple environmental impact factors.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.methodology.environmental-score.overview",
+      "sourceText": "Environmental scores range from 0-10, with higher scores indicating lower environmental impact.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.methodology.environmental-score.updateFrequency",
+      "sourceText": "Updated weekly with new research data",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.methodology.environmental-score.dataProcessing",
+      "sourceText": "Environmental data is processed using life cycle assessment (LCA) principles and weighted based on scientific impact studies.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.methodology.environmental-score.factors.0.description",
+      "sourceText": "Greenhouse gas emissions during production, transportation, and disposal",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.methodology.environmental-score.factors.1.description",
+      "sourceText": "Water consumption and pollution impact during manufacturing",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.methodology.environmental-score.factors.2.description",
+      "sourceText": "Recyclability and sustainability of product packaging",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.methodology.environmental-score.factors.3.description",
+      "sourceText": "Carbon emissions from transportation and distribution",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.methodology.environmental-score.factors.4.description",
+      "sourceText": "Environmental impact of disposal and end-of-life management",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.methodology.social-impact.description",
+      "sourceText": "Social impact scoring evaluates the social responsibility aspects of product manufacturing and distribution.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.methodology.social-impact.overview",
+      "sourceText": "Social scores assess fair labor practices, community impact, and supply chain transparency.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.methodology.social-impact.updateFrequency",
+      "sourceText": "Updated monthly with new certification data",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.methodology.social-impact.dataProcessing",
+      "sourceText": "Social data is gathered from certification bodies, NGO reports, and company transparency reports.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.methodology.social-impact.factors.0.description",
+      "sourceText": "Worker rights, safety standards, and fair wage practices",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.methodology.social-impact.factors.1.description",
+      "sourceText": "Positive or negative impact on local communities",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.methodology.social-impact.factors.2.description",
+      "sourceText": "Transparency in supply chain and sourcing practices",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.methodology.social-impact.factors.3.description",
+      "sourceText": "Compliance with international labor and safety standards",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.methodology.social-impact.factors.4.description",
+      "sourceText": "Contribution to local economic development and job creation",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.methodology.health-rating.description",
+      "sourceText": "Health ratings evaluate the nutritional value and health impact of food products.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.methodology.health-rating.overview",
+      "sourceText": "Health scores consider nutritional content, processing level, and additive safety.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.methodology.health-rating.updateFrequency",
+      "sourceText": "Updated as new nutritional research becomes available",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.methodology.health-rating.dataProcessing",
+      "sourceText": "Health data combines nutritional databases with latest health research and dietary guidelines.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.methodology.health-rating.factors.0.description",
+      "sourceText": "Macro and micronutrient content and balance",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.methodology.health-rating.factors.1.description",
+      "sourceText": "Presence and safety of food additives and preservatives",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.methodology.health-rating.factors.2.description",
+      "sourceText": "Level of processing and impact on nutritional value",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.methodology.health-rating.factors.3.description",
+      "sourceText": "Allergen information and safety warnings",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.methodology.health-rating.factors.4.description",
+      "sourceText": "Verification of health claims and nutritional benefits",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.methodology.ethical-production.description",
+      "sourceText": "Ethical production scores evaluate animal welfare, organic practices, and fair trade compliance.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.methodology.ethical-production.overview",
+      "sourceText": "Ethical scores assess production methods and their alignment with ethical standards.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.methodology.ethical-production.updateFrequency",
+      "sourceText": "Updated quarterly with new certification data",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.methodology.ethical-production.dataProcessing",
+      "sourceText": "Ethical data is sourced from certification bodies, audits, and third-party verification systems.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.methodology.ethical-production.factors.0.description",
+      "sourceText": "Animal welfare standards and humane treatment practices",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.methodology.ethical-production.factors.1.description",
+      "sourceText": "Organic certification and sustainable farming practices",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.methodology.ethical-production.factors.2.description",
+      "sourceText": "Fair trade compliance and ethical sourcing",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.methodology.ethical-production.factors.3.description",
+      "sourceText": "Ethical sourcing of raw materials and ingredients",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.methodology.ethical-production.factors.4.description",
+      "sourceText": "Corporate social responsibility and ethical business practices",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.dataSources.title",
+      "sourceText": "Data Sources & Attribution",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.dataSources.description",
+      "sourceText": "CORIA uses trusted, verified data sources to provide accurate sustainability information.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.dataSources.verified",
+      "sourceText": "Verified",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.dataSources.coverage",
+      "sourceText": "Coverage",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.dataSources.updates",
+      "sourceText": "Updates",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.dataSources.reliability",
+      "sourceText": "Reliability",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.dataSources.visitSource",
+      "sourceText": "Visit Source",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.dataSources.quality.title",
+      "sourceText": "Data Quality Assurance",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.dataSources.quality.verification.title",
+      "sourceText": "Verification Process",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.dataSources.quality.verification.description",
+      "sourceText": "All data sources undergo rigorous verification to ensure accuracy and reliability.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.dataSources.quality.accuracy.title",
+      "sourceText": "Accuracy Standards",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.dataSources.quality.accuracy.description",
+      "sourceText": "We maintain high accuracy standards through continuous monitoring and validation.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.dataSources.attribution.title",
+      "sourceText": "Data Attribution",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.dataSources.attribution.description",
+      "sourceText": "We acknowledge and respect the valuable work of our data source partners in making sustainability information accessible.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.relatedFeatures.title",
+      "sourceText": "Related Features",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.relatedFeatures.description",
+      "sourceText": "Explore other features that work together to enhance your sustainable living experience.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.relatedFeatures.fromCategory",
+      "sourceText": "from this category",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 2
+    },
+    {
+      "key": "features.relatedFeatures.exploreAll.title",
+      "sourceText": "Explore All Features",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.relatedFeatures.exploreAll.description",
+      "sourceText": "Discover the complete range of CORIA's sustainability features.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.relatedFeatures.exploreAll.action",
+      "sourceText": "View All Features",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.scanning.title",
+      "sourceText": "Product Scanning",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.scanning.description",
+      "sourceText": "Instantly scan and analyze products for sustainability information",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.scanning.badge",
+      "sourceText": "Core Feature",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.scanning.longDescription",
+      "sourceText": "Our advanced scanning technology allows you to instantly access comprehensive sustainability information for millions of products. Simply scan a barcode to get detailed environmental, health, and social impact scores.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.scanning.benefits",
+      "sourceText": [
+        "Instant product recognition",
+        "Comprehensive sustainability data",
+        "Offline scanning capability",
+        "Global product database"
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.scanning.whyItMatters.description",
+      "sourceText": "Product scanning is the foundation of conscious consumption, enabling informed decisions at the point of purchase.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.categories.scanning.whyItMatters.impacts",
+      "sourceText": [
+        {
+          "type": "environmental",
+          "title": "Reduce Environmental Impact",
+          "description": "Make choices that minimize your carbon footprint and environmental damage."
+        },
+        {
+          "type": "health",
+          "title": "Improve Health Outcomes",
+          "description": "Choose products that are better for your health and wellbeing."
+        }
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.categories.scanning.whyItMatters.statistics",
+      "sourceText": [
+        {
+          "value": "2.8M+",
+          "label": "Products in database",
+          "description": "Comprehensive global coverage"
+        },
+        {
+          "value": "95%",
+          "label": "Scan accuracy",
+          "description": "Reliable product recognition"
+        }
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.categories.scanning.whyItMatters.cta.title",
+      "sourceText": "Start Scanning Today",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.categories.scanning.whyItMatters.cta.description",
+      "sourceText": "Join millions making conscious choices through product scanning.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.categories.scanning.relatedCategories",
+      "sourceText": [
+        "ai-recommendations",
+        "sustainability-scoring"
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.ai-recommendations.title",
+      "sourceText": "AI Recommendations",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.ai-recommendations.description",
+      "sourceText": "Get personalized sustainable product suggestions powered by AI",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.ai-recommendations.badge",
+      "sourceText": "AI-Powered",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.ai-recommendations.longDescription",
+      "sourceText": "Our advanced AI analyzes your preferences, dietary needs, and sustainability goals to provide personalized recommendations for more sustainable alternatives.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.ai-recommendations.benefits",
+      "sourceText": [
+        "Personalized suggestions",
+        "Learning algorithm",
+        "Alternative products",
+        "Smart matching"
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.ai-recommendations.whyItMatters.description",
+      "sourceText": "AI recommendations help you discover sustainable alternatives you might never have found on your own.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.categories.ai-recommendations.whyItMatters.impacts",
+      "sourceText": [
+        {
+          "type": "environmental",
+          "title": "Discover Better Alternatives",
+          "description": "Find products with lower environmental impact that match your needs."
+        },
+        {
+          "type": "economic",
+          "title": "Save Money",
+          "description": "Often sustainable alternatives are more cost-effective in the long run."
+        }
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.categories.ai-recommendations.whyItMatters.statistics",
+      "sourceText": [
+        {
+          "value": "87%",
+          "label": "User satisfaction",
+          "description": "With AI recommendations"
+        },
+        {
+          "value": "3.2x",
+          "label": "More alternatives found",
+          "description": "Compared to manual search"
+        }
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.categories.ai-recommendations.whyItMatters.cta.title",
+      "sourceText": "Get Smart Recommendations",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.categories.ai-recommendations.whyItMatters.cta.description",
+      "sourceText": "Let AI help you make better sustainable choices.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.categories.ai-recommendations.relatedCategories",
+      "sourceText": [
+        "scanning",
+        "impact-tracking"
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.impact-tracking.title",
+      "sourceText": "Impact Tracking",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.impact-tracking.description",
+      "sourceText": "Monitor your environmental footprint and sustainability progress",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.impact-tracking.badge",
+      "sourceText": "Analytics",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.impact-tracking.longDescription",
+      "sourceText": "Track your environmental impact over time with detailed analytics on carbon footprint, water consumption, and other sustainability metrics.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.impact-tracking.benefits",
+      "sourceText": [
+        "Carbon footprint tracking",
+        "Water usage monitoring",
+        "Progress visualization",
+        "Goal setting"
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.impact-tracking.whyItMatters.description",
+      "sourceText": "Understanding your impact is the first step toward meaningful change and sustainable living.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.categories.impact-tracking.whyItMatters.impacts",
+      "sourceText": [
+        {
+          "type": "environmental",
+          "title": "Measure Real Impact",
+          "description": "See the tangible environmental benefits of your sustainable choices."
+        },
+        {
+          "type": "social",
+          "title": "Inspire Others",
+          "description": "Share your progress and inspire friends and family to join the movement."
+        }
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.categories.impact-tracking.whyItMatters.statistics",
+      "sourceText": [
+        {
+          "value": "23%",
+          "label": "Average CO2 reduction",
+          "description": "Among active users"
+        },
+        {
+          "value": "156L",
+          "label": "Water saved per month",
+          "description": "Average user impact"
+        }
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.categories.impact-tracking.whyItMatters.cta.title",
+      "sourceText": "Start Tracking Your Impact",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.categories.impact-tracking.whyItMatters.cta.description",
+      "sourceText": "See how your choices make a difference for the planet.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.categories.impact-tracking.relatedCategories",
+      "sourceText": [
+        "sustainability-scoring",
+        "data-insights"
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.smart-pantry.title",
+      "sourceText": "Smart Pantry",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.smart-pantry.description",
+      "sourceText": "Manage your food inventory and reduce waste intelligently",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.smart-pantry.badge",
+      "sourceText": "Smart Home",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.smart-pantry.longDescription",
+      "sourceText": "Transform your pantry into a smart, sustainable food management system that reduces waste, saves money, and helps you shop more efficiently.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.smart-pantry.benefits",
+      "sourceText": [
+        "Inventory management",
+        "Expiry tracking",
+        "Smart shopping lists",
+        "Waste reduction"
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.smart-pantry.whyItMatters.description",
+      "sourceText": "Food waste is a major environmental issue. Smart pantry management can significantly reduce your household's food waste.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.categories.smart-pantry.whyItMatters.impacts",
+      "sourceText": [
+        {
+          "type": "environmental",
+          "title": "Reduce Food Waste",
+          "description": "Minimize food waste and its environmental impact."
+        },
+        {
+          "type": "economic",
+          "title": "Save Money",
+          "description": "Reduce food costs by avoiding unnecessary purchases and waste."
+        }
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.categories.smart-pantry.whyItMatters.statistics",
+      "sourceText": [
+        {
+          "value": "40%",
+          "label": "Food waste reduction",
+          "description": "Average among users"
+        },
+        {
+          "value": "₺180",
+          "label": "Monthly savings",
+          "description": "Average household"
+        }
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.categories.smart-pantry.whyItMatters.cta.title",
+      "sourceText": "Smart Pantry Management",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.categories.smart-pantry.whyItMatters.cta.description",
+      "sourceText": "Reduce waste and save money with intelligent food management.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.categories.smart-pantry.relatedCategories",
+      "sourceText": [
+        "scanning",
+        "ai-recommendations"
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.sustainability-scoring.title",
+      "sourceText": "Sustainability Scoring",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.sustainability-scoring.description",
+      "sourceText": "Comprehensive environmental, social, and health impact scores",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.sustainability-scoring.badge",
+      "sourceText": "Core Metric",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.sustainability-scoring.longDescription",
+      "sourceText": "Our comprehensive scoring system evaluates products across multiple dimensions including environmental impact, social responsibility, health effects, and ethical production practices.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.sustainability-scoring.benefits",
+      "sourceText": [
+        "Multi-dimensional scoring",
+        "Scientific methodology",
+        "Regular updates",
+        "Transparent criteria"
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.sustainability-scoring.whyItMatters.description",
+      "sourceText": "Sustainability scoring provides a clear, objective way to compare products and make informed decisions.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.categories.sustainability-scoring.whyItMatters.impacts",
+      "sourceText": [
+        {
+          "type": "environmental",
+          "title": "Environmental Protection",
+          "description": "Choose products that minimize environmental damage."
+        },
+        {
+          "type": "social",
+          "title": "Social Responsibility",
+          "description": "Support companies with ethical labor practices and community impact."
+        },
+        {
+          "type": "health",
+          "title": "Health & Wellness",
+          "description": "Select products that are better for your health and wellbeing."
+        }
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.categories.sustainability-scoring.whyItMatters.statistics",
+      "sourceText": [
+        {
+          "value": "12",
+          "label": "Scoring criteria",
+          "description": "Comprehensive evaluation"
+        },
+        {
+          "value": "98%",
+          "label": "Data accuracy",
+          "description": "Verified information"
+        }
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.categories.sustainability-scoring.whyItMatters.cta.title",
+      "sourceText": "Understand Sustainability Scores",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.categories.sustainability-scoring.whyItMatters.cta.description",
+      "sourceText": "Learn how our scoring system helps you make better choices.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.categories.sustainability-scoring.relatedCategories",
+      "sourceText": [
+        "scanning",
+        "methodology"
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.community.title",
+      "sourceText": "Community Features",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.community.description",
+      "sourceText": "Connect with other conscious consumers and share experiences",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.community.badge",
+      "sourceText": "Social",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.community.longDescription",
+      "sourceText": "Join a community of conscious consumers, share your experiences, read reviews, and learn from others on their sustainability journey.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.community.benefits",
+      "sourceText": [
+        "User reviews",
+        "Community ratings",
+        "Experience sharing",
+        "Social learning"
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.community.whyItMatters.description",
+      "sourceText": "Community support and shared knowledge accelerate the adoption of sustainable practices.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.categories.community.whyItMatters.impacts",
+      "sourceText": [
+        {
+          "type": "social",
+          "title": "Collective Impact",
+          "description": "Together we can create greater positive change than individually."
+        },
+        {
+          "type": "educational",
+          "title": "Shared Learning",
+          "description": "Learn from others' experiences and share your own insights."
+        }
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.categories.community.whyItMatters.statistics",
+      "sourceText": [
+        {
+          "value": "50K+",
+          "label": "Active community members",
+          "description": "Growing daily"
+        },
+        {
+          "value": "4.8/5",
+          "label": "Average community rating",
+          "description": "High user satisfaction"
+        }
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.categories.community.whyItMatters.cta.title",
+      "sourceText": "Join Our Community",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.categories.community.whyItMatters.cta.description",
+      "sourceText": "Connect with like-minded individuals on the sustainability journey.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.categories.community.relatedCategories",
+      "sourceText": [
+        "scanning",
+        "impact-tracking"
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.premium-features.title",
+      "sourceText": "Premium Features",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.premium-features.description",
+      "sourceText": "Advanced features for serious sustainability enthusiasts",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.premium-features.badge",
+      "sourceText": "Premium",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.premium-features.longDescription",
+      "sourceText": "Unlock advanced features including unlimited scanning, detailed reports, advanced analytics, and an ad-free experience for the ultimate sustainability toolkit.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.premium-features.benefits",
+      "sourceText": [
+        "Unlimited scanning",
+        "Detailed reports",
+        "Advanced analytics",
+        "Ad-free experience"
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.premium-features.whyItMatters.description",
+      "sourceText": "Premium features provide deeper insights and more comprehensive tools for serious sustainability practitioners.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.categories.premium-features.whyItMatters.impacts",
+      "sourceText": [
+        {
+          "type": "analytical",
+          "title": "Deeper Insights",
+          "description": "Get comprehensive analytics and detailed reports on your sustainability journey."
+        },
+        {
+          "type": "efficiency",
+          "title": "Enhanced Experience",
+          "description": "Enjoy unlimited access and an ad-free experience for focused sustainability practice."
+        }
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.categories.premium-features.whyItMatters.statistics",
+      "sourceText": [
+        {
+          "value": "₺29.99",
+          "label": "Monthly subscription",
+          "description": "Affordable premium access"
+        },
+        {
+          "value": "5x",
+          "label": "More detailed insights",
+          "description": "Compared to free version"
+        }
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.categories.premium-features.whyItMatters.cta.title",
+      "sourceText": "Upgrade to Premium",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.categories.premium-features.whyItMatters.cta.description",
+      "sourceText": "Unlock the full potential of sustainable living with premium features.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.categories.premium-features.relatedCategories",
+      "sourceText": [
+        "data-insights",
+        "impact-tracking"
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.data-insights.title",
+      "sourceText": "Data Insights",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.data-insights.description",
+      "sourceText": "Advanced analytics and insights into your consumption patterns",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.data-insights.badge",
+      "sourceText": "Analytics",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.data-insights.longDescription",
+      "sourceText": "Gain deep insights into your consumption patterns, visualize your impact over time, and track progress toward your sustainability goals with advanced analytics.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.data-insights.benefits",
+      "sourceText": [
+        "Consumption analysis",
+        "Impact visualization",
+        "Progress tracking",
+        "Trend analysis"
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.categories.data-insights.whyItMatters.description",
+      "sourceText": "Data-driven insights help you understand your consumption patterns and make more informed decisions.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.categories.data-insights.whyItMatters.impacts",
+      "sourceText": [
+        {
+          "type": "analytical",
+          "title": "Pattern Recognition",
+          "description": "Identify trends and patterns in your consumption behavior."
+        },
+        {
+          "type": "optimization",
+          "title": "Continuous Improvement",
+          "description": "Use insights to continuously improve your sustainability practices."
+        }
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.categories.data-insights.whyItMatters.statistics",
+      "sourceText": [
+        {
+          "value": "15+",
+          "label": "Analytics dashboards",
+          "description": "Comprehensive insights"
+        },
+        {
+          "value": "92%",
+          "label": "Users improve habits",
+          "description": "With data insights"
+        }
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 4
+    },
+    {
+      "key": "features.categories.data-insights.whyItMatters.cta.title",
+      "sourceText": "Explore Your Data",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.categories.data-insights.whyItMatters.cta.description",
+      "sourceText": "Discover insights that help you live more sustainably.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 5
+    },
+    {
+      "key": "features.categories.data-insights.relatedCategories",
+      "sourceText": [
+        "impact-tracking",
+        "premium-features"
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.features.barcode-scan.title",
+      "sourceText": "Barcode Scanning",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.features.barcode-scan.shortDescription",
+      "sourceText": "Instantly scan product barcodes for sustainability information",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.features.barcode-scan.longDescription",
+      "sourceText": "Use your phone's camera to scan any product barcode and instantly access comprehensive sustainability information including environmental impact, health ratings, and ethical production details.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.features.barcode-scan.benefits",
+      "sourceText": [
+        "Instant product recognition with 95% accuracy",
+        "Access to 2.8M+ products in our global database",
+        "Works offline for previously scanned products",
+        "Fast scanning with advanced image recognition"
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.features.barcode-scan.howItWorks",
+      "sourceText": [
+        {
+          "title": "Point & Scan",
+          "description": "Simply point your camera at any product barcode"
+        },
+        {
+          "title": "Instant Recognition",
+          "description": "Our AI instantly identifies the product and retrieves data"
+        },
+        {
+          "title": "View Results",
+          "description": "See comprehensive sustainability scores and information"
+        }
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.features.barcode-scan.technicalDetails",
+      "sourceText": [
+        {
+          "title": "Recognition Technology",
+          "description": "Advanced computer vision and machine learning algorithms for accurate barcode recognition",
+          "link": "https://developers.google.com/ml-kit/vision/barcode-scanning"
+        },
+        {
+          "title": "Database Coverage",
+          "description": "Integration with multiple global product databases for comprehensive coverage"
+        }
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.features.environmental-score.title",
+      "sourceText": "Environmental Score",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.features.environmental-score.shortDescription",
+      "sourceText": "Comprehensive environmental impact assessment",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.features.environmental-score.longDescription",
+      "sourceText": "Our environmental scoring system evaluates products across multiple environmental factors including carbon footprint, water usage, packaging sustainability, and production methods.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.features.environmental-score.benefits",
+      "sourceText": [
+        "Multi-factor environmental assessment",
+        "Science-based scoring methodology",
+        "Regular updates based on latest research",
+        "Transparent scoring criteria"
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.features.environmental-score.howItWorks",
+      "sourceText": [
+        {
+          "title": "Data Collection",
+          "description": "Gather environmental data from verified sources and databases"
+        },
+        {
+          "title": "Impact Analysis",
+          "description": "Analyze carbon footprint, water usage, and other environmental factors"
+        },
+        {
+          "title": "Score Calculation",
+          "description": "Calculate weighted environmental score from 0-10"
+        }
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.features.environmental-score.technicalDetails",
+      "sourceText": [
+        {
+          "title": "Scoring Algorithm",
+          "description": "Proprietary algorithm based on life cycle assessment (LCA) principles"
+        },
+        {
+          "title": "Data Sources",
+          "description": "Integration with environmental databases and scientific research"
+        }
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.features.personalized-suggestions.title",
+      "sourceText": "Personalized Suggestions",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.features.personalized-suggestions.shortDescription",
+      "sourceText": "AI-powered recommendations tailored to your preferences",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.features.personalized-suggestions.longDescription",
+      "sourceText": "Our AI learns from your scanning history, preferences, and sustainability goals to provide personalized product recommendations that match your values and needs.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.features.personalized-suggestions.benefits",
+      "sourceText": [
+        "Machine learning-powered recommendations",
+        "Learns from your preferences over time",
+        "Considers dietary restrictions and allergies",
+        "Balances sustainability with personal needs"
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.features.personalized-suggestions.howItWorks",
+      "sourceText": [
+        {
+          "title": "Profile Analysis",
+          "description": "Analyze your scanning history and stated preferences"
+        },
+        {
+          "title": "AI Processing",
+          "description": "Machine learning algorithms identify patterns and preferences"
+        },
+        {
+          "title": "Smart Recommendations",
+          "description": "Generate personalized suggestions for sustainable alternatives"
+        }
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.features.personalized-suggestions.technicalDetails",
+      "sourceText": [
+        {
+          "title": "Machine Learning",
+          "description": "Advanced recommendation algorithms using collaborative and content-based filtering"
+        },
+        {
+          "title": "Privacy Protection",
+          "description": "All personal data processing follows strict privacy guidelines"
+        }
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.features.carbon-footprint.title",
+      "sourceText": "Carbon Footprint Tracking",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.features.carbon-footprint.shortDescription",
+      "sourceText": "Monitor your personal carbon footprint from consumption",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.features.carbon-footprint.longDescription",
+      "sourceText": "Track the carbon footprint of your purchases and consumption patterns over time. See how your choices impact the environment and work toward carbon reduction goals.",
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.features.carbon-footprint.benefits",
+      "sourceText": [
+        "Real-time carbon footprint calculation",
+        "Historical tracking and trends",
+        "Goal setting and progress monitoring",
+        "Comparison with average consumption"
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.features.carbon-footprint.howItWorks",
+      "sourceText": [
+        {
+          "title": "Purchase Tracking",
+          "description": "Automatically track carbon impact of scanned products"
+        },
+        {
+          "title": "Impact Calculation",
+          "description": "Calculate total carbon footprint based on consumption data"
+        },
+        {
+          "title": "Progress Visualization",
+          "description": "View trends and progress toward reduction goals"
+        }
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "features.features.carbon-footprint.technicalDetails",
+      "sourceText": [
+        {
+          "title": "Carbon Calculation",
+          "description": "Based on life cycle assessment data and scientific research"
+        },
+        {
+          "title": "Data Accuracy",
+          "description": "Regular updates from environmental databases and research institutions"
+        }
+      ],
+      "category": "features",
+      "priority": 2,
+      "context": "Product features and benefits",
+      "nestingLevel": 3
+    },
+    {
+      "key": "pricing.meta.title",
+      "sourceText": "CORIA Fiyatlandırma - Ücretsiz ve Premium Planlar",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pricing.meta.description",
+      "sourceText": "CORIA'nın temel özelliklerle ücretsiz planı veya sınırsız tarama, detaylı raporlar ve gelişmiş analizlerle aylık ₺29,99 premium planı arasından seçim yapın.",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pricing.plans.free.name",
+      "sourceText": "Ücretsiz",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 3
+    },
+    {
+      "key": "pricing.plans.free.price",
+      "sourceText": "0",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 3
+    },
+    {
+      "key": "pricing.plans.free.period",
+      "sourceText": "sonsuza kadar",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 3
+    },
+    {
+      "key": "pricing.plans.free.description",
+      "sourceText": "Sürdürülebilir yaşama başlamak için mükemmel",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 3
+    },
+    {
+      "key": "pricing.plans.free.features",
+      "sourceText": [
+        "Günde 10 ürün tarama",
+        "Temel sürdürülebilirlik skorları",
+        "Basit etki takibi",
+        "Topluluk erişimi",
+        "Temel öneriler"
+      ],
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 3
+    },
+    {
+      "key": "pricing.plans.free.cta",
+      "sourceText": "Başlayın",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 3
+    },
+    {
+      "key": "pricing.plans.free.popular",
+      "sourceText": false,
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 3
+    },
+    {
+      "key": "pricing.plans.premium.name",
+      "sourceText": "Premium",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 3
+    },
+    {
+      "key": "pricing.plans.premium.price",
+      "sourceText": "29,99",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 3
+    },
+    {
+      "key": "pricing.plans.premium.period",
+      "sourceText": "aylık",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 3
+    },
+    {
+      "key": "pricing.plans.premium.description",
+      "sourceText": "Ciddi sürdürülebilirlik meraklıları için",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 3
+    },
+    {
+      "key": "pricing.plans.premium.features",
+      "sourceText": [
+        "Sınırsız ürün tarama",
+        "Detaylı sürdürülebilirlik raporları",
+        "Gelişmiş etki analizleri",
+        "Kişiselleştirilmiş AI önerileri",
+        "Öncelikli müşteri desteği",
+        "Reklamsız deneyim",
+        "Veri ve rapor dışa aktarma",
+        "Yeni özelliklere erken erişim"
+      ],
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 3
+    },
+    {
+      "key": "pricing.plans.premium.cta",
+      "sourceText": "Premium Seç",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 3
+    },
+    {
+      "key": "pricing.plans.premium.popular",
+      "sourceText": true,
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 3
+    },
+    {
+      "key": "pricing.comparison.title",
+      "sourceText": "Özellik Karşılaştırması",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pricing.comparison.features.scanning.name",
+      "sourceText": "Ürün Tarama",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 4
+    },
+    {
+      "key": "pricing.comparison.features.scanning.free",
+      "sourceText": "10 tarama/gün",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 4
+    },
+    {
+      "key": "pricing.comparison.features.scanning.premium",
+      "sourceText": "Sınırsız",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 4
+    },
+    {
+      "key": "pricing.comparison.features.reports.name",
+      "sourceText": "Sürdürülebilirlik Raporları",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 4
+    },
+    {
+      "key": "pricing.comparison.features.reports.free",
+      "sourceText": "Temel",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 4
+    },
+    {
+      "key": "pricing.comparison.features.reports.premium",
+      "sourceText": "Detaylı ve Dışa Aktarılabilir",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 4
+    },
+    {
+      "key": "pricing.comparison.features.analytics.name",
+      "sourceText": "Etki Analizleri",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 4
+    },
+    {
+      "key": "pricing.comparison.features.analytics.free",
+      "sourceText": "Basit takip",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 4
+    },
+    {
+      "key": "pricing.comparison.features.analytics.premium",
+      "sourceText": "Gelişmiş içgörüler",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 4
+    },
+    {
+      "key": "pricing.comparison.features.recommendations.name",
+      "sourceText": "AI Önerileri",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 4
+    },
+    {
+      "key": "pricing.comparison.features.recommendations.free",
+      "sourceText": "Temel öneriler",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 4
+    },
+    {
+      "key": "pricing.comparison.features.recommendations.premium",
+      "sourceText": "Kişiselleştirilmiş ve Akıllı",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 4
+    },
+    {
+      "key": "pricing.comparison.features.support.name",
+      "sourceText": "Müşteri Desteği",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 4
+    },
+    {
+      "key": "pricing.comparison.features.support.free",
+      "sourceText": "Topluluk desteği",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 4
+    },
+    {
+      "key": "pricing.comparison.features.support.premium",
+      "sourceText": "Öncelikli destek",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 4
+    },
+    {
+      "key": "pricing.comparison.features.ads.name",
+      "sourceText": "Reklamlar",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 4
+    },
+    {
+      "key": "pricing.comparison.features.ads.free",
+      "sourceText": "Reklamlı",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 4
+    },
+    {
+      "key": "pricing.comparison.features.ads.premium",
+      "sourceText": "Reklamsız",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 4
+    },
+    {
+      "key": "pricing.comparison.features.export.name",
+      "sourceText": "Veri Dışa Aktarma",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 4
+    },
+    {
+      "key": "pricing.comparison.features.export.free",
+      "sourceText": "Mevcut değil",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 4
+    },
+    {
+      "key": "pricing.comparison.features.export.premium",
+      "sourceText": "Tam dışa aktarma",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 4
+    },
+    {
+      "key": "pricing.comparison.features.earlyAccess.name",
+      "sourceText": "Erken Erişim",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 4
+    },
+    {
+      "key": "pricing.comparison.features.earlyAccess.free",
+      "sourceText": "Standart sürümler",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 4
+    },
+    {
+      "key": "pricing.comparison.features.earlyAccess.premium",
+      "sourceText": "Beta özellikler",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 4
+    },
+    {
+      "key": "pricing.trust.title",
+      "sourceText": "Neden CORIA Premium?",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pricing.trust.benefits",
+      "sourceText": [
+        {
+          "title": "İstediğiniz Zaman İptal",
+          "description": "Uzun vadeli taahhüt yok. Aboneliğinizi istediğiniz zaman tek tıkla iptal edin.",
+          "icon": "cancel"
+        },
+        {
+          "title": "30 Gün Para İade Garantisi",
+          "description": "Memnun değil misiniz? 30 gün içinde soru sorulmadan tam para iadesi.",
+          "icon": "refund"
+        },
+        {
+          "title": "Güvenli Ödemeler",
+          "description": "Ödeme bilgileriniz banka düzeyinde güvenlikle korunur.",
+          "icon": "security"
+        },
+        {
+          "title": "Düzenli Güncellemeler",
+          "description": "Sürekli iyileştirmeler ve yeni özellikler düzenli olarak eklenir.",
+          "icon": "updates"
+        }
+      ],
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pricing.faq.title",
+      "sourceText": "Fiyatlandırma SSS",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pricing.faq.questions",
+      "sourceText": [
+        {
+          "question": "Planımı istediğim zaman yükseltebilir veya düşürebilir miyim?",
+          "answer": "Evet, istediğiniz zaman Premium'a yükseltebilir veya Ücretsiz'e düşürebilirsiniz. Değişiklikler hemen etkili olur ve faturalandırma orantılı olarak yapılır."
+        },
+        {
+          "question": "Hangi ödeme yöntemlerini kabul ediyorsunuz?",
+          "answer": "Güvenli uygulama mağazası faturalandırma sistemleri aracılığıyla tüm büyük kredi kartları, banka kartları ve mobil ödeme yöntemlerini kabul ediyoruz."
+        },
+        {
+          "question": "Premium için ücretsiz deneme var mı?",
+          "answer": "Evet! Yeni kullanıcılar uygulamayı ilk indirdiklerinde Premium özelliklerinin 7 günlük ücretsiz denemesini alırlar."
+        },
+        {
+          "question": "Premium'u iptal edersem verilerime ne olur?",
+          "answer": "Verileriniz güvende kalır ve erişilebilir durumda olur. Temel özelliklere erişiminiz devam eder, ancak gelişmiş analizler ve sınırsız tarama sınırlanır."
+        },
+        {
+          "question": "Öğrenci veya aile indirimleri sunuyor musunuz?",
+          "answer": "Öğrenciler ve aileler için özel fiyatlandırma üzerinde çalışıyoruz. Bunlar mevcut olduğunda bildirim almak için bültenimize kaydolun."
+        },
+        {
+          "question": "Premium özelliklerini çevrimdışı kullanabilir miyim?",
+          "answer": "Birçok Premium özellik çevrimdışı çalışır, önceden önbelleğe alınmış ürünlerin sınırsız taranması ve kayıtlı raporlarınızın görüntülenmesi dahil."
+        }
+      ],
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pricing.testimonials.title",
+      "sourceText": "Premium Kullanıcılar Ne Diyor",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pricing.testimonials.reviews",
+      "sourceText": [
+        {
+          "name": "Ayşe K.",
+          "location": "İstanbul",
+          "rating": 5,
+          "text": "Sınırsız tarama özelliği alışveriş şeklimi tamamen değiştirdi. Günlük limitlerden endişe etmeden her ürünü kontrol edebiliyorum.",
+          "feature": "Sınırsız Tarama"
+        },
+        {
+          "name": "Mehmet D.",
+          "location": "Ankara",
+          "rating": 5,
+          "text": "Detaylı raporlar ailemin çevresel etkisini takip etmeme yardımcı oluyor. Sadece 3 ayda karbon ayak izimizi %30 azalttık!",
+          "feature": "Detaylı Raporlar"
+        },
+        {
+          "name": "Zeynep M.",
+          "location": "İzmir",
+          "rating": 5,
+          "text": "Premium öneriler inanılmaz derecede doğru. AI gerçekten tercihlerimi ve beslenme ihtiyaçlarımı anlıyor.",
+          "feature": "AI Önerileri"
+        }
+      ],
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pricing.cta.title",
+      "sourceText": "Daha Büyük Etki Yapmaya Hazır mısınız?",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pricing.cta.description",
+      "sourceText": "CORIA Premium ile bilinçli seçimler yapan binlerce kullanıcıya katılın.",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pricing.cta.downloadIos",
+      "sourceText": "App Store'dan İndir",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pricing.cta.downloadAndroid",
+      "sourceText": "Google Play'den İndir",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pricing.cta.note",
+      "sourceText": "Premium abonelik, uygulama mağazası hesabınız üzerinden yönetilir.",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pricing.support.title",
+      "sourceText": "Müşteri Desteği",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pricing.support.description",
+      "sourceText": "Sorularınız mı var? Size yardımcı olmaktan mutluluk duyarız.",
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 2
+    },
+    {
+      "key": "pricing.support.methods",
+      "sourceText": [
+        {
+          "title": "E-posta Desteği",
+          "description": "24 saat içinde yanıt alın",
+          "contact": "destek@coria.app",
+          "icon": "email"
+        },
+        {
+          "title": "Canlı Sohbet",
+          "description": "Pazartesi-Cuma 09:00-18:00",
+          "contact": "Sohbeti Başlat",
+          "icon": "chat"
+        },
+        {
+          "title": "Yardım Merkezi",
+          "description": "SSS ve rehberler",
+          "contact": "Yardım Merkezini Ziyaret Et",
+          "icon": "help"
+        }
+      ],
+      "category": "pricing",
+      "priority": 2,
+      "context": "Pricing plans and payment options",
+      "nestingLevel": 2
+    }
+  ]
+}

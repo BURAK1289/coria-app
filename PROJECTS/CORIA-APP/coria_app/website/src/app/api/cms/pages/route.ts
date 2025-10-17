@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getPages, getPageBySlug } from '@/lib/cms/pages';
+import { logger } from '@/lib/logger';
 
 export async function GET(request: NextRequest) {
   try {
@@ -25,7 +26,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ pages });
     }
   } catch (error) {
-    console.error('Error fetching pages:', error);
+    logger.error('Error fetching pages:', error);
     return NextResponse.json(
       { error: 'Failed to fetch pages' },
       { status: 500 }

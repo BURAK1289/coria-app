@@ -4,14 +4,7 @@ import { useTranslations } from 'next-intl';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Heading, Text } from '@/components/ui/typography';
-import {
-  LeafIcon,
-  HeartIcon,
-  UsersIcon,
-  ShieldIcon,
-  BarChart3Icon,
-  InfoIcon,
-} from 'lucide-react';
+import { Icon } from '@/components/icons/Icon';
 
 interface MethodologyExplanationProps {
   feature: string;
@@ -19,7 +12,7 @@ interface MethodologyExplanationProps {
 
 const scoringCriteria = {
   'environmental-score': {
-    icon: LeafIcon,
+    iconName: 'leaf',
     accent: 'text-coria-primary',
     bg: 'bg-coria-primary/12',
     factors: [
@@ -31,7 +24,7 @@ const scoringCriteria = {
     ],
   },
   'social-impact': {
-    icon: UsersIcon,
+    iconName: 'star',
     accent: 'text-water',
     bg: 'bg-water/12',
     factors: [
@@ -43,7 +36,7 @@ const scoringCriteria = {
     ],
   },
   'health-rating': {
-    icon: HeartIcon,
+    iconName: 'star',
     accent: 'text-coria-accent',
     bg: 'bg-coria-accent/12',
     factors: [
@@ -55,7 +48,7 @@ const scoringCriteria = {
     ],
   },
   'ethical-production': {
-    icon: ShieldIcon,
+    iconName: 'star',
     accent: 'text-coria-primary-dark',
     bg: 'bg-coria-primary-light/12',
     factors: [
@@ -77,8 +70,6 @@ export function MethodologyExplanation({ feature }: MethodologyExplanationProps)
     return null;
   }
 
-  const Icon = criteria.icon;
-
   return (
     <section className="space-y-10">
       <div className="text-center space-y-4">
@@ -90,10 +81,10 @@ export function MethodologyExplanation({ feature }: MethodologyExplanationProps)
         </Text>
       </div>
 
-      <Card className="rounded-[28px] border border-white/70 bg-white/95 p-6 shadow-[0_35px_90px_-65px_rgba(27,94,63,0.45)]">
+      <Card className="rounded-[28px] border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm p-6 shadow-sm">
         <div className="flex flex-col gap-5 md:flex-row md:items-start">
           <span className={`flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl ${criteria.bg} ${criteria.accent}`}>
-            <Icon className="h-6 w-6" />
+            <Icon name={criteria.iconName} size={24} aria-hidden="true" />
           </span>
           <div className="flex-1 space-y-4">
             <div className="space-y-2">
@@ -105,7 +96,7 @@ export function MethodologyExplanation({ feature }: MethodologyExplanationProps)
               </Text>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
-              <Card className="rounded-2xl border border-white/70 bg-white/90 p-4">
+              <Card className="rounded-2xl border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm p-4">
                 <Heading as="h5" size="sm" weight="semibold" className="uppercase tracking-wider text-coria-primary">
                   {t('methodology.scoringRange')}
                 </Heading>
@@ -116,7 +107,7 @@ export function MethodologyExplanation({ feature }: MethodologyExplanationProps)
                   <p><Badge variant="default">9-10</Badge> {t('methodology.ratings.excellent')}</p>
                 </div>
               </Card>
-              <Card className="rounded-2xl border border-white/70 bg-white/90 p-4">
+              <Card className="rounded-2xl border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm p-4">
                 <Heading as="h5" size="sm" weight="semibold" className="uppercase tracking-wider text-coria-primary">
                   {t('methodology.updateFrequency')}
                 </Heading>
@@ -137,7 +128,7 @@ export function MethodologyExplanation({ feature }: MethodologyExplanationProps)
           {criteria.factors.map((factor, index) => (
             <Card
               key={factor}
-              className="rounded-[22px] border border-white/70 bg-white/95 p-4 shadow-[0_25px_70px_-55px_rgba(27,94,63,0.4)]"
+              className="rounded-[22px] border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm p-4 shadow-sm"
             >
               <div className="flex items-start gap-3">
                 <span className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-coria-primary/10 text-sm font-semibold text-coria-primary">
@@ -157,9 +148,9 @@ export function MethodologyExplanation({ feature }: MethodologyExplanationProps)
         </div>
       </div>
 
-      <Card className="rounded-[24px] border border-white/70 bg-white/95 p-6 shadow-[0_28px_80px_-65px_rgba(27,94,63,0.4)]">
+      <Card className="rounded-[24px] border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm p-6 shadow-sm">
         <div className="flex items-start gap-3">
-          <BarChart3Icon className="h-5 w-5 text-coria-primary" />
+          <Icon name="bar-chart" size={20} className="text-coria-primary" aria-hidden="true" />
           <div className="space-y-2">
             <Heading as="h5" size="sm" weight="semibold" className="text-coria-primary">
               {t('methodology.dataProcessing.title')}
@@ -173,7 +164,7 @@ export function MethodologyExplanation({ feature }: MethodologyExplanationProps)
 
       <Card className="rounded-[20px] border border-coria-primary/20 bg-coria-primary/5 p-5 text-sm text-coria-primary">
         <div className="flex items-start gap-3">
-          <InfoIcon className="h-5 w-5" />
+          <Icon name="info" size={20} aria-hidden="true" />
           <div className="space-y-1">
             <Heading as="h5" size="sm" weight="semibold">
               {t('methodology.transparency.title')}

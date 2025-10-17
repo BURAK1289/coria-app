@@ -2,24 +2,37 @@ import { forwardRef } from 'react';
 import { cn } from '@/lib/utils';
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
-  variant?: 'default' | 'elevated' | 'outlined' | 'outline' | 'ghost';
+  variant?: 'default' | 'elevated' | 'outline' | 'ghost' | 'glass';
   padding?: 'none' | 'sm' | 'md' | 'lg';
+  rounded?: 'default' | 'lg' | 'organic-sm' | 'organic' | 'organic-lg' | 'organic-xl';
+  hover?: boolean;
   children: React.ReactNode;
 }
 
 const Card = forwardRef<HTMLDivElement, CardProps>(
-  ({ className, variant = 'default', padding = 'md', ...props }, ref) => {
+  ({ className, variant = 'default', padding = 'md', rounded = 'default', hover = false, ...props }, ref) => {
+    const roundedClasses: Record<NonNullable<CardProps['rounded']>, string> = {
+      'default': 'rounded-lg',
+      'lg': 'rounded-xl',
+      'organic-sm': 'rounded-[22px]',
+      'organic': 'rounded-[28px]',
+      'organic-lg': 'rounded-[32px]',
+      'organic-xl': 'rounded-[36px]',
+    };
+
     return (
       <div
         ref={ref}
         className={cn(
-          'rounded-lg transition-all duration-200',
+          'transition-all duration-300',
+          roundedClasses[rounded],
           // Variant styles
           {
             'bg-white border border-coria-gray-200': variant === 'default',
             'bg-white border border-coria-gray-200 shadow-lg hover:shadow-xl': variant === 'elevated',
-            'bg-transparent border-2 border-coria-primary': variant === 'outlined' || variant === 'outline',
+            'bg-transparent border-2 border-coria-primary': variant === 'outline',
             'bg-coria-gray-50 border-0': variant === 'ghost',
+            'bg-[var(--foam)]/85 backdrop-blur-sm border border-[var(--foam)] shadow-lg': variant === 'glass',
           },
           // Padding styles
           {
@@ -27,6 +40,10 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
             'p-4': padding === 'sm',
             'p-6': padding === 'md',
             'p-8': padding === 'lg',
+          },
+          // Hover effects
+          {
+            'hover:-translate-y-2 hover:shadow-xl': hover,
           },
           className
         )}

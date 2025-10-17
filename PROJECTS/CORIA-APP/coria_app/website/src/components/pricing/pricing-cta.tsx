@@ -24,7 +24,7 @@ export function PricingCTA() {
             <Button
               variant="secondary"
               size="lg"
-              className="bg-white text-coria-green hover:bg-gray-100"
+              className="bg-[var(--foam)]/90 backdrop-blur-sm text-coria-green hover:bg-[var(--foam)]/95 border border-[var(--foam)] shadow-lg"
               onClick={() => window.open('https://apps.apple.com/app/coria', '_blank')}
             >
               <AppleIcon className="w-5 h-5 mr-2" />
@@ -33,7 +33,7 @@ export function PricingCTA() {
             <Button
               variant="secondary"
               size="lg"
-              className="bg-white text-coria-green hover:bg-gray-100"
+              className="bg-[var(--foam)]/90 backdrop-blur-sm text-coria-green hover:bg-[var(--foam)]/95 border border-[var(--foam)] shadow-lg"
               onClick={() => window.open('https://play.google.com/store/apps/details?id=com.coria.app', '_blank')}
             >
               <GooglePlayIcon className="w-5 h-5 mr-2" />

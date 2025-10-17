@@ -50,7 +50,7 @@ export function TrustIndicators() {
           {benefits.map((benefit, index) => {
             const IconComponent = benefit.icon;
             return (
-              <Card key={index} className="p-6 text-center">
+              <Card key={index} className="p-6 text-center bg-[var(--foam)]/60 backdrop-blur-sm border-[var(--foam)]/50">
                 <div className="w-12 h-12 bg-coria-green/10 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <IconComponent className="w-6 h-6 text-coria-green" />
                 </div>

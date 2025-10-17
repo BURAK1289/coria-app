@@ -22,7 +22,7 @@ export default function BlogSearch({ initialValue = '' }: BlogSearchProps) {
   
   const handleSearch = (term: string) => {
     setIsSearching(true);
-    const params = new URLSearchParams(searchParams);
+    const params = new URLSearchParams(searchParams || undefined);
     
     if (term.trim()) {
       params.set('search', term.trim());
@@ -49,8 +49,8 @@ export default function BlogSearch({ initialValue = '' }: BlogSearchProps) {
   };
   
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+    <div className="bg-white rounded-lg shadow-md p-6">
+      <h3 className="text-lg font-semibold text-gray-900 mb-4">
         {t('search')}
       </h3>
       
@@ -61,7 +61,7 @@ export default function BlogSearch({ initialValue = '' }: BlogSearchProps) {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder={t('searchPlaceholder')}
-            className="w-full pl-10 pr-10 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-coria-green focus:border-transparent"
+            className="w-full pl-10 pr-10 py-2 border border-gray-300 rounded-md bg-white text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-coria-green focus:border-transparent"
           />
           
           {/* Search Icon */}
@@ -76,7 +76,7 @@ export default function BlogSearch({ initialValue = '' }: BlogSearchProps) {
             <button
               type="button"
               onClick={handleClear}
-              className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+              className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
             >
               <XMarkIcon className="h-5 w-5" />
             </button>
@@ -94,7 +94,7 @@ export default function BlogSearch({ initialValue = '' }: BlogSearchProps) {
       </form>
       
       {/* Search Tips */}
-      <div className="mt-4 text-xs text-gray-500 dark:text-gray-400">
+      <div className="mt-4 text-xs text-gray-500">
         <p>{t('searchTips')}</p>
       </div>
     </div>

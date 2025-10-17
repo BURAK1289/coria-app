@@ -13,6 +13,10 @@ export function PricingPlans() {
   const t = useTranslations('pricing');
   const locale = useLocale() as Locale;
 
+  // Get regional pricing for TR
+  const regionalPrice = t('regional.regions.TR.monthly');
+  const regionalPeriod = t('regional.perMonth');
+
   const plans = [
     {
       key: 'free',
@@ -21,11 +25,10 @@ export function PricingPlans() {
       period: t('plans.free.period'),
       description: t('plans.free.description'),
       features: [
-        t('plans.free.features.0'),
-        t('plans.free.features.1'),
-        t('plans.free.features.2'),
-        t('plans.free.features.3'),
-        t('plans.free.features.4'),
+        t('plans.free.highlights.0'),
+        t('plans.free.highlights.1'),
+        t('plans.free.highlights.2'),
+        t('plans.free.highlights.3'),
       ],
       cta: t('plans.free.cta'),
       popular: false,
@@ -33,18 +36,16 @@ export function PricingPlans() {
     {
       key: 'premium',
       name: t('plans.premium.name'),
-      price: t('plans.premium.price'),
-      period: t('plans.premium.period'),
+      price: regionalPrice.replace(/[₺$€]/g, ''),
+      period: regionalPeriod,
       description: t('plans.premium.description'),
       features: [
-        t('plans.premium.features.0'),
-        t('plans.premium.features.1'),
-        t('plans.premium.features.2'),
-        t('plans.premium.features.3'),
-        t('plans.premium.features.4'),
-        t('plans.premium.features.5'),
-        t('plans.premium.features.6'),
-        t('plans.premium.features.7'),
+        t('plans.premium.highlights.0'),
+        t('plans.premium.highlights.1'),
+        t('plans.premium.highlights.2'),
+        t('plans.premium.highlights.3'),
+        t('plans.premium.highlights.4'),
+        t('plans.premium.highlights.5'),
       ],
       cta: t('plans.premium.cta'),
       popular: true,
@@ -58,28 +59,28 @@ export function PricingPlans() {
           {plans.map((plan) => (
             <Card
               key={plan.key}
-              className={`relative p-8 ${
+              className={`relative p-8 bg-[var(--foam)]/85 backdrop-blur-sm ${
                 plan.popular
                   ? 'border-coria-green shadow-lg scale-105'
-                  : 'border-gray-200'
+                  : 'border-[var(--foam)]'
               }`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                   <span className="bg-coria-green text-white px-4 py-2 rounded-full text-sm font-medium">
-                    En Popüler
+                    {t('mostPopular')}
                   </span>
                 </div>
               )}
-              
+
               <div className="text-center mb-8">
                 <Typography variant="h3" className="mb-2">
                   {plan.name}
                 </Typography>
                 <div className="mb-4">
                   <span className="text-4xl font-bold text-coria-green">
-                    {plan.price === '0' 
-                      ? 'Ücretsiz' 
+                    {plan.price === '0'
+                      ? t('free')
                       : formatPrice(parseFloat(plan.price), locale, 'TRY')
                     }
                   </span>
@@ -94,7 +95,7 @@ export function PricingPlans() {
                 </Typography>
               </div>
 
-              <ul className="space-y-4 mb-8">
+              <ul className="space-y-4 mb-6">
                 {plan.features.map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <CheckIcon className="w-5 h-5 text-leaf mt-0.5 flex-shrink-0" />
@@ -104,6 +105,18 @@ export function PricingPlans() {
                   </li>
                 ))}
               </ul>
+
+              {/* 14-Day Trial Badge for Premium */}
+              {plan.popular && (
+                <div className="mb-6 p-4 bg-[var(--foam)]/90 backdrop-blur-sm rounded-lg border border-blue-200/50 shadow-sm">
+                  <Typography variant="small" className="text-blue-700 font-medium text-center">
+                    ✨ {t('trial.duration')} {t('trial.noCard')}
+                  </Typography>
+                  <Typography variant="small" className="text-blue-600 text-center mt-1">
+                    {t('trial.afterTrial')}
+                  </Typography>
+                </div>
+              )}
 
               <Button
                 variant={plan.popular ? 'primary' : 'secondary'}

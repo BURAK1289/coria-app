@@ -1,1 +1,1 @@
-export { ThemeProvider, useTheme } from './theme-provider';
+// Theme provider removed - using light mode only

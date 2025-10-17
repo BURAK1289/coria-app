@@ -6,6 +6,7 @@
  */
 
 import { useEffect, useState } from 'react';
+import { logger } from '@/lib/logger';
 import { Card } from '@/components/ui/card';
 import { 
   ABTestMetrics, 
@@ -252,21 +253,21 @@ export function ABTestResultsDashboard() {
   const handleViewDetails = (testId: string) => {
     trackDashboardInteraction('view_test_details', 'ab_test_results', testId);
     // In a real implementation, this would navigate to detailed test analytics
-    console.log('View test details:', testId);
+    logger.debug('View test details:', testId);
   };
 
   const handleStopTest = (testId: string) => {
     trackDashboardInteraction('stop_test', 'ab_test_results', testId);
     // In a real implementation, this would stop the test
     if (confirm('Are you sure you want to stop this test?')) {
-      console.log('Stop test:', testId);
+      logger.info('Stop test:', testId);
     }
   };
 
   const handleCreateNewTest = () => {
     trackDashboardInteraction('create_test', 'ab_test_results');
     // In a real implementation, this would open test creation modal
-    console.log('Create new test');
+    logger.debug('Create new test');
   };
 
   if (loading || !metrics) {

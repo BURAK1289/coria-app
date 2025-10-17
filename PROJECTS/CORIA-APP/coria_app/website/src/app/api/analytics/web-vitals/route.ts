@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { logger } from '@/lib/logger';
 
 export async function POST(request: NextRequest) {
   try {
@@ -18,7 +19,7 @@ export async function POST(request: NextRequest) {
     
     // For now, we'll just log it in development
     if (process.env.NODE_ENV === 'development') {
-      console.log('Web Vitals Metric:', {
+      logger.debug('Web Vitals Metric:', {
         name,
         value,
         id,
@@ -52,7 +53,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('Error processing web vitals:', error);
+    logger.error('Error processing web vitals:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

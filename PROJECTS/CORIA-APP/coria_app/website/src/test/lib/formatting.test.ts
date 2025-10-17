@@ -14,8 +14,8 @@ describe('formatting utilities', () => {
     })
 
     it('should format EUR correctly', () => {
-      expect(formatCurrency(29.99, 'de')).toBe('29,99 €')
-      expect(formatCurrency(29.99, 'fr')).toBe('29,99 €')
+      expect(formatCurrency(29.99, 'de')).toBe('29,99 €')
+      expect(formatCurrency(29.99, 'fr')).toBe('29,99\u00A0€')
     })
 
     it('should handle zero values', () => {

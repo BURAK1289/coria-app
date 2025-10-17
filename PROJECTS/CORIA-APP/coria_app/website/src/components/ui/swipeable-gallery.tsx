@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { cn } from '@/lib/utils';
-import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react';
+import { Icon } from '@/components/icons/Icon';
 
 interface SwipeableGalleryProps {
   children: React.ReactNode[];
@@ -175,13 +175,13 @@ export function SwipeableGallery({
             className={cn(
               'absolute left-2 top-1/2 -translate-y-1/2 z-10',
               'bg-white/80 backdrop-blur-sm rounded-full p-2',
-              'shadow-md hover:bg-white/90 transition-colors',
+              'shadow-md hover:bg-white transition-colors',
               'disabled:opacity-50 disabled:cursor-not-allowed',
               'touch-target'
             )}
             aria-label="Previous slide"
           >
-            <ChevronLeftIcon className="h-5 w-5 text-gray-700" />
+            <Icon name="chevron-left" size={20} className="text-gray-700" aria-hidden="true" />
           </button>
           
           <button
@@ -190,13 +190,13 @@ export function SwipeableGallery({
             className={cn(
               'absolute right-2 top-1/2 -translate-y-1/2 z-10',
               'bg-white/80 backdrop-blur-sm rounded-full p-2',
-              'shadow-md hover:bg-white/90 transition-colors',
+              'shadow-md hover:bg-white transition-colors',
               'disabled:opacity-50 disabled:cursor-not-allowed',
               'touch-target'
             )}
             aria-label="Next slide"
           >
-            <ChevronRightIcon className="h-5 w-5 text-gray-700" />
+            <Icon name="chevron-right" size={20} className="text-gray-700" aria-hidden="true" />
           </button>
         </>
       )}

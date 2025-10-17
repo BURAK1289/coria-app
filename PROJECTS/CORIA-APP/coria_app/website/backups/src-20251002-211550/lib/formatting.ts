@@ -1,0 +1,289 @@
+import { Locale } from '@/types/localization';
+
+/**
+ * Currency formatting utilities
+ */
+
+export interface CurrencyOptions {
+  currency: string;
+  minimumFractionDigits?: number;
+  maximumFractionDigits?: number;
+  style?: 'currency' | 'decimal';
+}
+
+/**
+ * Format currency based on locale
+ */
+export function formatCurrency(
+  amount: number,
+  locale: Locale,
+  options: CurrencyOptions = { currency: 'TRY' }
+): string {
+  const localeMap: Record<Locale, string> = {
+    tr: 'tr-TR',
+    en: 'en-US',
+    de: 'de-DE',
+    fr: 'fr-FR',
+  };
+
+  const formatOptions: Intl.NumberFormatOptions = {
+    style: options.style || 'currency',
+    currency: options.currency,
+    minimumFractionDigits: options.minimumFractionDigits ?? 2,
+    maximumFractionDigits: options.maximumFractionDigits ?? 2,
+  };
+
+  try {
+    return new Intl.NumberFormat(localeMap[locale], formatOptions).format(amount);
+  } catch {
+    // Fallback to Turkish formatting
+    return new Intl.NumberFormat('tr-TR', formatOptions).format(amount);
+  }
+}
+
+/**
+ * Format price with currency symbol
+ */
+export function formatPrice(
+  amount: number,
+  locale: Locale,
+  currency: string = 'TRY'
+): string {
+  return formatCurrency(amount, locale, { currency });
+}
+
+/**
+ * Format percentage
+ */
+export function formatPercentage(
+  value: number,
+  locale: Locale,
+  minimumFractionDigits: number = 0,
+  maximumFractionDigits: number = 1
+): string {
+  const localeMap: Record<Locale, string> = {
+    tr: 'tr-TR',
+    en: 'en-US',
+    de: 'de-DE',
+    fr: 'fr-FR',
+  };
+
+  try {
+    return new Intl.NumberFormat(localeMap[locale], {
+      style: 'percent',
+      minimumFractionDigits,
+      maximumFractionDigits,
+    }).format(value / 100);
+  } catch {
+    return new Intl.NumberFormat('tr-TR', {
+      style: 'percent',
+      minimumFractionDigits,
+      maximumFractionDigits,
+    }).format(value / 100);
+  }
+}
+
+/**
+ * Date formatting utilities
+ */
+
+export interface DateFormatOptions {
+  dateStyle?: 'full' | 'long' | 'medium' | 'short';
+  timeStyle?: 'full' | 'long' | 'medium' | 'short';
+  year?: 'numeric' | '2-digit';
+  month?: 'numeric' | '2-digit' | 'long' | 'short' | 'narrow';
+  day?: 'numeric' | '2-digit';
+  weekday?: 'long' | 'short' | 'narrow';
+  hour?: 'numeric' | '2-digit';
+  minute?: 'numeric' | '2-digit';
+  second?: 'numeric' | '2-digit';
+  timeZone?: string;
+}
+
+/**
+ * Format date based on locale
+ */
+export function formatDate(
+  date: Date | string | number,
+  locale: Locale,
+  options: DateFormatOptions = {}
+): string {
+  const localeMap: Record<Locale, string> = {
+    tr: 'tr-TR',
+    en: 'en-US',
+    de: 'de-DE',
+    fr: 'fr-FR',
+  };
+
+  const dateObj = typeof date === 'string' || typeof date === 'number' ? new Date(date) : date;
+
+  const formatOptions: Intl.DateTimeFormatOptions = {
+    dateStyle: options.dateStyle,
+    timeStyle: options.timeStyle,
+    year: options.year,
+    month: options.month,
+    day: options.day,
+    weekday: options.weekday,
+    hour: options.hour,
+    minute: options.minute,
+    second: options.second,
+    timeZone: options.timeZone || 'Europe/Istanbul', // Default to Turkey timezone
+  };
+
+  try {
+    return new Intl.DateTimeFormat(localeMap[locale], formatOptions).format(dateObj);
+  } catch {
+    // Fallback to Turkish formatting
+    return new Intl.DateTimeFormat('tr-TR', formatOptions).format(dateObj);
+  }
+}
+
+/**
+ * Format relative time (e.g., "2 days ago", "in 3 hours")
+ */
+export function formatRelativeTime(
+  date: Date | string | number,
+  locale: Locale,
+  baseDate: Date = new Date()
+): string {
+  const localeMap: Record<Locale, string> = {
+    tr: 'tr-TR',
+    en: 'en-US',
+    de: 'de-DE',
+    fr: 'fr-FR',
+  };
+
+  const dateObj = typeof date === 'string' || typeof date === 'number' ? new Date(date) : date;
+  const diffInSeconds = Math.floor((dateObj.getTime() - baseDate.getTime()) / 1000);
+
+  const rtf = new Intl.RelativeTimeFormat(localeMap[locale], { numeric: 'auto' });
+
+  const intervals = [
+    { unit: 'year' as const, seconds: 31536000 },
+    { unit: 'month' as const, seconds: 2592000 },
+    { unit: 'week' as const, seconds: 604800 },
+    { unit: 'day' as const, seconds: 86400 },
+    { unit: 'hour' as const, seconds: 3600 },
+    { unit: 'minute' as const, seconds: 60 },
+    { unit: 'second' as const, seconds: 1 },
+  ];
+
+  for (const interval of intervals) {
+    const count = Math.floor(Math.abs(diffInSeconds) / interval.seconds);
+    if (count >= 1) {
+      return rtf.format(diffInSeconds < 0 ? -count : count, interval.unit);
+    }
+  }
+
+  return rtf.format(0, 'second');
+}
+
+/**
+ * Format reading time
+ */
+export function formatReadingTime(minutes: number, locale: Locale): string {
+  const readingTimeLabels: Record<Locale, { singular: string; plural: string; suffix: string }> = {
+    tr: { singular: 'dakika', plural: 'dakika', suffix: 'okuma süresi' },
+    en: { singular: 'minute', plural: 'minutes', suffix: 'read' },
+    de: { singular: 'Minute', plural: 'Minuten', suffix: 'Lesezeit' },
+    fr: { singular: 'minute', plural: 'minutes', suffix: 'de lecture' },
+  };
+
+  const labels = readingTimeLabels[locale];
+  const timeUnit = minutes === 1 ? labels.singular : labels.plural;
+
+  if (locale === 'tr') {
+    return `${minutes} ${timeUnit} ${labels.suffix}`;
+  } else if (locale === 'de') {
+    return `${minutes} ${timeUnit} ${labels.suffix}`;
+  } else if (locale === 'fr') {
+    return `${minutes} ${timeUnit} ${labels.suffix}`;
+  } else {
+    return `${minutes} ${timeUnit} ${labels.suffix}`;
+  }
+}
+
+/**
+ * Number formatting utilities
+ */
+
+/**
+ * Format large numbers with abbreviations (K, M, B)
+ */
+export function formatLargeNumber(
+  number: number,
+  locale: Locale,
+  precision: number = 1
+): string {
+  const localeMap: Record<Locale, string> = {
+    tr: 'tr-TR',
+    en: 'en-US',
+    de: 'de-DE',
+    fr: 'fr-FR',
+  };
+
+  const abbreviations: Record<Locale, { thousand: string; million: string; billion: string }> = {
+    tr: { thousand: 'B', million: 'M', billion: 'Mr' },
+    en: { thousand: 'K', million: 'M', billion: 'B' },
+    de: { thousand: 'T', million: 'M', billion: 'Mrd' },
+    fr: { thousand: 'k', million: 'M', billion: 'Md' },
+  };
+
+  const abs = Math.abs(number);
+  const sign = number < 0 ? '-' : '';
+  const abbrev = abbreviations[locale];
+
+  if (abs >= 1000000000) {
+    const formatted = new Intl.NumberFormat(localeMap[locale], {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: precision,
+    }).format(abs / 1000000000);
+    return `${sign}${formatted}${abbrev.billion}`;
+  } else if (abs >= 1000000) {
+    const formatted = new Intl.NumberFormat(localeMap[locale], {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: precision,
+    }).format(abs / 1000000);
+    return `${sign}${formatted}${abbrev.million}`;
+  } else if (abs >= 1000) {
+    const formatted = new Intl.NumberFormat(localeMap[locale], {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: precision,
+    }).format(abs / 1000);
+    return `${sign}${formatted}${abbrev.thousand}`;
+  } else {
+    return new Intl.NumberFormat(localeMap[locale]).format(number);
+  }
+}
+
+/**
+ * Format file size
+ */
+export function formatFileSize(bytes: number, locale: Locale): string {
+  const units: Record<Locale, string[]> = {
+    tr: ['B', 'KB', 'MB', 'GB', 'TB'],
+    en: ['B', 'KB', 'MB', 'GB', 'TB'],
+    de: ['B', 'KB', 'MB', 'GB', 'TB'],
+    fr: ['o', 'Ko', 'Mo', 'Go', 'To'],
+  };
+
+  const localeMap: Record<Locale, string> = {
+    tr: 'tr-TR',
+    en: 'en-US',
+    de: 'de-DE',
+    fr: 'fr-FR',
+  };
+
+  if (bytes === 0) return `0 ${units[locale][0]}`;
+
+  const k = 1024;
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  const size = bytes / Math.pow(k, i);
+
+  const formatted = new Intl.NumberFormat(localeMap[locale], {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: i === 0 ? 0 : 1,
+  }).format(size);
+
+  return `${formatted} ${units[locale][i]}`;
+}

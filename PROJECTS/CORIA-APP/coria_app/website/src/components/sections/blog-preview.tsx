@@ -2,10 +2,15 @@
 
 import Link from 'next/link';
 import { useLocale } from 'next-intl';
-import { motion } from 'framer-motion';
+import dynamic from 'next/dynamic';
 
 import { Container, Heading, Text, Card, CardContent } from '@/components/ui';
 import { getHomeContent } from '@/content/home';
+
+const AnimatedBlogCard = dynamic(
+  () => import('./blog-preview-animated').then(mod => ({ default: mod.AnimatedBlogCard })),
+  { ssr: true }
+);
 
 export function BlogPreview() {
   const locale = useLocale();
@@ -13,7 +18,6 @@ export function BlogPreview() {
 
   return (
     <section className="relative overflow-hidden py-24">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white via-[var(--foam)] to-white" />
       <Container size="xl" padding="lg" className="relative z-10">
         <div className="mx-auto max-w-3xl text-center">
           <Heading as="h2" size="3xl" weight="bold" className="text-[var(--coria-primary)]">
@@ -26,16 +30,10 @@ export function BlogPreview() {
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {blog.articles.map((article) => (
-            <motion.div
-              key={article.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.5 }}
-            >
+            <AnimatedBlogCard key={article.title}>
               <Card
                 padding="lg"
-                className="h-full rounded-[24px] border border-[rgba(27,94,63,0.12)] bg-white/95 shadow-[0_24px_60px_-45px_rgba(27,94,63,0.25)]"
+                className="h-full rounded-[24px] border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm shadow-lg"
               >
                 <CardContent className="flex h-full flex-col gap-4 text-left">
                   <Heading as="h3" size="lg" weight="semibold" className="text-[var(--coria-primary)]">
@@ -46,13 +44,18 @@ export function BlogPreview() {
                   </Text>
                   <div className="mt-auto flex items-center justify-between text-xs text-gray-500">
                     <span>{article.readTime}</span>
-                    <Link href={article.url} className="font-semibold text-[var(--coria-primary)] hover:underline">
+                    <a
+                      href={article.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-[var(--coria-primary)] hover:underline"
+                    >
                       {blog.cta.label}
-                    </Link>
+                    </a>
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </AnimatedBlogCard>
           ))}
         </div>
       </Container>

@@ -4,15 +4,16 @@ import React from 'react';
 import * as Sentry from '@sentry/nextjs';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { AlertTriangle, RefreshCw, Bug, Home } from 'lucide-react';
-import { 
-  AppError, 
-  isAppError, 
-  isOperationalError, 
+import { Icon } from '@/components/icons/Icon';
+import {
+  AppError,
+  isAppError,
+  isOperationalError,
   getUserErrorMessage,
   createErrorContext,
   normalizeError
 } from '@/lib/errors';
+import { logger } from '@/lib/logger';
 
 // ============================================================================
 // ERROR BOUNDARY TYPES
@@ -115,12 +116,12 @@ export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoun
 
     // Enhanced development logging
     if (process.env.NODE_ENV === 'development') {
-      console.group('🚨 Error Boundary Caught Error');
-      console.error('Error:', error);
-      console.error('Error Info:', errorInfo);
-      console.error('Normalized Error:', normalizedError);
-      console.error('Context:', errorContext);
-      console.groupEnd();
+      logger.group('🚨 Error Boundary Caught Error');
+      logger.error('Error:', error);
+      logger.error('Error Info:', errorInfo);
+      logger.error('Normalized Error:', normalizedError);
+      logger.error('Context:', errorContext);
+      logger.groupEnd();
     }
 
     // Auto-retry for operational errors (with exponential backoff)
@@ -254,7 +255,7 @@ function DefaultErrorFallback({
     <div className="min-h-[200px] flex items-center justify-center p-4">
       <Card className="max-w-sm w-full p-4 text-center">
         <div className="flex justify-center mb-3">
-          <Bug className="h-8 w-8 text-orange-500" />
+          <Icon name="bug" size={32} className="text-orange-500" aria-label="Error" />
         </div>
         
         <h3 className="text-lg font-medium mb-2">Bileşen Hatası</h3>
@@ -276,7 +277,7 @@ function DefaultErrorFallback({
         
         <div className="flex gap-2 justify-center">
           <Button onClick={resetError} variant="outline" size="sm">
-            <RefreshCw className="h-3 w-3 mr-1" />
+            <Icon name="refresh" size={16} className="mr-1" aria-hidden="true" />
             Tekrar Dene {retryCount > 0 && `(${retryCount})`}
           </Button>
         </div>
@@ -297,7 +298,7 @@ function PageLevelErrorFallback({
     <div className="min-h-screen flex items-center justify-center p-4 bg-gray-50">
       <Card className="max-w-lg w-full p-8 text-center">
         <div className="flex justify-center mb-6">
-          <AlertTriangle className="h-16 w-16 text-red-500" />
+          <Icon name="alert-triangle" size={64} className="text-red-500" aria-label="Critical error" />
         </div>
         
         <h1 className="text-2xl font-bold mb-4">Sayfa Yüklenemedi</h1>
@@ -344,11 +345,11 @@ function PageLevelErrorFallback({
         
         <div className="flex gap-3 justify-center">
           <Button onClick={resetError} variant="outline">
-            <RefreshCw className="h-4 w-4 mr-2" />
+            <Icon name="refresh" size={16} className="mr-2" aria-hidden="true" />
             Tekrar Dene {retryCount > 0 && `(${retryCount})`}
           </Button>
           <Button onClick={() => window.location.href = '/'}>
-            <Home className="h-4 w-4 mr-2" />
+            <Icon name="home" size={16} className="mr-2" aria-hidden="true" />
             Ana Sayfa
           </Button>
           <Button 
@@ -375,7 +376,7 @@ function SectionLevelErrorFallback({
     <div className="min-h-[300px] flex items-center justify-center p-6 bg-gray-50 rounded-lg border">
       <div className="text-center max-w-md">
         <div className="flex justify-center mb-4">
-          <AlertTriangle className="h-12 w-12 text-orange-500" />
+          <Icon name="alert-triangle" size={48} className="text-orange-500" aria-label="Error" />
         </div>
         
         <h2 className="text-xl font-semibold mb-3">Bölüm Yüklenemedi</h2>
@@ -397,7 +398,7 @@ function SectionLevelErrorFallback({
         
         <div className="flex gap-2 justify-center">
           <Button onClick={resetError} variant="outline" size="sm">
-            <RefreshCw className="h-4 w-4 mr-2" />
+            <Icon name="refresh" size={16} className="mr-2" aria-hidden="true" />
             Tekrar Dene {retryCount > 0 && `(${retryCount})`}
           </Button>
         </div>
@@ -437,15 +438,15 @@ export function useErrorReporting() {
 
     // Development logging
     if (process.env.NODE_ENV === 'development') {
-      console.group('📊 Manual Error Report');
-      console.error('Error:', normalizedError);
-      console.error('Context:', errorContext);
-      console.groupEnd();
+      logger.group('📊 Manual Error Report');
+      logger.error('Error:', normalizedError);
+      logger.error('Context:', errorContext);
+      logger.groupEnd();
     }
   }, []);
 
   const reportMessage = React.useCallback((
-    message: string, 
+    message: string,
     level: 'info' | 'warning' | 'error' = 'info',
     context?: Record<string, unknown>
   ) => {
@@ -457,9 +458,9 @@ export function useErrorReporting() {
     );
 
     Sentry.captureMessage(message, level);
-    
+
     if (process.env.NODE_ENV === 'development') {
-      console.log(`📝 Manual Message Report [${level.toUpperCase()}]:`, message, messageContext);
+      logger.info(`📝 Manual Message Report [${level.toUpperCase()}]:`, message, messageContext);
     }
   }, []);
 
@@ -488,7 +489,7 @@ export function useErrorReporting() {
       );
 
       if (process.env.NODE_ENV === 'development') {
-        console.warn('⚡ Performance Issue:', performanceContext);
+        logger.warn('⚡ Performance Issue:', performanceContext);
       }
     }
   }, []);

@@ -1,5 +1,5 @@
 import { useTranslations, useMessages } from 'next-intl';
-import { ArrowLeftIcon, CheckIcon, InfoIcon, ExternalLinkIcon } from 'lucide-react';
+import { Icon } from '@/components/icons/Icon';
 
 import { Link } from '@/i18n/routing';
 import { Card } from '@/components/ui/card';
@@ -100,16 +100,15 @@ export function FeatureDetail({ category, feature }: FeatureDetailProps) {
       <Link href={{ pathname: '/features/[category]', params: { category } }}>
         <Button asChild variant="ghost" size="sm" className="gap-2 text-coria-primary">
           <span className="flex items-center gap-2">
-            <ArrowLeftIcon className="h-4 w-4" />
+            <Icon name="arrow-left" size={16} aria-hidden="true" />
             {t('navigation.backToCategory')}
           </span>
         </Button>
       </Link>
 
-      <Card className="relative overflow-hidden rounded-[36px] border border-white/60 bg-gradient-to-br from-coria-primary via-leaf to-water px-8 py-10 text-white shadow-[0_45px_120px_-60px_rgba(8,38,29,0.65)]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.18),transparent_60%)]" aria-hidden />
+      <Card className="relative overflow-hidden rounded-[36px] border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm px-8 py-10 shadow-lg">
         <div className="relative z-10 space-y-6">
-          <Badge variant="secondary" className="bg-white/20 text-white">
+          <Badge variant="secondary" className="bg-[var(--foam)]/90 backdrop-blur-sm text-coria-primary">
             {t(`categories.${category}.title`)}
           </Badge>
           <Heading as="h1" size="3xl" weight="bold" className="text-balance">
@@ -126,10 +125,10 @@ export function FeatureDetail({ category, feature }: FeatureDetailProps) {
           {benefits.map((benefit) => (
             <Card
               key={benefit}
-              className="flex items-start gap-3 rounded-[24px] border border-white/70 bg-white/95 p-4 shadow-[0_25px_70px_-55px_rgba(27,94,63,0.45)]"
+              className="flex items-start gap-3 rounded-[24px] border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm p-4 shadow-sm"
             >
               <span className="mt-1 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-xl bg-coria-primary/10 text-coria-primary">
-                <CheckIcon className="h-4 w-4" />
+                <Icon name="check" size={16} aria-hidden="true" />
               </span>
               <Text size="sm" color="secondary" className="text-gray-700">
                 {benefit}
@@ -150,7 +149,7 @@ export function FeatureDetail({ category, feature }: FeatureDetailProps) {
             {howItWorks.map((step, index) => (
               <Card
                 key={`${step.title}-${index}`}
-                className="h-full rounded-[24px] border border-white/70 bg-white/95 p-6 shadow-[0_25px_80px_-60px_rgba(27,94,63,0.4)]"
+                className="h-full rounded-[24px] border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm p-6 shadow-sm"
               >
                 <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-coria-primary/10 text-sm font-semibold text-coria-primary">
                   {index + 1}
@@ -176,11 +175,11 @@ export function FeatureDetail({ category, feature }: FeatureDetailProps) {
             {technicalDetails.map((detail, index) => (
               <Card
                 key={`${detail.title}-${index}`}
-                className="rounded-[24px] border border-white/70 bg-white/95 p-5 shadow-[0_25px_80px_-60px_rgba(27,94,63,0.35)]"
+                className="rounded-[24px] border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm p-5 shadow-sm"
               >
                 <div className="flex items-start gap-3">
                   <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-xl bg-coria-primary/10 text-coria-primary">
-                    <InfoIcon className="h-4 w-4" />
+                    <Icon name="info" size={16} aria-hidden="true" />
                   </span>
                   <div className="space-y-2">
                     <Heading as="h3" size="lg" weight="semibold" className="text-coria-primary">
@@ -197,7 +196,7 @@ export function FeatureDetail({ category, feature }: FeatureDetailProps) {
                         className="inline-flex items-center gap-2 text-sm font-semibold text-coria-primary hover:underline"
                       >
                         {t('featureDetail.learnMore')}
-                        <ExternalLinkIcon className="h-4 w-4" />
+                        <Icon name="external-link" size={16} aria-hidden="true" />
                       </a>
                     )}
                   </div>
@@ -214,7 +213,7 @@ export function FeatureDetail({ category, feature }: FeatureDetailProps) {
 
       <RelatedFeatures category={category} currentFeature={feature} />
 
-      <Card className="rounded-[32px] border border-white/70 bg-white/95 px-8 py-10 text-center shadow-[0_35px_90px_-65px_rgba(27,94,63,0.45)]">
+      <Card className="rounded-[32px] border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm px-8 py-10 text-center shadow-sm">
         <Heading as="h3" size="2xl" weight="bold" className="text-coria-primary">
           {t('featureDetail.cta.title')}
         </Heading>

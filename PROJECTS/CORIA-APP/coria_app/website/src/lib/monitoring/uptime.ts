@@ -1,5 +1,7 @@
 // Uptime monitoring utilities and health check endpoints
 
+import { logger } from '../logger';
+
 export interface HealthCheckResult {
   status: 'healthy' | 'degraded' | 'unhealthy';
   timestamp: string;
@@ -176,10 +178,10 @@ export async function sendAlert(
         }),
       });
     } catch (error) {
-      console.error('Failed to send Slack alert:', error);
+      logger.error('Failed to send Slack alert:', error);
     }
   }
-  
+
   // Log alert for debugging
-  console.log(`[ALERT] ${type.toUpperCase()}: ${message}`, details);
+  logger.warn(`[ALERT] ${type.toUpperCase()}: ${message}`, details);
 }

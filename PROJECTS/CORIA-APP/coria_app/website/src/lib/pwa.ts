@@ -1,6 +1,7 @@
 'use client';
 
 // PWA utility functions for service worker and push notifications
+import { logger } from './logger';
 
 interface PWAInstallPrompt extends Event {
   prompt(): Promise<void>;
@@ -24,15 +25,15 @@ class PWAManager {
 
   private async init() {
     if (process.env.NODE_ENV !== 'production') {
-      console.info('[PWA] Service worker development modunda devre dışı bırakıldı');
+      logger.info('[PWA] Service worker development modunda devre dışı bırakıldı');
 
       if ('serviceWorker' in navigator) {
         try {
           const registrations = await navigator.serviceWorker.getRegistrations();
           await Promise.all(registrations.map((registration) => registration.unregister()));
-          console.info('[PWA] Var olan servis worker kayıtları temizlendi');
+          logger.info('[PWA] Var olan servis worker kayıtları temizlendi');
         } catch (error) {
-          console.warn('[PWA] Servis worker temizleme başarısız:', error);
+          logger.warn('[PWA] Servis worker temizleme başarısız:', error);
         }
       }
 
@@ -41,7 +42,7 @@ class PWAManager {
 
     // Listen for beforeinstallprompt event
     window.addEventListener('beforeinstallprompt', (e) => {
-      console.log('[PWA] Install prompt available');
+      logger.info('[PWA] Install prompt available');
       e.preventDefault();
       this.deferredPrompt = e as PWAInstallPrompt;
       this.dispatchInstallAvailable();
@@ -49,7 +50,7 @@ class PWAManager {
 
     // Listen for app installed event
     window.addEventListener('appinstalled', () => {
-      console.log('[PWA] App installed');
+      logger.info('[PWA] App installed');
       this.deferredPrompt = null;
       this.dispatchAppInstalled();
     });
@@ -65,7 +66,7 @@ class PWAManager {
     }
 
     if (!('serviceWorker' in navigator)) {
-      console.warn('[PWA] Service workers not supported');
+      logger.warn('[PWA] Service workers not supported');
       return null;
     }
 
@@ -75,18 +76,18 @@ class PWAManager {
         updateViaCache: 'none'
       });
 
-      console.log('[PWA] Service worker registered:', registration);
+      logger.info('[PWA] Service worker registered:', registration);
       this.swRegistration = registration;
 
       // Check for updates
       registration.addEventListener('updatefound', () => {
-        console.log('[PWA] Service worker update found');
+        logger.info('[PWA] Service worker update found');
         const newWorker = registration.installing;
-        
+
         if (newWorker) {
           newWorker.addEventListener('statechange', () => {
             if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-              console.log('[PWA] New service worker installed, update available');
+              logger.info('[PWA] New service worker installed, update available');
               this.dispatchUpdateAvailable();
             }
           });
@@ -95,7 +96,7 @@ class PWAManager {
 
       return registration;
     } catch (error) {
-      console.error('[PWA] Service worker registration failed:', error);
+      logger.error('[PWA] Service worker registration failed:', error);
       return null;
     }
   }
@@ -103,15 +104,15 @@ class PWAManager {
   // Update service worker
   async updateServiceWorker(): Promise<void> {
     if (!this.swRegistration) {
-      console.warn('[PWA] No service worker registration available');
+      logger.warn('[PWA] No service worker registration available');
       return;
     }
 
     try {
       await this.swRegistration.update();
-      console.log('[PWA] Service worker update triggered');
+      logger.info('[PWA] Service worker update triggered');
     } catch (error) {
-      console.error('[PWA] Service worker update failed:', error);
+      logger.error('[PWA] Service worker update failed:', error);
     }
   }
 
@@ -132,20 +133,20 @@ class PWAManager {
   // App Installation
   async showInstallPrompt(): Promise<boolean> {
     if (!this.deferredPrompt) {
-      console.warn('[PWA] Install prompt not available');
+      logger.warn('[PWA] Install prompt not available');
       return false;
     }
 
     try {
       await this.deferredPrompt.prompt();
       const choiceResult = await this.deferredPrompt.userChoice;
-      
-      console.log('[PWA] Install prompt result:', choiceResult.outcome);
+
+      logger.info('[PWA] Install prompt result:', choiceResult.outcome);
       this.deferredPrompt = null;
-      
+
       return choiceResult.outcome === 'accepted';
     } catch (error) {
-      console.error('[PWA] Install prompt failed:', error);
+      logger.error('[PWA] Install prompt failed:', error);
       return false;
     }
   }
@@ -162,18 +163,18 @@ class PWAManager {
   // Push Notifications
   async requestNotificationPermission(): Promise<NotificationPermissionResult> {
     if (!('Notification' in window)) {
-      console.warn('[PWA] Notifications not supported');
+      logger.warn('[PWA] Notifications not supported');
       return { permission: 'denied' };
     }
 
     if (!this.swRegistration) {
-      console.warn('[PWA] Service worker not registered');
+      logger.warn('[PWA] Service worker not registered');
       return { permission: 'denied' };
     }
 
     try {
       const permission = await Notification.requestPermission();
-      console.log('[PWA] Notification permission:', permission);
+      logger.info('[PWA] Notification permission:', permission);
 
       if (permission === 'granted') {
         const subscription = await this.subscribeToPush();
@@ -182,23 +183,23 @@ class PWAManager {
 
       return { permission };
     } catch (error) {
-      console.error('[PWA] Notification permission request failed:', error);
+      logger.error('[PWA] Notification permission request failed:', error);
       return { permission: 'denied' };
     }
   }
 
   async subscribeToPush(): Promise<PushSubscription | null> {
     if (!this.swRegistration) {
-      console.warn('[PWA] Service worker not registered');
+      logger.warn('[PWA] Service worker not registered');
       return null;
     }
 
     try {
       // You would need to replace this with your actual VAPID public key
       const vapidPublicKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY || '';
-      
+
       if (!vapidPublicKey) {
-        console.warn('[PWA] VAPID public key not configured');
+        logger.warn('[PWA] VAPID public key not configured');
         return null;
       }
 
@@ -207,14 +208,14 @@ class PWAManager {
         applicationServerKey: new Uint8Array(this.urlBase64ToUint8Array(vapidPublicKey))
       });
 
-      console.log('[PWA] Push subscription created:', subscription);
-      
+      logger.info('[PWA] Push subscription created:', subscription);
+
       // Send subscription to server
       await this.sendSubscriptionToServer(subscription);
-      
+
       return subscription;
     } catch (error) {
-      console.error('[PWA] Push subscription failed:', error);
+      logger.error('[PWA] Push subscription failed:', error);
       return null;
     }
   }
@@ -226,20 +227,20 @@ class PWAManager {
 
     try {
       const subscription = await this.swRegistration.pushManager.getSubscription();
-      
+
       if (subscription) {
         await subscription.unsubscribe();
-        console.log('[PWA] Push subscription removed');
-        
+        logger.info('[PWA] Push subscription removed');
+
         // Remove subscription from server
         await this.removeSubscriptionFromServer(subscription);
-        
+
         return true;
       }
-      
+
       return false;
     } catch (error) {
-      console.error('[PWA] Push unsubscription failed:', error);
+      logger.error('[PWA] Push unsubscription failed:', error);
       return false;
     }
   }
@@ -247,31 +248,31 @@ class PWAManager {
   // Background Sync
   async registerBackgroundSync(tag: string): Promise<void> {
     if (!this.swRegistration || !('sync' in this.swRegistration)) {
-      console.warn('[PWA] Background sync not supported');
+      logger.warn('[PWA] Background sync not supported');
       return;
     }
 
     try {
       await (this.swRegistration as any).sync.register(tag);
-      console.log('[PWA] Background sync registered:', tag);
+      logger.info('[PWA] Background sync registered:', tag);
     } catch (error) {
-      console.error('[PWA] Background sync registration failed:', error);
+      logger.error('[PWA] Background sync registration failed:', error);
     }
   }
 
   // Offline Storage
   async cacheResource(url: string, cacheName: string = 'dynamic-cache'): Promise<void> {
     if (!('caches' in window)) {
-      console.warn('[PWA] Cache API not supported');
+      logger.warn('[PWA] Cache API not supported');
       return;
     }
 
     try {
       const cache = await caches.open(cacheName);
       await cache.add(url);
-      console.log('[PWA] Resource cached:', url);
+      logger.info('[PWA] Resource cached:', url);
     } catch (error) {
-      console.error('[PWA] Resource caching failed:', error);
+      logger.error('[PWA] Resource caching failed:', error);
     }
   }
 
@@ -284,7 +285,7 @@ class PWAManager {
       const response = await caches.match(url);
       return response || null;
     } catch (error) {
-      console.error('[PWA] Cache lookup failed:', error);
+      logger.error('[PWA] Cache lookup failed:', error);
       return null;
     }
   }
@@ -315,7 +316,7 @@ class PWAManager {
         body: JSON.stringify(subscription),
       });
     } catch (error) {
-      console.error('[PWA] Failed to send subscription to server:', error);
+      logger.error('[PWA] Failed to send subscription to server:', error);
     }
   }
 
@@ -329,7 +330,7 @@ class PWAManager {
         body: JSON.stringify(subscription),
       });
     } catch (error) {
-      console.error('[PWA] Failed to remove subscription from server:', error);
+      logger.error('[PWA] Failed to remove subscription from server:', error);
     }
   }
 

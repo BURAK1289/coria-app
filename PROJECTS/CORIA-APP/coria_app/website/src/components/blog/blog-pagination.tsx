@@ -20,7 +20,7 @@ export default function BlogPagination({
   const t = useTranslations('blog');
   
   const createPageUrl = (page: number) => {
-    const params = new URLSearchParams(searchParams);
+    const params = new URLSearchParams(searchParams || undefined);
     if (page === 1) {
       params.delete('page');
     } else {
@@ -66,7 +66,7 @@ export default function BlogPagination({
   return (
     <div className="flex flex-col items-center space-y-4">
       {/* Results Info */}
-      <p className="text-sm text-gray-600 dark:text-gray-300">
+      <p className="text-sm text-gray-600">
         {t('paginationInfo', {
           start: (currentPage - 1) * 12 + 1,
           end: Math.min(currentPage * 12, totalPosts),
@@ -80,13 +80,13 @@ export default function BlogPagination({
         {currentPage > 1 ? (
           <Link
             href={createPageUrl(currentPage - 1)}
-            className="flex items-center px-3 py-2 text-sm font-medium text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-700 dark:hover:text-gray-300"
+            className="flex items-center px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 hover:text-gray-700"
           >
             <ChevronLeftIcon className="w-4 h-4 mr-1" />
             {t('previous')}
           </Link>
         ) : (
-          <span className="flex items-center px-3 py-2 text-sm font-medium text-gray-300 dark:text-gray-600 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md cursor-not-allowed">
+          <span className="flex items-center px-3 py-2 text-sm font-medium text-gray-300 bg-gray-100 border border-gray-200 rounded-md cursor-not-allowed">
             <ChevronLeftIcon className="w-4 h-4 mr-1" />
             {t('previous')}
           </span>
@@ -99,7 +99,7 @@ export default function BlogPagination({
               return (
                 <span
                   key={`dots-${index}`}
-                  className="px-3 py-2 text-sm font-medium text-gray-500 dark:text-gray-400"
+                  className="px-3 py-2 text-sm font-medium text-gray-500"
                 >
                   ...
                 </span>
@@ -116,7 +116,7 @@ export default function BlogPagination({
                 className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                   isActive
                     ? 'bg-coria-green text-white'
-                    : 'text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700'
+                    : 'text-gray-700 bg-white border border-gray-300 hover:bg-gray-50'
                 }`}
               >
                 {pageNumber}
@@ -129,13 +129,13 @@ export default function BlogPagination({
         {currentPage < totalPages ? (
           <Link
             href={createPageUrl(currentPage + 1)}
-            className="flex items-center px-3 py-2 text-sm font-medium text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-700 dark:hover:text-gray-300"
+            className="flex items-center px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 hover:text-gray-700"
           >
             {t('next')}
             <ChevronRightIcon className="w-4 h-4 ml-1" />
           </Link>
         ) : (
-          <span className="flex items-center px-3 py-2 text-sm font-medium text-gray-300 dark:text-gray-600 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md cursor-not-allowed">
+          <span className="flex items-center px-3 py-2 text-sm font-medium text-gray-300 bg-gray-100 border border-gray-200 rounded-md cursor-not-allowed">
             {t('next')}
             <ChevronRightIcon className="w-4 h-4 ml-1" />
           </span>

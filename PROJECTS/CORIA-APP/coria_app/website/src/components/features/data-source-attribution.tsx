@@ -5,13 +5,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui';
 import { Badge } from '@/components/ui/badge';
 import { Heading, Text } from '@/components/ui/typography';
-import {
-  ExternalLinkIcon,
-  DatabaseIcon,
-  ShieldCheckIcon,
-  ClockIcon,
-  GlobeIcon,
-} from 'lucide-react';
+import { Icon } from '@/components/icons/Icon';
 
 interface DataSourceAttributionProps {
   feature: string;
@@ -26,7 +20,7 @@ const dataSources = [
     coverage: '2.8M+ products',
     updateFrequency: 'Real-time',
     reliability: 'Community-verified',
-    icon: DatabaseIcon,
+    iconName: 'home',
     accent: 'text-coria-primary',
     bg: 'bg-coria-primary/12',
   },
@@ -38,7 +32,7 @@ const dataSources = [
     coverage: '800K+ foods',
     updateFrequency: 'Weekly',
     reliability: 'Dietician verified',
-    icon: ShieldCheckIcon,
+    iconName: 'star',
     accent: 'text-coria-accent',
     bg: 'bg-coria-accent/12',
   },
@@ -46,11 +40,11 @@ const dataSources = [
     id: 'edamam',
     name: 'Edamam',
     url: 'https://www.edamam.com/',
-    description: 'Food, nutrition, and recipe intelligence API powering CORIA’s analytics.',
+    description: 'Food, nutrition, and recipe intelligence API powering CORIA analytics.',
     coverage: '2M+ recipes',
     updateFrequency: 'Daily',
     reliability: 'API-verified',
-    icon: GlobeIcon,
+    iconName: 'globe',
     accent: 'text-water',
     bg: 'bg-water/12',
   },
@@ -62,7 +56,7 @@ const dataSources = [
     coverage: '5K+ recipes',
     updateFrequency: 'Daily',
     reliability: 'Curated content',
-    icon: ClockIcon,
+    iconName: 'star',
     accent: 'text-leaf-700',
     bg: 'bg-leaf/12',
   },
@@ -105,18 +99,16 @@ export function DataSourceAttribution({ feature }: DataSourceAttributionProps) {
 
       <div className="grid gap-6 md:grid-cols-2">
         {sources.map((source) => {
-          const Icon = source.icon;
-
           return (
             <Card
               key={source.id}
-              className="h-full rounded-[26px] border border-white/70 bg-white/95 p-6 shadow-[0_25px_80px_-60px_rgba(27,94,63,0.35)]"
+              className="h-full rounded-[26px] border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm p-6 shadow-sm"
             >
               <div className="flex items-start gap-4">
                 <span
                   className={`flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl ${source.bg} ${source.accent}`}
                 >
-                  <Icon className="h-6 w-6" />
+                  <Icon name={source.iconName} size={24} aria-hidden="true" />
                 </span>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
@@ -133,7 +125,7 @@ export function DataSourceAttribution({ feature }: DataSourceAttributionProps) {
                 </div>
               </div>
 
-              <div className="mt-5 grid gap-4 rounded-[20px] border border-white/60 bg-white/80 px-4 py-3 text-center text-xs text-gray-600 md:grid-cols-3">
+              <div className="mt-5 grid gap-4 rounded-[20px] border border-[var(--foam)] bg-[var(--foam)]/90 backdrop-blur-sm px-4 py-3 text-center text-xs text-gray-600 md:grid-cols-3">
                 <div>
                   <Text size="sm" color="secondary" className="font-semibold text-coria-primary">
                     {source.coverage}
@@ -157,13 +149,13 @@ export function DataSourceAttribution({ feature }: DataSourceAttributionProps) {
               <div className="mt-5">
                 <Button
                   asChild
-                 
+
                   size="sm"
                   className="w-full border-coria-primary/30 text-coria-primary"
                 >
                   <a href={source.url} target="_blank" rel="noopener noreferrer">
                     {t('dataSources.visitSource')}
-                    <ExternalLinkIcon className="ml-2 h-4 w-4" />
+                    <Icon name="external-link" size={16} className="ml-2" aria-hidden="true" />
                   </a>
                 </Button>
               </div>
@@ -172,7 +164,7 @@ export function DataSourceAttribution({ feature }: DataSourceAttributionProps) {
         })}
       </div>
 
-      <Card className="rounded-[28px] border border-white/70 bg-white/95 p-8 shadow-[0_35px_90px_-65px_rgba(27,94,63,0.45)]">
+      <Card className="rounded-[28px] border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm p-8 shadow-sm">
         <Heading as="h4" size="xl" weight="bold" className="text-coria-primary">
           {t('dataSources.quality.title')}
         </Heading>

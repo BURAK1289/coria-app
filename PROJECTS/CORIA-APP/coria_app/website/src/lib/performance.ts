@@ -3,6 +3,7 @@
  */
 
 import React from 'react';
+import { logger } from './logger';
 
 interface PerformanceMemoryStats {
   usedJSHeapSize: number;
@@ -185,11 +186,11 @@ export class PerformanceMonitor {
 
     const duration = performance.now() - startTime;
     this.metrics.set(label, duration);
-    
+
     if (process.env.NODE_ENV === 'development') {
-      console.log(`⏱️ ${label}: ${duration.toFixed(2)}ms`);
+      logger.debug(`⏱️ ${label}: ${duration.toFixed(2)}ms`);
     }
-    
+
     return duration;
   }
 
@@ -284,10 +285,10 @@ export function registerServiceWorker(): void {
     navigator.serviceWorker
       .register('/sw.js')
       .then((registration: ServiceWorkerRegistration) => {
-        console.log('SW registered: ', registration);
+        logger.info('SW registered: ', registration);
       })
       .catch((registrationError: Error) => {
-        console.log('SW registration failed: ', registrationError);
+        logger.error('SW registration failed: ', registrationError);
       });
   });
 }

@@ -1,0 +1,119 @@
+config:
+  target: 'http://localhost:3000'
+  phases:
+    # Warm up phase
+    - duration: 60
+      arrivalRate: 5
+      name: "Warm up"
+    
+    # Ramp up phase
+    - duration: 120
+      arrivalRate: 5
+      rampTo: 50
+      name: "Ramp up load"
+    
+    # Sustained load phase
+    - duration: 300
+      arrivalRate: 50
+      name: "Sustained load"
+    
+    # Peak load phase
+    - duration: 120
+      arrivalRate: 50
+      rampTo: 100
+      name: "Peak load"
+    
+    # Cool down phase
+    - duration: 60
+      arrivalRate: 100
+      rampTo: 5
+      name: "Cool down"
+
+  defaults:
+    headers:
+      User-Agent: "Artillery Load Test"
+      Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+      Accept-Language: "en-US,en;q=0.5"
+      Accept-Encoding: "gzip, deflate"
+      Connection: "keep-alive"
+
+  # Performance thresholds
+  ensure:
+    p95: 2000  # 95% of requests should complete within 2 seconds
+    p99: 5000  # 99% of requests should complete within 5 seconds
+    maxErrorRate: 1  # Error rate should be less than 1%
+
+scenarios:
+  - name: "Homepage browsing"
+    weight: 40
+    flow:
+      - get:
+          url: "/"
+          capture:
+            - json: "$.title"
+              as: "pageTitle"
+      - think: 3
+      - get:
+          url: "/features"
+      - think: 5
+      - get:
+          url: "/pricing"
+      - think: 2
+
+  - name: "Feature exploration"
+    weight: 30
+    flow:
+      - get:
+          url: "/features"
+      - think: 2
+      - get:
+          url: "/features/sustainability-scoring"
+      - think: 4
+      - get:
+          url: "/features/barcode-scanning"
+      - think: 3
+      - get:
+          url: "/features/impact-tracking"
+
+  - name: "Multi-language browsing"
+    weight: 20
+    flow:
+      - get:
+          url: "/tr"
+      - think: 3
+      - get:
+          url: "/tr/features"
+      - think: 2
+      - get:
+          url: "/de"
+      - think: 2
+      - get:
+          url: "/de/pricing"
+
+  - name: "Contact and about"
+    weight: 10
+    flow:
+      - get:
+          url: "/about"
+      - think: 4
+      - get:
+          url: "/contact"
+      - think: 2
+      - post:
+          url: "/api/contact"
+          json:
+            name: "Test User {{ $randomString() }}"
+            email: "test{{ $randomInt(1, 1000) }}@example.com"
+            message: "This is a load test message"
+            subject: "Load Test"
+
+# Custom functions for realistic data
+functions:
+  randomString:
+    - return Math.random().toString(36).substring(7)
+  
+  randomInt:
+    - |
+      function(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }

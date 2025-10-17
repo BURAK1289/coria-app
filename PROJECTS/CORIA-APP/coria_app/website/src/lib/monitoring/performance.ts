@@ -1,6 +1,7 @@
 import { onCLS, onFCP, onFID, onLCP, onTTFB } from 'web-vitals';
 import type { Metric } from 'web-vitals';
 import * as Sentry from '@sentry/nextjs';
+import { logger } from '@/lib/logger';
 
 interface NavigatorConnectionInfo {
   effectiveType?: string;
@@ -121,7 +122,7 @@ function sendPerformanceMetric(metric: PerformanceMetric) {
 
 function alertPoorPerformance(metric: PerformanceMetric) {
   // Log poor performance
-  console.warn(`Poor performance detected: ${metric.name} = ${metric.value} (${metric.rating})`);
+  logger.warn(`Poor performance detected: ${metric.name} = ${metric.value} (${metric.rating})`);
 
   // Send to Sentry as a performance issue
   Sentry.captureMessage(

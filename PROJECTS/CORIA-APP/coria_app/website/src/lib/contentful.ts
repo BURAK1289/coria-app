@@ -1,5 +1,6 @@
 import { createClient, Entry, Asset, EntryCollection, EntrySkeletonType } from 'contentful';
 import { Document } from '@contentful/rich-text-types';
+import { logger } from '@/lib/logger';
 
 type ContentfulClient = ReturnType<typeof createClient>;
 
@@ -10,7 +11,7 @@ function initializeContentfulClient(options: { accessToken?: string; host?: stri
 
   if (!space || !accessToken) {
     if (process.env.NODE_ENV !== 'production') {
-      console.warn('[Contentful] Gerekli kimlik bilgileri eksik; istemci başlatılamadı.');
+      logger.warn('[Contentful] Gerekli kimlik bilgileri eksik; istemci başlatılamadı.');
     }
     return null;
   }
@@ -23,7 +24,7 @@ function initializeContentfulClient(options: { accessToken?: string; host?: stri
       ...(host ? { host } : {}),
     });
   } catch (error) {
-    console.error('[Contentful] İstemci oluşturulurken hata oluştu:', error);
+    logger.error('[Contentful] İstemci oluşturulurken hata oluştu:', error);
     return null;
   }
 }
@@ -189,7 +190,7 @@ export async function fetchContentfulEntries<T extends EntrySkeletonType>(
 
     if (!client) {
       if (process.env.NODE_ENV !== 'production') {
-        console.warn(`[Contentful] '${contentType}' içerikleri için istemci bulunamadı. Boş sonuç dönüyor.`);
+        logger.warn(`[Contentful] '${contentType}' içerikleri için istemci bulunamadı. Boş sonuç dönüyor.`);
       }
       return [];
     }
@@ -201,7 +202,7 @@ export async function fetchContentfulEntries<T extends EntrySkeletonType>(
     
     return response.items;
   } catch (error) {
-    console.error(`Error fetching ${contentType} entries:`, error);
+    logger.error(`Error fetching ${contentType} entries:`, error);
     return [];
   }
 }
@@ -217,7 +218,7 @@ export async function fetchContentfulEntry<T extends EntrySkeletonType>(
 
     if (!client) {
       if (process.env.NODE_ENV !== 'production') {
-        console.warn(`[Contentful] '${contentType}' içeriği (${slug}) için istemci bulunamadı.`);
+        logger.warn(`[Contentful] '${contentType}' içeriği (${slug}) için istemci bulunamadı.`);
       }
       return null;
     }
@@ -230,7 +231,7 @@ export async function fetchContentfulEntry<T extends EntrySkeletonType>(
     
     return response.items[0] || null;
   } catch (error) {
-    console.error(`Error fetching ${contentType} entry with slug ${slug}:`, error);
+    logger.error(`Error fetching ${contentType} entry with slug ${slug}:`, error);
     return null;
   }
 }
@@ -245,7 +246,7 @@ export async function fetchContentfulEntryById<T extends EntrySkeletonType>(
 
     if (!client) {
       if (process.env.NODE_ENV !== 'production') {
-        console.warn(`[Contentful] ID'si ${entryId} olan kayıt için istemci bulunamadı.`);
+        logger.warn(`[Contentful] ID'si ${entryId} olan kayıt için istemci bulunamadı.`);
       }
       return null;
     }
@@ -253,7 +254,7 @@ export async function fetchContentfulEntryById<T extends EntrySkeletonType>(
     const entry = await client.getEntry<T>(entryId);
     return entry;
   } catch (error) {
-    console.error(`Error fetching entry with ID ${entryId}:`, error);
+    logger.error(`Error fetching entry with ID ${entryId}:`, error);
     return null;
   }
 }
@@ -268,7 +269,7 @@ export async function fetchContentfulAsset(
 
     if (!client) {
       if (process.env.NODE_ENV !== 'production') {
-        console.warn(`[Contentful] ID'si ${assetId} olan varlık için istemci bulunamadı.`);
+        logger.warn(`[Contentful] ID'si ${assetId} olan varlık için istemci bulunamadı.`);
       }
       return null;
     }
@@ -276,7 +277,7 @@ export async function fetchContentfulAsset(
     const asset = await client.getAsset(assetId);
     return asset;
   } catch (error) {
-    console.error(`Error fetching asset with ID ${assetId}:`, error);
+    logger.error(`Error fetching asset with ID ${assetId}:`, error);
     return null;
   }
 }

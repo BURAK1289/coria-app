@@ -20,6 +20,7 @@ export function StructuredData({ locale, type = 'website', data }: StructuredDat
       dangerouslySetInnerHTML={{
         __html: JSON.stringify(structuredData, null, 2),
       }}
+      suppressHydrationWarning
     />
   );
 }

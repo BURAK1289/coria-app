@@ -1,5 +1,5 @@
 import { useTranslations, useMessages } from 'next-intl';
-import { ArrowRightIcon, CheckIcon } from 'lucide-react';
+import { Icon } from '@/components/icons/Icon';
 
 import { Link } from '@/i18n/routing';
 import { Card } from '@/components/ui/card';
@@ -34,16 +34,15 @@ export function CategoryOverview({ category }: CategoryOverviewProps) {
 
   return (
     <div className="space-y-14">
-      <Card className="relative overflow-hidden rounded-[36px] border border-white/60 bg-gradient-to-br from-coria-primary via-leaf to-water px-8 py-10 text-white shadow-[0_45px_120px_-60px_rgba(8,38,29,0.65)]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.18),transparent_65%)]" aria-hidden />
+      <Card className="relative overflow-hidden rounded-[36px] border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm px-8 py-10 shadow-lg">
         <div className="relative z-10 space-y-6">
-          <Badge variant="secondary" className="bg-white/20 text-white">
+          <Badge variant="secondary" className="bg-coria-primary/10 text-coria-primary">
             {t(`categories.${category}.badge`)}
           </Badge>
-          <Heading as="h2" size="3xl" weight="bold" className="text-balance">
+          <Heading as="h2" size="3xl" weight="bold" className="text-balance text-coria-primary">
             {t(`categories.${category}.title`)}
           </Heading>
-          <Text size="lg" className="max-w-3xl text-white/85">
+          <Text size="lg" className="max-w-3xl text-gray-600">
             {t(`categories.${category}.longDescription`)}
           </Text>
         </div>
@@ -53,10 +52,10 @@ export function CategoryOverview({ category }: CategoryOverviewProps) {
         {benefits.map((benefit) => (
           <Card
             key={benefit}
-            className="flex items-start gap-3 rounded-[24px] border border-white/70 bg-white/95 p-4 shadow-[0_25px_70px_-55px_rgba(27,94,63,0.45)]"
+            className="flex items-start gap-3 rounded-[24px] border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm p-4 shadow-sm"
           >
             <span className="mt-1 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-xl bg-coria-primary/10 text-coria-primary">
-              <CheckIcon className="h-4 w-4" />
+              <Icon name="check" size={16} aria-hidden="true" />
             </span>
             <Text size="sm" color="secondary" className="text-gray-700">
               {benefit}
@@ -77,7 +76,7 @@ export function CategoryOverview({ category }: CategoryOverviewProps) {
               key={feature}
               href={{ pathname: '/features/[category]/[feature]', params: { category, feature } }}
             >
-              <Card className="group h-full rounded-[26px] border border-white/70 bg-white/95 p-5 transition-all hover:border-coria-primary/20 hover:shadow-[0_28px_80px_-60px_rgba(27,94,63,0.45)]">
+              <Card className="group h-full rounded-[26px] border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm p-5 transition-all hover:border-coria-primary/20 hover:shadow-sm">
                 <div className="flex items-start justify-between gap-3">
                   <div className="space-y-2">
                     <Heading as="h4" size="lg" weight="semibold" className="text-coria-primary">
@@ -88,7 +87,7 @@ export function CategoryOverview({ category }: CategoryOverviewProps) {
                     </Text>
                   </div>
                   <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-coria-primary/10 text-coria-primary transition-transform group-hover:translate-x-1">
-                    <ArrowRightIcon className="h-4 w-4" />
+                    <Icon name="arrow-right" size={16} aria-hidden="true" />
                   </span>
                 </div>
               </Card>
@@ -109,7 +108,7 @@ export function CategoryOverview({ category }: CategoryOverviewProps) {
               key={relatedCategory}
               href={{ pathname: '/features/[category]', params: { category: relatedCategory } }}
             >
-              <Card className="group h-full rounded-[24px] border border-white/70 bg-white/95 p-5 transition-all hover:border-coria-primary/20 hover:shadow-[0_28px_80px_-60px_rgba(27,94,63,0.45)]">
+              <Card className="group h-full rounded-[24px] border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm p-5 transition-all hover:border-coria-primary/20 hover:shadow-sm">
                 <Heading as="h4" size="lg" weight="semibold" className="text-coria-primary">
                   {t(`categories.${relatedCategory}.title`)}
                 </Heading>
@@ -118,7 +117,7 @@ export function CategoryOverview({ category }: CategoryOverviewProps) {
                 </Text>
                 <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-coria-primary/80">
                   {t('overview.learnMore')}
-                  <ArrowRightIcon className="h-4 w-4" />
+                  <Icon name="arrow-right" size={16} aria-hidden="true" />
                 </span>
               </Card>
             </Link>
@@ -126,7 +125,7 @@ export function CategoryOverview({ category }: CategoryOverviewProps) {
         </div>
       </div>
 
-      <Card className="rounded-[32px] border border-white/70 bg-white/95 px-8 py-10 text-center shadow-[0_35px_90px_-65px_rgba(27,94,63,0.45)]">
+      <Card className="rounded-[32px] border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm px-8 py-10 text-center shadow-sm">
         <Heading as="h3" size="2xl" weight="bold" className="text-coria-primary">
           {t('categoryOverview.cta.title')}
         </Heading>

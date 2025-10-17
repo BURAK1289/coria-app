@@ -17,7 +17,7 @@ export interface CurrencyOptions {
 export function formatCurrency(
   amount: number,
   locale: Locale,
-  options: CurrencyOptions = { currency: 'TRY' }
+  options?: Partial<CurrencyOptions>
 ): string {
   const localeMap: Record<Locale, string> = {
     tr: 'tr-TR',
@@ -26,11 +26,21 @@ export function formatCurrency(
     fr: 'fr-FR',
   };
 
+  // Auto-map locale to appropriate currency if not specified
+  const currencyMap: Record<Locale, string> = {
+    tr: 'TRY',
+    en: 'USD',
+    de: 'EUR',
+    fr: 'EUR',
+  };
+
+  const currency = options?.currency || currencyMap[locale];
+
   const formatOptions: Intl.NumberFormatOptions = {
-    style: options.style || 'currency',
-    currency: options.currency,
-    minimumFractionDigits: options.minimumFractionDigits ?? 2,
-    maximumFractionDigits: options.maximumFractionDigits ?? 2,
+    style: options?.style || 'currency',
+    currency,
+    minimumFractionDigits: options?.minimumFractionDigits ?? 2,
+    maximumFractionDigits: options?.maximumFractionDigits ?? 2,
   };
 
   try {
@@ -115,7 +125,19 @@ export function formatDate(
     fr: 'fr-FR',
   };
 
-  const dateObj = typeof date === 'string' || typeof date === 'number' ? new Date(date) : date;
+  // Handle invalid dates
+  let dateObj: Date;
+  if (typeof date === 'string' || typeof date === 'number') {
+    dateObj = new Date(date);
+    if (isNaN(dateObj.getTime())) {
+      return 'Invalid Date';
+    }
+  } else {
+    dateObj = date;
+    if (isNaN(dateObj.getTime())) {
+      return 'Invalid Date';
+    }
+  }
 
   const formatOptions: Intl.DateTimeFormatOptions = {
     dateStyle: options.dateStyle,

@@ -1,7 +1,6 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { motion } from 'framer-motion';
 
 import { Container, Heading, Text, Card, CardContent, Button, Grid } from '@/components/ui';
 import { getHomeContent } from '@/content/home';
@@ -12,13 +11,10 @@ export function FoundationShowcase() {
 
   return (
     <section className="relative overflow-hidden py-24">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white via-[var(--foam)] to-white" />
-      <div className="absolute left-8 top-10 -z-10 h-60 w-60 rounded-full bg-[rgba(38,166,154,0.2)] blur-3xl" />
-      <div className="absolute -right-24 bottom-0 -z-10 h-64 w-64 rounded-full bg-[rgba(255,217,61,0.25)] blur-3xl" />
 
       <Container size="xl" padding="lg" className="relative z-10">
         <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-[rgba(27,94,63,0.15)] bg-white/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-[var(--coria-primary)] shadow-sm">
+          <span className="inline-flex items-center gap-2 rounded-full border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-[var(--coria-primary)] shadow-lg">
             {foundation.eyebrow}
           </span>
           <Heading as="h2" size="3xl" weight="bold" className="mt-6 mb-4 text-[var(--coria-primary)]">
@@ -34,7 +30,7 @@ export function FoundationShowcase() {
             <Card
               key={pillar.title}
               padding="lg"
-              className="rounded-[28px] border border-[rgba(27,94,63,0.12)] bg-white/95 shadow-[0_26px_66px_-50px_rgba(27,94,63,0.25)]"
+              className="rounded-[28px] border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm shadow-lg"
             >
               <CardContent className="space-y-3 text-left">
                 <Heading as="h3" size="lg" weight="semibold" className="text-[var(--coria-primary)]">
@@ -52,7 +48,7 @@ export function FoundationShowcase() {
           {foundation.projects.map((project) => (
             <div
               key={project.title}
-              className="rounded-[24px] border border-[rgba(27,94,63,0.12)] bg-white/95 p-5 text-left shadow-sm"
+              className="rounded-[24px] border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm p-5 text-left shadow-lg"
             >
               <div className="text-sm font-semibold text-[var(--coria-primary)]">{project.title}</div>
               <div className="mt-2 text-sm text-gray-600">{project.impact}</div>

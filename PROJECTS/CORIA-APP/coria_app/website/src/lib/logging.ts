@@ -112,17 +112,26 @@ class Logger {
 
     const style = this.getConsoleStyle(entry.level);
     const prefix = `[${entry.level.toUpperCase()}] ${entry.timestamp}`;
-    
+
+    // eslint-disable-next-line no-console
     console.group(`%c${prefix}`, style);
+    // eslint-disable-next-line no-console
     console.log('Message:', entry.message);
-    
+
+    // eslint-disable-next-line no-console
     if (entry.component) console.log('Component:', entry.component);
+    // eslint-disable-next-line no-console
     if (entry.action) console.log('Action:', entry.action);
+    // eslint-disable-next-line no-console
     if (entry.userId) console.log('User ID:', entry.userId);
+    // eslint-disable-next-line no-console
     if (entry.context) console.log('Context:', entry.context);
+    // eslint-disable-next-line no-console
     if (entry.error) console.error('Error:', entry.error);
+    // eslint-disable-next-line no-console
     if (entry.metadata) console.log('Metadata:', entry.metadata);
-    
+
+    // eslint-disable-next-line no-console
     console.groupEnd();
   }
 

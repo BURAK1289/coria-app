@@ -1,0 +1,2 @@
+Lines 14-42: Replace formatCurrency function with locale-to-currency auto-mapping
+Lines 106-139: Add invalid date check in formatDate function

@@ -3,13 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { cn } from '@/lib/utils';
-import {
-  ScanIcon,
-  BrainIcon,
-  TrendingUpIcon,
-  ShieldCheckIcon,
-  BarChart3Icon,
-} from 'lucide-react';
+import { Icon } from '@/components/icons/Icon';
 
 import {
   SmartPantrySvgIcon,
@@ -26,42 +20,50 @@ interface FeaturesSidebarProps {
 const featureCategories = [
   {
     id: 'scanning',
-    icon: ScanIcon,
+    iconType: 'coria' as const,
+    iconName: 'search',
     features: ['barcode-scan', 'product-info', 'offline-mode'],
   },
   {
     id: 'ai-recommendations',
-    icon: BrainIcon,
+    iconType: 'coria' as const,
+    iconName: 'star',
     features: ['personalized-suggestions', 'alternative-products', 'smart-matching'],
   },
   {
     id: 'impact-tracking',
-    icon: TrendingUpIcon,
+    iconType: 'coria' as const,
+    iconName: 'trending-up',
     features: ['carbon-footprint', 'water-consumption', 'environmental-metrics'],
   },
   {
     id: 'smart-pantry',
+    iconType: 'svg' as const,
     icon: SmartPantrySvgIcon,
     features: ['inventory-management', 'expiry-tracking', 'shopping-lists'],
   },
   {
     id: 'sustainability-scoring',
+    iconType: 'svg' as const,
     icon: SustainabilitySvgIcon,
     features: ['environmental-score', 'social-impact', 'health-rating', 'ethical-production'],
   },
   {
     id: 'community',
+    iconType: 'svg' as const,
     icon: CommunitySvgIcon,
     features: ['user-reviews', 'community-ratings', 'shared-experiences'],
   },
   {
     id: 'premium-features',
-    icon: ShieldCheckIcon,
+    iconType: 'coria' as const,
+    iconName: 'star',
     features: ['unlimited-scans', 'detailed-reports', 'advanced-analytics', 'ad-free'],
   },
   {
     id: 'data-insights',
-    icon: BarChart3Icon,
+    iconType: 'coria' as const,
+    iconName: 'bar-chart',
     features: ['consumption-patterns', 'impact-visualization', 'progress-tracking'],
   },
 ] as const;
@@ -116,7 +118,7 @@ export function FeaturesSidebar({ activeCategory, activeFeature }: FeaturesSideb
     <aside className="space-y-6">
       <div className="sticky top-28 space-y-5">
         <div className="space-y-2 text-sm">
-          <span className="inline-flex rounded-full border border-coria-primary/20 bg-white/80 px-3 py-1 font-medium text-coria-primary shadow-sm">
+          <span className="inline-flex rounded-full border border-coria-primary/20 bg-[var(--foam)]/90 backdrop-blur-sm px-3 py-1 font-medium text-coria-primary shadow-sm">
             {t('sidebar.title')}
           </span>
           <p className="text-xs text-muted-foreground">
@@ -124,8 +126,9 @@ export function FeaturesSidebar({ activeCategory, activeFeature }: FeaturesSideb
           </p>
         </div>
 
-        <nav className="space-y-3">
-          {featureCategories.map(({ id, icon: Icon, features }) => {
+        <nav className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          {featureCategories.map((category) => {
+            const { id, iconType, features } = category;
             const isActiveCategory = activeCategory === id;
             const styles = categoryStyles[id] ?? categoryStyles.scanning;
 
@@ -135,14 +138,13 @@ export function FeaturesSidebar({ activeCategory, activeFeature }: FeaturesSideb
                   href={{ pathname: '/features/[category]', params: { category: id } }}
                   aria-current={isActiveCategory ? 'page' : undefined}
                   className={cn(
-                    'group block rounded-3xl border bg-gradient-to-br px-4 py-3 shadow-sm transition-all',
-                    styles.gradient,
+                    'group flex h-full min-h-[100px] rounded-3xl border bg-[var(--foam)]/85 backdrop-blur-sm px-4 py-3 shadow-sm transition-all hover:shadow-md',
                     isActiveCategory
-                      ? 'border-coria-primary/40 text-coria-primary shadow-[0_20px_40px_-30px_rgba(27,94,63,0.65)]'
-                      : 'border-white/70 text-muted-foreground hover:border-coria-primary/30 hover:text-coria-primary'
+                      ? 'border-coria-primary/40 text-coria-primary shadow-md'
+                      : 'border-[var(--foam)] text-muted-foreground hover:border-coria-primary/30 hover:text-coria-primary'
                   )}
                 >
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-3 w-full">
                     <span
                       className={cn(
                         'flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-2xl text-sm font-semibold transition-colors',
@@ -150,13 +152,17 @@ export function FeaturesSidebar({ activeCategory, activeFeature }: FeaturesSideb
                         styles.iconText
                       )}
                     >
-                      <Icon className="h-5 w-5" />
+                      {iconType === 'coria' && 'iconName' in category ? (
+                        <Icon name={category.iconName} size={20} aria-hidden="true" />
+                      ) : iconType === 'svg' && 'icon' in category ? (
+                        <category.icon size={20} className="text-current" />
+                      ) : null}
                     </span>
-                    <div className="flex-1">
-                      <p className="text-sm font-semibold">
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-semibold truncate">
                         {t(`categories.${id}.title`)}
                       </p>
-                      <p className="text-xs text-muted-foreground group-hover:text-coria-primary/80">
+                      <p className="text-xs text-muted-foreground group-hover:text-coria-primary/80 line-clamp-2">
                         {t(`categories.${id}.description`)}
                       </p>
                     </div>
@@ -184,7 +190,7 @@ export function FeaturesSidebar({ activeCategory, activeFeature }: FeaturesSideb
                           )}
                         >
                           <span>{t(`features.${feature}.title`)}</span>
-                          <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/70 text-[11px] font-semibold text-coria-primary transition-colors group-hover:bg-coria-primary/90 group-hover:text-white">
+                          <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[var(--foam)]/85 backdrop-blur-sm text-[11px] font-semibold text-coria-primary transition-colors group-hover:bg-coria-primary/90 group-hover:text-white">
                             →
                           </span>
                         </Link>

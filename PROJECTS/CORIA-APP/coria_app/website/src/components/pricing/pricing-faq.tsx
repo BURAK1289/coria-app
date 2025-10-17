@@ -55,10 +55,10 @@ export function PricingFAQ() {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="border border-gray-200 rounded-lg overflow-hidden"
+                className="border border-[var(--foam)] rounded-lg overflow-hidden bg-[var(--foam)]/85 backdrop-blur-sm shadow-lg"
               >
                 <button
-                  className="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 transition-colors duration-200 flex items-center justify-between"
+                  className="w-full px-6 py-4 text-left hover:bg-[var(--foam)]/90 transition-colors duration-200 flex items-center justify-between"
                   onClick={() => toggleFAQ(index)}
                 >
                   <Typography variant="large" className="font-medium pr-4">
@@ -70,9 +70,9 @@ export function PricingFAQ() {
                     }`}
                   />
                 </button>
-                
+
                 {openIndex === index && (
-                  <div className="px-6 py-4 bg-gray-50 border-t">
+                  <div className="px-6 py-4 border-t border-[var(--foam)]">
                     <Typography variant="large" className="text-text-secondary">
                       {faq.answer}
                     </Typography>

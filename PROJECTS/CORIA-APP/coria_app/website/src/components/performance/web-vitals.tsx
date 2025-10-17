@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import { onCLS, onFID, onFCP, onLCP, onTTFB, Metric } from 'web-vitals';
+import { logger } from '@/lib/logger';
 
 interface WebVitalsProps {
   debug?: boolean;
@@ -11,7 +12,7 @@ export function WebVitals({ debug = false }: WebVitalsProps) {
   useEffect(() => {
     const reportWebVitals = (metric: Metric) => {
       if (debug) {
-        console.log('Web Vitals:', metric);
+        logger.debug('Web Vitals:', metric);
       }
 
       // Send to analytics service
@@ -40,7 +41,7 @@ export function WebVitals({ debug = false }: WebVitalsProps) {
           }),
         }).catch(error => {
           if (debug) {
-            console.error('Failed to send web vitals:', error);
+            logger.error('Failed to send web vitals:', error);
           }
         });
       }
@@ -83,7 +84,7 @@ export function usePerformanceObserver(): void {
             loadComplete: navEntry.loadEventEnd - navEntry.loadEventStart,
           };
 
-          console.log('Navigation Metrics:', metrics);
+          logger.debug('Navigation Metrics:', metrics);
         }
       });
     });
@@ -96,10 +97,10 @@ export function usePerformanceObserver(): void {
       entries.forEach((entry) => {
         if (entry.entryType === 'resource') {
           const resourceEntry = entry as PerformanceResourceTiming;
-          
+
           // Track slow resources
           if (resourceEntry.duration > 1000) {
-            console.warn('Slow resource:', {
+            logger.warn('Slow resource:', {
               name: resourceEntry.name,
               duration: resourceEntry.duration,
               size: resourceEntry.transferSize,
@@ -132,16 +133,16 @@ export function PerformanceDebugger() {
 
       const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
       const paint = performance.getEntriesByType('paint');
-      
-      console.group('🚀 Performance Metrics');
-      console.log('Navigation Type:', navigation.type);
+
+      logger.group('🚀 Performance Metrics');
+      logger.debug('Navigation Type:', navigation.type);
       if (navigation.navigationStart) {
-        console.log('Page Load Time:', navigation.loadEventEnd - navigation.navigationStart, 'ms');
-        console.log('DOM Content Loaded:', navigation.domContentLoadedEventEnd - navigation.navigationStart, 'ms');
+        logger.debug('Page Load Time:', navigation.loadEventEnd - navigation.navigationStart, 'ms');
+        logger.debug('DOM Content Loaded:', navigation.domContentLoadedEventEnd - navigation.navigationStart, 'ms');
       }
-      console.log('First Paint:', paint.find(p => p.name === 'first-paint')?.startTime, 'ms');
-      console.log('First Contentful Paint:', paint.find(p => p.name === 'first-contentful-paint')?.startTime, 'ms');
-      console.groupEnd();
+      logger.debug('First Paint:', paint.find(p => p.name === 'first-paint')?.startTime, 'ms');
+      logger.debug('First Contentful Paint:', paint.find(p => p.name === 'first-contentful-paint')?.startTime, 'ms');
+      logger.groupEnd();
     };
 
     // Log metrics after page load

@@ -4,29 +4,41 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
-import { ThemeProvider } from '@/components/providers';
+import { MotionProvider } from '@/components/providers/motion-provider';
 import PreviewBanner from '@/components/cms/preview-banner';
 import { SEOHead } from '@/components/seo/seo-head';
 import { WebVitals } from '@/components/performance/web-vitals';
 import { AnalyticsProvider } from '@/components/analytics/analytics-provider';
-import { ConsentBanner } from '@/components/analytics/consent-banner';
-import { InstallPrompt } from '@/components/pwa/install-prompt';
-import { UpdateNotification } from '@/components/pwa/update-notification';
-import { NotificationPermission } from '@/components/pwa/notification-permission';
+// Lazy-loaded client components (PWA, Analytics)
+import {
+  ConsentBanner,
+  InstallPrompt,
+  UpdateNotification,
+  NotificationPermission,
+} from '@/components/layout/client-components';
+import { Navigation } from '@/components/layout/navigation';
+import { Footer } from '@/components/layout/footer';
 import { Locale } from '@/types/localization';
 import '../globals.css';
+import '@/styles/brand-background.css';
+import '@/lib/suppress-extension-errors';
 
 const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
+  display: 'swap', // Prevent FOIT (Flash of Invisible Text)
+  preload: true,
 });
 
 const jetbrainsMono = JetBrains_Mono({
   variable: '--font-jetbrains-mono',
   subsets: ['latin'],
+  display: 'swap', // Prevent FOIT (Flash of Invisible Text)
+  preload: true,
 });
 
 import { LocalizedPageProps } from '@/types/global';
+import { ClientBackground } from '@/components/layout/ClientBackground';
 
 interface LocaleLayoutProps extends LocalizedPageProps {
   children: React.ReactNode;
@@ -136,17 +148,16 @@ export async function generateMetadata({
       },
     },
 
-    // Icons
+    // Icons - CORIA logo
     icons: {
       icon: [
-        { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-        { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+        { url: '/coria-logo.svg', type: 'image/svg+xml' },
       ],
       apple: [
-        { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+        { url: '/coria-logo.svg', type: 'image/svg+xml' },
       ],
       other: [
-        { rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#1B5E3F' },
+        { rel: 'mask-icon', url: '/coria-logo.svg', color: '#1B5E3F' },
       ],
     },
 
@@ -175,32 +186,52 @@ export default async function LocaleLayout({
 
   // Providing all messages to the client
   // side is the easiest way to get started
-  const messages = await getMessages();
+  // CRITICAL: Pass locale parameter to prevent fallback to defaultLocale (tr)
+  const messages = await getMessages({ locale });
+
+  // Read environment variables server-side
+  const bgEnabled = process.env.NEXT_PUBLIC_BG_EFFECT !== 'off';
+  const bgIntensity = (process.env.NEXT_PUBLIC_BG_INTENSITY as 'low' | 'med' | 'high') || 'low';
 
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
-        <SEOHead 
-          locale={locale as Locale} 
+        <meta name="color-scheme" content="light" />
+        <SEOHead
+          locale={locale as Locale}
           includeOrganization={true}
           includeProduct={true}
         />
+        {/* Critical CSS - Inline for immediate rendering (2.4KB) */}
+        <style dangerouslySetInnerHTML={{ __html: `
+/* Critical CSS for Above-the-Fold Content */
+:root{--coria-green:#1B5E3F;--acik-yesil:#66BB6A;--coria-white:#FFF;--coria-gray-900:#2C3E34;--coria-gray-600:#5F6F64}*,::before,::after{box-sizing:border-box;border-width:0;border-style:solid}html{line-height:1.5;-webkit-text-size-adjust:100%;tab-size:4;font-family:ui-sans-serif,system-ui,sans-serif}body{margin:0;line-height:inherit}.font-sans{font-family:var(--font-inter),ui-sans-serif,system-ui,sans-serif}.font-bold{font-weight:700}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.leading-tight{line-height:1.25}.leading-loose{line-height:2}.bg-coria-primary{background-color:var(--coria-green)}.text-white{color:var(--coria-white)}.text-gray-600{color:var(--coria-gray-600)}.text-coria-primary{color:var(--coria-green)}.container{width:100%;margin-left:auto;margin-right:auto;padding-left:1rem;padding-right:1rem}.grid{display:grid}.flex{display:flex}.items-center{align-items:center}.justify-center{justify-content:center}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-20{padding-top:5rem;padding-bottom:5rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mx-auto{margin-left:auto;margin-right:auto}@media (min-width:640px){.sm\\:text-5xl{font-size:3rem;line-height:1}.sm\\:text-2xl{font-size:1.5rem;line-height:2rem}}@media (min-width:768px){.md\\:text-6xl{font-size:3.75rem;line-height:1}.md\\:px-8{padding-left:2rem;padding-right:2rem}.container{max-width:768px}}@media (min-width:1024px){.lg\\:text-2xl{font-size:1.5rem;line-height:2rem}.container{max-width:1024px}}@media (min-width:1280px){.container{max-width:1280px}}.max-w-2xl{max-width:42rem}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+        ` }} />
+        {/* CSS is automatically loaded by Next.js - no manual preload needed */}
       </head>
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}
+        suppressHydrationWarning
       >
-        <NextIntlClientProvider messages={messages}>
-          <ThemeProvider defaultTheme="system" storageKey="coria-theme">
+        {/* Brand Background - Fixed positioned behind all content */}
+        <ClientBackground
+          enabled={bgEnabled}
+          intensity={bgIntensity}
+        />
+        <NextIntlClientProvider messages={messages} locale={locale}>
+          <MotionProvider>
             <AnalyticsProvider>
               <WebVitals debug={process.env.NODE_ENV === 'development'} />
               <PreviewBanner />
+              <Navigation />
               {children}
+              <Footer />
               <ConsentBanner />
               <InstallPrompt />
               <UpdateNotification />
               <NotificationPermission />
             </AnalyticsProvider>
-          </ThemeProvider>
+          </MotionProvider>
         </NextIntlClientProvider>
       </body>
     </html>

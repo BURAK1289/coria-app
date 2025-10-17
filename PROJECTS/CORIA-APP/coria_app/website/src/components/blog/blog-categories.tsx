@@ -15,7 +15,7 @@ export default function BlogCategories({ categories, activeCategory }: BlogCateg
   const t = useTranslations('blog');
   
   const createCategoryUrl = (categorySlug?: string) => {
-    const params = new URLSearchParams(searchParams);
+    const params = new URLSearchParams(searchParams || undefined);
     if (categorySlug) {
       params.set('category', categorySlug);
     } else {
@@ -26,8 +26,8 @@ export default function BlogCategories({ categories, activeCategory }: BlogCateg
   };
   
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+    <div className="bg-white rounded-lg shadow-md p-6">
+      <h3 className="text-lg font-semibold text-gray-900 mb-4">
         {t('categories')}
       </h3>
       
@@ -38,7 +38,7 @@ export default function BlogCategories({ categories, activeCategory }: BlogCateg
           className={`block px-3 py-2 rounded-md text-sm font-medium transition-colors ${
             !activeCategory
               ? 'bg-coria-green text-white'
-              : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+              : 'text-gray-700 hover:bg-gray-100'
           }`}
         >
           {t('allCategories')}
@@ -52,11 +52,11 @@ export default function BlogCategories({ categories, activeCategory }: BlogCateg
             className={`block px-3 py-2 rounded-md text-sm font-medium transition-colors ${
               activeCategory === category.slug
                 ? 'text-white'
-                : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+                : 'text-gray-700 hover:bg-gray-100'
             }`}
             style={{
               backgroundColor: activeCategory === category.slug 
-                ? category.color || '#1B5E3F' 
+                ? category.color || 'var(--coria-primary)' 
                 : undefined
             }}
           >

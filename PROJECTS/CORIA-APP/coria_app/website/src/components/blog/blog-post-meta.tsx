@@ -75,7 +75,7 @@ export default function BlogPostMeta({ post, className = '' }: BlogPostMetaProps
   const readingTime = estimateReadingTime(post.content);
 
   return (
-    <div className={`flex flex-wrap items-center gap-6 text-sm text-gray-600 dark:text-gray-300 ${className}`}>
+    <div className={`flex flex-wrap items-center gap-6 text-sm text-gray-600 ${className}`}>
       {/* Author */}
       <div className="flex items-center space-x-3">
         <Image
@@ -88,7 +88,7 @@ export default function BlogPostMeta({ post, className = '' }: BlogPostMetaProps
         <div>
           <div className="flex items-center space-x-1">
             <UserIcon className="w-4 h-4" />
-            <span className="font-medium text-gray-900 dark:text-white">
+            <span className="font-medium text-gray-900">
               {post.author.name}
             </span>
           </div>
@@ -113,10 +113,10 @@ export default function BlogPostMeta({ post, className = '' }: BlogPostMetaProps
       
       {/* Category */}
       <div className="flex items-center">
-        <span className="text-gray-500 dark:text-gray-400 mr-2">in</span>
+        <span className="text-gray-500 mr-2">in</span>
         <span 
           className="px-2 py-1 text-xs font-medium text-white rounded"
-          style={{ backgroundColor: post.category.color || '#1B5E3F' }}
+          style={{ backgroundColor: post.category.color || 'var(--coria-primary)' }}
         >
           {post.category.name}
         </span>

@@ -1,0 +1,1086 @@
+{
+  "navigation": {
+    "home": "Startseite",
+    "features": "Funktionen",
+    "pricing": "Preise",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "blog": "Blog",
+    "logoAria": "Zur CORIA-Startseite gehen"
+  },
+  "hero": {
+    "title": "See the impact behind every product.",
+    "subtitle": "Vegan, allergen, health and sustainability insights — at a glance.",
+    "downloadIos": "Download on the App Store",
+    "downloadAndroid": "Get it on Google Play",
+    "watchDemo": "Watch Demo",
+    "badge": "Choose with heart, live with impact",
+    "highlightImpact": "Multi-source product intelligence",
+    "highlightScans": "360° impact insights",
+    "highlightMarkets": "180+ brands & retailers"
+  },
+  "features": {
+    "title": "Funktionen",
+    "subtitle": "Machen Sie nachhaltiges Leben einfacher mit CORIAs leistungsstarken Funktionen",
+    "barcodeScan": {
+      "title": "Barcode-Scanning",
+      "description": "Erfahren Sie sofort die Nachhaltigkeitsbewertungen von Produkten"
+    },
+    "aiRecommendations": {
+      "title": "KI-Empfehlungen",
+      "description": "Erhalten Sie personalisierte nachhaltige Produktempfehlungen"
+    },
+    "impactTracking": {
+      "title": "Impact-Tracking",
+      "description": "Verfolgen Sie Ihren CO2-Fußabdruck und Ihre Umweltauswirkungen"
+    },
+    "smartPantry": {
+      "title": "Intelligente Speisekammer",
+      "description": "Reduzieren Sie Lebensmittelverschwendung und kaufen Sie intelligent ein"
+    }
+  },
+  "pricing": {
+    "title": "Preise",
+    "subtitle": "Wählen Sie den Plan, der zu Ihnen passt",
+    "free": "Kostenlos",
+    "premium": "Premium",
+    "monthly": "monatlich",
+    "currency": "₺",
+    "getStarted": "Loslegen",
+    "choosePlan": "Plan wählen"
+  },
+  "footer": {
+    "description": "Treffen Sie intelligente Entscheidungen für nachhaltiges Leben",
+    "newsletter": {
+      "title": "Newsletter",
+      "placeholder": "Ihre E-Mail-Adresse",
+      "subscribe": "Abonnieren"
+    },
+    "links": {
+      "product": "Produkt",
+      "company": "Unternehmen",
+      "support": "Support",
+      "legal": "Rechtliches"
+    },
+    "copyright": "© 2024 CORIA. Alle Rechte vorbehalten."
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Neueste Nachrichten und Einblicke über nachhaltiges Leben, Umweltbewusstsein und bewussten Konsum",
+    "categories": "Kategorien",
+    "allCategories": "Alle Kategorien",
+    "search": "Suchen",
+    "searchPlaceholder": "Blog-Beiträge durchsuchen...",
+    "searchButton": "Suchen",
+    "searching": "Suche läuft...",
+    "searchTips": "Tipp: Sie können in Titeln, Inhalten oder Tags suchen",
+    "resultsFound": "{count} Ergebnisse gefunden",
+    "searchFor": "Suche:",
+    "inCategory": "in Kategorie:",
+    "allPosts": "{count} Beiträge",
+    "tags": "Tags",
+    "readingTime": "{minutes} Min. Lesezeit",
+    "tableOfContents": "Inhaltsverzeichnis",
+    "sharePost": "Teilen",
+    "copyLink": "Link kopieren",
+    "shareOnTwitter": "Auf Twitter teilen",
+    "shareOnLinkedIn": "Auf LinkedIn teilen",
+    "relatedPosts": "Ähnliche Beiträge",
+    "previous": "Vorherige",
+    "next": "Nächste",
+    "paginationInfo": "{start}-{end} von {total} Beiträgen angezeigt",
+    "emptyState": {
+      "title": "Inhalte folgen in Kürze",
+      "description": "Die Blog-Integration ist in dieser Umgebung deaktiviert. Hinterlegen Sie Contentful-Zugangsdaten, um Beiträge anzuzeigen."
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "Über CORIA - Unsere Mission für nachhaltiges Leben",
+      "description": "Erfahren Sie mehr über CORIAs Mission, nachhaltiges Leben für alle zugänglich zu machen. Lernen Sie unser Team kennen und entdecken Sie unser Engagement für Umweltverantwortung."
+    },
+    "hero": {
+      "title": "Gemeinsam eine nachhaltige Zukunft aufbauen",
+      "subtitle": "Wir glauben, dass kleine, bewusste Entscheidungen einen enormen positiven Einfluss auf unseren Planeten haben können. CORIA befähigt Millionen, täglich nachhaltige Entscheidungen zu treffen.",
+      "downloadIos": "Download on App Store",
+      "downloadAndroid": "Get it on Google Play"
+    },
+    "missionVision": {
+      "title": "Unsere Mission & Vision",
+      "subtitle": "Positiven Wandel durch Technologie und bewussten Konsum vorantreiben",
+      "mission": {
+        "title": "Unsere Mission",
+        "description": "Nachhaltiges Leben für alle zugänglich, verständlich und umsetzbar zu machen, indem wir transparente Informationen über die Umwelt- und Sozialauswirkungen von Produkten bereitstellen.",
+        "points": [
+          "Zugang zu Nachhaltigkeitsinformationen demokratisieren",
+          "Verbraucher zu bewussten Entscheidungen befähigen",
+          "Transparenz bei Produktauswirkungen schaffen",
+          "Eine Gemeinschaft bewusster Verbraucher aufbauen"
+        ]
+      },
+      "vision": {
+        "title": "Unsere Vision",
+        "description": "Eine Welt, in der jede Kaufentscheidung zu einem nachhaltigeren, gerechteren und gesünderen Planeten für zukünftige Generationen beiträgt.",
+        "points": [
+          "Globale Einführung bewussten Konsums",
+          "Transparente Lieferketten weltweit",
+          "Reduzierte Umweltauswirkungen durch Konsum",
+          "Gestärkte Gemeinschaften, die positive Veränderungen bewirken"
+        ]
+      }
+    },
+    "values": {
+      "title": "Unsere Werte",
+      "subtitle": "Die Prinzipien, die alles leiten, was wir tun",
+      "list": [
+        {
+          "id": "sustainability",
+          "title": "Nachhaltigkeit zuerst",
+          "description": "Umweltverantwortung steht im Mittelpunkt jeder Entscheidung, die wir treffen, von der Produktentwicklung bis zum Geschäftsbetrieb.",
+          "icon": "sustainability"
+        },
+        {
+          "id": "transparency",
+          "title": "Radikale Transparenz",
+          "description": "Wir glauben an vollständige Offenheit über unsere Methodik, Datenquellen und Geschäftspraktiken, um Vertrauen aufzubauen.",
+          "icon": "transparency"
+        },
+        {
+          "id": "innovation",
+          "title": "Kontinuierliche Innovation",
+          "description": "Wir entwickeln unsere Technologie und unseren Ansatz ständig weiter, um bessere Werkzeuge für nachhaltiges Leben zu bieten.",
+          "icon": "innovation"
+        },
+        {
+          "id": "community",
+          "title": "Gemeinschaftseinfluss",
+          "description": "Wir bauen eine globale Gemeinschaft bewusster Verbraucher auf, die sich gegenseitig unterstützen und voneinander lernen.",
+          "icon": "community"
+        }
+      ],
+      "sustainability": {
+        "title": "Unsere Nachhaltigkeitsverpflichtungen",
+        "subtitle": "Wir praktizieren, was wir predigen, mit messbaren Umweltverpflichtungen"
+      },
+      "commitments": [
+        {
+          "id": "carbon-neutral",
+          "title": "Klimaneutrale Operationen",
+          "description": "Wir haben Klimaneutralität in unseren Operationen erreicht und arbeiten daran, bis 2025 klimanegativ zu werden.",
+          "metrics": [
+            {
+              "value": "100%",
+              "label": "Erneuerbare Energie"
+            },
+            {
+              "value": "0kg",
+              "label": "Netto-CO2-Emissionen"
+            }
+          ]
+        },
+        {
+          "id": "data-impact",
+          "title": "Positive Datenauswirkung",
+          "description": "Unsere Plattform hat Nutzern geholfen, ihren ökologischen Fußabdruck durch informierte Konsumentscheidungen zu reduzieren.",
+          "metrics": [
+            {
+              "value": "2,3M kg",
+              "label": "CO2 eingespart"
+            },
+            {
+              "value": "156K L",
+              "label": "Wasser geschont"
+            }
+          ]
+        }
+      ],
+      "cta": {
+        "title": "Schließen Sie sich unserer Mission an",
+        "description": "Seien Sie Teil der Bewegung hin zu nachhaltigem Leben und bewusstem Konsum.",
+        "action": "CORIA herunterladen"
+      }
+    },
+    "team": {
+      "title": "Lernen Sie unser Team kennen",
+      "subtitle": "Leidenschaftliche Menschen, die daran arbeiten, nachhaltiges Leben für alle zugänglich zu machen",
+      "members": [
+        {
+          "id": "founder-ceo",
+          "name": "Burak Cem Yaman",
+          "role": "Gründer & CEO",
+          "bio": "Leidenschaftlich für Nachhaltigkeit und Technologie gründete Burak CORIA, um den Zugang zu Umweltinformationen zu demokratisieren.",
+          "image": "/images/team/founder.jpg",
+          "linkedin": "https://linkedin.com/in/burakcemyaman"
+        },
+        {
+          "id": "cto",
+          "name": "Tech-Leiter",
+          "role": "Chief Technology Officer",
+          "bio": "Führt unsere technische Vision mit Expertise in KI, mobiler Entwicklung und nachhaltigen Technologielösungen.",
+          "image": "/images/team/cto.jpg"
+        },
+        {
+          "id": "sustainability-director",
+          "name": "Nachhaltigkeitsdirektor",
+          "role": "Leiter Nachhaltigkeit",
+          "bio": "Umweltwissenschaftler, der sicherstellt, dass unsere Methodik und Daten wissenschaftlich genau und wirkungsvoll bleiben.",
+          "image": "/images/team/sustainability.jpg"
+        }
+      ],
+      "leadership": {
+        "title": "Eine Nachricht von unserer Führung",
+        "message": "Wir haben CORIA gegründet, weil wir glauben, dass Information Macht ist. Wenn Verbraucher Zugang zu transparenten, genauen Informationen über die Produkte haben, die sie kaufen, können sie Entscheidungen treffen, die mit ihren Werten übereinstimmen und positive Veränderungen bewirken.",
+        "signature": "CORIA Führungsteam"
+      }
+    },
+    "timeline": {
+      "title": "Unsere Reise",
+      "subtitle": "Wichtige Meilensteine beim Aufbau einer nachhaltigeren Zukunft",
+      "events": [
+        {
+          "id": "founding",
+          "date": "Januar 2023",
+          "title": "CORIA gegründet",
+          "description": "Begonnen mit der Vision, Nachhaltigkeitsinformationen durch Technologie für alle zugänglich zu machen.",
+          "type": "milestone"
+        },
+        {
+          "id": "mvp-launch",
+          "date": "Juni 2023",
+          "title": "MVP-Start",
+          "description": "Veröffentlichung unserer ersten mobilen App mit grundlegenden Barcode-Scan- und Nachhaltigkeitsbewertungsfunktionen.",
+          "type": "launch"
+        },
+        {
+          "id": "user-milestone",
+          "date": "Dezember 2023",
+          "title": "10.000 Nutzer",
+          "description": "Erreichten unseren ersten großen Nutzermeilenstein mit 10.000 aktiven Nutzern, die täglich bewusste Entscheidungen treffen.",
+          "type": "achievement"
+        },
+        {
+          "id": "ai-integration",
+          "date": "März 2024",
+          "title": "KI-Empfehlungen",
+          "description": "Einführung personalisierter KI-Empfehlungen, um Nutzern zu helfen, nachhaltige Alternativen zu entdecken.",
+          "type": "launch"
+        },
+        {
+          "id": "multi-language",
+          "date": "August 2024",
+          "title": "Globale Expansion",
+          "description": "Erweitert um Unterstützung mehrerer Sprachen und Regionen, wodurch Nachhaltigkeit weltweit zugänglich wird.",
+          "type": "expansion"
+        },
+        {
+          "id": "premium-launch",
+          "date": "November 2024",
+          "title": "Premium-Funktionen",
+          "description": "Einführung des Premium-Abonnements mit erweiterten Analysen und unbegrenzten Scan-Funktionen.",
+          "type": "launch"
+        }
+      ],
+      "future": {
+        "title": "Blick nach vorn",
+        "description": "Wir fangen gerade erst an. Unsere Roadmap umfasst die Erweiterung auf mehr Produktkategorien, die Verbesserung der KI-Fähigkeiten und den Aufbau stärkerer Community-Funktionen, um die Einführung nachhaltiger Lebenspraktiken weltweit zu beschleunigen."
+      }
+    },
+    "cta": {
+      "title": "Bereit, einen Unterschied zu machen?",
+      "description": "Schließen Sie sich Millionen von Nutzern an, die bewusste Entscheidungen für eine nachhaltige Zukunft treffen.",
+      "downloadIos": "Im App Store laden",
+      "downloadAndroid": "Bei Google Play laden"
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "CORIA Kontakt - Support & Hilfe erhalten",
+      "description": "Kontaktieren Sie das CORIA Support-Team. Finden Sie Antworten auf Ihre Fragen, reichen Sie Support-Tickets ein und erhalten Sie Hilfe für nachhaltiges Leben."
+    },
+    "hero": {
+      "title": "Kontakt aufnehmen",
+      "subtitle": "Wir sind hier, um Ihnen auf Ihrer Reise zu nachhaltigem Leben zu helfen. Kontaktieren Sie uns bei Fragen, Feedback oder Support-Bedürfnissen.",
+      "primaryActionLabel": "Email Support",
+      "secondaryActionLabel": "Help Center"
+    },
+    "methods": {
+      "title": "Kontaktmethoden",
+      "subtitle": "Wählen Sie den besten Weg, uns basierend auf Ihren Bedürfnissen zu erreichen",
+      "list": [
+        {
+          "id": "email",
+          "title": "E-Mail-Support",
+          "description": "Erhalten Sie detaillierte Hilfe bei Fragen oder Problemen. Perfekt für komplexe Anfragen, die ausführliche Erklärungen benötigen.",
+          "contact": "support@coria.app",
+          "icon": "email",
+          "availability": "24/7",
+          "responseTime": "Innerhalb von 24 Stunden"
+        },
+        {
+          "id": "chat",
+          "title": "Live-Chat",
+          "description": "Erhalten Sie sofortige Hilfe von unserem Support-Team während der Geschäftszeiten. Großartig für schnelle Fragen und sofortige Hilfe.",
+          "contact": "Chat starten",
+          "icon": "chat",
+          "availability": "Mo-Fr 9:00-18:00 (GMT+3)",
+          "responseTime": "Sofort"
+        },
+        {
+          "id": "help-center",
+          "title": "Hilfe-Center",
+          "description": "Durchsuchen Sie unsere umfassende Wissensdatenbank mit Anleitungen, Tutorials und häufig gestellten Fragen.",
+          "contact": "Hilfe-Center besuchen",
+          "icon": "help",
+          "availability": "24/7",
+          "responseTime": "Selbstbedienung"
+        }
+      ],
+      "emergency": {
+        "title": "Kritische Probleme",
+        "description": "Für dringende technische Probleme oder Sicherheitsbedenken, die sofortige Aufmerksamkeit benötigen.",
+        "email": "dringend@coria.app",
+        "phone": "+90 212 555 0123",
+        "contactNow": "Jetzt kontaktieren"
+      }
+    },
+    "form": {
+      "title": "Senden Sie uns eine Nachricht",
+      "subtitle": "Füllen Sie das untenstehende Formular aus und wir melden uns so schnell wie möglich bei Ihnen",
+      "fields": {
+        "name": "Vollständiger Name",
+        "email": "E-Mail-Adresse",
+        "subject": "Betreff",
+        "category": "Kategorie",
+        "priority": "Priorität",
+        "message": "Nachricht"
+      },
+      "placeholders": {
+        "name": "Geben Sie Ihren vollständigen Namen ein",
+        "email": "Geben Sie Ihre E-Mail-Adresse ein",
+        "subject": "Kurze Beschreibung Ihrer Anfrage",
+        "message": "Beschreiben Sie Ihre Frage oder Ihr Problem detailliert..."
+      },
+      "categories": {
+        "general": "Allgemeine Anfrage",
+        "technical": "Technischer Support",
+        "billing": "Abrechnung & Abonnements",
+        "featureRequest": "Feature-Anfrage",
+        "bugReport": "Fehlerbericht",
+        "partnership": "Partnerschaft & Geschäft"
+      },
+      "priorities": {
+        "low": "Niedrig",
+        "medium": "Mittel",
+        "high": "Hoch"
+      },
+      "validation": {
+        "nameRequired": "Name ist erforderlich",
+        "emailRequired": "E-Mail ist erforderlich",
+        "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+        "subjectRequired": "Betreff ist erforderlich",
+        "messageRequired": "Nachricht ist erforderlich",
+        "messageTooShort": "Nachricht muss mindestens 10 Zeichen lang sein"
+      },
+      "charactersRemaining": "Zeichen verbleibend",
+      "submit": "Nachricht senden",
+      "submitting": "Wird gesendet...",
+      "success": {
+        "title": "Nachricht erfolgreich gesendet!",
+        "message": "Vielen Dank, dass Sie uns kontaktiert haben. Wir haben Ihre Nachricht erhalten und werden innerhalb von 24 Stunden antworten.",
+        "sendAnother": "Weitere Nachricht senden"
+      },
+      "messageHelp": "Please share as much detail as possible."
+    },
+    "support": {
+      "title": "Support-Ticket-System",
+      "subtitle": "Erstellen Sie ein Support-Ticket für verfolgte Unterstützung bei Ihren spezifischen Bedürfnissen",
+      "ticketTypes": [
+        {
+          "id": "bug-report",
+          "title": "Fehlerbericht",
+          "description": "Melden Sie technische Probleme, App-Abstürze oder unerwartetes Verhalten",
+          "category": "Technisch",
+          "priority": "high",
+          "estimatedTime": "2-4 Stunden",
+          "icon": "bug"
+        },
+        {
+          "id": "feature-request",
+          "title": "Feature-Anfrage",
+          "description": "Schlagen Sie neue Features oder Verbesserungen bestehender Funktionalität vor",
+          "category": "Produkt",
+          "priority": "medium",
+          "estimatedTime": "1-2 Wochen",
+          "icon": "feature"
+        },
+        {
+          "id": "account-help",
+          "title": "Konto-Hilfe",
+          "description": "Probleme mit Anmeldung, Profileinstellungen oder Kontoverwaltung",
+          "category": "Konto",
+          "priority": "medium",
+          "estimatedTime": "4-8 Stunden",
+          "icon": "account"
+        },
+        {
+          "id": "billing-support",
+          "title": "Abrechnungs-Support",
+          "description": "Fragen zu Abonnements, Zahlungen oder Abrechnungsproblemen",
+          "category": "Abrechnung",
+          "priority": "high",
+          "estimatedTime": "2-4 Stunden",
+          "icon": "billing"
+        },
+        {
+          "id": "technical-help",
+          "title": "Technische Hilfe",
+          "description": "Allgemeine technische Unterstützung und Fehlerbehebung",
+          "category": "Technisch",
+          "priority": "medium",
+          "estimatedTime": "4-8 Stunden",
+          "icon": "technical"
+        },
+        {
+          "id": "partnership",
+          "title": "Partnerschaftsanfrage",
+          "description": "Geschäftspartnerschaften, Integrationen oder Kooperationsmöglichkeiten",
+          "category": "Geschäft",
+          "priority": "low",
+          "estimatedTime": "1-2 Wochen",
+          "icon": "partnership"
+        }
+      ],
+      "tracking": {
+        "title": "Verfolgen Sie Ihr Ticket",
+        "description": "Geben Sie Ihre Ticket-ID ein, um den Status Ihrer Support-Anfrage zu überprüfen",
+        "placeholder": "Ticket-ID eingeben (z.B. CORIA-12345)",
+        "track": "Verfolgen",
+        "help": "Sie finden Ihre Ticket-ID in der Bestätigungs-E-Mail, die wir Ihnen gesendet haben"
+      },
+      "sla": {
+        "low": {
+          "time": "1-2 Wochen",
+          "description": "Niedrige Priorität"
+        },
+        "medium": {
+          "time": "4-8 Stunden",
+          "description": "Standard-Support"
+        },
+        "high": {
+          "time": "2-4 Stunden",
+          "description": "Hohe Priorität"
+        },
+        "urgent": {
+          "time": "< 1 Stunde",
+          "description": "Kritische Probleme"
+        }
+      }
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "subtitle": "Finden Sie schnelle Antworten auf häufige Fragen zu CORIA",
+      "searchPlaceholder": "FAQ durchsuchen...",
+      "allCategories": "Alle Kategorien",
+      "searchResults": "{count} Ergebnisse für \"{query}\" gefunden",
+      "categories": [
+        {
+          "id": "general",
+          "name": "Allgemein"
+        },
+        {
+          "id": "technical",
+          "name": "Technisch"
+        },
+        {
+          "id": "billing",
+          "name": "Abrechnung"
+        },
+        {
+          "id": "features",
+          "name": "Features"
+        },
+        {
+          "id": "account",
+          "name": "Konto"
+        }
+      ],
+      "items": [
+        {
+          "id": "what-is-coria",
+          "question": "Was ist CORIA und wie funktioniert es?",
+          "answer": "CORIA ist eine App für nachhaltiges Leben, die Ihnen hilft, bewusste Konsumentscheidungen zu treffen. Scannen Sie einfach Produktbarcodes, um Umweltauswirkungsbewertungen zu sehen, erhalten Sie personalisierte Empfehlungen für nachhaltige Alternativen und verfolgen Sie Ihre positive Wirkung über die Zeit.",
+          "category": "general"
+        },
+        {
+          "id": "how-accurate-scores",
+          "question": "Wie genau sind die Nachhaltigkeitsbewertungen?",
+          "answer": "Unsere Nachhaltigkeitsbewertungen basieren auf verifizierten Daten aus mehreren Quellen, einschließlich OpenFoodFacts, Umweltdatenbanken und wissenschaftlicher Forschung. Wir aktualisieren kontinuierlich unsere Methodik und Daten, um Genauigkeit zu gewährleisten. Unsere Bewertungen erreichen 98% Datengenauigkeit durch rigorose Verifizierungsprozesse.",
+          "category": "general"
+        },
+        {
+          "id": "premium-worth-it",
+          "question": "Ist CORIA Premium das Abonnement wert?",
+          "answer": "CORIA Premium bietet unbegrenztes Scannen, detaillierte Auswirkungsberichte, erweiterte Analysen und eine werbefreie Erfahrung für ₺29,99/Monat. Wenn Sie mehr als 10 Produkte täglich scannen oder tiefere Einblicke in Ihre Umweltauswirkungen wünschen, bietet Premium erheblichen Wert. Wir bieten auch eine 7-tägige kostenlose Testversion.",
+          "category": "billing"
+        },
+        {
+          "id": "offline-scanning",
+          "question": "Kann ich Produkte offline scannen?",
+          "answer": "Ja! CORIA funktioniert offline für Produkte, die Sie zuvor gescannt haben. Die App speichert Produktdaten lokal zwischen, sodass Sie auch ohne Internetverbindung auf Nachhaltigkeitsinformationen zugreifen können. Neue Produkte benötigen eine Internetverbindung für den ersten Scan.",
+          "category": "technical"
+        },
+        {
+          "id": "data-privacy",
+          "question": "Wie schützen Sie meine persönlichen Daten?",
+          "answer": "Wir nehmen Datenschutz ernst. Ihre persönlichen Daten werden verschlüsselt und sicher gespeichert. Wir verkaufen Ihre Daten niemals an Dritte. Sie können unsere detaillierte Datenschutzrichtlinie einsehen und Ihre Dateneinstellungen in den App-Einstellungen verwalten. Alle Datenverarbeitung entspricht der DSGVO und anderen Datenschutzbestimmungen.",
+          "category": "account"
+        },
+        {
+          "id": "cancel-subscription",
+          "question": "Wie kündige ich mein Premium-Abonnement?",
+          "answer": "Sie können Ihr Premium-Abonnement jederzeit über Ihr App-Store-Konto (App Store oder Google Play) kündigen. Gehen Sie zu Ihren Abonnements, finden Sie CORIA Premium und wählen Sie Kündigen. Ihre Premium-Features bleiben bis zum Ende Ihres aktuellen Abrechnungszeitraums aktiv.",
+          "category": "billing"
+        },
+        {
+          "id": "supported-countries",
+          "question": "Welche Länder unterstützt CORIA?",
+          "answer": "CORIA unterstützt derzeit die Türkei mit Plänen zur Expansion in andere Länder. Unsere Produktdatenbank umfasst internationale Produkte und die App ist auf Türkisch, Englisch, Deutsch und Französisch verfügbar. Wir arbeiten an der Expansion in weitere Regionen basierend auf der Benutzernachfrage.",
+          "category": "general"
+        },
+        {
+          "id": "barcode-not-found",
+          "question": "Was ist, wenn ein Produktbarcode nicht erkannt wird?",
+          "answer": "Wenn ein Barcode nicht in unserer Datenbank ist, können Sie ihn zur Überprüfung einreichen. Wir fügen regelmäßig neue Produkte basierend auf Benutzereinsendungen hinzu. Premium-Benutzer erhalten Priorität für neue Produktzusätze. Sie können auch manuell nach ähnlichen Produkten suchen, um Nachhaltigkeitsinformationen zu erhalten.",
+          "category": "features"
+        }
+      ],
+      "noResults": {
+        "title": "Keine Ergebnisse gefunden",
+        "description": "Wir konnten keine FAQ-Einträge finden, die Ihrer Suche entsprechen. Versuchen Sie andere Suchbegriffe oder durchsuchen Sie alle Kategorien.",
+        "clearFilters": "Filter löschen"
+      },
+      "stillNeedHelp": {
+        "title": "Brauchen Sie noch Hilfe?",
+        "description": "Können Sie nicht finden, wonach Sie suchen? Unser Support-Team ist hier, um zu helfen.",
+        "contactUs": "Kontaktieren Sie uns",
+        "emailSupport": "E-Mail-Support"
+      }
+    },
+    "cta": {
+      "title": "Let’s build the future of conscious consumption together",
+      "description": "Partner with CORIA for data collaborations, enterprise enablement, or community programs. Our team will get back within one business day.",
+      "primaryLabel": "partners@coria.app",
+      "secondaryLabel": "Book a meeting"
+    }
+  },
+  "common": {
+    "loading": "Wird geladen...",
+    "error": "Ein Fehler ist aufgetreten",
+    "retry": "Erneut versuchen",
+    "close": "Schließen",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "continue": "Weiter",
+    "back": "Zurück",
+    "next": "Weiter"
+  },
+  "consent": {
+    "banner": {
+      "message": "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und den Website-Traffic zu analysieren.",
+      "learnMore": "Mehr erfahren",
+      "acceptAll": "Alle akzeptieren",
+      "rejectAll": "Alle ablehnen"
+    },
+    "preferences": {
+      "title": "Cookie-Einstellungen",
+      "description": "Wählen Sie, welche Cookies Sie zulassen möchten. Sie können diese Einstellungen jederzeit ändern.",
+      "alwaysActive": "Immer aktiv",
+      "savePreferences": "Einstellungen speichern",
+      "rejectAll": "Alle ablehnen",
+      "essential": {
+        "title": "Notwendige Cookies",
+        "description": "Erforderlich für das ordnungsgemäße Funktionieren der Website. Kann nicht deaktiviert werden."
+      },
+      "analytics": {
+        "title": "Analyse-Cookies",
+        "description": "Helfen uns zu verstehen, wie Besucher mit unserer Website interagieren."
+      },
+      "marketing": {
+        "title": "Marketing-Cookies",
+        "description": "Werden verwendet, um Besucher zu verfolgen und relevante Werbung anzuzeigen."
+      }
+    }
+  },
+  "home": {
+    "hero": {
+      "badge": "Choose with Heart · Live with Impact",
+      "title": "See the impact behind every product. Choose better.",
+      "subtitle": "Vegan, allergen, health, carbon/water and ethical scores — all at a glance.",
+      "downloadIos": "Download on the App Store",
+      "downloadAndroid": "Get it on Google Play",
+      "watchDemo": "Watch Demo",
+      "stats": [
+        {
+          "value": "2.5B+",
+          "label": "Multi-source product data & ingredient records"
+        },
+        {
+          "value": "360°",
+          "label": "Vegan, health, ESG and boycott intelligence"
+        },
+        {
+          "value": "180+",
+          "label": "Brands, retailers and certification partners"
+        }
+      ],
+      "pills": [
+        {
+          "icon": "🧬",
+          "label": "Vegan & allergen analysis"
+        },
+        {
+          "icon": "🌍",
+          "label": "ESG & boycott alerts"
+        },
+        {
+          "icon": "🤖",
+          "label": "AI guidance & smart workflows"
+        }
+      ],
+      "fallbackStats": {
+        "products": "Multi-source product intelligence",
+        "coverage": "360° sustainability coverage",
+        "markets": "Supported brands and retailers"
+      },
+      "fallbackPills": {
+        "scanning": "Barcode scanning & insights",
+        "impact": "Impact tracking dashboards",
+        "ai": "AI recommendations"
+      },
+      "preview": {
+        "badge": "Live product snapshot",
+        "timeframe": "Last 7 days",
+        "scan": {
+          "title": "Scan any barcode, see the impact",
+          "subtitle": "Vegan, allergen, carbon and health scores in one view",
+          "score": "9.2 / 10",
+          "impact": "Carbon impact -34%",
+          "delta": "Better than the community average"
+        },
+        "assistant": {
+          "title": "AI Assistant in action",
+          "subtitle": "Personalised guidance for your goals",
+          "tip": "Plant-based swap that boosts protein balance",
+          "alert": "Palm oil detected"
+        },
+        "pantry": {
+          "title": "Smart Pantry reminder",
+          "subtitle": "Expiring items and waste risk alerts",
+          "reminder": "Use today to avoid waste",
+          "days": "3 days left"
+        },
+        "caption": {
+          "title": "360° visibility",
+          "description": "Environmental, ethical and health signals united for every decision."
+        }
+      }
+    },
+    "audiences": {
+      "badge": "Tailored value for every persona",
+      "title": "Insights that speak each audience's language",
+      "subtitle": "CORIA aligns sustainability, health and ethical decisions for consumers, partners and investors alike.",
+      "cards": [
+        {
+          "id": "consumers",
+          "icon": "🌱",
+          "persona": "Individuals",
+          "title": "Vegan & conscious consumers",
+          "description": "Understand vegan status, ethics and health impact the moment you scan.",
+          "highlights": [
+            "Instantly surface vegan/vegetarian status, additives and allergens.",
+            "Compare planet-friendly alternatives across price, health and sustainability.",
+            "Get carbon and water alerts aligned with your personal goals."
+          ]
+        },
+        {
+          "id": "parents",
+          "icon": "👨‍👩‍👧",
+          "persona": "Families",
+          "title": "Parents",
+          "description": "Peace of mind for ingredient safety and allergen management.",
+          "highlights": [
+            "Colour-coded risk levels for every allergen profile.",
+            "Transparency on suspicious additives with source references.",
+            "Curate safe shopping lists for each family member in seconds."
+          ]
+        },
+        {
+          "id": "health",
+          "icon": "💪",
+          "persona": "Wellness",
+          "title": "Health & fitness seekers",
+          "description": "Macro/micro nutrients and health scores in a unified dashboard.",
+          "highlights": [
+            "Track sugar, salt and protein balances in real time.",
+            "Spot ultra-processed warnings and serving-size suggestions.",
+            "Access AI-powered recipes that match your training routine."
+          ]
+        },
+        {
+          "id": "sustainability",
+          "icon": "🌎",
+          "persona": "Climate",
+          "title": "Sustainability champions",
+          "description": "Carbon, water, circularity and certification data in full context.",
+          "highlights": [
+            "Compare life-cycle (LCA) scores across products.",
+            "Follow community boycott alerts and ESG breakdowns.",
+            "Measure monthly savings with impact dashboards and forecasts."
+          ]
+        },
+        {
+          "id": "partners",
+          "icon": "🤝",
+          "persona": "Partners",
+          "title": "Brands, retailers & API partners",
+          "description": "Transparent ESG profiles, community feedback and integration opportunities.",
+          "highlights": [
+            "Showcase sustainability commitments on your brand profile.",
+            "Collect and respond to real-time product feedback.",
+            "Drive users directly to your store with deep links and future cart sync."
+          ]
+        },
+        {
+          "id": "investors",
+          "icon": "📈",
+          "persona": "Investors",
+          "title": "Investors",
+          "description": "Market size, competitive edge and measurable impact metrics in one report.",
+          "highlights": [
+            "Explore the 360° product vision and roadmap.",
+            "Review premium conversion and retention KPIs.",
+            "Assess CORIA's value through impact-driven KPIs."
+          ]
+        }
+      ]
+    },
+    "featureHighlights": {
+      "badge": "360° platform",
+      "title": "Every tool you need for sustainable living",
+      "subtitle": "CORIA brings vegan, health, environmental and ethical intelligence together so daily choices scale your impact.",
+      "cards": [
+        {
+          "id": "product-analysis",
+          "icon": "🧬",
+          "badge": "Core",
+          "title": "Product Analysis",
+          "description": "Scan any barcode to surface vegan status, allergens and ingredient risks in seconds.",
+          "details": "Multi-source verification, additive explanations, science-backed health scoring and community feedback meet in a single card."
+        },
+        {
+          "id": "ai-assistant",
+          "icon": "🤖",
+          "badge": "AI",
+          "title": "AI Assistant",
+          "description": "Ask in text or voice and receive tailored recommendations instantly.",
+          "details": "Recipes, diet restrictions, shopping and waste reduction flows keep guidance personal and contextual."
+        },
+        {
+          "id": "smart-pantry",
+          "icon": "🥫",
+          "badge": "Living",
+          "title": "Smart Pantry & Expiry",
+          "description": "Track inventory, expiry dates and waste risk with intelligent alerts.",
+          "details": "Shelf-life predictions, automatic reminders and use-what-you-have recipes can cut food waste by up to 40%."
+        },
+        {
+          "id": "shopping",
+          "icon": "🛒",
+          "badge": "Integrations",
+          "title": "Shopping Lists & Retail",
+          "description": "Seasonal, stock-aware and budget-friendly smart lists.",
+          "details": "Retail integrations, deep links and upcoming cart sync make sustainable shopping effortless."
+        },
+        {
+          "id": "esg",
+          "icon": "🌍",
+          "badge": "ESG",
+          "title": "ESG & Boycott Profiles",
+          "description": "See environmental, social and governance performance transparently.",
+          "details": "Certifications, boycott alerts, audit highlights and supply-chain transparency in one place."
+        },
+        {
+          "id": "ocr",
+          "icon": "📊",
+          "badge": "Analytics",
+          "title": "OCR & Impact Dashboards",
+          "description": "Scan receipts to quantify carbon, water and waste impact.",
+          "details": "OCR-powered capture turns monthly dashboards, savings scenarios and improvement tips into automated insight."
+        }
+      ],
+      "cta": {
+        "title": "Ready to experience every feature?",
+        "description": "Download CORIA and turn every scan into a smarter, planet-positive choice.",
+        "downloadIos": "Download on the App Store",
+        "downloadAndroid": "Get it on Google Play"
+      },
+      "card": {
+        "showDetails": "Show details",
+        "hideDetails": "Hide details"
+      }
+    },
+    "demo": {
+      "badge": "30-second demo",
+      "title": "Experience CORIA in a single flow",
+      "subtitle": "Scan, understand the impact, explore alternatives and save to your pantry — all in under 30 seconds.",
+      "steps": [
+        {
+          "title": "Scan the barcode",
+          "description": "Open the app, point and scan — your product is analysed instantly.",
+          "emphasis": "Powered by multi-source data and community validation."
+        },
+        {
+          "title": "See the 360° impact",
+          "description": "Vegan, allergen, health, carbon and ethical scores in a single card.",
+          "emphasis": "Underpinned by scientific methodologies and transparent sourcing."
+        },
+        {
+          "title": "Discover better alternatives",
+          "description": "AI suggests healthier, more sustainable and accessible options.",
+          "emphasis": "Ranked by the best balance of price and impact."
+        },
+        {
+          "title": "Save to lists and pantry",
+          "description": "Sync with your smart pantry, expiry alerts and retail partners.",
+          "emphasis": "Automation that prevents waste before it happens."
+        }
+      ],
+      "video": {
+        "badge": "Real product demo",
+        "length": "0:32",
+        "title": "Scan → Impact → Alternative",
+        "description": "A quick walkthrough of CORIA's 360° experience.",
+        "cta": "Play demo",
+        "caption": "Narrated with captions for every step."
+      },
+      "download": {
+        "badge": "App Store & Google Play",
+        "title": "Download now, amplify your impact",
+        "ios": "App Store",
+        "android": "Google Play"
+      },
+      "cta": {
+        "primary": "Download now",
+        "secondary": "Open on Android"
+      }
+    },
+    "impact": {
+      "badge": "Measured impact",
+      "title": "Tangible outcomes with every decision",
+      "subtitle": "Track carbon, water and waste in real time, benchmarked against the community.",
+      "metrics": [
+        {
+          "value": "34",
+          "unit": "kg CO₂e",
+          "label": "Saved this month",
+          "description": "Swapping high-impact products for smarter alternatives reduces emissions instantly.",
+          "trend": "18% improvement vs last month"
+        },
+        {
+          "value": "1,200",
+          "unit": "L water",
+          "label": "Water saved",
+          "description": "Seasonal and local suggestions keep your water footprint low.",
+          "trend": "24% above community average"
+        },
+        {
+          "value": "18",
+          "unit": "hours",
+          "label": "Planning time regained",
+          "description": "Automated stock, expiry and list management speeds up shopping.",
+          "trend": "+45 minutes every week"
+        }
+      ],
+      "highlights": [
+        {
+          "icon": "📊",
+          "title": "Live dashboards",
+          "description": "Monthly carbon, water and ethical snapshots ready to share."
+        },
+        {
+          "icon": "🌐",
+          "title": "Scientific backbone",
+          "description": "LCA datasets, certifications and community signals validated together."
+        },
+        {
+          "icon": "🤝",
+          "title": "Community impact",
+          "description": "Shared success stories and benchmarks keep motivation high."
+        }
+      ]
+    },
+    "blog": {
+      "badge": "From the blog",
+      "title": "Science-backed guides & community stories",
+      "subtitle": "Transition to vegan living, manage allergens and cut your carbon footprint with actionable content.",
+      "cta": "Explore all posts",
+      "readMore": "Read",
+      "comingSoon": "Coming soon",
+      "articles": [
+        {
+          "id": "vegan-starter",
+          "title": "Vegan Starter Guide 101",
+          "description": "Practical tips from nutrition experts with trustworthy references.",
+          "category": "Guide",
+          "readTime": "8 min read",
+          "href": "/blog/vegan-starter-guide"
+        },
+        {
+          "id": "allergen-checklist",
+          "title": "Essential Allergen Checklist",
+          "description": "What to watch for on labels across dairy, gluten, nuts and more.",
+          "category": "Health",
+          "readTime": "6 min read",
+          "href": "/blog/allergen-checklist"
+        },
+        {
+          "id": "reduce-carbon",
+          "title": "7 Ways to Shrink Your Carbon Footprint",
+          "description": "Everyday tactics from mindful shopping to smart pantry routines.",
+          "category": "Sustainability",
+          "readTime": "7 min read",
+          "href": "/blog/reduce-carbon-footprint"
+        }
+      ]
+    },
+    "faq": {
+      "badge": "FAQ",
+      "title": "Answers to the questions we hear most",
+      "subtitle": "Everything you need to know about CORIA's sustainable living experience.",
+      "tapToReveal": "Tap to reveal the answer",
+      "items": [
+        {
+          "question": "Is CORIA free to use?",
+          "answer": "Yes, core scanning and reporting are free. Upgrade to Premium for unlimited scans, deep analytics and exportable reports."
+        },
+        {
+          "question": "How reliable is the data?",
+          "answer": "We combine multi-API feeds, brand disclosures, certifications and academic research, referencing every score transparently."
+        },
+        {
+          "question": "Which languages does the AI assistant support?",
+          "answer": "Full support in English and Turkish today, with German and French betas on the way."
+        },
+        {
+          "question": "How do allergen alerts work?",
+          "answer": "Add allergen profiles once; every scan checks against them and serves risk alerts with safer alternatives."
+        },
+        {
+          "question": "How often are ESG scores refreshed?",
+          "answer": "We refresh monthly with new certifications, brand updates and NGO reports, and send instant alerts for critical changes."
+        },
+        {
+          "question": "Do you integrate with retailers?",
+          "answer": "We already partner with selected local and global retailers via deep links, with cart sync and delivery partners in progress."
+        },
+        {
+          "question": "How is my data protected?",
+          "answer": "All personal data is encrypted, never sold, and processed in line with GDPR and global privacy regulations."
+        }
+      ]
+    },
+    "cta": {
+      "badge": "Choose with heart",
+      "title": "Every scan fuels a more sustainable future",
+      "subtitle": "Download CORIA today and turn daily habits into measurable impact.",
+      "downloadIos": "Download on the App Store",
+      "downloadAndroid": "Get it on Google Play",
+      "footnote": "Start for free and upgrade to Premium whenever you want."
+    },
+    "socialProof": {
+      "badge": "Community impact",
+      "title": "Millions of scans, measurable change",
+      "subtitle": "Together the CORIA community makes ethical, healthy and sustainable choices mainstream.",
+      "stats": [
+        {
+          "value": "2.5B+",
+          "label": "Products & ingredients tracked",
+          "description": "Continuously updated through multi-source data streams",
+          "icon": "🗂"
+        },
+        {
+          "value": "500K+",
+          "label": "Community ratings",
+          "description": "Real reviews and validations from conscious consumers",
+          "icon": "⭐"
+        },
+        {
+          "value": "92%",
+          "label": "Impact reduction",
+          "description": "Average CO₂ decrease reported by premium members",
+          "icon": "🌱"
+        },
+        {
+          "value": "28",
+          "label": "Countries covered",
+          "description": "Brand and certification partnerships across the globe",
+          "icon": "🌍"
+        }
+      ],
+      "pressTitle": "Featured in",
+      "press": [
+        {
+          "name": "Fast Company",
+          "label": "Fast Company"
+        },
+        {
+          "name": "Ekoturk",
+          "label": "Ekoturk"
+        },
+        {
+          "name": "TechCrunch",
+          "label": "TechCrunch"
+        },
+        {
+          "name": "BBC",
+          "label": "BBC"
+        },
+        {
+          "name": "Anadolu",
+          "label": "Anadolu Agency"
+        },
+        {
+          "name": "Reuters",
+          "label": "Reuters"
+        }
+      ],
+      "testimonials": {
+        "title": "What our users say",
+        "subtitle": "Real people transforming their routines with CORIA.",
+        "list": [
+          {
+            "name": "Ayşe Demir",
+            "role": "Vegan activist",
+            "content": "CORIA completely reshaped my grocery list. Knowing the impact behind every item keeps me accountable.",
+            "rating": 5,
+            "avatar": "AD"
+          },
+          {
+            "name": "Mehmet Kaya",
+            "role": "Parent managing allergies",
+            "content": "The allergen alerts and community notes help me keep my child safe with zero guesswork.",
+            "rating": 5,
+            "avatar": "MK"
+          },
+          {
+            "name": "Sarah Johnson",
+            "role": "Sustainability consultant",
+            "content": "Carbon and ESG dashboards are now my go-to reference for client reports.",
+            "rating": 5,
+            "avatar": "SJ"
+          }
+        ]
+      }
+    }
+  }
+}

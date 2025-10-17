@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getPageBySlug } from '@/lib/cms/pages';
 import { getBlogPostBySlug } from '@/lib/cms/blog';
+import { logger } from '@/lib/logger';
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
@@ -66,7 +67,7 @@ export async function GET(request: NextRequest) {
     return response;
     
   } catch (error) {
-    console.error('Preview error:', error);
+    logger.error('Preview error:', error);
     return NextResponse.json(
       { message: 'Failed to enable preview mode' },
       { status: 500 }

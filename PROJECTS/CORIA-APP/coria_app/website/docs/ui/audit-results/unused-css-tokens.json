@@ -1,0 +1,1563 @@
+{
+  "variables": {
+    "total": 133,
+    "high_confidence_unused": [],
+    "medium_confidence_unused": [
+      {
+        "token": "--koyu-gri",
+        "file": "src/app/globals.css",
+        "line": 13,
+        "confidence": "MEDIUM",
+        "references": 2,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "2 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 13,
+            "usage": "--koyu-gri: #2C2C2C;           /* Koyu Gri - Text, headings */"
+          },
+          {
+            "file": "src/app/globals.css",
+            "line": 199,
+            "usage": ".text-koyu-gri { color: var(--koyu-gri); }"
+          }
+        ]
+      },
+      {
+        "token": "--acik-gri",
+        "file": "src/app/globals.css",
+        "line": 14,
+        "confidence": "MEDIUM",
+        "references": 2,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "2 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 14,
+            "usage": "--acik-gri: #F5F5F5;           /* Açık Gri - Backgrounds, cards */"
+          },
+          {
+            "file": "src/app/globals.css",
+            "line": 208,
+            "usage": ".bg-acik-gri { background-color: var(--acik-gri); }"
+          }
+        ]
+      },
+      {
+        "token": "--color-coria-green",
+        "file": "src/app/globals.css",
+        "line": 77,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 77,
+            "usage": "--color-coria-green: var(--coria-green);"
+          }
+        ]
+      },
+      {
+        "token": "--color-coral",
+        "file": "src/app/globals.css",
+        "line": 78,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 78,
+            "usage": "--color-coral: var(--coral);"
+          }
+        ]
+      },
+      {
+        "token": "--color-earth",
+        "file": "src/app/globals.css",
+        "line": 79,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 79,
+            "usage": "--color-earth: var(--earth);"
+          }
+        ]
+      },
+      {
+        "token": "--color-leaf",
+        "file": "src/app/globals.css",
+        "line": 80,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 80,
+            "usage": "--color-leaf: var(--leaf);"
+          }
+        ]
+      },
+      {
+        "token": "--color-water",
+        "file": "src/app/globals.css",
+        "line": 81,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 81,
+            "usage": "--color-water: var(--sky);"
+          }
+        ]
+      },
+      {
+        "token": "--color-coria-primary-light",
+        "file": "src/app/globals.css",
+        "line": 85,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 85,
+            "usage": "--color-coria-primary-light: var(--coria-primary-light);"
+          }
+        ]
+      },
+      {
+        "token": "--color-coria-primary-dark",
+        "file": "src/app/globals.css",
+        "line": 86,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 86,
+            "usage": "--color-coria-primary-dark: var(--coria-primary-dark);"
+          }
+        ]
+      },
+      {
+        "token": "--color-coria-secondary",
+        "file": "src/app/globals.css",
+        "line": 87,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 87,
+            "usage": "--color-coria-secondary: var(--coria-secondary);"
+          }
+        ]
+      },
+      {
+        "token": "--color-coria-accent",
+        "file": "src/app/globals.css",
+        "line": 88,
+        "confidence": "MEDIUM",
+        "references": 2,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "2 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 88,
+            "usage": "--color-coria-accent: var(--coria-accent);"
+          },
+          {
+            "file": "src/app/globals.css",
+            "line": 89,
+            "usage": "--color-coria-accent-light: var(--coria-accent-light);"
+          }
+        ]
+      },
+      {
+        "token": "--color-coria-accent-light",
+        "file": "src/app/globals.css",
+        "line": 89,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 89,
+            "usage": "--color-coria-accent-light: var(--coria-accent-light);"
+          }
+        ]
+      },
+      {
+        "token": "--color-coria-lime",
+        "file": "src/app/globals.css",
+        "line": 90,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 90,
+            "usage": "--color-coria-lime: var(--lime);"
+          }
+        ]
+      },
+      {
+        "token": "--color-coria-earth",
+        "file": "src/app/globals.css",
+        "line": 91,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 91,
+            "usage": "--color-coria-earth: var(--earth);"
+          }
+        ]
+      },
+      {
+        "token": "--color-coria-gold",
+        "file": "src/app/globals.css",
+        "line": 92,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 92,
+            "usage": "--color-coria-gold: var(--gold);"
+          }
+        ]
+      },
+      {
+        "token": "--color-coria-white",
+        "file": "src/app/globals.css",
+        "line": 95,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 95,
+            "usage": "--color-coria-white: var(--coria-white);"
+          }
+        ]
+      },
+      {
+        "token": "--color-coria-gray-50",
+        "file": "src/app/globals.css",
+        "line": 96,
+        "confidence": "MEDIUM",
+        "references": 2,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "2 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 96,
+            "usage": "--color-coria-gray-50: var(--coria-gray-50);"
+          },
+          {
+            "file": "src/app/globals.css",
+            "line": 101,
+            "usage": "--color-coria-gray-500: var(--coria-gray-500);"
+          }
+        ]
+      },
+      {
+        "token": "--color-coria-gray-100",
+        "file": "src/app/globals.css",
+        "line": 97,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 97,
+            "usage": "--color-coria-gray-100: var(--coria-gray-100);"
+          }
+        ]
+      },
+      {
+        "token": "--color-coria-gray-200",
+        "file": "src/app/globals.css",
+        "line": 98,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 98,
+            "usage": "--color-coria-gray-200: var(--coria-gray-200);"
+          }
+        ]
+      },
+      {
+        "token": "--color-coria-gray-300",
+        "file": "src/app/globals.css",
+        "line": 99,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 99,
+            "usage": "--color-coria-gray-300: var(--coria-gray-300);"
+          }
+        ]
+      },
+      {
+        "token": "--color-coria-gray-400",
+        "file": "src/app/globals.css",
+        "line": 100,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 100,
+            "usage": "--color-coria-gray-400: var(--coria-gray-400);"
+          }
+        ]
+      },
+      {
+        "token": "--color-coria-gray-500",
+        "file": "src/app/globals.css",
+        "line": 101,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 101,
+            "usage": "--color-coria-gray-500: var(--coria-gray-500);"
+          }
+        ]
+      },
+      {
+        "token": "--color-coria-gray-600",
+        "file": "src/app/globals.css",
+        "line": 102,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 102,
+            "usage": "--color-coria-gray-600: var(--coria-gray-600);"
+          }
+        ]
+      },
+      {
+        "token": "--color-coria-gray-700",
+        "file": "src/app/globals.css",
+        "line": 103,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 103,
+            "usage": "--color-coria-gray-700: var(--coria-gray-700);"
+          }
+        ]
+      },
+      {
+        "token": "--color-coria-gray-800",
+        "file": "src/app/globals.css",
+        "line": 104,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 104,
+            "usage": "--color-coria-gray-800: var(--coria-gray-800);"
+          }
+        ]
+      },
+      {
+        "token": "--color-coria-gray-900",
+        "file": "src/app/globals.css",
+        "line": 105,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 105,
+            "usage": "--color-coria-gray-900: var(--coria-gray-900);"
+          }
+        ]
+      },
+      {
+        "token": "--color-coria-black",
+        "file": "src/app/globals.css",
+        "line": 106,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 106,
+            "usage": "--color-coria-black: var(--coria-black);"
+          }
+        ]
+      },
+      {
+        "token": "--color-coria-success",
+        "file": "src/app/globals.css",
+        "line": 109,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 109,
+            "usage": "--color-coria-success: var(--coria-success);"
+          }
+        ]
+      },
+      {
+        "token": "--color-coria-warning",
+        "file": "src/app/globals.css",
+        "line": 110,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 110,
+            "usage": "--color-coria-warning: var(--coria-warning);"
+          }
+        ]
+      },
+      {
+        "token": "--color-coria-error",
+        "file": "src/app/globals.css",
+        "line": 111,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 111,
+            "usage": "--color-coria-error: var(--coria-error);"
+          }
+        ]
+      },
+      {
+        "token": "--color-coria-info",
+        "file": "src/app/globals.css",
+        "line": 112,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 112,
+            "usage": "--color-coria-info: var(--coria-info);"
+          }
+        ]
+      },
+      {
+        "token": "--color-background",
+        "file": "src/app/globals.css",
+        "line": 115,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 115,
+            "usage": "--color-background: var(--background);"
+          }
+        ]
+      },
+      {
+        "token": "--color-foreground",
+        "file": "src/app/globals.css",
+        "line": 116,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 116,
+            "usage": "--color-foreground: var(--foreground);"
+          }
+        ]
+      },
+      {
+        "token": "--color-text-primary",
+        "file": "src/app/globals.css",
+        "line": 117,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 117,
+            "usage": "--color-text-primary: var(--text-primary);"
+          }
+        ]
+      },
+      {
+        "token": "--color-text-secondary",
+        "file": "src/app/globals.css",
+        "line": 118,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 118,
+            "usage": "--color-text-secondary: var(--text-secondary);"
+          }
+        ]
+      },
+      {
+        "token": "--font-sans",
+        "file": "src/app/globals.css",
+        "line": 121,
+        "confidence": "MEDIUM",
+        "references": 2,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "2 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 121,
+            "usage": "--font-sans: 'Inter', system-ui, -apple-system, sans-serif;"
+          },
+          {
+            "file": "src/app/globals.css",
+            "line": 167,
+            "usage": "font-family: var(--font-sans);"
+          }
+        ]
+      },
+      {
+        "token": "--font-technical",
+        "file": "src/app/globals.css",
+        "line": 122,
+        "confidence": "MEDIUM",
+        "references": 2,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "2 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 122,
+            "usage": "--font-technical: 'IBM Plex Sans', 'Inter', system-ui, -apple-system, sans-serif"
+          },
+          {
+            "file": "src/app/globals.css",
+            "line": 247,
+            "usage": "font-family: var(--font-technical);"
+          }
+        ]
+      },
+      {
+        "token": "--font-mono",
+        "file": "src/app/globals.css",
+        "line": 123,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 123,
+            "usage": "--font-mono: 'JetBrains Mono', 'Fira Code', monospace;"
+          }
+        ]
+      },
+      {
+        "token": "--font-weight-normal",
+        "file": "src/app/globals.css",
+        "line": 126,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 126,
+            "usage": "--font-weight-normal: 400;"
+          }
+        ]
+      },
+      {
+        "token": "--font-weight-medium",
+        "file": "src/app/globals.css",
+        "line": 127,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 127,
+            "usage": "--font-weight-medium: 500;"
+          }
+        ]
+      },
+      {
+        "token": "--font-weight-semibold",
+        "file": "src/app/globals.css",
+        "line": 128,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 128,
+            "usage": "--font-weight-semibold: 600;"
+          }
+        ]
+      },
+      {
+        "token": "--font-weight-bold",
+        "file": "src/app/globals.css",
+        "line": 129,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 129,
+            "usage": "--font-weight-bold: 700;"
+          }
+        ]
+      },
+      {
+        "token": "--font-weight-black",
+        "file": "src/app/globals.css",
+        "line": 130,
+        "confidence": "MEDIUM",
+        "references": 2,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "2 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 130,
+            "usage": "--font-weight-black: 900;"
+          },
+          {
+            "file": "src/app/globals.css",
+            "line": 251,
+            "usage": "font-weight: var(--font-weight-black);"
+          }
+        ]
+      },
+      {
+        "token": "--spacing-2xl",
+        "file": "src/app/globals.css",
+        "line": 138,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 138,
+            "usage": "--spacing-2xl: 3rem;"
+          }
+        ]
+      },
+      {
+        "token": "--spacing-3xl",
+        "file": "src/app/globals.css",
+        "line": 139,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 139,
+            "usage": "--spacing-3xl: 4rem;"
+          }
+        ]
+      },
+      {
+        "token": "--radius-sm",
+        "file": "src/app/globals.css",
+        "line": 142,
+        "confidence": "MEDIUM",
+        "references": 2,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "2 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 142,
+            "usage": "--radius-sm: 0.25rem;"
+          },
+          {
+            "file": "src/app/globals.css",
+            "line": 324,
+            "usage": "border-radius: var(--radius-sm);"
+          }
+        ]
+      },
+      {
+        "token": "--radius-md",
+        "file": "src/app/globals.css",
+        "line": 143,
+        "confidence": "MEDIUM",
+        "references": 2,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "2 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 143,
+            "usage": "--radius-md: 0.5rem;"
+          },
+          {
+            "file": "src/app/globals.css",
+            "line": 328,
+            "usage": "border-radius: var(--radius-md);"
+          }
+        ]
+      },
+      {
+        "token": "--radius-lg",
+        "file": "src/app/globals.css",
+        "line": 144,
+        "confidence": "MEDIUM",
+        "references": 2,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "2 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 144,
+            "usage": "--radius-lg: 0.75rem;"
+          },
+          {
+            "file": "src/app/globals.css",
+            "line": 332,
+            "usage": "border-radius: var(--radius-lg);"
+          }
+        ]
+      },
+      {
+        "token": "--radius-xl",
+        "file": "src/app/globals.css",
+        "line": 145,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 145,
+            "usage": "--radius-xl: 1rem;"
+          }
+        ]
+      },
+      {
+        "token": "--radius-2xl",
+        "file": "src/app/globals.css",
+        "line": 146,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 146,
+            "usage": "--radius-2xl: 1.5rem;"
+          }
+        ]
+      },
+      {
+        "token": "--shadow-sm",
+        "file": "src/app/globals.css",
+        "line": 149,
+        "confidence": "MEDIUM",
+        "references": 2,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "2 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 149,
+            "usage": "--shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);"
+          },
+          {
+            "file": "src/app/globals.css",
+            "line": 337,
+            "usage": "box-shadow: var(--shadow-sm);"
+          }
+        ]
+      },
+      {
+        "token": "--shadow-md",
+        "file": "src/app/globals.css",
+        "line": 150,
+        "confidence": "MEDIUM",
+        "references": 2,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "2 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 150,
+            "usage": "--shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);"
+          },
+          {
+            "file": "src/app/globals.css",
+            "line": 341,
+            "usage": "box-shadow: var(--shadow-md);"
+          }
+        ]
+      },
+      {
+        "token": "--shadow-lg",
+        "file": "src/app/globals.css",
+        "line": 151,
+        "confidence": "MEDIUM",
+        "references": 2,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "2 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 151,
+            "usage": "--shadow-lg:"
+          },
+          {
+            "file": "src/app/globals.css",
+            "line": 345,
+            "usage": "box-shadow: var(--shadow-lg);"
+          }
+        ]
+      },
+      {
+        "token": "--shadow-xl",
+        "file": "src/app/globals.css",
+        "line": 153,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 153,
+            "usage": "--shadow-xl:"
+          }
+        ]
+      },
+      {
+        "token": "--transition-elastic",
+        "file": "src/app/globals.css",
+        "line": 528,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 528,
+            "usage": "--transition-elastic: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);"
+          }
+        ]
+      },
+      {
+        "token": "--gradient-primary-hover",
+        "file": "src/app/globals.css",
+        "line": 1275,
+        "confidence": "MEDIUM",
+        "references": 2,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "2 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 1275,
+            "usage": "--gradient-primary-hover: linear-gradient(to right, var(--coria-primary-dark), v"
+          },
+          {
+            "file": "src/app/globals.css",
+            "line": 1311,
+            "usage": "background-image: var(--gradient-primary-hover);"
+          }
+        ]
+      },
+      {
+        "token": "--gradient-bg-white-foam",
+        "file": "src/app/globals.css",
+        "line": 1278,
+        "confidence": "MEDIUM",
+        "references": 2,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "2 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 1278,
+            "usage": "--gradient-bg-white-foam: linear-gradient(to bottom, white, #FAFAFA, white);"
+          },
+          {
+            "file": "src/app/globals.css",
+            "line": 1315,
+            "usage": "background-image: var(--gradient-bg-white-foam);"
+          }
+        ]
+      },
+      {
+        "token": "--gradient-bg-white-mist",
+        "file": "src/app/globals.css",
+        "line": 1279,
+        "confidence": "MEDIUM",
+        "references": 2,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "2 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 1279,
+            "usage": "--gradient-bg-white-mist: linear-gradient(to bottom, white, white 98%, #F5F5F5);"
+          },
+          {
+            "file": "src/app/globals.css",
+            "line": 1319,
+            "usage": "background-image: var(--gradient-bg-white-mist);"
+          }
+        ]
+      },
+      {
+        "token": "--gradient-bg-foam-white-mist",
+        "file": "src/app/globals.css",
+        "line": 1280,
+        "confidence": "MEDIUM",
+        "references": 2,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "2 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 1280,
+            "usage": "--gradient-bg-foam-white-mist: linear-gradient(to bottom, #FAFAFA, white, #F5F5F"
+          },
+          {
+            "file": "src/app/globals.css",
+            "line": 1323,
+            "usage": "background-image: var(--gradient-bg-foam-white-mist);"
+          }
+        ]
+      },
+      {
+        "token": "--gradient-text-primary",
+        "file": "src/app/globals.css",
+        "line": 1287,
+        "confidence": "MEDIUM",
+        "references": 2,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "2 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 1287,
+            "usage": "--gradient-text-primary: linear-gradient(to right, var(--coria-primary), var(--c"
+          },
+          {
+            "file": "src/app/globals.css",
+            "line": 1335,
+            "usage": "background-image: var(--gradient-text-primary);"
+          }
+        ]
+      },
+      {
+        "token": "--gradient-text-colorful",
+        "file": "src/app/globals.css",
+        "line": 1288,
+        "confidence": "MEDIUM",
+        "references": 2,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "2 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 1288,
+            "usage": "--gradient-text-colorful: linear-gradient(to right, var(--coria-primary), var(--"
+          },
+          {
+            "file": "src/app/globals.css",
+            "line": 1339,
+            "usage": "background-image: var(--gradient-text-colorful);"
+          }
+        ]
+      },
+      {
+        "token": "--gradient-glass-light",
+        "file": "src/app/globals.css",
+        "line": 1291,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 1291,
+            "usage": "--gradient-glass-light: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgb"
+          }
+        ]
+      },
+      {
+        "token": "--gradient-glass-dark",
+        "file": "src/app/globals.css",
+        "line": 1292,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 1292,
+            "usage": "--gradient-glass-dark: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0,"
+          }
+        ]
+      },
+      {
+        "token": "--gradient-overlay-top",
+        "file": "src/app/globals.css",
+        "line": 1295,
+        "confidence": "MEDIUM",
+        "references": 2,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "2 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 1295,
+            "usage": "--gradient-overlay-top: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), transpare"
+          },
+          {
+            "file": "src/app/globals.css",
+            "line": 1343,
+            "usage": "background-image: var(--gradient-overlay-top);"
+          }
+        ]
+      },
+      {
+        "token": "--gradient-overlay-bottom",
+        "file": "src/app/globals.css",
+        "line": 1296,
+        "confidence": "MEDIUM",
+        "references": 2,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "2 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/globals.css",
+            "line": 1296,
+            "usage": "--gradient-overlay-bottom: linear-gradient(to top, rgba(0, 0, 0, 0.2), transpare"
+          },
+          {
+            "file": "src/app/globals.css",
+            "line": 1347,
+            "usage": "background-image: var(--gradient-overlay-bottom);"
+          }
+        ]
+      },
+      {
+        "token": "--brand-green-muted",
+        "file": "src/styles/brand-background.css",
+        "line": 7,
+        "confidence": "MEDIUM",
+        "references": 1,
+        "recommendation": "REVIEW_BEFORE_REMOVE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/styles/brand-background.css",
+            "line": 7,
+            "usage": "--brand-green-muted: rgba(74, 158, 114, 0.08);"
+          }
+        ]
+      }
+    ],
+    "protected": [
+      {
+        "token": "--coria-green",
+        "file": "src/app/globals.css",
+        "line": 6,
+        "confidence": "PROTECTED",
+        "reason": "Safelist",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--leaf",
+        "file": "src/app/globals.css",
+        "line": 17,
+        "confidence": "PROTECTED",
+        "reason": "Safelist",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--foam",
+        "file": "src/app/globals.css",
+        "line": 18,
+        "confidence": "PROTECTED",
+        "reason": "Safelist",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--mist",
+        "file": "src/app/globals.css",
+        "line": 19,
+        "confidence": "PROTECTED",
+        "reason": "Safelist",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--forest",
+        "file": "src/app/globals.css",
+        "line": 20,
+        "confidence": "PROTECTED",
+        "reason": "Safelist",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--lime",
+        "file": "src/app/globals.css",
+        "line": 21,
+        "confidence": "PROTECTED",
+        "reason": "Safelist",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--earth",
+        "file": "src/app/globals.css",
+        "line": 22,
+        "confidence": "PROTECTED",
+        "reason": "Safelist",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--sky",
+        "file": "src/app/globals.css",
+        "line": 23,
+        "confidence": "PROTECTED",
+        "reason": "Safelist",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coral",
+        "file": "src/app/globals.css",
+        "line": 24,
+        "confidence": "PROTECTED",
+        "reason": "Safelist",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--gold",
+        "file": "src/app/globals.css",
+        "line": 25,
+        "confidence": "PROTECTED",
+        "reason": "Safelist",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--cream-50",
+        "file": "src/app/globals.css",
+        "line": 28,
+        "confidence": "PROTECTED",
+        "reason": "Safelist",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--cream-100",
+        "file": "src/app/globals.css",
+        "line": 29,
+        "confidence": "PROTECTED",
+        "reason": "Safelist",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--cream-200",
+        "file": "src/app/globals.css",
+        "line": 30,
+        "confidence": "PROTECTED",
+        "reason": "Safelist",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--cream-300",
+        "file": "src/app/globals.css",
+        "line": 31,
+        "confidence": "PROTECTED",
+        "reason": "Safelist",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-primary",
+        "file": "src/app/globals.css",
+        "line": 34,
+        "confidence": "PROTECTED",
+        "reason": "Safelist",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-primary-light",
+        "file": "src/app/globals.css",
+        "line": 35,
+        "confidence": "PROTECTED",
+        "reason": "Dynamic pattern match",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-primary-dark",
+        "file": "src/app/globals.css",
+        "line": 36,
+        "confidence": "PROTECTED",
+        "reason": "Dynamic pattern match",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-secondary",
+        "file": "src/app/globals.css",
+        "line": 37,
+        "confidence": "PROTECTED",
+        "reason": "Dynamic pattern match",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-tertiary",
+        "file": "src/app/globals.css",
+        "line": 38,
+        "confidence": "PROTECTED",
+        "reason": "Dynamic pattern match",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-accent",
+        "file": "src/app/globals.css",
+        "line": 39,
+        "confidence": "PROTECTED",
+        "reason": "Dynamic pattern match",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-accent-light",
+        "file": "src/app/globals.css",
+        "line": 40,
+        "confidence": "PROTECTED",
+        "reason": "Dynamic pattern match",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-warning",
+        "file": "src/app/globals.css",
+        "line": 41,
+        "confidence": "PROTECTED",
+        "reason": "Dynamic pattern match",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-neutral",
+        "file": "src/app/globals.css",
+        "line": 42,
+        "confidence": "PROTECTED",
+        "reason": "Dynamic pattern match",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-glow",
+        "file": "src/app/globals.css",
+        "line": 43,
+        "confidence": "PROTECTED",
+        "reason": "Dynamic pattern match",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-mint",
+        "file": "src/app/globals.css",
+        "line": 44,
+        "confidence": "PROTECTED",
+        "reason": "Dynamic pattern match",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-sky",
+        "file": "src/app/globals.css",
+        "line": 45,
+        "confidence": "PROTECTED",
+        "reason": "Dynamic pattern match",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-sand",
+        "file": "src/app/globals.css",
+        "line": 46,
+        "confidence": "PROTECTED",
+        "reason": "Dynamic pattern match",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-white",
+        "file": "src/app/globals.css",
+        "line": 49,
+        "confidence": "PROTECTED",
+        "reason": "Dynamic pattern match",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-gray-50",
+        "file": "src/app/globals.css",
+        "line": 50,
+        "confidence": "PROTECTED",
+        "reason": "Dynamic pattern match",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-gray-100",
+        "file": "src/app/globals.css",
+        "line": 51,
+        "confidence": "PROTECTED",
+        "reason": "Dynamic pattern match",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-gray-200",
+        "file": "src/app/globals.css",
+        "line": 52,
+        "confidence": "PROTECTED",
+        "reason": "Dynamic pattern match",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-gray-300",
+        "file": "src/app/globals.css",
+        "line": 53,
+        "confidence": "PROTECTED",
+        "reason": "Dynamic pattern match",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-gray-400",
+        "file": "src/app/globals.css",
+        "line": 54,
+        "confidence": "PROTECTED",
+        "reason": "Dynamic pattern match",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-gray-500",
+        "file": "src/app/globals.css",
+        "line": 55,
+        "confidence": "PROTECTED",
+        "reason": "Dynamic pattern match",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-gray-600",
+        "file": "src/app/globals.css",
+        "line": 56,
+        "confidence": "PROTECTED",
+        "reason": "Dynamic pattern match",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-gray-700",
+        "file": "src/app/globals.css",
+        "line": 57,
+        "confidence": "PROTECTED",
+        "reason": "Dynamic pattern match",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-gray-800",
+        "file": "src/app/globals.css",
+        "line": 58,
+        "confidence": "PROTECTED",
+        "reason": "Dynamic pattern match",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-gray-900",
+        "file": "src/app/globals.css",
+        "line": 59,
+        "confidence": "PROTECTED",
+        "reason": "Dynamic pattern match",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-black",
+        "file": "src/app/globals.css",
+        "line": 60,
+        "confidence": "PROTECTED",
+        "reason": "Dynamic pattern match",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-success",
+        "file": "src/app/globals.css",
+        "line": 63,
+        "confidence": "PROTECTED",
+        "reason": "Dynamic pattern match",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-error",
+        "file": "src/app/globals.css",
+        "line": 65,
+        "confidence": "PROTECTED",
+        "reason": "Dynamic pattern match",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--coria-info",
+        "file": "src/app/globals.css",
+        "line": 66,
+        "confidence": "PROTECTED",
+        "reason": "Dynamic pattern match",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--transition-organic",
+        "file": "src/app/globals.css",
+        "line": 256,
+        "confidence": "PROTECTED",
+        "reason": "Safelist",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--transition-bounce",
+        "file": "src/app/globals.css",
+        "line": 261,
+        "confidence": "PROTECTED",
+        "reason": "Safelist",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--cream-50",
+        "file": "src/styles/brand-background.css",
+        "line": 3,
+        "confidence": "PROTECTED",
+        "reason": "Safelist",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--cream-100",
+        "file": "src/styles/brand-background.css",
+        "line": 4,
+        "confidence": "PROTECTED",
+        "reason": "Safelist",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--cream-200",
+        "file": "src/styles/brand-background.css",
+        "line": 5,
+        "confidence": "PROTECTED",
+        "reason": "Safelist",
+        "recommendation": "DO_NOT_TOUCH"
+      },
+      {
+        "token": "--cream-300",
+        "file": "src/styles/brand-background.css",
+        "line": 6,
+        "confidence": "PROTECTED",
+        "reason": "Safelist",
+        "recommendation": "DO_NOT_TOUCH"
+      }
+    ]
+  },
+  "summary": {
+    "total_variables": 133,
+    "high_confidence_removal_candidates": 0,
+    "medium_confidence_review_needed": 66,
+    "protected_variables": 48,
+    "estimated_css_size_reduction_kb": "3.22"
+  },
+  "analyzed_at": "2025-10-16T17:13:41.726Z"
+}

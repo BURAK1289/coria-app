@@ -7,20 +7,28 @@
     "foundation": "Foundation",
     "about": "Hakkımızda",
     "contact": "İletişim",
-    "downloadApp": "Download the CORIA App",
+    "downloadApp": "Android Uygulamasını İndir",
+    "downloadAndroid": "Android için İndir",
     "sustainableLiving": "Sustainable living made simple",
     "logoAria": "CORIA ana sayfaya git"
   },
   "hero": {
-    "title": "Taradığın her ürünün etkisini gör.",
-    "subtitle": "Veganlık, alerjen, sağlık ve sürdürülebilirlik skorları — tek bakışta.",
-    "downloadIos": "App Store'dan İndir",
-    "downloadAndroid": "Google Play'den İndir",
-    "watchDemo": "Demo İzle",
-    "badge": "Kalbinle seç, etkiyle yaşa",
-    "highlightImpact": "Çok kaynaklı ürün verisi",
-    "highlightScans": "360° etki analizi",
-    "highlightMarkets": "180+ marka ve market"
+    "badge": {
+      "veganYaşamAsistanı": "Vegan Yaşam Asistanı"
+    },
+    "title": {
+      "kalbinleSeçEtkiyleYaşa": "Kalbinle Seç. Etkiyle Yaşa.",
+      "taradığınHerÜrününVeganlıkAlerjenSağlıkVeSü": "Taradığın her ürünün veganlık, alerjen, sağlık ve sürdürülebilirlik skorlarını anında gör."
+    },
+    "cta": {
+      "iosIçinİndir": "iOS için İndir",
+      "androidIçinİndir": "Android için İndir"
+    },
+    "stats": {
+      "milyarÜrünVerisi": "Milyar Ürün Verisi",
+      "etiketVeİçerik": "Etiket ve İçerik",
+      "aktifKullanıcı": "Aktif Kullanıcı"
+    }
   },
   "features": {
     "title": "Özellikler",
@@ -778,147 +786,311 @@
           }
         ]
       }
+    },
+    "sustainabilityInsights": {
+      "title": "Sürdürülebilirlik İçgörüleri",
+      "description": "Detaylı analitiklerle çevresel etkinizi takip edin"
+    },
+    "socialCommitment": {
+      "title": "Sosyal Sorumluluk",
+      "description": "Etik uygulamalar ve sosyal sorumluluk sahibi markaları destekleyin"
     }
   },
   "pricing": {
     "title": "Fiyatlandırma",
     "subtitle": "Size uygun planı seçin",
+    "tagline": "Sınırsız tarama herkese. Kişisel uyarılar, tarif & alternatifler, akıllı kiler otomasyonları ve ileri raporlar → Premium.",
+    "mostPopular": "En Popüler",
+    "free": "Ücretsiz",
     "meta": {
-      "title": "CORIA Fiyatlandırma - Ücretsiz ve Premium Planlar",
-      "description": "CORIA'nın temel özelliklerle ücretsiz planı veya sınırsız tarama, detaylı raporlar ve gelişmiş analizlerle aylık ₺29,99 premium planı arasından seçim yapın."
+      "title": "CORIA Fiyatlandırma - Freemium & Premium Planlar",
+      "description": "Temel özelliklerle ücretsiz plan veya kişiselleştirilmiş öneriler, sınırsız AI chat ve akıllı kiler otomasyonu ile Premium. 14 gün ücretsiz deneme."
+    },
+    "trial": {
+      "duration": "14 gün",
+      "noCard": "Kart gerektirmez",
+      "afterTrial": "Deneme sonunda otomatik olarak Ücretsiz plana geçer",
+      "description": "Premium özelliklerini 14 gün boyunca ücretsiz deneyin. Kart bilgisi gerekmez."
     },
     "plans": {
       "free": {
-        "name": "Ücretsiz",
+        "name": "Free",
         "price": "0",
         "period": "sonsuza kadar",
-        "description": "Sürdürülebilir yaşama başlamak için mükemmel",
-        "features": [
-          "Günde 10 ürün tarama",
-          "Temel sürdürülebilirlik skorları",
-          "Basit etki takibi",
-          "Topluluk erişimi",
-          "Temel öneriler"
+        "description": "Temel özelliklerle başla",
+        "highlights": [
+          "Sınırsız tarama",
+          "Temel besin özeti",
+          "20 ürünlük kiler",
+          "10 AI mesaj/gün"
         ],
         "cta": "Başlayın",
         "popular": false
       },
       "premium": {
         "name": "Premium",
-        "price": "29,99",
-        "period": "aylık",
-        "description": "Ciddi sürdürülebilirlik meraklıları için",
-        "features": [
-          "Sınırsız ürün tarama",
-          "Detaylı sürdürülebilirlik raporları",
-          "Gelişmiş etki analizleri",
-          "Kişiselleştirilmiş AI önerileri",
-          "Öncelikli müşteri desteği",
-          "Reklamsız deneyim",
-          "Veri ve rapor dışa aktarma",
-          "Yeni özelliklere erken erişim"
+        "description": "Tüm özelliklerle tam deneyim",
+        "highlights": [
+          "Kişiselleştirilmiş öneriler",
+          "Sınırsız AI chat",
+          "Tarif ve alternatifler",
+          "Akıllı kiler otomasyonu",
+          "Yemek planlayıcı",
+          "Detaylı raporlar"
         ],
-        "cta": "Premium Seç",
+        "cta": "Premium'a Yükselt",
         "popular": true
       }
     },
-    "currency": "₺",
-    "comparison": {
-      "title": "Özellik Karşılaştırması",
-      "features": {
-        "scanning": {
-          "name": "Ürün Tarama",
-          "free": "10 tarama/gün",
-          "premium": "Sınırsız"
+    "billingPeriods": {
+      "monthly": "Aylık",
+      "yearly": "Yıllık",
+      "family": "Aile Planı",
+      "lifetime": "Lifetime"
+    },
+    "regional": {
+      "title": "Bölgesel Fiyatlandırma",
+      "subtitle": "Bölgenize göre yerel para birimi ve fiyatlarımızı görün",
+      "vatIncluded": "KDV dahil",
+      "discount": "{percent}% indirim",
+      "perMonth": "/ay",
+      "perYear": "/yıl",
+      "oneTime": "Tek seferlik",
+      "regions": {
+        "US": {
+          "name": "Amerika Birleşik Devletleri",
+          "currency": "USD",
+          "monthly": "$5.49",
+          "yearly": "$39.99",
+          "family": "$9.99",
+          "lifetime": "$99"
         },
-        "reports": {
-          "name": "Sürdürülebilirlik Raporları",
-          "free": "Temel",
-          "premium": "Detaylı ve Dışa Aktarılabilir"
+        "EU": {
+          "name": "Euro Bölgesi",
+          "currency": "EUR",
+          "monthly": "€4.99",
+          "yearly": "€39.99",
+          "family": "€10.49",
+          "lifetime": "€109"
         },
-        "analytics": {
-          "name": "Etki Analizleri",
-          "free": "Basit takip",
-          "premium": "Gelişmiş içgörüler"
-        },
-        "recommendations": {
-          "name": "AI Önerileri",
-          "free": "Temel öneriler",
-          "premium": "Kişiselleştirilmiş ve Akıllı"
-        },
-        "support": {
-          "name": "Müşteri Desteği",
-          "free": "Topluluk desteği",
-          "premium": "Öncelikli destek"
-        },
-        "ads": {
-          "name": "Reklamlar",
-          "free": "Reklamlı",
-          "premium": "Reklamsız"
-        },
-        "export": {
-          "name": "Veri Dışa Aktarma",
-          "free": "Mevcut değil",
-          "premium": "Tam dışa aktarma"
-        },
-        "earlyAccess": {
-          "name": "Erken Erişim",
-          "free": "Standart sürümler",
-          "premium": "Beta özellikler"
+        "TR": {
+          "name": "Türkiye",
+          "currency": "TRY",
+          "monthly": "₺89.99",
+          "yearly": "₺649.99",
+          "family": "₺139.99",
+          "lifetime": "₺1.499"
         }
+      },
+      "note": "Fiyatlar bölgenize ve uygulama mağazasına göre değişiklik gösterebilir"
+    },
+    "features": {
+      "title": "Özellik Karşılaştırması",
+      "subtitle": "Free ve Premium planları arasındaki farkları görün",
+      "scanningAndNutrition": {
+        "name": "Tarama & Besin Özeti",
+        "free": "Sınırsız",
+        "premium": "Sınırsız",
+        "note": "Sınırsız tarama herkese açık"
+      },
+      "sustainabilityMetrics": {
+        "name": "Sürdürülebilirlik Metrikleri",
+        "free": "Görüntüleme",
+        "premium": "Derin Raporlar",
+        "note": "Free: görüntüleme; Premium: derin analiz ve raporlar"
+      },
+      "alternativesAndRecipes": {
+        "name": "Alternatifler & Tarifler",
+        "free": false,
+        "premium": true,
+        "note": "Premium özelliği",
+        "tooltip": "Kişiye özel alternatifler ve tarifler için Premium'a geçin"
+      },
+      "smartPantry": {
+        "name": "Akıllı Kiler",
+        "free": "20 ürün",
+        "premium": "Sınırsız + Otomasyon",
+        "note": "Free: 20 ürün; Premium: sınırsız + otomasyon",
+        "tooltip": "Kilerde 20 ürün limitine geldin—sınırsız ve otomatik uyarılar için Premium"
+      },
+      "shoppingList": {
+        "name": "Alışveriş Listesi",
+        "free": "Sınırsız",
+        "premium": "Sınırsız + Paylaşım + Akıllı Sıralama",
+        "note": "Herkese sınırsız; Premium: paylaşım + akıllı sıralama"
+      },
+      "aiChat": {
+        "name": "AI Chat Asistanı",
+        "free": "10 mesaj/gün (sadece alerjen)",
+        "premium": "Sınırsız + Kişisel Tercihler + Geçmiş",
+        "note": "Free: 10 mesaj/gün, sadece alerjen; Premium: sınırsız + kişisel",
+        "tooltip": "Günlük 10 mesaj sınırına ulaştın—kişisel öneriler ve sınırsız sohbet için Premium'a geç"
+      },
+      "mealPlanner": {
+        "name": "Yemek Planlayıcı",
+        "free": false,
+        "premium": true,
+        "note": "Premium özelliği",
+        "tooltip": "Yemek planlama Premium özelliğidir"
+      },
+      "scanHistory": {
+        "name": "Geçmiş Taramalar",
+        "free": "1 ay",
+        "premium": "Sınırsız",
+        "note": "Free: 1 ay; Premium: sınırsız"
+      },
+      "weeklySummary": {
+        "name": "Haftalık Özet",
+        "free": "Temel",
+        "premium": "Detaylı + Trend Analizi",
+        "note": "Free: temel; Premium: detaylı + trend analizi"
+      },
+      "notifications": {
+        "name": "Bildirimler",
+        "free": "Temel",
+        "premium": "Akıllı",
+        "note": "Free: temel; Premium: akıllı bildirimler"
+      },
+      "ads": {
+        "name": "Reklamlar",
+        "free": false,
+        "premium": false,
+        "note": "Her iki planda da reklam yok"
+      },
+      "reports": {
+        "name": "Etki Raporları",
+        "free": "Temel aylık",
+        "premium": "Detaylı haftalık"
       }
+    },
+    "paywallTriggers": {
+      "title": "Premium'a Neden Geçmeli?",
+      "description": "Ücretsiz planı seveceksiniz, ancak Premium tam CORIA deneyimini kişiselleştirilmiş öneriler ve sınırsız özelliklerle açar.",
+      "trustSignal": "14 gün ücretsiz dene • Kredi kartı gerekmez",
+      "alternatives": {
+        "title": "Kişiye özel alternatifler için Premium'a geç",
+        "description": "Tercihlerinize ve değerlerinize uygun kişiselleştirilmiş ürün alternatiflerini keşfedin",
+        "featureHighlight": "Değerlerinize dayalı AI destekli öneriler",
+        "cta": "Premium ile Kilidini Aç"
+      },
+      "recipes": {
+        "title": "Tarifler Premium'da",
+        "description": "Ürünlerinizle lezzetli, sürdürülebilir tarifler oluşturun",
+        "featureHighlight": "Kilerizdeki ürünlerle özel tarifler",
+        "cta": "Tariflere Erişim Sağla"
+      },
+      "aiLimit": {
+        "title": "Günlük 10 mesaj sınırına ulaştınız",
+        "description": "Kişisel öneriler ve sınırsız sohbet için Premium'a geçin",
+        "featureHighlight": "Tüm sorularınız için sınırsız AI sohbeti",
+        "cta": "Sınırsız AI Chat'e Geç"
+      },
+      "pantryLimit": {
+        "title": "Kilerde 20 ürün limitine geldiniz",
+        "description": "Sınırsız ürün depolama ve otomatik uyarılar için Premium'a yükseltin",
+        "featureHighlight": "Akıllı son kullanma uyarılarıyla sınırsız ürün takibi",
+        "cta": "Kiler Kapasitesini Artır"
+      },
+      "mealPlanner": {
+        "title": "Yemek Planlayıcı Premium Özelliğidir",
+        "description": "Haftalık yemek planları oluşturun ve otomatik alışveriş listesi alın",
+        "featureHighlight": "Otomatik alışveriş listeleriyle haftalık planlama",
+        "cta": "Yemek Planlayıcıyı Etkinleştir"
+      }
+    },
+    "upgradeReasons": {
+      "title": "Neden Premium?",
+      "reasons": [
+        {
+          "title": "Kişiselleştirilmiş Deneyim",
+          "description": "Tercihlerinize ve değerlerinize özel öneriler ve alternatifler",
+          "icon": "user-check"
+        },
+        {
+          "title": "Sınırsız Özellikler",
+          "description": "AI chat, kiler yönetimi ve tarama geçmişinde sınır yok",
+          "icon": "infinity"
+        },
+        {
+          "title": "Gelişmiş Analiz",
+          "description": "Detaylı sürdürülebilirlik raporları ve trend analizleri",
+          "icon": "chart-line"
+        },
+        {
+          "title": "Otomasyon",
+          "description": "Akıllı kiler uyarıları ve otomatik alışveriş listeleri",
+          "icon": "bot"
+        }
+      ]
+    },
+    "comparison": {
+      "title": "Detaylı Özellik Karşılaştırması",
+      "free": "Free",
+      "premium": "Premium",
+      "available": "Mevcut",
+      "notAvailable": "Mevcut Değil",
+      "limited": "Sınırlı",
+      "unlimited": "Sınırsız"
     },
     "trust": {
       "title": "Neden CORIA Premium?",
       "benefits": [
         {
-          "title": "İstediğiniz Zaman İptal",
-          "description": "Uzun vadeli taahhüt yok. Aboneliğinizi istediğiniz zaman tek tıkla iptal edin.",
-          "icon": "cancel"
+          "title": "14 Gün Ücretsiz Deneme",
+          "description": "Kart bilgisi gerekmeden tüm Premium özellikleri deneyin. Deneme sonunda otomatik olarak Free plana geçilir.",
+          "icon": "gift"
         },
         {
-          "title": "30 Gün Para İade Garantisi",
-          "description": "Memnun değil misiniz? 30 gün içinde soru sorulmadan tam para iadesi.",
-          "icon": "refund"
+          "title": "İstediğiniz Zaman İptal",
+          "description": "Uzun vadeli taahhüt yok. Aboneliğinizi istediğiniz zaman tek tıkla iptal edin.",
+          "icon": "x-circle"
         },
         {
           "title": "Güvenli Ödemeler",
-          "description": "Ödeme bilgileriniz banka düzeyinde güvenlikle korunur.",
-          "icon": "security"
+          "description": "Ödeme bilgileriniz uygulama mağazası güvenliği ile korunur.",
+          "icon": "shield-check"
         },
         {
           "title": "Düzenli Güncellemeler",
           "description": "Sürekli iyileştirmeler ve yeni özellikler düzenli olarak eklenir.",
-          "icon": "updates"
+          "icon": "refresh"
         }
       ]
     },
     "faq": {
-      "title": "Fiyatlandırma SSS",
+      "title": "Sık Sorulan Sorular",
       "questions": [
         {
-          "question": "Planımı istediğim zaman yükseltebilir veya düşürebilir miyim?",
-          "answer": "Evet, istediğiniz zaman Premium'a yükseltebilir veya Ücretsiz'e düşürebilirsiniz. Değişiklikler hemen etkili olur ve faturalandırma orantılı olarak yapılır."
+          "question": "14 günlük deneme nasıl çalışır?",
+          "answer": "Premium'a kaydolduğunuzda 14 gün boyunca tüm özelliklere ücretsiz erişirsiniz. Kart bilgisi gerekmez. Deneme süresi sonunda otomatik olarak Free plana geçersiniz."
+        },
+        {
+          "question": "Deneme sonunda ne olur?",
+          "answer": "Deneme süresi bittiğinde otomatik olarak Free plana geçersiniz. Verileriniz korunur ve temel özelliklere erişmeye devam edersiniz. Premium'a devam etmek isterseniz, herhangi bir zamanda yükseltme yapabilirsiniz."
+        },
+        {
+          "question": "Yıllık plana geçersem ne kadar tasarruf ederim?",
+          "answer": "Yıllık plan, aylık ödemeye göre yaklaşık %35 tasarruf sağlar. Örneğin Türkiye'de aylık ₺89.99 yerine yıllık ₺649.99 ödersiniz (₺1.079.88 yerine)."
+        },
+        {
+          "question": "Aile Planı nedir?",
+          "answer": "Aile Planı, 6 kişiye kadar Premium özelliklerini kullanma imkanı sunar. Her aile üyesi kendi hesabı ve kişiselleştirilmiş deneyimi ile Premium'un tüm özelliklerine erişir."
+        },
+        {
+          "question": "Lifetime plan ne anlama gelir?",
+          "answer": "Lifetime plan, tek seferlik ödeme ile Premium özelliklerine ömür boyu erişim sağlar. Aylık veya yıllık abonelik yerine bir kez ödeyip kalıcı olarak tüm özelliklere sahip olursunuz."
+        },
+        {
+          "question": "Planımı istediğim zaman değiştirebilir miyim?",
+          "answer": "Evet, istediğiniz zaman Premium'a yükseltebilir veya Free'e düşürebilirsiniz. Değişiklikler hemen etkili olur ve faturalandırma orantılı olarak yapılır."
         },
         {
           "question": "Hangi ödeme yöntemlerini kabul ediyorsunuz?",
-          "answer": "Güvenli uygulama mağazası faturalandırma sistemleri aracılığıyla tüm büyük kredi kartları, banka kartları ve mobil ödeme yöntemlerini kabul ediyoruz."
+          "answer": "Uygulama mağazası (App Store/Google Play) üzerinden tüm büyük kredi kartları, banka kartları ve mobil ödeme yöntemlerini kabul ediyoruz."
         },
         {
-          "question": "Premium için ücretsiz deneme var mı?",
-          "answer": "Evet! Yeni kullanıcılar uygulamayı ilk indirdiklerinde Premium özelliklerinin 7 günlük ücretsiz denemesini alırlar."
-        },
-        {
-          "question": "Premium'u iptal edersem verilerime ne olur?",
-          "answer": "Verileriniz güvende kalır ve erişilebilir durumda olur. Temel özelliklere erişiminiz devam eder, ancak gelişmiş analizler ve sınırsız tarama sınırlanır."
-        },
-        {
-          "question": "Öğrenci veya aile indirimleri sunuyor musunuz?",
-          "answer": "Öğrenciler ve aileler için özel fiyatlandırma üzerinde çalışıyoruz. Bunlar mevcut olduğunda bildirim almak için bültenimize kaydolun."
-        },
-        {
-          "question": "Premium özelliklerini çevrimdışı kullanabilir miyim?",
-          "answer": "Birçok Premium özellik çevrimdışı çalışır, önceden önbelleğe alınmış ürünlerin sınırsız taranması ve kayıtlı raporlarınızın görüntülenmesi dahil."
+          "question": "Verilerim güvende mi?",
+          "answer": "Evet, tüm verileriniz şifrelenir ve güvenli sunucularda saklanır. Premium'u iptal etseniz bile verileriniz korunur ve Free planla erişilebilir durumda kalır."
         }
       ]
     },
@@ -929,31 +1101,32 @@
           "name": "Ayşe K.",
           "location": "İstanbul",
           "rating": 5,
-          "text": "Sınırsız tarama özelliği alışveriş şeklimi tamamen değiştirdi. Günlük limitlerden endişe etmeden her ürünü kontrol edebiliyorum.",
-          "feature": "Sınırsız Tarama"
+          "text": "Sınırsız AI chat özelliği harika! Artık günlük mesaj limitinden endişe etmeden tüm sorularımı sorabili yorum. Kişiselleştirilmiş öneriler gerçekten işe yarıyor.",
+          "feature": "Sınırsız AI Chat"
         },
         {
           "name": "Mehmet D.",
           "location": "Ankara",
           "rating": 5,
-          "text": "Detaylı raporlar ailemin çevresel etkisini takip etmeme yardımcı oluyor. Sadece 3 ayda karbon ayak izimizi %30 azalttık!",
-          "feature": "Detaylı Raporlar"
+          "text": "Akıllı kiler otomasyonu sayesinde son kullanma tarihlerini takip etmek çok kolay. Gıda israfımı %40 azalttım!",
+          "feature": "Akıllı Kiler"
         },
         {
           "name": "Zeynep M.",
           "location": "İzmir",
           "rating": 5,
-          "text": "Premium öneriler inanılmaz derecede doğru. AI gerçekten tercihlerimi ve beslenme ihtiyaçlarımı anlıyor.",
-          "feature": "AI Önerileri"
+          "text": "Tarif ve alternatif önerileri muhteşem. Her hafta yeni, sürdürülebilir yemekler keşfediyorum. Premium'a geçtiğim için çok mutluyum.",
+          "feature": "Tarif & Alternatifler"
         }
       ]
     },
     "cta": {
-      "title": "Daha Büyük Etki Yapmaya Hazır mısınız?",
-      "description": "CORIA Premium ile bilinçli seçimler yapan binlerce kullanıcıya katılın.",
+      "title": "Daha Sürdürülebilir Bir Yaşam İçin Hazır mısınız?",
+      "description": "CORIA Premium ile kişiselleştirilmiş öneriler ve sınırsız özelliklere erişin. 14 gün ücretsiz deneyin.",
+      "startTrial": "14 Gün Ücretsiz Deneyin",
       "downloadIos": "App Store'dan İndir",
       "downloadAndroid": "Google Play'den İndir",
-      "note": "Premium abonelik, uygulama mağazası hesabınız üzerinden yönetilir."
+      "note": "Kart bilgisi gerekmez • Deneme sonunda otomatik Free plana geçilir"
     },
     "support": {
       "title": "Müşteri Desteği",
@@ -963,37 +1136,66 @@
           "title": "E-posta Desteği",
           "description": "24 saat içinde yanıt alın",
           "contact": "destek@coria.app",
-          "icon": "email"
+          "icon": "mail"
         },
         {
           "title": "Canlı Sohbet",
           "description": "Pazartesi-Cuma 09:00-18:00",
           "contact": "Sohbeti Başlat",
-          "icon": "chat"
+          "icon": "message-circle"
         },
         {
           "title": "Yardım Merkezi",
           "description": "SSS ve rehberler",
           "contact": "Yardım Merkezini Ziyaret Et",
-          "icon": "help"
+          "icon": "help-circle"
         }
       ]
     }
   },
   "footer": {
     "description": "Sürdürülebilir yaşam için akıllı seçimler yapın",
+    "product": {
+      "title": "Ürün",
+      "features": "Özellikler",
+      "pricing": "Fiyatlandırma",
+      "foundation": "Foundation",
+      "blog": "Blog"
+    },
+    "company": {
+      "title": "Şirket",
+      "about": "Hakkımızda",
+      "contact": "İletişim",
+      "careers": "Kariyer"
+    },
+    "resources": {
+      "title": "Kaynaklar",
+      "faq": "Sıkça Sorulan Sorular",
+      "foundationApply": "Foundation Başvuru"
+    },
+    "legal": {
+      "title": "Yasal",
+      "privacy": "Gizlilik Politikası",
+      "terms": "Kullanım Şartları",
+      "kvkk": "KVKK",
+      "cookies": "Çerez Politikası"
+    },
+    "social": {
+      "twitter": "Twitter'da CORIA",
+      "linkedin": "LinkedIn'de CORIA",
+      "instagram": "Instagram'da CORIA",
+      "medium": "Medium'da CORIA",
+      "youtube": "YouTube'da CORIA"
+    },
     "newsletter": {
       "title": "Bülten",
+      "description": "Sürdürülebilir yaşam ipuçları ve güncellemeler alın",
       "placeholder": "E-posta adresiniz",
-      "subscribe": "Abone Ol"
+      "button": "Abone Ol"
     },
-    "links": {
-      "product": "Ürün",
-      "company": "Şirket",
-      "support": "Destek",
-      "legal": "Yasal"
-    },
-    "copyright": "© 2024 CORIA. Tüm hakları saklıdır."
+    "copyright": {
+      "text": "© {year} CORIA. Tüm hakları saklıdır."
+    }
   },
   "blog": {
     "title": "Blog",
@@ -1033,8 +1235,39 @@
     "hero": {
       "title": "Birlikte Sürdürülebilir Bir Gelecek İnşa Ediyoruz",
       "subtitle": "Küçük, bilinçli seçimlerin gezegenimiz üzerinde büyük bir pozitif etki yaratabileceğine inanıyoruz. CORIA, milyonlarca kişiyi her gün sürdürülebilir kararlar almaya güçlendiriyor.",
+      "description": "Küçük, bilinçli seçimlerin gezegenimiz üzerinde büyük bir pozitif etki yaratabileceğine inanıyoruz. CORIA, milyonlarca kişiyi her gün sürdürülebilir kararlar almaya güçlendiriyor.",
       "downloadIos": "App Store'dan İndir",
       "downloadAndroid": "Google Play'den İndir"
+    },
+    "vision": {
+      "title": "Vizyonumuz",
+      "description": "Her satın alma kararının gelecek nesiller için daha sürdürülebilir, adil ve sağlıklı bir gezegene katkıda bulunduğu bir dünya."
+    },
+    "positioning": {
+      "title": "Konumumuz",
+      "description": "CORIA, teknoloji ve sürdürülebilirliğin kesişiminde yer alarak, bilinçli tüketimi herkese erişilebilir kılmak için gereken araçları ve bilgileri sağlar."
+    },
+    "roadmap": {
+      "title": "Yol Haritamız",
+      "timeline": [
+        {
+          "year": "2025 Q3",
+          "detail": "İlk MVP aşaması"
+        },
+        {
+          "year": "2025 Q4",
+          "detail": "Yayınlama ve token çıkarma süreci"
+        }
+      ]
+    },
+    "partnerships": {
+      "title": "Ortaklıklarımız",
+      "items": [
+        {
+          "name": "Heaven ICM",
+          "description": "Stratejik ortağımız"
+        }
+      ]
     },
     "missionVision": {
       "title": "Misyonumuz ve Vizyonumuz",
@@ -1505,6 +1738,7 @@
     }
   },
   "common": {
+    "skipToMainContent": "Ana içeriğe geç",
     "loading": "Yükleniyor...",
     "error": "Bir hata oluştu",
     "retry": "Tekrar Dene",
@@ -1513,7 +1747,12 @@
     "cancel": "İptal",
     "continue": "Devam Et",
     "back": "Geri",
-    "next": "İleri"
+    "next": "İleri",
+    "aria": {
+      "daCoriaUygulamasınıIndirin": "'da CORIA uygulamasını indirin",
+      "coriaIstatistikleriVeEtkiGöstergeleri": "CORIA istatistikleri ve etki göstergeleri",
+      "coriaEtkiGöstergesi": "CORIA etki göstergesi"
+    }
   },
   "consent": {
     "banner": {
@@ -1715,6 +1954,39 @@
           ]
         }
       ]
+    },
+    "features": {
+      "title": "Vegan yaşam için 360° platform",
+      "subtitle": "CORIA, ürün analizinden AI rehberliğine, akıllı kilerden ESG skorlarına, karbon takibinden topluluk önerilerine kadar—bilinçli tüketim için ihtiyacınız olan her şeyi bir araya getirir.",
+      "cta": "Tüm Özellikleri Keşfet",
+      "veganAllergen": {
+        "title": "Vegan & Alerjen Analizi",
+        "description": "Ürünlerin vegan uygunluğunu, alerjen içeriğini ve bileşen risklerini saniyeler içinde kontrol edin"
+      },
+      "aiAssistant": {
+        "title": "AI Asistan",
+        "description": "Vegan yaşam tarzı AI arkadaşınızdan kişiselleştirilmiş öneriler ve rehberlik alın"
+      },
+      "smartPantry": {
+        "title": "Akıllı Kiler",
+        "description": "Son kullanma uyarıları ve israf azaltma otomasyonu ile akıllı envanter takibi"
+      },
+      "esgScores": {
+        "title": "ESG Skorları",
+        "description": "Her marka ve ürün için çevresel, sosyal ve yönetişim şeffaflığı"
+      },
+      "carbonWater": {
+        "title": "Karbon/Su Takibi",
+        "description": "Gerçek zamanlı etki panoları ile çevresel ayak izinizi izleyin ve azaltın"
+      },
+      "community": {
+        "title": "Topluluk Önerileri",
+        "description": "Bilinçli tüketici topluluğu tarafından önerilen ürünleri ve alternatifleri keşfedin"
+      }
+    },
+    "audience": {
+      "title": "Her persona için kişiselleştirilmiş deneyim",
+      "description": "Vegan adaylarından sürdürülebilirlik savunucularına, ebeveynlerden sağlık meraklılarına—CORIA yolculuğunuza uyum sağlar"
     },
     "featureHighlights": {
       "badge": "360° platform",
@@ -2032,6 +2304,327 @@
             "avatar": "SJ"
           }
         ]
+      }
+    }
+  },
+  "foundation": {
+    "hero": {
+      "title": "CORIA Foundation",
+      "subtitle": "Birlikte Daha Büyük Etki Yaratıyoruz",
+      "description": "CORIA, uygulama gelirlerinin bir kısmını sürdürülebilirlik projelerine yatırım yapmak için CORIA Foundation'ı kuruyor. Heaven ICM üzerinden çıkarılacak özel Solana token ile blockchain ekosisteminde yer alarak, token fee gelirlerini de yeşil enerji, veganlık ve sürdürülebilirlik projelerinin fonlanmasında kullanacak.",
+      "cta": "Proje Fonlaması Başvurusu"
+    },
+    "tokenEconomy": {
+      "title": "CORIA Token Ekonomisi",
+      "description": "Heaven ICM entegrasyonu ile Solana tabanlı token kullanım alanları",
+      "features": {
+        "0": {
+          "title": "CORIA Token",
+          "description": "Heaven ICM üzerinden çıkarılacak özel Solana token"
+        },
+        "1": {
+          "title": "Fee Dağılım Modeli",
+          "description": "Token işlem ücretleri direkt olarak sürdürülebilirlik projelerine aktarılır"
+        },
+        "2": {
+          "title": "Şeffaf Fonlama",
+          "description": "Blockchain tabanlı şeffaf fon dağıtımı ve etki takibi"
+        }
+      }
+    },
+    "principles": {
+      "title": "İlkelerimiz",
+      "description": "CORIA Foundation'ı yönlendiren değerler",
+      "items": {
+        "0": {
+          "title": "Şeffaflık",
+          "description": "Tüm fonlama kararları ve etki raporları halka açık blockchain üzerinde"
+        },
+        "1": {
+          "title": "Topluluk Yönetimi",
+          "description": "CORIA token sahipleri ve erken dönem melek yatırımcılar proje seçiminde oy kullanma hakkına sahip"
+        },
+        "2": {
+          "title": "Etki Odaklılık",
+          "description": "Her projenin ölçülebilir çevresel ve sosyal etkisi raporlanır"
+        }
+      }
+    },
+    "projects": {
+      "title": "Desteklediğimiz Projeler",
+      "description": "Fonladığımız projeler ve etkileri",
+      "comingSoon": {
+        "title": "Çok Yakında",
+        "description": "CORIA Foundation resmi olarak başlatıldıktan sonra, desteklediğimiz sürdürülebilirlik projelerini ve çevresel etkilerini burada sergileyeceğiz.",
+        "cta": "İlk fonladığımız projeler için bizi takipte kalın"
+      }
+    },
+    "form": {
+      "title": "Proje Fonlaması Başvurusu",
+      "description": "Sürdürülebilirlik projeniz varsa, CORIA Foundation'dan fon almak için başvurun.",
+      "timeline": {
+        "0": {
+          "year": "2025 Ç3",
+          "items": {
+            "0": "CORIA Foundation konsepti tasarlandı ve Heaven ICM ile ortaklık kuruldu"
+          }
+        },
+        "1": {
+          "year": "2025 Ç4",
+          "items": {
+            "0": "Heaven ICM ile Token ve Foundation lansmanı",
+            "1": "RWA (Gerçek Dünya Varlıkları) projelerinin hayata geçirilmesine destek"
+          }
+        }
+      },
+      "fields": {
+        "projectName": {
+          "label": "Proje Adı",
+          "placeholder": "Proje adınızı girin"
+        },
+        "category": {
+          "label": "Kategori",
+          "options": {
+            "veganism": "Veganlık",
+            "sustainability": "Sürdürülebilirlik",
+            "greenEnergy": "Yeşil Enerji"
+          }
+        },
+        "email": {
+          "label": "E-posta",
+          "placeholder": "sizin@email.com"
+        },
+        "shortDescription": {
+          "label": "Kısa Açıklama",
+          "placeholder": "Projenizi 2-3 cümlede özetleyin"
+        },
+        "detailedDescription": {
+          "label": "Detaylı Açıklama",
+          "placeholder": "Projenizin hedeflerini, metodolojisini ve beklenen etkisini detaylı açıklayın"
+        }
+      },
+      "submit": "Başvuruyu Gönder"
+    },
+    "apply": {
+      "cta": {
+        "title": "Başvuru Yap",
+        "description": "Sürdürülebilirlik, veganlık veya yeşil enerji projeniz varsa bizimle iletişime geçin. Projenizi değerlendirmek ve nasıl destek olabileceğimizi görüşmek isteriz.",
+        "button": "Başvuru Formunu Doldur"
+      },
+      "meta": {
+        "title": "Foundation Fonlama Başvurusu - CORIA Foundation",
+        "description": "Sürdürülebilirlik, veganlık veya yeşil enerji projenizi CORIA Foundation fonlaması için başvurun"
+      },
+      "hero": {
+        "title": "Proje Fonlaması Başvurusu",
+        "subtitle": "Veganlık, yeşil enerji ve sürdürülebilirlik alanlarında yenilikçi projeleri fonluyoruz",
+        "description": "CORIA Foundation fonlaması için değerlendirilmek üzere aşağıdaki başvuru formunu doldurun. Ölçülebilir çevresel ve sosyal etki yaratan projeleri destekliyoruz."
+      },
+      "steps": {
+        "0": {
+          "title": "Proje Bilgileri",
+          "description": "Projeniz ve organizasyonunuz hakkında bize bilgi verin"
+        },
+        "1": {
+          "title": "Proje Detayları",
+          "description": "Proje hedeflerinizi, bütçenizi ve zaman çizelgenizi açıklayın"
+        },
+        "2": {
+          "title": "İnceleme ve Gönderim",
+          "description": "Başvurunuzu gözden geçirin ve gönderin"
+        }
+      },
+      "fields": {
+        "projectName": {
+          "label": "Proje Adı",
+          "placeholder": "Proje adınızı girin",
+          "helper": "Projenize açık ve tanımlayıcı bir isim verin"
+        },
+        "category": {
+          "label": "Proje Kategorisi",
+          "placeholder": "Bir kategori seçin",
+          "helper": "Projenizin ana odak alanını seçin"
+        },
+        "orgType": {
+          "label": "Organizasyon Türü",
+          "placeholder": "Organizasyon türünü seçin",
+          "helper": "Ne tür bir organizasyonsunuz?"
+        },
+        "contactName": {
+          "label": "İletişim Kişisi",
+          "placeholder": "Ad Soyad",
+          "helper": "Bu başvuru için birincil iletişim kişisi"
+        },
+        "contactEmail": {
+          "label": "E-posta Adresi",
+          "placeholder": "sizin@email.com",
+          "helper": "Güncellemeleri bu e-postaya göndereceğiz"
+        },
+        "country": {
+          "label": "Ülke",
+          "placeholder": "Ülkenizi seçin",
+          "helper": "Projeniz nerede konumlanmış?"
+        },
+        "shortSummary": {
+          "label": "Proje Özeti",
+          "placeholder": "Projenizi 280 karakter veya daha az ile özetleyin",
+          "helper": "{remaining} karakter kaldı"
+        },
+        "detailedDescription": {
+          "label": "Detaylı Açıklama",
+          "placeholder": "Proje hedeflerinizi, metodolojinizi, hedef kitlenizi ve beklenen sonuçları açıklayın",
+          "helper": "Projeniz hakkında kapsamlı detaylar sağlayın (200-5000 karakter)"
+        },
+        "budget": {
+          "label": "Toplam Proje Bütçesi",
+          "placeholder": "TL cinsinden tutarı girin",
+          "helper": "Projenin tamamı için toplam bütçe"
+        },
+        "requestedAmount": {
+          "label": "Talep Edilen Fonlama Tutarı",
+          "placeholder": "TL cinsinden tutarı girin",
+          "helper": "CORIA Foundation'dan ne kadar fonlama talep ediyorsunuz?"
+        },
+        "timelineStart": {
+          "label": "Proje Başlangıç Tarihi",
+          "placeholder": "YYYY-AA-GG",
+          "helper": "Proje ne zaman başlayacak?"
+        },
+        "timelineEnd": {
+          "label": "Proje Bitiş Tarihi",
+          "placeholder": "YYYY-AA-GG",
+          "helper": "Proje ne zaman tamamlanacak?"
+        },
+        "website": {
+          "label": "Web Sitesi (Opsiyonel)",
+          "placeholder": "https://projeniz.com",
+          "helper": "Proje veya organizasyon web sitesi"
+        },
+        "socialMedia": {
+          "label": "Sosyal Medya (Opsiyonel)",
+          "twitter": {
+            "label": "Twitter/X",
+            "placeholder": "https://twitter.com/projeniz"
+          },
+          "instagram": {
+            "label": "Instagram",
+            "placeholder": "https://instagram.com/projeniz"
+          },
+          "linkedin": {
+            "label": "LinkedIn",
+            "placeholder": "https://linkedin.com/company/projeniz"
+          }
+        },
+        "impactMetrics": {
+          "label": "Beklenen Etki Metrikleri (Opsiyonel)",
+          "placeholder": "Ölçülebilir sonuçları açıklayın (ör. azaltılan CO2, ulaşılan kişi sayısı, korunan hektar)",
+          "helper": "Projeniz hangi ölçülebilir etkiyi sağlayacak?"
+        },
+        "attachments": {
+          "label": "Destekleyici Belgeler (Opsiyonel)",
+          "helper": "En fazla 3 dosya yükleyin (PDF, PNG, JPG - her biri maks 10MB)",
+          "button": "Dosya Seç",
+          "selected": "{count} dosya seçildi",
+          "remove": "Kaldır"
+        },
+        "consent": {
+          "label": "{privacyPolicy} kabul ediyorum ve sağlanan tüm bilgilerin doğru olduğunu onaylıyorum",
+          "privacyPolicyLink": "Gizlilik Politikası ve KVKK Koşulları",
+          "helper": "Başvurunuzu işlemek için gerekli"
+        },
+        "marketingConsent": {
+          "label": "CORIA Foundation ve fonlanan projeler hakkında güncellemeler almayı kabul ediyorum",
+          "helper": "Opsiyonel - istediğiniz zaman abonelikten çıkabilirsiniz"
+        }
+      },
+      "categories": {
+        "veganism": "Veganlık ve Bitkisel Yaşam",
+        "greenEnergy": "Yeşil Enerji ve Yenilenebilir Kaynaklar",
+        "sustainability": "Sürdürülebilirlik ve Çevre Koruma"
+      },
+      "orgTypes": {
+        "nonprofit": "Kar Amacı Gütmeyen Kuruluş",
+        "cooperative": "Kooperatif",
+        "socialEnterprise": "Sosyal Girişim",
+        "community": "Topluluk Grubu",
+        "startup": "Startup",
+        "other": "Diğer"
+      },
+      "errors": {
+        "projectNameTooShort": "Proje adı en az 3 karakter olmalıdır",
+        "projectNameTooLong": "Proje adı 100 karakteri geçmemelidir",
+        "projectNameInvalidChars": "Proje adı geçersiz karakterler içeriyor",
+        "invalidCategory": "Lütfen geçerli bir kategori seçin",
+        "invalidOrgType": "Lütfen geçerli bir organizasyon türü seçin",
+        "contactNameTooShort": "İletişim adı en az 2 karakter olmalıdır",
+        "contactNameTooLong": "İletişim adı 100 karakteri geçmemelidir",
+        "invalidEmail": "Lütfen geçerli bir e-posta adresi girin",
+        "countryRequired": "Ülke zorunludur",
+        "countryTooLong": "Ülke adı çok uzun",
+        "summaryTooShort": "Özet en az 50 karakter olmalıdır",
+        "summaryTooLong": "Özet 280 karakteri geçmemelidir",
+        "descriptionTooShort": "Açıklama en az 200 karakter olmalıdır",
+        "descriptionTooLong": "Açıklama 5000 karakteri geçmemelidir",
+        "budgetTooLow": "Bütçe en az ₺1.000 olmalıdır",
+        "budgetTooHigh": "Bütçe izin verilen maksimum tutarı aşıyor",
+        "requestedAmountTooLow": "Talep edilen tutar en az ₺1.000 olmalıdır",
+        "requestedAmountTooHigh": "Talep edilen tutar izin verilen maksimumu aşıyor",
+        "requestedExceedsBudget": "Talep edilen tutar toplam bütçeyi aşamaz",
+        "invalidDate": "Lütfen geçerli bir tarih girin (YYYY-AA-GG)",
+        "invalidTimeline": "Bitiş tarihi başlangıç tarihinden sonra olmalıdır",
+        "invalidUrl": "Lütfen geçerli bir URL girin",
+        "impactMetricsTooLong": "Etki metrikleri açıklaması çok uzun",
+        "fileTooLarge": "Dosya boyutu 10MB sınırını aşıyor",
+        "invalidFileType": "Sadece PDF, PNG ve JPG dosyaları kabul edilir",
+        "tooManyFiles": "Maksimum 3 dosyaya izin verilir",
+        "consentRequired": "Göndermek için koşulları kabul etmelisiniz"
+      },
+      "validation": {
+        "required": "Bu alan zorunludur",
+        "checking": "Doğrulanıyor...",
+        "valid": "Geçerli",
+        "invalid": "Geçersiz"
+      },
+      "buttons": {
+        "previous": "Önceki",
+        "next": "Sonraki",
+        "submit": "Başvuruyu Gönder",
+        "submitting": "Gönderiliyor...",
+        "cancel": "İptal",
+        "saveDraft": "Taslak Kaydet",
+        "loadDraft": "Taslak Yükle"
+      },
+      "success": {
+        "title": "Başvuru Başarıyla Gönderildi!",
+        "message": "CORIA Foundation'a başvurduğunuz için teşekkür ederiz. Başvurunuzu aldık ve dikkatlice inceleyeceğiz.",
+        "applicationId": "Başvuru numaranız: {id}",
+        "nextSteps": "Sırada ne var:",
+        "steps": {
+          "0": "Ekibimiz başvurunuzu 2-3 hafta içinde inceleyecek",
+          "1": "Ek bilgi için sizinle iletişime geçebiliriz",
+          "2": "Kararımızı e-posta ile alacaksınız",
+          "3": "Onaylanırsa, fonlama detaylarını ve zaman çizelgesini görüşeceğiz"
+        },
+        "checkEmail": "{email} adresine onay e-postası gönderdik",
+        "downloadPdf": "Başvuru Kopyasını İndir",
+        "backToHome": "Foundation Sayfasına Dön"
+      },
+      "draft": {
+        "saved": "Taslak başarıyla kaydedildi",
+        "loaded": "Taslak başarıyla yüklendi",
+        "cleared": "Taslak temizlendi"
+      },
+      "progress": {
+        "step": "Adım {current} / {total}",
+        "complete": "%{percent} tamamlandı",
+        "indicator": "Adım {current} / {total}"
+      },
+      "help": {
+        "title": "Yardıma mı İhtiyacınız Var?",
+        "description": "Başvuru süreci hakkında sorularınız varsa veya yardıma ihtiyacınız varsa, ekibimiz size yardımcı olmak için burada."
+      },
+      "review": {
+        "title": "Başvurunuzu Gözden Geçirin"
       }
     }
   }

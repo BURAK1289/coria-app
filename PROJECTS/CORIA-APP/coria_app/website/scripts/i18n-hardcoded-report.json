@@ -1,0 +1,1118 @@
+{
+  "total": 159,
+  "findings": [
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/about/page.tsx",
+      "line": 4,
+      "text": "Fikrin doğuşu ve ilk veri toplama prototipi",
+      "context": "{ year: '2023', detail: 'Fikrin doğuşu ve ilk veri toplama prototipi' },",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/about/page.tsx",
+      "line": 7,
+      "text": "Resmi lansman ve Foundation duyurusu",
+      "context": "{ year: '2024 Q3', detail: 'Resmi lansman ve Foundation duyurusu' },",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/about/page.tsx",
+      "line": 14,
+      "text": "Yeşil Enerji Kooperatifleri",
+      "context": "{ name: 'Yeşil Enerji Kooperatifleri', description: 'Topluluk fonlu güneş enerjisi kurulumları.' },",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+      "line": 72,
+      "text": "Birlikte Daha Büyük Etki Yaratıyoruz",
+      "context": "subtitle: \"Birlikte Daha Büyük Etki Yaratıyoruz\",",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+      "line": 77,
+      "text": "Believe Platform entegrasyonu ile Solana tabanlı t",
+      "context": "description: \"Believe Platform entegrasyonu ile Solana tabanlı token kullanım alanları\",",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+      "line": 82,
+      "text": "Believe Platform üzerinden çıkarılacak özel Solana",
+      "context": "description: \"Believe Platform üzerinden çıkarılacak özel Solana token\"",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+      "line": 87,
+      "text": "Token işlem ücretleri direkt olarak sürdürülebilir",
+      "context": "description: \"Token işlem ücretleri direkt olarak sürdürülebilirlik projelerine aktarılır\"",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+      "line": 92,
+      "text": "Blockchain tabanlı şeffaf fon dağıtımı ve etki tak",
+      "context": "description: \"Blockchain tabanlı şeffaf fon dağıtımı ve etki takibi\"",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+      "line": 100,
+      "text": "Ekolojik Tarım Projesi",
+      "context": "title: \"Ekolojik Tarım Projesi\",",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+      "line": 106,
+      "text": "Güneş Enerjisi Kooperatifi",
+      "context": "title: \"Güneş Enerjisi Kooperatifi\",",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+      "line": 112,
+      "text": "Sıfır Atık İnisiyatifi",
+      "context": "title: \"Sıfır Atık İnisiyatifi\",",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+      "line": 141,
+      "text": "Foundation konsepti tasarlandı",
+      "context": "items: ['Foundation konsepti tasarlandı', 'Believe platformu ortaklığı kuruldu']",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+      "line": 141,
+      "text": "Believe platformu ortaklığı kuruldu",
+      "context": "items: ['Foundation konsepti tasarlandı', 'Believe platformu ortaklığı kuruldu']",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+      "line": 146,
+      "text": "Solana tabanlı CORIA Token lansmanı",
+      "context": "items: ['Solana tabanlı CORIA Token lansmanı', 'İlk topluluk oylaması ile 3 proje fonlandı']",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+      "line": 151,
+      "text": "Yerel kooperatif iş birlikleri",
+      "context": "items: ['Global genişleme', 'Yerel kooperatif iş birlikleri', 'On-chain etki raporları']",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+      "line": 338,
+      "text": "Etki Değerlendirmesi",
+      "context": "<span className=\"text-sm text-gray-500\">Etki Değerlendirmesi</span>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+      "line": 408,
+      "text": "Projenizi tanımlayan başlık",
+      "context": "placeholder=\"Projenizi tanımlayan başlık\"",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/[locale]/foundation/page.tsx",
+      "line": 419,
+      "text": "Yeşil Enerji",
+      "context": "<option>Yeşil Enerji</option>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/admin/monitoring/page.tsx",
+      "line": 53,
+      "text": "Brief CDN slowdown",
+      "context": "title: 'Brief CDN slowdown',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/admin/monitoring/page.tsx",
+      "line": 70,
+      "text": "Monitoring Dashboard",
+      "context": "<h1 className=\"text-3xl font-bold\">Monitoring Dashboard</h1>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/admin/monitoring/page.tsx",
+      "line": 116,
+      "text": "Response Time",
+      "context": "<p className=\"text-sm font-medium text-gray-600\">Response Time</p>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/admin/monitoring/page.tsx",
+      "line": 148,
+      "text": "Active Users",
+      "context": "<p className=\"text-sm font-medium text-gray-600\">Active Users</p>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/admin/monitoring/page.tsx",
+      "line": 221,
+      "text": "Recent Incidents",
+      "context": "<h2 className=\"text-xl font-semibold mb-4\">Recent Incidents</h2>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/admin/monitoring/page.tsx",
+      "line": 254,
+      "text": "Performance Trends",
+      "context": "<h2 className=\"text-xl font-semibold mb-4\">Performance Trends</h2>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/admin/monitoring/page.tsx",
+      "line": 258,
+      "text": "Performance charts would be displayed here",
+      "context": "<p>Performance charts would be displayed here</p>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/admin/monitoring/page.tsx",
+      "line": 259,
+      "text": "Integration with monitoring service required",
+      "context": "<p className=\"text-sm\">Integration with monitoring service required</p>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/admin/monitoring/page.tsx",
+      "line": 266,
+      "text": "Quick Actions",
+      "context": "<h2 className=\"text-xl font-semibold mb-4\">Quick Actions</h2>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/api/analytics/web-vitals/route.ts",
+      "line": 12,
+      "text": "Invalid web vitals data",
+      "context": "{ error: 'Invalid web vitals data' },",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/api/analytics/web-vitals/route.ts",
+      "line": 58,
+      "text": "Internal server error",
+      "context": "{ error: 'Internal server error' },",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/api/cms/blog/route.ts",
+      "line": 39,
+      "text": "Failed to fetch blog data",
+      "context": "error: 'Failed to fetch blog data',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/api/cms/features/route.ts",
+      "line": 32,
+      "text": "Feature not found",
+      "context": "{ error: 'Feature not found' },",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/api/cms/features/route.ts",
+      "line": 59,
+      "text": "Failed to fetch features",
+      "context": "{ error: 'Failed to fetch features' },",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/api/cms/pages/route.ts",
+      "line": 31,
+      "text": "Failed to fetch pages",
+      "context": "{ error: 'Failed to fetch pages' },",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/api/preview/route.ts",
+      "line": 41,
+      "text": "Content not found",
+      "context": "{ message: 'Content not found' },",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/api/preview/route.ts",
+      "line": 72,
+      "text": "Failed to enable preview mode",
+      "context": "{ message: 'Failed to enable preview mode' },",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/app/api/preview/route.ts",
+      "line": 80,
+      "text": "Preview mode disabled",
+      "context": "const response = NextResponse.json({ message: 'Preview mode disabled' });",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/about/company-timeline.tsx",
+      "line": 158,
+      "text": "Timeline end marker",
+      "context": "{isLast && <span className=\"sr-only\">Timeline end marker</span>}",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/accessibility/a11y-audit.tsx",
+      "line": 31,
+      "text": "Image missing alt attribute",
+      "context": "message: 'Image missing alt attribute',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/accessibility/a11y-audit.tsx",
+      "line": 83,
+      "text": "Potential low contrast detected",
+      "context": "message: 'Potential low contrast detected',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/accessibility/a11y-audit.tsx",
+      "line": 99,
+      "text": "Element may lack visible focus indicator",
+      "context": "message: 'Element may lack visible focus indicator',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/accessibility/a11y-audit.tsx",
+      "line": 116,
+      "text": "Consider adding skip navigation links",
+      "context": "message: 'Consider adding skip navigation links',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/analytics-dashboard.tsx",
+      "line": 65,
+      "text": "Analytics Dashboard",
+      "context": "<h1 className=\"text-2xl font-bold text-gray-900\">Analytics Dashboard</h1>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/analytics-dashboard.tsx",
+      "line": 66,
+      "text": "Monitor website performance and user behavior",
+      "context": "<p className=\"text-gray-600\">Monitor website performance and user behavior</p>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/analytics-dashboard.tsx",
+      "line": 127,
+      "text": "Users in Tests",
+      "context": "{ label: 'Users in Tests', value: '2.1K', change: '+15%', positive: true },",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/analytics-dashboard.tsx",
+      "line": 206,
+      "text": "Privacy compliant",
+      "context": "<span>Privacy compliant</span>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/content-performance.tsx",
+      "line": 51,
+      "text": "Engagement Rate",
+      "context": "<span className=\"text-gray-600\">Engagement Rate</span>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/content-performance.tsx",
+      "line": 89,
+      "text": "Feature Page Performance",
+      "context": "<h3 className=\"text-lg font-semibold text-gray-900 mb-4\">Feature Page Performance</h3>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/content-performance.tsx",
+      "line": 96,
+      "text": "Time on Page",
+      "context": "<th className=\"text-right py-3 font-medium text-gray-600\">Time on Page</th>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/content-performance.tsx",
+      "line": 148,
+      "text": "Language Performance",
+      "context": "<h3 className=\"text-lg font-semibold text-gray-900 mb-4\">Language Performance</h3>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/content-performance.tsx",
+      "line": 174,
+      "text": "Conversion Rate",
+      "context": "<div className=\"text-gray-600\">Conversion Rate</div>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/content-performance.tsx",
+      "line": 199,
+      "text": "Content Engagement",
+      "context": "<h3 className=\"text-lg font-semibold text-gray-900 mb-4\">Content Engagement</h3>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/content-performance.tsx",
+      "line": 221,
+      "text": "Comment Rate",
+      "context": "<div className=\"text-sm text-blue-600\">Comment Rate</div>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/content-performance.tsx",
+      "line": 254,
+      "text": "Export content performance data",
+      "context": "logger.debug('Export content performance data');",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/content-performance.tsx",
+      "line": 275,
+      "text": "Content Performance",
+      "context": "<h2 className=\"text-2xl font-bold text-gray-900\">Content Performance</h2>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/content-performance.tsx",
+      "line": 320,
+      "text": "Content Insights",
+      "context": "<h3 className=\"text-lg font-semibold text-gray-900 mb-4\">Content Insights</h3>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/content-performance.tsx",
+      "line": 326,
+      "text": "Total Blog Views",
+      "context": "<div className=\"text-sm text-green-600\">Total Blog Views</div>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/content-performance.tsx",
+      "line": 338,
+      "text": "Total Social Shares",
+      "context": "<div className=\"text-sm text-purple-600\">Total Social Shares</div>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/conversion-funnel.tsx",
+      "line": 118,
+      "text": "Engagement Events",
+      "context": "<h3 className=\"text-lg font-semibold text-gray-900 mb-4\">Engagement Events</h3>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/conversion-funnel.tsx",
+      "line": 154,
+      "text": "Goal Completions",
+      "context": "<h3 className=\"text-lg font-semibold text-gray-900 mb-4\">Goal Completions</h3>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/conversion-funnel.tsx",
+      "line": 232,
+      "text": "Conversion Funnel",
+      "context": "<h2 className=\"text-2xl font-bold text-gray-900\">Conversion Funnel</h2>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/conversion-funnel.tsx",
+      "line": 257,
+      "text": "User Journey Funnel",
+      "context": "<h3 className=\"text-lg font-semibold text-gray-900 mb-6\">User Journey Funnel</h3>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/conversion-funnel.tsx",
+      "line": 281,
+      "text": "Form Performance",
+      "context": "<h3 className=\"text-lg font-semibold text-gray-900 mb-4\">Form Performance</h3>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/overview-metrics.tsx",
+      "line": 83,
+      "text": "Bounce Rate",
+      "context": "<th className=\"text-right py-2 font-medium text-gray-600\">Bounce Rate</th>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/overview-metrics.tsx",
+      "line": 130,
+      "text": "Device Breakdown",
+      "context": "<h3 className=\"text-lg font-semibold text-gray-900 mb-4\">Device Breakdown</h3>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/overview-metrics.tsx",
+      "line": 209,
+      "text": "Overview Metrics",
+      "context": "<h2 className=\"text-2xl font-bold text-gray-900\">Overview Metrics</h2>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/overview-metrics.tsx",
+      "line": 224,
+      "text": "Overview Metrics",
+      "context": "<h2 className=\"text-2xl font-bold text-gray-900\">Overview Metrics</h2>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/overview-metrics.tsx",
+      "line": 272,
+      "text": "Quick Stats",
+      "context": "<h3 className=\"text-lg font-semibold text-gray-900 mb-4\">Quick Stats</h3>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/overview-metrics.tsx",
+      "line": 275,
+      "text": "Bounce Rate",
+      "context": "<span className=\"text-gray-600\">Bounce Rate</span>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/analytics/dashboard/overview-metrics.tsx",
+      "line": 279,
+      "text": "Pages per Session",
+      "context": "<span className=\"text-gray-600\">Pages per Session</span>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/cms/rich-text-renderer.tsx",
+      "line": 80,
+      "text": "Invalid asset",
+      "context": "return <div className=\"my-4 p-4 border border-red-200 rounded-lg text-red-600\">Invalid asset</div>;",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/cms/rich-text-renderer.tsx",
+      "line": 85,
+      "text": "Invalid asset file",
+      "context": "return <div className=\"my-4 p-4 border border-red-200 rounded-lg text-red-600\">Invalid asset file</d",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/examples/gray-scale-showcase.tsx",
+      "line": 144,
+      "text": "Large Text Only",
+      "context": "? 'Large Text Only'",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/examples/gray-scale-showcase.tsx",
+      "line": 162,
+      "text": "Typography Examples",
+      "context": "<h2 className=\"text-2xl font-bold text-coria-gray-900 mb-6\">Typography Examples</h2>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/examples/gray-scale-showcase.tsx",
+      "line": 190,
+      "text": "Card Examples",
+      "context": "<h2 className=\"text-2xl font-bold text-coria-gray-900 mb-6\">Card Examples</h2>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/examples/gray-scale-showcase.tsx",
+      "line": 211,
+      "text": "Still accessible",
+      "context": "<small className=\"text-coria-gray-600\">Still accessible</small>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/examples/gray-scale-showcase.tsx",
+      "line": 222,
+      "text": "Hover to see effect",
+      "context": "<small className=\"text-coria-gray-600\">Hover to see effect</small>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/examples/gray-scale-showcase.tsx",
+      "line": 229,
+      "text": "Button Examples",
+      "context": "<h2 className=\"text-2xl font-bold text-coria-gray-900 mb-6\">Button Examples</h2>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/examples/gray-scale-showcase.tsx",
+      "line": 251,
+      "text": "Form Examples",
+      "context": "<h2 className=\"text-2xl font-bold text-coria-gray-900 mb-6\">Form Examples</h2>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/features/app-screenshot-gallery.tsx",
+      "line": 28,
+      "text": "Detailed sustainability and impact scores",
+      "context": "description: 'Detailed sustainability and impact scores',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/features/app-screenshot-gallery.tsx",
+      "line": 33,
+      "text": "Discover smarter alternatives aligned with your va",
+      "context": "description: 'Discover smarter alternatives aligned with your values',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/features/methodology-explanation.tsx",
+      "line": 26,
+      "text": "Carbon footprint during production",
+      "context": "'Carbon footprint during production',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/features/methodology-explanation.tsx",
+      "line": 27,
+      "text": "Water usage and pollution",
+      "context": "'Water usage and pollution',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/features/methodology-explanation.tsx",
+      "line": 40,
+      "text": "Supply chain transparency",
+      "context": "'Supply chain transparency',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/features/methodology-explanation.tsx",
+      "line": 41,
+      "text": "Worker safety standards",
+      "context": "'Worker safety standards',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/features/methodology-explanation.tsx",
+      "line": 42,
+      "text": "Local economic contribution",
+      "context": "'Local economic contribution',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/features/methodology-explanation.tsx",
+      "line": 54,
+      "text": "Health claims verification",
+      "context": "'Health claims verification',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/features/methodology-explanation.tsx",
+      "line": 62,
+      "text": "Animal welfare standards",
+      "context": "'Animal welfare standards',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/layout/footer.tsx",
+      "line": 95,
+      "text": "Sustainable Living",
+      "context": "<span className=\"text-[9px] uppercase tracking-wider text-gray-500\">Sustainable Living</span>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/monitoring/error-boundary.tsx",
+      "line": 261,
+      "text": "Bileşen Hatası",
+      "context": "<h3 className=\"text-lg font-medium mb-2\">Bileşen Hatası</h3>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/monitoring/error-boundary.tsx",
+      "line": 304,
+      "text": "Sayfa Yüklenemedi",
+      "context": "<h1 className=\"text-2xl font-bold mb-4\">Sayfa Yüklenemedi</h1>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/monitoring/error-boundary.tsx",
+      "line": 382,
+      "text": "Bölüm Yüklenemedi",
+      "context": "<h2 className=\"text-xl font-semibold mb-3\">Bölüm Yüklenemedi</h2>",
+      "type": "jsx"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/sections/hero-section.tsx",
+      "line": 51,
+      "text": "Vegan Yaşam Asistanı",
+      "context": "eyebrow: \"Vegan Yaşam Asistanı\",",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/sections/hero-section.tsx",
+      "line": 59,
+      "text": "Android için İndir",
+      "context": "label: \"Android için İndir\",",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/sections/hero-section.tsx",
+      "line": 66,
+      "text": "Etiket ve İçerik",
+      "context": "{ value: \"10M+\", label: \"Etiket ve İçerik\" },",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/seo/structured-data.tsx",
+      "line": 142,
+      "text": "Application Mobile CORIA",
+      "context": "fr: 'Application Mobile CORIA',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/seo/structured-data.tsx",
+      "line": 189,
+      "text": "Environmental Impact Tracking",
+      "context": "'Environmental Impact Tracking',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/seo/structured-data.tsx",
+      "line": 191,
+      "text": "Smart Pantry Management",
+      "context": "'Smart Pantry Management',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/ui/mobile-navigation.tsx",
+      "line": 253,
+      "text": "Download from App Store",
+      "context": "aria-label=\"Download from App Store\"",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/components/ui/mobile-navigation.tsx",
+      "line": 263,
+      "text": "Download from Google Play",
+      "context": "aria-label=\"Download from Google Play\"",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 132,
+      "text": "Android için indir",
+      "context": "secondaryCta: { label: 'Android için indir', href: 'https://play.google.com/store/apps/details?id=co",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 142,
+      "text": "Topluluk ve iş ortaklarımızdan destek",
+      "context": "title: 'Topluluk ve iş ortaklarımızdan destek',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 145,
+      "text": "Alışveriş rutinimi kurtardı",
+      "context": "{ title: '\"Alışveriş rutinimi kurtardı\"', description: '\"Alerjen riskleri ve etik uyarılar sayesinde",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 146,
+      "text": "Veriye dayalı ESG raporları",
+      "context": "{ title: '\"Veriye dayalı ESG raporları\"', description: '\"Marka analizlerinde CORIA’nın verilerini re",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 147,
+      "text": "Foundation ile gerçek etki",
+      "context": "{ title: '\"Foundation ile gerçek etki\"', description: '\"Token tabanlı modelleri sayesinde bağışlarım",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 156,
+      "text": "Topluluk yorumları ve deneyimleri",
+      "context": "'Topluluk yorumları ve deneyimleri',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 157,
+      "text": "Tarif önerileri ve market alışveriş listeleri",
+      "context": "'Tarif önerileri ve market alışveriş listeleri'",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 166,
+      "text": "Detaylı içerik açıklamaları",
+      "context": "'Detaylı içerik açıklamaları',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 167,
+      "text": "Güvenli alternatif önerileri",
+      "context": "'Güvenli alternatif önerileri'",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 172,
+      "text": "Sağlık Odaklı Kullanıcılar",
+      "context": "title: 'Sağlık Odaklı Kullanıcılar',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 177,
+      "text": "Uzmanlardan onaylı içerik kütüphanesi",
+      "context": "'Uzmanlardan onaylı içerik kütüphanesi'",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 219,
+      "text": "Topluluk ve İçerikler",
+      "context": "title: 'Topluluk ve İçerikler',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 237,
+      "text": "Topluluğumuzun biriktirdiği etki",
+      "context": "title: 'Topluluğumuzun biriktirdiği etki',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 246,
+      "text": "Kişisel etki paneli",
+      "context": "title: 'Kişisel etki paneli',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 257,
+      "text": "Birlikte daha büyük etki yaratıyoruz",
+      "context": "title: 'Birlikte daha büyük etki yaratıyoruz',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 263,
+      "text": "Yerel projelere odak",
+      "context": "{ title: 'Yerel projelere odak', description: 'Vegan restoran dönüşümü, gıda bankacılığı, orman rest",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 267,
+      "text": "Anadolu Vegan Mutfağı",
+      "context": "{ title: 'Anadolu Vegan Mutfağı', impact: 'İlk 6 ayda 2.4 ton gıda israfı önlendi.' },",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 268,
+      "text": "Yeşil Enerji Kooperatifi",
+      "context": "{ title: 'Yeşil Enerji Kooperatifi', impact: 'Topluluk fonuyla 120 kW güneş enerjisi kuruldu.' },",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 269,
+      "text": "Sıfır Atık Marketleri",
+      "context": "{ title: 'Sıfır Atık Marketleri', impact: '5 şehirde yeniden kullanılabilir ambalaj altyapısı kuruld",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 271,
+      "text": "Foundation detaylarını incele",
+      "context": "cta: { label: 'Foundation detaylarını incele', href: '/foundation' }",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 274,
+      "text": "Bilinçli tüketim rehberleri",
+      "context": "title: 'Bilinçli tüketim rehberleri',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 284,
+      "text": "Karbon ayak izinizi market alışverişinde azaltın",
+      "context": "title: 'Karbon ayak izinizi market alışverişinde azaltın',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 290,
+      "text": "Foundation projelerinde yeni dönem",
+      "context": "title: 'Foundation projelerinde yeni dönem',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 338,
+      "text": "Download for iOS",
+      "context": "primaryCta: { label: 'Download for iOS', href: 'https://apps.apple.com/app/coria' },",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 339,
+      "text": "Download for Android",
+      "context": "secondaryCta: { label: 'Download for Android', href: 'https://play.google.com/store/apps/details?id=",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 352,
+      "text": "Saved our family routine",
+      "context": "{ title: '\"Saved our family routine\"', description: '\"Allergen alerts and ethical guidance mean safe",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 363,
+      "text": "Community reviews and shared experiences",
+      "context": "'Community reviews and shared experiences',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 364,
+      "text": "Curated recipes and mindful shopping lists",
+      "context": "'Curated recipes and mindful shopping lists'",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 373,
+      "text": "Transparent ingredient explanations",
+      "context": "'Transparent ingredient explanations',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 374,
+      "text": "Trusted alternative suggestions",
+      "context": "'Trusted alternative suggestions'",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 441,
+      "text": "Watch the interactive demo",
+      "context": "cta: { label: 'Watch the interactive demo', href: '#demo' }",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 444,
+      "text": "Community impact in real time",
+      "context": "title: 'Community impact in real time',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 448,
+      "text": "Water preserved this week",
+      "context": "{ value: '120 L', label: 'Water preserved this week', description: 'Thanks to smarter seasonal swaps",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 453,
+      "text": "Personal impact dashboard",
+      "context": "title: 'Personal impact dashboard',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 464,
+      "text": "Funding the future we believe in",
+      "context": "title: 'Funding the future we believe in',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 474,
+      "text": "Anatolia Vegan Kitchen",
+      "context": "{ title: 'Anatolia Vegan Kitchen', impact: '2.4 tons of food waste avoided in six months.' },",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 475,
+      "text": "Green Energy Cooperative",
+      "context": "{ title: 'Green Energy Cooperative', impact: '120 kW solar capacity funded by the community.' },",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 478,
+      "text": "Explore Foundation projects",
+      "context": "cta: { label: 'Explore Foundation projects', href: '/foundation' }",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 481,
+      "text": "Insights for conscious living",
+      "context": "title: 'Insights for conscious living',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 491,
+      "text": "Shrink your carbon footprint at the grocery store",
+      "context": "title: 'Shrink your carbon footprint at the grocery store',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 503,
+      "text": "Browse all stories",
+      "context": "cta: { label: 'Browse all stories', href: '/blog' }",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/content/home.ts",
+      "line": 506,
+      "text": "Frequently asked questions",
+      "context": "title: 'Frequently asked questions',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/analytics/dashboard-data.ts",
+      "line": 301,
+      "text": "Landing Page View",
+      "context": "{ step: 'Landing Page View', visitors: 12543, conversionRate: 1.0, dropoffRate: 0.0 },",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/analytics/dashboard-data.ts",
+      "line": 302,
+      "text": "Feature Page View",
+      "context": "{ step: 'Feature Page View', visitors: 8765, conversionRate: 0.70, dropoffRate: 0.30 },",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/analytics/dashboard-data.ts",
+      "line": 303,
+      "text": "Pricing Page View",
+      "context": "{ step: 'Pricing Page View', visitors: 5432, conversionRate: 0.62, dropoffRate: 0.38 },",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/analytics/dashboard-data.ts",
+      "line": 327,
+      "text": "Complete Guide to Sustainable Living",
+      "context": "{ slug: 'sustainable-living-guide', title: 'Complete Guide to Sustainable Living', views: 2345, read",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/analytics/dashboard-data.ts",
+      "line": 368,
+      "text": "Pricing Display Format",
+      "context": "{ testId: 'pricing_display', testName: 'Pricing Display Format', status: 'running', participants: 87",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/cms/blog.ts",
+      "line": 67,
+      "text": "Invalid avatar asset",
+      "context": "throw new Error('Invalid avatar asset');",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/cms/blog.ts",
+      "line": 72,
+      "text": "Avatar file is missing",
+      "context": "throw new Error('Avatar file is missing');",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/cms/blog.ts",
+      "line": 102,
+      "text": "Invalid featured image asset",
+      "context": "throw new Error('Invalid featured image asset');",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/cms/blog.ts",
+      "line": 107,
+      "text": "Featured image file is missing",
+      "context": "throw new Error('Featured image file is missing');",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/cms/features.ts",
+      "line": 60,
+      "text": "Asset file is missing",
+      "context": "throw new Error('Asset file is missing');",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/logging.ts",
+      "line": 400,
+      "text": "Unknown error occurred",
+      "context": "logger.error('Unknown error occurred', { ...context, error });",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/monitoring/performance.ts",
+      "line": 213,
+      "text": "Consider optimizing images on the homepage",
+      "context": "'Consider optimizing images on the homepage',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/monitoring/performance.ts",
+      "line": 215,
+      "text": "Implement resource hints for critical resources",
+      "context": "'Implement resource hints for critical resources',",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/monitoring/performance.ts",
+      "line": 232,
+      "text": "Review server response times and consider CDN opti",
+      "context": "suggestions.push('Review server response times and consider CDN optimization');",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/monitoring/performance.ts",
+      "line": 237,
+      "text": "Reduce JavaScript execution time",
+      "context": "suggestions.push('Reduce JavaScript execution time');",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/monitoring/performance.ts",
+      "line": 238,
+      "text": "Consider code splitting and lazy loading",
+      "context": "suggestions.push('Consider code splitting and lazy loading');",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/monitoring/performance.ts",
+      "line": 245,
+      "text": "Reserve space for dynamic content",
+      "context": "suggestions.push('Reserve space for dynamic content');",
+      "type": "string"
+    },
+    {
+      "file": "/Users/burakcemyaman/PROJECTS/CORIA-APP/coria_app/website/src/lib/monitoring/performance.ts",
+      "line": 246,
+      "text": "Avoid inserting content above existing content",
+      "context": "suggestions.push('Avoid inserting content above existing content');",
+      "type": "string"
+    }
+  ]
+}

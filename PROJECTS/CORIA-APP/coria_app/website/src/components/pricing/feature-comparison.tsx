@@ -10,81 +10,84 @@ export function FeatureComparison() {
 
   const features = [
     {
-      key: 'scanning',
-      name: t('comparison.features.scanning.name'),
-      free: t('comparison.features.scanning.free'),
-      premium: t('comparison.features.scanning.premium'),
+      key: 'scanningAndNutrition',
+      name: t('features.scanningAndNutrition.name'),
+      free: t('features.scanningAndNutrition.free'),
+      premium: t('features.scanningAndNutrition.premium'),
+    },
+    {
+      key: 'sustainabilityMetrics',
+      name: t('features.sustainabilityMetrics.name'),
+      free: t('features.sustainabilityMetrics.free'),
+      premium: t('features.sustainabilityMetrics.premium'),
+    },
+    {
+      key: 'alternativesAndRecipes',
+      name: t('features.alternativesAndRecipes.name'),
+      free: t('comparison.notAvailable'),
+      premium: t('comparison.available'),
+    },
+    {
+      key: 'smartPantry',
+      name: t('features.smartPantry.name'),
+      free: t('features.smartPantry.free'),
+      premium: t('features.smartPantry.premium'),
+    },
+    {
+      key: 'shoppingList',
+      name: t('features.shoppingList.name'),
+      free: t('features.shoppingList.free'),
+      premium: t('features.shoppingList.premium'),
+    },
+    {
+      key: 'aiChat',
+      name: t('features.aiChat.name'),
+      free: t('features.aiChat.free'),
+      premium: t('features.aiChat.premium'),
+    },
+    {
+      key: 'mealPlanner',
+      name: t('features.mealPlanner.name'),
+      free: t('comparison.notAvailable'),
+      premium: t('comparison.available'),
     },
     {
       key: 'reports',
-      name: t('comparison.features.reports.name'),
-      free: t('comparison.features.reports.free'),
-      premium: t('comparison.features.reports.premium'),
-    },
-    {
-      key: 'analytics',
-      name: t('comparison.features.analytics.name'),
-      free: t('comparison.features.analytics.free'),
-      premium: t('comparison.features.analytics.premium'),
-    },
-    {
-      key: 'recommendations',
-      name: t('comparison.features.recommendations.name'),
-      free: t('comparison.features.recommendations.free'),
-      premium: t('comparison.features.recommendations.premium'),
-    },
-    {
-      key: 'support',
-      name: t('comparison.features.support.name'),
-      free: t('comparison.features.support.free'),
-      premium: t('comparison.features.support.premium'),
-    },
-    {
-      key: 'ads',
-      name: t('comparison.features.ads.name'),
-      free: t('comparison.features.ads.free'),
-      premium: t('comparison.features.ads.premium'),
-    },
-    {
-      key: 'export',
-      name: t('comparison.features.export.name'),
-      free: t('comparison.features.export.free'),
-      premium: t('comparison.features.export.premium'),
-    },
-    {
-      key: 'earlyAccess',
-      name: t('comparison.features.earlyAccess.name'),
-      free: t('comparison.features.earlyAccess.free'),
-      premium: t('comparison.features.earlyAccess.premium'),
+      name: t('features.reports.name'),
+      free: t('features.reports.free'),
+      premium: t('features.reports.premium'),
     },
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-gray-50">
+    <section className="py-16 lg:py-24">
       <Container>
         <div className="text-center mb-12">
           <Typography variant="h2" className="mb-4">
-            {t('comparison.title')}
+            {t('features.title')}
+          </Typography>
+          <Typography variant="large" className="text-text-secondary">
+            {t('features.subtitle')}
           </Typography>
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+          <div className="bg-transparent backdrop-blur-sm border border-[var(--foam)]/50 rounded-lg shadow-lg overflow-hidden">
             {/* Header */}
-            <div className="grid grid-cols-3 bg-gray-50 border-b">
+            <div className="grid grid-cols-3 border-b border-[var(--foam)]/30">
               <div className="p-6">
                 <Typography variant="h4" className="text-text-primary">
                   Özellik
                 </Typography>
               </div>
-              <div className="p-6 text-center border-l">
+              <div className="p-6 text-center border-l border-[var(--foam)]/30">
                 <Typography variant="h4" className="text-text-primary">
-                  Ücretsiz
+                  {t('comparison.free')}
                 </Typography>
               </div>
-              <div className="p-6 text-center border-l bg-coria-green/5">
+              <div className="p-6 text-center border-l border-[var(--foam)]/30 bg-coria-green/10">
                 <Typography variant="h4" className="text-coria-green">
-                  Premium
+                  {t('comparison.premium')}
                 </Typography>
               </div>
             </div>
@@ -93,8 +96,8 @@ export function FeatureComparison() {
             {features.map((feature, index) => (
               <div
                 key={feature.key}
-                className={`grid grid-cols-3 border-b last:border-b-0 ${
-                  index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'
+                className={`grid grid-cols-3 border-b border-[var(--foam)]/30 last:border-b-0 ${
+                  index % 2 === 0 ? 'bg-[var(--foam)]/20' : 'bg-transparent'
                 }`}
               >
                 <div className="p-6">
@@ -102,12 +105,12 @@ export function FeatureComparison() {
                     {feature.name}
                   </Typography>
                 </div>
-                <div className="p-6 text-center border-l">
+                <div className="p-6 text-center border-l border-[var(--foam)]/30">
                   <Typography variant="large" className="text-text-secondary">
                     {feature.free}
                   </Typography>
                 </div>
-                <div className="p-6 text-center border-l bg-coria-green/5">
+                <div className="p-6 text-center border-l border-[var(--foam)]/30 bg-coria-green/10">
                   <Typography variant="large" className="text-coria-green font-medium">
                     {feature.premium}
                   </Typography>

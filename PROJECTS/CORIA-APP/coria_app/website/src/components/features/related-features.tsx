@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { ArrowRightIcon } from 'lucide-react';
+import { Icon } from '@/components/icons/Icon';
 
 import { Link } from '@/i18n/routing';
 import { Card } from '@/components/ui/card';
@@ -110,7 +110,7 @@ export function RelatedFeatures({ category, currentFeature }: RelatedFeaturesPro
                   key={featureId}
                   href={{ pathname: '/features/[category]/[feature]', params: { category: cat, feature: featureId } }}
                 >
-                  <Card className="group h-full rounded-[24px] border border-white/70 bg-white/95 p-5 transition-all hover:border-coria-primary/20 hover:shadow-[0_28px_80px_-60px_rgba(27,94,63,0.45)]">
+                  <Card className="group h-full rounded-[24px] border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm p-5 shadow-lg transition-all hover:border-coria-primary/20 hover:shadow-xl">
                     <Heading as="h4" size="lg" weight="semibold" className="text-coria-primary">
                       {t(`features.${featureId}.title`)}
                     </Heading>
@@ -122,7 +122,7 @@ export function RelatedFeatures({ category, currentFeature }: RelatedFeaturesPro
                     </Text>
                     <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-coria-primary/80">
                       {t('overview.learnMore')}
-                      <ArrowRightIcon className="h-4 w-4" />
+                      <Icon name="arrow-right" size={16} aria-hidden="true" />
                     </span>
                   </Card>
                 </Link>
@@ -133,7 +133,7 @@ export function RelatedFeatures({ category, currentFeature }: RelatedFeaturesPro
       </div>
 
       <Link href="/features">
-        <Card className="group rounded-[26px] border border-white/60 bg-gradient-to-r from-coria-primary/10 via-white to-white p-6 text-center shadow-[0_30px_90px_-70px_rgba(27,94,63,0.5)] transition-all hover:border-coria-primary/30">
+        <Card className="group rounded-[26px] border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm p-6 text-center shadow-lg transition-all hover:border-coria-primary/30 hover:shadow-xl">
           <Heading as="h4" size="lg" weight="semibold" className="text-coria-primary">
             {t('relatedFeatures.exploreAll.title')}
           </Heading>
@@ -142,7 +142,7 @@ export function RelatedFeatures({ category, currentFeature }: RelatedFeaturesPro
           </Text>
           <span className="mt-4 inline-flex items-center justify-center gap-2 text-sm font-semibold text-coria-primary">
             {t('relatedFeatures.exploreAll.action')}
-            <ArrowRightIcon className="h-4 w-4" />
+            <Icon name="arrow-right" size={16} aria-hidden="true" />
           </span>
         </Card>
       </Link>

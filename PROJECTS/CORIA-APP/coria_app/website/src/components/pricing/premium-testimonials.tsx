@@ -45,7 +45,7 @@ export function PremiumTestimonials() {
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-gray-50">
+    <section className="py-16 lg:py-24">
       <Container>
         <div className="text-center mb-12">
           <Typography variant="h2" className="mb-4">
@@ -57,7 +57,7 @@ export function PremiumTestimonials() {
           {testimonials.map((testimonial, index) => {
             const TestimonialIcon = testimonial.icon;
             return (
-              <Card key={index} className="p-6 relative overflow-hidden">
+              <Card key={index} className="p-6 relative overflow-hidden bg-[var(--foam)]/85 backdrop-blur-sm border border-[var(--foam)] shadow-lg">
                 {/* Category Icon */}
                 <div className="absolute top-4 right-4 opacity-10">
                   <TestimonialIcon size={48} className="text-coria-green" />

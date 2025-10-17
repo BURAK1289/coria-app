@@ -52,6 +52,7 @@ const nextConfig: NextConfig = {
       'date-fns',
     ],
     webVitalsAttribution: ['CLS', 'LCP'],
+    // optimizeCss: true, // Requires critters package - will implement manual critical CSS
   },
 
   // Webpack optimizations
@@ -170,7 +171,7 @@ const nextConfig: NextConfig = {
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: https: blob:",
               "media-src 'self' https:",
-              "connect-src 'self' https://www.google-analytics.com https://cdn.contentful.com https://preview.contentful.com https://vitals.vercel-insights.com",
+              "connect-src 'self' https://www.google-analytics.com https://cdn.contentful.com https://preview.contentful.com https://vitals.vercel-insights.com https://*.vercel-insights.com",
               "frame-src 'none'",
               "object-src 'none'",
               "base-uri 'self'",

@@ -1,10 +1,15 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { motion } from 'framer-motion';
+import dynamic from 'next/dynamic';
 
 import { Container, Heading, Text, Card, CardContent } from '@/components/ui';
 import { getHomeContent } from '@/content/home';
+
+const AnimatedMetricCard = dynamic(
+  () => import('./impact-overview-animated').then(mod => ({ default: mod.AnimatedMetricCard })),
+  { ssr: true }
+);
 
 export function ImpactOverview() {
   const locale = useLocale();
@@ -12,7 +17,6 @@ export function ImpactOverview() {
 
   return (
     <section className="relative overflow-hidden py-24">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[var(--foam)] via-white to-[var(--mist)]" />
       <Container size="xl" padding="lg" className="relative z-10">
         <div className="mx-auto max-w-3xl text-center">
           <Heading as="h2" size="3xl" weight="bold" className="text-[var(--coria-primary)]">
@@ -25,14 +29,7 @@ export function ImpactOverview() {
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {impact.metrics.map((metric, index) => (
-            <motion.div
-              key={metric.label}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="rounded-[28px] border border-[rgba(27,94,63,0.12)] bg-white/95 p-6 text-center shadow-[0_30px_70px_-50px_rgba(27,94,63,0.25)]"
-            >
+            <AnimatedMetricCard key={metric.label} index={index}>
               <div className="text-3xl font-bold text-[var(--coria-primary)]">
                 {metric.value}
               </div>
@@ -42,7 +39,7 @@ export function ImpactOverview() {
               <div className="mt-3 text-sm text-gray-600">
                 {metric.description}
               </div>
-            </motion.div>
+            </AnimatedMetricCard>
           ))}
         </div>
 
@@ -51,7 +48,7 @@ export function ImpactOverview() {
             <Card
               key={insight.title}
               padding="lg"
-              className="rounded-[28px] border border-[rgba(27,94,63,0.12)] bg-white/95 shadow-[0_30px_70px_-50px_rgba(27,94,63,0.25)]"
+              className="rounded-[28px] border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm shadow-lg"
             >
               <CardContent className="space-y-3 text-left">
                 <Heading as="h3" size="lg" weight="semibold" className="text-[var(--coria-primary)]">

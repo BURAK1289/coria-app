@@ -5,12 +5,13 @@
 
 import { onCLS, onFID, onFCP, onLCP, onTTFB, Metric } from 'web-vitals';
 import { trackPerformance, isGAEnabled } from './gtag';
-import type { 
-  WebVitalsMetric, 
-  CustomPerformanceMetric, 
+import { logger } from '../logger';
+import type {
+  WebVitalsMetric,
+  CustomPerformanceMetric,
   NavigationTimingMetrics,
   ResourceTimingMetric,
-  PerformanceThresholds 
+  PerformanceThresholds
 } from '@/types/analytics';
 
 interface PerformanceMemoryStats {
@@ -69,7 +70,7 @@ const sendToAnalytics = (metric: Metric) => {
 
   // Log to console in development
   if (process.env.NODE_ENV === 'development') {
-    console.log(`[Web Vitals] ${metric.name}:`, {
+    logger.debug(`[Web Vitals] ${metric.name}:`, {
       value: metric.value,
       rating,
       delta: metric.delta,
@@ -93,7 +94,7 @@ export const initWebVitals = () => {
     onFCP(sendToAnalytics);
     onTTFB(sendToAnalytics);
   } catch (error) {
-    console.warn('Failed to initialize Web Vitals:', error);
+    logger.warn('Failed to initialize Web Vitals:', error);
   }
 };
 
@@ -179,7 +180,7 @@ export const initLongTaskObserver = () => {
 
     observer.observe({ entryTypes: ['longtask'] });
   } catch (error) {
-    console.warn('Long task observer not supported:', error);
+    logger.warn('Long task observer not supported:', error);
   }
 };
 

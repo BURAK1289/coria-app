@@ -6,6 +6,7 @@
  */
 
 import { useEffect, useState } from 'react';
+import { logger } from '@/lib/logger';
 import { Card } from '@/components/ui/card';
 import { 
   ContentMetrics, 
@@ -244,13 +245,13 @@ export function ContentPerformanceDashboard() {
   const handleViewBlogDetails = (slug: string) => {
     trackDashboardInteraction('view_blog_details', 'content_performance', slug);
     // In a real implementation, this would navigate to detailed blog analytics
-    console.log('View blog details:', slug);
+    logger.debug('View blog details:', slug);
   };
 
   const handleExportData = () => {
     trackDashboardInteraction('export', 'content_performance');
     // In a real implementation, this would export the data
-    console.log('Export content performance data');
+    logger.debug('Export content performance data');
   };
 
   if (loading || !metrics) {

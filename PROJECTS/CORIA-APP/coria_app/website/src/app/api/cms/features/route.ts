@@ -1,11 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { 
-  getFeatures, 
-  getFeatureByName, 
+import {
+  getFeatures,
+  getFeatureByName,
   getFeatureCategories,
   getFeaturesByCategory,
   getRelatedFeatures
 } from '@/lib/cms/features';
+import { logger } from '@/lib/logger';
 
 export async function GET(request: NextRequest) {
   try {
@@ -53,7 +54,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ features });
     
   } catch (error) {
-    console.error('Error fetching features:', error);
+    logger.error('Error fetching features:', error);
     return NextResponse.json(
       { error: 'Failed to fetch features' },
       { status: 500 }

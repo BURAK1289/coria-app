@@ -1,8 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import type { Metadata } from 'next';
-
-import { Navigation, Footer } from '@/components/layout';
 import {
   Button,
   Container,
@@ -35,32 +33,25 @@ export default async function FeaturesPage({ params, searchParams }: Props) {
   const { category, feature } = await searchParams;
 
   return (
-    <div className="min-h-screen bg-background text-text-primary">
-      <Navigation />
+    <main className="min-h-screen text-text-primary">
+      <FeaturesHero />
 
-      <main>
-        <FeaturesHero />
-
-        <section className="relative overflow-hidden pb-24">
-
-          <Container size="xl" padding="lg" className="pt-10">
-            <div className="grid gap-8 lg:grid-cols-[320px,minmax(0,1fr)]">
-              <div className="rounded-[28px] border border-white/70 bg-white p-6 shadow-sm backdrop-blur">
-                <FeaturesSidebarLazy activeCategory={category} activeFeature={feature} />
-              </div>
-
-              <div className="rounded-[32px] border border-white/70 bg-white p-8 shadow-sm backdrop-blur">
-                <FeatureContentLazy category={category} feature={feature} />
-              </div>
+      <section className="relative overflow-hidden pb-24">
+        <Container size="xl" padding="lg" className="pt-10">
+          <div className="grid gap-8 lg:grid-cols-[1fr,2fr]">
+            <div>
+              <FeaturesSidebarLazy activeCategory={category} activeFeature={feature} />
             </div>
-          </Container>
-        </section>
 
-        <FeaturesCTA />
-      </main>
+            <div>
+              <FeatureContentLazy category={category} feature={feature} />
+            </div>
+          </div>
+        </Container>
+      </section>
 
-      <Footer className="mt-12" />
-    </div>
+      <FeaturesCTA />
+    </main>
   );
 }
 
@@ -68,7 +59,7 @@ function FeaturesHero() {
   const t = useTranslations('features.overview');
 
   return (
-    <section className="relative overflow-hidden pt-32 pb-20 sm:pt-36 sm:pb-24 bg-gradient-to-br from-white via-foam/50 to-acik-gri/30">
+    <section className="relative overflow-hidden pt-32 pb-20 sm:pt-36 sm:pb-24">
 
       <Container size="xl" padding="lg" className="relative z-10">
         <div className="mx-auto max-w-4xl text-center space-y-8">
@@ -100,7 +91,7 @@ function FeaturesCTA() {
   const t = useTranslations('features.overview.cta');
 
   return (
-    <section className="relative overflow-hidden py-24 sm:py-28 bg-white">
+    <section className="relative overflow-hidden py-24 sm:py-28">
 
       <Container size="xl" padding="lg" className="relative z-10">
         <div className="mx-auto max-w-4xl text-center space-y-6">

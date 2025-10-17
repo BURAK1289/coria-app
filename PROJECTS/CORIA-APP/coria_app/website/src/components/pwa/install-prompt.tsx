@@ -2,10 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
-import { X, Download, Smartphone } from 'lucide-react';
+import { Icon } from '@/components/icons/Icon';
 import { usePWA } from '@/lib/pwa';
 import { MobileButton } from '@/components/ui/mobile-button';
 import { cn } from '@/lib/utils';
+import { logger } from '@/lib/logger';
 
 interface InstallPromptProps {
   className?: string;
@@ -67,7 +68,7 @@ export function InstallPrompt({ className }: InstallPromptProps) {
         setIsVisible(false);
       }
     } catch (error) {
-      console.error('Install failed:', error);
+      logger.error('Install failed:', error);
     } finally {
       setIsInstalling(false);
     }
@@ -94,7 +95,7 @@ export function InstallPrompt({ className }: InstallPromptProps) {
     <div
       className={cn(
         'fixed bottom-4 left-4 right-4 z-50',
-        'bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700',
+        'bg-white rounded-lg shadow-lg border border-gray-200',
         'p-4 safe-area-bottom',
         'animate-in slide-in-from-bottom-full duration-300',
         className
@@ -103,15 +104,15 @@ export function InstallPrompt({ className }: InstallPromptProps) {
       <div className="flex items-start space-x-3">
         <div className="flex-shrink-0">
           <div className="w-10 h-10 bg-coria-primary/10 rounded-lg flex items-center justify-center">
-            <Smartphone className="h-5 w-5 text-coria-primary" />
+            <Icon name="smartphone" size={20} className="text-coria-primary" aria-hidden="true" />
           </div>
         </div>
         
         <div className="flex-1 min-w-0">
-          <h3 className="text-sm font-semibold text-gray-900 dark:text-white">
+          <h3 className="text-sm font-semibold text-gray-900">
             {t('install.title')}
           </h3>
-          <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
+          <p className="text-sm text-gray-600 mt-1">
             {t('install.description')}
           </p>
           
@@ -124,13 +125,13 @@ export function InstallPrompt({ className }: InstallPromptProps) {
               size="sm"
               className="flex items-center space-x-2"
             >
-              <Download className="h-4 w-4" />
+              <Icon name="download" size={16} aria-hidden="true" />
               <span>{t('install.button')}</span>
             </MobileButton>
             
             <button
               onClick={handleDismiss}
-              className="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 px-3 py-2"
+              className="text-sm text-gray-500 hover:text-gray-700 px-3 py-2"
             >
               {t('install.dismiss')}
             </button>
@@ -139,9 +140,10 @@ export function InstallPrompt({ className }: InstallPromptProps) {
         
         <button
           onClick={handleDismiss}
-          className="flex-shrink-0 p-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
+          className="flex-shrink-0 p-1 text-gray-400 hover:text-gray-600"
+          aria-label="Close install prompt"
         >
-          <X className="h-5 w-5" />
+          <Icon name="close" size={20} aria-hidden="true" />
         </button>
       </div>
     </div>

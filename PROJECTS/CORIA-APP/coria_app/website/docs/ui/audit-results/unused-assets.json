@@ -1,0 +1,350 @@
+{
+  "assets": {
+    "total": 47,
+    "high_confidence_unused": [
+      {
+        "file": "public/Ekran Resmi 2025-09-21 00.30.31.png",
+        "size_kb": 2520.81,
+        "references": 0,
+        "last_modified": "2025-09-20T21:30:34.045Z",
+        "confidence": "HIGH",
+        "recommendation": "SAFE_TO_DELETE",
+        "reason": "0 references found"
+      },
+      {
+        "file": "public/badge-72x72.png",
+        "size_kb": 0.88,
+        "references": 0,
+        "last_modified": "2025-09-20T19:20:11.973Z",
+        "confidence": "HIGH",
+        "recommendation": "SAFE_TO_DELETE",
+        "reason": "0 references found"
+      },
+      {
+        "file": "public/icon-close.png",
+        "size_kb": 0.98,
+        "references": 0,
+        "last_modified": "2025-09-20T19:20:16.002Z",
+        "confidence": "HIGH",
+        "recommendation": "SAFE_TO_DELETE",
+        "reason": "0 references found"
+      },
+      {
+        "file": "public/icon-explore.png",
+        "size_kb": 0.98,
+        "references": 0,
+        "last_modified": "2025-09-20T19:20:15.906Z",
+        "confidence": "HIGH",
+        "recommendation": "SAFE_TO_DELETE",
+        "reason": "0 references found"
+      },
+      {
+        "file": "public/screenshot-desktop-1.png",
+        "size_kb": 17.88,
+        "references": 0,
+        "last_modified": "2025-09-20T19:20:27.345Z",
+        "confidence": "HIGH",
+        "recommendation": "SAFE_TO_DELETE",
+        "reason": "0 references found"
+      },
+      {
+        "file": "public/screenshot-mobile-1.png",
+        "size_kb": 7.75,
+        "references": 0,
+        "last_modified": "2025-09-20T19:20:20.138Z",
+        "confidence": "HIGH",
+        "recommendation": "SAFE_TO_DELETE",
+        "reason": "0 references found"
+      },
+      {
+        "file": "public/screenshot-mobile-2.png",
+        "size_kb": 7.75,
+        "references": 0,
+        "last_modified": "2025-09-20T19:20:23.623Z",
+        "confidence": "HIGH",
+        "recommendation": "SAFE_TO_DELETE",
+        "reason": "0 references found"
+      },
+      {
+        "file": "public/shortcut-contact.png",
+        "size_kb": 0.98,
+        "references": 0,
+        "last_modified": "2025-09-20T19:20:16.335Z",
+        "confidence": "HIGH",
+        "recommendation": "SAFE_TO_DELETE",
+        "reason": "0 references found"
+      },
+      {
+        "file": "public/shortcut-features.png",
+        "size_kb": 0.98,
+        "references": 0,
+        "last_modified": "2025-09-20T19:20:16.101Z",
+        "confidence": "HIGH",
+        "recommendation": "SAFE_TO_DELETE",
+        "reason": "0 references found"
+      },
+      {
+        "file": "public/shortcut-pricing.png",
+        "size_kb": 0.98,
+        "references": 0,
+        "last_modified": "2025-09-20T19:20:16.205Z",
+        "confidence": "HIGH",
+        "recommendation": "SAFE_TO_DELETE",
+        "reason": "0 references found"
+      }
+    ],
+    "medium_confidence_unused": [
+      {
+        "file": "public/safari-pinned-tab.svg",
+        "size_kb": 0.38,
+        "references": 2,
+        "last_modified": "2025-09-20T15:29:31.422Z",
+        "confidence": "MEDIUM",
+        "recommendation": "REVIEW_BEFORE_DELETE",
+        "reason": "2 references found",
+        "reference_locations": [
+          {
+            "file": "src/app/[locale]/layout.tsx",
+            "line": 161,
+            "usage": "{ rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#1B5E3F' },"
+          },
+          {
+            "file": "src/lib/metadata.ts",
+            "line": 135,
+            "usage": "{ rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#1B5E3F' },"
+          }
+        ]
+      },
+      {
+        "file": "public/testimonial-analytics.svg",
+        "size_kb": 0.32,
+        "references": 2,
+        "last_modified": "2025-09-23T15:20:52.000Z",
+        "confidence": "MEDIUM",
+        "recommendation": "REVIEW_BEFORE_DELETE",
+        "reason": "2 references found",
+        "reference_locations": [
+          {
+            "file": "src/components/icons/icons-map.ts",
+            "line": 192,
+            "usage": "'testimonial-analytics': TestimonialAnalyticsSvgIcon,"
+          },
+          {
+            "file": "src/components/icons/svg-icons.tsx",
+            "line": 170,
+            "usage": "// Testimonial Analytics Icon - From public/testimonial-analytics.svg"
+          }
+        ]
+      },
+      {
+        "file": "public/testimonial-chat.svg",
+        "size_kb": 0.41,
+        "references": 2,
+        "last_modified": "2025-09-23T15:20:52.000Z",
+        "confidence": "MEDIUM",
+        "recommendation": "REVIEW_BEFORE_DELETE",
+        "reason": "2 references found",
+        "reference_locations": [
+          {
+            "file": "src/components/icons/icons-map.ts",
+            "line": 193,
+            "usage": "'testimonial-chat': TestimonialChatSvgIcon,"
+          },
+          {
+            "file": "src/components/icons/svg-icons.tsx",
+            "line": 189,
+            "usage": "// Testimonial Chat Icon - From public/testimonial-chat.svg"
+          }
+        ]
+      },
+      {
+        "file": "public/testimonial-foundation.svg",
+        "size_kb": 0.39,
+        "references": 2,
+        "last_modified": "2025-09-23T15:20:52.000Z",
+        "confidence": "MEDIUM",
+        "recommendation": "REVIEW_BEFORE_DELETE",
+        "reason": "2 references found",
+        "reference_locations": [
+          {
+            "file": "src/components/icons/icons-map.ts",
+            "line": 194,
+            "usage": "'testimonial-foundation': TestimonialFoundationSvgIcon,"
+          },
+          {
+            "file": "src/components/icons/svg-icons.tsx",
+            "line": 210,
+            "usage": "// Testimonial Foundation Icon - From public/testimonial-foundation.svg"
+          }
+        ]
+      },
+      {
+        "file": "public/vegan-allergen.svg",
+        "size_kb": 0.39,
+        "references": 2,
+        "last_modified": "2025-09-23T15:20:52.000Z",
+        "confidence": "MEDIUM",
+        "recommendation": "REVIEW_BEFORE_DELETE",
+        "reason": "2 references found",
+        "reference_locations": [
+          {
+            "file": "src/components/icons/icons-map.ts",
+            "line": 189,
+            "usage": "'vegan-allergen': VeganAllergenSvgIcon,"
+          },
+          {
+            "file": "src/components/icons/svg-icons.tsx",
+            "line": 230,
+            "usage": "// Vegan Allergen Icon - From public/vegan-allergen.svg"
+          }
+        ]
+      },
+      {
+        "file": "public/vegan-user.svg",
+        "size_kb": 0.43,
+        "references": 2,
+        "last_modified": "2025-09-23T15:20:52.000Z",
+        "confidence": "MEDIUM",
+        "recommendation": "REVIEW_BEFORE_DELETE",
+        "reason": "2 references found",
+        "reference_locations": [
+          {
+            "file": "src/components/icons/icons-map.ts",
+            "line": 190,
+            "usage": "'vegan-user': VeganUserSvgIcon,"
+          },
+          {
+            "file": "src/components/icons/svg-icons.tsx",
+            "line": 250,
+            "usage": "// Vegan User Icon - From public/vegan-user.svg"
+          }
+        ]
+      },
+      {
+        "file": "public/vercel.svg",
+        "size_kb": 0.13,
+        "references": 1,
+        "last_modified": "2025-09-13T20:34:32.444Z",
+        "confidence": "MEDIUM",
+        "recommendation": "REVIEW_BEFORE_DELETE",
+        "reason": "1 references found",
+        "reference_locations": [
+          {
+            "file": "src/middleware.ts",
+            "line": 233,
+            "usage": "const country = request.geo?.country || request.headers.get('x-vercel-ip-country"
+          }
+        ]
+      }
+    ],
+    "protected": [
+      {
+        "file": "public/apple-touch-icon.png",
+        "size_kb": "0.41",
+        "confidence": "PROTECTED",
+        "reason": "PWA icon pattern",
+        "recommendation": "DO_NOT_DELETE"
+      },
+      {
+        "file": "public/coria-app-logo.svg",
+        "size_kb": "247.69",
+        "confidence": "PROTECTED",
+        "reason": "Brand asset safelist",
+        "recommendation": "DO_NOT_DELETE"
+      },
+      {
+        "file": "public/favicon-16x16.png",
+        "size_kb": "0.69",
+        "confidence": "PROTECTED",
+        "reason": "PWA icon pattern",
+        "recommendation": "DO_NOT_DELETE"
+      },
+      {
+        "file": "public/favicon-32x32.png",
+        "size_kb": "0.71",
+        "confidence": "PROTECTED",
+        "reason": "PWA icon pattern",
+        "recommendation": "DO_NOT_DELETE"
+      },
+      {
+        "file": "public/icon-128x128.png",
+        "size_kb": "1.12",
+        "confidence": "PROTECTED",
+        "reason": "PWA icon pattern",
+        "recommendation": "DO_NOT_DELETE"
+      },
+      {
+        "file": "public/icon-144x144.png",
+        "size_kb": "1.27",
+        "confidence": "PROTECTED",
+        "reason": "PWA icon pattern",
+        "recommendation": "DO_NOT_DELETE"
+      },
+      {
+        "file": "public/icon-152x152.png",
+        "size_kb": "1.33",
+        "confidence": "PROTECTED",
+        "reason": "PWA icon pattern",
+        "recommendation": "DO_NOT_DELETE"
+      },
+      {
+        "file": "public/icon-192x192.png",
+        "size_kb": "1.59",
+        "confidence": "PROTECTED",
+        "reason": "PWA icon pattern",
+        "recommendation": "DO_NOT_DELETE"
+      },
+      {
+        "file": "public/icon-384x384.png",
+        "size_kb": "3.85",
+        "confidence": "PROTECTED",
+        "reason": "PWA icon pattern",
+        "recommendation": "DO_NOT_DELETE"
+      },
+      {
+        "file": "public/icon-512x512.png",
+        "size_kb": "5.59",
+        "confidence": "PROTECTED",
+        "reason": "PWA icon pattern",
+        "recommendation": "DO_NOT_DELETE"
+      },
+      {
+        "file": "public/icon-72x72.png",
+        "size_kb": "0.88",
+        "confidence": "PROTECTED",
+        "reason": "PWA icon pattern",
+        "recommendation": "DO_NOT_DELETE"
+      },
+      {
+        "file": "public/icon-96x96.png",
+        "size_kb": "0.98",
+        "confidence": "PROTECTED",
+        "reason": "PWA icon pattern",
+        "recommendation": "DO_NOT_DELETE"
+      },
+      {
+        "file": "public/leaf-vein.svg",
+        "size_kb": "2.25",
+        "confidence": "PROTECTED",
+        "reason": "Brand asset safelist",
+        "recommendation": "DO_NOT_DELETE"
+      },
+      {
+        "file": "public/logo.svg",
+        "size_kb": "11391.65",
+        "confidence": "PROTECTED",
+        "reason": "Brand asset safelist",
+        "recommendation": "DO_NOT_DELETE"
+      }
+    ]
+  },
+  "summary": {
+    "total_assets": 47,
+    "high_confidence_removal_candidates": 10,
+    "medium_confidence_review_needed": 7,
+    "protected_assets": 14,
+    "estimated_space_savings_kb": "2562.42",
+    "estimated_space_savings_mb": "2.50"
+  },
+  "analyzed_at": "2025-10-16T17:13:49.199Z"
+}

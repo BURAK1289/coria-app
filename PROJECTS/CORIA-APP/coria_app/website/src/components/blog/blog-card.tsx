@@ -21,7 +21,7 @@ export default function BlogCard({ post }: BlogCardProps) {
   const appLocale: Locale = isLocale(locale) ? locale : 'tr';
   
   return (
-    <article className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+    <article className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
       <Link href={`/blog/${post.slug}`}>
         <div className="relative h-48 overflow-hidden">
           <Image
@@ -36,7 +36,7 @@ export default function BlogCard({ post }: BlogCardProps) {
           <div className="absolute top-4 left-4">
             <span 
               className="px-3 py-1 text-xs font-medium text-white rounded-full"
-              style={{ backgroundColor: post.category.color || '#1B5E3F' }}
+              style={{ backgroundColor: post.category.color || 'var(--coria-primary)' }}
             >
               {post.category.name}
             </span>
@@ -46,7 +46,7 @@ export default function BlogCard({ post }: BlogCardProps) {
       
       <div className="p-6">
         {/* Meta Info */}
-        <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
+        <div className="flex items-center text-sm text-gray-500 mb-3">
           <time dateTime={post.publishedAt.toISOString()}>
             {formatDate(post.publishedAt, appLocale)}
           </time>
@@ -55,7 +55,7 @@ export default function BlogCard({ post }: BlogCardProps) {
         </div>
         
         {/* Title */}
-        <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2">
+        <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
           <Link 
             href={`/blog/${post.slug}`}
             className="hover:text-coria-green transition-colors"
@@ -65,7 +65,7 @@ export default function BlogCard({ post }: BlogCardProps) {
         </h2>
         
         {/* Excerpt */}
-        <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+        <p className="text-gray-600 mb-4 line-clamp-3">
           {post.excerpt}
         </p>
         
@@ -75,13 +75,13 @@ export default function BlogCard({ post }: BlogCardProps) {
             {post.tags.slice(0, 3).map((tag) => (
               <span
                 key={tag}
-                className="px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded"
+                className="px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded"
               >
                 #{tag}
               </span>
             ))}
             {post.tags.length > 3 && (
-              <span className="px-2 py-1 text-xs text-gray-500 dark:text-gray-400">
+              <span className="px-2 py-1 text-xs text-gray-500">
                 +{post.tags.length - 3} more
               </span>
             )}

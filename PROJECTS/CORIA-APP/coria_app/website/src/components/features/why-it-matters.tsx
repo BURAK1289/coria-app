@@ -1,14 +1,7 @@
 'use client';
 
 import { useTranslations, useMessages } from 'next-intl';
-import {
-  LeafIcon,
-  TrendingUpIcon,
-  ShieldIcon,
-  UsersIcon,
-  GlobeIcon,
-} from 'lucide-react';
-
+import { Icon } from '@/components/icons/Icon';
 import { HealthSvgIcon } from '@/components/icons/svg-icons';
 
 import { Card } from '@/components/ui/card';
@@ -35,13 +28,13 @@ interface Statistic {
   description?: string;
 }
 
-const impactIcons: Record<ImpactIconKey, any> = {
-  environmental: LeafIcon,
-  health: HealthSvgIcon,
-  economic: TrendingUpIcon,
-  social: UsersIcon,
-  ethical: ShieldIcon,
-  global: GlobeIcon,
+const impactIcons: Record<ImpactIconKey, { type: 'coria' | 'svg'; iconName?: string; icon?: any }> = {
+  environmental: { type: 'coria', iconName: 'leaf' },
+  health: { type: 'svg', icon: HealthSvgIcon },
+  economic: { type: 'coria', iconName: 'trending-up' },
+  social: { type: 'coria', iconName: 'star' },
+  ethical: { type: 'coria', iconName: 'star' },
+  global: { type: 'coria', iconName: 'globe' },
 };
 
 function isImpact(value: unknown): value is Impact {
@@ -88,15 +81,19 @@ export function WhyItMatters({ category }: WhyItMattersProps) {
 
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {impacts.map((impact, index) => {
-          const IconComponent = impactIcons[impact.type] ?? LeafIcon;
+          const iconConfig = impactIcons[impact.type] ?? { type: 'coria' as const, iconName: 'leaf' };
 
           return (
             <Card
               key={`${impact.type}-${index}`}
-              className="rounded-[24px] border border-white/70 bg-white/95 p-6 text-center shadow-[0_25px_70px_-55px_rgba(27,94,63,0.45)]"
+              className="rounded-[24px] border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm p-6 text-center shadow-sm"
             >
               <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-coria-primary/10 text-coria-primary">
-                <IconComponent className="h-5 w-5" />
+                {iconConfig.type === 'coria' && iconConfig.iconName ? (
+                  <Icon name={iconConfig.iconName} size={20} aria-hidden="true" />
+                ) : iconConfig.type === 'svg' && iconConfig.icon ? (
+                  <iconConfig.icon size={20} className="text-current" />
+                ) : null}
               </span>
               <Badge variant="secondary" className="mt-4 bg-coria-primary/10 text-coria-primary">
                 {t(`whyItMatters.impactTypes.${impact.type}`)}
@@ -113,7 +110,7 @@ export function WhyItMatters({ category }: WhyItMattersProps) {
       </div>
 
       {statistics.length > 0 && (
-        <Card className="rounded-[28px] border border-white/70 bg-white/95 px-8 py-10 text-center shadow-[0_35px_90px_-65px_rgba(27,94,63,0.45)]">
+        <Card className="rounded-[28px] border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm px-8 py-10 text-center shadow-sm">
           <Heading as="h4" size="xl" weight="bold" className="text-coria-primary">
             {t('whyItMatters.statisticsTitle')}
           </Heading>
@@ -137,7 +134,7 @@ export function WhyItMatters({ category }: WhyItMattersProps) {
         </Card>
       )}
 
-      <Card className="rounded-[24px] border border-white/70 bg-white/95 p-6 text-center shadow-[0_25px_80px_-60px_rgba(27,94,63,0.45)]">
+      <Card className="rounded-[24px] border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm p-6 text-center shadow-sm">
         <Heading as="h5" size="lg" weight="semibold" className="text-coria-primary">
           {t(`categories.${category}.whyItMatters.cta.title`)}
         </Heading>

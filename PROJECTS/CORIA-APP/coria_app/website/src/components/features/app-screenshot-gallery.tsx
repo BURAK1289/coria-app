@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { PlayIcon } from 'lucide-react';
+import { Icon } from '@/components/icons/Icon';
 
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui';
@@ -66,17 +66,17 @@ export function AppScreenshotGallery({ category }: AppScreenshotGalleryProps) {
           className={cn('gap-2', showVideo ? 'text-white' : 'text-coria-primary')}
           onClick={() => setShowVideo((prev) => !prev)}
         >
-          <PlayIcon className="h-4 w-4" />
+          <Icon name="play" size={16} aria-hidden="true" />
           {t('gallery.watchDemo')}
         </Button>
       </div>
 
       {showVideo ? (
-        <Card className="rounded-[28px] border border-white/70 bg-white/95 p-6 text-center shadow-[0_30px_90px_-70px_rgba(27,94,63,0.45)]">
+        <Card className="rounded-[28px] border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm p-6 text-center shadow-sm">
           <div className="flex aspect-video items-center justify-center rounded-[24px] bg-gradient-to-br from-coria-primary/15 via-white to-leaf/15">
             <div className="space-y-3 text-center">
               <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-coria-primary/15 text-coria-primary">
-                <PlayIcon className="h-8 w-8" />
+                <Icon name="play" size={32} aria-hidden="true" />
               </span>
               <Text size="sm" color="secondary" className="text-gray-600">
                 {t('gallery.videoPlaceholder')}
@@ -85,7 +85,7 @@ export function AppScreenshotGallery({ category }: AppScreenshotGalleryProps) {
           </div>
         </Card>
       ) : (
-        <Card className="rounded-[28px] border border-white/70 bg-white/95 p-6 shadow-[0_30px_90px_-70px_rgba(27,94,63,0.45)]">
+        <Card className="rounded-[28px] border border-[var(--foam)] bg-[var(--foam)]/85 backdrop-blur-sm p-6 shadow-sm">
           <SwipeableGallery onSlideChange={setCurrentIndex} showDots className="max-w-sm mx-auto">
             {screenshots.map((screenshot) => (
               <div key={screenshot.key} className="space-y-4">

@@ -12,7 +12,7 @@ import { ContentPerformanceDashboard } from './content-performance';
 import { ABTestResultsDashboard } from './ab-test-results';
 import { trackDashboardInteraction } from '@/lib/analytics/dashboard-data';
 import { TestimonialAnalyticsSvgIcon } from '@/components/icons/svg-icons';
-import { BarChart3Icon, TrendingUpIcon, FileTextIcon, FlaskConicalIcon } from 'lucide-react';
+import { Icon } from '@/components/icons/Icon';
 
 type DashboardSection = 'overview' | 'conversions' | 'content' | 'ab-tests';
 
@@ -52,9 +52,9 @@ function DashboardHeader({ currentSection, onSectionChange }: DashboardHeaderPro
     icon: React.ReactNode;
   }> = [
     { id: 'overview', label: 'Overview', icon: <TestimonialAnalyticsSvgIcon size={20} className="text-current" /> },
-    { id: 'conversions', label: 'Conversions', icon: <TrendingUpIcon size={20} className="text-current" /> },
-    { id: 'content', label: 'Content', icon: <FileTextIcon size={20} className="text-current" /> },
-    { id: 'ab-tests', label: 'A/B Tests', icon: <FlaskConicalIcon size={20} className="text-current" /> },
+    { id: 'conversions', label: 'Conversions', icon: <Icon name="trending-up" size={20} className="text-current" aria-hidden="true" /> },
+    { id: 'content', label: 'Content', icon: <Icon name="file-text" size={20} className="text-current" aria-hidden="true" /> },
+    { id: 'ab-tests', label: 'A/B Tests', icon: <Icon name="flask" size={20} className="text-current" aria-hidden="true" /> },
   ];
 
   return (

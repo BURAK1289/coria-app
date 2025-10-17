@@ -87,7 +87,7 @@ export const MobileFormLabel = forwardRef<HTMLLabelElement, MobileFormLabelProps
       <label
         ref={ref}
         className={cn(
-          'block text-base font-medium text-gray-700 dark:text-gray-300 mb-2',
+          'block text-base font-medium text-gray-700 mb-2',
           className
         )}
         {...props}
@@ -393,7 +393,7 @@ export const MobileFormSelect = forwardRef<HTMLSelectElement, MobileFormSelectPr
           className={cn(
             'form-input-mobile w-full rounded-lg border-2 transition-colors',
             'focus:outline-none focus:ring-2 focus:ring-coria-primary/20',
-            'appearance-none bg-white dark:bg-gray-800',
+            'appearance-none bg-white',
             'disabled:opacity-50 disabled:cursor-not-allowed',
             loading && 'pr-10',
             error
