@@ -1,0 +1,609 @@
+-- =====================================================
+-- CORIA SOLANA PAYMENT RPC HELPER FUNCTIONS
+-- Migration: 0003_rpc.sql
+-- Version: 1.0
+-- Date: 2025-01-26
+-- Purpose: RPC helper functions for payment idempotency and confirmation
+-- =====================================================
+
+-- =====================================================
+-- 1. IDEMPOTENCY HELPER FUNCTIONS
+-- =====================================================
+
+-- Function to safely initiate a payment with idempotency
+CREATE OR REPLACE FUNCTION initiate_payment_idempotent(
+    p_idempotency_key VARCHAR(255),
+    p_user_id UUID,
+    p_wallet_id UUID,
+    p_kind payment_kind_enum,
+    p_amount_lamports BIGINT,
+    p_destination_address VARCHAR(44),
+    p_metadata JSONB DEFAULT '{}'
+)
+RETURNS JSONB AS $$
+DECLARE
+    existing_response JSONB;
+    existing_payment_id UUID;
+    new_payment_id UUID;
+    user_wallet_exists BOOLEAN;
+    result JSONB;
+BEGIN
+    -- Security: Verify user owns the wallet
+    SELECT EXISTS(
+        SELECT 1 FROM public.solana_wallets
+        WHERE id = p_wallet_id AND user_id = p_user_id AND is_active = true
+    ) INTO user_wallet_exists;
+
+    IF NOT user_wallet_exists THEN
+        RETURN jsonb_build_object(
+            'success', false,
+            'error', 'WALLET_NOT_FOUND',
+            'message', 'Wallet not found or not owned by user'
+        );
+    END IF;
+
+    -- Check if idempotency key already exists
+    SELECT response_data, payment_id
+    FROM public.payment_idempotency_keys
+    WHERE key = p_idempotency_key AND user_id = p_user_id
+    INTO existing_response, existing_payment_id;
+
+    -- If exists and not expired, return cached response
+    IF existing_response IS NOT NULL THEN
+        RETURN jsonb_build_object(
+            'success', true,
+            'cached', true,
+            'payment_id', existing_payment_id,
+            'data', existing_response
+        );
+    END IF;
+
+    -- Validate destination address format
+    IF NOT is_valid_solana_pubkey(p_destination_address) THEN
+        RETURN jsonb_build_object(
+            'success', false,
+            'error', 'INVALID_DESTINATION',
+            'message', 'Invalid Solana destination address format'
+        );
+    END IF;
+
+    -- Create new payment
+    INSERT INTO public.solana_payments (
+        user_id, wallet_id, kind, amount_lamports,
+        destination_address, status, metadata
+    ) VALUES (
+        p_user_id, p_wallet_id, p_kind, p_amount_lamports,
+        p_destination_address, 'pending', p_metadata
+    ) RETURNING id INTO new_payment_id;
+
+    -- Build response data
+    result := jsonb_build_object(
+        'payment_id', new_payment_id,
+        'status', 'pending',
+        'amount_lamports', p_amount_lamports,
+        'amount_sol', (p_amount_lamports::DECIMAL / 1000000000),
+        'destination_address', p_destination_address,
+        'kind', p_kind,
+        'created_at', NOW()
+    );
+
+    -- Store idempotency key with response
+    INSERT INTO public.payment_idempotency_keys (
+        key, user_id, payment_id, response_data, http_status
+    ) VALUES (
+        p_idempotency_key, p_user_id, new_payment_id, result, 201
+    );
+
+    -- Log activity
+    INSERT INTO public.wallet_activities (
+        user_id, wallet_id, activity_type, description,
+        amount_lamports, metadata
+    ) VALUES (
+        p_user_id, p_wallet_id, 'payment_initiated',
+        'Payment initiated for ' || p_kind || ' (' || (p_amount_lamports::DECIMAL / 1000000000) || ' SOL)',
+        p_amount_lamports,
+        jsonb_build_object(
+            'payment_id', new_payment_id,
+            'idempotency_key', p_idempotency_key,
+            'destination', p_destination_address
+        )
+    );
+
+    RETURN jsonb_build_object(
+        'success', true,
+        'cached', false,
+        'payment_id', new_payment_id,
+        'data', result
+    );
+
+EXCEPTION
+    WHEN OTHERS THEN
+        RETURN jsonb_build_object(
+            'success', false,
+            'error', 'PAYMENT_CREATION_FAILED',
+            'message', SQLERRM
+        );
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- Function to update idempotency response (for caching API responses)
+CREATE OR REPLACE FUNCTION update_idempotency_response(
+    p_idempotency_key VARCHAR(255),
+    p_user_id UUID,
+    p_response_data JSONB,
+    p_http_status INTEGER DEFAULT 200
+)
+RETURNS BOOLEAN AS $$
+BEGIN
+    UPDATE public.payment_idempotency_keys
+    SET
+        response_data = p_response_data,
+        http_status = p_http_status,
+        expires_at = NOW() + INTERVAL '24 hours'
+    WHERE key = p_idempotency_key AND user_id = p_user_id;
+
+    RETURN FOUND;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- =====================================================
+-- 2. PAYMENT CONFIRMATION FUNCTIONS
+-- =====================================================
+
+-- Function to confirm a payment with transaction signature
+CREATE OR REPLACE FUNCTION confirm_payment(
+    p_payment_id UUID,
+    p_tx_signature VARCHAR(88),
+    p_blockhash VARCHAR(44) DEFAULT NULL,
+    p_slot BIGINT DEFAULT NULL
+)
+RETURNS JSONB AS $$
+DECLARE
+    payment_record RECORD;
+    premium_duration INTERVAL;
+    result JSONB;
+BEGIN
+    -- Validate signature format
+    IF NOT is_valid_solana_signature(p_tx_signature) THEN
+        RETURN jsonb_build_object(
+            'success', false,
+            'error', 'INVALID_SIGNATURE',
+            'message', 'Invalid Solana transaction signature format'
+        );
+    END IF;
+
+    -- Get payment details and lock row
+    SELECT p.*, w.user_id as wallet_user_id
+    FROM public.solana_payments p
+    JOIN public.solana_wallets w ON p.wallet_id = w.id
+    WHERE p.id = p_payment_id
+    FOR UPDATE INTO payment_record;
+
+    IF NOT FOUND THEN
+        RETURN jsonb_build_object(
+            'success', false,
+            'error', 'PAYMENT_NOT_FOUND',
+            'message', 'Payment not found'
+        );
+    END IF;
+
+    -- Check if already confirmed or failed
+    IF payment_record.status IN ('confirmed', 'failed') THEN
+        RETURN jsonb_build_object(
+            'success', false,
+            'error', 'PAYMENT_ALREADY_PROCESSED',
+            'message', 'Payment already ' || payment_record.status,
+            'current_status', payment_record.status
+        );
+    END IF;
+
+    -- Update payment status to confirmed
+    UPDATE public.solana_payments
+    SET
+        status = 'confirmed',
+        tx_signature = p_tx_signature,
+        blockhash = p_blockhash,
+        slot = p_slot,
+        confirmed_at = NOW(),
+        confirmation_attempts = confirmation_attempts + 1,
+        last_confirmation_check = NOW()
+    WHERE id = p_payment_id;
+
+    -- Create ledger entry
+    INSERT INTO public.solana_ledger (
+        user_id, wallet_id, payment_id,
+        delta_lamports, reason, tx_signature, metadata
+    ) VALUES (
+        payment_record.user_id, payment_record.wallet_id, p_payment_id,
+        -payment_record.amount_lamports, -- Negative for outgoing payment
+        payment_record.kind || '_payment',
+        p_tx_signature,
+        jsonb_build_object(
+            'confirmed_at', NOW(),
+            'blockhash', p_blockhash,
+            'slot', p_slot,
+            'amount_sol', (payment_record.amount_lamports::DECIMAL / 1000000000)
+        )
+    );
+
+    -- Handle premium payments
+    IF payment_record.kind = 'premium' THEN
+        -- Calculate premium duration based on payment amount
+        -- 1 SOL = 1 month, minimum 1 month
+        premium_duration := GREATEST(
+            INTERVAL '1 month',
+            (payment_record.amount_lamports::DECIMAL / 1000000000) * INTERVAL '1 month'
+        );
+
+        -- Update user premium status
+        UPDATE public.user_profiles
+        SET
+            premium_status = 'active',
+            premium_expires_at = CASE
+                WHEN premium_status = 'active' AND premium_expires_at > NOW()
+                THEN premium_expires_at + premium_duration
+                ELSE NOW() + premium_duration
+            END,
+            premium_activated_at = CASE
+                WHEN premium_status != 'active' THEN NOW()
+                ELSE premium_activated_at
+            END
+        WHERE id = payment_record.user_id;
+    END IF;
+
+    -- Log confirmation activity
+    INSERT INTO public.wallet_activities (
+        user_id, wallet_id, activity_type, description,
+        tx_signature, amount_lamports, metadata
+    ) VALUES (
+        payment_record.user_id, payment_record.wallet_id, 'payment_confirmed',
+        'Payment confirmed for ' || payment_record.kind || ' (' || (payment_record.amount_lamports::DECIMAL / 1000000000) || ' SOL)',
+        p_tx_signature, payment_record.amount_lamports,
+        jsonb_build_object(
+            'payment_id', p_payment_id,
+            'blockhash', p_blockhash,
+            'slot', p_slot,
+            'confirmed_at', NOW()
+        )
+    );
+
+    -- Build result
+    result := jsonb_build_object(
+        'success', true,
+        'payment_id', p_payment_id,
+        'status', 'confirmed',
+        'tx_signature', p_tx_signature,
+        'confirmed_at', NOW(),
+        'amount_lamports', payment_record.amount_lamports,
+        'amount_sol', (payment_record.amount_lamports::DECIMAL / 1000000000),
+        'kind', payment_record.kind
+    );
+
+    -- Add premium info if applicable
+    IF payment_record.kind = 'premium' THEN
+        result := result || jsonb_build_object(
+            'premium_duration_months', EXTRACT(EPOCH FROM premium_duration) / (30 * 24 * 3600),
+            'premium_activated', true
+        );
+    END IF;
+
+    RETURN result;
+
+EXCEPTION
+    WHEN OTHERS THEN
+        RETURN jsonb_build_object(
+            'success', false,
+            'error', 'CONFIRMATION_FAILED',
+            'message', SQLERRM
+        );
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- Function to fail a payment with error details
+CREATE OR REPLACE FUNCTION fail_payment(
+    p_payment_id UUID,
+    p_error_message TEXT,
+    p_retry_possible BOOLEAN DEFAULT false
+)
+RETURNS JSONB AS $$
+DECLARE
+    payment_record RECORD;
+BEGIN
+    -- Get payment details and lock row
+    SELECT p.*, w.user_id as wallet_user_id
+    FROM public.solana_payments p
+    JOIN public.solana_wallets w ON p.wallet_id = w.id
+    WHERE p.id = p_payment_id
+    FOR UPDATE INTO payment_record;
+
+    IF NOT FOUND THEN
+        RETURN jsonb_build_object(
+            'success', false,
+            'error', 'PAYMENT_NOT_FOUND',
+            'message', 'Payment not found'
+        );
+    END IF;
+
+    -- Check if already processed
+    IF payment_record.status IN ('confirmed', 'failed') THEN
+        RETURN jsonb_build_object(
+            'success', false,
+            'error', 'PAYMENT_ALREADY_PROCESSED',
+            'message', 'Payment already ' || payment_record.status
+        );
+    END IF;
+
+    -- Update payment status to failed
+    UPDATE public.solana_payments
+    SET
+        status = 'failed',
+        error_message = p_error_message,
+        failed_at = NOW(),
+        confirmation_attempts = confirmation_attempts + 1,
+        last_confirmation_check = NOW()
+    WHERE id = p_payment_id;
+
+    -- Log failure activity
+    INSERT INTO public.wallet_activities (
+        user_id, wallet_id, activity_type, description,
+        amount_lamports, metadata
+    ) VALUES (
+        payment_record.user_id, payment_record.wallet_id, 'payment_failed',
+        'Payment failed for ' || payment_record.kind || ': ' || p_error_message,
+        payment_record.amount_lamports,
+        jsonb_build_object(
+            'payment_id', p_payment_id,
+            'error_message', p_error_message,
+            'retry_possible', p_retry_possible,
+            'failed_at', NOW()
+        )
+    );
+
+    RETURN jsonb_build_object(
+        'success', true,
+        'payment_id', p_payment_id,
+        'status', 'failed',
+        'error_message', p_error_message,
+        'retry_possible', p_retry_possible,
+        'failed_at', NOW()
+    );
+
+EXCEPTION
+    WHEN OTHERS THEN
+        RETURN jsonb_build_object(
+            'success', false,
+            'error', 'FAILURE_UPDATE_FAILED',
+            'message', SQLERRM
+        );
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- =====================================================
+-- 3. PAYMENT STATUS AND QUERY FUNCTIONS
+-- =====================================================
+
+-- Function to get payment status with full details
+CREATE OR REPLACE FUNCTION get_payment_status(
+    p_payment_id UUID,
+    p_user_id UUID DEFAULT NULL
+)
+RETURNS JSONB AS $$
+DECLARE
+    payment_record RECORD;
+    result JSONB;
+BEGIN
+    -- Get payment with wallet info
+    SELECT
+        p.*,
+        w.public_key as wallet_public_key,
+        w.type as wallet_type,
+        w.provider as wallet_provider,
+        up.premium_status,
+        up.premium_expires_at
+    FROM public.solana_payments p
+    JOIN public.solana_wallets w ON p.wallet_id = w.id
+    JOIN public.user_profiles up ON p.user_id = up.id
+    WHERE p.id = p_payment_id
+    AND (p_user_id IS NULL OR p.user_id = p_user_id)
+    INTO payment_record;
+
+    IF NOT FOUND THEN
+        RETURN jsonb_build_object(
+            'success', false,
+            'error', 'PAYMENT_NOT_FOUND',
+            'message', 'Payment not found or access denied'
+        );
+    END IF;
+
+    -- Build comprehensive result
+    result := jsonb_build_object(
+        'success', true,
+        'payment_id', payment_record.id,
+        'user_id', payment_record.user_id,
+        'wallet_id', payment_record.wallet_id,
+        'wallet_public_key', payment_record.wallet_public_key,
+        'wallet_type', payment_record.wallet_type,
+        'wallet_provider', payment_record.wallet_provider,
+        'kind', payment_record.kind,
+        'status', payment_record.status,
+        'amount_lamports', payment_record.amount_lamports,
+        'amount_sol', payment_record.amount_sol,
+        'destination_address', payment_record.destination_address,
+        'tx_signature', payment_record.tx_signature,
+        'blockhash', payment_record.blockhash,
+        'slot', payment_record.slot,
+        'created_at', payment_record.created_at,
+        'confirmed_at', payment_record.confirmed_at,
+        'failed_at', payment_record.failed_at,
+        'error_message', payment_record.error_message,
+        'confirmation_attempts', payment_record.confirmation_attempts,
+        'last_confirmation_check', payment_record.last_confirmation_check,
+        'metadata', payment_record.metadata
+    );
+
+    -- Add premium status info for premium payments
+    IF payment_record.kind = 'premium' THEN
+        result := result || jsonb_build_object(
+            'premium_status', payment_record.premium_status,
+            'premium_expires_at', payment_record.premium_expires_at
+        );
+    END IF;
+
+    RETURN result;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- Function to get user's pending payments
+CREATE OR REPLACE FUNCTION get_pending_payments(
+    p_user_id UUID,
+    p_limit INTEGER DEFAULT 50
+)
+RETURNS JSONB AS $$
+DECLARE
+    payments JSONB;
+BEGIN
+    SELECT jsonb_agg(
+        jsonb_build_object(
+            'payment_id', p.id,
+            'wallet_id', p.wallet_id,
+            'wallet_public_key', w.public_key,
+            'kind', p.kind,
+            'status', p.status,
+            'amount_lamports', p.amount_lamports,
+            'amount_sol', p.amount_sol,
+            'destination_address', p.destination_address,
+            'created_at', p.created_at,
+            'confirmation_attempts', p.confirmation_attempts,
+            'last_confirmation_check', p.last_confirmation_check,
+            'metadata', p.metadata
+        ) ORDER BY p.created_at DESC
+    ) INTO payments
+    FROM public.solana_payments p
+    JOIN public.solana_wallets w ON p.wallet_id = w.id
+    WHERE p.user_id = p_user_id
+    AND p.status = 'pending'
+    AND p.created_at > NOW() - INTERVAL '24 hours' -- Only recent pending payments
+    LIMIT p_limit;
+
+    RETURN jsonb_build_object(
+        'success', true,
+        'count', COALESCE(jsonb_array_length(payments), 0),
+        'payments', COALESCE(payments, '[]'::jsonb)
+    );
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- =====================================================
+-- 4. UTILITY FUNCTIONS
+-- =====================================================
+
+-- Function to cleanup old payment data
+CREATE OR REPLACE FUNCTION cleanup_old_payment_data(
+    p_days_old INTEGER DEFAULT 90
+)
+RETURNS JSONB AS $$
+DECLARE
+    deleted_idempotency INTEGER;
+    deleted_activities INTEGER;
+    cutoff_date TIMESTAMP WITH TIME ZONE;
+BEGIN
+    cutoff_date := NOW() - (p_days_old || ' days')::INTERVAL;
+
+    -- Cleanup expired idempotency keys
+    DELETE FROM public.payment_idempotency_keys
+    WHERE expires_at < NOW();
+    GET DIAGNOSTICS deleted_idempotency = ROW_COUNT;
+
+    -- Cleanup old wallet activities (keep important ones)
+    DELETE FROM public.wallet_activities
+    WHERE created_at < cutoff_date
+    AND activity_type NOT IN ('payment_confirmed', 'premium_status_changed');
+    GET DIAGNOSTICS deleted_activities = ROW_COUNT;
+
+    RETURN jsonb_build_object(
+        'success', true,
+        'deleted_idempotency_keys', deleted_idempotency,
+        'deleted_activities', deleted_activities,
+        'cutoff_date', cutoff_date
+    );
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- Function to get payment statistics for a user
+CREATE OR REPLACE FUNCTION get_user_payment_stats(
+    p_user_id UUID,
+    p_days INTEGER DEFAULT 30
+)
+RETURNS JSONB AS $$
+DECLARE
+    stats JSONB;
+    premium_info JSONB;
+BEGIN
+    -- Get payment statistics
+    SELECT jsonb_build_object(
+        'total_payments', COUNT(*),
+        'confirmed_payments', COUNT(*) FILTER (WHERE status = 'confirmed'),
+        'failed_payments', COUNT(*) FILTER (WHERE status = 'failed'),
+        'pending_payments', COUNT(*) FILTER (WHERE status = 'pending'),
+        'total_amount_sol', COALESCE(SUM(amount_sol) FILTER (WHERE status = 'confirmed'), 0),
+        'donation_amount_sol', COALESCE(SUM(amount_sol) FILTER (WHERE status = 'confirmed' AND kind = 'donation'), 0),
+        'premium_amount_sol', COALESCE(SUM(amount_sol) FILTER (WHERE status = 'confirmed' AND kind = 'premium'), 0),
+        'period_days', p_days,
+        'period_start', NOW() - (p_days || ' days')::INTERVAL
+    ) INTO stats
+    FROM public.solana_payments
+    WHERE user_id = p_user_id
+    AND created_at > NOW() - (p_days || ' days')::INTERVAL;
+
+    -- Get current premium info
+    SELECT jsonb_build_object(
+        'premium_status', premium_status,
+        'premium_expires_at', premium_expires_at,
+        'premium_activated_at', premium_activated_at,
+        'is_premium_active', premium_status = 'active' AND (premium_expires_at IS NULL OR premium_expires_at > NOW())
+    ) INTO premium_info
+    FROM public.user_profiles
+    WHERE id = p_user_id;
+
+    RETURN jsonb_build_object(
+        'success', true,
+        'user_id', p_user_id,
+        'payment_stats', stats,
+        'premium_info', premium_info
+    );
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- =====================================================
+-- 5. PERMISSIONS AND GRANTS
+-- =====================================================
+
+-- Grant execute permissions to authenticated users for client-side functions
+GRANT EXECUTE ON FUNCTION initiate_payment_idempotent(VARCHAR, UUID, UUID, payment_kind_enum, BIGINT, VARCHAR, JSONB) TO authenticated;
+GRANT EXECUTE ON FUNCTION update_idempotency_response(VARCHAR, UUID, JSONB, INTEGER) TO authenticated;
+GRANT EXECUTE ON FUNCTION get_payment_status(UUID, UUID) TO authenticated;
+GRANT EXECUTE ON FUNCTION get_pending_payments(UUID, INTEGER) TO authenticated;
+GRANT EXECUTE ON FUNCTION get_user_payment_stats(UUID, INTEGER) TO authenticated;
+
+-- Grant execute permissions to service role for backend functions
+GRANT EXECUTE ON FUNCTION confirm_payment(UUID, VARCHAR, VARCHAR, BIGINT) TO service_role;
+GRANT EXECUTE ON FUNCTION fail_payment(UUID, TEXT, BOOLEAN) TO service_role;
+GRANT EXECUTE ON FUNCTION cleanup_old_payment_data(INTEGER) TO service_role;
+
+-- Grant all functions to service role (for administrative access)
+GRANT EXECUTE ON ALL FUNCTIONS IN SCHEMA public TO service_role;
+
+-- =====================================================
+-- RPC HELPER FUNCTIONS MIGRATION COMPLETED
+-- =====================================================
+
+-- Log successful migration
+DO $$
+BEGIN
+    RAISE NOTICE 'RPC Helper Functions migration completed successfully at %', NOW();
+    RAISE NOTICE 'Created idempotency management functions';
+    RAISE NOTICE 'Created payment confirmation functions';
+    RAISE NOTICE 'Created payment status and query functions';
+    RAISE NOTICE 'Created utility and cleanup functions';
+    RAISE NOTICE 'Configured appropriate permissions for authenticated and service roles';
+END$$;

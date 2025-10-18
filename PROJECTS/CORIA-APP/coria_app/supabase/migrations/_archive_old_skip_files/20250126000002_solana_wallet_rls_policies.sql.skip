@@ -1,0 +1,405 @@
+-- =====================================================
+-- CORIA SOLANA WALLET RLS SECURITY POLICIES
+-- Migration: 20250126000002_solana_wallet_rls_policies.sql
+-- Version: 1.0
+-- Date: 2025-01-26
+-- Purpose: Row Level Security policies for Solana wallet system
+-- =====================================================
+
+-- =====================================================
+-- 1. ENABLE RLS ON ALL SOLANA TABLES
+-- =====================================================
+
+-- Enable RLS on all new Solana wallet tables
+ALTER TABLE public.solana_wallets ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.solana_payments ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.solana_ledger ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.payment_idempotency_keys ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.wallet_activities ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.premium_benefits_usage ENABLE ROW LEVEL SECURITY;
+
+-- =====================================================
+-- 2. SOLANA WALLETS RLS POLICIES
+-- =====================================================
+
+-- Users can view their own wallets
+CREATE POLICY "Users can view own wallets" ON public.solana_wallets
+    FOR SELECT USING (
+        auth.uid() = user_id
+    );
+
+-- Users can insert their own wallets (for external wallet connections)
+CREATE POLICY "Users can insert own wallets" ON public.solana_wallets
+    FOR INSERT WITH CHECK (
+        auth.uid() = user_id
+    );
+
+-- Users can update their own wallets (name, is_primary status)
+CREATE POLICY "Users can update own wallets" ON public.solana_wallets
+    FOR UPDATE USING (
+        auth.uid() = user_id
+    ) WITH CHECK (
+        auth.uid() = user_id AND
+        -- Prevent users from changing critical fields
+        OLD.public_key = NEW.public_key AND
+        OLD.type = NEW.type AND
+        OLD.kms_key_id = NEW.kms_key_id AND
+        OLD.derivation_path = NEW.derivation_path
+    );
+
+-- Service role can manage all wallets (for custodial wallet creation)
+CREATE POLICY "Service role can manage all wallets" ON public.solana_wallets
+    FOR ALL USING (
+        auth.role() = 'service_role'
+    );
+
+-- =====================================================
+-- 3. SOLANA PAYMENTS RLS POLICIES
+-- =====================================================
+
+-- Users can view their own payments
+CREATE POLICY "Users can view own payments" ON public.solana_payments
+    FOR SELECT USING (
+        auth.uid() = user_id
+    );
+
+-- Users can insert their own payments (for payment initiation)
+CREATE POLICY "Users can insert own payments" ON public.solana_payments
+    FOR INSERT WITH CHECK (
+        auth.uid() = user_id AND
+        -- Ensure the wallet belongs to the user
+        EXISTS (
+            SELECT 1 FROM public.solana_wallets
+            WHERE id = wallet_id AND user_id = auth.uid()
+        )
+    );
+
+-- Service role can manage all payments (for backend processing)
+CREATE POLICY "Service role can manage all payments" ON public.solana_payments
+    FOR ALL USING (
+        auth.role() = 'service_role'
+    );
+
+-- Anonymous users cannot access payments
+CREATE POLICY "Anonymous users cannot access payments" ON public.solana_payments
+    FOR ALL USING (
+        auth.uid() IS NOT NULL
+    );
+
+-- =====================================================
+-- 4. SOLANA LEDGER RLS POLICIES
+-- =====================================================
+
+-- Users can view their own ledger entries
+CREATE POLICY "Users can view own ledger" ON public.solana_ledger
+    FOR SELECT USING (
+        auth.uid() = user_id
+    );
+
+-- Service role can manage all ledger entries
+CREATE POLICY "Service role can manage ledger" ON public.solana_ledger
+    FOR ALL USING (
+        auth.role() = 'service_role'
+    );
+
+-- Users cannot directly insert/update/delete ledger entries
+-- (only service role for audit trail integrity)
+
+-- =====================================================
+-- 5. PAYMENT IDEMPOTENCY KEYS RLS POLICIES
+-- =====================================================
+
+-- Users can view their own idempotency keys
+CREATE POLICY "Users can view own idempotency keys" ON public.payment_idempotency_keys
+    FOR SELECT USING (
+        auth.uid() = user_id
+    );
+
+-- Users can insert their own idempotency keys
+CREATE POLICY "Users can insert own idempotency keys" ON public.payment_idempotency_keys
+    FOR INSERT WITH CHECK (
+        auth.uid() = user_id
+    );
+
+-- Users can update their own idempotency keys (for response caching)
+CREATE POLICY "Users can update own idempotency keys" ON public.payment_idempotency_keys
+    FOR UPDATE USING (
+        auth.uid() = user_id
+    ) WITH CHECK (
+        auth.uid() = user_id
+    );
+
+-- Service role can manage all idempotency keys
+CREATE POLICY "Service role can manage idempotency keys" ON public.payment_idempotency_keys
+    FOR ALL USING (
+        auth.role() = 'service_role'
+    );
+
+-- =====================================================
+-- 6. WALLET ACTIVITIES RLS POLICIES
+-- =====================================================
+
+-- Users can view their own wallet activities
+CREATE POLICY "Users can view own wallet activities" ON public.wallet_activities
+    FOR SELECT USING (
+        auth.uid() = user_id
+    );
+
+-- Users can insert their own wallet activities (for client-side logging)
+CREATE POLICY "Users can insert own wallet activities" ON public.wallet_activities
+    FOR INSERT WITH CHECK (
+        auth.uid() = user_id AND
+        -- Validate wallet ownership if wallet_id is provided
+        (wallet_id IS NULL OR EXISTS (
+            SELECT 1 FROM public.solana_wallets
+            WHERE id = wallet_id AND user_id = auth.uid()
+        ))
+    );
+
+-- Service role can manage all wallet activities
+CREATE POLICY "Service role can manage wallet activities" ON public.wallet_activities
+    FOR ALL USING (
+        auth.role() = 'service_role'
+    );
+
+-- =====================================================
+-- 7. PREMIUM BENEFITS USAGE RLS POLICIES
+-- =====================================================
+
+-- Users can view their own premium benefits usage
+CREATE POLICY "Users can view own premium benefits" ON public.premium_benefits_usage
+    FOR SELECT USING (
+        auth.uid() = user_id
+    );
+
+-- Users can insert their own premium benefits usage
+CREATE POLICY "Users can insert own premium benefits" ON public.premium_benefits_usage
+    FOR INSERT WITH CHECK (
+        auth.uid() = user_id
+    );
+
+-- Users can update their own premium benefits usage
+CREATE POLICY "Users can update own premium benefits" ON public.premium_benefits_usage
+    FOR UPDATE USING (
+        auth.uid() = user_id
+    ) WITH CHECK (
+        auth.uid() = user_id
+    );
+
+-- Service role can manage all premium benefits usage
+CREATE POLICY "Service role can manage premium benefits" ON public.premium_benefits_usage
+    FOR ALL USING (
+        auth.role() = 'service_role'
+    );
+
+-- =====================================================
+-- 8. ENHANCED USER PROFILES RLS POLICIES
+-- =====================================================
+
+-- Extend existing user_profiles policies for premium status
+-- (These should be added to existing RLS policies, not replace them)
+
+-- Policy for premium status visibility (existing policy enhancement)
+CREATE OR REPLACE POLICY "Users can view own profile" ON public.user_profiles
+    FOR SELECT USING (
+        auth.uid() = id
+    );
+
+-- Policy for premium status updates (existing policy enhancement)
+CREATE OR REPLACE POLICY "Users can update own profile" ON public.user_profiles
+    FOR UPDATE USING (
+        auth.uid() = id
+    ) WITH CHECK (
+        auth.uid() = id AND
+        -- Users cannot directly modify premium status (only service role)
+        (OLD.premium_status = NEW.premium_status OR auth.role() = 'service_role') AND
+        (OLD.premium_expires_at = NEW.premium_expires_at OR auth.role() = 'service_role') AND
+        (OLD.premium_activated_at = NEW.premium_activated_at OR auth.role() = 'service_role')
+    );
+
+-- Service role can manage premium status
+CREATE POLICY "Service role can manage user premium status" ON public.user_profiles
+    FOR UPDATE USING (
+        auth.role() = 'service_role'
+    );
+
+-- =====================================================
+-- 9. SECURITY FUNCTIONS
+-- =====================================================
+
+-- Function to validate Solana public key format
+CREATE OR REPLACE FUNCTION is_valid_solana_pubkey(pubkey TEXT)
+RETURNS BOOLEAN AS $$
+BEGIN
+    -- Solana public keys are 44 characters base58
+    RETURN pubkey ~ '^[1-9A-HJ-NP-Za-km-z]{44}$';
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- Function to validate Solana transaction signature format
+CREATE OR REPLACE FUNCTION is_valid_solana_signature(signature TEXT)
+RETURNS BOOLEAN AS $$
+BEGIN
+    -- Solana signatures are 88 characters base58
+    RETURN signature ~ '^[1-9A-HJ-NP-Za-km-z]{88}$';
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- =====================================================
+-- 10. VALIDATION CONSTRAINTS WITH SECURITY FUNCTIONS
+-- =====================================================
+
+-- Add validation constraints using security functions
+ALTER TABLE public.solana_wallets
+    ADD CONSTRAINT valid_solana_public_key
+    CHECK (is_valid_solana_pubkey(public_key));
+
+ALTER TABLE public.solana_payments
+    ADD CONSTRAINT valid_solana_signature
+    CHECK (tx_signature IS NULL OR is_valid_solana_signature(tx_signature));
+
+ALTER TABLE public.solana_payments
+    ADD CONSTRAINT valid_destination_address
+    CHECK (is_valid_solana_pubkey(destination_address));
+
+ALTER TABLE public.solana_ledger
+    ADD CONSTRAINT valid_ledger_signature
+    CHECK (tx_signature IS NULL OR is_valid_solana_signature(tx_signature));
+
+-- =====================================================
+-- 11. AUDIT LOGGING FUNCTION
+-- =====================================================
+
+-- Function to log sensitive operations for audit trail
+CREATE OR REPLACE FUNCTION log_sensitive_operation()
+RETURNS TRIGGER AS $$
+BEGIN
+    -- Log premium status changes
+    IF TG_TABLE_NAME = 'user_profiles' AND OLD.premium_status != NEW.premium_status THEN
+        INSERT INTO public.wallet_activities (
+            user_id,
+            wallet_id,
+            activity_type,
+            description,
+            metadata
+        ) VALUES (
+            NEW.id,
+            NULL,
+            'premium_status_changed',
+            'Premium status changed from ' || OLD.premium_status || ' to ' || NEW.premium_status,
+            jsonb_build_object(
+                'old_status', OLD.premium_status,
+                'new_status', NEW.premium_status,
+                'changed_by', current_setting('request.jwt.claims', true)::jsonb ->> 'sub',
+                'changed_at', NOW()
+            )
+        );
+    END IF;
+
+    -- Log payment status changes
+    IF TG_TABLE_NAME = 'solana_payments' AND OLD.status != NEW.status THEN
+        INSERT INTO public.wallet_activities (
+            user_id,
+            wallet_id,
+            activity_type,
+            description,
+            tx_signature,
+            amount_lamports,
+            metadata
+        ) VALUES (
+            NEW.user_id,
+            NEW.wallet_id,
+            'payment_status_changed',
+            'Payment status changed from ' || OLD.status || ' to ' || NEW.status,
+            NEW.tx_signature,
+            NEW.amount_lamports,
+            jsonb_build_object(
+                'payment_id', NEW.id,
+                'old_status', OLD.status,
+                'new_status', NEW.status,
+                'payment_kind', NEW.kind
+            )
+        );
+    END IF;
+
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- Apply audit logging triggers
+DROP TRIGGER IF EXISTS audit_premium_status_changes ON public.user_profiles;
+CREATE TRIGGER audit_premium_status_changes
+    AFTER UPDATE ON public.user_profiles
+    FOR EACH ROW EXECUTE FUNCTION log_sensitive_operation();
+
+DROP TRIGGER IF EXISTS audit_payment_status_changes ON public.solana_payments;
+CREATE TRIGGER audit_payment_status_changes
+    AFTER UPDATE ON public.solana_payments
+    FOR EACH ROW EXECUTE FUNCTION log_sensitive_operation();
+
+-- =====================================================
+-- 12. RLS POLICY TESTING HELPERS
+-- =====================================================
+
+-- Function to test RLS policies (development/testing only)
+CREATE OR REPLACE FUNCTION test_rls_policies(test_user_id UUID)
+RETURNS TABLE(
+    table_name TEXT,
+    operation TEXT,
+    success BOOLEAN,
+    error_message TEXT
+) AS $$
+DECLARE
+    test_result RECORD;
+BEGIN
+    -- This function would contain RLS policy tests
+    -- Implementation details would depend on specific testing requirements
+
+    RETURN QUERY SELECT
+        'solana_wallets'::TEXT,
+        'SELECT'::TEXT,
+        true::BOOLEAN,
+        ''::TEXT;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- =====================================================
+-- 13. GRANT PERMISSIONS
+-- =====================================================
+
+-- Grant necessary permissions for authenticated users
+GRANT SELECT, INSERT, UPDATE ON public.solana_wallets TO authenticated;
+GRANT SELECT, INSERT ON public.solana_payments TO authenticated;
+GRANT SELECT ON public.solana_ledger TO authenticated;
+GRANT SELECT, INSERT, UPDATE ON public.payment_idempotency_keys TO authenticated;
+GRANT SELECT, INSERT ON public.wallet_activities TO authenticated;
+GRANT SELECT, INSERT, UPDATE ON public.premium_benefits_usage TO authenticated;
+
+-- Grant full access to service role
+GRANT ALL ON public.solana_wallets TO service_role;
+GRANT ALL ON public.solana_payments TO service_role;
+GRANT ALL ON public.solana_ledger TO service_role;
+GRANT ALL ON public.payment_idempotency_keys TO service_role;
+GRANT ALL ON public.wallet_activities TO service_role;
+GRANT ALL ON public.premium_benefits_usage TO service_role;
+
+-- Grant execute permissions on functions
+GRANT EXECUTE ON FUNCTION is_valid_solana_pubkey(TEXT) TO authenticated, service_role;
+GRANT EXECUTE ON FUNCTION is_valid_solana_signature(TEXT) TO authenticated, service_role;
+GRANT EXECUTE ON FUNCTION cleanup_expired_idempotency_keys() TO service_role;
+GRANT EXECUTE ON FUNCTION test_rls_policies(UUID) TO service_role;
+
+-- =====================================================
+-- RLS POLICIES MIGRATION COMPLETED
+-- =====================================================
+
+-- Log successful RLS setup
+DO $$
+BEGIN
+    RAISE NOTICE 'Solana Wallet RLS Policies migration completed successfully at %', NOW();
+    RAISE NOTICE 'RLS enabled on all Solana wallet tables';
+    RAISE NOTICE 'User isolation policies configured';
+    RAISE NOTICE 'Service role administrative access configured';
+    RAISE NOTICE 'Security validation functions created';
+    RAISE NOTICE 'Audit logging triggers configured';
+END$$;

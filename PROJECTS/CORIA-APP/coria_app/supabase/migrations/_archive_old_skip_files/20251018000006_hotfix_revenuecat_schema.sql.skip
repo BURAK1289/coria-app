@@ -1,0 +1,728 @@
+-- ========================================
+-- HOTFIX: REVENUECAT SCHEMA & RPC FUNCTIONS
+-- ========================================
+-- Date: 2025-10-18
+-- Purpose: Add missing columns, tables, and RPC functions for RevenueCat integration
+-- Priority: P0 Critical - Fixes schema mismatch between local and remote
+-- Safety: Idempotent, additive-only changes (no destructive operations)
+
+-- ========================================
+-- SECTION 1: ADD MISSING COLUMNS TO PREMIUM_SUBSCRIPTIONS
+-- ========================================
+-- Safe column additions with exception handling for existing columns
+
+DO $$
+BEGIN
+  -- Add subscription_id if not exists
+  IF NOT EXISTS (
+    SELECT 1 FROM information_schema.columns
+    WHERE table_schema = 'public'
+    AND table_name = 'premium_subscriptions'
+    AND column_name = 'subscription_id'
+  ) THEN
+    ALTER TABLE premium_subscriptions ADD COLUMN subscription_id TEXT;
+  END IF;
+
+  -- Add subscription_type if not exists
+  IF NOT EXISTS (
+    SELECT 1 FROM information_schema.columns
+    WHERE table_schema = 'public'
+    AND table_name = 'premium_subscriptions'
+    AND column_name = 'subscription_type'
+  ) THEN
+    ALTER TABLE premium_subscriptions ADD COLUMN subscription_type TEXT;
+  END IF;
+
+  -- Add original_transaction_id if not exists
+  IF NOT EXISTS (
+    SELECT 1 FROM information_schema.columns
+    WHERE table_schema = 'public'
+    AND table_name = 'premium_subscriptions'
+    AND column_name = 'original_transaction_id'
+  ) THEN
+    ALTER TABLE premium_subscriptions ADD COLUMN original_transaction_id TEXT;
+  END IF;
+
+  -- Add auto_renew_enabled if not exists
+  IF NOT EXISTS (
+    SELECT 1 FROM information_schema.columns
+    WHERE table_schema = 'public'
+    AND table_name = 'premium_subscriptions'
+    AND column_name = 'auto_renew_enabled'
+  ) THEN
+    ALTER TABLE premium_subscriptions ADD COLUMN auto_renew_enabled BOOLEAN DEFAULT true;
+  END IF;
+
+  -- Add billing_issues_detected_at if not exists
+  IF NOT EXISTS (
+    SELECT 1 FROM information_schema.columns
+    WHERE table_schema = 'public'
+    AND table_name = 'premium_subscriptions'
+    AND column_name = 'billing_issues_detected_at'
+  ) THEN
+    ALTER TABLE premium_subscriptions ADD COLUMN billing_issues_detected_at TIMESTAMPTZ;
+  END IF;
+
+  -- Add grace_period_expires_at if not exists
+  IF NOT EXISTS (
+    SELECT 1 FROM information_schema.columns
+    WHERE table_schema = 'public'
+    AND table_name = 'premium_subscriptions'
+    AND column_name = 'grace_period_expires_at'
+  ) THEN
+    ALTER TABLE premium_subscriptions ADD COLUMN grace_period_expires_at TIMESTAMPTZ;
+  END IF;
+
+  -- Add cancellation_reason if not exists
+  IF NOT EXISTS (
+    SELECT 1 FROM information_schema.columns
+    WHERE table_schema = 'public'
+    AND table_name = 'premium_subscriptions'
+    AND column_name = 'cancellation_reason'
+  ) THEN
+    ALTER TABLE premium_subscriptions ADD COLUMN cancellation_reason TEXT;
+  END IF;
+
+  -- Add store if not exists
+  IF NOT EXISTS (
+    SELECT 1 FROM information_schema.columns
+    WHERE table_schema = 'public'
+    AND table_name = 'premium_subscriptions'
+    AND column_name = 'store'
+  ) THEN
+    ALTER TABLE premium_subscriptions ADD COLUMN store TEXT;
+  END IF;
+
+  -- Add product_id if not exists
+  IF NOT EXISTS (
+    SELECT 1 FROM information_schema.columns
+    WHERE table_schema = 'public'
+    AND table_name = 'premium_subscriptions'
+    AND column_name = 'product_id'
+  ) THEN
+    ALTER TABLE premium_subscriptions ADD COLUMN product_id TEXT;
+  END IF;
+
+  -- Add is_trial if not exists
+  IF NOT EXISTS (
+    SELECT 1 FROM information_schema.columns
+    WHERE table_schema = 'public'
+    AND table_name = 'premium_subscriptions'
+    AND column_name = 'is_trial'
+  ) THEN
+    ALTER TABLE premium_subscriptions ADD COLUMN is_trial BOOLEAN DEFAULT false;
+  END IF;
+
+  -- Add trial_started_at if not exists
+  IF NOT EXISTS (
+    SELECT 1 FROM information_schema.columns
+    WHERE table_schema = 'public'
+    AND table_name = 'premium_subscriptions'
+    AND column_name = 'trial_started_at'
+  ) THEN
+    ALTER TABLE premium_subscriptions ADD COLUMN trial_started_at TIMESTAMPTZ;
+  END IF;
+
+  -- Add refunded_at if not exists
+  IF NOT EXISTS (
+    SELECT 1 FROM information_schema.columns
+    WHERE table_schema = 'public'
+    AND table_name = 'premium_subscriptions'
+    AND column_name = 'refunded_at'
+  ) THEN
+    ALTER TABLE premium_subscriptions ADD COLUMN refunded_at TIMESTAMPTZ;
+  END IF;
+
+  -- Add refund_reason if not exists
+  IF NOT EXISTS (
+    SELECT 1 FROM information_schema.columns
+    WHERE table_schema = 'public'
+    AND table_name = 'premium_subscriptions'
+    AND column_name = 'refund_reason'
+  ) THEN
+    ALTER TABLE premium_subscriptions ADD COLUMN refund_reason TEXT;
+  END IF;
+
+END $$;
+
+-- Add indexes for new columns
+CREATE INDEX IF NOT EXISTS idx_premium_subs_subscription_id
+  ON premium_subscriptions(subscription_id);
+
+CREATE INDEX IF NOT EXISTS idx_premium_subs_original_tx
+  ON premium_subscriptions(original_transaction_id);
+
+CREATE INDEX IF NOT EXISTS idx_premium_subs_store
+  ON premium_subscriptions(store);
+
+CREATE INDEX IF NOT EXISTS idx_premium_subs_grace_period
+  ON premium_subscriptions(grace_period_expires_at)
+  WHERE grace_period_expires_at IS NOT NULL;
+
+-- ========================================
+-- SECTION 2: REVENUECAT WEBHOOK EVENTS TABLE
+-- ========================================
+-- Idempotency tracking for webhook events
+
+CREATE TABLE IF NOT EXISTS revenuecat_webhook_events (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  event_id TEXT NOT NULL UNIQUE, -- RevenueCat event.id for idempotency
+  event_type TEXT NOT NULL, -- INITIAL_PURCHASE, RENEWAL, CANCELLATION, etc.
+  app_user_id TEXT NOT NULL, -- RevenueCat app_user_id
+  product_id TEXT NOT NULL,
+  subscription_id TEXT,
+  transaction_id TEXT,
+
+  -- Event payload and processing
+  event_payload JSONB NOT NULL,
+  processed_at TIMESTAMPTZ,
+  processing_error TEXT,
+  retry_count INTEGER NOT NULL DEFAULT 0,
+
+  -- Timestamps
+  event_timestamp TIMESTAMPTZ NOT NULL,
+  received_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+
+  -- Constraints
+  CONSTRAINT valid_event_type CHECK (
+    event_type IN (
+      'INITIAL_PURCHASE',
+      'RENEWAL',
+      'CANCELLATION',
+      'EXPIRATION',
+      'BILLING_ISSUE',
+      'REFUND',
+      'PRODUCT_CHANGE',
+      'UNCANCELLATION'
+    )
+  )
+);
+
+-- Indexes for webhook events
+CREATE INDEX IF NOT EXISTS idx_webhook_events_user
+  ON revenuecat_webhook_events(app_user_id);
+
+CREATE INDEX IF NOT EXISTS idx_webhook_events_subscription
+  ON revenuecat_webhook_events(subscription_id);
+
+CREATE INDEX IF NOT EXISTS idx_webhook_events_type
+  ON revenuecat_webhook_events(event_type);
+
+CREATE INDEX IF NOT EXISTS idx_webhook_events_processed
+  ON revenuecat_webhook_events(processed_at)
+  WHERE processed_at IS NULL;
+
+-- ========================================
+-- SECTION 3: PLAN CHANGE HISTORY TABLE
+-- ========================================
+-- Track subscription upgrades/downgrades
+
+CREATE TABLE IF NOT EXISTS plan_change_history (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+  subscription_id TEXT NOT NULL,
+
+  -- Change details
+  old_product_id TEXT,
+  new_product_id TEXT NOT NULL,
+  change_type TEXT NOT NULL, -- upgrade, downgrade, resubscribe
+  effective_date TIMESTAMPTZ NOT NULL,
+
+  -- Metadata
+  changed_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  revenuecat_event_id TEXT,
+
+  CONSTRAINT valid_change_type CHECK (
+    change_type IN ('upgrade', 'downgrade', 'resubscribe', 'initial')
+  )
+);
+
+CREATE INDEX IF NOT EXISTS idx_plan_changes_user
+  ON plan_change_history(user_id);
+
+CREATE INDEX IF NOT EXISTS idx_plan_changes_subscription
+  ON plan_change_history(subscription_id);
+
+-- ========================================
+-- SECTION 4: RPC FUNCTION - ACTIVATE PREMIUM
+-- ========================================
+
+CREATE OR REPLACE FUNCTION activate_premium_atomic(
+  p_user_id UUID,
+  p_subscription_id TEXT,
+  p_product_id TEXT,
+  p_purchase_date TIMESTAMPTZ,
+  p_expiration_date TIMESTAMPTZ,
+  p_original_transaction_id TEXT,
+  p_store TEXT DEFAULT 'app_store',
+  p_is_trial BOOLEAN DEFAULT false
+)
+RETURNS JSONB
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = public
+AS $$
+DECLARE
+  v_result JSONB;
+  v_existing_sub RECORD;
+BEGIN
+  -- Check for existing subscription
+  SELECT * INTO v_existing_sub
+  FROM premium_subscriptions
+  WHERE user_id = p_user_id
+  FOR UPDATE;
+
+  IF v_existing_sub.id IS NOT NULL THEN
+    -- Update existing subscription
+    UPDATE premium_subscriptions
+    SET
+      subscription_id = p_subscription_id,
+      product_id = p_product_id,
+      is_active = true,
+      started_at = COALESCE(started_at, p_purchase_date),
+      expires_at = p_expiration_date,
+      original_transaction_id = p_original_transaction_id,
+      auto_renew_enabled = true,
+      store = p_store,
+      is_trial = p_is_trial,
+      trial_started_at = CASE WHEN p_is_trial THEN p_purchase_date ELSE trial_started_at END,
+      billing_issues_detected_at = NULL,
+      grace_period_expires_at = NULL,
+      updated_at = NOW()
+    WHERE user_id = p_user_id;
+
+    v_result = jsonb_build_object(
+      'success', true,
+      'action', 'updated',
+      'user_id', p_user_id,
+      'subscription_id', p_subscription_id,
+      'expires_at', p_expiration_date
+    );
+  ELSE
+    -- Insert new subscription
+    INSERT INTO premium_subscriptions (
+      user_id,
+      subscription_id,
+      product_id,
+      is_active,
+      started_at,
+      expires_at,
+      original_transaction_id,
+      auto_renew_enabled,
+      store,
+      is_trial,
+      trial_started_at
+    ) VALUES (
+      p_user_id,
+      p_subscription_id,
+      p_product_id,
+      true,
+      p_purchase_date,
+      p_expiration_date,
+      p_original_transaction_id,
+      true,
+      p_store,
+      p_is_trial,
+      CASE WHEN p_is_trial THEN p_purchase_date ELSE NULL END
+    );
+
+    v_result = jsonb_build_object(
+      'success', true,
+      'action', 'created',
+      'user_id', p_user_id,
+      'subscription_id', p_subscription_id,
+      'expires_at', p_expiration_date
+    );
+  END IF;
+
+  RETURN v_result;
+
+EXCEPTION
+  WHEN OTHERS THEN
+    RETURN jsonb_build_object(
+      'success', false,
+      'error', SQLERRM,
+      'user_id', p_user_id
+    );
+END;
+$$;
+
+-- ========================================
+-- SECTION 5: RPC FUNCTION - CANCEL PREMIUM
+-- ========================================
+
+CREATE OR REPLACE FUNCTION cancel_premium_atomic(
+  p_user_id UUID,
+  p_cancellation_reason TEXT DEFAULT NULL,
+  p_cancelled_at TIMESTAMPTZ DEFAULT NOW()
+)
+RETURNS JSONB
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = public
+AS $$
+DECLARE
+  v_result JSONB;
+  v_existing_sub RECORD;
+BEGIN
+  -- Get existing subscription
+  SELECT * INTO v_existing_sub
+  FROM premium_subscriptions
+  WHERE user_id = p_user_id
+  FOR UPDATE;
+
+  IF v_existing_sub.id IS NULL THEN
+    RETURN jsonb_build_object(
+      'success', false,
+      'error', 'No active subscription found',
+      'user_id', p_user_id
+    );
+  END IF;
+
+  -- Update subscription (keep active until expiration)
+  UPDATE premium_subscriptions
+  SET
+    auto_renew_enabled = false,
+    cancellation_reason = p_cancellation_reason,
+    updated_at = NOW()
+  WHERE user_id = p_user_id;
+
+  v_result = jsonb_build_object(
+    'success', true,
+    'action', 'cancelled',
+    'user_id', p_user_id,
+    'subscription_id', v_existing_sub.subscription_id,
+    'expires_at', v_existing_sub.expires_at,
+    'auto_renew_enabled', false
+  );
+
+  RETURN v_result;
+
+EXCEPTION
+  WHEN OTHERS THEN
+    RETURN jsonb_build_object(
+      'success', false,
+      'error', SQLERRM,
+      'user_id', p_user_id
+    );
+END;
+$$;
+
+-- ========================================
+-- SECTION 6: RPC FUNCTION - EXPIRE PREMIUM
+-- ========================================
+
+CREATE OR REPLACE FUNCTION expire_premium_atomic(
+  p_user_id UUID,
+  p_expired_at TIMESTAMPTZ DEFAULT NOW()
+)
+RETURNS JSONB
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = public
+AS $$
+DECLARE
+  v_result JSONB;
+  v_existing_sub RECORD;
+BEGIN
+  -- Get existing subscription
+  SELECT * INTO v_existing_sub
+  FROM premium_subscriptions
+  WHERE user_id = p_user_id
+  FOR UPDATE;
+
+  IF v_existing_sub.id IS NULL THEN
+    RETURN jsonb_build_object(
+      'success', false,
+      'error', 'No subscription found',
+      'user_id', p_user_id
+    );
+  END IF;
+
+  -- Expire the subscription
+  UPDATE premium_subscriptions
+  SET
+    is_active = false,
+    expires_at = p_expired_at,
+    auto_renew_enabled = false,
+    updated_at = NOW()
+  WHERE user_id = p_user_id;
+
+  v_result = jsonb_build_object(
+    'success', true,
+    'action', 'expired',
+    'user_id', p_user_id,
+    'subscription_id', v_existing_sub.subscription_id,
+    'expired_at', p_expired_at
+  );
+
+  RETURN v_result;
+
+EXCEPTION
+  WHEN OTHERS THEN
+    RETURN jsonb_build_object(
+      'success', false,
+      'error', SQLERRM,
+      'user_id', p_user_id
+    );
+END;
+$$;
+
+-- ========================================
+-- SECTION 7: RPC FUNCTION - REFUND PREMIUM
+-- ========================================
+
+CREATE OR REPLACE FUNCTION refund_premium_atomic(
+  p_user_id UUID,
+  p_refunded_at TIMESTAMPTZ DEFAULT NOW(),
+  p_refund_reason TEXT DEFAULT NULL
+)
+RETURNS JSONB
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = public
+AS $$
+DECLARE
+  v_result JSONB;
+  v_existing_sub RECORD;
+BEGIN
+  -- Get existing subscription
+  SELECT * INTO v_existing_sub
+  FROM premium_subscriptions
+  WHERE user_id = p_user_id
+  FOR UPDATE;
+
+  IF v_existing_sub.id IS NULL THEN
+    RETURN jsonb_build_object(
+      'success', false,
+      'error', 'No subscription found',
+      'user_id', p_user_id
+    );
+  END IF;
+
+  -- Process refund and deactivate
+  UPDATE premium_subscriptions
+  SET
+    is_active = false,
+    refunded_at = p_refunded_at,
+    refund_reason = p_refund_reason,
+    auto_renew_enabled = false,
+    updated_at = NOW()
+  WHERE user_id = p_user_id;
+
+  v_result = jsonb_build_object(
+    'success', true,
+    'action', 'refunded',
+    'user_id', p_user_id,
+    'subscription_id', v_existing_sub.subscription_id,
+    'refunded_at', p_refunded_at
+  );
+
+  RETURN v_result;
+
+EXCEPTION
+  WHEN OTHERS THEN
+    RETURN jsonb_build_object(
+      'success', false,
+      'error', SQLERRM,
+      'user_id', p_user_id
+    );
+END;
+$$;
+
+-- ========================================
+-- SECTION 8: RPC FUNCTION - ENTER GRACE PERIOD
+-- ========================================
+
+CREATE OR REPLACE FUNCTION enter_grace_period_atomic(
+  p_user_id UUID,
+  p_grace_period_days INTEGER DEFAULT 16,
+  p_billing_issue_detected_at TIMESTAMPTZ DEFAULT NOW()
+)
+RETURNS JSONB
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = public
+AS $$
+DECLARE
+  v_result JSONB;
+  v_existing_sub RECORD;
+  v_grace_expires_at TIMESTAMPTZ;
+BEGIN
+  -- Calculate grace period expiration (Apple standard: 16 days)
+  v_grace_expires_at := p_billing_issue_detected_at + (p_grace_period_days || ' days')::INTERVAL;
+
+  -- Get existing subscription
+  SELECT * INTO v_existing_sub
+  FROM premium_subscriptions
+  WHERE user_id = p_user_id
+  FOR UPDATE;
+
+  IF v_existing_sub.id IS NULL THEN
+    RETURN jsonb_build_object(
+      'success', false,
+      'error', 'No subscription found',
+      'user_id', p_user_id
+    );
+  END IF;
+
+  -- Enter grace period (keep subscription active)
+  UPDATE premium_subscriptions
+  SET
+    billing_issues_detected_at = p_billing_issue_detected_at,
+    grace_period_expires_at = v_grace_expires_at,
+    updated_at = NOW()
+  WHERE user_id = p_user_id;
+
+  v_result = jsonb_build_object(
+    'success', true,
+    'action', 'grace_period_started',
+    'user_id', p_user_id,
+    'subscription_id', v_existing_sub.subscription_id,
+    'grace_expires_at', v_grace_expires_at,
+    'grace_period_days', p_grace_period_days
+  );
+
+  RETURN v_result;
+
+EXCEPTION
+  WHEN OTHERS THEN
+    RETURN jsonb_build_object(
+      'success', false,
+      'error', SQLERRM,
+      'user_id', p_user_id
+    );
+END;
+$$;
+
+-- ========================================
+-- SECTION 9: RPC FUNCTION - RESOLVE GRACE PERIOD
+-- ========================================
+
+CREATE OR REPLACE FUNCTION resolve_grace_period_atomic(
+  p_user_id UUID,
+  p_resolution TEXT, -- 'recovered' or 'failed'
+  p_resolved_at TIMESTAMPTZ DEFAULT NOW()
+)
+RETURNS JSONB
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = public
+AS $$
+DECLARE
+  v_result JSONB;
+  v_existing_sub RECORD;
+BEGIN
+  -- Validate resolution type
+  IF p_resolution NOT IN ('recovered', 'failed') THEN
+    RETURN jsonb_build_object(
+      'success', false,
+      'error', 'Invalid resolution type. Must be recovered or failed',
+      'user_id', p_user_id
+    );
+  END IF;
+
+  -- Get existing subscription
+  SELECT * INTO v_existing_sub
+  FROM premium_subscriptions
+  WHERE user_id = p_user_id
+  FOR UPDATE;
+
+  IF v_existing_sub.id IS NULL THEN
+    RETURN jsonb_build_object(
+      'success', false,
+      'error', 'No subscription found',
+      'user_id', p_user_id
+    );
+  END IF;
+
+  IF p_resolution = 'recovered' THEN
+    -- Billing issue resolved, clear grace period
+    UPDATE premium_subscriptions
+    SET
+      billing_issues_detected_at = NULL,
+      grace_period_expires_at = NULL,
+      is_active = true,
+      auto_renew_enabled = true,
+      updated_at = NOW()
+    WHERE user_id = p_user_id;
+
+    v_result = jsonb_build_object(
+      'success', true,
+      'action', 'grace_period_recovered',
+      'user_id', p_user_id,
+      'subscription_id', v_existing_sub.subscription_id
+    );
+  ELSE
+    -- Grace period expired, deactivate subscription
+    UPDATE premium_subscriptions
+    SET
+      is_active = false,
+      auto_renew_enabled = false,
+      expires_at = p_resolved_at,
+      updated_at = NOW()
+    WHERE user_id = p_user_id;
+
+    v_result = jsonb_build_object(
+      'success', true,
+      'action', 'grace_period_failed',
+      'user_id', p_user_id,
+      'subscription_id', v_existing_sub.subscription_id,
+      'deactivated_at', p_resolved_at
+    );
+  END IF;
+
+  RETURN v_result;
+
+EXCEPTION
+  WHEN OTHERS THEN
+    RETURN jsonb_build_object(
+      'success', false,
+      'error', SQLERRM,
+      'user_id', p_user_id
+    );
+END;
+$$;
+
+-- ========================================
+-- SECTION 10: ENABLE ROW LEVEL SECURITY
+-- ========================================
+
+-- Enable RLS on new tables
+ALTER TABLE revenuecat_webhook_events ENABLE ROW LEVEL SECURITY;
+ALTER TABLE plan_change_history ENABLE ROW LEVEL SECURITY;
+
+-- Policies for webhook events (service role only)
+CREATE POLICY "Service role can manage webhook events"
+  ON revenuecat_webhook_events
+  FOR ALL
+  TO service_role
+  USING (true)
+  WITH CHECK (true);
+
+-- Policies for plan change history (users can view their own)
+CREATE POLICY "Users can view own plan changes"
+  ON plan_change_history
+  FOR SELECT
+  TO authenticated
+  USING (auth.uid() = user_id);
+
+CREATE POLICY "Service role can manage plan changes"
+  ON plan_change_history
+  FOR ALL
+  TO service_role
+  USING (true)
+  WITH CHECK (true);
+
+-- ========================================
+-- MIGRATION COMPLETE
+-- ========================================
+-- This migration adds:
+-- ✅ 13 missing columns to premium_subscriptions
+-- ✅ revenuecat_webhook_events table for idempotency
+-- ✅ plan_change_history table for upgrade/downgrade tracking
+-- ✅ 6 RPC functions for atomic subscription operations
+-- ✅ Performance indexes
+-- ✅ Row-level security policies

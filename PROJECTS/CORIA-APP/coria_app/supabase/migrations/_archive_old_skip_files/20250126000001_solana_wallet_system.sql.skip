@@ -1,0 +1,445 @@
+-- =====================================================
+-- CORIA SOLANA WALLET & PREMIUM SYSTEM
+-- Migration: 20250126000001_solana_wallet_system.sql
+-- Version: 1.0
+-- Date: 2025-01-26
+-- Purpose: Solana wallet integration with custodial/external wallets and premium payments
+-- =====================================================
+
+-- Extensions for Solana wallet system
+CREATE EXTENSION IF NOT EXISTS "pgcrypto";
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+-- =====================================================
+-- 1. CUSTOM TYPES FOR SOLANA SYSTEM
+-- =====================================================
+
+-- Premium status enumeration
+DO $$
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'premium_status_enum') THEN
+        CREATE TYPE premium_status_enum AS ENUM ('none', 'active', 'expired');
+    END IF;
+END$$;
+
+-- Wallet type enumeration
+DO $$
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'wallet_type_enum') THEN
+        CREATE TYPE wallet_type_enum AS ENUM ('custodial', 'external');
+    END IF;
+END$$;
+
+-- Payment kind enumeration
+DO $$
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'payment_kind_enum') THEN
+        CREATE TYPE payment_kind_enum AS ENUM ('donation', 'premium');
+    END IF;
+END$$;
+
+-- Payment status enumeration
+DO $$
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'payment_status_enum') THEN
+        CREATE TYPE payment_status_enum AS ENUM ('pending', 'confirmed', 'failed', 'refunded');
+    END IF;
+END$$;
+
+-- =====================================================
+-- 2. EXTEND USER PROFILES WITH PREMIUM STATUS
+-- =====================================================
+
+-- Add premium status fields to existing user_profiles table
+DO $$
+BEGIN
+    -- Add premium_status column if it doesn't exist
+    IF NOT EXISTS (
+        SELECT 1 FROM information_schema.columns
+        WHERE table_name = 'user_profiles'
+        AND column_name = 'premium_status'
+    ) THEN
+        ALTER TABLE public.user_profiles
+        ADD COLUMN premium_status premium_status_enum DEFAULT 'none';
+    END IF;
+
+    -- Add premium_expires_at column if it doesn't exist
+    IF NOT EXISTS (
+        SELECT 1 FROM information_schema.columns
+        WHERE table_name = 'user_profiles'
+        AND column_name = 'premium_expires_at'
+    ) THEN
+        ALTER TABLE public.user_profiles
+        ADD COLUMN premium_expires_at TIMESTAMP WITH TIME ZONE NULL;
+    END IF;
+
+    -- Add premium_activated_at column for tracking
+    IF NOT EXISTS (
+        SELECT 1 FROM information_schema.columns
+        WHERE table_name = 'user_profiles'
+        AND column_name = 'premium_activated_at'
+    ) THEN
+        ALTER TABLE public.user_profiles
+        ADD COLUMN premium_activated_at TIMESTAMP WITH TIME ZONE NULL;
+    END IF;
+END$$;
+
+-- =====================================================
+-- 3. SOLANA WALLETS TABLE
+-- =====================================================
+
+CREATE TABLE IF NOT EXISTS public.solana_wallets (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+
+    -- User association
+    user_id UUID NOT NULL REFERENCES public.user_profiles(id) ON DELETE CASCADE,
+
+    -- Wallet details
+    public_key VARCHAR(44) UNIQUE NOT NULL,
+    type wallet_type_enum NOT NULL,
+    provider VARCHAR(50) NULL, -- 'phantom', 'backpack', 'custodial'
+    is_primary BOOLEAN DEFAULT FALSE,
+
+    -- Wallet metadata
+    name VARCHAR(100) NULL, -- User-defined wallet name
+    balance_lamports BIGINT DEFAULT 0,
+    last_balance_update TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+
+    -- KMS/Security (for custodial wallets)
+    kms_key_id VARCHAR(255) NULL, -- Reference to KMS key
+    derivation_path VARCHAR(100) NULL, -- BIP44 path: m/44'/501'/account'/0/0
+
+    -- Status and metadata
+    is_active BOOLEAN DEFAULT TRUE,
+    metadata JSONB DEFAULT '{}',
+
+    -- Timestamps
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+
+    -- Constraints
+    CONSTRAINT unique_primary_wallet_per_user
+        EXCLUDE (user_id WITH =) WHERE (is_primary = true),
+    CONSTRAINT valid_provider
+        CHECK (
+            (type = 'custodial' AND provider = 'custodial') OR
+            (type = 'external' AND provider IN ('phantom', 'backpack'))
+        )
+);
+
+-- =====================================================
+-- 4. SOLANA PAYMENTS TABLE
+-- =====================================================
+
+CREATE TABLE IF NOT EXISTS public.solana_payments (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+
+    -- User and payment details
+    user_id UUID NOT NULL REFERENCES public.user_profiles(id) ON DELETE CASCADE,
+    wallet_id UUID NOT NULL REFERENCES public.solana_wallets(id) ON DELETE RESTRICT,
+
+    -- Payment information
+    kind payment_kind_enum NOT NULL,
+    amount_lamports BIGINT NOT NULL CHECK (amount_lamports > 0),
+    amount_sol DECIMAL(20,9) GENERATED ALWAYS AS (amount_lamports::DECIMAL / 1000000000) STORED,
+
+    -- Solana transaction details
+    tx_signature VARCHAR(88) UNIQUE NULL,
+    blockhash VARCHAR(44) NULL,
+    slot BIGINT NULL,
+
+    -- Payment status
+    status payment_status_enum DEFAULT 'pending',
+
+    -- Destination addresses
+    destination_address VARCHAR(44) NOT NULL, -- donation_pool or premium_pool
+
+    -- Processing metadata
+    confirmation_attempts INTEGER DEFAULT 0,
+    last_confirmation_check TIMESTAMP WITH TIME ZONE NULL,
+    error_message TEXT NULL,
+
+    -- Business metadata
+    metadata JSONB DEFAULT '{}',
+
+    -- Timestamps
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    confirmed_at TIMESTAMP WITH TIME ZONE NULL,
+    failed_at TIMESTAMP WITH TIME ZONE NULL,
+
+    -- Constraints
+    CONSTRAINT valid_amount CHECK (amount_lamports > 0),
+    CONSTRAINT confirmed_payments_have_signature
+        CHECK (status != 'confirmed' OR tx_signature IS NOT NULL),
+    CONSTRAINT failed_payments_have_error
+        CHECK (status != 'failed' OR error_message IS NOT NULL)
+);
+
+-- =====================================================
+-- 5. TRANSACTION LEDGER TABLE
+-- =====================================================
+
+CREATE TABLE IF NOT EXISTS public.solana_ledger (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+
+    -- References
+    user_id UUID NULL REFERENCES public.user_profiles(id) ON DELETE SET NULL,
+    wallet_id UUID NULL REFERENCES public.solana_wallets(id) ON DELETE SET NULL,
+    payment_id UUID NULL REFERENCES public.solana_payments(id) ON DELETE SET NULL,
+
+    -- Ledger entry details
+    delta_lamports BIGINT NOT NULL, -- Positive for incoming, negative for outgoing
+    balance_before BIGINT NULL,
+    balance_after BIGINT NULL,
+
+    -- Transaction context
+    reason VARCHAR(255) NOT NULL, -- 'donation_sent', 'premium_payment', 'balance_update', etc.
+    tx_signature VARCHAR(88) NULL,
+
+    -- Metadata
+    metadata JSONB DEFAULT '{}',
+
+    -- Timestamps
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+
+    -- Constraints
+    CONSTRAINT ledger_reason_check
+        CHECK (reason IN (
+            'wallet_created', 'balance_update', 'donation_sent', 'premium_payment',
+            'payment_refund', 'external_transfer_in', 'external_transfer_out'
+        ))
+);
+
+-- =====================================================
+-- 6. IDEMPOTENCY KEYS TABLE
+-- =====================================================
+
+CREATE TABLE IF NOT EXISTS public.payment_idempotency_keys (
+    key VARCHAR(255) PRIMARY KEY,
+    user_id UUID NOT NULL REFERENCES public.user_profiles(id) ON DELETE CASCADE,
+    payment_id UUID NULL REFERENCES public.solana_payments(id) ON DELETE CASCADE,
+
+    -- Response caching
+    response_data JSONB NOT NULL,
+    http_status INTEGER DEFAULT 200,
+
+    -- Expiration
+    expires_at TIMESTAMP WITH TIME ZONE DEFAULT (NOW() + INTERVAL '24 hours'),
+
+    -- Timestamps
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+
+    -- Constraints
+    CONSTRAINT valid_http_status CHECK (http_status >= 200 AND http_status < 600)
+);
+
+-- =====================================================
+-- 7. WALLET ACTIVITY LOG
+-- =====================================================
+
+CREATE TABLE IF NOT EXISTS public.wallet_activities (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+
+    -- References
+    user_id UUID NOT NULL REFERENCES public.user_profiles(id) ON DELETE CASCADE,
+    wallet_id UUID NULL REFERENCES public.solana_wallets(id) ON DELETE SET NULL,
+
+    -- Activity details
+    activity_type VARCHAR(50) NOT NULL,
+    description TEXT NULL,
+
+    -- Transaction reference
+    tx_signature VARCHAR(88) NULL,
+    amount_lamports BIGINT NULL,
+
+    -- Context metadata
+    metadata JSONB DEFAULT '{}',
+    user_agent TEXT NULL,
+    ip_address INET NULL,
+
+    -- Timestamps
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+
+    -- Constraints
+    CONSTRAINT activity_type_check
+        CHECK (activity_type IN (
+            'wallet_created', 'wallet_connected', 'wallet_disconnected',
+            'balance_refreshed', 'payment_initiated', 'payment_confirmed',
+            'payment_failed', 'external_transaction'
+        ))
+);
+
+-- =====================================================
+-- 8. PREMIUM BENEFITS TRACKING
+-- =====================================================
+
+CREATE TABLE IF NOT EXISTS public.premium_benefits_usage (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+
+    -- User reference
+    user_id UUID NOT NULL REFERENCES public.user_profiles(id) ON DELETE CASCADE,
+
+    -- Benefit details
+    benefit_type VARCHAR(100) NOT NULL,
+    usage_count INTEGER DEFAULT 1,
+    monthly_limit INTEGER NULL,
+
+    -- Period tracking
+    usage_month INTEGER NOT NULL DEFAULT EXTRACT(MONTH FROM NOW()),
+    usage_year INTEGER NOT NULL DEFAULT EXTRACT(YEAR FROM NOW()),
+
+    -- Metadata
+    metadata JSONB DEFAULT '{}',
+
+    -- Timestamps
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+
+    -- Constraints
+    CONSTRAINT valid_month CHECK (usage_month >= 1 AND usage_month <= 12),
+    CONSTRAINT valid_year CHECK (usage_year >= 2025),
+    CONSTRAINT unique_user_benefit_month
+        UNIQUE (user_id, benefit_type, usage_month, usage_year)
+);
+
+-- =====================================================
+-- 9. PERFORMANCE INDEXES
+-- =====================================================
+
+-- Solana wallets indexes
+CREATE INDEX IF NOT EXISTS idx_solana_wallets_user_id ON public.solana_wallets(user_id);
+CREATE INDEX IF NOT EXISTS idx_solana_wallets_public_key ON public.solana_wallets(public_key);
+CREATE INDEX IF NOT EXISTS idx_solana_wallets_type ON public.solana_wallets(type);
+CREATE INDEX IF NOT EXISTS idx_solana_wallets_is_primary ON public.solana_wallets(user_id, is_primary) WHERE is_primary = true;
+CREATE INDEX IF NOT EXISTS idx_solana_wallets_active ON public.solana_wallets(is_active) WHERE is_active = true;
+
+-- Solana payments indexes
+CREATE INDEX IF NOT EXISTS idx_solana_payments_user_id ON public.solana_payments(user_id);
+CREATE INDEX IF NOT EXISTS idx_solana_payments_wallet_id ON public.solana_payments(wallet_id);
+CREATE INDEX IF NOT EXISTS idx_solana_payments_status ON public.solana_payments(status);
+CREATE INDEX IF NOT EXISTS idx_solana_payments_tx_signature ON public.solana_payments(tx_signature) WHERE tx_signature IS NOT NULL;
+CREATE INDEX IF NOT EXISTS idx_solana_payments_kind ON public.solana_payments(kind);
+CREATE INDEX IF NOT EXISTS idx_solana_payments_created_at ON public.solana_payments(created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_solana_payments_pending ON public.solana_payments(created_at) WHERE status = 'pending';
+
+-- Ledger indexes
+CREATE INDEX IF NOT EXISTS idx_solana_ledger_user_id ON public.solana_ledger(user_id);
+CREATE INDEX IF NOT EXISTS idx_solana_ledger_wallet_id ON public.solana_ledger(wallet_id);
+CREATE INDEX IF NOT EXISTS idx_solana_ledger_payment_id ON public.solana_ledger(payment_id);
+CREATE INDEX IF NOT EXISTS idx_solana_ledger_created_at ON public.solana_ledger(created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_solana_ledger_tx_signature ON public.solana_ledger(tx_signature) WHERE tx_signature IS NOT NULL;
+
+-- Idempotency keys indexes
+CREATE INDEX IF NOT EXISTS idx_payment_idempotency_user_id ON public.payment_idempotency_keys(user_id);
+CREATE INDEX IF NOT EXISTS idx_payment_idempotency_expires_at ON public.payment_idempotency_keys(expires_at);
+
+-- Wallet activities indexes
+CREATE INDEX IF NOT EXISTS idx_wallet_activities_user_id ON public.wallet_activities(user_id);
+CREATE INDEX IF NOT EXISTS idx_wallet_activities_wallet_id ON public.wallet_activities(wallet_id);
+CREATE INDEX IF NOT EXISTS idx_wallet_activities_type ON public.wallet_activities(activity_type);
+CREATE INDEX IF NOT EXISTS idx_wallet_activities_created_at ON public.wallet_activities(created_at DESC);
+
+-- Premium benefits indexes
+CREATE INDEX IF NOT EXISTS idx_premium_benefits_user_id ON public.premium_benefits_usage(user_id);
+CREATE INDEX IF NOT EXISTS idx_premium_benefits_type ON public.premium_benefits_usage(benefit_type);
+CREATE INDEX IF NOT EXISTS idx_premium_benefits_period ON public.premium_benefits_usage(usage_year, usage_month);
+
+-- User profiles premium indexes
+CREATE INDEX IF NOT EXISTS idx_user_profiles_premium_status ON public.user_profiles(premium_status) WHERE premium_status != 'none';
+CREATE INDEX IF NOT EXISTS idx_user_profiles_premium_expires ON public.user_profiles(premium_expires_at) WHERE premium_expires_at IS NOT NULL;
+
+-- =====================================================
+-- 10. TRIGGERS FOR AUTOMATIC UPDATES
+-- =====================================================
+
+-- Function to update timestamps
+CREATE OR REPLACE FUNCTION update_updated_at_column()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.updated_at = NOW();
+    RETURN NEW;
+END;
+$$ language 'plpgsql';
+
+-- Apply updated_at triggers
+DROP TRIGGER IF EXISTS update_solana_wallets_updated_at ON public.solana_wallets;
+CREATE TRIGGER update_solana_wallets_updated_at
+    BEFORE UPDATE ON public.solana_wallets
+    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+DROP TRIGGER IF EXISTS update_premium_benefits_updated_at ON public.premium_benefits_usage;
+CREATE TRIGGER update_premium_benefits_updated_at
+    BEFORE UPDATE ON public.premium_benefits_usage
+    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+-- Function to handle premium expiration
+CREATE OR REPLACE FUNCTION check_premium_expiration()
+RETURNS TRIGGER AS $$
+BEGIN
+    -- Auto-expire premium if expiration date passed
+    IF NEW.premium_expires_at IS NOT NULL AND NEW.premium_expires_at <= NOW() THEN
+        NEW.premium_status = 'expired';
+    END IF;
+
+    -- Set activation date when premium becomes active
+    IF OLD.premium_status != 'active' AND NEW.premium_status = 'active' THEN
+        NEW.premium_activated_at = NOW();
+    END IF;
+
+    RETURN NEW;
+END;
+$$ language 'plpgsql';
+
+-- Apply premium expiration trigger
+DROP TRIGGER IF EXISTS check_premium_expiration_trigger ON public.user_profiles;
+CREATE TRIGGER check_premium_expiration_trigger
+    BEFORE UPDATE ON public.user_profiles
+    FOR EACH ROW EXECUTE FUNCTION check_premium_expiration();
+
+-- =====================================================
+-- 11. CLEANUP FUNCTIONS
+-- =====================================================
+
+-- Function to clean up expired idempotency keys
+CREATE OR REPLACE FUNCTION cleanup_expired_idempotency_keys()
+RETURNS INTEGER AS $$
+DECLARE
+    deleted_count INTEGER;
+BEGIN
+    DELETE FROM public.payment_idempotency_keys
+    WHERE expires_at < NOW();
+
+    GET DIAGNOSTICS deleted_count = ROW_COUNT;
+    RETURN deleted_count;
+END;
+$$ LANGUAGE plpgsql;
+
+-- =====================================================
+-- 12. COMMENTS FOR DOCUMENTATION
+-- =====================================================
+
+COMMENT ON TABLE public.solana_wallets IS 'Solana wallet management for custodial and external wallets';
+COMMENT ON TABLE public.solana_payments IS 'Solana payment transactions for donations and premium purchases';
+COMMENT ON TABLE public.solana_ledger IS 'Audit trail for all wallet balance changes and transactions';
+COMMENT ON TABLE public.payment_idempotency_keys IS 'Idempotency keys to prevent duplicate payment processing';
+COMMENT ON TABLE public.wallet_activities IS 'Activity log for wallet operations and user actions';
+COMMENT ON TABLE public.premium_benefits_usage IS 'Tracking of premium feature usage and limits';
+
+COMMENT ON COLUMN public.solana_wallets.public_key IS 'Solana public key (44 characters base58)';
+COMMENT ON COLUMN public.solana_wallets.derivation_path IS 'BIP44 derivation path for custodial wallets';
+COMMENT ON COLUMN public.solana_payments.amount_sol IS 'Amount in SOL (calculated from lamports)';
+COMMENT ON COLUMN public.solana_payments.tx_signature IS 'Solana transaction signature (88 characters base58)';
+COMMENT ON COLUMN public.solana_ledger.delta_lamports IS 'Balance change in lamports (positive=credit, negative=debit)';
+
+-- =====================================================
+-- MIGRATION COMPLETED SUCCESSFULLY
+-- =====================================================
+
+-- Log successful migration
+DO $$
+BEGIN
+    RAISE NOTICE 'Solana Wallet System migration completed successfully at %', NOW();
+    RAISE NOTICE 'Tables created: solana_wallets, solana_payments, solana_ledger, payment_idempotency_keys, wallet_activities, premium_benefits_usage';
+    RAISE NOTICE 'User profiles extended with premium status fields';
+    RAISE NOTICE 'Performance indexes and triggers configured';
+END$$;

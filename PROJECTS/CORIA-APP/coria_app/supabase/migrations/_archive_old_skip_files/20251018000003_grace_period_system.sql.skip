@@ -1,0 +1,825 @@
+-- ========================================
+-- GRACE PERIOD SYSTEM
+-- ========================================
+-- Date: 2025-10-18
+-- Purpose: Grace period state + scheduler for automatic grace→expired transitions
+-- Security: Period-end based checks, atomic transitions
+-- Priority: P0 Critical - FIX-003 Missing Grace Period State
+--
+-- GEREKSINIMLER:
+-- ✅ 'grace' state - Ödeme başarısız, yeniden deneme süresi
+-- ✅ Premium gibi erişim - Kullanıcı kesintisiz devam eder
+-- ✅ Scheduler job - period_end bazlı kontrol ile grace→expired
+-- ✅ UI ribbon bilgisi - "Ödemeniz yenileniyor" mesajı
+
+-- ========================================
+-- 1. ALTER ENUM - Add 'grace' status
+-- ========================================
+-- PostgreSQL enum'a değer eklemek için CREATE TYPE yerine ALTER TYPE kullanılır
+
+-- Önce enum'ın mevcut durumunu kontrol et
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_enum
+    WHERE enumlabel = 'grace'
+    AND enumtypid = 'premium_subscription_status'::regtype
+  ) THEN
+    -- 'grace' değerini 'active' ile 'expired' arasına ekle
+    ALTER TYPE premium_subscription_status
+    ADD VALUE IF NOT EXISTS 'grace' AFTER 'active';
+  END IF;
+END $$;
+
+-- ========================================
+-- 2. ALTER TABLE - Add grace period columns
+-- ========================================
+-- premium_subscriptions tablosuna grace period takibi için kolonlar ekle
+
+ALTER TABLE premium_subscriptions
+ADD COLUMN IF NOT EXISTS grace_period_end TIMESTAMPTZ,
+ADD COLUMN IF NOT EXISTS payment_retry_count INTEGER DEFAULT 0,
+ADD COLUMN IF NOT EXISTS last_payment_attempt TIMESTAMPTZ;
+
+-- Index for scheduler job efficiency
+CREATE INDEX IF NOT EXISTS idx_premium_subscriptions_grace_end
+  ON premium_subscriptions(grace_period_end)
+  WHERE status = 'grace';
+
+CREATE INDEX IF NOT EXISTS idx_premium_subscriptions_status_expiry
+  ON premium_subscriptions(status, expiry_date);
+
+-- ========================================
+-- 3. FUNCTION: Enter Grace Period
+-- ========================================
+-- Ödeme başarısız olduğunda çağrılır
+-- Kullanıcı erişimini KORUR, sadece status değişir
+
+CREATE OR REPLACE FUNCTION enter_grace_period_atomic(
+  p_user_id UUID,
+  p_grace_days INTEGER DEFAULT 7,
+  p_event_id TEXT DEFAULT NULL,
+  p_idempotency_key TEXT DEFAULT NULL
+) RETURNS JSONB
+LANGUAGE plpgsql
+SECURITY DEFINER
+AS $$
+DECLARE
+  v_subscription_id TEXT;
+  v_previous_status TEXT;
+  v_grace_end TIMESTAMPTZ;
+  v_result JSONB;
+BEGIN
+  -- Idempotency check
+  IF p_idempotency_key IS NOT NULL THEN
+    SELECT result INTO v_result
+    FROM idempotency_log
+    WHERE idempotency_key = p_idempotency_key
+      AND operation = 'enter_grace_period'
+      AND created_at > NOW() - INTERVAL '24 hours';
+
+    IF FOUND THEN
+      RETURN v_result;
+    END IF;
+  END IF;
+
+  -- Get current subscription info
+  SELECT subscription_id, status
+  INTO v_subscription_id, v_previous_status
+  FROM premium_subscriptions
+  WHERE user_id = p_user_id
+    AND status IN ('active', 'cancelled'); -- Can enter grace from active or cancelled
+
+  IF NOT FOUND THEN
+    RETURN jsonb_build_object(
+      'success', false,
+      'error', 'No active or cancelled subscription found',
+      'user_id', p_user_id
+    );
+  END IF;
+
+  -- Calculate grace period end (from expiry_date, NOT from now)
+  SELECT expiry_date + (p_grace_days || ' days')::INTERVAL
+  INTO v_grace_end
+  FROM premium_subscriptions
+  WHERE user_id = p_user_id;
+
+  -- Update subscription to grace status
+  UPDATE premium_subscriptions
+  SET
+    status = 'grace',
+    grace_period_end = v_grace_end,
+    payment_retry_count = payment_retry_count + 1,
+    last_payment_attempt = NOW(),
+    updated_at = NOW()
+  WHERE user_id = p_user_id
+    AND status IN ('active', 'cancelled');
+
+  -- IMPORTANT: Do NOT change user_profiles.is_premium
+  -- User KEEPS premium access during grace period
+
+  -- Update entitlements tier to 'grace' for analytics
+  UPDATE user_entitlements
+  SET
+    tier = 'grace',
+    expires_at = v_grace_end,
+    updated_at = NOW()
+  WHERE user_id = p_user_id;
+
+  -- Log plan change history
+  INSERT INTO plan_change_history (
+    user_id,
+    subscription_id,
+    previous_status,
+    new_status,
+    change_type,
+    change_reason,
+    metadata
+  ) VALUES (
+    p_user_id,
+    v_subscription_id,
+    v_previous_status,
+    'grace',
+    'grace_period_entered',
+    'payment_failed',
+    jsonb_build_object(
+      'grace_days', p_grace_days,
+      'grace_period_end', v_grace_end,
+      'retry_count', (SELECT payment_retry_count FROM premium_subscriptions WHERE user_id = p_user_id),
+      'event_id', p_event_id
+    )
+  );
+
+  -- Build result
+  v_result := jsonb_build_object(
+    'success', true,
+    'status', 'grace',
+    'grace_period_end', v_grace_end,
+    'retry_count', (SELECT payment_retry_count FROM premium_subscriptions WHERE user_id = p_user_id),
+    'days_remaining', p_grace_days,
+    'message', 'Entered grace period - user keeps access until ' || v_grace_end::TEXT
+  );
+
+  -- Store in idempotency log
+  IF p_idempotency_key IS NOT NULL THEN
+    INSERT INTO idempotency_log (
+      idempotency_key,
+      operation,
+      user_id,
+      result,
+      created_at
+    ) VALUES (
+      p_idempotency_key,
+      'enter_grace_period',
+      p_user_id,
+      v_result,
+      NOW()
+    )
+    ON CONFLICT (idempotency_key) DO NOTHING;
+  END IF;
+
+  RETURN v_result;
+
+EXCEPTION
+  WHEN OTHERS THEN
+    RETURN jsonb_build_object(
+      'success', false,
+      'error', SQLERRM,
+      'error_detail', SQLSTATE
+    );
+END;
+$$;
+
+COMMENT ON FUNCTION enter_grace_period_atomic IS
+'Enters grace period when payment fails. User KEEPS premium access.';
+
+-- ========================================
+-- 4. FUNCTION: Resolve Grace Period (Payment Success)
+-- ========================================
+-- Ödeme başarılı olduğunda grace'ten active'e döndürür
+
+CREATE OR REPLACE FUNCTION resolve_grace_period_atomic(
+  p_user_id UUID,
+  p_new_expiry_date TIMESTAMPTZ,
+  p_event_id TEXT DEFAULT NULL,
+  p_idempotency_key TEXT DEFAULT NULL
+) RETURNS JSONB
+LANGUAGE plpgsql
+SECURITY DEFINER
+AS $$
+DECLARE
+  v_subscription_id TEXT;
+  v_result JSONB;
+BEGIN
+  -- Idempotency check
+  IF p_idempotency_key IS NOT NULL THEN
+    SELECT result INTO v_result
+    FROM idempotency_log
+    WHERE idempotency_key = p_idempotency_key
+      AND operation = 'resolve_grace_period'
+      AND created_at > NOW() - INTERVAL '24 hours';
+
+    IF FOUND THEN
+      RETURN v_result;
+    END IF;
+  END IF;
+
+  -- Get subscription ID
+  SELECT subscription_id INTO v_subscription_id
+  FROM premium_subscriptions
+  WHERE user_id = p_user_id
+    AND status = 'grace';
+
+  IF NOT FOUND THEN
+    RETURN jsonb_build_object(
+      'success', false,
+      'error', 'No grace period subscription found',
+      'user_id', p_user_id
+    );
+  END IF;
+
+  -- Update subscription to active
+  UPDATE premium_subscriptions
+  SET
+    status = 'active',
+    expiry_date = p_new_expiry_date,
+    grace_period_end = NULL,
+    payment_retry_count = 0,
+    last_payment_attempt = NULL,
+    updated_at = NOW()
+  WHERE user_id = p_user_id
+    AND status = 'grace';
+
+  -- Update entitlements back to premium
+  UPDATE user_entitlements
+  SET
+    tier = 'premium',
+    expires_at = p_new_expiry_date,
+    updated_at = NOW()
+  WHERE user_id = p_user_id;
+
+  -- Log plan change history
+  INSERT INTO plan_change_history (
+    user_id,
+    subscription_id,
+    previous_status,
+    new_status,
+    change_type,
+    change_reason,
+    metadata
+  ) VALUES (
+    p_user_id,
+    v_subscription_id,
+    'grace',
+    'active',
+    'grace_period_resolved',
+    'payment_success',
+    jsonb_build_object(
+      'new_expiry_date', p_new_expiry_date,
+      'event_id', p_event_id
+    )
+  );
+
+  -- Build result
+  v_result := jsonb_build_object(
+    'success', true,
+    'status', 'active',
+    'expiry_date', p_new_expiry_date,
+    'message', 'Grace period resolved - subscription reactivated'
+  );
+
+  -- Store in idempotency log
+  IF p_idempotency_key IS NOT NULL THEN
+    INSERT INTO idempotency_log (
+      idempotency_key,
+      operation,
+      user_id,
+      result,
+      created_at
+    ) VALUES (
+      p_idempotency_key,
+      'resolve_grace_period',
+      p_user_id,
+      v_result,
+      NOW()
+    )
+    ON CONFLICT (idempotency_key) DO NOTHING;
+  END IF;
+
+  RETURN v_result;
+
+EXCEPTION
+  WHEN OTHERS THEN
+    RETURN jsonb_build_object(
+      'success', false,
+      'error', SQLERRM,
+      'error_detail', SQLSTATE
+    );
+END;
+$$;
+
+COMMENT ON FUNCTION resolve_grace_period_atomic IS
+'Resolves grace period when payment succeeds. Reactivates subscription.';
+
+-- ========================================
+-- 5. FUNCTION: Expire Grace Period (Auto-called by scheduler)
+-- ========================================
+-- Grace period süresi dolduğunda otomatik çağrılır
+-- Kullanıcı FREE tier'a düşer
+
+CREATE OR REPLACE FUNCTION expire_grace_period_atomic(
+  p_user_id UUID,
+  p_event_id TEXT DEFAULT NULL,
+  p_idempotency_key TEXT DEFAULT NULL
+) RETURNS JSONB
+LANGUAGE plpgsql
+SECURITY DEFINER
+AS $$
+DECLARE
+  v_subscription_id TEXT;
+  v_result JSONB;
+BEGIN
+  -- Idempotency check
+  IF p_idempotency_key IS NOT NULL THEN
+    SELECT result INTO v_result
+    FROM idempotency_log
+    WHERE idempotency_key = p_idempotency_key
+      AND operation = 'expire_grace_period'
+      AND created_at > NOW() - INTERVAL '24 hours';
+
+    IF FOUND THEN
+      RETURN v_result;
+    END IF;
+  END IF;
+
+  -- Get subscription ID
+  SELECT subscription_id INTO v_subscription_id
+  FROM premium_subscriptions
+  WHERE user_id = p_user_id
+    AND status = 'grace'
+    AND grace_period_end < NOW(); -- Only expire if grace period actually ended
+
+  IF NOT FOUND THEN
+    RETURN jsonb_build_object(
+      'success', false,
+      'error', 'No expired grace period subscription found',
+      'user_id', p_user_id
+    );
+  END IF;
+
+  -- Update subscription to expired
+  UPDATE premium_subscriptions
+  SET
+    status = 'expired',
+    grace_period_end = NULL,
+    updated_at = NOW()
+  WHERE user_id = p_user_id
+    AND status = 'grace'
+    AND grace_period_end < NOW();
+
+  -- Downgrade user to FREE tier
+  UPDATE user_profiles
+  SET
+    is_premium = FALSE,
+    updated_at = NOW()
+  WHERE id = p_user_id;
+
+  -- Reset entitlements to free tier
+  UPDATE user_entitlements
+  SET
+    tier = 'free',
+    pantry_unlimited = FALSE,
+    ai_chat_unlimited = FALSE,
+    recipe_recommendations = FALSE,
+    offline_mode = FALSE,
+    export_data = FALSE,
+    priority_support = FALSE,
+    advanced_analytics = FALSE,
+    expires_at = NULL,
+    updated_at = NOW()
+  WHERE user_id = p_user_id;
+
+  -- Reset quotas to free tier limits
+  UPDATE user_quotas
+  SET
+    pantry_items_limit = 20,        -- Free tier limit
+    ai_messages_limit = 10,         -- Free tier limit
+    scans_limit = 50,               -- Free tier limit
+    exports_monthly_limit = 5,      -- Free tier limit
+    updated_at = NOW()
+  WHERE user_id = p_user_id;
+
+  -- Log plan change history
+  INSERT INTO plan_change_history (
+    user_id,
+    subscription_id,
+    previous_status,
+    new_status,
+    change_type,
+    change_reason,
+    metadata
+  ) VALUES (
+    p_user_id,
+    v_subscription_id,
+    'grace',
+    'expired',
+    'grace_period_expired',
+    'payment_retry_failed',
+    jsonb_build_object(
+      'final_retry_count', (SELECT payment_retry_count FROM premium_subscriptions WHERE user_id = p_user_id),
+      'event_id', p_event_id
+    )
+  );
+
+  -- Build result
+  v_result := jsonb_build_object(
+    'success', true,
+    'status', 'expired',
+    'tier', 'free',
+    'message', 'Grace period expired - downgraded to FREE tier'
+  );
+
+  -- Store in idempotency log
+  IF p_idempotency_key IS NOT NULL THEN
+    INSERT INTO idempotency_log (
+      idempotency_key,
+      operation,
+      user_id,
+      result,
+      created_at
+    ) VALUES (
+      p_idempotency_key,
+      'expire_grace_period',
+      p_user_id,
+      v_result,
+      NOW()
+    )
+    ON CONFLICT (idempotency_key) DO NOTHING;
+  END IF;
+
+  RETURN v_result;
+
+EXCEPTION
+  WHEN OTHERS THEN
+    RETURN jsonb_build_object(
+      'success', false,
+      'error', SQLERRM,
+      'error_detail', SQLSTATE
+    );
+END;
+$$;
+
+COMMENT ON FUNCTION expire_grace_period_atomic IS
+'Expires grace period and downgrades user to FREE tier. Auto-called by scheduler.';
+
+-- ========================================
+-- 6. FUNCTION: Batch Process Expired Grace Periods (Scheduler Job)
+-- ========================================
+-- Cron/scheduler tarafından her saat çağrılır
+-- grace_period_end < NOW() olan tüm kullanıcıları işler
+
+CREATE OR REPLACE FUNCTION process_expired_grace_periods()
+RETURNS TABLE (
+  processed_count INTEGER,
+  success_count INTEGER,
+  error_count INTEGER,
+  user_ids UUID[]
+)
+LANGUAGE plpgsql
+SECURITY DEFINER
+AS $$
+DECLARE
+  v_user_id UUID;
+  v_result JSONB;
+  v_processed INTEGER := 0;
+  v_success INTEGER := 0;
+  v_error INTEGER := 0;
+  v_user_ids UUID[] := ARRAY[]::UUID[];
+BEGIN
+  -- Find all grace period subscriptions that have expired
+  FOR v_user_id IN
+    SELECT user_id
+    FROM premium_subscriptions
+    WHERE status = 'grace'
+      AND grace_period_end < NOW()
+    ORDER BY grace_period_end ASC  -- Process oldest first
+  LOOP
+    v_processed := v_processed + 1;
+
+    -- Process each user
+    SELECT expire_grace_period_atomic(
+      v_user_id,
+      'scheduler_job_' || NOW()::TEXT,
+      'scheduler_' || v_user_id::TEXT || '_' || NOW()::TEXT
+    ) INTO v_result;
+
+    IF (v_result->>'success')::BOOLEAN THEN
+      v_success := v_success + 1;
+      v_user_ids := array_append(v_user_ids, v_user_id);
+    ELSE
+      v_error := v_error + 1;
+      -- Log error but continue processing
+      RAISE WARNING 'Failed to expire grace period for user %: %', v_user_id, v_result->>'error';
+    END IF;
+  END LOOP;
+
+  RETURN QUERY SELECT v_processed, v_success, v_error, v_user_ids;
+
+EXCEPTION
+  WHEN OTHERS THEN
+    RAISE WARNING 'Batch grace period processing failed: % (SQLSTATE: %)', SQLERRM, SQLSTATE;
+    RETURN QUERY SELECT 0, 0, 0, ARRAY[]::UUID[];
+END;
+$$;
+
+COMMENT ON FUNCTION process_expired_grace_periods IS
+'Batch processes all expired grace periods. Called by scheduler every hour.';
+
+-- ========================================
+-- 7. FUNCTION: Check Grace Period Status (Helper)
+-- ========================================
+-- UI'da grace period bilgisini göstermek için
+
+CREATE OR REPLACE FUNCTION get_grace_period_info(p_user_id UUID)
+RETURNS JSONB
+LANGUAGE plpgsql
+SECURITY DEFINER
+AS $$
+DECLARE
+  v_result JSONB;
+  v_days_remaining INTEGER;
+BEGIN
+  SELECT jsonb_build_object(
+    'is_in_grace', status = 'grace',
+    'grace_period_end', grace_period_end,
+    'days_remaining', GREATEST(0, EXTRACT(DAY FROM grace_period_end - NOW())::INTEGER),
+    'retry_count', payment_retry_count,
+    'has_access', status IN ('active', 'grace', 'cancelled')
+  )
+  INTO v_result
+  FROM premium_subscriptions
+  WHERE user_id = p_user_id;
+
+  RETURN COALESCE(v_result, jsonb_build_object(
+    'is_in_grace', false,
+    'has_access', false
+  ));
+END;
+$$;
+
+COMMENT ON FUNCTION get_grace_period_info IS
+'Returns grace period status for UI display';
+
+-- ========================================
+-- 8. UPDATE: Modify existing activate_premium to handle grace→active
+-- ========================================
+-- Eğer kullanıcı grace period'dayken ödeme yapılırsa, direk active'e geçsin
+
+-- activate_premium_atomic fonksiyonunu güncelle
+CREATE OR REPLACE FUNCTION activate_premium_atomic(
+  p_user_id UUID,
+  p_subscription_id TEXT,
+  p_product_id TEXT,
+  p_expiry_date TIMESTAMPTZ,
+  p_payment_method TEXT DEFAULT 'revenuecat',
+  p_idempotency_key TEXT DEFAULT NULL,
+  p_receipt_id TEXT DEFAULT NULL,
+  p_receipt_signature TEXT DEFAULT NULL,
+  p_event_id TEXT DEFAULT NULL,
+  p_store TEXT DEFAULT NULL,
+  p_environment TEXT DEFAULT 'production'
+) RETURNS JSONB
+LANGUAGE plpgsql
+SECURITY DEFINER
+AS $$
+DECLARE
+  v_previous_status TEXT;
+  v_result JSONB;
+BEGIN
+  -- Idempotency check
+  IF p_idempotency_key IS NOT NULL THEN
+    SELECT result INTO v_result
+    FROM idempotency_log
+    WHERE idempotency_key = p_idempotency_key
+      AND operation = 'activate_premium'
+      AND created_at > NOW() - INTERVAL '24 hours';
+
+    IF FOUND THEN
+      RETURN v_result;
+    END IF;
+  END IF;
+
+  -- Get previous status (might be NULL for new, or 'grace' for recovery)
+  SELECT status INTO v_previous_status
+  FROM premium_subscriptions
+  WHERE user_id = p_user_id;
+
+  -- Upsert subscription
+  INSERT INTO premium_subscriptions (
+    user_id,
+    subscription_id,
+    product_id,
+    status,
+    start_date,
+    expiry_date,
+    payment_method,
+    store,
+    environment,
+    grace_period_end,       -- Reset grace fields
+    payment_retry_count,    -- Reset retry count
+    last_payment_attempt,   -- Reset last attempt
+    created_at,
+    updated_at
+  ) VALUES (
+    p_user_id,
+    p_subscription_id,
+    p_product_id,
+    'active',
+    NOW(),
+    p_expiry_date,
+    p_payment_method,
+    p_store,
+    p_environment,
+    NULL,  -- Clear grace period
+    0,     -- Reset retry count
+    NULL,  -- Clear last attempt
+    NOW(),
+    NOW()
+  )
+  ON CONFLICT (user_id) DO UPDATE
+  SET
+    subscription_id = EXCLUDED.subscription_id,
+    product_id = EXCLUDED.product_id,
+    status = 'active',
+    start_date = NOW(),
+    expiry_date = EXCLUDED.expiry_date,
+    payment_method = EXCLUDED.payment_method,
+    store = EXCLUDED.store,
+    environment = EXCLUDED.environment,
+    grace_period_end = NULL,       -- Clear grace
+    payment_retry_count = 0,       -- Reset retry
+    last_payment_attempt = NULL,   -- Clear attempt
+    updated_at = NOW();
+
+  -- Update user profile
+  UPDATE user_profiles
+  SET
+    is_premium = TRUE,
+    trial_active = FALSE,
+    updated_at = NOW()
+  WHERE id = p_user_id;
+
+  -- Update entitlements to premium tier
+  INSERT INTO user_entitlements (
+    user_id,
+    tier,
+    pantry_unlimited,
+    ai_chat_unlimited,
+    recipe_recommendations,
+    offline_mode,
+    export_data,
+    priority_support,
+    advanced_analytics,
+    activated_at,
+    expires_at
+  ) VALUES (
+    p_user_id,
+    'premium',
+    TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE,
+    NOW(),
+    p_expiry_date
+  )
+  ON CONFLICT (user_id) DO UPDATE
+  SET
+    tier = 'premium',
+    pantry_unlimited = TRUE,
+    ai_chat_unlimited = TRUE,
+    recipe_recommendations = TRUE,
+    offline_mode = TRUE,
+    export_data = TRUE,
+    priority_support = TRUE,
+    advanced_analytics = TRUE,
+    activated_at = NOW(),
+    expires_at = EXCLUDED.expires_at,
+    updated_at = NOW();
+
+  -- Update quotas to premium limits
+  INSERT INTO user_quotas (
+    user_id,
+    pantry_items_limit,
+    ai_messages_limit,
+    scans_limit,
+    exports_monthly_limit
+  ) VALUES (
+    p_user_id,
+    999999, 999999, 999999, 999999
+  )
+  ON CONFLICT (user_id) DO UPDATE
+  SET
+    pantry_items_limit = 999999,
+    ai_messages_limit = 999999,
+    scans_limit = 999999,
+    exports_monthly_limit = 999999,
+    updated_at = NOW();
+
+  -- Log plan change
+  INSERT INTO plan_change_history (
+    user_id,
+    subscription_id,
+    previous_status,
+    new_status,
+    change_type,
+    change_reason,
+    metadata
+  ) VALUES (
+    p_user_id,
+    p_subscription_id,
+    v_previous_status,
+    'active',
+    CASE
+      WHEN v_previous_status IS NULL THEN 'activation'
+      WHEN v_previous_status = 'grace' THEN 'grace_resolved'
+      WHEN v_previous_status = 'expired' THEN 'reactivation'
+      ELSE 'renewal'
+    END,
+    'payment_success',
+    jsonb_build_object(
+      'payment_method', p_payment_method,
+      'product_id', p_product_id,
+      'store', p_store,
+      'event_id', p_event_id
+    )
+  );
+
+  -- Build result
+  v_result := jsonb_build_object(
+    'success', true,
+    'status', 'activated',
+    'tier', 'premium',
+    'expiry_date', p_expiry_date,
+    'was_in_grace', v_previous_status = 'grace'
+  );
+
+  -- Store in idempotency log
+  IF p_idempotency_key IS NOT NULL THEN
+    INSERT INTO idempotency_log (
+      idempotency_key,
+      operation,
+      user_id,
+      result,
+      created_at
+    ) VALUES (
+      p_idempotency_key,
+      'activate_premium',
+      p_user_id,
+      v_result,
+      NOW()
+    )
+    ON CONFLICT (idempotency_key) DO NOTHING;
+  END IF;
+
+  RETURN v_result;
+
+EXCEPTION
+  WHEN OTHERS THEN
+    RETURN jsonb_build_object(
+      'success', false,
+      'error', SQLERRM,
+      'error_detail', SQLSTATE
+    );
+END;
+$$;
+
+-- ========================================
+-- 9. GRANTS
+-- ========================================
+
+-- Grant execute permissions to service role
+GRANT EXECUTE ON FUNCTION enter_grace_period_atomic TO service_role;
+GRANT EXECUTE ON FUNCTION resolve_grace_period_atomic TO service_role;
+GRANT EXECUTE ON FUNCTION expire_grace_period_atomic TO service_role;
+GRANT EXECUTE ON FUNCTION process_expired_grace_periods TO service_role;
+GRANT EXECUTE ON FUNCTION get_grace_period_info TO service_role, authenticated;
+
+-- ========================================
+-- 10. COMMENTS & DOCUMENTATION
+-- ========================================
+
+COMMENT ON COLUMN premium_subscriptions.grace_period_end IS
+'End date of grace period. NULL if not in grace. Calculated as expiry_date + grace_days.';
+
+COMMENT ON COLUMN premium_subscriptions.payment_retry_count IS
+'Number of payment retry attempts during current/last grace period.';
+
+COMMENT ON COLUMN premium_subscriptions.last_payment_attempt IS
+'Timestamp of last payment retry attempt.';
+
+-- ========================================
+-- END OF MIGRATION
+-- ========================================
+-- NEXT STEPS:
+-- 1. Deploy migration: supabase db push
+-- 2. Update Dart enum: Add 'grace' to PremiumSubscriptionStatus
+-- 3. Update UI: Add GracePeriodBanner widget
+-- 4. Setup scheduler: Call process_expired_grace_periods() every hour
+-- 5. Update webhook: Call enter_grace_period_atomic on BILLING_ISSUE event

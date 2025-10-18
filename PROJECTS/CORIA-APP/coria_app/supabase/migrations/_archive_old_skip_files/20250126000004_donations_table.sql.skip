@@ -1,0 +1,76 @@
+-- =====================================================
+-- CORIA Donations Table Migration
+-- Created: 2025-01-26
+-- Purpose: Track user donations to CORIA Foundation
+-- =====================================================
+
+-- Create donations table
+CREATE TABLE IF NOT EXISTS public.donations (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+    wallet_id UUID NOT NULL REFERENCES public.solana_wallets(id) ON DELETE CASCADE,
+
+    -- Transaction details
+    amount_sol DECIMAL(20, 9) NOT NULL CHECK (amount_sol > 0),
+    amount_lamports BIGINT NOT NULL CHECK (amount_lamports > 0),
+    destination_address TEXT NOT NULL,
+    tx_signature TEXT UNIQUE,
+
+    -- Status tracking
+    status TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'confirmed', 'failed')),
+    confirmed_at TIMESTAMPTZ,
+
+    -- Additional info
+    message TEXT,
+    metadata JSONB DEFAULT '{}'::jsonb,
+
+    -- Timestamps
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+-- Create indexes for better query performance
+CREATE INDEX IF NOT EXISTS idx_donations_user_id ON public.donations(user_id);
+CREATE INDEX IF NOT EXISTS idx_donations_wallet_id ON public.donations(wallet_id);
+CREATE INDEX IF NOT EXISTS idx_donations_status ON public.donations(status);
+CREATE INDEX IF NOT EXISTS idx_donations_tx_signature ON public.donations(tx_signature) WHERE tx_signature IS NOT NULL;
+CREATE INDEX IF NOT EXISTS idx_donations_created_at ON public.donations(created_at DESC);
+
+-- Enable Row Level Security
+ALTER TABLE public.donations ENABLE ROW LEVEL SECURITY;
+
+-- RLS Policies for donations table
+-- Users can view their own donations
+CREATE POLICY "Users can view own donations"
+    ON public.donations
+    FOR SELECT
+    USING (auth.uid() = user_id);
+
+-- Users can insert their own donations (but backend will validate via service role)
+CREATE POLICY "Users can create own donations"
+    ON public.donations
+    FOR INSERT
+    WITH CHECK (auth.uid() = user_id);
+
+-- Only service role can update donations (for status changes)
+CREATE POLICY "Service role can update donations"
+    ON public.donations
+    FOR UPDATE
+    USING (auth.jwt() ->> 'role' = 'service_role');
+
+-- Add trigger for updated_at
+CREATE OR REPLACE FUNCTION public.update_donations_updated_at()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.updated_at = NOW();
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER update_donations_updated_at
+    BEFORE UPDATE ON public.donations
+    FOR EACH ROW
+    EXECUTE FUNCTION public.update_donations_updated_at();
+
+-- Add comment
+COMMENT ON TABLE public.donations IS 'User donations to CORIA Foundation via Solana';

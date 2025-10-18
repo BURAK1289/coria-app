@@ -1,0 +1,409 @@
+-- =====================================================
+-- CORIA SOLANA WALLET CONFIGURATION & SEED DATA
+-- Migration: 20250126000003_solana_wallet_configuration.sql
+-- Version: 1.0
+-- Date: 2025-01-26
+-- Purpose: Environment configuration and seed data for Solana wallet system
+-- =====================================================
+
+-- =====================================================
+-- 1. SYSTEM CONFIGURATION TABLE
+-- =====================================================
+
+CREATE TABLE IF NOT EXISTS public.solana_config (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+
+    -- Configuration key-value pairs
+    config_key VARCHAR(100) UNIQUE NOT NULL,
+    config_value TEXT NOT NULL,
+    config_type VARCHAR(20) DEFAULT 'string' CHECK (config_type IN ('string', 'number', 'boolean', 'json')),
+
+    -- Environment and context
+    environment VARCHAR(20) DEFAULT 'development' CHECK (environment IN ('development', 'staging', 'production')),
+    is_active BOOLEAN DEFAULT TRUE,
+    is_secret BOOLEAN DEFAULT FALSE, -- Mark sensitive values
+
+    -- Metadata
+    description TEXT,
+    metadata JSONB DEFAULT '{}',
+
+    -- Timestamps
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+
+    -- Constraints
+    CONSTRAINT valid_config_key CHECK (config_key ~ '^[A-Z_][A-Z0-9_]*$') -- Uppercase snake_case
+);
+
+-- =====================================================
+-- 2. SOLANA NETWORK CONFIGURATION
+-- =====================================================
+
+-- Insert Solana network configuration
+INSERT INTO public.solana_config (config_key, config_value, config_type, environment, description) VALUES
+-- Development (Devnet) Configuration
+('SOLANA_NETWORK', 'devnet', 'string', 'development', 'Solana network environment'),
+('SOLANA_RPC_PRIMARY_URL', 'https://api.devnet.solana.com', 'string', 'development', 'Primary Solana RPC endpoint'),
+('SOLANA_RPC_FALLBACK_1', 'https://devnet.genesysgo.net', 'string', 'development', 'Fallback RPC endpoint 1'),
+('SOLANA_RPC_FALLBACK_2', 'https://rpc-devnet.solana.com', 'string', 'development', 'Fallback RPC endpoint 2'),
+('SOLANA_COMMITMENT_LEVEL', 'confirmed', 'string', 'development', 'Transaction commitment level'),
+('SOLANA_CONFIRMATION_TIMEOUT', '30000', 'number', 'development', 'Transaction confirmation timeout in ms'),
+
+-- Staging Configuration
+('SOLANA_NETWORK', 'devnet', 'string', 'staging', 'Solana network environment'),
+('SOLANA_RPC_PRIMARY_URL', 'https://api.devnet.solana.com', 'string', 'staging', 'Primary Solana RPC endpoint'),
+('SOLANA_RPC_FALLBACK_1', 'https://devnet.genesysgo.net', 'string', 'staging', 'Fallback RPC endpoint 1'),
+('SOLANA_RPC_FALLBACK_2', 'https://rpc-devnet.solana.com', 'string', 'staging', 'Fallback RPC endpoint 2'),
+('SOLANA_COMMITMENT_LEVEL', 'confirmed', 'string', 'staging', 'Transaction commitment level'),
+('SOLANA_CONFIRMATION_TIMEOUT', '30000', 'number', 'staging', 'Transaction confirmation timeout in ms'),
+
+-- Production Configuration
+('SOLANA_NETWORK', 'mainnet-beta', 'string', 'production', 'Solana network environment'),
+('SOLANA_RPC_PRIMARY_URL', 'https://api.mainnet-beta.solana.com', 'string', 'production', 'Primary Solana RPC endpoint'),
+('SOLANA_RPC_FALLBACK_1', 'https://solana-api.projectserum.com', 'string', 'production', 'Fallback RPC endpoint 1'),
+('SOLANA_RPC_FALLBACK_2', 'https://rpc.ankr.com/solana', 'string', 'production', 'Fallback RPC endpoint 2'),
+('SOLANA_COMMITMENT_LEVEL', 'confirmed', 'string', 'production', 'Transaction commitment level'),
+('SOLANA_CONFIRMATION_TIMEOUT', '45000', 'number', 'production', 'Transaction confirmation timeout in ms')
+
+ON CONFLICT (config_key, environment) DO NOTHING;
+
+-- =====================================================
+-- 3. PREMIUM PRICING CONFIGURATION
+-- =====================================================
+
+INSERT INTO public.solana_config (config_key, config_value, config_type, environment, description) VALUES
+-- Development Pricing (Low amounts for testing)
+('PREMIUM_PRICE_SOL', '0.001', 'number', 'development', 'Premium subscription price in SOL'),
+('PREMIUM_DURATION_DAYS', '30', 'number', 'development', 'Premium subscription duration in days'),
+('DONATION_MIN_SOL', '0.0001', 'number', 'development', 'Minimum donation amount in SOL'),
+('DONATION_MAX_SOL', '1.0', 'number', 'development', 'Maximum donation amount in SOL'),
+
+-- Staging Pricing (Realistic testing amounts)
+('PREMIUM_PRICE_SOL', '0.01', 'number', 'staging', 'Premium subscription price in SOL'),
+('PREMIUM_DURATION_DAYS', '30', 'number', 'staging', 'Premium subscription duration in days'),
+('DONATION_MIN_SOL', '0.001', 'number', 'staging', 'Minimum donation amount in SOL'),
+('DONATION_MAX_SOL', '5.0', 'number', 'staging', 'Maximum donation amount in SOL'),
+
+-- Production Pricing (Real market prices)
+('PREMIUM_PRICE_SOL', '0.1', 'number', 'production', 'Premium subscription price in SOL'),
+('PREMIUM_DURATION_DAYS', '30', 'number', 'production', 'Premium subscription duration in days'),
+('DONATION_MIN_SOL', '0.01', 'number', 'production', 'Minimum donation amount in SOL'),
+('DONATION_MAX_SOL', '10.0', 'number', 'production', 'Maximum donation amount in SOL')
+
+ON CONFLICT (config_key, environment) DO NOTHING;
+
+-- =====================================================
+-- 4. WALLET CONFIGURATION
+-- =====================================================
+
+INSERT INTO public.solana_config (config_key, config_value, config_type, environment, description) VALUES
+-- Development Wallet Addresses (Devnet)
+('DONATION_POOL_PUBKEY', 'DevDonationPoolAddress1234567890123456789012', 'string', 'development', 'Donation pool wallet address'),
+('PREMIUM_POOL_PUBKEY', 'DevPremiumPoolAddress1234567890123456789012', 'string', 'development', 'Premium payments pool wallet address'),
+
+-- Staging Wallet Addresses (Devnet)
+('DONATION_POOL_PUBKEY', 'StageDonationPoolAddress12345678901234567890', 'string', 'staging', 'Donation pool wallet address'),
+('PREMIUM_POOL_PUBKEY', 'StagePremiumPoolAddress123456789012345678901', 'string', 'staging', 'Premium payments pool wallet address'),
+
+-- Production Wallet Addresses (Mainnet-beta) - TO BE UPDATED WITH REAL ADDRESSES
+('DONATION_POOL_PUBKEY', 'REPLACE_WITH_REAL_DONATION_POOL_ADDRESS', 'string', 'production', 'Donation pool wallet address'),
+('PREMIUM_POOL_PUBKEY', 'REPLACE_WITH_REAL_PREMIUM_POOL_ADDRESS', 'string', 'production', 'Premium payments pool wallet address')
+
+ON CONFLICT (config_key, environment) DO NOTHING;
+
+-- =====================================================
+-- 5. PREMIUM FEATURES CONFIGURATION
+-- =====================================================
+
+CREATE TABLE IF NOT EXISTS public.premium_features (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+
+    -- Feature details
+    feature_key VARCHAR(100) UNIQUE NOT NULL,
+    feature_name VARCHAR(200) NOT NULL,
+    description TEXT,
+
+    -- Access control
+    requires_premium BOOLEAN DEFAULT TRUE,
+    monthly_limit INTEGER NULL, -- NULL = unlimited
+    daily_limit INTEGER NULL,   -- NULL = unlimited
+
+    -- Feature configuration
+    is_active BOOLEAN DEFAULT TRUE,
+    rollout_percentage INTEGER DEFAULT 100 CHECK (rollout_percentage >= 0 AND rollout_percentage <= 100),
+
+    -- Metadata
+    metadata JSONB DEFAULT '{}',
+
+    -- Timestamps
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+
+    -- Constraints
+    CONSTRAINT valid_feature_key CHECK (feature_key ~ '^[a-z_][a-z0-9_]*$') -- Lowercase snake_case
+);
+
+-- Insert premium features
+INSERT INTO public.premium_features (feature_key, feature_name, description, requires_premium, monthly_limit, daily_limit) VALUES
+-- AI Features
+('advanced_ai_analysis', 'Advanced AI Product Analysis', 'Detailed AI-powered ingredient analysis and recommendations', true, 100, NULL),
+('ai_recipe_suggestions', 'AI Recipe Suggestions', 'Personalized vegan recipe recommendations based on scanned products', true, 50, 5),
+('ai_nutrition_insights', 'AI Nutrition Insights', 'Advanced nutritional analysis and health impact assessments', true, 75, NULL),
+
+-- Scanner Features
+('bulk_scanning', 'Bulk Product Scanning', 'Scan multiple products in batch mode', true, NULL, 20),
+('offline_scanning', 'Offline Scanning', 'Scan products without internet connection', true, NULL, NULL),
+('barcode_history_unlimited', 'Unlimited Scan History', 'Access to complete scanning history', true, NULL, NULL),
+
+-- Social Features
+('community_reviews', 'Community Product Reviews', 'Submit and view detailed product reviews', true, 25, 3),
+('brand_following', 'Brand Following & Alerts', 'Follow brands and get updates on new products', true, NULL, NULL),
+('product_sharing', 'Enhanced Product Sharing', 'Share detailed product analyses with friends', true, 20, 5),
+
+-- Data Features
+('data_export', 'Data Export', 'Export your scanning data and preferences', true, 3, NULL),
+('advanced_filters', 'Advanced Search Filters', 'Use complex filters for product search', true, NULL, NULL),
+('trend_analysis', 'Personal Trend Analysis', 'Analyze your scanning patterns and dietary trends', true, 10, NULL),
+
+-- Free Features (for reference)
+('basic_scanning', 'Basic Product Scanning', 'Basic barcode scanning and vegan status check', false, NULL, NULL),
+('basic_history', 'Basic Scan History', 'Access to last 30 scanned products', false, NULL, NULL),
+('basic_ai_chat', 'Basic AI Assistant', 'Basic vegan lifestyle questions', false, 10, 3)
+
+ON CONFLICT (feature_key) DO NOTHING;
+
+-- =====================================================
+-- 6. ENVIRONMENT-SPECIFIC SETTINGS
+-- =====================================================
+
+INSERT INTO public.solana_config (config_key, config_value, config_type, environment, description) VALUES
+-- Development Settings
+('DEBUG_MODE', 'true', 'boolean', 'development', 'Enable debug logging and features'),
+('LOG_LEVEL', 'debug', 'string', 'development', 'Application logging level'),
+('RATE_LIMIT_ENABLED', 'false', 'boolean', 'development', 'Enable API rate limiting'),
+('CACHE_TTL_SECONDS', '300', 'number', 'development', 'Cache time-to-live in seconds'),
+
+-- Staging Settings
+('DEBUG_MODE', 'true', 'boolean', 'staging', 'Enable debug logging and features'),
+('LOG_LEVEL', 'info', 'string', 'staging', 'Application logging level'),
+('RATE_LIMIT_ENABLED', 'true', 'boolean', 'staging', 'Enable API rate limiting'),
+('CACHE_TTL_SECONDS', '600', 'number', 'staging', 'Cache time-to-live in seconds'),
+
+-- Production Settings
+('DEBUG_MODE', 'false', 'boolean', 'production', 'Enable debug logging and features'),
+('LOG_LEVEL', 'warn', 'string', 'production', 'Application logging level'),
+('RATE_LIMIT_ENABLED', 'true', 'boolean', 'production', 'Enable API rate limiting'),
+('CACHE_TTL_SECONDS', '3600', 'number', 'production', 'Cache time-to-live in seconds')
+
+ON CONFLICT (config_key, environment) DO NOTHING;
+
+-- =====================================================
+-- 7. SECURITY CONFIGURATION
+-- =====================================================
+
+INSERT INTO public.solana_config (config_key, config_value, config_type, environment, is_secret, description) VALUES
+-- KMS Configuration (marked as secret - values should be set via environment variables)
+('KMS_KEY_ID_DEV', 'SET_VIA_ENV_VAR', 'string', 'development', true, 'KMS key ID for development'),
+('KMS_KEY_ID_STAGING', 'SET_VIA_ENV_VAR', 'string', 'staging', true, 'KMS key ID for staging'),
+('KMS_KEY_ID_PROD', 'SET_VIA_ENV_VAR', 'string', 'production', true, 'KMS key ID for production'),
+
+-- Security Settings
+('SESSION_TIMEOUT_MINUTES', '30', 'number', 'development', false, 'User session timeout'),
+('MAX_LOGIN_ATTEMPTS', '5', 'number', 'development', false, 'Maximum login attempts before lockout'),
+('LOCKOUT_DURATION_MINUTES', '15', 'number', 'development', false, 'Account lockout duration'),
+
+('SESSION_TIMEOUT_MINUTES', '30', 'number', 'staging', false, 'User session timeout'),
+('MAX_LOGIN_ATTEMPTS', '5', 'number', 'staging', false, 'Maximum login attempts before lockout'),
+('LOCKOUT_DURATION_MINUTES', '15', 'number', 'staging', false, 'Account lockout duration'),
+
+('SESSION_TIMEOUT_MINUTES', '60', 'number', 'production', false, 'User session timeout'),
+('MAX_LOGIN_ATTEMPTS', '3', 'number', 'production', false, 'Maximum login attempts before lockout'),
+('LOCKOUT_DURATION_MINUTES', '30', 'number', 'production', false, 'Account lockout duration')
+
+ON CONFLICT (config_key, environment) DO NOTHING;
+
+-- =====================================================
+-- 8. CONFIGURATION MANAGEMENT FUNCTIONS
+-- =====================================================
+
+-- Function to get configuration value by environment
+CREATE OR REPLACE FUNCTION get_solana_config(
+    p_config_key VARCHAR(100),
+    p_environment VARCHAR(20) DEFAULT 'development'
+)
+RETURNS TEXT AS $$
+DECLARE
+    config_value TEXT;
+BEGIN
+    SELECT sc.config_value INTO config_value
+    FROM public.solana_config sc
+    WHERE sc.config_key = p_config_key
+      AND sc.environment = p_environment
+      AND sc.is_active = true;
+
+    RETURN config_value;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- Function to get typed configuration value
+CREATE OR REPLACE FUNCTION get_solana_config_typed(
+    p_config_key VARCHAR(100),
+    p_environment VARCHAR(20) DEFAULT 'development'
+)
+RETURNS JSONB AS $$
+DECLARE
+    config_record RECORD;
+    result JSONB;
+BEGIN
+    SELECT sc.config_value, sc.config_type INTO config_record
+    FROM public.solana_config sc
+    WHERE sc.config_key = p_config_key
+      AND sc.environment = p_environment
+      AND sc.is_active = true;
+
+    IF NOT FOUND THEN
+        RETURN NULL;
+    END IF;
+
+    CASE config_record.config_type
+        WHEN 'number' THEN
+            result = to_jsonb(config_record.config_value::NUMERIC);
+        WHEN 'boolean' THEN
+            result = to_jsonb(config_record.config_value::BOOLEAN);
+        WHEN 'json' THEN
+            result = config_record.config_value::JSONB;
+        ELSE
+            result = to_jsonb(config_record.config_value);
+    END CASE;
+
+    RETURN result;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- Function to check if user has premium feature access
+CREATE OR REPLACE FUNCTION user_has_premium_feature(
+    p_user_id UUID,
+    p_feature_key VARCHAR(100)
+)
+RETURNS BOOLEAN AS $$
+DECLARE
+    user_premium premium_status_enum;
+    feature_requires_premium BOOLEAN;
+    monthly_limit INTEGER;
+    usage_count INTEGER;
+BEGIN
+    -- Get user premium status
+    SELECT premium_status INTO user_premium
+    FROM public.user_profiles
+    WHERE id = p_user_id;
+
+    -- Get feature requirements
+    SELECT requires_premium, monthly_limit INTO feature_requires_premium, monthly_limit
+    FROM public.premium_features
+    WHERE feature_key = p_feature_key AND is_active = true;
+
+    -- If feature not found, deny access
+    IF NOT FOUND THEN
+        RETURN false;
+    END IF;
+
+    -- If feature doesn't require premium, allow access
+    IF NOT feature_requires_premium THEN
+        RETURN true;
+    END IF;
+
+    -- If user doesn't have active premium, deny access
+    IF user_premium != 'active' THEN
+        RETURN false;
+    END IF;
+
+    -- If no monthly limit, allow access
+    IF monthly_limit IS NULL THEN
+        RETURN true;
+    END IF;
+
+    -- Check monthly usage
+    SELECT COALESCE(usage_count, 0) INTO usage_count
+    FROM public.premium_benefits_usage
+    WHERE user_id = p_user_id
+      AND benefit_type = p_feature_key
+      AND usage_month = EXTRACT(MONTH FROM NOW())
+      AND usage_year = EXTRACT(YEAR FROM NOW());
+
+    RETURN usage_count < monthly_limit;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- =====================================================
+-- 9. INDEXES FOR CONFIGURATION TABLES
+-- =====================================================
+
+CREATE INDEX IF NOT EXISTS idx_solana_config_key_env ON public.solana_config(config_key, environment);
+CREATE INDEX IF NOT EXISTS idx_solana_config_active ON public.solana_config(is_active) WHERE is_active = true;
+CREATE INDEX IF NOT EXISTS idx_solana_config_environment ON public.solana_config(environment);
+
+CREATE INDEX IF NOT EXISTS idx_premium_features_key ON public.premium_features(feature_key);
+CREATE INDEX IF NOT EXISTS idx_premium_features_active ON public.premium_features(is_active) WHERE is_active = true;
+CREATE INDEX IF NOT EXISTS idx_premium_features_premium_required ON public.premium_features(requires_premium);
+
+-- =====================================================
+-- 10. RLS POLICIES FOR CONFIGURATION TABLES
+-- =====================================================
+
+-- Enable RLS on configuration tables
+ALTER TABLE public.solana_config ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.premium_features ENABLE ROW LEVEL SECURITY;
+
+-- Authenticated users can read non-secret configuration
+CREATE POLICY "Users can view non-secret config" ON public.solana_config
+    FOR SELECT USING (
+        auth.uid() IS NOT NULL AND is_secret = false
+    );
+
+-- Service role can manage all configuration
+CREATE POLICY "Service role can manage config" ON public.solana_config
+    FOR ALL USING (
+        auth.role() = 'service_role'
+    );
+
+-- Authenticated users can view active premium features
+CREATE POLICY "Users can view premium features" ON public.premium_features
+    FOR SELECT USING (
+        auth.uid() IS NOT NULL AND is_active = true
+    );
+
+-- Service role can manage premium features
+CREATE POLICY "Service role can manage premium features" ON public.premium_features
+    FOR ALL USING (
+        auth.role() = 'service_role'
+    );
+
+-- =====================================================
+-- 11. GRANT PERMISSIONS
+-- =====================================================
+
+-- Grant permissions on configuration tables
+GRANT SELECT ON public.solana_config TO authenticated;
+GRANT ALL ON public.solana_config TO service_role;
+
+GRANT SELECT ON public.premium_features TO authenticated;
+GRANT ALL ON public.premium_features TO service_role;
+
+-- Grant permissions on configuration functions
+GRANT EXECUTE ON FUNCTION get_solana_config(VARCHAR(100), VARCHAR(20)) TO authenticated, service_role;
+GRANT EXECUTE ON FUNCTION get_solana_config_typed(VARCHAR(100), VARCHAR(20)) TO authenticated, service_role;
+GRANT EXECUTE ON FUNCTION user_has_premium_feature(UUID, VARCHAR(100)) TO authenticated, service_role;
+
+-- =====================================================
+-- CONFIGURATION MIGRATION COMPLETED
+-- =====================================================
+
+-- Log successful configuration setup
+DO $$
+BEGIN
+    RAISE NOTICE 'Solana Wallet Configuration migration completed successfully at %', NOW();
+    RAISE NOTICE 'Environment-specific configuration loaded';
+    RAISE NOTICE 'Premium features defined and configured';
+    RAISE NOTICE 'Configuration management functions created';
+    RAISE NOTICE 'Security policies applied to configuration tables';
+END$$;

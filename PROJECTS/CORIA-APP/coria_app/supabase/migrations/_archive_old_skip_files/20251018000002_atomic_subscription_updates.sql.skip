@@ -1,0 +1,830 @@
+-- ========================================
+-- ATOMIC SUBSCRIPTION UPDATES SYSTEM
+-- ========================================
+-- Date: 2025-10-18
+-- Purpose: Atomik abonelik güncellemeleri - transaction + entitlements + quotas + history
+-- Security: Idempotency, unique constraints, rollback on fail
+-- Priority: P0 Critical - FIX-002 Database Transaction Atomicity
+--
+-- GEREKSINIMLER:
+-- ✅ Tek transaction: subscriptions(upsert) + entitlements(update) + plan_change_history(insert) + quotas(reset/bypass)
+-- ✅ unique(idempotency_key) - Tekrar işlemeyi önler
+-- ✅ unique(receipt_id/signature) - Ödeme tekrarını önler
+-- ✅ Rollback on fail - Tüm değişiklikler atomik
+
+-- ========================================
+-- 1. USER ENTITLEMENTS TABLE
+-- ========================================
+-- Kullanıcı yetkilerini tutar (premium features)
+-- premium_subscriptions ile 1:1 ilişki
+
+CREATE TABLE IF NOT EXISTS user_entitlements (
+  user_id UUID PRIMARY KEY REFERENCES user_profiles(id) ON DELETE CASCADE,
+
+  -- Premium feature flags
+  pantry_unlimited BOOLEAN NOT NULL DEFAULT FALSE,
+  ai_chat_unlimited BOOLEAN NOT NULL DEFAULT FALSE,
+  recipe_recommendations BOOLEAN NOT NULL DEFAULT FALSE,
+  offline_mode BOOLEAN NOT NULL DEFAULT FALSE,
+  export_data BOOLEAN NOT NULL DEFAULT FALSE,
+  priority_support BOOLEAN NOT NULL DEFAULT FALSE,
+  advanced_analytics BOOLEAN NOT NULL DEFAULT FALSE,
+
+  -- Tier information
+  tier TEXT NOT NULL DEFAULT 'free', -- free, trial, premium
+  activated_at TIMESTAMPTZ,
+  expires_at TIMESTAMPTZ,
+
+  -- Timestamps
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+
+  -- Constraints
+  CONSTRAINT valid_tier CHECK (tier IN ('free', 'trial', 'premium'))
+);
+
+-- Indexes
+CREATE INDEX IF NOT EXISTS idx_entitlements_tier ON user_entitlements(tier);
+CREATE INDEX IF NOT EXISTS idx_entitlements_expires_at ON user_entitlements(expires_at);
+
+-- RLS policies
+ALTER TABLE user_entitlements ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Users can view their own entitlements"
+  ON user_entitlements FOR SELECT
+  USING (auth.uid() = user_id);
+
+CREATE POLICY "Service role can manage entitlements"
+  ON user_entitlements FOR ALL
+  USING (auth.jwt()->>'role' = 'service_role');
+
+-- ========================================
+-- 2. USER QUOTAS TABLE
+-- ========================================
+-- Günlük/aylık kullanım sınırlarını tutar
+-- Free tier: Sınırlı | Premium: Unlimited (999999)
+
+CREATE TABLE IF NOT EXISTS user_quotas (
+  user_id UUID PRIMARY KEY REFERENCES user_profiles(id) ON DELETE CASCADE,
+
+  -- Daily limits (reset at 00:00 UTC)
+  pantry_items_count INTEGER NOT NULL DEFAULT 0,
+  pantry_items_limit INTEGER NOT NULL DEFAULT 20, -- Free: 20, Premium: 999999
+
+  ai_messages_today INTEGER NOT NULL DEFAULT 0,
+  ai_messages_limit INTEGER NOT NULL DEFAULT 10, -- Free: 10, Premium: 999999
+
+  scans_today INTEGER NOT NULL DEFAULT 0,
+  scans_limit INTEGER NOT NULL DEFAULT 50, -- Free: 50, Premium: 999999
+
+  -- Monthly limits
+  exports_this_month INTEGER NOT NULL DEFAULT 0,
+  exports_monthly_limit INTEGER NOT NULL DEFAULT 5, -- Free: 5, Premium: 999999
+
+  -- Reset tracking
+  last_daily_reset TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  last_monthly_reset TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+
+  -- Timestamps
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+-- Indexes
+CREATE INDEX IF NOT EXISTS idx_quotas_last_daily_reset ON user_quotas(last_daily_reset);
+CREATE INDEX IF NOT EXISTS idx_quotas_last_monthly_reset ON user_quotas(last_monthly_reset);
+
+-- RLS policies
+ALTER TABLE user_quotas ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Users can view their own quotas"
+  ON user_quotas FOR SELECT
+  USING (auth.uid() = user_id);
+
+CREATE POLICY "Service role can manage quotas"
+  ON user_quotas FOR ALL
+  USING (auth.jwt()->>'role' = 'service_role');
+
+-- ========================================
+-- 3. PLAN CHANGE HISTORY TABLE
+-- ========================================
+-- Abonelik değişiklik audit trail (FIX-006)
+-- Her state transition loglanır
+
+CREATE TABLE IF NOT EXISTS plan_change_history (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID NOT NULL REFERENCES user_profiles(id) ON DELETE CASCADE,
+  subscription_id TEXT,
+
+  -- State transition
+  from_state TEXT,
+  to_state TEXT NOT NULL,
+
+  -- Change metadata
+  change_type TEXT NOT NULL, -- activation, renewal, cancellation, expiration, upgrade, downgrade
+  change_reason TEXT NOT NULL, -- payment_success, payment_failed, user_action, webhook, admin_action, etc.
+  event_type TEXT, -- RevenueCat event type if applicable
+  event_id TEXT, -- RevenueCat event ID for correlation
+
+  -- Audit fields
+  metadata JSONB,
+  changed_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+
+  -- Constraints
+  CONSTRAINT valid_change_type CHECK (
+    change_type IN ('activation', 'renewal', 'cancellation', 'expiration', 'upgrade', 'downgrade', 'reactivation', 'refund')
+  )
+);
+
+-- Indexes for fast queries
+CREATE INDEX IF NOT EXISTS idx_plan_history_user_id ON plan_change_history(user_id);
+CREATE INDEX IF NOT EXISTS idx_plan_history_subscription_id ON plan_change_history(subscription_id);
+CREATE INDEX IF NOT EXISTS idx_plan_history_change_type ON plan_change_history(change_type);
+CREATE INDEX IF NOT EXISTS idx_plan_history_changed_at ON plan_change_history(changed_at DESC);
+CREATE INDEX IF NOT EXISTS idx_plan_history_event_id ON plan_change_history(event_id);
+
+-- RLS policies
+ALTER TABLE plan_change_history ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Users can view their own history"
+  ON plan_change_history FOR SELECT
+  USING (auth.uid() = user_id);
+
+CREATE POLICY "Service role can manage history"
+  ON plan_change_history FOR ALL
+  USING (auth.jwt()->>'role' = 'service_role');
+
+-- ========================================
+-- 4. UNIQUE CONSTRAINTS - IDEMPOTENCY
+-- ========================================
+-- premium_subscriptions tablosuna idempotency ve receipt constraints ekleme
+
+-- Idempotency key kolonu ekle
+ALTER TABLE premium_subscriptions
+ADD COLUMN IF NOT EXISTS idempotency_key TEXT;
+
+-- Receipt ID ve signature kolonları ekle
+ALTER TABLE premium_subscriptions
+ADD COLUMN IF NOT EXISTS receipt_id TEXT;
+
+ALTER TABLE premium_subscriptions
+ADD COLUMN IF NOT EXISTS receipt_signature TEXT;
+
+-- Unique constraint: idempotency_key
+CREATE UNIQUE INDEX IF NOT EXISTS unique_idempotency_key
+ON premium_subscriptions(idempotency_key)
+WHERE idempotency_key IS NOT NULL;
+
+-- Unique constraint: receipt_id + receipt_signature
+CREATE UNIQUE INDEX IF NOT EXISTS unique_receipt
+ON premium_subscriptions(receipt_id, receipt_signature)
+WHERE receipt_id IS NOT NULL AND receipt_signature IS NOT NULL;
+
+-- ========================================
+-- 5. ATOMIC RPC FUNCTIONS
+-- ========================================
+
+-- ========================================
+-- 5.1. ACTIVATE PREMIUM SUBSCRIPTION (ATOMIC)
+-- ========================================
+-- Tüm premium activation işlemlerini tek transaction'da yapar
+-- Herhangi biri fail olursa tümü rollback
+
+CREATE OR REPLACE FUNCTION activate_premium_atomic(
+  p_user_id UUID,
+  p_subscription_id TEXT,
+  p_product_id TEXT,
+  p_expiry_date TIMESTAMPTZ,
+  p_payment_method TEXT DEFAULT 'revenuecat',
+  p_idempotency_key TEXT DEFAULT NULL,
+  p_receipt_id TEXT DEFAULT NULL,
+  p_receipt_signature TEXT DEFAULT NULL,
+  p_event_id TEXT DEFAULT NULL,
+  p_store TEXT DEFAULT NULL,
+  p_environment TEXT DEFAULT 'production'
+) RETURNS JSONB AS $$
+DECLARE
+  v_previous_status TEXT;
+  v_is_new_subscription BOOLEAN;
+  v_change_type TEXT;
+BEGIN
+  -- 🔒 IDEMPOTENCY CHECK
+  IF p_idempotency_key IS NOT NULL THEN
+    PERFORM 1 FROM premium_subscriptions
+    WHERE idempotency_key = p_idempotency_key;
+
+    IF FOUND THEN
+      RETURN jsonb_build_object(
+        'success', TRUE,
+        'status', 'already_processed',
+        'message', 'Idempotency key already processed'
+      );
+    END IF;
+  END IF;
+
+  -- Get previous status for history logging
+  SELECT status INTO v_previous_status
+  FROM premium_subscriptions
+  WHERE user_id = p_user_id;
+
+  v_is_new_subscription := v_previous_status IS NULL;
+
+  -- Determine change type
+  v_change_type := CASE
+    WHEN v_is_new_subscription THEN 'activation'
+    WHEN v_previous_status = 'expired' THEN 'reactivation'
+    ELSE 'renewal'
+  END;
+
+  -- ========================================
+  -- ATOMIC TRANSACTION START
+  -- ========================================
+
+  -- 1️⃣ UPSERT SUBSCRIPTION
+  INSERT INTO premium_subscriptions (
+    user_id, subscription_id, product_id, status,
+    start_date, expiry_date, payment_method,
+    idempotency_key, receipt_id, receipt_signature,
+    store, environment,
+    created_at, updated_at
+  ) VALUES (
+    p_user_id, p_subscription_id, p_product_id, 'active',
+    NOW(), p_expiry_date, p_payment_method,
+    p_idempotency_key, p_receipt_id, p_receipt_signature,
+    p_store, p_environment,
+    NOW(), NOW()
+  )
+  ON CONFLICT (user_id)
+  DO UPDATE SET
+    subscription_id = EXCLUDED.subscription_id,
+    product_id = EXCLUDED.product_id,
+    status = 'active',
+    expiry_date = EXCLUDED.expiry_date,
+    payment_method = EXCLUDED.payment_method,
+    idempotency_key = EXCLUDED.idempotency_key,
+    receipt_id = EXCLUDED.receipt_id,
+    receipt_signature = EXCLUDED.receipt_signature,
+    store = EXCLUDED.store,
+    environment = EXCLUDED.environment,
+    cancellation_date = NULL, -- Clear cancellation if reactivating
+    billing_issue_detected_at = NULL, -- Clear billing issues
+    updated_at = NOW();
+
+  -- 2️⃣ UPDATE ENTITLEMENTS (Premium features)
+  INSERT INTO user_entitlements (
+    user_id,
+    pantry_unlimited, ai_chat_unlimited, recipe_recommendations,
+    offline_mode, export_data, priority_support, advanced_analytics,
+    tier, activated_at, expires_at,
+    created_at, updated_at
+  ) VALUES (
+    p_user_id,
+    TRUE, TRUE, TRUE,
+    TRUE, TRUE, TRUE, TRUE,
+    'premium', NOW(), p_expiry_date,
+    NOW(), NOW()
+  )
+  ON CONFLICT (user_id)
+  DO UPDATE SET
+    pantry_unlimited = TRUE,
+    ai_chat_unlimited = TRUE,
+    recipe_recommendations = TRUE,
+    offline_mode = TRUE,
+    export_data = TRUE,
+    priority_support = TRUE,
+    advanced_analytics = TRUE,
+    tier = 'premium',
+    activated_at = NOW(),
+    expires_at = EXCLUDED.expires_at,
+    updated_at = NOW();
+
+  -- 3️⃣ RESET/BYPASS QUOTAS (Premium = unlimited)
+  INSERT INTO user_quotas (
+    user_id,
+    pantry_items_limit, ai_messages_limit, scans_limit, exports_monthly_limit,
+    created_at, updated_at
+  ) VALUES (
+    p_user_id,
+    999999, 999999, 999999, 999999,
+    NOW(), NOW()
+  )
+  ON CONFLICT (user_id)
+  DO UPDATE SET
+    pantry_items_limit = 999999,
+    ai_messages_limit = 999999,
+    scans_limit = 999999,
+    exports_monthly_limit = 999999,
+    updated_at = NOW();
+
+  -- 4️⃣ LOG HISTORY (Audit trail)
+  INSERT INTO plan_change_history (
+    user_id, subscription_id,
+    from_state, to_state,
+    change_type, change_reason,
+    event_type, event_id,
+    metadata, changed_at
+  ) VALUES (
+    p_user_id, p_subscription_id,
+    v_previous_status, 'active',
+    v_change_type, 'payment_success',
+    'RENEWAL', p_event_id,
+    jsonb_build_object(
+      'payment_method', p_payment_method,
+      'product_id', p_product_id,
+      'store', p_store,
+      'environment', p_environment
+    ),
+    NOW()
+  );
+
+  -- 5️⃣ UPDATE USER PROFILE
+  UPDATE user_profiles SET
+    is_premium = TRUE,
+    premium_expires_at = p_expiry_date,
+    trial_active = FALSE, -- End trial if active
+    updated_at = NOW()
+  WHERE id = p_user_id;
+
+  -- ========================================
+  -- ATOMIC TRANSACTION END
+  -- ========================================
+  -- Tüm işlemler başarılı → COMMIT
+  -- Herhangi biri fail → ROLLBACK (PostgreSQL otomatik yapar)
+
+  RETURN jsonb_build_object(
+    'success', TRUE,
+    'status', 'activated',
+    'change_type', v_change_type,
+    'user_id', p_user_id,
+    'expiry_date', p_expiry_date
+  );
+
+EXCEPTION
+  WHEN OTHERS THEN
+    -- Transaction otomatik rollback oldu
+    RAISE NOTICE 'Premium activation failed: %', SQLERRM;
+    RETURN jsonb_build_object(
+      'success', FALSE,
+      'error', SQLERRM,
+      'error_detail', SQLSTATE
+    );
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- ========================================
+-- 5.2. EXPIRE PREMIUM SUBSCRIPTION (ATOMIC)
+-- ========================================
+-- Abonelik süresini dolduğunda tüm değişiklikleri yapar
+
+CREATE OR REPLACE FUNCTION expire_premium_atomic(
+  p_user_id UUID,
+  p_event_id TEXT DEFAULT NULL
+) RETURNS JSONB AS $$
+DECLARE
+  v_previous_status TEXT;
+BEGIN
+  -- Get previous status
+  SELECT status INTO v_previous_status
+  FROM premium_subscriptions
+  WHERE user_id = p_user_id;
+
+  IF v_previous_status IS NULL THEN
+    RETURN jsonb_build_object(
+      'success', FALSE,
+      'error', 'No subscription found for user'
+    );
+  END IF;
+
+  -- ========================================
+  -- ATOMIC TRANSACTION START
+  -- ========================================
+
+  -- 1️⃣ UPDATE SUBSCRIPTION STATUS
+  UPDATE premium_subscriptions SET
+    status = 'expired',
+    updated_at = NOW()
+  WHERE user_id = p_user_id
+    AND status IN ('active', 'cancelled', 'grace_period');
+
+  -- 2️⃣ REVOKE ENTITLEMENTS (Back to free tier)
+  UPDATE user_entitlements SET
+    pantry_unlimited = FALSE,
+    ai_chat_unlimited = FALSE,
+    recipe_recommendations = FALSE,
+    offline_mode = FALSE,
+    export_data = FALSE,
+    priority_support = FALSE,
+    advanced_analytics = FALSE,
+    tier = 'free',
+    expires_at = NOW(),
+    updated_at = NOW()
+  WHERE user_id = p_user_id;
+
+  -- 3️⃣ RESET QUOTAS TO FREE TIER
+  UPDATE user_quotas SET
+    pantry_items_limit = 20,
+    ai_messages_limit = 10,
+    scans_limit = 50,
+    exports_monthly_limit = 5,
+    updated_at = NOW()
+  WHERE user_id = p_user_id;
+
+  -- 4️⃣ LOG HISTORY
+  INSERT INTO plan_change_history (
+    user_id,
+    from_state, to_state,
+    change_type, change_reason,
+    event_type, event_id,
+    changed_at
+  ) VALUES (
+    p_user_id,
+    v_previous_status, 'expired',
+    'expiration', 'subscription_expired',
+    'EXPIRATION', p_event_id,
+    NOW()
+  );
+
+  -- 5️⃣ UPDATE USER PROFILE
+  UPDATE user_profiles SET
+    is_premium = FALSE,
+    updated_at = NOW()
+  WHERE id = p_user_id;
+
+  -- ========================================
+  -- ATOMIC TRANSACTION END
+  -- ========================================
+
+  RETURN jsonb_build_object(
+    'success', TRUE,
+    'status', 'expired',
+    'user_id', p_user_id
+  );
+
+EXCEPTION
+  WHEN OTHERS THEN
+    RAISE NOTICE 'Premium expiration failed: %', SQLERRM;
+    RETURN jsonb_build_object(
+      'success', FALSE,
+      'error', SQLERRM
+    );
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- ========================================
+-- 5.3. CANCEL PREMIUM SUBSCRIPTION (ATOMIC)
+-- ========================================
+-- Kullanıcı iptal eder ama expiry_date'e kadar access devam eder
+
+CREATE OR REPLACE FUNCTION cancel_premium_atomic(
+  p_user_id UUID,
+  p_cancelled_by TEXT DEFAULT 'user',
+  p_event_id TEXT DEFAULT NULL
+) RETURNS JSONB AS $$
+DECLARE
+  v_previous_status TEXT;
+  v_expiry_date TIMESTAMPTZ;
+BEGIN
+  -- Get subscription info
+  SELECT status, expiry_date INTO v_previous_status, v_expiry_date
+  FROM premium_subscriptions
+  WHERE user_id = p_user_id;
+
+  IF v_previous_status IS NULL THEN
+    RETURN jsonb_build_object(
+      'success', FALSE,
+      'error', 'No subscription found for user'
+    );
+  END IF;
+
+  IF v_previous_status != 'active' THEN
+    RETURN jsonb_build_object(
+      'success', FALSE,
+      'error', 'Cannot cancel subscription in status: ' || v_previous_status
+    );
+  END IF;
+
+  -- ========================================
+  -- ATOMIC TRANSACTION START
+  -- ========================================
+
+  -- 1️⃣ MARK AS CANCELLED (but don't expire yet)
+  UPDATE premium_subscriptions SET
+    status = 'cancelled',
+    cancellation_date = NOW(),
+    updated_at = NOW()
+  WHERE user_id = p_user_id
+    AND status = 'active';
+
+  -- 2️⃣ ENTITLEMENTS STAY ACTIVE until expiry_date
+  -- NO CHANGE - user keeps access
+
+  -- 3️⃣ QUOTAS STAY UNLIMITED until expiry_date
+  -- NO CHANGE - user keeps unlimited access
+
+  -- 4️⃣ LOG HISTORY
+  INSERT INTO plan_change_history (
+    user_id,
+    from_state, to_state,
+    change_type, change_reason,
+    event_type, event_id,
+    metadata,
+    changed_at
+  ) VALUES (
+    p_user_id,
+    v_previous_status, 'cancelled',
+    'cancellation', p_cancelled_by,
+    'CANCELLATION', p_event_id,
+    jsonb_build_object(
+      'cancelled_by', p_cancelled_by,
+      'access_until', v_expiry_date
+    ),
+    NOW()
+  );
+
+  -- 5️⃣ USER PROFILE STAYS PREMIUM until expiry
+  -- NO CHANGE - is_premium stays TRUE
+
+  -- ========================================
+  -- ATOMIC TRANSACTION END
+  -- ========================================
+
+  RETURN jsonb_build_object(
+    'success', TRUE,
+    'status', 'cancelled',
+    'user_id', p_user_id,
+    'access_until', v_expiry_date,
+    'message', 'Subscription cancelled. Access continues until ' || v_expiry_date::TEXT
+  );
+
+EXCEPTION
+  WHEN OTHERS THEN
+    RAISE NOTICE 'Premium cancellation failed: %', SQLERRM;
+    RETURN jsonb_build_object(
+      'success', FALSE,
+      'error', SQLERRM
+    );
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- ========================================
+-- 5.4. ENTER GRACE PERIOD (ATOMIC)
+-- ========================================
+-- Ödeme başarısız olduğunda grace period'a geçiş
+
+CREATE OR REPLACE FUNCTION enter_grace_period_atomic(
+  p_user_id UUID,
+  p_grace_days INTEGER DEFAULT 7,
+  p_event_id TEXT DEFAULT NULL
+) RETURNS JSONB AS $$
+DECLARE
+  v_previous_status TEXT;
+  v_grace_end TIMESTAMPTZ;
+BEGIN
+  v_grace_end := NOW() + (p_grace_days || ' days')::INTERVAL;
+
+  SELECT status INTO v_previous_status
+  FROM premium_subscriptions
+  WHERE user_id = p_user_id;
+
+  IF v_previous_status != 'active' THEN
+    RETURN jsonb_build_object(
+      'success', FALSE,
+      'error', 'Can only enter grace period from active status'
+    );
+  END IF;
+
+  -- ========================================
+  -- ATOMIC TRANSACTION START
+  -- ========================================
+
+  -- 1️⃣ UPDATE SUBSCRIPTION to grace_period
+  UPDATE premium_subscriptions SET
+    status = 'grace_period',
+    billing_issue_detected_at = NOW(),
+    expiry_date = v_grace_end, -- Extend expiry to grace end
+    updated_at = NOW()
+  WHERE user_id = p_user_id
+    AND status = 'active';
+
+  -- 2️⃣ ENTITLEMENTS STAY ACTIVE during grace
+  -- NO CHANGE - user keeps all features
+
+  -- 3️⃣ QUOTAS STAY UNLIMITED during grace
+  -- NO CHANGE - user keeps unlimited access
+
+  -- 4️⃣ LOG HISTORY
+  INSERT INTO plan_change_history (
+    user_id,
+    from_state, to_state,
+    change_type, change_reason,
+    event_type, event_id,
+    metadata,
+    changed_at
+  ) VALUES (
+    p_user_id,
+    v_previous_status, 'grace_period',
+    'downgrade', 'billing_issue',
+    'BILLING_ISSUE', p_event_id,
+    jsonb_build_object(
+      'grace_days', p_grace_days,
+      'grace_end', v_grace_end
+    ),
+    NOW()
+  );
+
+  -- 5️⃣ USER PROFILE STAYS PREMIUM during grace
+  UPDATE user_profiles SET
+    premium_expires_at = v_grace_end,
+    updated_at = NOW()
+  WHERE id = p_user_id;
+
+  -- ========================================
+  -- ATOMIC TRANSACTION END
+  -- ========================================
+
+  RETURN jsonb_build_object(
+    'success', TRUE,
+    'status', 'grace_period',
+    'grace_end', v_grace_end,
+    'message', 'Entered grace period. Access continues for ' || p_grace_days || ' days'
+  );
+
+EXCEPTION
+  WHEN OTHERS THEN
+    RAISE NOTICE 'Grace period entry failed: %', SQLERRM;
+    RETURN jsonb_build_object(
+      'success', FALSE,
+      'error', SQLERRM
+    );
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- ========================================
+-- 5.5. PROCESS REFUND (ATOMIC)
+-- ========================================
+-- İade durumunda premium'u hemen iptal et
+
+CREATE OR REPLACE FUNCTION process_refund_atomic(
+  p_user_id UUID,
+  p_event_id TEXT DEFAULT NULL
+) RETURNS JSONB AS $$
+DECLARE
+  v_previous_status TEXT;
+BEGIN
+  SELECT status INTO v_previous_status
+  FROM premium_subscriptions
+  WHERE user_id = p_user_id;
+
+  -- ========================================
+  -- ATOMIC TRANSACTION START
+  -- ========================================
+
+  -- 1️⃣ UPDATE SUBSCRIPTION to refunded
+  UPDATE premium_subscriptions SET
+    status = 'refunded',
+    updated_at = NOW()
+  WHERE user_id = p_user_id;
+
+  -- 2️⃣ IMMEDIATELY REVOKE ENTITLEMENTS
+  UPDATE user_entitlements SET
+    pantry_unlimited = FALSE,
+    ai_chat_unlimited = FALSE,
+    recipe_recommendations = FALSE,
+    offline_mode = FALSE,
+    export_data = FALSE,
+    priority_support = FALSE,
+    advanced_analytics = FALSE,
+    tier = 'free',
+    expires_at = NOW(),
+    updated_at = NOW()
+  WHERE user_id = p_user_id;
+
+  -- 3️⃣ RESET QUOTAS TO FREE TIER
+  UPDATE user_quotas SET
+    pantry_items_limit = 20,
+    ai_messages_limit = 10,
+    scans_limit = 50,
+    exports_monthly_limit = 5,
+    updated_at = NOW()
+  WHERE user_id = p_user_id;
+
+  -- 4️⃣ LOG HISTORY
+  INSERT INTO plan_change_history (
+    user_id,
+    from_state, to_state,
+    change_type, change_reason,
+    event_type, event_id,
+    changed_at
+  ) VALUES (
+    p_user_id,
+    v_previous_status, 'refunded',
+    'refund', 'payment_refunded',
+    'REFUND', p_event_id,
+    NOW()
+  );
+
+  -- 5️⃣ IMMEDIATELY UPDATE USER PROFILE
+  UPDATE user_profiles SET
+    is_premium = FALSE,
+    updated_at = NOW()
+  WHERE id = p_user_id;
+
+  -- ========================================
+  -- ATOMIC TRANSACTION END
+  -- ========================================
+
+  RETURN jsonb_build_object(
+    'success', TRUE,
+    'status', 'refunded',
+    'message', 'Refund processed. Premium access immediately revoked.'
+  );
+
+EXCEPTION
+  WHEN OTHERS THEN
+    RAISE NOTICE 'Refund processing failed: %', SQLERRM;
+    RETURN jsonb_build_object(
+      'success', FALSE,
+      'error', SQLERRM
+    );
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- ========================================
+-- 6. HELPER FUNCTIONS
+-- ========================================
+
+-- ========================================
+-- 6.1. CHECK USER PREMIUM STATUS
+-- ========================================
+CREATE OR REPLACE FUNCTION check_premium_status(p_user_id UUID)
+RETURNS JSONB AS $$
+DECLARE
+  v_subscription RECORD;
+  v_entitlements RECORD;
+BEGIN
+  SELECT * INTO v_subscription
+  FROM premium_subscriptions
+  WHERE user_id = p_user_id;
+
+  SELECT * INTO v_entitlements
+  FROM user_entitlements
+  WHERE user_id = p_user_id;
+
+  RETURN jsonb_build_object(
+    'has_subscription', v_subscription.id IS NOT NULL,
+    'status', v_subscription.status,
+    'tier', v_entitlements.tier,
+    'is_premium', v_entitlements.tier IN ('trial', 'premium'),
+    'expires_at', v_subscription.expiry_date,
+    'features', jsonb_build_object(
+      'pantry_unlimited', v_entitlements.pantry_unlimited,
+      'ai_chat_unlimited', v_entitlements.ai_chat_unlimited,
+      'recipe_recommendations', v_entitlements.recipe_recommendations
+    )
+  );
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- ========================================
+-- 7. TRIGGERS
+-- ========================================
+
+-- Updated_at trigger for entitlements
+CREATE OR REPLACE FUNCTION update_entitlements_updated_at()
+RETURNS TRIGGER AS $$
+BEGIN
+  NEW.updated_at = NOW();
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER set_entitlements_updated_at
+  BEFORE UPDATE ON user_entitlements
+  FOR EACH ROW
+  EXECUTE FUNCTION update_entitlements_updated_at();
+
+-- Updated_at trigger for quotas
+CREATE OR REPLACE FUNCTION update_quotas_updated_at()
+RETURNS TRIGGER AS $$
+BEGIN
+  NEW.updated_at = NOW();
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER set_quotas_updated_at
+  BEFORE UPDATE ON user_quotas
+  FOR EACH ROW
+  EXECUTE FUNCTION update_quotas_updated_at();
+
+-- ========================================
+-- END OF MIGRATION
+-- ========================================
+-- Bu migration tamamlandıktan sonra:
+-- 1. premium_subscriptions -> ATOMIC upsert
+-- 2. user_entitlements -> ATOMIC update
+-- 3. plan_change_history -> ATOMIC insert
+-- 4. user_quotas -> ATOMIC reset/bypass
+-- 5. user_profiles -> ATOMIC is_premium update
+--
+-- Tüm işlemler tek transaction'da, herhangi biri fail olursa ROLLBACK

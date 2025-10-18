@@ -1,0 +1,559 @@
+-- =====================================================
+-- AUTO-TRIAL SYSTEM
+-- =====================================================
+-- Description: Automatic 14-day trial for new users
+-- Requirements: Auto-start on signup, one trial per user
+-- Dependencies: 20251018000003_grace_period_system.sql
+-- Author: Auto-Trial Implementation
+-- Date: 2025-01-18
+-- =====================================================
+
+-- =====================================================
+-- 1. SCHEMA CHANGES
+-- =====================================================
+
+-- Add trial fields to premium_subscriptions table
+ALTER TABLE premium_subscriptions
+ADD COLUMN IF NOT EXISTS trial_start TIMESTAMP WITH TIME ZONE,
+ADD COLUMN IF NOT EXISTS trial_end TIMESTAMP WITH TIME ZONE,
+ADD COLUMN IF NOT EXISTS trial_used BOOLEAN DEFAULT FALSE;
+
+-- Add trial status to subscription status enum
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_type t
+    JOIN pg_enum e ON t.oid = e.enumtypid
+    WHERE t.typname = 'subscription_status'
+    AND e.enumlabel = 'trial'
+  ) THEN
+    ALTER TYPE subscription_status ADD VALUE 'trial';
+  END IF;
+END$$;
+
+-- Add index for trial queries
+CREATE INDEX IF NOT EXISTS idx_premium_subscriptions_trial_end
+ON premium_subscriptions(trial_end)
+WHERE status = 'trial' AND trial_end IS NOT NULL;
+
+-- Add index for trial abuse prevention
+CREATE INDEX IF NOT EXISTS idx_premium_subscriptions_trial_used
+ON premium_subscriptions(user_id, trial_used)
+WHERE trial_used = TRUE;
+
+COMMENT ON COLUMN premium_subscriptions.trial_start IS 'Trial period start timestamp';
+COMMENT ON COLUMN premium_subscriptions.trial_end IS 'Trial period end timestamp';
+COMMENT ON COLUMN premium_subscriptions.trial_used IS 'Has user ever used trial (abuse prevention)';
+
+-- =====================================================
+-- 2. HELPER FUNCTIONS
+-- =====================================================
+
+-- Check if user has already used trial
+CREATE OR REPLACE FUNCTION has_used_trial(p_user_id UUID)
+RETURNS BOOLEAN
+LANGUAGE plpgsql
+SECURITY DEFINER
+AS $$
+BEGIN
+  RETURN EXISTS (
+    SELECT 1
+    FROM premium_subscriptions
+    WHERE user_id = p_user_id
+    AND trial_used = TRUE
+  );
+END;
+$$;
+
+COMMENT ON FUNCTION has_used_trial IS 'Abuse prevention: Check if user already consumed their one-time trial';
+
+-- =====================================================
+-- 3. ATOMIC TRIAL OPERATIONS
+-- =====================================================
+
+-- Auto-create trial subscription for new users
+CREATE OR REPLACE FUNCTION create_trial_subscription_atomic(
+  p_user_id UUID,
+  p_trial_days INTEGER DEFAULT 14,
+  p_event_id TEXT DEFAULT NULL,
+  p_idempotency_key TEXT DEFAULT NULL
+)
+RETURNS JSONB
+LANGUAGE plpgsql
+SECURITY DEFINER
+AS $$
+DECLARE
+  v_subscription_id UUID;
+  v_trial_start TIMESTAMP WITH TIME ZONE;
+  v_trial_end TIMESTAMP WITH TIME ZONE;
+  v_existing_sub premium_subscriptions%ROWTYPE;
+BEGIN
+  -- Idempotency check
+  IF p_idempotency_key IS NOT NULL THEN
+    PERFORM idempotency_guard(p_idempotency_key);
+  END IF;
+
+  -- Check if user already used trial (abuse prevention)
+  IF has_used_trial(p_user_id) THEN
+    RETURN jsonb_build_object(
+      'success', FALSE,
+      'error', 'trial_already_used',
+      'message', 'User has already used their trial period'
+    );
+  END IF;
+
+  -- Check if user already has active subscription
+  SELECT * INTO v_existing_sub
+  FROM premium_subscriptions
+  WHERE user_id = p_user_id
+  AND status IN ('active', 'trial', 'grace')
+  LIMIT 1;
+
+  IF v_existing_sub.id IS NOT NULL THEN
+    RETURN jsonb_build_object(
+      'success', FALSE,
+      'error', 'active_subscription_exists',
+      'message', 'User already has an active subscription',
+      'current_status', v_existing_sub.status
+    );
+  END IF;
+
+  -- Set trial period
+  v_trial_start := NOW();
+  v_trial_end := v_trial_start + (p_trial_days || ' days')::INTERVAL;
+
+  -- Insert trial subscription
+  INSERT INTO premium_subscriptions (
+    user_id,
+    plan_id,
+    status,
+    start_date,
+    expiry_date,
+    trial_start,
+    trial_end,
+    trial_used,
+    payment_retry_count,
+    created_at,
+    updated_at
+  )
+  VALUES (
+    p_user_id,
+    'trial_plan',  -- Special trial plan ID
+    'trial',
+    v_trial_start,
+    v_trial_end,   -- expiry_date matches trial_end for trial subscriptions
+    v_trial_start,
+    v_trial_end,
+    TRUE,          -- Mark trial as used immediately (abuse prevention)
+    0,
+    NOW(),
+    NOW()
+  )
+  RETURNING id INTO v_subscription_id;
+
+  -- Update user tier
+  UPDATE user_profiles
+  SET tier = 'premium_trial',
+      updated_at = NOW()
+  WHERE user_id = p_user_id;
+
+  -- Log plan change
+  INSERT INTO plan_change_history (
+    user_id,
+    subscription_id,
+    change_type,
+    from_state,
+    to_state,
+    from_tier,
+    to_tier,
+    event_id,
+    metadata,
+    changed_at
+  )
+  VALUES (
+    p_user_id,
+    v_subscription_id,
+    'trial_started',
+    NULL,
+    'trial',
+    'free',
+    'premium_trial',
+    p_event_id,
+    jsonb_build_object(
+      'trial_days', p_trial_days,
+      'trial_start', v_trial_start,
+      'trial_end', v_trial_end,
+      'auto_created', TRUE
+    ),
+    NOW()
+  );
+
+  -- Return success
+  RETURN jsonb_build_object(
+    'success', TRUE,
+    'subscription_id', v_subscription_id,
+    'trial_start', v_trial_start,
+    'trial_end', v_trial_end,
+    'trial_days_remaining', p_trial_days,
+    'message', 'Trial subscription created successfully'
+  );
+
+EXCEPTION
+  WHEN OTHERS THEN
+    RETURN jsonb_build_object(
+      'success', FALSE,
+      'error', 'database_error',
+      'message', SQLERRM,
+      'detail', SQLSTATE
+    );
+END;
+$$;
+
+COMMENT ON FUNCTION create_trial_subscription_atomic IS 'Auto-create 14-day trial subscription for new users with abuse prevention';
+
+-- Convert trial to premium (payment successful)
+CREATE OR REPLACE FUNCTION upgrade_trial_to_premium_atomic(
+  p_user_id UUID,
+  p_plan_id TEXT,
+  p_payment_id TEXT,
+  p_expiry_date TIMESTAMP WITH TIME ZONE,
+  p_event_id TEXT DEFAULT NULL,
+  p_idempotency_key TEXT DEFAULT NULL
+)
+RETURNS JSONB
+LANGUAGE plpgsql
+SECURITY DEFINER
+AS $$
+DECLARE
+  v_subscription_id UUID;
+  v_old_status TEXT;
+BEGIN
+  -- Idempotency check
+  IF p_idempotency_key IS NOT NULL THEN
+    PERFORM idempotency_guard(p_idempotency_key);
+  END IF;
+
+  -- Get trial subscription
+  SELECT id, status::TEXT INTO v_subscription_id, v_old_status
+  FROM premium_subscriptions
+  WHERE user_id = p_user_id
+  AND status = 'trial'
+  ORDER BY created_at DESC
+  LIMIT 1;
+
+  IF v_subscription_id IS NULL THEN
+    RETURN jsonb_build_object(
+      'success', FALSE,
+      'error', 'trial_not_found',
+      'message', 'No active trial subscription found for user'
+    );
+  END IF;
+
+  -- Update subscription to premium
+  UPDATE premium_subscriptions
+  SET status = 'active',
+      plan_id = p_plan_id,
+      payment_id = p_payment_id,
+      expiry_date = p_expiry_date,
+      updated_at = NOW()
+  WHERE id = v_subscription_id;
+
+  -- Update user tier
+  UPDATE user_profiles
+  SET tier = 'premium',
+      updated_at = NOW()
+  WHERE user_id = p_user_id;
+
+  -- Log plan change
+  INSERT INTO plan_change_history (
+    user_id,
+    subscription_id,
+    change_type,
+    from_state,
+    to_state,
+    from_tier,
+    to_tier,
+    event_id,
+    metadata,
+    changed_at
+  )
+  VALUES (
+    p_user_id,
+    v_subscription_id,
+    'trial_upgraded',
+    v_old_status,
+    'active',
+    'premium_trial',
+    'premium',
+    p_event_id,
+    jsonb_build_object(
+      'plan_id', p_plan_id,
+      'payment_id', p_payment_id,
+      'expiry_date', p_expiry_date
+    ),
+    NOW()
+  );
+
+  -- Return success
+  RETURN jsonb_build_object(
+    'success', TRUE,
+    'subscription_id', v_subscription_id,
+    'status', 'active',
+    'tier', 'premium',
+    'expiry_date', p_expiry_date,
+    'message', 'Trial upgraded to premium successfully'
+  );
+
+EXCEPTION
+  WHEN OTHERS THEN
+    RETURN jsonb_build_object(
+      'success', FALSE,
+      'error', 'database_error',
+      'message', SQLERRM,
+      'detail', SQLSTATE
+    );
+END;
+$$;
+
+COMMENT ON FUNCTION upgrade_trial_to_premium_atomic IS 'Convert trial subscription to paid premium when user makes payment';
+
+-- Expire trial subscription (auto-called by scheduler)
+CREATE OR REPLACE FUNCTION expire_trial_subscription_atomic(
+  p_user_id UUID,
+  p_event_id TEXT DEFAULT NULL,
+  p_idempotency_key TEXT DEFAULT NULL
+)
+RETURNS JSONB
+LANGUAGE plpgsql
+SECURITY DEFINER
+AS $$
+DECLARE
+  v_subscription_id UUID;
+  v_old_status TEXT;
+BEGIN
+  -- Idempotency check
+  IF p_idempotency_key IS NOT NULL THEN
+    PERFORM idempotency_guard(p_idempotency_key);
+  END IF;
+
+  -- Get trial subscription
+  SELECT id, status::TEXT INTO v_subscription_id, v_old_status
+  FROM premium_subscriptions
+  WHERE user_id = p_user_id
+  AND status = 'trial'
+  AND trial_end < NOW()
+  ORDER BY created_at DESC
+  LIMIT 1;
+
+  IF v_subscription_id IS NULL THEN
+    RETURN jsonb_build_object(
+      'success', FALSE,
+      'error', 'trial_not_found',
+      'message', 'No expired trial subscription found for user'
+    );
+  END IF;
+
+  -- Update subscription to expired
+  UPDATE premium_subscriptions
+  SET status = 'expired',
+      updated_at = NOW()
+  WHERE id = v_subscription_id;
+
+  -- Downgrade user to free tier
+  UPDATE user_profiles
+  SET tier = 'free',
+      updated_at = NOW()
+  WHERE user_id = p_user_id;
+
+  -- Log plan change
+  INSERT INTO plan_change_history (
+    user_id,
+    subscription_id,
+    change_type,
+    from_state,
+    to_state,
+    from_tier,
+    to_tier,
+    event_id,
+    metadata,
+    changed_at
+  )
+  VALUES (
+    p_user_id,
+    v_subscription_id,
+    'trial_expired',
+    v_old_status,
+    'expired',
+    'premium_trial',
+    'free',
+    p_event_id,
+    jsonb_build_object(
+      'auto_expired', TRUE,
+      'expired_at', NOW()
+    ),
+    NOW()
+  );
+
+  -- Return success
+  RETURN jsonb_build_object(
+    'success', TRUE,
+    'subscription_id', v_subscription_id,
+    'status', 'expired',
+    'tier', 'free',
+    'message', 'Trial subscription expired successfully'
+  );
+
+EXCEPTION
+  WHEN OTHERS THEN
+    RETURN jsonb_build_object(
+      'success', FALSE,
+      'error', 'database_error',
+      'message', SQLERRM,
+      'detail', SQLSTATE
+    );
+END;
+$$;
+
+COMMENT ON FUNCTION expire_trial_subscription_atomic IS 'Expire trial subscription and downgrade user to free tier';
+
+-- =====================================================
+-- 4. TRIAL INFORMATION QUERY
+-- =====================================================
+
+-- Get trial status and days remaining
+CREATE OR REPLACE FUNCTION get_trial_info(p_user_id UUID)
+RETURNS TABLE (
+  is_in_trial BOOLEAN,
+  trial_start TIMESTAMP WITH TIME ZONE,
+  trial_end TIMESTAMP WITH TIME ZONE,
+  days_remaining INTEGER,
+  trial_used BOOLEAN,
+  can_upgrade BOOLEAN,
+  has_access BOOLEAN
+)
+LANGUAGE plpgsql
+SECURITY DEFINER
+AS $$
+BEGIN
+  RETURN QUERY
+  SELECT
+    (ps.status = 'trial') AS is_in_trial,
+    ps.trial_start,
+    ps.trial_end,
+    CASE
+      WHEN ps.status = 'trial' AND ps.trial_end > NOW()
+      THEN GREATEST(0, EXTRACT(DAY FROM ps.trial_end - NOW())::INTEGER)
+      ELSE 0
+    END AS days_remaining,
+    ps.trial_used,
+    (ps.status = 'trial' AND ps.trial_end > NOW()) AS can_upgrade,
+    (ps.status IN ('active', 'trial', 'grace') AND ps.expiry_date > NOW()) AS has_access
+  FROM premium_subscriptions ps
+  WHERE ps.user_id = p_user_id
+  ORDER BY ps.created_at DESC
+  LIMIT 1;
+
+  -- If no subscription exists, return default values
+  IF NOT FOUND THEN
+    RETURN QUERY
+    SELECT
+      FALSE AS is_in_trial,
+      NULL::TIMESTAMP WITH TIME ZONE AS trial_start,
+      NULL::TIMESTAMP WITH TIME ZONE AS trial_end,
+      0 AS days_remaining,
+      FALSE AS trial_used,
+      FALSE AS can_upgrade,
+      FALSE AS has_access;
+  END IF;
+END;
+$$;
+
+COMMENT ON FUNCTION get_trial_info IS 'Get trial status and remaining days for user';
+
+-- =====================================================
+-- 5. TRIAL EXPIRATION SCHEDULER
+-- =====================================================
+
+-- Process expired trials (called hourly by Edge Function or pg_cron)
+CREATE OR REPLACE FUNCTION process_expired_trials()
+RETURNS TABLE (
+  processed_count INTEGER,
+  success_count INTEGER,
+  error_count INTEGER,
+  user_ids UUID[]
+)
+LANGUAGE plpgsql
+SECURITY DEFINER
+AS $$
+DECLARE
+  v_user_id UUID;
+  v_result JSONB;
+  v_processed INTEGER := 0;
+  v_success INTEGER := 0;
+  v_error INTEGER := 0;
+  v_user_ids UUID[] := ARRAY[]::UUID[];
+BEGIN
+  -- Find all expired trials
+  FOR v_user_id IN
+    SELECT DISTINCT user_id
+    FROM premium_subscriptions
+    WHERE status = 'trial'
+    AND trial_end < NOW()
+    ORDER BY trial_end ASC
+  LOOP
+    v_processed := v_processed + 1;
+    v_user_ids := array_append(v_user_ids, v_user_id);
+
+    BEGIN
+      -- Expire trial
+      v_result := expire_trial_subscription_atomic(
+        p_user_id := v_user_id,
+        p_event_id := 'auto_expire_trial_' || gen_random_uuid()::TEXT
+      );
+
+      IF (v_result->>'success')::BOOLEAN THEN
+        v_success := v_success + 1;
+      ELSE
+        v_error := v_error + 1;
+        RAISE WARNING 'Failed to expire trial for user %: %', v_user_id, v_result->>'error';
+      END IF;
+
+    EXCEPTION WHEN OTHERS THEN
+      v_error := v_error + 1;
+      RAISE WARNING 'Exception expiring trial for user %: %', v_user_id, SQLERRM;
+    END;
+  END LOOP;
+
+  RETURN QUERY
+  SELECT v_processed, v_success, v_error, v_user_ids;
+END;
+$$;
+
+COMMENT ON FUNCTION process_expired_trials IS 'Batch process expired trial subscriptions (scheduler job)';
+
+-- =====================================================
+-- 6. RLS POLICIES
+-- =====================================================
+
+-- Users can view their own trial info
+CREATE POLICY "Users can view own trial info"
+ON premium_subscriptions
+FOR SELECT
+USING (user_id = auth.uid());
+
+-- =====================================================
+-- 7. GRANTS
+-- =====================================================
+
+GRANT EXECUTE ON FUNCTION has_used_trial(UUID) TO authenticated;
+GRANT EXECUTE ON FUNCTION create_trial_subscription_atomic(UUID, INTEGER, TEXT, TEXT) TO authenticated;
+GRANT EXECUTE ON FUNCTION upgrade_trial_to_premium_atomic(UUID, TEXT, TEXT, TIMESTAMP WITH TIME ZONE, TEXT, TEXT) TO authenticated;
+GRANT EXECUTE ON FUNCTION get_trial_info(UUID) TO authenticated;
+
+-- Service role only (scheduler, admin operations)
+GRANT EXECUTE ON FUNCTION expire_trial_subscription_atomic(UUID, TEXT, TEXT) TO service_role;
+GRANT EXECUTE ON FUNCTION process_expired_trials() TO service_role;
+
+-- =====================================================
+-- END OF MIGRATION
+-- =====================================================

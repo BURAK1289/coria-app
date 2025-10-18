@@ -1,0 +1,336 @@
+-- =====================================================
+-- SUBSCRIPTION ANALYTICS SYSTEM
+-- =====================================================
+-- Purpose: Event tracking for subscription funnel analysis and SLA monitoring
+-- Created: 2025-01-18
+-- Related: FIX-005 - Add Subscription Analytics Events
+
+-- =====================================================
+-- 1. CLIENT-SIDE EVENT TRACKING
+-- =====================================================
+-- Tracks user interactions and funnel progression in the Flutter app
+
+CREATE TABLE IF NOT EXISTS subscription_client_events (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+  event_type TEXT NOT NULL,
+  event_context TEXT, -- Where the event occurred: 'dashboard', 'settings', 'feature_gate', etc.
+  metadata JSONB DEFAULT '{}'::jsonb,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+
+  -- Ensure valid event types
+  CONSTRAINT valid_client_event_type CHECK (
+    event_type IN (
+      'gate_blocked',           -- User hits premium feature gate
+      'upgrade_cta_view',       -- Upgrade CTA shown
+      'upgrade_cta_click',      -- User clicks upgrade CTA
+      'checkout_start',         -- Payment flow initiated
+      'checkout_success',       -- Payment completed successfully
+      'checkout_fail',          -- Payment failed
+      'paywall_viewed',         -- Paywall screen displayed
+      'feature_used'            -- User uses feature (premium/free)
+    )
+  )
+);
+
+-- Performance indexes
+CREATE INDEX idx_client_events_user_created ON subscription_client_events(user_id, created_at DESC);
+CREATE INDEX idx_client_events_type_created ON subscription_client_events(event_type, created_at DESC);
+CREATE INDEX idx_client_events_context ON subscription_client_events(event_context) WHERE event_context IS NOT NULL;
+
+-- Enable Row Level Security
+ALTER TABLE subscription_client_events ENABLE ROW LEVEL SECURITY;
+
+-- RLS Policies: Users can only insert their own events, admins can read all
+CREATE POLICY "Users can insert own events"
+  ON subscription_client_events FOR INSERT
+  WITH CHECK (auth.uid() = user_id);
+
+CREATE POLICY "Admins can read all events"
+  ON subscription_client_events FOR SELECT
+  USING (
+    EXISTS (
+      SELECT 1 FROM user_profiles
+      WHERE id = auth.uid()
+      AND role = 'admin'
+    )
+  );
+
+-- =====================================================
+-- 2. SLA METRICS TRACKING
+-- =====================================================
+-- Measures entitlement propagation time (server → client)
+
+CREATE TABLE IF NOT EXISTS subscription_sla_metrics (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+  event_type TEXT NOT NULL, -- 'entitlement_granted', 'entitlement_revoked'
+  server_timestamp TIMESTAMPTZ NOT NULL, -- When server processed the change
+  client_timestamp TIMESTAMPTZ, -- When client received confirmation (NULL until confirmed)
+  propagation_ms INTEGER GENERATED ALWAYS AS (
+    CASE
+      WHEN client_timestamp IS NOT NULL
+      THEN EXTRACT(EPOCH FROM (client_timestamp - server_timestamp))::INTEGER * 1000
+      ELSE NULL
+    END
+  ) STORED,
+  metadata JSONB DEFAULT '{}'::jsonb,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+
+  CONSTRAINT valid_sla_event_type CHECK (
+    event_type IN ('entitlement_granted', 'entitlement_revoked')
+  )
+);
+
+-- Performance indexes
+CREATE INDEX idx_sla_metrics_user_created ON subscription_sla_metrics(user_id, created_at DESC);
+CREATE INDEX idx_sla_metrics_propagation ON subscription_sla_metrics(propagation_ms) WHERE propagation_ms IS NOT NULL;
+CREATE INDEX idx_sla_metrics_pending ON subscription_sla_metrics(server_timestamp) WHERE client_timestamp IS NULL;
+
+-- Enable Row Level Security
+ALTER TABLE subscription_sla_metrics ENABLE ROW LEVEL SECURITY;
+
+-- RLS Policies
+CREATE POLICY "System can insert SLA metrics"
+  ON subscription_sla_metrics FOR INSERT
+  WITH CHECK (true); -- Server-side inserts only
+
+CREATE POLICY "Users can update own SLA metrics"
+  ON subscription_sla_metrics FOR UPDATE
+  USING (auth.uid() = user_id)
+  WITH CHECK (auth.uid() = user_id);
+
+CREATE POLICY "Admins can read all SLA metrics"
+  ON subscription_sla_metrics FOR SELECT
+  USING (
+    EXISTS (
+      SELECT 1 FROM user_profiles
+      WHERE id = auth.uid()
+      AND role = 'admin'
+    )
+  );
+
+-- =====================================================
+-- 3. ANALYTICS VIEWS
+-- =====================================================
+
+-- View: Conversion Funnel Metrics
+CREATE OR REPLACE VIEW subscription_conversion_funnel AS
+SELECT
+  DATE_TRUNC('day', created_at) as date,
+  COUNT(*) FILTER (WHERE event_type = 'paywall_viewed') as paywall_views,
+  COUNT(*) FILTER (WHERE event_type = 'upgrade_cta_view') as cta_views,
+  COUNT(*) FILTER (WHERE event_type = 'upgrade_cta_click') as cta_clicks,
+  COUNT(*) FILTER (WHERE event_type = 'checkout_start') as checkout_starts,
+  COUNT(*) FILTER (WHERE event_type = 'checkout_success') as checkout_completions,
+  COUNT(*) FILTER (WHERE event_type = 'checkout_fail') as checkout_failures,
+
+  -- Conversion rates
+  ROUND(100.0 * COUNT(*) FILTER (WHERE event_type = 'upgrade_cta_click') /
+    NULLIF(COUNT(*) FILTER (WHERE event_type = 'paywall_viewed'), 0), 2) as paywall_to_cta_rate,
+  ROUND(100.0 * COUNT(*) FILTER (WHERE event_type = 'checkout_start') /
+    NULLIF(COUNT(*) FILTER (WHERE event_type = 'upgrade_cta_click'), 0), 2) as cta_to_checkout_rate,
+  ROUND(100.0 * COUNT(*) FILTER (WHERE event_type = 'checkout_success') /
+    NULLIF(COUNT(*) FILTER (WHERE event_type = 'checkout_start'), 0), 2) as checkout_success_rate,
+  ROUND(100.0 * COUNT(*) FILTER (WHERE event_type = 'checkout_success') /
+    NULLIF(COUNT(*) FILTER (WHERE event_type = 'paywall_viewed'), 0), 2) as overall_conversion_rate
+FROM subscription_client_events
+WHERE created_at >= NOW() - INTERVAL '90 days'
+GROUP BY DATE_TRUNC('day', created_at)
+ORDER BY date DESC;
+
+-- View: Trial Conversion Metrics
+CREATE OR REPLACE VIEW trial_conversion_metrics AS
+SELECT
+  DATE_TRUNC('day', trial_start) as cohort_date,
+  COUNT(*) as trial_starts,
+  COUNT(*) FILTER (WHERE converted_to_premium = true) as conversions,
+  ROUND(100.0 * COUNT(*) FILTER (WHERE converted_to_premium = true) / NULLIF(COUNT(*), 0), 2) as conversion_rate,
+  ROUND(AVG(CASE WHEN converted_to_premium THEN days_to_convert END), 2) as avg_days_to_convert,
+  ROUND(PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY CASE WHEN converted_to_premium THEN days_to_convert END), 2) as median_days_to_convert
+FROM (
+  SELECT
+    pch1.user_id,
+    pch1.changed_at as trial_start,
+    pch2.changed_at as converted_at,
+    (pch2.change_type = 'activation' AND pch2.change_reason = 'payment_success') as converted_to_premium,
+    EXTRACT(EPOCH FROM (pch2.changed_at - pch1.changed_at)) / 86400 as days_to_convert
+  FROM plan_change_history pch1
+  LEFT JOIN LATERAL (
+    SELECT changed_at, change_type, change_reason
+    FROM plan_change_history
+    WHERE user_id = pch1.user_id
+      AND change_type IN ('activation', 'renewal')
+      AND change_reason = 'payment_success'
+      AND changed_at > pch1.changed_at
+    ORDER BY changed_at ASC
+    LIMIT 1
+  ) pch2 ON true
+  WHERE pch1.change_type = 'activation'
+    AND pch1.change_reason = 'trial_started'
+    AND pch1.changed_at >= NOW() - INTERVAL '90 days'
+) trial_data
+GROUP BY DATE_TRUNC('day', trial_start)
+ORDER BY cohort_date DESC;
+
+-- View: Feature Gate Analysis
+CREATE OR REPLACE VIEW feature_gate_analysis AS
+SELECT
+  metadata->>'feature_name' as feature,
+  COUNT(*) as gate_hits,
+  COUNT(DISTINCT user_id) as unique_users,
+  ROUND(AVG(CASE
+    WHEN EXISTS (
+      SELECT 1 FROM subscription_client_events sce2
+      WHERE sce2.user_id = sce.user_id
+        AND sce2.event_type = 'checkout_success'
+        AND sce2.created_at > sce.created_at
+        AND sce2.created_at < sce.created_at + INTERVAL '7 days'
+    ) THEN 1 ELSE 0
+  END) * 100, 2) as conversion_rate_7d,
+  ROUND(AVG(CASE
+    WHEN EXISTS (
+      SELECT 1 FROM subscription_client_events sce2
+      WHERE sce2.user_id = sce.user_id
+        AND sce2.event_type = 'checkout_success'
+        AND sce2.created_at > sce.created_at
+        AND sce2.created_at < sce.created_at + INTERVAL '1 day'
+    ) THEN 1 ELSE 0
+  END) * 100, 2) as conversion_rate_24h
+FROM subscription_client_events sce
+WHERE event_type = 'gate_blocked'
+  AND created_at >= NOW() - INTERVAL '30 days'
+GROUP BY metadata->>'feature_name'
+ORDER BY gate_hits DESC;
+
+-- View: p95 SLA Metrics
+CREATE OR REPLACE VIEW subscription_sla_p95 AS
+SELECT
+  DATE_TRUNC('hour', created_at) as hour,
+  COUNT(*) as total_events,
+  COUNT(*) FILTER (WHERE propagation_ms IS NOT NULL) as measured_events,
+  ROUND(PERCENTILE_CONT(0.95) WITHIN GROUP (ORDER BY propagation_ms), 2) as p95_ms,
+  ROUND(PERCENTILE_CONT(0.75) WITHIN GROUP (ORDER BY propagation_ms), 2) as p75_ms,
+  ROUND(PERCENTILE_CONT(0.50) WITHIN GROUP (ORDER BY propagation_ms), 2) as p50_ms,
+  ROUND(AVG(propagation_ms), 2) as avg_ms,
+  MIN(propagation_ms) as min_ms,
+  MAX(propagation_ms) as max_ms
+FROM subscription_sla_metrics
+WHERE created_at >= NOW() - INTERVAL '7 days'
+GROUP BY DATE_TRUNC('hour', created_at)
+ORDER BY hour DESC;
+
+-- =====================================================
+-- 4. RPC FUNCTIONS
+-- =====================================================
+
+-- Function: Log client event (called from Flutter app)
+CREATE OR REPLACE FUNCTION log_client_event(
+  p_event_type TEXT,
+  p_event_context TEXT DEFAULT NULL,
+  p_metadata JSONB DEFAULT '{}'::jsonb
+)
+RETURNS UUID
+LANGUAGE plpgsql
+SECURITY DEFINER
+AS $$
+DECLARE
+  v_event_id UUID;
+BEGIN
+  -- Insert event
+  INSERT INTO subscription_client_events (
+    user_id,
+    event_type,
+    event_context,
+    metadata
+  ) VALUES (
+    auth.uid(),
+    p_event_type,
+    p_event_context,
+    p_metadata
+  )
+  RETURNING id INTO v_event_id;
+
+  RETURN v_event_id;
+END;
+$$;
+
+-- Function: Confirm entitlement received (client-side timestamp)
+CREATE OR REPLACE FUNCTION confirm_entitlement_received(
+  p_sla_metric_id UUID
+)
+RETURNS BOOLEAN
+LANGUAGE plpgsql
+SECURITY DEFINER
+AS $$
+BEGIN
+  -- Update client timestamp
+  UPDATE subscription_sla_metrics
+  SET client_timestamp = NOW()
+  WHERE id = p_sla_metric_id
+    AND user_id = auth.uid()
+    AND client_timestamp IS NULL; -- Only update if not already set
+
+  RETURN FOUND;
+END;
+$$;
+
+-- Function: Log entitlement change (server-side, called by atomic functions)
+CREATE OR REPLACE FUNCTION log_entitlement_change(
+  p_user_id UUID,
+  p_event_type TEXT,
+  p_metadata JSONB DEFAULT '{}'::jsonb
+)
+RETURNS UUID
+LANGUAGE plpgsql
+SECURITY DEFINER
+AS $$
+DECLARE
+  v_sla_id UUID;
+BEGIN
+  -- Insert SLA metric with server timestamp
+  INSERT INTO subscription_sla_metrics (
+    user_id,
+    event_type,
+    server_timestamp,
+    metadata
+  ) VALUES (
+    p_user_id,
+    p_event_type,
+    NOW(),
+    p_metadata
+  )
+  RETURNING id INTO v_sla_id;
+
+  RETURN v_sla_id;
+END;
+$$;
+
+-- =====================================================
+-- 5. GRANT PERMISSIONS
+-- =====================================================
+
+-- Grant execute permissions on RPC functions
+GRANT EXECUTE ON FUNCTION log_client_event TO authenticated;
+GRANT EXECUTE ON FUNCTION confirm_entitlement_received TO authenticated;
+GRANT EXECUTE ON FUNCTION log_entitlement_change TO service_role;
+
+-- Grant view access to admins
+GRANT SELECT ON subscription_conversion_funnel TO authenticated;
+GRANT SELECT ON trial_conversion_metrics TO authenticated;
+GRANT SELECT ON feature_gate_analysis TO authenticated;
+GRANT SELECT ON subscription_sla_p95 TO authenticated;
+
+-- =====================================================
+-- 6. COMMENTS FOR DOCUMENTATION
+-- =====================================================
+
+COMMENT ON TABLE subscription_client_events IS 'Client-side event tracking for subscription funnel analysis';
+COMMENT ON TABLE subscription_sla_metrics IS 'SLA metrics for entitlement propagation time (server → client)';
+COMMENT ON VIEW subscription_conversion_funnel IS 'Daily conversion funnel metrics from paywall to checkout';
+COMMENT ON VIEW trial_conversion_metrics IS 'Trial period conversion rates by cohort';
+COMMENT ON VIEW feature_gate_analysis IS 'Feature gate hit frequency and conversion impact';
+COMMENT ON VIEW subscription_sla_p95 IS 'p95 entitlement propagation SLA metrics by hour';
+COMMENT ON FUNCTION log_client_event IS 'Logs a client-side subscription event from the Flutter app';
+COMMENT ON FUNCTION confirm_entitlement_received IS 'Updates SLA metric with client confirmation timestamp';
+COMMENT ON FUNCTION log_entitlement_change IS 'Logs server-side entitlement change for SLA tracking';

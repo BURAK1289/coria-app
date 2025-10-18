@@ -1,0 +1,345 @@
+-- ========================================
+-- SOL Premium Payment Security Migration
+-- ========================================
+-- Date: 2025-10-01
+-- Purpose: Add atomic premium activation, audit logging, and security hardening
+-- Security: Transaction signature uniqueness, idempotency, audit trail
+
+-- ========================================
+-- 1. PAYMENT HISTORY TABLE
+-- ========================================
+-- Stores all premium payment transactions with idempotency guarantee
+
+CREATE TABLE IF NOT EXISTS payment_history (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
+  transaction_signature TEXT NOT NULL UNIQUE, -- 🔒 CRITICAL: Prevents double-spend
+  subscription_type TEXT NOT NULL CHECK (subscription_type IN ('monthly', 'yearly', 'lifetime')),
+  amount_sol DECIMAL(10, 9) NOT NULL, -- SOL amount (9 decimals for lamports precision)
+  payment_date TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  expiry_date TIMESTAMPTZ, -- NULL for failed payments
+  user_wallet TEXT NOT NULL, -- Solana wallet that sent payment
+  status TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'confirmed', 'failed')),
+  premium_activated_at TIMESTAMPTZ, -- Timestamp when premium was activated
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+-- Indexes for performance
+CREATE INDEX IF NOT EXISTS idx_payment_history_user_id ON payment_history(user_id);
+CREATE INDEX IF NOT EXISTS idx_payment_history_tx_sig ON payment_history(transaction_signature);
+CREATE INDEX IF NOT EXISTS idx_payment_history_status ON payment_history(status);
+CREATE INDEX IF NOT EXISTS idx_payment_history_payment_date ON payment_history(payment_date DESC);
+
+-- RLS policies
+ALTER TABLE payment_history ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Users can view own payment history"
+  ON payment_history FOR SELECT
+  USING (auth.uid() = user_id);
+
+-- Service role can insert/update (via Edge Functions only)
+CREATE POLICY "Service role can manage payments"
+  ON payment_history FOR ALL
+  USING (auth.jwt()->>'role' = 'service_role');
+
+-- ========================================
+-- 2. AUDIT LOG TABLE
+-- ========================================
+-- Comprehensive audit trail for security-sensitive operations
+
+CREATE TABLE IF NOT EXISTS audit_log (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  operation TEXT NOT NULL, -- e.g., 'DEV_RESET_PREMIUM', 'PREMIUM_ACTIVATED', 'PAYMENT_FAILED'
+  user_id UUID REFERENCES profiles(id) ON DELETE CASCADE, -- Affected user
+  performed_by UUID REFERENCES profiles(id) ON DELETE SET NULL, -- Who performed the action
+  environment TEXT NOT NULL DEFAULT 'production', -- development, staging, production
+  ip_address TEXT,
+  user_agent TEXT,
+  request_payload JSONB, -- Full request data for debugging
+  response_data JSONB, -- Response details
+  timestamp TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+-- Indexes for audit log queries
+CREATE INDEX IF NOT EXISTS idx_audit_log_operation ON audit_log(operation);
+CREATE INDEX IF NOT EXISTS idx_audit_log_user_id ON audit_log(user_id);
+CREATE INDEX IF NOT EXISTS idx_audit_log_performed_by ON audit_log(performed_by);
+CREATE INDEX IF NOT EXISTS idx_audit_log_timestamp ON audit_log(timestamp DESC);
+CREATE INDEX IF NOT EXISTS idx_audit_log_environment ON audit_log(environment);
+
+-- RLS: Audit logs are admin-only
+ALTER TABLE audit_log ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Service role can manage audit logs"
+  ON audit_log FOR ALL
+  USING (auth.jwt()->>'role' = 'service_role');
+
+-- ========================================
+-- 3. ATOMIC PREMIUM ACTIVATION FUNCTION
+-- ========================================
+-- Ensures premium activation is atomic: profile update + payment record + audit log
+
+CREATE OR REPLACE FUNCTION process_premium_payment(
+  p_user_id UUID,
+  p_tx_signature TEXT,
+  p_subscription_type TEXT,
+  p_amount_sol DECIMAL,
+  p_payment_date TIMESTAMPTZ,
+  p_user_wallet TEXT
+) RETURNS JSONB AS $$
+DECLARE
+  v_expiry_date TIMESTAMPTZ;
+  v_existing_payment UUID;
+  v_payment_id UUID;
+BEGIN
+  -- 🔒 IDEMPOTENCY CHECK: Prevent double-processing same transaction
+  SELECT id INTO v_existing_payment
+  FROM payment_history
+  WHERE transaction_signature = p_tx_signature;
+
+  IF v_existing_payment IS NOT NULL THEN
+    RAISE EXCEPTION 'Transaction signature already processed (idempotency violation)';
+  END IF;
+
+  -- Calculate expiry date based on subscription type
+  v_expiry_date := CASE p_subscription_type
+    WHEN 'monthly' THEN p_payment_date + INTERVAL '30 days'
+    WHEN 'yearly' THEN p_payment_date + INTERVAL '365 days'
+    WHEN 'lifetime' THEN '2099-12-31'::TIMESTAMPTZ -- Far future for lifetime
+    ELSE NULL
+  END;
+
+  IF v_expiry_date IS NULL THEN
+    RAISE EXCEPTION 'Invalid subscription type: %', p_subscription_type;
+  END IF;
+
+  -- 🔒 ATOMIC TRANSACTION STARTS HERE
+
+  -- 1. Update user profile
+  UPDATE profiles
+  SET
+    is_premium = TRUE,
+    premium_expires_at = v_expiry_date,
+    updated_at = NOW()
+  WHERE id = p_user_id;
+
+  IF NOT FOUND THEN
+    RAISE EXCEPTION 'User not found: %', p_user_id;
+  END IF;
+
+  -- 2. Record payment in history
+  INSERT INTO payment_history (
+    user_id,
+    transaction_signature,
+    subscription_type,
+    amount_sol,
+    payment_date,
+    expiry_date,
+    user_wallet,
+    status,
+    premium_activated_at
+  ) VALUES (
+    p_user_id,
+    p_tx_signature,
+    p_subscription_type,
+    p_amount_sol,
+    p_payment_date,
+    v_expiry_date,
+    p_user_wallet,
+    'confirmed',
+    NOW()
+  ) RETURNING id INTO v_payment_id;
+
+  -- 3. Audit log
+  INSERT INTO audit_log (
+    operation,
+    user_id,
+    environment,
+    request_payload,
+    response_data
+  ) VALUES (
+    'PREMIUM_ACTIVATED',
+    p_user_id,
+    'production',
+    jsonb_build_object(
+      'tx_signature', p_tx_signature,
+      'subscription_type', p_subscription_type,
+      'amount_sol', p_amount_sol
+    ),
+    jsonb_build_object(
+      'payment_id', v_payment_id,
+      'expiry_date', v_expiry_date
+    )
+  );
+
+  -- Return success response
+  RETURN jsonb_build_object(
+    'success', TRUE,
+    'expiry_date', v_expiry_date,
+    'payment_id', v_payment_id
+  );
+
+EXCEPTION
+  WHEN OTHERS THEN
+    -- Log failure
+    INSERT INTO audit_log (
+      operation,
+      user_id,
+      environment,
+      request_payload,
+      response_data
+    ) VALUES (
+      'PREMIUM_ACTIVATION_FAILED',
+      p_user_id,
+      'production',
+      jsonb_build_object(
+        'tx_signature', p_tx_signature,
+        'error', SQLERRM
+      ),
+      jsonb_build_object('success', FALSE)
+    );
+
+    RAISE; -- Re-raise exception to rollback transaction
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- ========================================
+-- 4. DEV-ONLY RESET PREMIUM FUNCTION
+-- ========================================
+-- 🔴 SECURITY: This function should ONLY be callable from dev/staging Edge Function
+-- Backend Edge Function enforces triple environment validation
+
+CREATE OR REPLACE FUNCTION dev_reset_premium_status(
+  p_user_id UUID,
+  p_performed_by UUID,
+  p_reason TEXT DEFAULT 'dev_testing'
+) RETURNS JSONB AS $$
+DECLARE
+  v_old_premium BOOLEAN;
+  v_old_expiry TIMESTAMPTZ;
+BEGIN
+  -- Get current premium status for audit trail
+  SELECT is_premium, premium_expires_at
+  INTO v_old_premium, v_old_expiry
+  FROM profiles
+  WHERE id = p_user_id;
+
+  IF NOT FOUND THEN
+    RAISE EXCEPTION 'User not found: %', p_user_id;
+  END IF;
+
+  -- 🔒 ATOMIC TRANSACTION: Reset premium status
+  UPDATE profiles
+  SET
+    is_premium = FALSE,
+    premium_expires_at = NULL,
+    updated_at = NOW()
+  WHERE id = p_user_id;
+
+  -- 🚨 CRITICAL AUDIT: Log reset operation
+  INSERT INTO audit_log (
+    operation,
+    user_id,
+    performed_by,
+    environment,
+    request_payload,
+    response_data
+  ) VALUES (
+    'DEV_RESET_PREMIUM',
+    p_user_id,
+    p_performed_by,
+    'development', -- Environment is validated by Edge Function
+    jsonb_build_object(
+      'reason', p_reason,
+      'old_premium', v_old_premium,
+      'old_expiry', v_old_expiry
+    ),
+    jsonb_build_object(
+      'success', TRUE,
+      'new_premium', FALSE,
+      'new_expiry', NULL
+    )
+  );
+
+  -- ⚠️ NOTE: Payment history is PRESERVED (soft delete pattern)
+  -- We do NOT delete payment_history records - they remain for audit trail
+
+  RETURN jsonb_build_object(
+    'success', TRUE,
+    'old_premium', v_old_premium,
+    'old_expiry', v_old_expiry,
+    'new_premium', FALSE,
+    'new_expiry', NULL
+  );
+
+EXCEPTION
+  WHEN OTHERS THEN
+    RAISE; -- Rollback transaction on error
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- ========================================
+-- 5. SCHEDULED EXPIRY CHECK (pg_cron)
+-- ========================================
+-- Automatically expire premium subscriptions daily
+
+-- Note: pg_cron extension must be enabled manually:
+-- CREATE EXTENSION IF NOT EXISTS pg_cron;
+
+-- Schedule daily expiry check at 2 AM UTC
+-- SELECT cron.schedule(
+--   'expire-premium-subscriptions',
+--   '0 2 * * *',
+--   $$
+--   UPDATE profiles
+--   SET is_premium = FALSE
+--   WHERE is_premium = TRUE
+--     AND premium_expires_at IS NOT NULL
+--     AND premium_expires_at < NOW()
+--     AND premium_expires_at != '2099-12-31'::TIMESTAMPTZ; -- Exclude lifetime
+--   $$
+-- );
+
+-- ========================================
+-- 6. TRIGGERS FOR UPDATED_AT
+-- ========================================
+
+CREATE OR REPLACE FUNCTION update_updated_at_column()
+RETURNS TRIGGER AS $$
+BEGIN
+  NEW.updated_at = NOW();
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Apply to payment_history
+DROP TRIGGER IF EXISTS update_payment_history_updated_at ON payment_history;
+CREATE TRIGGER update_payment_history_updated_at
+  BEFORE UPDATE ON payment_history
+  FOR EACH ROW
+  EXECUTE FUNCTION update_updated_at_column();
+
+-- ========================================
+-- 7. GRANT PERMISSIONS
+-- ========================================
+
+-- Service role can execute functions
+GRANT EXECUTE ON FUNCTION process_premium_payment TO service_role;
+GRANT EXECUTE ON FUNCTION dev_reset_premium_status TO service_role;
+
+-- Anon users cannot access these functions directly
+REVOKE EXECUTE ON FUNCTION process_premium_payment FROM anon;
+REVOKE EXECUTE ON FUNCTION dev_reset_premium_status FROM anon;
+
+-- ========================================
+-- MIGRATION COMPLETE
+-- ========================================
+-- Summary:
+-- ✅ payment_history table with unique tx_signature constraint
+-- ✅ audit_log table for security-sensitive operations
+-- ✅ Atomic premium activation function with idempotency
+-- ✅ DEV-ONLY reset function (protected by Edge Function env checks)
+-- ✅ RLS policies for security
+-- ✅ Indexes for performance
+-- ✅ Scheduled expiry check (commented, requires pg_cron)

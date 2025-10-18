@@ -1,0 +1,691 @@
+-- ========================================
+-- REVENUECAT WEBHOOK SYSTEM
+-- ========================================
+-- Date: 2025-10-18
+-- Purpose: RevenueCat webhook integration with HMAC verification and idempotency
+-- Security: Event deduplication, atomic state transitions, comprehensive audit trail
+-- Priority: P0 Critical - Required for iOS/Android IAP premium activation
+
+-- ========================================
+-- 1. REVENUECAT WEBHOOK EVENTS TABLE
+-- ========================================
+-- Stores all incoming webhook events with idempotency guarantee
+-- Prevents duplicate processing of the same event
+
+CREATE TABLE IF NOT EXISTS revenuecat_webhook_events (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  event_id TEXT NOT NULL UNIQUE, -- 🔒 CRITICAL: RevenueCat event.id for idempotency
+  event_type TEXT NOT NULL, -- INITIAL_PURCHASE, RENEWAL, CANCELLATION, EXPIRATION, BILLING_ISSUE, REFUND
+  app_user_id TEXT NOT NULL, -- RevenueCat app_user_id (maps to user_id)
+  product_id TEXT NOT NULL,
+  subscription_id TEXT, -- RevenueCat subscription identifier
+  transaction_id TEXT, -- Original transaction identifier
+
+  -- Event payload and metadata
+  event_payload JSONB NOT NULL, -- Full webhook payload for debugging
+  processed_at TIMESTAMPTZ, -- NULL if not yet processed
+  processing_error TEXT, -- Error message if processing failed
+  retry_count INTEGER NOT NULL DEFAULT 0,
+
+  -- Timestamps
+  event_timestamp TIMESTAMPTZ NOT NULL, -- When event occurred in RevenueCat
+  received_at TIMESTAMPTZ NOT NULL DEFAULT NOW(), -- When webhook was received
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+
+  -- Constraints
+  CONSTRAINT valid_event_type CHECK (
+    event_type IN (
+      'INITIAL_PURCHASE',
+      'RENEWAL',
+      'CANCELLATION',
+      'EXPIRATION',
+      'BILLING_ISSUE',
+      'REFUND',
+      'PRODUCT_CHANGE'
+    )
+  )
+);
+
+-- Indexes for performance
+CREATE INDEX IF NOT EXISTS idx_webhook_events_event_id ON revenuecat_webhook_events(event_id);
+CREATE INDEX IF NOT EXISTS idx_webhook_events_app_user_id ON revenuecat_webhook_events(app_user_id);
+CREATE INDEX IF NOT EXISTS idx_webhook_events_event_type ON revenuecat_webhook_events(event_type);
+CREATE INDEX IF NOT EXISTS idx_webhook_events_processed_at ON revenuecat_webhook_events(processed_at);
+CREATE INDEX IF NOT EXISTS idx_webhook_events_event_timestamp ON revenuecat_webhook_events(event_timestamp DESC);
+
+-- RLS policies
+ALTER TABLE revenuecat_webhook_events ENABLE ROW LEVEL SECURITY;
+
+-- Service role can manage webhook events (Edge Function only)
+CREATE POLICY "Service role can manage webhook events"
+  ON revenuecat_webhook_events FOR ALL
+  USING (auth.jwt()->>'role' = 'service_role');
+
+-- ========================================
+-- 2. PREMIUM SUBSCRIPTIONS TABLE
+-- ========================================
+-- Stores RevenueCat subscription details and current state
+
+CREATE TABLE IF NOT EXISTS premium_subscriptions (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID NOT NULL REFERENCES user_profiles(id) ON DELETE CASCADE,
+
+  -- RevenueCat identifiers
+  subscription_id TEXT NOT NULL, -- RevenueCat subscription_id
+  product_id TEXT NOT NULL, -- Product identifier (e.g., coria_premium_monthly)
+  original_transaction_id TEXT, -- First transaction ID
+
+  -- Subscription status
+  status TEXT NOT NULL DEFAULT 'active',
+  payment_method TEXT NOT NULL DEFAULT 'revenuecat',
+
+  -- Dates
+  start_date TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  expiry_date TIMESTAMPTZ NOT NULL,
+  cancellation_date TIMESTAMPTZ, -- When user cancelled (may still be active until expiry)
+  billing_issue_detected_at TIMESTAMPTZ, -- When billing issue started
+
+  -- RevenueCat metadata
+  store TEXT, -- app_store, play_store
+  environment TEXT, -- production, sandbox
+
+  -- Timestamps
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+
+  -- Constraints
+  CONSTRAINT unique_user_subscription UNIQUE (user_id, subscription_id),
+  CONSTRAINT valid_status CHECK (
+    status IN ('active', 'cancelled', 'expired', 'grace_period', 'refunded')
+  ),
+  CONSTRAINT valid_store CHECK (
+    store IN ('app_store', 'play_store', 'stripe', NULL)
+  )
+);
+
+-- Indexes for performance
+CREATE INDEX IF NOT EXISTS idx_premium_subs_user_id ON premium_subscriptions(user_id);
+CREATE INDEX IF NOT EXISTS idx_premium_subs_subscription_id ON premium_subscriptions(subscription_id);
+CREATE INDEX IF NOT EXISTS idx_premium_subs_status ON premium_subscriptions(status);
+CREATE INDEX IF NOT EXISTS idx_premium_subs_expiry_date ON premium_subscriptions(expiry_date);
+
+-- RLS policies
+ALTER TABLE premium_subscriptions ENABLE ROW LEVEL SECURITY;
+
+-- Users can view their own subscriptions
+CREATE POLICY "Users can view their own subscriptions"
+  ON premium_subscriptions FOR SELECT
+  USING (auth.uid() = user_id);
+
+-- Service role can manage all subscriptions
+CREATE POLICY "Service role can manage subscriptions"
+  ON premium_subscriptions FOR ALL
+  USING (auth.jwt()->>'role' = 'service_role');
+
+-- ========================================
+-- 3. PLAN CHANGE HISTORY TABLE
+-- ========================================
+-- Comprehensive audit trail for all subscription state changes
+
+CREATE TABLE IF NOT EXISTS plan_change_history (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID NOT NULL REFERENCES user_profiles(id) ON DELETE CASCADE,
+  subscription_id TEXT, -- NULL for trial activations
+
+  -- State transition
+  from_state TEXT NOT NULL, -- Previous state (free, trial, active, cancelled, etc.)
+  to_state TEXT NOT NULL, -- New state
+  change_reason TEXT NOT NULL, -- WEBHOOK_EVENT, USER_ACTION, SYSTEM_EXPIRY, etc.
+
+  -- Event details
+  event_type TEXT, -- RevenueCat event type if applicable
+  event_id TEXT, -- Links to revenuecat_webhook_events.event_id
+
+  -- Additional context
+  metadata JSONB, -- Additional information about the change
+
+  -- Timestamps
+  changed_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+-- Indexes for performance
+CREATE INDEX IF NOT EXISTS idx_plan_history_user_id ON plan_change_history(user_id);
+CREATE INDEX IF NOT EXISTS idx_plan_history_subscription_id ON plan_change_history(subscription_id);
+CREATE INDEX IF NOT EXISTS idx_plan_history_event_id ON plan_change_history(event_id);
+CREATE INDEX IF NOT EXISTS idx_plan_history_changed_at ON plan_change_history(changed_at DESC);
+
+-- RLS policies
+ALTER TABLE plan_change_history ENABLE ROW LEVEL SECURITY;
+
+-- Users can view their own history
+CREATE POLICY "Users can view their own plan history"
+  ON plan_change_history FOR SELECT
+  USING (auth.uid() = user_id);
+
+-- Service role can manage all history
+CREATE POLICY "Service role can manage plan history"
+  ON plan_change_history FOR ALL
+  USING (auth.jwt()->>'role' = 'service_role');
+
+-- ========================================
+-- 4. ATOMIC RPC FUNCTIONS
+-- ========================================
+
+-- ========================================
+-- 4.1 ACTIVATE PREMIUM (INITIAL_PURCHASE, RENEWAL)
+-- ========================================
+
+CREATE OR REPLACE FUNCTION activate_revenuecat_premium(
+  p_event_id TEXT,
+  p_app_user_id TEXT,
+  p_subscription_id TEXT,
+  p_product_id TEXT,
+  p_expiry_date TIMESTAMPTZ,
+  p_store TEXT DEFAULT 'app_store',
+  p_environment TEXT DEFAULT 'production',
+  p_original_transaction_id TEXT DEFAULT NULL
+) RETURNS JSONB AS $$
+DECLARE
+  v_user_id UUID;
+  v_existing_sub_id UUID;
+  v_old_status TEXT;
+  v_event_type TEXT;
+BEGIN
+  -- Map app_user_id to internal user_id
+  SELECT id INTO v_user_id
+  FROM user_profiles
+  WHERE id::text = p_app_user_id OR email = p_app_user_id;
+
+  IF v_user_id IS NULL THEN
+    RAISE EXCEPTION 'User not found: %', p_app_user_id;
+  END IF;
+
+  -- Get event type from webhook event
+  SELECT event_type INTO v_event_type
+  FROM revenuecat_webhook_events
+  WHERE event_id = p_event_id;
+
+  -- Get existing subscription if any
+  SELECT id, status INTO v_existing_sub_id, v_old_status
+  FROM premium_subscriptions
+  WHERE user_id = v_user_id AND subscription_id = p_subscription_id;
+
+  -- 🔒 ATOMIC TRANSACTION STARTS HERE
+
+  -- 1. Upsert subscription record
+  INSERT INTO premium_subscriptions (
+    user_id,
+    subscription_id,
+    product_id,
+    original_transaction_id,
+    status,
+    payment_method,
+    start_date,
+    expiry_date,
+    store,
+    environment
+  ) VALUES (
+    v_user_id,
+    p_subscription_id,
+    p_product_id,
+    COALESCE(p_original_transaction_id, p_subscription_id),
+    'active',
+    'revenuecat',
+    NOW(),
+    p_expiry_date,
+    p_store,
+    p_environment
+  )
+  ON CONFLICT (user_id, subscription_id) DO UPDATE
+  SET
+    status = 'active',
+    expiry_date = EXCLUDED.expiry_date,
+    product_id = EXCLUDED.product_id,
+    cancellation_date = NULL, -- Clear cancellation if renewed
+    billing_issue_detected_at = NULL, -- Clear billing issues
+    updated_at = NOW();
+
+  -- 2. Update user profile premium status
+  UPDATE user_profiles
+  SET
+    is_premium = TRUE,
+    premium_expires_at = p_expiry_date,
+    trial_active = FALSE, -- End trial if active
+    updated_at = NOW()
+  WHERE id = v_user_id;
+
+  -- 3. Log to plan change history
+  INSERT INTO plan_change_history (
+    user_id,
+    subscription_id,
+    from_state,
+    to_state,
+    change_reason,
+    event_type,
+    event_id,
+    metadata
+  ) VALUES (
+    v_user_id,
+    p_subscription_id,
+    COALESCE(v_old_status, 'free'),
+    'active',
+    'WEBHOOK_EVENT',
+    v_event_type,
+    p_event_id,
+    jsonb_build_object(
+      'product_id', p_product_id,
+      'expiry_date', p_expiry_date,
+      'store', p_store,
+      'environment', p_environment
+    )
+  );
+
+  -- 4. Mark webhook event as processed
+  UPDATE revenuecat_webhook_events
+  SET
+    processed_at = NOW(),
+    updated_at = NOW()
+  WHERE event_id = p_event_id;
+
+  RETURN jsonb_build_object(
+    'success', TRUE,
+    'user_id', v_user_id,
+    'status', 'active',
+    'expiry_date', p_expiry_date
+  );
+
+EXCEPTION
+  WHEN OTHERS THEN
+    -- Log error to webhook event
+    UPDATE revenuecat_webhook_events
+    SET
+      processing_error = SQLERRM,
+      retry_count = retry_count + 1,
+      updated_at = NOW()
+    WHERE event_id = p_event_id;
+
+    RAISE;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- ========================================
+-- 4.2 CANCEL SUBSCRIPTION
+-- ========================================
+
+CREATE OR REPLACE FUNCTION cancel_revenuecat_subscription(
+  p_event_id TEXT,
+  p_app_user_id TEXT,
+  p_subscription_id TEXT,
+  p_cancellation_date TIMESTAMPTZ
+) RETURNS JSONB AS $$
+DECLARE
+  v_user_id UUID;
+  v_expiry_date TIMESTAMPTZ;
+BEGIN
+  -- Map app_user_id to internal user_id
+  SELECT id INTO v_user_id
+  FROM user_profiles
+  WHERE id::text = p_app_user_id OR email = p_app_user_id;
+
+  IF v_user_id IS NULL THEN
+    RAISE EXCEPTION 'User not found: %', p_app_user_id;
+  END IF;
+
+  -- 🔒 ATOMIC TRANSACTION
+
+  -- 1. Update subscription status to cancelled
+  UPDATE premium_subscriptions
+  SET
+    status = 'cancelled',
+    cancellation_date = p_cancellation_date,
+    updated_at = NOW()
+  WHERE user_id = v_user_id AND subscription_id = p_subscription_id
+  RETURNING expiry_date INTO v_expiry_date;
+
+  -- Note: User stays premium until expiry_date (Apple/Google policy)
+  -- is_premium will be set to FALSE by scheduled expiry job
+
+  -- 2. Log to plan change history
+  INSERT INTO plan_change_history (
+    user_id,
+    subscription_id,
+    from_state,
+    to_state,
+    change_reason,
+    event_type,
+    event_id,
+    metadata
+  ) VALUES (
+    v_user_id,
+    p_subscription_id,
+    'active',
+    'cancelled',
+    'WEBHOOK_EVENT',
+    'CANCELLATION',
+    p_event_id,
+    jsonb_build_object(
+      'cancellation_date', p_cancellation_date,
+      'expiry_date', v_expiry_date,
+      'note', 'Premium access continues until expiry'
+    )
+  );
+
+  -- 3. Mark webhook event as processed
+  UPDATE revenuecat_webhook_events
+  SET processed_at = NOW(), updated_at = NOW()
+  WHERE event_id = p_event_id;
+
+  RETURN jsonb_build_object(
+    'success', TRUE,
+    'user_id', v_user_id,
+    'status', 'cancelled',
+    'expires_at', v_expiry_date
+  );
+
+EXCEPTION
+  WHEN OTHERS THEN
+    UPDATE revenuecat_webhook_events
+    SET processing_error = SQLERRM, retry_count = retry_count + 1, updated_at = NOW()
+    WHERE event_id = p_event_id;
+    RAISE;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- ========================================
+-- 4.3 EXPIRE SUBSCRIPTION
+-- ========================================
+
+CREATE OR REPLACE FUNCTION expire_revenuecat_subscription(
+  p_event_id TEXT,
+  p_app_user_id TEXT,
+  p_subscription_id TEXT
+) RETURNS JSONB AS $$
+DECLARE
+  v_user_id UUID;
+BEGIN
+  -- Map app_user_id to internal user_id
+  SELECT id INTO v_user_id
+  FROM user_profiles
+  WHERE id::text = p_app_user_id OR email = p_app_user_id;
+
+  IF v_user_id IS NULL THEN
+    RAISE EXCEPTION 'User not found: %', p_app_user_id;
+  END IF;
+
+  -- 🔒 ATOMIC TRANSACTION
+
+  -- 1. Update subscription status to expired
+  UPDATE premium_subscriptions
+  SET
+    status = 'expired',
+    updated_at = NOW()
+  WHERE user_id = v_user_id AND subscription_id = p_subscription_id;
+
+  -- 2. Update user profile premium status
+  UPDATE user_profiles
+  SET
+    is_premium = FALSE,
+    updated_at = NOW()
+  WHERE id = v_user_id;
+
+  -- 3. Log to plan change history
+  INSERT INTO plan_change_history (
+    user_id,
+    subscription_id,
+    from_state,
+    to_state,
+    change_reason,
+    event_type,
+    event_id
+  ) VALUES (
+    v_user_id,
+    p_subscription_id,
+    'active',
+    'expired',
+    'WEBHOOK_EVENT',
+    'EXPIRATION',
+    p_event_id
+  );
+
+  -- 4. Mark webhook event as processed
+  UPDATE revenuecat_webhook_events
+  SET processed_at = NOW(), updated_at = NOW()
+  WHERE event_id = p_event_id;
+
+  RETURN jsonb_build_object(
+    'success', TRUE,
+    'user_id', v_user_id,
+    'status', 'expired'
+  );
+
+EXCEPTION
+  WHEN OTHERS THEN
+    UPDATE revenuecat_webhook_events
+    SET processing_error = SQLERRM, retry_count = retry_count + 1, updated_at = NOW()
+    WHERE event_id = p_event_id;
+    RAISE;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- ========================================
+-- 4.4 HANDLE BILLING ISSUE (GRACE PERIOD)
+-- ========================================
+
+CREATE OR REPLACE FUNCTION handle_billing_issue(
+  p_event_id TEXT,
+  p_app_user_id TEXT,
+  p_subscription_id TEXT,
+  p_grace_period_expires_at TIMESTAMPTZ
+) RETURNS JSONB AS $$
+DECLARE
+  v_user_id UUID;
+BEGIN
+  -- Map app_user_id to internal user_id
+  SELECT id INTO v_user_id
+  FROM user_profiles
+  WHERE id::text = p_app_user_id OR email = p_app_user_id;
+
+  IF v_user_id IS NULL THEN
+    RAISE EXCEPTION 'User not found: %', p_app_user_id;
+  END IF;
+
+  -- 🔒 ATOMIC TRANSACTION
+
+  -- 1. Update subscription status to grace_period
+  UPDATE premium_subscriptions
+  SET
+    status = 'grace_period',
+    billing_issue_detected_at = NOW(),
+    expiry_date = p_grace_period_expires_at, -- Extend with grace period
+    updated_at = NOW()
+  WHERE user_id = v_user_id AND subscription_id = p_subscription_id;
+
+  -- Note: User STAYS premium during grace period (Apple/Google policy)
+  -- is_premium remains TRUE until grace period expires
+
+  -- 2. Log to plan change history
+  INSERT INTO plan_change_history (
+    user_id,
+    subscription_id,
+    from_state,
+    to_state,
+    change_reason,
+    event_type,
+    event_id,
+    metadata
+  ) VALUES (
+    v_user_id,
+    p_subscription_id,
+    'active',
+    'grace_period',
+    'WEBHOOK_EVENT',
+    'BILLING_ISSUE',
+    p_event_id,
+    jsonb_build_object(
+      'grace_period_expires_at', p_grace_period_expires_at,
+      'note', 'User retains premium access during grace period'
+    )
+  );
+
+  -- 3. Mark webhook event as processed
+  UPDATE revenuecat_webhook_events
+  SET processed_at = NOW(), updated_at = NOW()
+  WHERE event_id = p_event_id;
+
+  RETURN jsonb_build_object(
+    'success', TRUE,
+    'user_id', v_user_id,
+    'status', 'grace_period',
+    'grace_period_expires_at', p_grace_period_expires_at
+  );
+
+EXCEPTION
+  WHEN OTHERS THEN
+    UPDATE revenuecat_webhook_events
+    SET processing_error = SQLERRM, retry_count = retry_count + 1, updated_at = NOW()
+    WHERE event_id = p_event_id;
+    RAISE;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- ========================================
+-- 4.5 PROCESS REFUND
+-- ========================================
+
+CREATE OR REPLACE FUNCTION process_revenuecat_refund(
+  p_event_id TEXT,
+  p_app_user_id TEXT,
+  p_subscription_id TEXT
+) RETURNS JSONB AS $$
+DECLARE
+  v_user_id UUID;
+BEGIN
+  -- Map app_user_id to internal user_id
+  SELECT id INTO v_user_id
+  FROM user_profiles
+  WHERE id::text = p_app_user_id OR email = p_app_user_id;
+
+  IF v_user_id IS NULL THEN
+    RAISE EXCEPTION 'User not found: %', p_app_user_id;
+  END IF;
+
+  -- 🔒 ATOMIC TRANSACTION
+
+  -- 1. Update subscription status to refunded
+  UPDATE premium_subscriptions
+  SET
+    status = 'refunded',
+    updated_at = NOW()
+  WHERE user_id = v_user_id AND subscription_id = p_subscription_id;
+
+  -- 2. IMMEDIATELY revoke premium access
+  UPDATE user_profiles
+  SET
+    is_premium = FALSE,
+    premium_expires_at = NULL, -- Clear expiry date
+    updated_at = NOW()
+  WHERE id = v_user_id;
+
+  -- 3. Log to plan change history
+  INSERT INTO plan_change_history (
+    user_id,
+    subscription_id,
+    from_state,
+    to_state,
+    change_reason,
+    event_type,
+    event_id,
+    metadata
+  ) VALUES (
+    v_user_id,
+    p_subscription_id,
+    'active',
+    'refunded',
+    'WEBHOOK_EVENT',
+    'REFUND',
+    p_event_id,
+    jsonb_build_object(
+      'note', 'Premium access immediately revoked due to refund'
+    )
+  );
+
+  -- 4. Mark webhook event as processed
+  UPDATE revenuecat_webhook_events
+  SET processed_at = NOW(), updated_at = NOW()
+  WHERE event_id = p_event_id;
+
+  RETURN jsonb_build_object(
+    'success', TRUE,
+    'user_id', v_user_id,
+    'status', 'refunded',
+    'premium_revoked', TRUE
+  );
+
+EXCEPTION
+  WHEN OTHERS THEN
+    UPDATE revenuecat_webhook_events
+    SET processing_error = SQLERRM, retry_count = retry_count + 1, updated_at = NOW()
+    WHERE event_id = p_event_id;
+    RAISE;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- ========================================
+-- 5. TRIGGERS FOR UPDATED_AT
+-- ========================================
+
+CREATE OR REPLACE FUNCTION update_updated_at_column()
+RETURNS TRIGGER AS $$
+BEGIN
+  NEW.updated_at = NOW();
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Apply to all RevenueCat tables
+DROP TRIGGER IF EXISTS update_webhook_events_updated_at ON revenuecat_webhook_events;
+CREATE TRIGGER update_webhook_events_updated_at
+  BEFORE UPDATE ON revenuecat_webhook_events
+  FOR EACH ROW
+  EXECUTE FUNCTION update_updated_at_column();
+
+DROP TRIGGER IF EXISTS update_premium_subs_updated_at ON premium_subscriptions;
+CREATE TRIGGER update_premium_subs_updated_at
+  BEFORE UPDATE ON premium_subscriptions
+  FOR EACH ROW
+  EXECUTE FUNCTION update_updated_at_column();
+
+-- ========================================
+-- 6. GRANT PERMISSIONS
+-- ========================================
+
+-- Service role can execute all RPC functions
+GRANT EXECUTE ON FUNCTION activate_revenuecat_premium TO service_role;
+GRANT EXECUTE ON FUNCTION cancel_revenuecat_subscription TO service_role;
+GRANT EXECUTE ON FUNCTION expire_revenuecat_subscription TO service_role;
+GRANT EXECUTE ON FUNCTION handle_billing_issue TO service_role;
+GRANT EXECUTE ON FUNCTION process_revenuecat_refund TO service_role;
+
+-- Revoke from anonymous users
+REVOKE EXECUTE ON FUNCTION activate_revenuecat_premium FROM anon;
+REVOKE EXECUTE ON FUNCTION cancel_revenuecat_subscription FROM anon;
+REVOKE EXECUTE ON FUNCTION expire_revenuecat_subscription FROM anon;
+REVOKE EXECUTE ON FUNCTION handle_billing_issue FROM anon;
+REVOKE EXECUTE ON FUNCTION process_revenuecat_refund FROM anon;
+
+-- ========================================
+-- MIGRATION COMPLETE
+-- ========================================
+-- Summary:
+-- ✅ revenuecat_webhook_events table (idempotency + event storage)
+-- ✅ premium_subscriptions table (RevenueCat subscription tracking)
+-- ✅ plan_change_history table (comprehensive audit trail)
+-- ✅ 5 atomic RPC functions for all event types
+-- ✅ HMAC signature verification (implemented in Edge Function)
+-- ✅ Idempotency via unique event_id constraint
+-- ✅ Retry-safe with processing_error and retry_count tracking
+-- ✅ RLS policies for security
+-- ✅ Indexes for performance
+-- ✅ Triggers for updated_at automation
